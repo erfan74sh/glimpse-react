@@ -1,15 +1,19 @@
 import React from "react";
 import { Outlet } from "react-router";
+// components
+import Nav from "./Nav";
 // style
 import "./Estimation.scss";
 
-const Estimate = () => {
+const Estimation = () => {
 	return (
-		<div>
-			<header>estimation page</header>
+		<div className="h-screen bg-gray-50">
+			<header className="">
+				<Nav />
+			</header>
 			<Outlet />
 		</div>
 	);
 };
 
-export default Estimate;
+export default Estimation;
