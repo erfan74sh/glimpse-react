@@ -8,8 +8,6 @@ import {
 	LabelList,
 	Tooltip,
 } from "recharts";
-// style
-import "./Chart.scss";
 
 const renderCustomeLabel = (props) => {
 	const { x, y, stroke, value } = props;
