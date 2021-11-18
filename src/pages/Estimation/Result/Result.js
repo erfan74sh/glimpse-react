@@ -5,7 +5,6 @@ import Chart from "./Chart";
 import "./Result.scss";
 
 const Result = () => {
-	const data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
 	return (
 		<main className=" px-24 py-16" id="result__main">
 			<header className="mb-14">
