@@ -16,7 +16,7 @@ const Result = () => {
 				<section className="flex justify-center items-center max-h-152 overflow-hidden">
 					<Chart />
 				</section>
-				<section className="flex flex-col w-3/5 pl-24">
+				<section className="flex flex-col px-52 mt-20">
 					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						geometry
 					</h2>
