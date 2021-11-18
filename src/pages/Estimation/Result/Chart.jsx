@@ -149,7 +149,7 @@ const Chart = () => {
 		<LineChart
 			width={1000}
 			height={300}
-			margin={{ top: 5, right: 20, bottom: 5, left: 100 }}
+			margin={{ top: 20, right: 50, bottom: 20, left: 50 }}
 		>
 			<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
 			{series.map((s) => {
