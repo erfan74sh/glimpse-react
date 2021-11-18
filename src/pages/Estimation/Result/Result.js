@@ -13,7 +13,7 @@ const Result = () => {
 				</h1>
 			</header>
 			<main className="">
-				<section className=" max-h-152 overflow-hidden bg-white p-10">
+				<section className="flex justify-center items-center max-h-152 overflow-hidden bg-white p-10">
 					<Chart />
 				</section>
 				<section className="flex flex-col w-3/5 pl-24">
