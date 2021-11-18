@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	LineChart,
-	Line,
-	CartesianGrid,
-	XAxis,
-	YAxis,
-	Tooltip,
-} from "recharts";
+// compoents
 import Chart from "./Chart";
 // style
 import "./Result.scss";
