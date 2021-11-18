@@ -8,6 +8,8 @@ import {
 	LabelList,
 	Tooltip,
 } from "recharts";
+// style
+import "./Chart.scss";
 
 const renderCustomeLabel = (props) => {
 	const { x, y, stroke, value } = props;
@@ -52,8 +54,9 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 	);
 };
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload, label, stroke }) => {
 	let title;
+	let color = ["#784AC1", "#00C48C"];
 	switch (label) {
 		case "X- Dimention":
 			title = "m";
@@ -73,11 +76,15 @@ const CustomTooltip = ({ active, payload, label }) => {
 	}
 	if (active && payload && payload.length) {
 		return (
-			<div className="custom-tooltip">
-				<p>{label}</p>
-				{payload.map((p) => {
+			<div className="p-3 bg-gray-200 bg-opacity-50 border border-blue-550 border-opacity-40">
+				<h4 className="text-blue-550 font-semibold text-sm">{label}</h4>
+				{payload.map((p, i) => {
 					return (
-						<p className="label" key={p.name}>{`${p.name} : ${
+						<p
+							key={p.name}
+							style={{ color: color[i] }}
+							className="text-xs font-medium"
+						>{`${p.name} : ${
 							label === "Shading"
 								? p.value / 10
 								: label === "Material"
