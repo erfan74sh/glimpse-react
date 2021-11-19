@@ -7,6 +7,7 @@ import {
 	YAxis,
 	LabelList,
 	Tooltip,
+	Legend,
 } from "recharts";
 
 const renderCustomeLabel = (props) => {
@@ -98,6 +99,24 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 	return null;
 };
 
+const CustomLegend = ({ payload }) => {
+	console.log(payload);
+	return (
+		<ul className="flex flex-col gap-y-2 content-center">
+			{payload.map((entry) => {
+				return (
+					<li
+						className="px-1 py-1 rounded-lg text-white text-xs font-normal capitalize"
+						style={{ backgroundColor: entry.color }}
+					>
+						{entry.value}
+					</li>
+				);
+			})}
+		</ul>
+	);
+};
+
 const Chart = () => {
 	const series = [
 		{
@@ -184,6 +203,13 @@ const Chart = () => {
 			/>
 			<YAxis hide={true} />
 			<Tooltip content={<CustomTooltip />} />
+			<Legend
+				align="left"
+				verticalAlign="middle"
+				layout="vertical"
+				wrapperStyle={{ left: 0 }}
+				content={<CustomLegend />}
+			/>
 		</LineChart>
 	);
 };
