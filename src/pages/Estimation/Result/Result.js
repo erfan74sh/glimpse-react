@@ -11,6 +11,9 @@ import {
 	faSortDown,
 	faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
+// assets
+import ModelImage from "../../../assets/images/3dmodel-result.png";
+import PDFIcon from "../../../assets/images/pdf-icon.png";
 
 const Result = () => {
 	const [series, setSeries] = useState([]);
@@ -69,33 +72,85 @@ const Result = () => {
 				<section className="flex justify-center items-center max-h-152 overflow-hidden">
 					<Chart series={series} />
 				</section>
-				<section className="flex flex-col px-52 mt-20">
+				<section className="flex flex-col h-screen px-52 mt-20">
 					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						geometry
 					</h2>
 					<ul className="flex flex-col gap-y-9">
 						{series.map((entry, i) => (
-							<li
-								key={i}
-								className="flex content-between items-center mx-16 px-4 py-3.5 text-sm rounded-md shadow-xl bg-white"
-								data-name={entry.name}
-							>
-								<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
-								<span>{` ${entry.name}`}</span>
-								<button className="ml-auto mr-4" onClick={handleVisibility}>
-									{entry.visible ? (
-										<FontAwesomeIcon icon={faEye} />
-									) : (
-										<FontAwesomeIcon
-											icon={faEyeSlash}
-											className="text-gray-500"
-										/>
-									)}
-								</button>
-								<button className="relative bottom-1 text-base leading-5 text-gray-500">
-									<FontAwesomeIcon icon={faSortDown} />
-								</button>
-							</li>
+							<>
+								<li
+									key={i}
+									className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-xl bg-white"
+									data-name={entry.name}
+								>
+									<article className="block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-lg">
+										<div className="flex justify-between">
+											<div>
+												<h3 className="mb-5 font-bold text-blue-550 text-base uppercase">
+													result
+												</h3>
+												<ul>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+													<li>
+														<span>parameter</span>
+														<span>[unit]:</span>
+														<span>10</span>
+													</li>
+												</ul>
+											</div>
+											<img src={ModelImage} alt="model image" />
+										</div>
+										<button className="absolute top-5 right-5">
+											<img src={PDFIcon} alt="download pdf icon" />
+										</button>
+									</article>
+									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
+									<span>{` ${entry.name}`}</span>
+									<button className="ml-auto mr-4" onClick={handleVisibility}>
+										{entry.visible ? (
+											<FontAwesomeIcon icon={faEye} />
+										) : (
+											<FontAwesomeIcon
+												icon={faEyeSlash}
+												className="text-gray-500"
+											/>
+										)}
+									</button>
+									<button className="relative bottom-1 text-base leading-5 text-gray-500">
+										<FontAwesomeIcon icon={faSortDown} />
+									</button>
+								</li>
+							</>
 						))}
 					</ul>
 				</section>
