@@ -11,7 +11,6 @@ import {
 } from "recharts";
 
 const renderCustomeLabel = (props) => {
-	console.log(props);
 	const { x, y, stroke, value, opacity } = props;
 	return (
 		<text
@@ -120,57 +119,27 @@ const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 	);
 };
 
-const Chart = () => {
-	const [series, setSeries] = useState([]);
-	useEffect(() => {
-		const data = [
-			{
-				name: "output 1",
-				stroke: "#926ECB",
-				opacity: 1,
-				data: [
-					{ name: "X- Dimention", uv: 400, amt: 8 },
-					{ name: "Y- Dimention", uv: 450, amt: 20 },
-					{ name: "Material", uv: 380, amt: 30 },
-					{ name: "Shading", uv: 410, amt: 20 },
-					{ name: "UDI", uv: 410, amt: 65 },
-					{ name: "SDA", uv: 410, amt: 80 },
-					{ name: "ASE", uv: 410, amt: 35 },
-				],
-			},
-			{
-				name: "output 2",
-				stroke: "#00C48C",
-				opacity: 1,
-				data: [
-					{ name: "X- Dimention", uv: 400, amt: 10 },
-					{ name: "Y- Dimention", uv: 450, amt: 30 },
-					{ name: "Material", uv: 380, amt: 70 },
-					{ name: "Shading", uv: 410, amt: 40 },
-					{ name: "UDI", uv: 410, amt: 50 },
-					{ name: "SDA", uv: 410, amt: 55 },
-					{ name: "ASE", uv: 410, amt: 10 },
-				],
-			},
-		];
-		setSeries(data);
-	}, []);
+const Chart = ({ series }) => {
+	const [lineOpacity, setLineOpacity] = useState({ output_1: 1, output_2: 1 });
+	// todo: define lineOpacity in useEffect and fix the issue
 
 	const handleMouseEnterLegend = (e) => {
-		let tempState = [...series];
-		tempState.forEach((el) => {
-			if (el.name !== e.target.innerHTML) {
-				el.opacity = 0.2;
+		let tempState = { ...lineOpacity };
+		for (let name in tempState) {
+			console.log(name);
+			if (name !== e.target.innerHTML) {
+				tempState[name] = 0.3;
 			}
-		});
-
-		setSeries(tempState);
+		}
+		setLineOpacity(tempState);
 	};
 
 	const handleMouseLeaveLegend = () => {
-		let tempState = [...series];
-		tempState.forEach((el) => (el.opacity = 1));
-		setSeries(tempState);
+		let tempState = { ...lineOpacity };
+		for (let name in tempState) {
+			tempState[name] = 1;
+		}
+		setLineOpacity(tempState);
 	};
 
 	const getValue = (data) => {
@@ -212,12 +181,12 @@ const Chart = () => {
 						key={s.name}
 						stroke={s.stroke}
 						strokeWidth="2"
-						strokeOpacity={s.opacity}
+						strokeOpacity={lineOpacity[s.name]}
 						dot={{
 							strokeWidth: 1,
 							fill: s.stroke,
 							r: 5,
-							opacity: s.opacity,
+							opacity: lineOpacity[s.name],
 						}}
 					>
 						<LabelList dataKey={getValue} content={renderCustomeLabel} />
