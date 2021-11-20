@@ -160,10 +160,15 @@ const Result = () => {
 										)}
 									</button>
 									<button
-										className="relative bottom-1 text-base leading-5 text-gray-500"
+										className="relative text-base leading-5 text-gray-500"
 										onClick={handleShowResultDropdown}
 									>
-										<FontAwesomeIcon icon={faSortDown} />
+										<FontAwesomeIcon
+											icon={faSortDown}
+											className={`${
+												entry.showDropdown ? "transform rotate-180" : ""
+											} transition-all`}
+										/>
 									</button>
 								</li>
 							</>
