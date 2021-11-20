@@ -110,6 +110,7 @@ const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 						style={{ backgroundColor: entry.color }}
 						onMouseEnter={changeOpacity}
 						onMouseLeave={resetOpacity}
+						key={entry.value}
 					>
 						{entry.value}
 					</li>
@@ -171,28 +172,30 @@ const Chart = ({ series }) => {
 			margin={{ top: 20, right: 50, bottom: 20, left: 50 }}
 		>
 			<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
-			{series.map((s) => {
-				return (
-					<Line
-						type="linear"
-						dataKey="amt"
-						data={s.data}
-						name={s.name}
-						key={s.name}
-						stroke={s.stroke}
-						strokeWidth="2"
-						strokeOpacity={lineOpacity[s.name]}
-						dot={{
-							strokeWidth: 1,
-							fill: s.stroke,
-							r: 5,
-							opacity: lineOpacity[s.name],
-						}}
-					>
-						<LabelList dataKey={getValue} content={renderCustomeLabel} />
-					</Line>
-				);
-			})}
+			{series
+				.filter((s) => s.visible)
+				.map((s) => {
+					return (
+						<Line
+							type="linear"
+							dataKey="amt"
+							data={s.data}
+							name={s.name}
+							key={s.name}
+							stroke={s.stroke}
+							strokeWidth="2"
+							strokeOpacity={lineOpacity[s.name]}
+							dot={{
+								strokeWidth: 1,
+								fill: s.stroke,
+								r: 5,
+								opacity: lineOpacity[s.name],
+							}}
+						>
+							<LabelList dataKey={getValue} content={renderCustomeLabel} />
+						</Line>
+					);
+				})}
 			<XAxis
 				dataKey="name"
 				type="category"
