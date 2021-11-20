@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	LineChart,
 	Line,
@@ -99,8 +99,7 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 	return null;
 };
 
-const CustomLegend = ({ payload }) => {
-	console.log(payload);
+const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 	return (
 		<ul className="flex flex-col gap-y-2 content-center">
 			{payload.map((entry) => {
@@ -108,6 +107,8 @@ const CustomLegend = ({ payload }) => {
 					<li
 						className="px-1 py-0.5 rounded-lg text-white text-xs font-normal capitalize"
 						style={{ backgroundColor: entry.color }}
+						onMouseEnter={changeOpacity}
+						onMouseLeave={resetOpacity}
 					>
 						{entry.value}
 					</li>
@@ -118,34 +119,57 @@ const CustomLegend = ({ payload }) => {
 };
 
 const Chart = () => {
-	const series = [
-		{
-			name: "output 1",
-			stroke: "#926ECB",
-			data: [
-				{ name: "X- Dimention", uv: 400, amt: 8 },
-				{ name: "Y- Dimention", uv: 450, amt: 20 },
-				{ name: "Material", uv: 380, amt: 30 },
-				{ name: "Shading", uv: 410, amt: 20 },
-				{ name: "UDI", uv: 410, amt: 65 },
-				{ name: "SDA", uv: 410, amt: 80 },
-				{ name: "ASE", uv: 410, amt: 35 },
-			],
-		},
-		{
-			name: "output 2",
-			stroke: "#00C48C",
-			data: [
-				{ name: "X- Dimention", uv: 400, amt: 10 },
-				{ name: "Y- Dimention", uv: 450, amt: 30 },
-				{ name: "Material", uv: 380, amt: 70 },
-				{ name: "Shading", uv: 410, amt: 40 },
-				{ name: "UDI", uv: 410, amt: 50 },
-				{ name: "SDA", uv: 410, amt: 55 },
-				{ name: "ASE", uv: 410, amt: 10 },
-			],
-		},
-	];
+	const [series, setSeries] = useState([]);
+	useEffect(() => {
+		const data = [
+			{
+				name: "output 1",
+				stroke: "#926ECB",
+				opacity: 1,
+				data: [
+					{ name: "X- Dimention", uv: 400, amt: 8 },
+					{ name: "Y- Dimention", uv: 450, amt: 20 },
+					{ name: "Material", uv: 380, amt: 30 },
+					{ name: "Shading", uv: 410, amt: 20 },
+					{ name: "UDI", uv: 410, amt: 65 },
+					{ name: "SDA", uv: 410, amt: 80 },
+					{ name: "ASE", uv: 410, amt: 35 },
+				],
+			},
+			{
+				name: "output 2",
+				stroke: "#00C48C",
+				opacity: 1,
+				data: [
+					{ name: "X- Dimention", uv: 400, amt: 10 },
+					{ name: "Y- Dimention", uv: 450, amt: 30 },
+					{ name: "Material", uv: 380, amt: 70 },
+					{ name: "Shading", uv: 410, amt: 40 },
+					{ name: "UDI", uv: 410, amt: 50 },
+					{ name: "SDA", uv: 410, amt: 55 },
+					{ name: "ASE", uv: 410, amt: 10 },
+				],
+			},
+		];
+		setSeries(data);
+	}, []);
+
+	const handleMouseEnterLegend = (e) => {
+		let tempState = [...series];
+		tempState.forEach((el) => {
+			if (el.name !== e.target.innerHTML) {
+				el.opacity = 0.2;
+			}
+		});
+
+		setSeries(tempState);
+	};
+
+	const handleMouseLeaveLegend = () => {
+		let tempState = [...series];
+		tempState.forEach((el) => (el.opacity = 1));
+		setSeries(tempState);
+	};
 
 	const getValue = (data) => {
 		let val;
@@ -186,7 +210,13 @@ const Chart = () => {
 						key={s.name}
 						stroke={s.stroke}
 						strokeWidth="2"
-						dot={{ strokeWidth: 1, fill: s.stroke, r: 5 }}
+						strokeOpacity={s.opacity}
+						dot={{
+							strokeWidth: 1,
+							fill: s.stroke,
+							r: 5,
+							opacity: s.opacity,
+						}}
 					>
 						<LabelList dataKey={getValue} content={renderCustomeLabel} />
 					</Line>
@@ -209,6 +239,8 @@ const Chart = () => {
 				layout="vertical"
 				wrapperStyle={{ left: 0 }}
 				content={<CustomLegend />}
+				changeOpacity={handleMouseEnterLegend}
+				resetOpacity={handleMouseLeaveLegend}
 			/>
 		</LineChart>
 	);
