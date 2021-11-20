@@ -14,9 +14,9 @@ const renderCustomeLabel = (props) => {
 	const { x, y, stroke, value } = props;
 	return (
 		<text
-			x={x - 20}
+			x={x - 22}
 			y={y}
-			dy={-4}
+			dy={8}
 			fill={stroke}
 			fontSize={10}
 			textAnchor="middle"
@@ -106,7 +106,7 @@ const CustomLegend = ({ payload }) => {
 			{payload.map((entry) => {
 				return (
 					<li
-						className="px-1 py-1 rounded-lg text-white text-xs font-normal capitalize"
+						className="px-1 py-0.5 rounded-lg text-white text-xs font-normal capitalize"
 						style={{ backgroundColor: entry.color }}
 					>
 						{entry.value}
