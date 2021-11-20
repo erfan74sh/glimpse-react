@@ -86,7 +86,10 @@ const Result = () => {
 									{entry.visible ? (
 										<FontAwesomeIcon icon={faEye} />
 									) : (
-										<FontAwesomeIcon icon={faEyeSlash} />
+										<FontAwesomeIcon
+											icon={faEyeSlash}
+											className="text-gray-500"
+										/>
 									)}
 								</button>
 								<button className="relative bottom-1 text-base leading-5 text-gray-500">
