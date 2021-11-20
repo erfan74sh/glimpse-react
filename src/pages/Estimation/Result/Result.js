@@ -24,6 +24,7 @@ const Result = () => {
 				stroke: "#926ECB",
 				opacity: 1,
 				visible: true,
+				showDropdown: false,
 				data: [
 					{ name: "X- Dimention", uv: 400, amt: 8 },
 					{ name: "Y- Dimention", uv: 450, amt: 20 },
@@ -39,6 +40,7 @@ const Result = () => {
 				stroke: "#00C48C",
 				opacity: 1,
 				visible: true,
+				showDropdown: false,
 				data: [
 					{ name: "X- Dimention", uv: 400, amt: 10 },
 					{ name: "Y- Dimention", uv: 450, amt: 30 },
@@ -59,6 +61,13 @@ const Result = () => {
 		let item = temState.filter((entry) => entry.name === name)[0];
 		item.visible = !item.visible;
 		setSeries(temState);
+	};
+	const handleShowResultDropdown = (e) => {
+		const name = e.currentTarget.parentNode.dataset.name;
+		let tempState = [...series];
+		let item = tempState.filter((entry) => entry.name === name)[0];
+		item.showDropdown = !item.showDropdown;
+		setSeries(tempState);
 	};
 
 	return (
@@ -84,7 +93,11 @@ const Result = () => {
 									className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-xl bg-white"
 									data-name={entry.name}
 								>
-									<article className="block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-lg">
+									<article
+										className={`${
+											entry.showDropdown ? "visible" : "hidden"
+										} block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-lg`}
+									>
 										<div className="flex justify-between">
 											<div>
 												<h3 className="mb-5 font-bold text-blue-550 text-base uppercase">
@@ -146,7 +159,10 @@ const Result = () => {
 											/>
 										)}
 									</button>
-									<button className="relative bottom-1 text-base leading-5 text-gray-500">
+									<button
+										className="relative bottom-1 text-base leading-5 text-gray-500"
+										onClick={handleShowResultDropdown}
+									>
 										<FontAwesomeIcon icon={faSortDown} />
 									</button>
 								</li>
