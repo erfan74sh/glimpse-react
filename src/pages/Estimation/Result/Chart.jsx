@@ -11,7 +11,8 @@ import {
 } from "recharts";
 
 const renderCustomeLabel = (props) => {
-	const { x, y, stroke, value } = props;
+	console.log(props);
+	const { x, y, stroke, value, opacity } = props;
 	return (
 		<text
 			x={x - 22}
@@ -20,6 +21,7 @@ const renderCustomeLabel = (props) => {
 			fill={stroke}
 			fontSize={10}
 			textAnchor="middle"
+			opacity={opacity}
 		>
 			{value}
 		</text>
@@ -105,7 +107,7 @@ const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 			{payload.map((entry) => {
 				return (
 					<li
-						className="px-1 py-0.5 rounded-lg text-white text-xs font-normal capitalize"
+						className="px-1 py-0.5 rounded-lg text-white text-xs font-normal capitalize cursor-pointer"
 						style={{ backgroundColor: entry.color }}
 						onMouseEnter={changeOpacity}
 						onMouseLeave={resetOpacity}
