@@ -15,6 +15,9 @@ module.exports = {
 				152: "38rem",
 				160: "40rem",
 			},
+			fontFamily: {
+				gothic: ["gothic", "Helvetica", "Arial", "sans-serif"],
+			},
 		},
 	},
 	variants: {
