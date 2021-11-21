@@ -4,9 +4,21 @@ import CarretDown from "../../assets/icons/caret-down.svg";
 
 const InputSelect = ({ placeHolder, items }) => {
 	const [selectedValue, setSelectedValue] = useState("");
+
 	const handleSelectedValue = (e) => {
 		setSelectedValue(e.target.dataset.value);
 		setShowDropdown(false);
+		const nextSibilingEl =
+			e.target.parentElement.parentElement.nextElementSibling;
+		const parentEl =
+			e.target.parentElement.parentElement.parentElement.parentElement;
+		const yPixelToScroll = nextSibilingEl.offsetTop;
+
+		parentEl.scroll({
+			top: yPixelToScroll,
+			left: 0,
+			behavior: "smooth",
+		});
 	};
 
 	const [showDropdown, setShowDropdown] = useState(false);
