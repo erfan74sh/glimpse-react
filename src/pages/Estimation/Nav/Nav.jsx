@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// component
+import Profile from "../../../components/profile/Profile";
 // assets
 import Logo from "../../../assets/images/logo-02.png";
 
@@ -28,7 +30,9 @@ const Header = () => {
 						</li>
 					</ul>
 				</li>
-				<li>user name</li>
+				<li>
+					<Profile />
+				</li>
 			</ul>
 		</nav>
 	);
