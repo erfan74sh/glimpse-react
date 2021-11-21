@@ -25,23 +25,23 @@ const Estimate = () => {
 								geometry
 							</legend>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="X-Dimention"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="Y-Dimention"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="WWR-North"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="WWR-South"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="Shading Type"
 								items={["item1", "item2", "item3"]}
 							/>
 						</fieldset>
@@ -50,23 +50,23 @@ const Estimate = () => {
 								material
 							</legend>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="Wall-material"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="placeholder"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="placeholder"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="placeholder"
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
-								placeHolder="X- Dimention"
+								placeHolder="placeholder"
 								items={["item1", "item2", "item3"]}
 							/>
 						</fieldset>
