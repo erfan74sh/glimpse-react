@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// components
+import InputSelect from "../../../components/inputs/InputSelect";
 // style
 import "./Estimate.scss";
 // asset
@@ -22,61 +24,21 @@ const Estimate = () => {
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
 								geometry
 							</legend>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
 						</fieldset>
 						<fieldset className="flex flex-col gap-y-9">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
 								material
 							</legend>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
-							<input
-								type="text"
-								placeholder="somthing"
-								className="mr-8 px-4 py-3.5 rounded-md shadow-xl"
-							/>
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
+							<InputSelect />
 						</fieldset>
 					</form>
 				</section>
