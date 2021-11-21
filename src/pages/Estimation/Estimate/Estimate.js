@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // components
 import InputSelect from "../../../components/inputs/InputSelect";
+import ProgressBar from "../../../components/progress-bar/ProgressBar";
 // style
 import "./Estimate.scss";
 // asset
@@ -18,9 +19,9 @@ const Estimate = () => {
 				</h1>
 			</header>
 			<main className="flex">
-				<section className="w-2/5 max-h-152 overflow-hidden">
+				<section className="w-2/5 max-h-152 relative overflow-hidden">
 					<form className=" h-full w-full pr-10 overflow-y-scroll box-content relative">
-						<fieldset className="flex flex-col gap-y-9 mb-12">
+						<fieldset className="flex flex-col gap-y-9 mb-12 pr-10">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								geometry
 							</legend>
@@ -45,7 +46,7 @@ const Estimate = () => {
 								items={["item1", "item2", "item3"]}
 							/>
 						</fieldset>
-						<fieldset className="flex flex-col gap-y-9">
+						<fieldset className="flex flex-col gap-y-9 pr-10">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								material
 							</legend>
@@ -71,6 +72,9 @@ const Estimate = () => {
 							/>
 						</fieldset>
 					</form>
+					<div className="absolute right-0 top-0 h-full">
+						<ProgressBar />
+					</div>
 				</section>
 				<section className="flex flex-col w-3/5 pl-24">
 					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
