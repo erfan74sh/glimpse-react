@@ -19,9 +19,9 @@ const Estimate = () => {
 			</header>
 			<main className="flex">
 				<section className="w-2/5 max-h-152 overflow-hidden">
-					<form className=" h-full w-full pr-10 overflow-y-scroll box-content">
+					<form className=" h-full w-full pr-10 overflow-y-scroll box-content relative">
 						<fieldset className="flex flex-col gap-y-9 mb-12">
-							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
+							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								geometry
 							</legend>
 							<InputSelect
@@ -46,7 +46,7 @@ const Estimate = () => {
 							/>
 						</fieldset>
 						<fieldset className="flex flex-col gap-y-9">
-							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
+							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								material
 							</legend>
 							<InputSelect
