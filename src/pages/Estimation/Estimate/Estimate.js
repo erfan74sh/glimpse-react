@@ -24,21 +24,51 @@ const Estimate = () => {
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
 								geometry
 							</legend>
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
 						</fieldset>
 						<fieldset className="flex flex-col gap-y-9">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500 sticky top-0">
 								material
 							</legend>
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
-							<InputSelect />
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
+							<InputSelect
+								placeHolder="X- Dimention"
+								items={["item1", "item2", "item3"]}
+							/>
 						</fieldset>
 					</form>
 				</section>
