@@ -84,7 +84,7 @@ const Estimate = () => {
 						<button>
 							<img src={ArrowLeft} alt="arrow left" />
 						</button>
-						<div>
+						<div className="w-96 h-96">
 							<_3D />
 						</div>
 						<button>
