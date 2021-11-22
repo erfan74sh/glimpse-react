@@ -27,6 +27,15 @@ const renderCustomeLabel = (props) => {
 	);
 };
 
+const CustomizedDot = ({ cx, cy, stroke, strokeOpacity }) => {
+	return (
+		<g opacity={strokeOpacity}>
+			<line x1={cx - 10} y1={cy} x2={cx + 10} y2={cy} stroke="black" />
+			<circle cx={cx} cy={cy} r="5" fill={stroke} />
+		</g>
+	);
+};
+
 const CustomizedAxisTick = ({ x, y, payload }) => {
 	let stroke = "#3F3356";
 	let strokeWidth = 1;
@@ -185,12 +194,7 @@ const Chart = ({ series }) => {
 							stroke={s.stroke}
 							strokeWidth="2"
 							strokeOpacity={lineOpacity[s.name]}
-							dot={{
-								strokeWidth: 1,
-								fill: s.stroke,
-								r: 5,
-								opacity: lineOpacity[s.name],
-							}}
+							dot={<CustomizedDot />}
 						>
 							<LabelList dataKey={getValue} content={renderCustomeLabel} />
 						</Line>
