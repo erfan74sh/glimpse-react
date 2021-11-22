@@ -8,6 +8,7 @@ import {
 	LabelList,
 	Tooltip,
 	Legend,
+	ResponsiveContainer,
 } from "recharts";
 
 const renderCustomeLabel = (props) => {
@@ -175,52 +176,54 @@ const Chart = ({ series }) => {
 	};
 
 	return (
-		<LineChart
-			width={1000}
-			height={300}
-			margin={{ top: 20, right: 50, bottom: 20, left: 50 }}
-		>
-			<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
-			{series
-				.filter((s) => s.visible)
-				.map((s) => {
-					return (
-						<Line
-							type="linear"
-							dataKey="amt"
-							data={s.data}
-							name={s.name}
-							key={s.name}
-							stroke={s.stroke}
-							strokeWidth="2"
-							strokeOpacity={lineOpacity[s.name]}
-							dot={<CustomizedDot />}
-						>
-							<LabelList dataKey={getValue} content={renderCustomeLabel} />
-						</Line>
-					);
-				})}
-			<XAxis
-				dataKey="name"
-				type="category"
-				allowDuplicatedCategory={false}
-				orientation="top"
-				axisLine={false}
-				tick={<CustomizedAxisTick />}
-				tickSize="0"
-			/>
-			<YAxis hide={true} />
-			<Tooltip content={<CustomTooltip />} />
-			<Legend
-				align="left"
-				verticalAlign="middle"
-				layout="vertical"
-				wrapperStyle={{ left: 0 }}
-				content={<CustomLegend />}
-				changeOpacity={handleMouseEnterLegend}
-				resetOpacity={handleMouseLeaveLegend}
-			/>
-		</LineChart>
+		<ResponsiveContainer width="100%" height={300}>
+			<LineChart
+				width={1000}
+				height={300}
+				margin={{ top: 20, right: 50, bottom: 20, left: 50 }}
+			>
+				<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
+				{series
+					.filter((s) => s.visible)
+					.map((s) => {
+						return (
+							<Line
+								type="linear"
+								dataKey="amt"
+								data={s.data}
+								name={s.name}
+								key={s.name}
+								stroke={s.stroke}
+								strokeWidth="2"
+								strokeOpacity={lineOpacity[s.name]}
+								dot={<CustomizedDot />}
+							>
+								<LabelList dataKey={getValue} content={renderCustomeLabel} />
+							</Line>
+						);
+					})}
+				<XAxis
+					dataKey="name"
+					type="category"
+					allowDuplicatedCategory={false}
+					orientation="top"
+					axisLine={false}
+					tick={<CustomizedAxisTick />}
+					tickSize="0"
+				/>
+				<YAxis hide={true} />
+				<Tooltip content={<CustomTooltip />} />
+				<Legend
+					align="left"
+					verticalAlign="middle"
+					layout="vertical"
+					wrapperStyle={{ left: 0 }}
+					content={<CustomLegend />}
+					changeOpacity={handleMouseEnterLegend}
+					resetOpacity={handleMouseLeaveLegend}
+				/>
+			</LineChart>
+		</ResponsiveContainer>
 	);
 };
 
