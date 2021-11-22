@@ -78,7 +78,7 @@ const Result = () => {
 				</h1>
 			</header>
 			<main className="">
-				<section className="flex justify-center items-center max-h-152 overflow-hidden">
+				<section className="flex justify-center items-center max-h-152 px-16 overflow-hidden">
 					<Chart series={series} />
 				</section>
 				<section className="flex flex-col h-screen px-52 mt-20">
