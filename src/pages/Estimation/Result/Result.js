@@ -78,10 +78,10 @@ const Result = () => {
 				</h1>
 			</header>
 			<main className="">
-				<section className="flex justify-center items-center max-h-152 px-16 overflow-hidden">
+				<section className="flex justify-center items-center max-h-152 px-20 overflow-hidden">
 					<Chart series={series} />
 				</section>
-				<section className="flex flex-col h-screen px-52 mt-20">
+				<section className="flex flex-col h-96 px-40 mt-20">
 					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						geometry
 					</h2>
