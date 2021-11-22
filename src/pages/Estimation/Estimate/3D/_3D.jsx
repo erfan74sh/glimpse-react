@@ -1,9 +1,20 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, TransformControls } from "@react-three/drei";
+import { useSpring, animated } from "@react-spring/three";
 
 const Box = () => {
 	const mesh = useRef(null);
+
+	// const [expand, setExpand] = useState(false);
+
+	// const { scale } = useSpring({ scale: expand ? [1.5, 1.5, 1.5] : [1, 1, 1] });
+
 	return (
+		// <animated.mesh ref={mesh} scale={scale} onClick={() => setExpand(!expand)}>
+		// 	<boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+		// 	<meshStandardMaterial attach="material" color="blue" />
+		// </animated.mesh>
 		<mesh ref={mesh}>
 			<boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
 			<meshStandardMaterial attach="material" color="blue" />
@@ -11,7 +22,8 @@ const Box = () => {
 	);
 };
 
-const _3D = () => {
+const _3D = ({ dimentions }) => {
+	console.log(dimentions);
 	return (
 		<Canvas
 			colorManagement
@@ -29,7 +41,10 @@ const _3D = () => {
 		>
 			<ambientLight intensity={0.3} />
 			<directionalLight position={[0, 10, 5]} intensity={1.5} />
-			<Box />
+			<TransformControls mode="scale">
+				<Box dimentions={dimentions} />
+			</TransformControls>
+			{/* <OrbitControls /> */}
 		</Canvas>
 	);
 };
