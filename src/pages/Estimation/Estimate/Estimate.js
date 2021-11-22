@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 // components
 import InputSelect from "../../../components/inputs/InputSelect";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
+import _3D from "./3D/_3D";
 // style
 import "./Estimate.scss";
 // asset
-import View from "../../../assets/images/3dmodel.png";
 import ArrowRight from "../../../assets/images/arrow-right.svg";
 import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
@@ -84,7 +84,9 @@ const Estimate = () => {
 						<button>
 							<img src={ArrowLeft} alt="arrow left" />
 						</button>
-						<img src={View} alt="3d view" />
+						<div>
+							<_3D />
+						</div>
 						<button>
 							<img src={ArrowRight} alt="arrow right" />
 						</button>
