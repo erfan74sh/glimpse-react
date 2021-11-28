@@ -44,7 +44,7 @@ const _3D = ({ dimentions }) => {
 			<TransformControls mode="scale">
 				<Box dimentions={dimentions} />
 			</TransformControls>
-			{/* <OrbitControls /> */}
+			<OrbitControls />
 		</Canvas>
 	);
 };
