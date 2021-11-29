@@ -1,7 +1,15 @@
 import React from "react";
+import Nav from "../../components/Nav";
 
 const AboutUs = () => {
-	return <div>about us</div>;
+	return (
+		<div className="h-screen bg-gray-50">
+			<header className="">
+				<Nav />
+			</header>
+			<main>main</main>
+		</div>
+	);
 };
 
 export default AboutUs;
