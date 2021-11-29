@@ -7,7 +7,7 @@ import Logo from "../../assets/images/logo-02.png";
 
 const Header = () => {
 	return (
-		<nav className="bg-gray-950 text-white">
+		<nav className="bg-gray-650 text-white">
 			<ul className="flex justify-between items-center px-9 py-5">
 				<li>
 					<Link to="/">
