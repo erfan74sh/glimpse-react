@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Estimation from "./pages/Estimation";
 import Result from "./pages/Estimation/Result";
 import Estimate from "./pages/Estimation/Estimate";
+import Profile from "./pages/Profile";
 // style
 import "./App.scss";
 
@@ -17,6 +18,7 @@ function App() {
 				<Route path="estimate" element={<Estimate />} />
 				<Route path="result" element={<Result />} />
 			</Route>
+			<Route path="profile" element={<Profile />} />
 		</Routes>
 	);
 }
