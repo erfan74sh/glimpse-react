@@ -15,7 +15,7 @@ const Header = () => {
 					</Link>
 				</li>
 				<li>
-					<ul className="flex justify-items-center items-center gap-x-40">
+					<ul className="flex justify-items-center items-center gap-x-28 text-xl font-normal capitalize">
 						<li>
 							<Link to="/">home</Link>
 						</li>
