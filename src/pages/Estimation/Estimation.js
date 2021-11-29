@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 // components
-import Nav from "./Nav";
+import Nav from "../../components/Nav";
 // style
 import "./Estimation.scss";
 
