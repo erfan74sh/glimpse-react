@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 // components
 import InputSelect from "../../../components/inputs/InputSelect";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import _3D from "./3D/_3D";
+// state
+import { selectInput } from "../../../features/data/inputDataSlice";
 // style
 import "./Estimate.scss";
 // asset
@@ -11,6 +14,7 @@ import ArrowRight from "../../../assets/images/arrow-right.svg";
 import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
 const Estimate = () => {
+	const inputData = useSelector(selectInput);
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
 			<header className="mb-14">
@@ -26,7 +30,7 @@ const Estimate = () => {
 								geometry
 							</legend>
 							<InputSelect
-								placeHolder="X-Dimention"
+								placeHolder={inputData.xDim}
 								items={["item1", "item2", "item3"]}
 							/>
 							<InputSelect
