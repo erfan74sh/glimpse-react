@@ -5,9 +5,13 @@ import ProfileIcon from "../../../assets/icons/Profile.svg";
 import ChargeIcon from "../../../assets/icons/charge.svg";
 import SignOutIcon from "../../../assets/icons/sign-out.svg";
 
-const DropdownProfile = () => {
+const DropdownProfile = ({ showDropdown }) => {
 	return (
-		<ul className=" absolute flex flex-col px-3 text-xl text-gray-500 font-normal bg-white shadow-lg top-full right-0 w-max capitalize rounded-md transform translate-y-9">
+		<ul
+			className={`${
+				showDropdown ? "max-h-screen" : "max-h-0"
+			} absolute flex flex-col px-3 text-xl text-gray-500 font-normal bg-white shadow-lg top-full right-0 w-max capitalize rounded-md transform translate-y-9 overflow-hidden transition-all`}
+		>
 			<li className="flex gap-x-4 px-2 py-4">
 				<img src={ProfileIcon} alt="profile icon" />
 				<span>profile</span>
