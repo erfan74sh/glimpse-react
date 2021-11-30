@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileInfo = () => {
 	return (
-		<section className="flex flex-col flex-grow gap-y-20">
+		<section className="flex flex-col flex-grow gap-y-10">
 			<section>
 				<header className="flex gap-x-4 pb-4 border-b-2 border-gray-400">
 					<h3 className="text-gray-650 text-2xl font-bold capitalize">
@@ -61,16 +61,24 @@ const ProfileInfo = () => {
 			<section>
 				<header className="flex gap-x-4 pb-4 border-b-2 border-gray-400">
 					<h3 className="text-gray-650 text-2xl font-bold capitalize">
-						information
+						account status
 					</h3>
 					<button
 						type="button"
 						className="text-xl font-normal text-blue-550 border-b-2 border-blue-550 capitalize"
 					>
-						edit
+						charge
 					</button>
 				</header>
-				<main className="py-8 px-4"></main>
+				<main className="py-8 px-4">
+					<div className="flex flex-col text-lg capitalize">
+						<span className="font-bold">status</span>
+						<div className="flex gap-x-2">
+							<span className="text-green-600">available</span>
+							<span>until 09.10.2022</span>
+						</div>
+					</div>
+				</main>
 			</section>
 		</section>
 	);
