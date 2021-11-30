@@ -15,7 +15,7 @@ const Profile = () => {
 						profile
 					</h1>
 				</header>
-				<main>
+				<main className="flex gap-x-12">
 					<ProfileCard />
 					<ProfileInfo />
 				</main>
