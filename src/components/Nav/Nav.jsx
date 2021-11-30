@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 // component
 import Profile from "../profile/Profile";
+import DropdownMenu from "../dropdowns/dropDownMenu";
+import DropdownProfile from "../dropdowns/dropdownProfile";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 
@@ -30,10 +32,11 @@ const Header = () => {
 						</li>
 					</ul>
 				</li>
-				<li>
+				<li className="relative">
 					<Link to="/profile">
 						<Profile />
 					</Link>
+					<DropdownProfile />
 				</li>
 			</ul>
 		</nav>
