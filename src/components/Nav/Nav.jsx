@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // component
 import Profile from "../profile/Profile";
@@ -8,6 +8,8 @@ import DropdownProfile from "../dropdowns/dropdownProfile";
 import Logo from "../../assets/images/logo-02.png";
 
 const Header = () => {
+	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+
 	return (
 		<nav className="bg-gray-650 text-white">
 			<ul className="flex justify-between items-center px-9 py-5">
@@ -32,11 +34,16 @@ const Header = () => {
 						</li>
 					</ul>
 				</li>
-				<li className="relative">
-					<Link to="/profile">
-						<Profile />
-					</Link>
-					<DropdownProfile />
+				<li
+					className="relative"
+					onClick={() => {
+						setShowProfileDropdown(!showProfileDropdown);
+					}}
+				>
+					<Profile />
+					{/* <Link to="/profile">
+					</Link> */}
+					<DropdownProfile showDropdown={showProfileDropdown} />
 				</li>
 			</ul>
 		</nav>
