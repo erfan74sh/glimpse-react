@@ -10,6 +10,9 @@ module.exports = {
 				gray: {
 					650: "#323232",
 				},
+				red: {
+					350: "#FF647C",
+				},
 			},
 			spacing: {
 				45: "11.25rem",
