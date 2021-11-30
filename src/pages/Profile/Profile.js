@@ -5,7 +5,7 @@ import ProfileInfo from "./profileInfo/ProfileInfo";
 
 const Profile = () => {
 	return (
-		<div className="h-screen bg-gray-50">
+		<div className="min-h-screen">
 			<header className="">
 				<Nav />
 			</header>
