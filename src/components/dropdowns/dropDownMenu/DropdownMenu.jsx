@@ -18,7 +18,7 @@ const DropdownMenu = ({ showDropdown }) => {
 		>
 			{items.map((item, idx) => {
 				return (
-					<li className="px-2 py-4 " key={idx}>
+					<li className="px-2 pr-5 py-4" key={idx}>
 						<Link to={item.path}>{item.title}</Link>
 					</li>
 				);
