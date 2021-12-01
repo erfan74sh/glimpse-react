@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //
 // assets
 import ProfileIcon from "../../../assets/icons/Profile.svg";
 import ChargeIcon from "../../../assets/icons/charge.svg";
 import SignOutIcon from "../../../assets/icons/sign-out.svg";
-import { Link } from "react-router-dom";
 
 const DropdownProfile = ({ showDropdown }) => {
 	return (
@@ -28,7 +28,6 @@ const DropdownProfile = ({ showDropdown }) => {
 					<span>charge account</span>
 				</Link>
 			</li>
-
 			<li>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
 					<img src={SignOutIcon} alt="sign out icon" />
