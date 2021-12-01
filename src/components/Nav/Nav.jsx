@@ -23,8 +23,9 @@ const Header = () => {
 						<li>
 							<Link to="/">home</Link>
 						</li>
-						<li>
+						<li className="relative">
 							<Link to="/estimation">simulations</Link>
+							<DropdownMenu />
 						</li>
 						<li>
 							<Link to="/about-us">about us</Link>
@@ -41,8 +42,6 @@ const Header = () => {
 					}}
 				>
 					<Profile />
-					{/* <Link to="/profile">
-					</Link> */}
 					<DropdownProfile showDropdown={showProfileDropdown} />
 				</li>
 			</ul>
