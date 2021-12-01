@@ -10,6 +10,8 @@ import Logo from "../../assets/images/logo-02.png";
 const Header = () => {
 	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
+	const [showMenuDropdown, setShowMenuDropdown] = useState(false);
+
 	return (
 		<nav className="bg-gray-650 text-white">
 			<ul className="flex justify-between items-center px-9 py-5">
@@ -23,9 +25,13 @@ const Header = () => {
 						<li>
 							<Link to="/">home</Link>
 						</li>
-						<li className="relative">
+						<li
+							className="relative"
+							onMouseEnter={() => setShowMenuDropdown(true)}
+							onMouseLeave={() => setShowMenuDropdown(false)}
+						>
 							<Link to="/estimation">simulations</Link>
-							<DropdownMenu />
+							<DropdownMenu showDropdown={showMenuDropdown} />
 						</li>
 						<li>
 							<Link to="/about-us">about us</Link>
