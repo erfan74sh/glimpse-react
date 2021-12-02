@@ -126,21 +126,21 @@ const Home = () => {
 								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
 							>
 								<span className="font-medium text-gray-650">Structure</span>
-								<span className="text-gray-600 font-bold">+7500</span>
+								<span className="text-xl text-gray-600 font-bold">+7500</span>
 							</li>
 							<li
 								id="energy-simulations"
 								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
 							>
-								<span className="font-medium text-gray-650">Structure</span>
-								<span className="text-gray-600 font-bold">+7500</span>
+								<span className="font-medium text-gray-650">Energy</span>
+								<span className="text-xl text-gray-600 font-bold">+5800</span>
 							</li>
 							<li
 								id="ieq-simulations"
 								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
 							>
-								<span className="font-medium text-gray-650">Structure</span>
-								<span className="text-gray-600 font-bold">+7500</span>
+								<span className="font-medium text-gray-650">IEQ</span>
+								<span className="text-xl text-gray-600 font-bold">+5900</span>
 							</li>
 						</ul>
 					</section>
