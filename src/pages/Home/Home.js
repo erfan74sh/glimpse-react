@@ -114,6 +114,27 @@ const Home = () => {
 							</li>
 						</ul>
 					</section>
+					<section className="pt-20 pb-40">
+						<header className="pb-6">
+							<h3 className="text-2xl text-center font-bold text-blue-550">
+								Number of Simulations
+							</h3>
+						</header>
+						<ul className="flex justify-center gap-x-24">
+							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+								<span className="font-medium text-gray-650">Structure</span>
+								<span className="text-gray-600 font-bold">+7500</span>
+							</li>
+							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+								<span className="font-medium text-gray-650">Structure</span>
+								<span className="text-gray-600 font-bold">+7500</span>
+							</li>
+							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+								<span className="font-medium text-gray-650">Structure</span>
+								<span className="text-gray-600 font-bold">+7500</span>
+							</li>
+						</ul>
+					</section>
 				</div>
 			</main>
 		</>
