@@ -145,6 +145,82 @@ const Home = () => {
 						</ul>
 					</section>
 				</div>
+				<section className="pb-40">
+					<header className="flex flex-col-reverse items-center pb-36">
+						<h3 className="text-2xl font-bold text-gray-650">
+							Our Pricing Plans
+						</h3>
+						<span className="text-blue-550 font-medium">Best Pricing</span>
+					</header>
+					<section className="flex justify-center gap-x-12">
+						<article className="flex flex-col items-center relative group">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<span>12000</span>
+								<span>Rls</span>
+							</header>
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<h5 className="text-xl font-medium">Basic</h5>
+								<ul className="flex flex-col items-center text-lg">
+									<li>2 Calculation</li>
+									<li>4 Revision</li>
+									<li>Numerical Results</li>
+								</ul>
+								<button
+									type="button"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+								>
+									buy now
+								</button>
+							</section>
+						</article>
+						<article className="flex flex-col items-center relative group">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<span>12000</span>
+								<span>Rls</span>
+							</header>
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<h5 className="text-xl font-medium">Standard</h5>
+								<ul className="flex flex-col items-center text-lg">
+									<li>15 Calculation</li>
+									<li>20 Revision</li>
+									<li>Numerical Results</li>
+									<li>Simulation</li>
+									<li>Rhino And Revit Exports</li>
+								</ul>
+								<button
+									type="button"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+								>
+									buy now
+								</button>
+							</section>
+						</article>
+						<article className="flex flex-col items-center relative group">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<span>1200</span>
+								<span>Rls</span>
+							</header>
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+								<h5 className="text-xl font-medium">Business</h5>
+								<ul className="flex flex-col items-center text-lg">
+									<li>30 Calculation</li>
+									<li>45 Revision</li>
+									<li>Numerical Results</li>
+									<li>Simulation</li>
+									<li>Rhino And Revit</li>
+									<li>Grasshopper Exports</li>
+									<li>Design Suggestions</li>
+								</ul>
+								<button
+									type="button"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+								>
+									buy now
+								</button>
+							</section>
+						</article>
+					</section>
+				</section>
 			</main>
 		</>
 	);
