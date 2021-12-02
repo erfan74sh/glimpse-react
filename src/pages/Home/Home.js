@@ -222,6 +222,50 @@ const Home = () => {
 					</section>
 				</section>
 			</main>
+			<footer className="flex gap-x-28 pt-10 mx-72 border-t-4 border-blue-550">
+				<section className="flex flex-col gap-y-8">
+					<h4 className="text-2xl font-medium text-gray-650">
+						want to talk with us?
+					</h4>
+					<ul className="flex flex-col justify-between gap-y-4 flex-grow">
+						<li className="flex items-center gap-x-3">
+							<span className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-550">
+								icon
+							</span>
+							<span>contact@glimpse.com</span>
+						</li>
+						<li className="flex items-center gap-x-3">
+							<span className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-550">
+								icon
+							</span>
+							<span>0913-333-7004</span>
+						</li>
+					</ul>
+				</section>
+				<section className="flex flex-col gap-y-8">
+					<h4 className="text-2xl font-medium text-gray-650">Our Company</h4>
+					<nav className="flex-grow">
+						<ul className="h-full flex flex-col justify-between">
+							<li>
+								<Link to="/">About Us</Link>
+							</li>
+							<li>
+								<Link to="">Contact Us</Link>
+							</li>
+							<li>
+								<Link to="">Our Technology</Link>
+							</li>
+							<li>
+								<Link to="">Latest Paper</Link>
+							</li>
+						</ul>
+					</nav>
+				</section>
+				<form className="flex flex-col gap-y-4 flex-grow">
+					<input type="email" placeholder="place holder" />
+					<textarea placeholder="place holder" className="flex-grow" />
+				</form>
+			</footer>
 		</>
 	);
 };
