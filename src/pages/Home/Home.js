@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 // components
 import Nav from "../../components/Nav";
 // assets
-import HeroImage from "../../assets/images/header-image.png";
+import SimulationIcon from "../../assets/icons/simulation.png";
+import AnalyzingIcon from "../../assets/icons/analysing.png";
+import DataSetIcon from "../../assets/icons/building-data-set.png";
+import MachineLearningIcon from "../../assets/icons/machine-learning.png";
+import ResultIcon from "../../assets/icons/result.png";
 // style
 import "./Home.scss";
 
@@ -43,6 +47,75 @@ const Home = () => {
 					</p>
 				</section>
 			</header>
+			<main className="bg-gray-100 mt-24">
+				<header className="bg-white text-center">
+					<h2 className="text-blue-550 font-medium">Work Frame</h2>
+				</header>
+				<div>
+					<section>
+						<header className="bg-white text-center">
+							<h3 className="text-2xl font-bold text-gray-650">
+								Our Working Process
+							</h3>
+						</header>
+						<ul className="flex justify-between px-56 py-16">
+							<li className="flex flex-col items-center">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+									<img
+										src={SimulationIcon}
+										alt="icon"
+										className="w-1/2 h-1/2 object-contain"
+									/>
+								</div>
+								<span className="font-medium">Simulation</span>
+							</li>
+							<li className="flex flex-col items-center">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+									<img
+										src={AnalyzingIcon}
+										alt="icon"
+										className="w-1/2 h-1/2 object-contain"
+									/>
+								</div>
+								<span className="font-medium">Analysing</span>
+							</li>
+							<li className="flex flex-col items-center">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+									<img
+										src={DataSetIcon}
+										alt="icon"
+										className="w-1/2 h-1/2 object-contain"
+									/>
+								</div>
+								<span className="font-medium">Bulding Data-set</span>
+							</li>
+							<li className="flex flex-col items-center">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+									<img
+										src={MachineLearningIcon}
+										alt="icon"
+										className="w-1/2 h-1/2 object-contain"
+									/>
+								</div>
+								<span className="text-center font-medium">
+									Machine Learning
+									<br /> Process
+								</span>
+							</li>
+							<li className="flex flex-col items-center">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+									<img
+										src={ResultIcon}
+										alt="icon"
+										className="w-3/5 h-3/5 object-contain"
+									/>
+								</div>
+								<span className="font-medium">Results</span>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</main>
 		</>
 	);
 };
