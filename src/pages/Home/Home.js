@@ -121,15 +121,24 @@ const Home = () => {
 							</h3>
 						</header>
 						<ul className="flex justify-center gap-x-24">
-							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+							<li
+								id="structure-simulations"
+								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+							>
 								<span className="font-medium text-gray-650">Structure</span>
 								<span className="text-gray-600 font-bold">+7500</span>
 							</li>
-							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+							<li
+								id="energy-simulations"
+								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+							>
 								<span className="font-medium text-gray-650">Structure</span>
 								<span className="text-gray-600 font-bold">+7500</span>
 							</li>
-							<li className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg bg-white rounded-md">
+							<li
+								id="ieq-simulations"
+								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+							>
 								<span className="font-medium text-gray-650">Structure</span>
 								<span className="text-gray-600 font-bold">+7500</span>
 							</li>
