@@ -51,7 +51,7 @@ const Home = () => {
 				<header className="bg-white text-center">
 					<h2 className="text-blue-550 font-medium">Work Frame</h2>
 				</header>
-				<div>
+				<div id="work-frame">
 					<section>
 						<header className="bg-white text-center">
 							<h3 className="text-2xl font-bold text-gray-650">
@@ -114,7 +114,7 @@ const Home = () => {
 							</li>
 						</ul>
 					</section>
-					<section className="pt-20 pb-40">
+					<section className="pt-20 pb-28">
 						<header className="pb-6">
 							<h3 className="text-2xl text-center font-bold text-blue-550">
 								Number of Simulations
