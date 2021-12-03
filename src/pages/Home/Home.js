@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import Nav from "../../components/Nav";
 // assets
@@ -8,6 +9,10 @@ import AnalyzingIcon from "../../assets/icons/analysing.png";
 import DataSetIcon from "../../assets/icons/building-data-set.png";
 import MachineLearningIcon from "../../assets/icons/machine-learning.png";
 import ResultIcon from "../../assets/icons/result.png";
+import Logo from "../../assets/images/logo-02.png";
+import FooterImage from "../../assets/images/footer-image.png";
+// icons
+import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
 import "./Home.scss";
 
@@ -60,7 +65,7 @@ const Home = () => {
 						</header>
 						<ul className="flex justify-between px-56 py-16">
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
 									<img
 										src={SimulationIcon}
 										alt="icon"
@@ -70,7 +75,7 @@ const Home = () => {
 								<span className="font-medium">Simulation</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
 									<img
 										src={AnalyzingIcon}
 										alt="icon"
@@ -80,7 +85,7 @@ const Home = () => {
 								<span className="font-medium">Analysing</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
 									<img
 										src={DataSetIcon}
 										alt="icon"
@@ -90,7 +95,7 @@ const Home = () => {
 								<span className="font-medium">Bulding Data-set</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
 									<img
 										src={MachineLearningIcon}
 										alt="icon"
@@ -103,7 +108,7 @@ const Home = () => {
 								</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-200">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
 									<img
 										src={ResultIcon}
 										alt="icon"
@@ -154,11 +159,11 @@ const Home = () => {
 					</header>
 					<section className="flex justify-center gap-x-12">
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Basic</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>2 Calculation</li>
@@ -167,18 +172,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Standard</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>15 Calculation</li>
@@ -189,18 +194,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-400 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>1200</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-600 border-2 border-gray-900 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Business</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>30 Calculation</li>
@@ -213,7 +218,7 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-300 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
@@ -222,49 +227,95 @@ const Home = () => {
 					</section>
 				</section>
 			</main>
-			<footer className="flex gap-x-28 pt-10 mx-72 border-t-4 border-blue-550">
-				<section className="flex flex-col gap-y-8">
-					<h4 className="text-2xl font-medium text-gray-650">
-						want to talk with us?
-					</h4>
-					<ul className="flex flex-col justify-between gap-y-4 flex-grow">
-						<li className="flex items-center gap-x-3">
-							<span className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-550">
-								icon
-							</span>
-							<span>contact@glimpse.com</span>
-						</li>
-						<li className="flex items-center gap-x-3">
-							<span className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-550">
-								icon
-							</span>
-							<span>0913-333-7004</span>
-						</li>
-					</ul>
-				</section>
-				<section className="flex flex-col gap-y-8">
-					<h4 className="text-2xl font-medium text-gray-650">Our Company</h4>
-					<nav className="flex-grow">
-						<ul className="h-full flex flex-col justify-between">
-							<li>
-								<Link to="/">About Us</Link>
+			<footer className="bg-gray-100 ">
+				<div className="pt-10 mx-80 border-t-2 border-blue-550 flex gap-x-28 relative">
+					<section className="flex flex-col gap-y-8">
+						<h4 className="text-2xl font-medium text-gray-650">
+							want to talk with us?
+						</h4>
+						<ul className="flex flex-col justify-between gap-y-4 flex-grow">
+							<li className="flex items-center gap-x-3">
+								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100">
+									<FontAwesomeIcon
+										icon={faPhoneAlt}
+										size="lg"
+										className="text-blue-550"
+									/>
+								</span>
+								<span className="text-gray-500 font-medium">
+									contact@glimpse.com
+								</span>
 							</li>
-							<li>
-								<Link to="">Contact Us</Link>
-							</li>
-							<li>
-								<Link to="">Our Technology</Link>
-							</li>
-							<li>
-								<Link to="">Latest Paper</Link>
+							<li className="flex items-center gap-x-3">
+								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100">
+									<FontAwesomeIcon
+										icon={faEnvelope}
+										size="lg"
+										className="text-blue-550"
+									/>
+								</span>
+								<span className="text-gray-500 font-medium">0913-333-7004</span>
 							</li>
 						</ul>
-					</nav>
+					</section>
+					<section className="flex flex-col gap-y-8">
+						<h4 className="text-2xl font-medium text-gray-650">Our Company</h4>
+						<nav className="flex-grow">
+							<ul className="h-full flex flex-col justify-between text-gray-500 ">
+								<li>
+									<Link
+										to="/"
+										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+									>
+										About Us
+									</Link>
+								</li>
+								<li>
+									<Link
+										to=""
+										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+									>
+										Contact Us
+									</Link>
+								</li>
+								<li>
+									<Link
+										to=""
+										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+									>
+										Our Technology
+									</Link>
+								</li>
+								<li>
+									<Link
+										to=""
+										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+									>
+										Latest Paper
+									</Link>
+								</li>
+							</ul>
+						</nav>
+					</section>
+					<form className="flex flex-col gap-y-4 flex-grow">
+						<input
+							type="email"
+							placeholder="Email Address"
+							className="py-3 px-4 bg-gray-100 rounded-full outline-none border-none"
+						/>
+						<textarea
+							placeholder="message"
+							className="py-3 px-4 bg-gray-100 rounded-2xl outline-none border-none flex-grow"
+						/>
+					</form>
+				</div>
+				<img src={FooterImage} alt="" className="-mt-45 w-2/3 h-auto mx-auto" />
+				<section className="flex flex-col items-center py-10">
+					<img src={Logo} alt="glimpse logo" className="w-48 h-auto" />
+					<p className="text-gray-500 text-sm font-normal">
+						Designed By Glimpse Team
+					</p>
 				</section>
-				<form className="flex flex-col gap-y-4 flex-grow">
-					<input type="email" placeholder="place holder" />
-					<textarea placeholder="place holder" className="flex-grow" />
-				</form>
 			</footer>
 		</>
 	);
