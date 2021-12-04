@@ -95,16 +95,16 @@ const Estimate = () => {
 					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						3D view
 					</h2>
-					<div className="flex justify-between items-center">
-						<button>
+					<div className="">
+						{/* <button>
 							<img src={ArrowLeft} alt="arrow left" />
-						</button>
-						<div className="w-96 h-96">
+						</button> */}
+						<div className="w-full px-10 h-96">
 							<_3D />
 						</div>
-						<button>
+						{/* <button>
 							<img src={ArrowRight} alt="arrow right" />
-						</button>
+						</button> */}
 					</div>
 
 					<button
