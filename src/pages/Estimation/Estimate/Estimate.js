@@ -61,7 +61,7 @@ const Estimate = () => {
 						{step !== "geometry" && (
 							<button
 								type="button"
-								className="flex items-center gap-x-1 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+								className="flex items-center gap-x-1 px-6 py-2 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
 								onClick={() => handleStep(step)}
 							>
 								{step !== "geometry" && (
@@ -75,7 +75,7 @@ const Estimate = () => {
 						{step !== "site plan" && (
 							<button
 								type="button"
-								className="flex items-center gap-x-1 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+								className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
 								onClick={() => handleStep(step, "next")}
 							>
 								next
