@@ -125,6 +125,12 @@ const Estimate = () => {
 							<img src={ArrowRight} alt="arrow right" />
 						</button>
 					</div>
+					<button type="button" onClick={() => handleStep(step)}>
+						prev
+					</button>
+					<button type="button" onClick={() => handleStep(step, "next")}>
+						next
+					</button>
 					<Link to="result" className="self-center">
 						<button className="mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550">
 							start estimate
