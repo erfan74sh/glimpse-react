@@ -6,6 +6,7 @@ import InputSelect from "../../../components/inputs/InputSelect";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import Geometry from "./FormSteps/Geometry";
 import Material from "./FormSteps/Material";
+import SitePlan from "./FormSteps/SitePlan";
 import _3D from "./3D/_3D";
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
@@ -50,62 +51,42 @@ const Estimate = () => {
 				</h1>
 			</header>
 			<main className="flex">
-				<section className="w-2/5 max-h-152 relative overflow-hidden">
-					<form className=" h-full w-full pr-10 overflow-y-scroll box-content relative">
+				<section className="flex flex-col w-2/5 pr-10 relative">
+					<form className="">
 						{step === "geometry" && <Geometry />}
 						{step === "material" && <Material />}
-
-						{/* <fieldset className="flex flex-col gap-y-9 mb-12 pr-10">
-							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-								geometry
-							</legend>
-							<InputSelect
-								placeHolder={inputData.xDim}
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="Y-Dimention"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="WWR-North"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="WWR-South"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="Shading Type"
-								items={["item1", "item2", "item3"]}
-							/>
-						</fieldset>
-						<fieldset className="flex flex-col gap-y-9 pr-10">
-							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-								material
-							</legend>
-							<InputSelect
-								placeHolder="Wall-material"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="placeholder"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="placeholder"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="placeholder"
-								items={["item1", "item2", "item3"]}
-							/>
-							<InputSelect
-								placeHolder="placeholder"
-								items={["item1", "item2", "item3"]}
-							/>
-						</fieldset> */}
+						{step === "site plan" && <SitePlan />}
 					</form>
+					<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
+						{step !== "geometry" && (
+							<button
+								type="button"
+								className="flex items-center gap-x-1 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+								onClick={() => handleStep(step)}
+							>
+								{step !== "geometry" && (
+									<span className="text-xs lowercase">{`${
+										step === "material" ? "(Geometry)" : "(Material)"
+									}`}</span>
+								)}
+								prev
+							</button>
+						)}
+						{step !== "site plan" && (
+							<button
+								type="button"
+								className="flex items-center gap-x-1 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+								onClick={() => handleStep(step, "next")}
+							>
+								next
+								{step !== "site plan" && (
+									<span className="text-xs lowercase">{`${
+										step === "geometry" ? "(material)" : "(site plan)"
+									}`}</span>
+								)}
+							</button>
+						)}
+					</section>
 					<div className="absolute right-0 top-0 h-full">
 						<ProgressBar />
 					</div>
@@ -125,14 +106,13 @@ const Estimate = () => {
 							<img src={ArrowRight} alt="arrow right" />
 						</button>
 					</div>
-					<button type="button" onClick={() => handleStep(step)}>
-						prev
-					</button>
-					<button type="button" onClick={() => handleStep(step, "next")}>
-						next
-					</button>
+
 					<Link to="result" className="self-center">
-						<button className="mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550">
+						<button
+							className={`mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
+								step !== "site plan" && "opacity-25 pointer-events-none"
+							}`}
+						>
 							start estimate
 						</button>
 					</Link>
