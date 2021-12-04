@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import InputSelect from "../../../components/inputs/InputSelect";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
+import Geometry from "./FormSteps/Geometry";
+import Material from "./FormSteps/Material";
 import _3D from "./3D/_3D";
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
@@ -25,7 +27,9 @@ const Estimate = () => {
 			<main className="flex">
 				<section className="w-2/5 max-h-152 relative overflow-hidden">
 					<form className=" h-full w-full pr-10 overflow-y-scroll box-content relative">
-						<fieldset className="flex flex-col gap-y-9 mb-12 pr-10">
+						<Geometry />
+						<Material />
+						{/* <fieldset className="flex flex-col gap-y-9 mb-12 pr-10">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								geometry
 							</legend>
@@ -74,7 +78,7 @@ const Estimate = () => {
 								placeHolder="placeholder"
 								items={["item1", "item2", "item3"]}
 							/>
-						</fieldset>
+						</fieldset> */}
 					</form>
 					<div className="absolute right-0 top-0 h-full">
 						<ProgressBar />
