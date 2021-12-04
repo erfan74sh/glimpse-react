@@ -107,15 +107,18 @@ const Estimate = () => {
 						</button>
 					</div>
 
-					<Link to="result" className="self-center">
-						<button
-							className={`mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-								step !== "site plan" && "opacity-25 pointer-events-none"
-							}`}
+					<button
+						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
+							step !== "site plan" && "opacity-25 pointer-events-none"
+						}`}
+					>
+						<Link
+							to="result"
+							className={`${step !== "site plan" && "pointer-events-none"}`}
 						>
 							start estimate
-						</button>
-					</Link>
+						</Link>
+					</button>
 				</section>
 			</main>
 		</main>
