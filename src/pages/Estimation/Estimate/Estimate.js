@@ -17,7 +17,7 @@ import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
-	const [step, setStep] = useState("geometry");
+	const [step, setStep] = useState(1);
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
 			<header className="mb-14">
