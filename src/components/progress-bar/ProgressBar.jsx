@@ -12,11 +12,13 @@ const ProgressBar = ({ step }) => {
 				} bg-gray-400 transform -translate-x-1/2 transition-all`}
 			></div>
 			<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
-				<span className="text-xs font-light text-white">1</span>
+				<span className="text-xs font-light text-white">
+					{step !== "geometry" ? <img src={TickIcon} alt="tick icon" /> : "1"}
+				</span>
 			</div>
 			<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
 				<span className="text-xs font-light text-white">
-					<img src={TickIcon} alt="tick icon" />
+					{step === "site plan" ? <img src={TickIcon} alt="tick icon" /> : "2"}
 				</span>
 			</div>
 			<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
