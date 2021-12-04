@@ -13,19 +13,15 @@ const Material = () => {
 				items={["item1", "item2", "item3"]}
 			/>
 			<InputSelect
-				placeHolder="placeholder"
+				placeHolder="Ceiling-material"
 				items={["item1", "item2", "item3"]}
 			/>
 			<InputSelect
-				placeHolder="placeholder"
+				placeHolder="Floor-material"
 				items={["item1", "item2", "item3"]}
 			/>
 			<InputSelect
-				placeHolder="placeholder"
-				items={["item1", "item2", "item3"]}
-			/>
-			<InputSelect
-				placeHolder="placeholder"
+				placeHolder="Glass-material"
 				items={["item1", "item2", "item3"]}
 			/>
 		</fieldset>
