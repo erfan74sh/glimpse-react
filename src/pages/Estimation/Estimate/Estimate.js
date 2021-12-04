@@ -17,7 +17,7 @@ import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
-	const [step, setStep] = useState(1);
+	const [step, setStep] = useState("geometry");
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
 			<header className="mb-14">
@@ -28,8 +28,9 @@ const Estimate = () => {
 			<main className="flex">
 				<section className="w-2/5 max-h-152 relative overflow-hidden">
 					<form className=" h-full w-full pr-10 overflow-y-scroll box-content relative">
-						<Geometry />
-						<Material />
+						{step === "geometry" && <Geometry />}
+						{step === "material" && <Material />}
+
 						{/* <fieldset className="flex flex-col gap-y-9 mb-12 pr-10">
 							<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 								geometry
