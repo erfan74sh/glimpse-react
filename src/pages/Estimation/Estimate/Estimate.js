@@ -87,7 +87,7 @@ const Estimate = () => {
 							</button>
 						)}
 					</section>
-					<div className="absolute right-0 top-0 h-full">
+					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar />
 					</div>
 				</section>
