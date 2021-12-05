@@ -19,79 +19,86 @@ const ProfileInfo = () => {
 							edit
 						</button>
 					)}
-					{isEdit && (
-						<button onClick={() => setIsEdit(false)}>save changes</button>
-					)}
 				</header>
 				{isEdit && (
-					<form className="flex gap-x-6 py-8 px-4">
-						<fieldset className="w-1/2 flex flex-col gap-y-6">
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">first name</label>
-								<input
-									type="text"
-									placeHolder="enter your first name"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">last name</label>
-								<input
-									type="text"
-									placeHolder="enter your last name"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">education</label>
-								<input
-									type="text"
-									placeHolder="enter tour education"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">position</label>
-								<input
-									type="text"
-									placeHolder="enter your position"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-						</fieldset>
-						<fieldset className="w-1/2 flex flex-col gap-y-6">
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">address</label>
-								<input
-									type="text"
-									placeHolder="enter your address"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">email</label>
-								<input
-									type="email"
-									placeHolder="enter your email"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-							<div className="flex flex-col text-lg capitalize">
-								<label className="font-bold">phone</label>
-								<input
-									type="tel"
-									placeHolder="enter your phone number"
-									value=""
-									className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
-								/>
-							</div>
-						</fieldset>
+					<form className="flex flex-col gap-y-10 py-8 px-4">
+						<div className="flex gap-x-6 ">
+							<fieldset className="w-1/2 flex flex-col gap-y-6">
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">first name</label>
+									<input
+										type="text"
+										placeHolder="enter your first name"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">last name</label>
+									<input
+										type="text"
+										placeHolder="enter your last name"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">education</label>
+									<input
+										type="text"
+										placeHolder="enter tour education"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">position</label>
+									<input
+										type="text"
+										placeHolder="enter your position"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+							</fieldset>
+							<fieldset className="w-1/2 flex flex-col gap-y-6">
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">address</label>
+									<input
+										type="text"
+										placeHolder="enter your address"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">email</label>
+									<input
+										type="email"
+										placeHolder="enter your email"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+								<div className="flex flex-col text-lg capitalize">
+									<label className="font-bold">phone</label>
+									<input
+										type="tel"
+										placeHolder="enter your phone number"
+										value=""
+										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+									/>
+								</div>
+							</fieldset>
+						</div>
+						{isEdit && (
+							<button
+								className="px-4 py-2 self-start rounded-md text-xl font-normal text-white bg-blue-550 capitalize"
+								onClick={() => setIsEdit(false)}
+							>
+								save changes
+							</button>
+						)}
 					</form>
 				)}
 				{!isEdit && (
