@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
-import InputSelect from "../../../components/inputs/InputSelect";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import Geometry from "./FormSteps/Geometry";
 import Material from "./FormSteps/Material";
@@ -13,8 +12,8 @@ import { selectInput } from "../../../features/data/inputDataSlice";
 // style
 import "./Estimate.scss";
 // asset
-import ArrowRight from "../../../assets/images/arrow-right.svg";
-import ArrowLeft from "../../../assets/images/arrow-left.svg";
+// import ArrowRight from "../../../assets/images/arrow-right.svg";
+// import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
