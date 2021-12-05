@@ -35,6 +35,10 @@ module.exports = {
 				"full-lg":
 					"0px 8px 60px rgba(0, 0, 0, 0.1), 0px -8px 60px rgba(0, 0, 0, 0.1);",
 			},
+			borderRadius: {
+				"4xl": "2rem",
+				"5xl": "2.5rem",
+			},
 		},
 	},
 	variants: {
