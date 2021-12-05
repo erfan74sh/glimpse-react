@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 // compoents
 import Chart from "./Chart";
+import PdfDoc from "./PdfDoc";
 // style
 import "./Result.scss";
 // icons
@@ -146,7 +148,12 @@ const Result = () => {
 											<img src={ModelImage} alt="model image" />
 										</div>
 										<button className="absolute top-5 right-5">
-											<img src={PDFIcon} alt="download pdf icon" />
+											<PDFDownloadLink
+												document={<PdfDoc />}
+												fileName={`${entry.name}.pdf`}
+											>
+												<img src={PDFIcon} alt="download pdf icon" />
+											</PDFDownloadLink>
 										</button>
 									</article>
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
