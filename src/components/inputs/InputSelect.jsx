@@ -27,7 +27,7 @@ const InputSelect = ({ placeHolder, items }) => {
 	};
 
 	return (
-		<div className="relative mr-8 px-4 py-3.5 rounded-md shadow-xl bg-white">
+		<div className="relative mr-8 px-4 py-3.5 rounded-md shadow-full-sm bg-white">
 			<div className="flex items-center justify-between">
 				{selectedValue.length !== 0 ? (
 					<span>{selectedValue}</span>
@@ -44,7 +44,7 @@ const InputSelect = ({ placeHolder, items }) => {
 				</button>
 			</div>
 			{showDropdown && (
-				<ul className="w-full absolute flex flex-col gap-y-3 top-0 left-0 px-4 py-3.5 transform translate-y-16 rounded-md shadow-md bg-white text-gray-400 z-10">
+				<ul className="w-full absolute flex flex-col gap-y-3 top-0 left-0 px-4 py-3.5 transform translate-y-16 rounded-md shadow-full-sm bg-white text-gray-400 z-10">
 					{items.map((item) => (
 						<li
 							className={`hover:text-black cursor-default ${

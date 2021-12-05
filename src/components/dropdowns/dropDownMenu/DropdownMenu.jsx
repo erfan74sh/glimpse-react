@@ -14,7 +14,7 @@ const DropdownMenu = ({ showDropdown }) => {
 		<ul
 			className={`${
 				showDropdown ? "max-h-screen" : "max-h-0"
-			} absolute flex flex-col px-3 text-lg text-gray-500 font-normal bg-white shadow-lg top-full right-0 w-max capitalize rounded-md transform translate-y-9 overflow-hidden transition-all z-10 divide-y-2 divide-gray-300`}
+			} absolute flex flex-col px-3 text-lg text-gray-500 font-normal bg-white shadow-full-sm top-full right-0 w-max capitalize rounded-md transform translate-y-9 overflow-hidden transition-all z-10 divide-y-2 divide-gray-300`}
 		>
 			{items.map((item, idx) => {
 				return (
