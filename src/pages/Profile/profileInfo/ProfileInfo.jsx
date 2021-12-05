@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+// state
+import { selectUserInfo } from "../../../features/userInfo/UserInfoSlice";
 
 const ProfileInfo = () => {
+	const userInfo = useSelector(selectUserInfo);
+
 	const [isEdit, setIsEdit] = useState(false);
 
 	return (
@@ -29,7 +34,7 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your first name"
-										value=""
+										value={userInfo.firstName}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -38,7 +43,7 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your last name"
-										value=""
+										value={userInfo.lastName}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -47,7 +52,7 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter tour education"
-										value=""
+										value={userInfo.education}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -56,7 +61,7 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your position"
-										value=""
+										value={userInfo.position}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -67,7 +72,7 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your address"
-										value=""
+										value={userInfo.address}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -76,7 +81,7 @@ const ProfileInfo = () => {
 									<input
 										type="email"
 										placeHolder="enter your email"
-										value=""
+										value={userInfo.email}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -85,7 +90,7 @@ const ProfileInfo = () => {
 									<input
 										type="tel"
 										placeHolder="enter your phone number"
-										value=""
+										value={userInfo.phone}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
