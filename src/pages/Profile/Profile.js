@@ -15,10 +15,10 @@ const Profile = () => {
 						profile
 					</h1>
 				</header>
-				<main className="flex gap-x-12">
+				<section className="flex gap-x-12 items-start">
 					<ProfileCard />
 					<ProfileInfo />
-				</main>
+				</section>
 			</main>
 		</div>
 	);
