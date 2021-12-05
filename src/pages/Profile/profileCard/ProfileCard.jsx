@@ -5,7 +5,7 @@ import Sucsess from "../../../assets/icons/sucsess.png";
 
 const ProfileCard = () => {
 	return (
-		<div className="flex flex-col justify-between items-center w-113 p-14 pb-6 rounded-md bg-white shadow-xl">
+		<div className="flex flex-col justify-between items-center w-113 p-14 pb-6 rounded-md bg-white shadow-full">
 			<img
 				src={ProfilePic}
 				alt="profile picture"
