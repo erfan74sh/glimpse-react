@@ -149,6 +149,7 @@ const Result = () => {
 									</article>
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 									<span>{` ${entry.name}`}</span>
+									<span className="ml-1 text-xs">(2021.06.12)</span>
 									<button className="ml-auto mr-4" onClick={handleVisibility}>
 										{entry.visible ? (
 											<FontAwesomeIcon icon={faEye} />
