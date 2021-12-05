@@ -9,6 +9,8 @@ import pic05 from "./../../assets/profile/05.png";
 import pic06 from "./../../assets/profile/06.png";
 import pic07 from "./../../assets/profile/07.png";
 import pic08 from "./../../assets/profile/08.png";
+import pic09 from "./../../assets/profile/09.png";
+import pic10 from "./../../assets/profile/10.jpg";
 
 const AboutUs = () => {
 	const [members, setMembers] = useState([
@@ -101,7 +103,7 @@ const AboutUs = () => {
 						</article>
 						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
 							<img
-								src={pic01}
+								src={pic09}
 								alt="profile pic"
 								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
 							/>
@@ -163,7 +165,7 @@ const AboutUs = () => {
 							<p>Master of energy and architecture</p>
 						</article>
 					</div>
-					<div className="flex justify-between">
+					<div className="flex">
 						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
 							<img
 								src={pic07}
@@ -172,6 +174,15 @@ const AboutUs = () => {
 							/>
 							<h4 className="text-xl font-bold text-blue-550">Sogand saadat</h4>
 							<p>Master of energy and architecture</p>
+						</article>
+						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
+							<img
+								src={pic10}
+								alt="profile pic"
+								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
+							/>
+							<h4 className="text-xl font-bold text-blue-550">Erfan shafiee</h4>
+							<p>Master of architecture</p>
 						</article>
 					</div>
 				</main>
