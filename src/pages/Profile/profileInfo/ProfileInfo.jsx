@@ -21,7 +21,8 @@ const ProfileInfo = () => {
 
 	const dispatch = useDispatch();
 
-	const handleSubmit = () => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
 		dispatch(
 			updateInfo({
 				firstName: firstName,
@@ -54,7 +55,10 @@ const ProfileInfo = () => {
 					)}
 				</header>
 				{isEdit && (
-					<form className="flex flex-col gap-y-10 py-8 px-4">
+					<form
+						className="flex flex-col gap-y-10 py-8 px-4"
+						onSubmit={(e) => handleSubmit(e)}
+					>
 						<div className="flex gap-x-6 ">
 							<fieldset className="w-1/2 flex flex-col gap-y-6">
 								<div className="flex flex-col text-lg capitalize">
@@ -65,6 +69,7 @@ const ProfileInfo = () => {
 										value={firstName}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setFirstName(e.target.value)}
+										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -73,8 +78,9 @@ const ProfileInfo = () => {
 										type="text"
 										placeHolder="enter your last name"
 										value={lastName}
-										onChange={(e) => setLastName(e.target.value)}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setLastName(e.target.value)}
+										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -85,6 +91,7 @@ const ProfileInfo = () => {
 										value={education}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setEducation(e.target.value)}
+										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -95,6 +102,7 @@ const ProfileInfo = () => {
 										value={position}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setPosition(e.target.value)}
+										required
 									/>
 								</div>
 							</fieldset>
@@ -107,6 +115,7 @@ const ProfileInfo = () => {
 										value={address}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setAddress(e.target.value)}
+										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -117,6 +126,7 @@ const ProfileInfo = () => {
 										value={email}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setEmail(e.target.value)}
+										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -127,6 +137,7 @@ const ProfileInfo = () => {
 										value={phone}
 										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setPhone(e.target.value)}
+										required
 									/>
 								</div>
 							</fieldset>
@@ -134,7 +145,7 @@ const ProfileInfo = () => {
 						{isEdit && (
 							<button
 								className="px-4 py-2 self-start rounded-md text-xl font-normal text-white bg-blue-550 capitalize"
-								onClick={handleSubmit}
+								type="submit"
 							>
 								save changes
 							</button>
