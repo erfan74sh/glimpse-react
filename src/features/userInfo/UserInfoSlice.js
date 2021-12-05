@@ -15,8 +15,15 @@ const initialState = {
 export const userInfoSlice = createSlice({
 	name: "userInfo",
 	initialState,
-	reducers: {},
+	reducers: {
+		updateInfo(state, action) {
+			state.info = action.payload;
+		},
+	},
 });
 
+export const { updateInfo } = userInfoSlice.actions;
+
 export const selectUserInfo = (state) => state.userInfo.info;
+
 export default userInfoSlice.reducer;
