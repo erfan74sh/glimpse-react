@@ -15,7 +15,76 @@ const ProfileInfo = () => {
 						edit
 					</button>
 				</header>
-				<main className="flex gap-x-6 py-8 px-4">
+				<form className="flex gap-x-6 py-8 px-4">
+					<fieldset className="w-1/2 flex flex-col gap-y-6">
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">first name</label>
+							<input
+								type="text"
+								placeHolder="enter your first name"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">last name</label>
+							<input
+								type="text"
+								placeHolder="enter your last name"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">education</label>
+							<input
+								type="text"
+								placeHolder="enter tour education"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">position</label>
+							<input
+								type="text"
+								placeHolder="enter your position"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+					</fieldset>
+					<fieldset className="w-1/2 flex flex-col gap-y-6">
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">address</label>
+							<input
+								type="text"
+								placeHolder="enter your address"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">email</label>
+							<input
+								type="email"
+								placeHolder="enter your email"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+						<div className="flex flex-col text-lg capitalize">
+							<label className="font-bold">phone</label>
+							<input
+								type="tel"
+								placeHolder="enter your phone number"
+								value=""
+								className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+							/>
+						</div>
+					</fieldset>
+				</form>
+				{/* <section className="flex gap-x-6 py-8 px-4">
 					<div className="w-1/2 flex flex-col gap-y-6">
 						<div className="flex flex-col text-lg capitalize">
 							<span className="font-bold">first name</span>
@@ -48,7 +117,7 @@ const ProfileInfo = () => {
 							<span>09361759625</span>
 						</div>
 					</div>
-				</main>
+				</section> */}
 			</section>
 			<section>
 				<header className="flex gap-x-4 pb-4 border-b-2 border-gray-400">
@@ -62,7 +131,7 @@ const ProfileInfo = () => {
 						charge
 					</button>
 				</header>
-				<main className="py-8 px-4">
+				<section className="py-8 px-4">
 					<div className="flex flex-col text-lg capitalize">
 						<span className="font-bold">status</span>
 						<div className="flex gap-x-2">
@@ -70,7 +139,7 @@ const ProfileInfo = () => {
 							<span>until 09.10.2022</span>
 						</div>
 					</div>
-				</main>
+				</section>
 			</section>
 		</section>
 	);
