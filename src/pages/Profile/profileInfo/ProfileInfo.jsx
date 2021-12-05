@@ -1,12 +1,40 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 // state
-import { selectUserInfo } from "../../../features/userInfo/UserInfoSlice";
+import {
+	selectUserInfo,
+	updateInfo,
+} from "../../../features/userInfo/UserInfoSlice";
 
 const ProfileInfo = () => {
 	const userInfo = useSelector(selectUserInfo);
 
+	const [firstName, setFirstName] = useState(userInfo.firstName);
+	const [lastName, setLastName] = useState(userInfo.lastName);
+	const [email, setEmail] = useState(userInfo.email);
+	const [address, setAddress] = useState(userInfo.address);
+	const [position, setPosition] = useState(userInfo.position);
+	const [education, setEducation] = useState(userInfo.education);
+	const [phone, setPhone] = useState(userInfo.phone);
+
 	const [isEdit, setIsEdit] = useState(false);
+
+	const dispatch = useDispatch();
+
+	const handleSubmit = () => {
+		dispatch(
+			updateInfo({
+				firstName: firstName,
+				lastName: lastName,
+				email: email,
+				address: address,
+				position: position,
+				education: education,
+				phone: phone,
+			})
+		);
+		setIsEdit(false);
+	};
 
 	return (
 		<section className="flex flex-col flex-grow gap-y-10">
@@ -34,8 +62,9 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your first name"
-										value={userInfo.firstName}
+										value={firstName}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setFirstName(e.target.value)}
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -43,7 +72,8 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your last name"
-										value={userInfo.lastName}
+										value={lastName}
+										onChange={(e) => setLastName(e.target.value)}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
@@ -52,8 +82,9 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter tour education"
-										value={userInfo.education}
+										value={education}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setEducation(e.target.value)}
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -61,8 +92,9 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your position"
-										value={userInfo.position}
+										value={position}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setPosition(e.target.value)}
 									/>
 								</div>
 							</fieldset>
@@ -72,8 +104,9 @@ const ProfileInfo = () => {
 									<input
 										type="text"
 										placeHolder="enter your address"
-										value={userInfo.address}
+										value={address}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setAddress(e.target.value)}
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -81,8 +114,9 @@ const ProfileInfo = () => {
 									<input
 										type="email"
 										placeHolder="enter your email"
-										value={userInfo.email}
+										value={email}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setEmail(e.target.value)}
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -90,8 +124,9 @@ const ProfileInfo = () => {
 									<input
 										type="tel"
 										placeHolder="enter your phone number"
-										value={userInfo.phone}
+										value={phone}
 										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										onChange={(e) => setPhone(e.target.value)}
 									/>
 								</div>
 							</fieldset>
@@ -99,7 +134,7 @@ const ProfileInfo = () => {
 						{isEdit && (
 							<button
 								className="px-4 py-2 self-start rounded-md text-xl font-normal text-white bg-blue-550 capitalize"
-								onClick={() => setIsEdit(false)}
+								onClick={handleSubmit}
 							>
 								save changes
 							</button>
@@ -111,33 +146,33 @@ const ProfileInfo = () => {
 						<div className="w-1/2 flex flex-col gap-y-6">
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">first name</span>
-								<span>mohammad</span>
+								<span>{userInfo.firstName}</span>
 							</div>
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">last name</span>
-								<span>rajaian</span>
+								<span>{userInfo.lastName}</span>
 							</div>
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">education</span>
-								<span>Master of Energy and architecture</span>
+								<span>{userInfo.education}</span>
 							</div>
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">position</span>
-								<span>Co_founder of more Office</span>
+								<span>{userInfo.position}</span>
 							</div>
 						</div>
 						<div className="w-1/2 flex flex-col gap-y-6">
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">address</span>
-								<span>No 64. Farhangian st , Esfahan</span>
+								<span>{userInfo.address}</span>
 							</div>
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">email</span>
-								<span>mrajaian@gmail.com</span>
+								<span>{userInfo.email}</span>
 							</div>
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">phone</span>
-								<span>09361759625</span>
+								<span>{userInfo.phone}</span>
 							</div>
 						</div>
 					</section>
