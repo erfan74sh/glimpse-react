@@ -65,7 +65,7 @@ const Home = () => {
 						</header>
 						<ul className="flex justify-between px-56 py-16">
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
 									<img
 										src={SimulationIcon}
 										alt="icon"
@@ -75,7 +75,7 @@ const Home = () => {
 								<span className="font-medium">Simulation</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
 									<img
 										src={AnalyzingIcon}
 										alt="icon"
@@ -85,7 +85,7 @@ const Home = () => {
 								<span className="font-medium">Analysing</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
 									<img
 										src={DataSetIcon}
 										alt="icon"
@@ -95,7 +95,7 @@ const Home = () => {
 								<span className="font-medium">Bulding Data-set</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
 									<img
 										src={MachineLearningIcon}
 										alt="icon"
@@ -108,7 +108,7 @@ const Home = () => {
 								</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100">
+								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
 									<img
 										src={ResultIcon}
 										alt="icon"
@@ -159,11 +159,11 @@ const Home = () => {
 					</header>
 					<section className="flex justify-center gap-x-12">
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Basic</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>2 Calculation</li>
@@ -172,18 +172,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Standard</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>15 Calculation</li>
@@ -194,18 +194,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
 						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<header className=" absolute -top-16 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<span>1200</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-96 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Business</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>30 Calculation</li>
@@ -218,7 +218,7 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 hover:bg-blue-550 hover:text-white transition-all"
+									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
 								>
 									buy now
 								</button>
@@ -235,7 +235,7 @@ const Home = () => {
 						</h4>
 						<ul className="flex flex-col justify-between gap-y-4 flex-grow">
 							<li className="flex items-center gap-x-3">
-								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100">
+								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 shadow-neo-sm">
 									<FontAwesomeIcon
 										icon={faPhoneAlt}
 										size="lg"
@@ -247,7 +247,7 @@ const Home = () => {
 								</span>
 							</li>
 							<li className="flex items-center gap-x-3">
-								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100">
+								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 shadow-neo-sm">
 									<FontAwesomeIcon
 										icon={faEnvelope}
 										size="lg"
@@ -301,11 +301,11 @@ const Home = () => {
 						<input
 							type="email"
 							placeholder="Email Address"
-							className="py-3 px-4 bg-gray-100 rounded-full outline-none border-none"
+							className="py-3 px-4 bg-gray-100 shadow-neo rounded-full outline-none border-none"
 						/>
 						<textarea
 							placeholder="message"
-							className="py-3 px-4 bg-gray-100 rounded-2xl outline-none border-none flex-grow"
+							className="py-3 px-4 bg-gray-100 shadow-neo rounded-2xl outline-none border-none flex-grow"
 						/>
 					</form>
 				</div>
