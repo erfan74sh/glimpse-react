@@ -23,6 +23,11 @@ module.exports = {
 			fontFamily: {
 				gothic: ["gothic", "Helvetica", "Arial", "sans-serif"],
 			},
+			boxShadow: {
+				"neo-sm": "6px 6px 16px #e3e5e8, -6px -6px 16px #ffffff;",
+				neo: "9px 9px 20px #e3e5e8, -9px -9px 20px #ffffff;",
+				"neo-lg": "12px 12px 24px #e3e5e8, -12px -12px 24px #ffffff;",
+			},
 		},
 	},
 	variants: {
