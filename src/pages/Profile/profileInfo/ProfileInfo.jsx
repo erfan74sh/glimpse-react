@@ -63,7 +63,7 @@ const ProfileInfo = () => {
 										type="text"
 										placeHolder="enter your first name"
 										value={firstName}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setFirstName(e.target.value)}
 									/>
 								</div>
@@ -74,7 +74,7 @@ const ProfileInfo = () => {
 										placeHolder="enter your last name"
 										value={lastName}
 										onChange={(e) => setLastName(e.target.value)}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -83,7 +83,7 @@ const ProfileInfo = () => {
 										type="text"
 										placeHolder="enter tour education"
 										value={education}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setEducation(e.target.value)}
 									/>
 								</div>
@@ -93,7 +93,7 @@ const ProfileInfo = () => {
 										type="text"
 										placeHolder="enter your position"
 										value={position}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setPosition(e.target.value)}
 									/>
 								</div>
@@ -105,7 +105,7 @@ const ProfileInfo = () => {
 										type="text"
 										placeHolder="enter your address"
 										value={address}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setAddress(e.target.value)}
 									/>
 								</div>
@@ -115,7 +115,7 @@ const ProfileInfo = () => {
 										type="email"
 										placeHolder="enter your email"
 										value={email}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setEmail(e.target.value)}
 									/>
 								</div>
@@ -125,7 +125,7 @@ const ProfileInfo = () => {
 										type="tel"
 										placeHolder="enter your phone number"
 										value={phone}
-										className="px-2 py-2 border-none outline-none shadow-neo-sm rounded-md"
+										className="p-3 border-none outline-none shadow-neo-sm rounded-md"
 										onChange={(e) => setPhone(e.target.value)}
 									/>
 								</div>
