@@ -21,6 +21,7 @@ const Result = () => {
 		const data = [
 			{
 				name: "output_1",
+				date: "2021.11.20",
 				stroke: "#926ECB",
 				opacity: 1,
 				visible: true,
@@ -37,6 +38,7 @@ const Result = () => {
 			},
 			{
 				name: "output_2",
+				date: "2021.06.09",
 				stroke: "#00C48C",
 				opacity: 1,
 				visible: true,
@@ -149,7 +151,7 @@ const Result = () => {
 									</article>
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 									<span>{` ${entry.name}`}</span>
-									<span className="ml-1 text-xs">(2021.06.12)</span>
+									<span className="ml-1 text-xs">({entry.date})</span>
 									<button className="ml-auto mr-4" onClick={handleVisibility}>
 										{entry.visible ? (
 											<FontAwesomeIcon icon={faEye} />
