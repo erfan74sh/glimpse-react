@@ -90,13 +90,13 @@ const Result = () => {
 							<>
 								<li
 									key={i}
-									className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-xl bg-white"
+									className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-full-sm bg-white"
 									data-name={entry.name}
 								>
 									<article
 										className={`${
 											entry.showDropdown ? "visible" : "hidden"
-										} block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-lg`}
+										} block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-full-sm`}
 									>
 										<div className="flex justify-between">
 											<div>
