@@ -163,7 +163,7 @@ const Home = () => {
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Basic</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>2 Calculation</li>
@@ -183,7 +183,7 @@ const Home = () => {
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Standard</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>15 Calculation</li>
@@ -205,7 +205,7 @@ const Home = () => {
 								<span>1200</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-3xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
 								<h5 className="text-xl font-medium">Business</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>30 Calculation</li>
