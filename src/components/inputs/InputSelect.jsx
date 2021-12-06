@@ -2,11 +2,12 @@ import React, { useState } from "react";
 // assets
 import CarretDown from "../../assets/icons/caret-down.svg";
 
-const InputSelect = ({ placeHolder, items }) => {
+const InputSelect = ({ placeHolder, items, handleValue }) => {
 	const [selectedValue, setSelectedValue] = useState("");
 
 	const handleSelectedValue = (e) => {
 		setSelectedValue(e.target.dataset.value);
+		handleValue(e);
 		setShowDropdown(false);
 	};
 
