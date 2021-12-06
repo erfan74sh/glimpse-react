@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// state
+import {
+	selectInput,
+	updateData,
+} from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
@@ -8,6 +14,23 @@ const Geometry = () => {
 	const [wwrNorth, setWwrNorth] = useState("");
 	const [wwrSouth, setWwrSouth] = useState("");
 	const [shadingType, setShadingType] = useState("");
+
+	const data = useSelector(selectInput);
+
+	const dispatch = useDispatch();
+
+	const handleNextStep = () => {
+		dispatch(
+			updateData({
+				...data,
+				xDim: xDim,
+				yDim: yDim,
+				wwrNorth: wwrNorth,
+				wwrSouth: wwrSouth,
+				shadingType: shadingType,
+			})
+		);
+	};
 
 	const handleXDimValue = (e) => {
 		setXDim(e.target.dataset.value);
@@ -55,6 +78,9 @@ const Geometry = () => {
 				items={["item1", "item2", "item3"]}
 				handleValue={(e) => handleShadingTypeValue(e)}
 			/>
+			<button type="button" onClick={handleNextStep}>
+				next <span>(material)</span>
+			</button>
 		</fieldset>
 	);
 };
