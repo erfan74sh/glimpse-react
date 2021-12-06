@@ -22,8 +22,13 @@ const initialState = {
 export const inputDataSlice = createSlice({
 	name: "input",
 	initialState,
-	reducers: {},
+	reducers: {
+		updateData(state, action) {
+			state.data = action.payload;
+		},
+	},
 });
 
+export const { updateData } = inputDataSlice.actions;
 export const selectInput = (state) => state.input.data;
 export default inputDataSlice.reducer;
