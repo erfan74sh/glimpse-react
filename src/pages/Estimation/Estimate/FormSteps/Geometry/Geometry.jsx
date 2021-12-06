@@ -83,7 +83,7 @@ const Geometry = () => {
 				className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
 				onClick={handleNextStep}
 			>
-				next <span>(material)</span>
+				next <span className="text-xs lowercase">(material)</span>
 			</button>
 		</fieldset>
 	);
