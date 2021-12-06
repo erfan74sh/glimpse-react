@@ -18,30 +18,35 @@ import "./Estimate.scss";
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
 	const [step, setStep] = useState("geometry");
-	const handleStep = (currntStep, direction = "prev") => {
-		if (direction === "next") {
-			switch (currntStep) {
-				case "geometry":
-					setStep("material");
-					break;
-				case "material":
-					setStep("site plan");
-					break;
-				default:
-					return;
-			}
-		} else {
-			switch (currntStep) {
-				case "material":
-					setStep("geometry");
-					break;
-				case "site plan":
-					setStep("material");
-				default:
-					return;
-			}
-		}
+	// const handleStep = (currntStep, direction = "prev") => {
+	// 	if (direction === "next") {
+	// 		switch (currntStep) {
+	// 			case "geometry":
+	// 				setStep("material");
+	// 				break;
+	// 			case "material":
+	// 				setStep("site plan");
+	// 				break;
+	// 			default:
+	// 				return;
+	// 		}
+	// 	} else {
+	// 		switch (currntStep) {
+	// 			case "material":
+	// 				setStep("geometry");
+	// 				break;
+	// 			case "site plan":
+	// 				setStep("material");
+	// 			default:
+	// 				return;
+	// 		}
+	// 	}
+	// };
+
+	const handleStep = (e) => {
+		setStep(e.target.value);
 	};
+
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
 			<header className="mb-14">
