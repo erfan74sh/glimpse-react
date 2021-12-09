@@ -1,8 +1,18 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// state
+import {
+	selectInput,
+	updateData,
+} from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
 const SitePlan = ({ handleStep }) => {
+	const data = useSelector(selectInput);
+
+	const dispatch = useDispatch();
+
 	const [southNeighborDist, setSouthNeighborDist] = useState("");
 	const [southNeighborHeight, setSouthNeighborHeight] = useState("");
 	const [northNeighborDist, setNorthNeighborDist] = useState("");
@@ -26,6 +36,18 @@ const SitePlan = ({ handleStep }) => {
 
 	const handlePrevStep = (e) => {
 		handleStep(e);
+	};
+
+	const handleSubmit = () => {
+		dispatch(
+			updateData({
+				...data,
+				southNeighborDist: southNeighborDist,
+				southNeighborHeight: southNeighborHeight,
+				northNeighborDist: northNeighborDist,
+				northNeighborHeight: northNeighborHeight,
+			})
+		);
 	};
 
 	return (
