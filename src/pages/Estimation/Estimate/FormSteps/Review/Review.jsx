@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+// state
+import { selectInput } from "../../../../../features/data/inputDataSlice";
 
 const Review = ({ handleStep }) => {
+	const data = useSelector(selectInput);
+
 	const handlePrevStep = (e) => {
 		handleStep(e);
 	};
@@ -16,79 +21,79 @@ const Review = ({ handleStep }) => {
 						<span className="text-gray-900 font-semibold capitalize">
 							X-dimention:
 						</span>
-						<span>calue</span>
+						<span>{data.xDim}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							Y-dimention:
 						</span>
-						<span>calue</span>
+						<span>{data.yDim}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							WWR-north:
 						</span>
-						<span>calue</span>
+						<span>{data.wwrNorth}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							WWR-south:
 						</span>
-						<span>calue</span>
+						<span>{data.wwrSouth}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							shading type:
 						</span>
-						<span>calue</span>
+						<span>{data.shadingType}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							wall material:
 						</span>
-						<span>calue</span>
+						<span>{data.wallMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							ceiling material:
 						</span>
-						<span>calue</span>
+						<span>{data.ceilingMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							floor material:
 						</span>
-						<span>calue</span>
+						<span>{data.floorMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							glass material:
 						</span>
-						<span>calue</span>
+						<span>{data.glassMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							south neighbor distance:
 						</span>
-						<span>calue</span>
+						<span>{data.southNeighborDist}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							south neighbor height:
 						</span>
-						<span>calue</span>
+						<span>{data.southNeighborHeight}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							north neighbor distance:
 						</span>
-						<span>calue</span>
+						<span>{data.northNeighborDist}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							north neighbor height:
 						</span>
-						<span>calue</span>
+						<span>{data.northNeighborHeight}</span>
 					</li>
 				</ul>
 			</section>
