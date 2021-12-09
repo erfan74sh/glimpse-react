@@ -6,6 +6,7 @@ import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import Geometry from "./FormSteps/Geometry";
 import Material from "./FormSteps/Material";
 import SitePlan from "./FormSteps/SitePlan";
+import Review from "./FormSteps/Review";
 import _3D from "./3D/_3D";
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
@@ -23,6 +24,11 @@ const Estimate = () => {
 		setStep(e.currentTarget.value);
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// todo: send data to server
+	};
+
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
 			<header className="mb-14">
@@ -32,7 +38,11 @@ const Estimate = () => {
 			</header>
 			<main className="flex">
 				<section className="w-2/5 pr-10 relative">
-					<form className=" h-full flex flex-col">
+					<form
+						id="energy-and-comfort"
+						className=" h-full flex flex-col"
+						onSubmit={handleSubmit}
+					>
 						{step === "geometry" && (
 							<Geometry handleStep={(e) => handleStep(e)} />
 						)}
@@ -42,6 +52,7 @@ const Estimate = () => {
 						{step === "site plan" && (
 							<SitePlan handleStep={(e) => handleStep(e)} />
 						)}
+						{step === "review" && <Review handleStep={(e) => handleStep(e)} />}
 					</form>
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
@@ -64,13 +75,15 @@ const Estimate = () => {
 					</div>
 
 					<button
+						type="submit"
+						form="energy-and-comfort"
 						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-							step !== "confirm" && "opacity-25 pointer-events-none"
+							step !== "review" && "opacity-25 pointer-events-none"
 						}`}
 					>
 						<Link
 							to="result"
-							className={`${step !== "confirm" && "pointer-events-none"}`}
+							className={`${step !== "review" && "pointer-events-none"}`}
 						>
 							start estimate
 						</Link>
