@@ -18,29 +18,33 @@ import "./Estimate.scss";
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
 	const [step, setStep] = useState("geometry");
-	const handleStep = (currntStep, direction = "prev") => {
-		if (direction === "next") {
-			switch (currntStep) {
-				case "geometry":
-					setStep("material");
-					break;
-				case "material":
-					setStep("site plan");
-					break;
-				default:
-					return;
-			}
-		} else {
-			switch (currntStep) {
-				case "material":
-					setStep("geometry");
-					break;
-				case "site plan":
-					setStep("material");
-				default:
-					return;
-			}
-		}
+	// const handleStep = (currntStep, direction = "prev") => {
+	// 	if (direction === "next") {
+	// 		switch (currntStep) {
+	// 			case "geometry":
+	// 				setStep("material");
+	// 				break;
+	// 			case "material":
+	// 				setStep("site plan");
+	// 				break;
+	// 			default:
+	// 				return;
+	// 		}
+	// 	} else {
+	// 		switch (currntStep) {
+	// 			case "material":
+	// 				setStep("geometry");
+	// 				break;
+	// 			case "site plan":
+	// 				setStep("material");
+	// 			default:
+	// 				return;
+	// 		}
+	// 	}
+	// };
+
+	const handleStep = (e) => {
+		setStep(e.target.value);
 	};
 
 	return (
@@ -53,11 +57,13 @@ const Estimate = () => {
 			<main className="flex">
 				<section className="flex flex-col w-2/5 pr-10 relative">
 					<form className="">
-						{step === "geometry" && <Geometry />}
+						{step === "geometry" && (
+							<Geometry handleStep={(e) => handleStep(e)} />
+						)}
 						{step === "material" && <Material />}
 						{step === "site plan" && <SitePlan />}
 					</form>
-					<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
+					{/* <section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 						{step !== "geometry" && (
 							<button
 								type="button"
@@ -86,7 +92,7 @@ const Estimate = () => {
 								)}
 							</button>
 						)}
-					</section>
+					</section> */}
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
 					</div>
