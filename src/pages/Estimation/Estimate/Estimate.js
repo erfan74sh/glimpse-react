@@ -63,7 +63,9 @@ const Estimate = () => {
 						{step === "material" && (
 							<Material handleStep={(e) => handleStep(e)} />
 						)}
-						{step === "site plan" && <SitePlan />}
+						{step === "site plan" && (
+							<SitePlan handleStep={(e) => handleStep(e)} />
+						)}
 					</form>
 					{/* <section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 						{step !== "geometry" && (
