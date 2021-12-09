@@ -86,7 +86,7 @@ const Material = ({ handleStep }) => {
 					}}
 				/>
 			</fieldset>
-			<section className="flex justify-center gap-x-4 mt-auto mr-8">
+			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
