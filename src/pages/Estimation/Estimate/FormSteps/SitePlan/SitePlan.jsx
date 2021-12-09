@@ -64,6 +64,13 @@ const SitePlan = ({ handleStep }) => {
 				>
 					prev <span className="text-xs lowercase">(material)</span>
 				</button>
+				<button
+					type="button"
+					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+					// onClick={han}
+				>
+					submit
+				</button>
 			</section>
 		</>
 	);
