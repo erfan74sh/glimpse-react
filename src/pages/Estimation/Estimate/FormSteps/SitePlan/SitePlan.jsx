@@ -89,7 +89,7 @@ const SitePlan = ({ handleStep }) => {
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-					// onClick={han}
+					onClick={handleSubmit}
 				>
 					submit
 				</button>
