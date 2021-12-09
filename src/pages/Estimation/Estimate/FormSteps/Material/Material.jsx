@@ -55,18 +55,30 @@ const Material = () => {
 				<InputSelect
 					placeHolder="Wall-material"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => {
+						handleWallMaterialValue(e);
+					}}
 				/>
 				<InputSelect
 					placeHolder="Ceiling-material"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => {
+						handleCeilingMaterialValue(e);
+					}}
 				/>
 				<InputSelect
 					placeHolder="Floor-material"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => {
+						handleFloorMaterialValue(e);
+					}}
 				/>
 				<InputSelect
 					placeHolder="Glass-material"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => {
+						handleGlassMaterialValue(e);
+					}}
 				/>
 			</fieldset>
 			<section className="flex justify-center gap-x-4 mt-auto mr-8">
