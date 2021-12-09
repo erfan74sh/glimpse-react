@@ -31,6 +31,10 @@ const Material = ({ handleStep }) => {
 		handleStep(e);
 	};
 
+	const handlePrevStep = (e) => {
+		handleStep(e);
+	};
+
 	const handleWallMaterialValue = (e) => {
 		setWallMaterial(e.target.dataset.value);
 	};
@@ -86,16 +90,16 @@ const Material = ({ handleStep }) => {
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-					// onClick={handleNextStep}
 					value="geometry"
+					onClick={handlePrevStep}
 				>
 					prev <span className="text-xs lowercase">(geometry)</span>
 				</button>
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-					onClick={handleNextStep}
 					value="site plan"
+					onClick={handleNextStep}
 				>
 					next <span className="text-xs lowercase">(site plan)</span>
 				</button>
