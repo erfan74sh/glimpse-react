@@ -2,7 +2,11 @@ import React from "react";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
-const SitePlan = () => {
+const SitePlan = ({ handleStep }) => {
+	const handlePrevStep = (e) => {
+		handleStep(e);
+	};
+
 	return (
 		<>
 			<fieldset className="flex flex-col gap-y-9 pr-10">
@@ -31,7 +35,7 @@ const SitePlan = () => {
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
 					value="material"
-					// onClick={handlePrevStep}
+					onClick={handlePrevStep}
 				>
 					prev <span className="text-xs lowercase">(material)</span>
 				</button>
