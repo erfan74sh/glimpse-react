@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
 const SitePlan = ({ handleStep }) => {
+	const [southNeighborDist, setSouthNeighborDist] = useState("");
+	const [southNeighborHeight, setSouthNeighborHeight] = useState("");
+	const [northNeighborDist, setNorthNeighborDist] = useState("");
+	const [northNeighborHeight, setNorthNeighborHeight] = useState("");
+
 	const handlePrevStep = (e) => {
 		handleStep(e);
 	};
@@ -30,7 +35,7 @@ const SitePlan = ({ handleStep }) => {
 					items={["item1", "item2", "item3"]}
 				/>
 			</fieldset>
-			<section className="flex justify-center gap-x-4 mt-auto mr-8">
+			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
