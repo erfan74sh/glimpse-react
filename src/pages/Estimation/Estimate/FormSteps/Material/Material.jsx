@@ -30,6 +30,22 @@ const Material = () => {
 		);
 	};
 
+	const handleWallMaterialValue = (e) => {
+		setWallMaterial(e.target.dataset.value);
+	};
+
+	const handleCeilingMaterialValue = (e) => {
+		setCeilingMaterial(e.target.dataset.value);
+	};
+
+	const handleFloorMaterialValue = (e) => {
+		setFloorMaterial(e.target.dataset.value);
+	};
+
+	const handleGlassMaterialValue = (e) => {
+		setGlassMaterial(e.target.dataset.value);
+	};
+
 	return (
 		<>
 			<fieldset className="flex flex-col gap-y-9 pr-10">
