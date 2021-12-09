@@ -18,6 +18,18 @@ const Material = () => {
 
 	const dispatch = useDispatch();
 
+	const handleNextStep = (e) => {
+		dispatch(
+			updateData({
+				...data,
+				wallMaterial: wallMaterial,
+				ceilingMaterial: ceilingMaterial,
+				floorMaterial: floorMaterial,
+				glassMaterial: glassMaterial,
+			})
+		);
+	};
+
 	return (
 		<>
 			<fieldset className="flex flex-col gap-y-9 pr-10">
