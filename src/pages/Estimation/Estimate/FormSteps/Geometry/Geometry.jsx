@@ -8,7 +8,7 @@ import {
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
-const Geometry = () => {
+const Geometry = ({ handleStep }) => {
 	const [xDim, setXDim] = useState("");
 	const [yDim, setYDim] = useState("");
 	const [wwrNorth, setWwrNorth] = useState("");
@@ -19,7 +19,7 @@ const Geometry = () => {
 
 	const dispatch = useDispatch();
 
-	const handleNextStep = () => {
+	const handleNextStep = (e) => {
 		dispatch(
 			updateData({
 				...data,
@@ -30,6 +30,7 @@ const Geometry = () => {
 				shadingType: shadingType,
 			})
 		);
+		handleStep(e);
 	};
 
 	const handleXDimValue = (e) => {
@@ -82,6 +83,7 @@ const Geometry = () => {
 				type="button"
 				className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
 				onClick={handleNextStep}
+				value="material"
 			>
 				next <span className="text-xs lowercase">(material)</span>
 			</button>
