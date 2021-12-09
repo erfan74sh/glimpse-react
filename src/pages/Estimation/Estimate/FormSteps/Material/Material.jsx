@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
 const Material = () => {
+	const [wallMaterial, setWallMaterial] = useState("");
+	const [ceilingMaterial, setCeilingMaterial] = useState("");
+	const [floorMaterial, setFloorMaterial] = useState("");
+	const [glassMaterial, setGlassMaterial] = useState("");
+
 	return (
 		<>
 			<fieldset className="flex flex-col gap-y-9 pr-10">
