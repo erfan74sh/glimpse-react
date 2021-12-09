@@ -79,14 +79,16 @@ const Geometry = ({ handleStep }) => {
 				items={["item1", "item2", "item3"]}
 				handleValue={(e) => handleShadingTypeValue(e)}
 			/>
-			<button
-				type="button"
-				className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-				onClick={handleNextStep}
-				value="material"
-			>
-				next <span className="text-xs lowercase">(material)</span>
-			</button>
+			<section className="flex justify-center gap-x-4 mt-auto mr-8">
+				<button
+					type="button"
+					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
+					onClick={handleNextStep}
+					value="material"
+				>
+					next <span className="text-xs lowercase">(material)</span>
+				</button>
+			</section>
 		</fieldset>
 	);
 };
