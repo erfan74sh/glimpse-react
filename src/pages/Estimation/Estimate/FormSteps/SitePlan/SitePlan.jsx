@@ -38,7 +38,7 @@ const SitePlan = ({ handleStep }) => {
 		handleStep(e);
 	};
 
-	const handleSubmit = () => {
+	const handleNextStep = (e) => {
 		dispatch(
 			updateData({
 				...data,
@@ -48,6 +48,7 @@ const SitePlan = ({ handleStep }) => {
 				northNeighborHeight: northNeighborHeight,
 			})
 		);
+		handleStep(e);
 	};
 
 	return (
@@ -89,9 +90,10 @@ const SitePlan = ({ handleStep }) => {
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-					onClick={handleSubmit}
+					onClick={handleNextStep}
+					value="confirm"
 				>
-					submit
+					next <span className="text-xs lowercase">(confirm)</span>
 				</button>
 			</section>
 		</>
