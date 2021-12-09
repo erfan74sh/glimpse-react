@@ -18,30 +18,6 @@ import "./Estimate.scss";
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
 	const [step, setStep] = useState("geometry");
-	// const handleStep = (currntStep, direction = "prev") => {
-	// 	if (direction === "next") {
-	// 		switch (currntStep) {
-	// 			case "geometry":
-	// 				setStep("material");
-	// 				break;
-	// 			case "material":
-	// 				setStep("site plan");
-	// 				break;
-	// 			default:
-	// 				return;
-	// 		}
-	// 	} else {
-	// 		switch (currntStep) {
-	// 			case "material":
-	// 				setStep("geometry");
-	// 				break;
-	// 			case "site plan":
-	// 				setStep("material");
-	// 			default:
-	// 				return;
-	// 		}
-	// 	}
-	// };
 
 	const handleStep = (e) => {
 		setStep(e.currentTarget.value);
@@ -55,8 +31,8 @@ const Estimate = () => {
 				</h1>
 			</header>
 			<main className="flex">
-				<section className="flex flex-col w-2/5 pr-10 relative">
-					<form className="">
+				<section className="w-2/5 pr-10 relative">
+					<form className=" h-full flex flex-col">
 						{step === "geometry" && (
 							<Geometry handleStep={(e) => handleStep(e)} />
 						)}
@@ -67,36 +43,6 @@ const Estimate = () => {
 							<SitePlan handleStep={(e) => handleStep(e)} />
 						)}
 					</form>
-					{/* <section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
-						{step !== "geometry" && (
-							<button
-								type="button"
-								className="flex items-center gap-x-1 px-6 py-2 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
-								onClick={() => handleStep(step)}
-							>
-								{step !== "geometry" && (
-									<span className="text-xs lowercase">{`${
-										step === "material" ? "(Geometry)" : "(Material)"
-									}`}</span>
-								)}
-								prev
-							</button>
-						)}
-						{step !== "site plan" && (
-							<button
-								type="button"
-								className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
-								onClick={() => handleStep(step, "next")}
-							>
-								next
-								{step !== "site plan" && (
-									<span className="text-xs lowercase">{`${
-										step === "geometry" ? "(material)" : "(site plan)"
-									}`}</span>
-								)}
-							</button>
-						)}
-					</section> */}
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
 					</div>
