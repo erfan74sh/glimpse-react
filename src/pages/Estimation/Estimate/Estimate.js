@@ -65,12 +65,12 @@ const Estimate = () => {
 
 					<button
 						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-							step !== "site plan" && "opacity-25 pointer-events-none"
+							step !== "confirm" && "opacity-25 pointer-events-none"
 						}`}
 					>
 						<Link
 							to="result"
-							className={`${step !== "site plan" && "pointer-events-none"}`}
+							className={`${step !== "confirm" && "pointer-events-none"}`}
 						>
 							start estimate
 						</Link>
