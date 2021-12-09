@@ -8,7 +8,7 @@ import {
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
-const Material = () => {
+const Material = ({ handleStep }) => {
 	const data = useSelector(selectInput);
 
 	const [wallMaterial, setWallMaterial] = useState("");
@@ -28,6 +28,7 @@ const Material = () => {
 				glassMaterial: glassMaterial,
 			})
 		);
+		handleStep(e);
 	};
 
 	const handleWallMaterialValue = (e) => {
