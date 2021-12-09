@@ -50,36 +50,38 @@ const Geometry = ({ handleStep }) => {
 	};
 
 	return (
-		<fieldset className="flex flex-col gap-y-9 pr-10">
-			<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-				geometry
-			</legend>
-			<InputSelect
-				placeHolder="X-Dimention"
-				items={["item1", "item2", "item3"]}
-				handleValue={(e) => handleXDimValue(e)}
-			/>
-			<InputSelect
-				placeHolder="Y-Dimention"
-				items={["item1", "item2", "item3"]}
-				handleValue={(e) => handleYDimValue(e)}
-			/>
-			<InputSelect
-				placeHolder="WWR-North"
-				items={["item1", "item2", "item3"]}
-				handleValue={(e) => handleWwrNorthValue(e)}
-			/>
-			<InputSelect
-				placeHolder="WWR-South"
-				items={["item1", "item2", "item3"]}
-				handleValue={(e) => handleWwrSouthValue(e)}
-			/>
-			<InputSelect
-				placeHolder="Shading Type"
-				items={["item1", "item2", "item3"]}
-				handleValue={(e) => handleShadingTypeValue(e)}
-			/>
-			<section className="flex justify-center gap-x-4 mt-auto mr-8">
+		<>
+			<fieldset className="flex flex-col gap-y-9 pr-10">
+				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+					geometry
+				</legend>
+				<InputSelect
+					placeHolder="X-Dimention"
+					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleXDimValue(e)}
+				/>
+				<InputSelect
+					placeHolder="Y-Dimention"
+					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleYDimValue(e)}
+				/>
+				<InputSelect
+					placeHolder="WWR-North"
+					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleWwrNorthValue(e)}
+				/>
+				<InputSelect
+					placeHolder="WWR-South"
+					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleWwrSouthValue(e)}
+				/>
+				<InputSelect
+					placeHolder="Shading Type"
+					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleShadingTypeValue(e)}
+				/>
+			</fieldset>
+			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
@@ -89,7 +91,7 @@ const Geometry = ({ handleStep }) => {
 					next <span className="text-xs lowercase">(material)</span>
 				</button>
 			</section>
-		</fieldset>
+		</>
 	);
 };
 
