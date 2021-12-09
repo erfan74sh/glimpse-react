@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// state
+import {
+	selectInput,
+	updateData,
+} from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 
 const Material = () => {
+	const data = useSelector(selectInput);
+
 	const [wallMaterial, setWallMaterial] = useState("");
 	const [ceilingMaterial, setCeilingMaterial] = useState("");
 	const [floorMaterial, setFloorMaterial] = useState("");
 	const [glassMaterial, setGlassMaterial] = useState("");
+
+	const dispatch = useDispatch();
 
 	return (
 		<>
