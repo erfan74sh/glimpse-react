@@ -8,6 +8,22 @@ const SitePlan = ({ handleStep }) => {
 	const [northNeighborDist, setNorthNeighborDist] = useState("");
 	const [northNeighborHeight, setNorthNeighborHeight] = useState("");
 
+	const handleSouthNeighborDistValue = (e) => {
+		setSouthNeighborDist(e.target.dataset.value);
+	};
+
+	const handleSouthNeighborHeightValue = (e) => {
+		setSouthNeighborHeight(e.target.dataset.value);
+	};
+
+	const handleNorthNeighborDistValue = (e) => {
+		setNorthNeighborDist(e.target.dataset.value);
+	};
+
+	const handleNorthNeighborHeightValue = (e) => {
+		setNorthNeighborHeight(e.target.dataset.value);
+	};
+
 	const handlePrevStep = (e) => {
 		handleStep(e);
 	};
