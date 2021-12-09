@@ -91,9 +91,9 @@ const SitePlan = ({ handleStep }) => {
 					type="button"
 					className="flex items-center gap-x-1 px-6 py-2 text-white font-medium uppercase rounded-md bg-blue-550"
 					onClick={handleNextStep}
-					value="confirm"
+					value="review"
 				>
-					next <span className="text-xs lowercase">(confirm)</span>
+					next <span className="text-xs lowercase">(review)</span>
 				</button>
 			</section>
 		</>
