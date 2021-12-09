@@ -37,18 +37,22 @@ const SitePlan = ({ handleStep }) => {
 				<InputSelect
 					placeHolder="South neighbor distance"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleSouthNeighborDistValue(e)}
 				/>
 				<InputSelect
 					placeHolder="South neighbor height"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleSouthNeighborHeightValue(e)}
 				/>
 				<InputSelect
 					placeHolder="North neighbor distance"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleNorthNeighborDistValue(e)}
 				/>
 				<InputSelect
 					placeHolder="North neighbor height"
 					items={["item1", "item2", "item3"]}
+					handleValue={(e) => handleNorthNeighborHeightValue(e)}
 				/>
 			</fieldset>
 			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
