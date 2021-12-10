@@ -7,6 +7,7 @@ import {
 } from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
+import InputRange from "../../../../../components/inputs/InputRange";
 
 const Geometry = ({ handleStep }) => {
 	const [xDim, setXDim] = useState("");
@@ -34,16 +35,16 @@ const Geometry = ({ handleStep }) => {
 	};
 
 	const handleXDimValue = (e) => {
-		setXDim(e.target.dataset.value);
+		setXDim(e.target.value);
 	};
 	const handleYDimValue = (e) => {
-		setYDim(e.target.dataset.value);
+		setYDim(e.target.value);
 	};
 	const handleWwrNorthValue = (e) => {
-		setWwrNorth(e.target.dataset.value);
+		setWwrNorth(e.target.value);
 	};
 	const handleWwrSouthValue = (e) => {
-		setWwrSouth(e.target.dataset.value);
+		setWwrSouth(e.target.value);
 	};
 	const handleShadingTypeValue = (e) => {
 		setShadingType(e.target.dataset.value);
@@ -55,29 +56,38 @@ const Geometry = ({ handleStep }) => {
 				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 					geometry
 				</legend>
-				<InputSelect
-					placeHolder="X-Dimention"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="X-Dimention"
+					min="8"
+					max="24"
+					step="0.5"
 					handleValue={(e) => handleXDimValue(e)}
 				/>
-				<InputSelect
-					placeHolder="Y-Dimention"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="Y-Dimention"
+					min="3"
+					max="10"
+					step="0.5"
 					handleValue={(e) => handleYDimValue(e)}
 				/>
-				<InputSelect
-					placeHolder="WWR-North"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="WWR-North"
+					min="10"
+					max="80"
+					step="10"
 					handleValue={(e) => handleWwrNorthValue(e)}
 				/>
-				<InputSelect
-					placeHolder="WWR-South"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="WWR-South"
+					min="10"
+					max="80"
+					step="10"
 					handleValue={(e) => handleWwrSouthValue(e)}
 				/>
+
 				<InputSelect
 					placeHolder="Shading Type"
-					items={["item1", "item2", "item3"]}
+					items={["Horizontal", "Horizontal Louvre", "Vertical", "All modes"]}
 					handleValue={(e) => handleShadingTypeValue(e)}
 				/>
 			</fieldset>
