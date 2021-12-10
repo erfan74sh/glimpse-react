@@ -20,7 +20,7 @@ const InputRange = ({ min, max, step }) => {
 				className="w-full"
 				onInput={handleValue}
 			/>
-			<span>value</span>
+			<span>{value}</span>
 		</div>
 	);
 };
