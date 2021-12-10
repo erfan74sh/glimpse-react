@@ -21,33 +21,53 @@ const Geometry = ({ handleStep }) => {
 	const dispatch = useDispatch();
 
 	const handleNextStep = (e) => {
-		dispatch(
-			updateData({
-				...data,
-				xDim: xDim,
-				yDim: yDim,
-				wwrNorth: wwrNorth,
-				wwrSouth: wwrSouth,
-				shadingType: shadingType,
-			})
-		);
 		handleStep(e);
 	};
 
 	const handleXDimValue = (e) => {
 		setXDim(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				xDim: e.target.value,
+			})
+		);
 	};
 	const handleYDimValue = (e) => {
 		setYDim(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				yDim: e.target.value,
+			})
+		);
 	};
 	const handleWwrNorthValue = (e) => {
 		setWwrNorth(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				wwrNorth: e.target.value,
+			})
+		);
 	};
 	const handleWwrSouthValue = (e) => {
 		setWwrSouth(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				wwrSouth: e.target.value,
+			})
+		);
 	};
 	const handleShadingTypeValue = (e) => {
 		setShadingType(e.target.dataset.value);
+		dispatch(
+			updateData({
+				...data,
+				shadingType: e.target.dataset.value,
+			})
+		);
 	};
 
 	return (
