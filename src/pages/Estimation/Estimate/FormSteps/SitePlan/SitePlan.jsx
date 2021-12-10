@@ -7,6 +7,7 @@ import {
 } from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
+import InputRange from "../../../../../components/inputs/InputRange";
 
 const SitePlan = ({ handleStep }) => {
 	const data = useSelector(selectInput);
@@ -19,19 +20,19 @@ const SitePlan = ({ handleStep }) => {
 	const [northNeighborHeight, setNorthNeighborHeight] = useState("");
 
 	const handleSouthNeighborDistValue = (e) => {
-		setSouthNeighborDist(e.target.dataset.value);
+		setSouthNeighborDist(e.target.value);
 	};
 
 	const handleSouthNeighborHeightValue = (e) => {
-		setSouthNeighborHeight(e.target.dataset.value);
+		setSouthNeighborHeight(e.target.value);
 	};
 
 	const handleNorthNeighborDistValue = (e) => {
-		setNorthNeighborDist(e.target.dataset.value);
+		setNorthNeighborDist(e.target.value);
 	};
 
 	const handleNorthNeighborHeightValue = (e) => {
-		setNorthNeighborHeight(e.target.dataset.value);
+		setNorthNeighborHeight(e.target.value);
 	};
 
 	const handlePrevStep = (e) => {
@@ -57,24 +58,32 @@ const SitePlan = ({ handleStep }) => {
 				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 					site plan
 				</legend>
-				<InputSelect
-					placeHolder="South neighbor distance"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="South neighbor distance"
+					min="2"
+					max="8"
+					step="1"
 					handleValue={(e) => handleSouthNeighborDistValue(e)}
 				/>
-				<InputSelect
-					placeHolder="South neighbor height"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="South neighbor height"
+					min="4"
+					max="10"
+					step="1"
 					handleValue={(e) => handleSouthNeighborHeightValue(e)}
 				/>
-				<InputSelect
-					placeHolder="North neighbor distance"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="North neighbor distance"
+					min="2"
+					max="8"
+					step="1"
 					handleValue={(e) => handleNorthNeighborDistValue(e)}
 				/>
-				<InputSelect
-					placeHolder="North neighbor height"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="North neighbor height"
+					min="4"
+					max="10"
+					step="1"
 					handleValue={(e) => handleNorthNeighborHeightValue(e)}
 				/>
 			</fieldset>
