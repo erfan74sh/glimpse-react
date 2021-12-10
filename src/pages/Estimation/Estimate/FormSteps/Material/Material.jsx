@@ -20,15 +20,6 @@ const Material = ({ handleStep }) => {
 	const dispatch = useDispatch();
 
 	const handleNextStep = (e) => {
-		dispatch(
-			updateData({
-				...data,
-				wallMaterial: wallMaterial,
-				ceilingMaterial: ceilingMaterial,
-				floorMaterial: floorMaterial,
-				glassMaterial: glassMaterial,
-			})
-		);
 		handleStep(e);
 	};
 
@@ -38,18 +29,42 @@ const Material = ({ handleStep }) => {
 
 	const handleWallMaterialValue = (e) => {
 		setWallMaterial(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				wallMaterial: e.target.value,
+			})
+		);
 	};
 
 	const handleCeilingMaterialValue = (e) => {
 		setCeilingMaterial(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				ceilingMaterial: e.target.value,
+			})
+		);
 	};
 
 	const handleFloorMaterialValue = (e) => {
 		setFloorMaterial(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				floorMaterial: e.target.value,
+			})
+		);
 	};
 
 	const handleGlassMaterialValue = (e) => {
 		setGlassMaterial(e.target.dataset.value);
+		dispatch(
+			updateData({
+				...data,
+				glassMaterial: e.target.dataset.value,
+			})
+		);
 	};
 
 	return (

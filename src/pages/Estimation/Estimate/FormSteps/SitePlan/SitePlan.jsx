@@ -21,18 +21,42 @@ const SitePlan = ({ handleStep }) => {
 
 	const handleSouthNeighborDistValue = (e) => {
 		setSouthNeighborDist(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				southNeighborDist: e.target.value,
+			})
+		);
 	};
 
 	const handleSouthNeighborHeightValue = (e) => {
 		setSouthNeighborHeight(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				southNeighborHeight: e.target.value,
+			})
+		);
 	};
 
 	const handleNorthNeighborDistValue = (e) => {
 		setNorthNeighborDist(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				northNeighborDist: e.target.value,
+			})
+		);
 	};
 
 	const handleNorthNeighborHeightValue = (e) => {
 		setNorthNeighborHeight(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				northNeighborHeight: e.target.value,
+			})
+		);
 	};
 
 	const handlePrevStep = (e) => {
@@ -40,15 +64,6 @@ const SitePlan = ({ handleStep }) => {
 	};
 
 	const handleNextStep = (e) => {
-		dispatch(
-			updateData({
-				...data,
-				southNeighborDist: southNeighborDist,
-				southNeighborHeight: southNeighborHeight,
-				northNeighborDist: northNeighborDist,
-				northNeighborHeight: northNeighborHeight,
-			})
-		);
 		handleStep(e);
 	};
 
