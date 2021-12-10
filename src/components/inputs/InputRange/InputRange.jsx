@@ -18,6 +18,7 @@ const InputRange = ({ min, max, step }) => {
 				// value="16"
 				defaultValue={value}
 				className="w-full"
+				onInput={handleValue}
 			/>
 			<span>value</span>
 		</div>
