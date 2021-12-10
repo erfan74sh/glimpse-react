@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
-const InputRange = ({ min, max, step }) => {
+const InputRange = ({ label, min, max, step, handleValue }) => {
 	const initialValue = (Number(max) - Number(min)) / 2 + Number(min);
 	const [value, setValue] = useState(initialValue);
 
-	const handleValue = (e) => {
+	const handleChangeValue = (e) => {
 		setValue(e.target.value);
+		handleValue(e);
 	};
 
 	return (
 		<div className="mr-8">
+			<label>{label}</label>
 			<input
 				type="range"
 				min={min}
@@ -18,7 +20,7 @@ const InputRange = ({ min, max, step }) => {
 				// value="16"
 				defaultValue={value}
 				className="w-full"
-				onInput={handleValue}
+				onInput={handleChangeValue}
 			/>
 			<span>{value}</span>
 		</div>
