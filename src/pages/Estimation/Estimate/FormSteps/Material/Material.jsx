@@ -7,6 +7,7 @@ import {
 } from "../../../../../features/data/inputDataSlice";
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
+import InputRange from "../../../../../components/inputs/InputRange";
 
 const Material = ({ handleStep }) => {
 	const data = useSelector(selectInput);
@@ -36,15 +37,15 @@ const Material = ({ handleStep }) => {
 	};
 
 	const handleWallMaterialValue = (e) => {
-		setWallMaterial(e.target.dataset.value);
+		setWallMaterial(e.target.value);
 	};
 
 	const handleCeilingMaterialValue = (e) => {
-		setCeilingMaterial(e.target.dataset.value);
+		setCeilingMaterial(e.target.value);
 	};
 
 	const handleFloorMaterialValue = (e) => {
-		setFloorMaterial(e.target.dataset.value);
+		setFloorMaterial(e.target.value);
 	};
 
 	const handleGlassMaterialValue = (e) => {
@@ -57,30 +58,37 @@ const Material = ({ handleStep }) => {
 				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 					material
 				</legend>
-				<InputSelect
-					placeHolder="Wall-material"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="Wall-material"
+					min=".2"
+					max=".7"
+					step=".05"
 					handleValue={(e) => {
 						handleWallMaterialValue(e);
 					}}
 				/>
-				<InputSelect
-					placeHolder="Ceiling-material"
-					items={["item1", "item2", "item3"]}
+
+				<InputRange
+					label="Ceiling-material"
+					min=".2"
+					max=".7"
+					step=".05"
 					handleValue={(e) => {
 						handleCeilingMaterialValue(e);
 					}}
 				/>
-				<InputSelect
-					placeHolder="Floor-material"
-					items={["item1", "item2", "item3"]}
+				<InputRange
+					label="Floor-material"
+					min=".2"
+					max=".7"
+					step=".05"
 					handleValue={(e) => {
 						handleFloorMaterialValue(e);
 					}}
 				/>
 				<InputSelect
 					placeHolder="Glass-material"
-					items={["item1", "item2", "item3"]}
+					items={["0.58", "0.72", "0.8", "0.9"]}
 					handleValue={(e) => {
 						handleGlassMaterialValue(e);
 					}}
