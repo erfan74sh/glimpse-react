@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const InputRange = ({ label, min, max, step, handleValue }) => {
-	const initialValue = (Number(max) - Number(min)) / 2 + Number(min);
-	const [value, setValue] = useState(initialValue);
+	// const initialValue = Number(min);
+	const [value, setValue] = useState(min);
 
 	const handleChangeValue = (e) => {
 		setValue(e.target.value);
@@ -11,18 +11,20 @@ const InputRange = ({ label, min, max, step, handleValue }) => {
 
 	return (
 		<div className="mr-8">
-			<label>{label}</label>
+			<div className="flex justify-between">
+				<label>{label}</label>
+				<span>{value}</span>
+			</div>
 			<input
 				type="range"
 				min={min}
 				max={max}
 				step={step}
 				// value="16"
-				defaultValue={value}
+				defaultValue={min}
 				className="w-full"
 				onInput={handleChangeValue}
 			/>
-			<span>{value}</span>
 		</div>
 	);
 };
