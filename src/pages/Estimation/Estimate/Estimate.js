@@ -67,7 +67,7 @@ const Estimate = () => {
 							<img src={ArrowLeft} alt="arrow left" />
 						</button> */}
 						<div className="w-full px-10 h-96">
-							<_3D />
+							<_3D xDim={inputData.xDim} yDim={inputData.yDim} />
 						</div>
 						{/* <button>
 							<img src={ArrowRight} alt="arrow right" />
