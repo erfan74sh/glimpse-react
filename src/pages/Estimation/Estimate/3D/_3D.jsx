@@ -42,6 +42,23 @@ const Window1 = ({ xDim, yDim }) => {
 	);
 };
 
+const Window2 = ({ xDim, yDim }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh
+			ref={mesh}
+			position={[xDim / 10 / 2 + 0.001, 0, 0]}
+			rotation={[0, Math.PI / 2, 0]}
+		>
+			<planeBufferGeometry
+				attach="geometry"
+				args={[(yDim / 10 / 4) * 3, (3.5 / 10 / 5) * 1.5]}
+			/>
+			<meshStandardMaterial attach="material" color="white" />
+		</mesh>
+	);
+};
+
 const _3D = ({ xDim, yDim }) => {
 	return (
 		<Canvas
@@ -66,6 +83,7 @@ const _3D = ({ xDim, yDim }) => {
 			</TransformControls> */}
 			{/* <OrbitControls /> */}
 			<Window1 xDim={xDim} yDim={yDim} />
+			<Window2 xDim={xDim} yDim={yDim} />
 		</Canvas>
 	);
 };
