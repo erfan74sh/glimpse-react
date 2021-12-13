@@ -8,7 +8,7 @@ const ContactUs = () => {
 			<header className="">
 				<Nav />
 			</header>
-			<main>
+			<main className="px-24 py-16">
 				<header>
 					<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
 						contact us
