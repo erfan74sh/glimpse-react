@@ -59,6 +59,19 @@ const Window2 = ({ xDim, yDim }) => {
 	);
 };
 
+const Roof = ({ xDim, yDim }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.1 / 10 / 2, 0]}>
+			<boxBufferGeometry
+				attach="geometry"
+				args={[xDim / 10, 0.1 / 10, yDim / 10]}
+			/>
+			<meshStandardMaterial attach="material" color="gray" />
+		</mesh>
+	);
+};
+
 const _3D = ({ xDim, yDim }) => {
 	return (
 		<Canvas
@@ -76,8 +89,9 @@ const _3D = ({ xDim, yDim }) => {
 			orthographic
 		>
 			<ambientLight intensity={0.3} />
-			<directionalLight position={[0, 10, 5]} intensity={1.5} />
+			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<Box xDim={xDim} yDim={yDim} />
+			<Roof xDim={xDim} yDim={yDim} />
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
