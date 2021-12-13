@@ -10,7 +10,9 @@ const ContactUs = () => {
 			</header>
 			<main>
 				<header>
-					<h1>contact us</h1>
+					<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
+						contact us
+					</h1>
 				</header>
 			</main>
 		</>
