@@ -1,6 +1,7 @@
 import React from "react";
 // components
 import Nav from "../../components/Nav";
+import MapContainer from "./MapContainer";
 
 const ContactUs = () => {
 	return (
@@ -30,6 +31,9 @@ const ContactUs = () => {
 							<span>Beheshti University _ Tehran</span>
 						</li>
 					</ul>
+				</section>
+				<section>
+					<MapContainer />
 				</section>
 			</main>
 		</>
