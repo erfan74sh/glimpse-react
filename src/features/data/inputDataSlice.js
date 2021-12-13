@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	data: {
-		xDim: 0,
-		yDim: 0,
+		xDim: 8,
+		yDim: 3,
 		rotation: 0,
 		wwrNorth: 0,
 		wwrSouth: 0,
