@@ -14,6 +14,23 @@ const ContactUs = () => {
 						contact us
 					</h1>
 				</header>
+
+				<section>
+					<ul>
+						<li>
+							<h3>phone</h3>
+							<span>09361759625</span>
+						</li>
+						<li>
+							<h3>email</h3>
+							<span>Glimpse@gmail.com</span>
+						</li>
+						<li>
+							<h3>address</h3>
+							<span>Beheshti University _ Tehran</span>
+						</li>
+					</ul>
+				</section>
 			</main>
 		</>
 	);
