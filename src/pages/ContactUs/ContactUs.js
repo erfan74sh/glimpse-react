@@ -4,11 +4,16 @@ import Nav from "../../components/Nav";
 
 const ContactUs = () => {
 	return (
-		<div className="h-screen bg-gray-50">
+		<>
 			<header className="">
 				<Nav />
 			</header>
-		</div>
+			<main>
+				<header>
+					<h1>contact us</h1>
+				</header>
+			</main>
+		</>
 	);
 };
 
