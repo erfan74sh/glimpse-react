@@ -29,6 +29,19 @@ const Box = ({ xDim, yDim, position, rotation }) => {
 	);
 };
 
+const Window1 = ({ xDim, yDim }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[0, 0, yDim / 10 / 2 + 0.001]}>
+			<planeBufferGeometry
+				attach="geometry"
+				args={[(xDim / 10 / 4) * 3, (3.5 / 10 / 5) * 3]}
+			/>
+			<meshStandardMaterial attach="material" color="white" />
+		</mesh>
+	);
+};
+
 const _3D = ({ xDim, yDim }) => {
 	return (
 		<Canvas
@@ -52,6 +65,7 @@ const _3D = ({ xDim, yDim }) => {
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
 			{/* <OrbitControls /> */}
+			<Window1 xDim={xDim} yDim={yDim} />
 		</Canvas>
 	);
 };
