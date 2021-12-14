@@ -25,7 +25,7 @@ const PricingPlans = () => {
 					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={SilverBadge} alt="gold badge" />
 						<h3>silver</h3>
-						<ul>
+						<ul className="flex flex-col items-center">
 							<li>15 Calculation </li>
 							<li>20 Revision</li>
 							<li>Numerical Results</li>
@@ -43,7 +43,7 @@ const PricingPlans = () => {
 					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={GoldBadge} alt="gold badge" />
 						<h3>gold</h3>
-						<ul>
+						<ul className="flex flex-col items-center">
 							<li>30 Calculation </li>
 							<li>45 Revision</li>
 							<li>Numerical Results</li>
@@ -62,7 +62,7 @@ const PricingPlans = () => {
 					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={BronzeBadge} alt="gold badge" />
 						<h3>bronze</h3>
-						<ul>
+						<ul className="flex flex-col items-center">
 							<li>2 Calculation </li>
 							<li>4 Revision</li>
 							<li>Numerical Results</li>
