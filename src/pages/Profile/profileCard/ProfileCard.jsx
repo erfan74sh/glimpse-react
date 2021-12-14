@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 // assets
 import ProfilePic from "../../../assets/profile/01.png";
-import Sucsess from "../../../assets/icons/sucsess.png";
 // states
 import { selectUserInfo } from "../../../features/userInfo/UserInfoSlice";
 import { Link } from "react-router-dom";
