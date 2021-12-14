@@ -36,6 +36,7 @@ module.exports = {
 				full: "0px 7px 32px rgba(0, 0, 0, 0.07), 0px -7px 32px rgba(0, 0, 0, 0.07);",
 				"full-lg":
 					"0px 8px 60px rgba(0, 0, 0, 0.1), 0px -8px 60px rgba(0, 0, 0, 0.1);",
+				"b-sm": "0px 4px 4px rgba(0, 0, 0, 0.25);",
 			},
 			borderRadius: {
 				"4xl": "2rem",
