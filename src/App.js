@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import PricingPlans from "./pages/PricingPlans";
+import SignInSignUp from "./pages/signIn-signUp";
 // style
 import "./App.scss";
 
@@ -25,6 +26,7 @@ function App() {
 			<Route path="about-us" element={<AboutUs />} />
 			<Route path="contact-us" element={<ContactUs />} />
 			<Route path="pricing" element={<PricingPlans />} />
+			<Route path="auth" element={<SignInSignUp />}></Route>
 		</Routes>
 	);
 }
