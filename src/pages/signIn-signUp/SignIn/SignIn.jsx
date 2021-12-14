@@ -20,9 +20,12 @@ const SignIn = () => {
 					placeholder="password"
 					className="px-4 py-3 border border-gray-300 rounded-md outline-none"
 				/>
-				<button type="submit">submit</button>
+				<button type="submit">Log in</button>
 			</form>
-			<span className="text-lg font-normal text-blue-550">
+			<Link to="#" className="text-sm text-gray-650 font-normal capitalize">
+				forget password?
+			</Link>
+			<span className="text-lg font-normal text-blue-550 capitalize">
 				or{" "}
 				<Link to="sign-up" className="underline">
 					sign up
