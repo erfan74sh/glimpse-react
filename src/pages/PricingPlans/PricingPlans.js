@@ -13,7 +13,7 @@ const PricingPlans = () => {
 			<header>
 				<Nav />
 			</header>
-			<main className="px-24 py-16">
+			<main className="px-24 py-16 bg-gray-100">
 				<header className="text-center text-4xl text-gray-650 font-bold">
 					<h1>
 						Choose a plan that’s right
@@ -21,8 +21,8 @@ const PricingPlans = () => {
 						for you
 					</h1>
 				</header>
-				<section>
-					<article>
+				<section className="flex gap-x-7">
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
 						<img src={SilverBadge} alt="gold badge" />
 						<h3>silver</h3>
 						<ul>
@@ -33,11 +33,11 @@ const PricingPlans = () => {
 							<li>Rhino And Revit</li>
 							<li>Exports</li>
 						</ul>
-						<button type="button">
+						<button type="button" className="mt-auto">
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article>
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
 						<img src={GoldBadge} alt="gold badge" />
 						<h3>gold</h3>
 						<ul>
@@ -49,11 +49,11 @@ const PricingPlans = () => {
 							<li> Grasshopper Exports</li>
 							<li>Design Suggestions</li>
 						</ul>
-						<button type="button">
+						<button type="button" className="mt-auto">
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article>
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
 						<img src={BronzeBadge} alt="gold badge" />
 						<h3>bronze</h3>
 						<ul>
@@ -61,7 +61,7 @@ const PricingPlans = () => {
 							<li>4 Revision</li>
 							<li>Numerical Results</li>
 						</ul>
-						<button type="button">
+						<button type="button" className="mt-auto">
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
