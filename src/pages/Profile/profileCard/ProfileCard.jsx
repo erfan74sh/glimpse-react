@@ -11,7 +11,7 @@ const ProfileCard = () => {
 	const userInfo = useSelector(selectUserInfo);
 
 	return (
-		<div className="flex flex-col justify-between items-center w-113 p-14 pb-6 rounded-md bg-white shadow-full">
+		<div className="flex flex-col justify-between items-center w-113 p-14 rounded-md bg-white shadow-full">
 			<img
 				src={ProfilePic}
 				alt="profile picture"
