@@ -39,7 +39,7 @@ const PricingPlans = () => {
 						</ul>
 						<button
 							type="button"
-							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg transition-all hover:shadow-b-sm"
 						>
 							<Link to="#">buy now</Link>
 						</button>
@@ -60,7 +60,7 @@ const PricingPlans = () => {
 						</ul>
 						<button
 							type="button"
-							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg transition-all hover:shadow-b-sm"
 						>
 							<Link to="#">buy now</Link>
 						</button>
@@ -77,7 +77,7 @@ const PricingPlans = () => {
 						</ul>
 						<button
 							type="button"
-							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg transition-all hover:shadow-b-sm"
 						>
 							<Link to="#">buy now</Link>
 						</button>
