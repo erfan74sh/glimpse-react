@@ -8,6 +8,7 @@ import Estimate from "./pages/Estimation/Estimate";
 import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import PricingPlans from "./pages/PricingPlans";
 // style
 import "./App.scss";
 
@@ -23,6 +24,7 @@ function App() {
 			<Route path="profile" element={<Profile />} />
 			<Route path="about-us" element={<AboutUs />} />
 			<Route path="contact-us" element={<ContactUs />} />
+			<Route path="pricing" element={<PricingPlans />} />
 		</Routes>
 	);
 }
