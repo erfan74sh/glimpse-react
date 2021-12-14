@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 // components
 import Nav from "../../components/Nav";
 
@@ -8,6 +9,9 @@ const SignInSignUp = () => {
 			<header>
 				<Nav />
 			</header>
+			<main>
+				<Outlet />
+			</main>
 		</>
 	);
 };
