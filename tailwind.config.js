@@ -33,7 +33,7 @@ module.exports = {
 				"neo-lg": "12px 12px 24px #e3e5e8, -12px -12px 24px #ffffff;",
 				"full-sm":
 					"0px 10px 20px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.1);",
-				full: "0px 7px 40px rgba(0, 0, 0, 0.1), 0px -7px 40px rgba(0, 0, 0, 0.1);",
+				full: "0px 7px 32px rgba(0, 0, 0, 0.07), 0px -7px 32px rgba(0, 0, 0, 0.07);",
 				"full-lg":
 					"0px 8px 60px rgba(0, 0, 0, 0.1), 0px -8px 60px rgba(0, 0, 0, 0.1);",
 			},
