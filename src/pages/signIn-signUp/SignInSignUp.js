@@ -9,7 +9,7 @@ const SignInSignUp = () => {
 			<header>
 				<Nav />
 			</header>
-			<main>
+			<main className="h-screen flex justify-center items-center bg-gray-100">
 				<Outlet />
 			</main>
 		</>
