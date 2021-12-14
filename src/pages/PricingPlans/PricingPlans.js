@@ -22,7 +22,7 @@ const PricingPlans = () => {
 					</h1>
 				</header>
 				<section className="flex gap-x-10 justify-center py-24">
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
+					<article className="w-84 h-133 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
 						<img src={SilverBadge} alt="gold badge" />
 						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
 							silver
@@ -42,7 +42,7 @@ const PricingPlans = () => {
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
+					<article className="w-84 h-133 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
 						<img src={GoldBadge} alt="gold badge" />
 						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
 							gold
@@ -63,7 +63,7 @@ const PricingPlans = () => {
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
+					<article className="w-84 h-133 flex flex-col items-center px-10 py-8 pt-3 bg-white rounded-3xl transition-all transform hover:scale-110">
 						<img src={BronzeBadge} alt="gold badge" />
 						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
 							bronze
