@@ -22,7 +22,7 @@ const PricingPlans = () => {
 					</h1>
 				</header>
 				<section className="flex gap-x-7">
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={SilverBadge} alt="gold badge" />
 						<h3>silver</h3>
 						<ul>
@@ -33,11 +33,14 @@ const PricingPlans = () => {
 							<li>Rhino And Revit</li>
 							<li>Exports</li>
 						</ul>
-						<button type="button" className="mt-auto">
+						<button
+							type="button"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+						>
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={GoldBadge} alt="gold badge" />
 						<h3>gold</h3>
 						<ul>
@@ -49,11 +52,14 @@ const PricingPlans = () => {
 							<li> Grasshopper Exports</li>
 							<li>Design Suggestions</li>
 						</ul>
-						<button type="button" className="mt-auto">
+						<button
+							type="button"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+						>
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
-					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 bg-white rounded-3xl">
+					<article className="w-80 h-152 flex flex-col items-center px-10 py-8 pt-3  bg-white rounded-3xl">
 						<img src={BronzeBadge} alt="gold badge" />
 						<h3>bronze</h3>
 						<ul>
@@ -61,7 +67,10 @@ const PricingPlans = () => {
 							<li>4 Revision</li>
 							<li>Numerical Results</li>
 						</ul>
-						<button type="button" className="mt-auto">
+						<button
+							type="button"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg"
+						>
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
