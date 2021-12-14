@@ -1,7 +1,15 @@
 import React from "react";
+// components
+import Nav from "../../components/Nav";
 
 const SignInSignUp = () => {
-	return <div>sign in sign up</div>;
+	return (
+		<>
+			<header>
+				<Nav />
+			</header>
+		</>
+	);
 };
 
 export default SignInSignUp;
