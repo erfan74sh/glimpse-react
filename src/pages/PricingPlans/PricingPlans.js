@@ -1,7 +1,15 @@
 import React from "react";
+// components
+import Nav from "../../components/Nav";
 
 const PricingPlans = () => {
-	return <div>pricing plan</div>;
+	return (
+		<>
+			<header>
+				<Nav />
+			</header>
+		</>
+	);
 };
 
 export default PricingPlans;
