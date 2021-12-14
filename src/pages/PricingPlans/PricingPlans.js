@@ -1,6 +1,10 @@
 import React from "react";
 // components
 import Nav from "../../components/Nav";
+// assets
+import GoldBadge from "../../assets/images/badge-gold.png";
+import SilverBadge from "../../assets/images/badge-silver.png";
+import BronzeBadge from "../../assets/images/badge-bronze.png";
 
 const PricingPlans = () => {
 	return (
@@ -16,6 +20,9 @@ const PricingPlans = () => {
 						for you
 					</h1>
 				</header>
+				<section>
+					<article></article>
+				</section>
 			</main>
 		</>
 	);
