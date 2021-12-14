@@ -6,6 +6,8 @@ import GoldBadge from "../../assets/images/badge-gold.png";
 import SilverBadge from "../../assets/images/badge-silver.png";
 import BronzeBadge from "../../assets/images/badge-bronze.png";
 import { Link } from "react-router-dom";
+// style
+import "./PricingPlan.scss";
 
 const PricingPlans = () => {
 	return (
