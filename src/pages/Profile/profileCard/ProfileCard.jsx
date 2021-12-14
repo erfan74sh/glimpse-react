@@ -5,6 +5,7 @@ import ProfilePic from "../../../assets/profile/01.png";
 import Sucsess from "../../../assets/icons/sucsess.png";
 // states
 import { selectUserInfo } from "../../../features/userInfo/UserInfoSlice";
+import { Link } from "react-router-dom";
 
 const ProfileCard = () => {
 	const userInfo = useSelector(selectUserInfo);
@@ -24,7 +25,12 @@ const ProfileCard = () => {
 				<span>{userInfo.email}</span>
 				<span>{userInfo.phone}</span>
 			</div>
-			<img src={Sucsess} alt="sucsess icon" />
+			<button
+				type="button"
+				className="py-3 px-5 text-lg text-white bg-blue-550 rounded-md"
+			>
+				<Link to="/">simulation history</Link>
+			</button>
 		</div>
 	);
 };
