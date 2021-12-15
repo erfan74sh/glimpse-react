@@ -8,7 +8,9 @@ const TextField = ({ ...props }) => {
 			<input
 				{...field}
 				{...props}
-				className="px-4 py-3 border border-gray-300 rounded-md outline-none"
+				className={`px-4 py-3 border ${
+					meta.touched && meta.error ? " border-red-600" : "border-gray-300"
+				} rounded-md outline-none`}
 			/>
 			{meta.touched && meta.error ? (
 				<span className="absolute bottom-0 left-1 transform translate-y-full text-xs text-red-600">
