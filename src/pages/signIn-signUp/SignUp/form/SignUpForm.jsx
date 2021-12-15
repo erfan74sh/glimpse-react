@@ -30,12 +30,14 @@ const SignUpForm = () => {
 				password: "",
 			}}
 			validationSchema={validate}
+			onSubmit={(values) => console.log(values)}
 		>
 			<Form className="flex flex-col items-center gap-y-7">
 				<TextField type="text" name="firstName" placeholder="first name" />
 				<TextField type="text" name="lastName" placeholder="last name" />
 				<TextField type="email" name="email" placeholder="email" />
 				<TextField type="password" name="password" placeholder="password" />
+				<button type="submit">register</button>
 			</Form>
 		</Formik>
 	);
