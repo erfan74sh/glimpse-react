@@ -13,7 +13,7 @@ const SignInSignUp = () => {
 			</header>
 			<main
 				id="auth-container"
-				className="h-screen flex justify-center items-center bg-gray-100"
+				className="h-screen flex justify-center items-center"
 			>
 				<Outlet />
 			</main>
