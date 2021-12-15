@@ -27,7 +27,7 @@ const SignIn = () => {
 			</Link>
 			<span className="text-lg font-normal text-blue-550 capitalize">
 				or{" "}
-				<Link to="sign-up" className="underline">
+				<Link to="/auth/sign-up" className="underline">
 					sign up
 				</Link>{" "}
 			</span>
