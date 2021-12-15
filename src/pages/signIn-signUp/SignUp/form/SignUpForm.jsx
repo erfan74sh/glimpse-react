@@ -31,7 +31,7 @@ const SignUpForm = () => {
 			}}
 			validationSchema={validate}
 		>
-			<Form className="flex flex-col items-center gap-y-4">
+			<Form className="flex flex-col items-center gap-y-7">
 				<TextField type="text" name="firstName" placeholder="first name" />
 				<TextField type="text" name="lastName" placeholder="last name" />
 				<TextField type="email" name="email" placeholder="email" />
