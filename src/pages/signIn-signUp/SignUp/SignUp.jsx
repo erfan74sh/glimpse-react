@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // assets
 import Logo from "../../../assets/images/logo-02.png";
 
@@ -33,6 +34,12 @@ const SignUp = () => {
 				/>
 				<button type="submit">submit</button>
 			</form>
+			<span className="text-lg font-normal text-blue-550 capitalize">
+				or{" "}
+				<Link to="/auth/sign-in" className="underline">
+					log in
+				</Link>{" "}
+			</span>
 		</div>
 	);
 };
