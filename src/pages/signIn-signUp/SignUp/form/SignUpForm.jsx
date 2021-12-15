@@ -37,7 +37,12 @@ const SignUpForm = () => {
 				<TextField type="text" name="lastName" placeholder="last name" />
 				<TextField type="email" name="email" placeholder="email" />
 				<TextField type="password" name="password" placeholder="password" />
-				<button type="submit">register</button>
+				<button
+					type="submit"
+					className="py-1 px-4 rounded-md capitalize bg-blue-550 text-white transition-all hover:shadow-b-sm"
+				>
+					register
+				</button>
 			</Form>
 		</Formik>
 	);
