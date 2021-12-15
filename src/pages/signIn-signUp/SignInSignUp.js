@@ -2,6 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 // components
 import Nav from "../../components/Nav";
+// style
+import "./SignInSignUp.scss";
 
 const SignInSignUp = () => {
 	return (
