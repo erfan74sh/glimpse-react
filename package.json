@@ -25,7 +25,8 @@
 		"react-router-dom": "^6.0.2",
 		"react-scripts": "4.0.3",
 		"recharts": "^2.1.6",
-		"three": "^0.134.0"
+		"three": "^0.134.0",
+		"yup": "^0.32.11"
 	},
 	"scripts": {
 		"start": "craco start",
