@@ -1,7 +1,16 @@
 import React from "react";
+import { Formik, Form } from "formik";
+// components
+import TextField from "../../../../components/inputs/TextField/TextField";
 
 const SignUpForm = () => {
-	return <div>sign up form</div>;
+	return (
+		<Formik>
+			<Form>
+				<TextField />
+			</Form>
+		</Formik>
+	);
 };
 
 export default SignUpForm;
