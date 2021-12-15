@@ -11,7 +11,10 @@ const SignInSignUp = () => {
 			<header>
 				<Nav />
 			</header>
-			<main className="h-screen flex justify-center items-center bg-gray-100">
+			<main
+				id="auth-container"
+				className="h-screen flex justify-center items-center bg-gray-100"
+			>
 				<Outlet />
 			</main>
 		</>
