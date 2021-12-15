@@ -7,7 +7,7 @@ const SignUpForm = () => {
 	return (
 		<Formik>
 			<Form>
-				<TextField />
+				<TextField type="text" name="firstName" placeHolder="first name" />
 			</Form>
 		</Formik>
 	);
