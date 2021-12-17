@@ -18,7 +18,7 @@ import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./Home.scss";
 
 const Home = () => {
-	const [showEstimateModal, setShowEstimateModal] = useState(true);
+	const [showEstimateModal, setShowEstimateModal] = useState(false);
 
 	return (
 		<>
@@ -38,8 +38,9 @@ const Home = () => {
 						<button
 							type="button"
 							className="px-9 py-4 bg-white rounded-b-full rounded-t-full text-lg text-blue-550 font-medium border-none outline-none hover:bg-blue-550 hover:text-white transition-all"
+							onClick={() => setShowEstimateModal(true)}
 						>
-							<Link to="/estimation">calculate now</Link>
+							calculate now
 						</button>
 					</section>
 				</div>
