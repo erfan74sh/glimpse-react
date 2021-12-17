@@ -11,6 +11,7 @@ import MachineLearningIcon from "../../assets/icons/machine-learning.png";
 import ResultIcon from "../../assets/icons/result.png";
 import Logo from "../../assets/images/logo-02.png";
 import FooterImage from "../../assets/images/footer-image.png";
+import Modal from "../../components/modal/Modal";
 // icons
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
@@ -19,6 +20,7 @@ import "./Home.scss";
 const Home = () => {
 	return (
 		<>
+			<Modal />
 			<Nav />
 			<header
 				className="relative flex flex-col items-center mt-10"
