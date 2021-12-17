@@ -23,7 +23,12 @@ const Home = () => {
 	return (
 		<>
 			{showEstimateModal && (
-				<Modal closeModal={() => setShowEstimateModal(false)} />
+				<Modal
+					title="title here"
+					closeModal={() => setShowEstimateModal(false)}
+				>
+					<div>content here</div>
+				</Modal>
 			)}
 			<Nav />
 			<header
