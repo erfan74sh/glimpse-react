@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
@@ -18,9 +18,13 @@ import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./Home.scss";
 
 const Home = () => {
+	const [showEstimateModal, setShowEstimateModal] = useState(true);
+
 	return (
 		<>
-			<Modal />
+			{showEstimateModal && (
+				<Modal closeModal={() => setShowEstimateModal(false)} />
+			)}
 			<Nav />
 			<header
 				className="relative flex flex-col items-center mt-10"
