@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ closeModal, title, children }) => {
 	return (
 		<div
 			className="h-screen w-screen fixed flex items-center justify-center bg-white bg-opacity-80 z-30"
@@ -13,11 +13,12 @@ const Modal = ({ closeModal }) => {
 				}}
 			>
 				<header className="pb-1 px-1 flex justify-between items-center border-b-2 border-gray-300">
-					<h2>modal title here</h2>
+					<h2>{title}</h2>
 					<button className="w-8" onClick={closeModal}>
 						x
 					</button>
 				</header>
+				<section>{children}</section>
 			</section>
 		</div>
 	);
