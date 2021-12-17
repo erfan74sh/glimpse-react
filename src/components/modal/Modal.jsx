@@ -2,8 +2,13 @@ import React from "react";
 
 const Modal = () => {
 	return (
-		<div className="h-screen w-screen fixed flex items-center justify-center bg-white bg-opacity-50 z-30">
-			<section>this is modal container</section>
+		<div className="h-screen w-screen fixed flex items-center justify-center bg-white bg-opacity-80 z-30">
+			<section className="p-5 bg-white rounded-lg">
+				<header>
+					<h2>modal title here</h2>
+					<button>x</button>
+				</header>
+			</section>
 		</div>
 	);
 };
