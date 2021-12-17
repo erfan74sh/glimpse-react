@@ -7,7 +7,7 @@ import SignUpForm from "./form/SignUpForm";
 const SignUp = () => {
 	return (
 		<div className="flex flex-col items-center px-12 py-12 gap-y-9 bg-white rounded-md shadow-full">
-			<img src={Logo} alt="logo image" className="w-60 h-auto" />
+			<img src={Logo} alt="logo" className="w-60 h-auto" />
 			<SignUpForm />
 			<span className="text-lg font-normal text-blue-550 capitalize">
 				or{" "}

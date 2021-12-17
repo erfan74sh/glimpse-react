@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 // state
 import {
@@ -10,11 +10,11 @@ import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
 
 const Geometry = ({ handleStep }) => {
-	const [xDim, setXDim] = useState("");
-	const [yDim, setYDim] = useState("");
-	const [wwrNorth, setWwrNorth] = useState("");
-	const [wwrSouth, setWwrSouth] = useState("");
-	const [shadingType, setShadingType] = useState("");
+	// const [xDim, setXDim] = useState("");
+	// const [yDim, setYDim] = useState("");
+	// const [wwrNorth, setWwrNorth] = useState("");
+	// const [wwrSouth, setWwrSouth] = useState("");
+	// const [shadingType, setShadingType] = useState("");
 
 	const data = useSelector(selectInput);
 
@@ -25,7 +25,7 @@ const Geometry = ({ handleStep }) => {
 	};
 
 	const handleXDimValue = (e) => {
-		setXDim(e.target.value);
+		// setXDim(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -34,7 +34,7 @@ const Geometry = ({ handleStep }) => {
 		);
 	};
 	const handleYDimValue = (e) => {
-		setYDim(e.target.value);
+		// setYDim(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -43,7 +43,7 @@ const Geometry = ({ handleStep }) => {
 		);
 	};
 	const handleWwrNorthValue = (e) => {
-		setWwrNorth(e.target.value);
+		// setWwrNorth(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -52,7 +52,7 @@ const Geometry = ({ handleStep }) => {
 		);
 	};
 	const handleWwrSouthValue = (e) => {
-		setWwrSouth(e.target.value);
+		// setWwrSouth(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -61,7 +61,7 @@ const Geometry = ({ handleStep }) => {
 		);
 	};
 	const handleShadingTypeValue = (e) => {
-		setShadingType(e.target.dataset.value);
+		// setShadingType(e.target.dataset.value);
 		dispatch(
 			updateData({
 				...data,

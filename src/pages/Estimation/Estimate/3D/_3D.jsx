@@ -1,11 +1,6 @@
-import React, { useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, TransformControls } from "@react-three/drei";
-import { useSpring, animated } from "@react-spring/three";
-// state
-import { selectInput } from "../../../../features/data/inputDataSlice";
-
+import React, { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 const Box = ({ xDim, yDim, position, rotation }) => {
 	// const data = useSelector(selectInput);
 	const mesh = useRef(null);

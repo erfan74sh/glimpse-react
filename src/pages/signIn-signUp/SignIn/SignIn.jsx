@@ -8,7 +8,7 @@ import Logo from "../../../assets/images/logo-02.png";
 const SignIn = () => {
 	return (
 		<div className="flex flex-col items-center px-12 py-12 gap-y-9 bg-white rounded-md shadow-full">
-			<img src={Logo} alt="logo image" className="w-60 h-auto" />
+			<img src={Logo} alt="logo" className="w-60 h-auto" />
 			<SignInForm />
 			<Link to="#" className="text-sm text-gray-650 font-normal capitalize">
 				forget password?

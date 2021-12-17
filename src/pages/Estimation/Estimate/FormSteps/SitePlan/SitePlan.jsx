@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 // state
 import {
@@ -6,7 +6,6 @@ import {
 	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // components
-import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
 
 const SitePlan = ({ handleStep }) => {
@@ -14,13 +13,13 @@ const SitePlan = ({ handleStep }) => {
 
 	const dispatch = useDispatch();
 
-	const [southNeighborDist, setSouthNeighborDist] = useState("");
-	const [southNeighborHeight, setSouthNeighborHeight] = useState("");
-	const [northNeighborDist, setNorthNeighborDist] = useState("");
-	const [northNeighborHeight, setNorthNeighborHeight] = useState("");
+	// const [southNeighborDist, setSouthNeighborDist] = useState("");
+	// const [southNeighborHeight, setSouthNeighborHeight] = useState("");
+	// const [northNeighborDist, setNorthNeighborDist] = useState("");
+	// const [northNeighborHeight, setNorthNeighborHeight] = useState("");
 
 	const handleSouthNeighborDistValue = (e) => {
-		setSouthNeighborDist(e.target.value);
+		// setSouthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -30,7 +29,7 @@ const SitePlan = ({ handleStep }) => {
 	};
 
 	const handleSouthNeighborHeightValue = (e) => {
-		setSouthNeighborHeight(e.target.value);
+		// setSouthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -40,7 +39,7 @@ const SitePlan = ({ handleStep }) => {
 	};
 
 	const handleNorthNeighborDistValue = (e) => {
-		setNorthNeighborDist(e.target.value);
+		// setNorthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -50,7 +49,7 @@ const SitePlan = ({ handleStep }) => {
 	};
 
 	const handleNorthNeighborHeightValue = (e) => {
-		setNorthNeighborHeight(e.target.value);
+		// setNorthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,

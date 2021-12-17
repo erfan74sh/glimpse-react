@@ -11,7 +11,6 @@ import {
 	faEye,
 	faEyeSlash,
 	faSortDown,
-	faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
 // assets
 import ModelImage from "../../../assets/images/3dmodel-result.png";
@@ -145,7 +144,7 @@ const Result = () => {
 													</li>
 												</ul>
 											</div>
-											<img src={ModelImage} alt="model image" />
+											<img src={ModelImage} alt="model" />
 										</div>
 										<button className="absolute top-5 right-5">
 											<PDFDownloadLink

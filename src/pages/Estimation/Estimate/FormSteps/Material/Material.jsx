@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 // state
 import {
@@ -12,10 +12,10 @@ import InputRange from "../../../../../components/inputs/InputRange";
 const Material = ({ handleStep }) => {
 	const data = useSelector(selectInput);
 
-	const [wallMaterial, setWallMaterial] = useState("");
-	const [ceilingMaterial, setCeilingMaterial] = useState("");
-	const [floorMaterial, setFloorMaterial] = useState("");
-	const [glassMaterial, setGlassMaterial] = useState("");
+	// const [wallMaterial, setWallMaterial] = useState("");
+	// const [ceilingMaterial, setCeilingMaterial] = useState("");
+	// const [floorMaterial, setFloorMaterial] = useState("");
+	// const [glassMaterial, setGlassMaterial] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const Material = ({ handleStep }) => {
 	};
 
 	const handleWallMaterialValue = (e) => {
-		setWallMaterial(e.target.value);
+		// setWallMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -38,7 +38,7 @@ const Material = ({ handleStep }) => {
 	};
 
 	const handleCeilingMaterialValue = (e) => {
-		setCeilingMaterial(e.target.value);
+		// setCeilingMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -48,7 +48,7 @@ const Material = ({ handleStep }) => {
 	};
 
 	const handleFloorMaterialValue = (e) => {
-		setFloorMaterial(e.target.value);
+		// setFloorMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -58,7 +58,7 @@ const Material = ({ handleStep }) => {
 	};
 
 	const handleGlassMaterialValue = (e) => {
-		setGlassMaterial(e.target.dataset.value);
+		// setGlassMaterial(e.target.dataset.value);
 		dispatch(
 			updateData({
 				...data,

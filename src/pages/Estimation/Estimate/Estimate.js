@@ -7,7 +7,7 @@ import Geometry from "./FormSteps/Geometry";
 import Material from "./FormSteps/Material";
 import SitePlan from "./FormSteps/SitePlan";
 import Review from "./FormSteps/Review";
-import _3D from "./3D/_3D";
+import Model3D from "./3D/_3D";
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
 // style
@@ -67,7 +67,7 @@ const Estimate = () => {
 							<img src={ArrowLeft} alt="arrow left" />
 						</button> */}
 						<div className="w-full px-10 h-96">
-							<_3D xDim={inputData.xDim} yDim={inputData.yDim} />
+							<Model3D xDim={inputData.xDim} yDim={inputData.yDim} />
 						</div>
 						{/* <button>
 							<img src={ArrowRight} alt="arrow right" />

@@ -13,7 +13,7 @@ const ProfileCard = () => {
 		<div className="flex flex-col justify-between items-center w-113 p-14 rounded-md bg-white shadow-full">
 			<img
 				src={ProfilePic}
-				alt="profile picture"
+				alt="profile"
 				className="w-48 h-48 object-cover overflow-hidden rounded-full mb-16"
 			/>
 			<div className="flex flex-col items-center gap-y-5 mb-12 text-xl text-gray-650 font-normal">
