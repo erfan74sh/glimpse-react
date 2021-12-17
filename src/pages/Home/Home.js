@@ -12,6 +12,7 @@ import ResultIcon from "../../assets/icons/result.png";
 import Logo from "../../assets/images/logo-02.png";
 import FooterImage from "../../assets/images/footer-image.png";
 import Modal from "../../components/modal/Modal";
+import EstimationModal from "./EstimationModal/EstimationModal";
 // icons
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
@@ -27,7 +28,7 @@ const Home = () => {
 					title="title here"
 					closeModal={() => setShowEstimateModal(false)}
 				>
-					<div>content here</div>
+					<EstimationModal />
 				</Modal>
 			)}
 			<Nav />
