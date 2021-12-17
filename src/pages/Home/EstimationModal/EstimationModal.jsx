@@ -2,7 +2,7 @@ import React from "react";
 
 const EstimationModal = () => {
 	return (
-		<form>
+		<form className="flex flex-col gap-y-2">
 			<label>category</label>
 			<input type="text" />
 			<label>type</label>
