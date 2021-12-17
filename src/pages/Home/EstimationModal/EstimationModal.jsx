@@ -7,6 +7,7 @@ const EstimationModal = () => {
 			<input type="text" />
 			<label>type</label>
 			<input type="text" />
+			<button type="submit">next</button>
 		</form>
 	);
 };
