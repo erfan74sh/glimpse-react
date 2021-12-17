@@ -6,7 +6,7 @@ const Modal = () => {
 			<section className="p-5 bg-white rounded-lg w-1/3 h-1/2">
 				<header className="pb-1 px-1 flex justify-between items-center border-b-2 border-gray-300">
 					<h2>modal title here</h2>
-					<button>x</button>
+					<button className="w-8">x</button>
 				</header>
 			</section>
 		</div>
