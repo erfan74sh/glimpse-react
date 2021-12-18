@@ -5,7 +5,7 @@ import RadioBtn from "../../../components/inputs/RadioBtn";
 
 const EstimationModal = () => {
 	return (
-		<Formik>
+		<Formik initialValues={{ newOrPrevProject: "newProject" }}>
 			<Form className="flex flex-col gap-y-2">
 				<RadioBtn name="newOrPrevProject" value="newProject">
 					new project
