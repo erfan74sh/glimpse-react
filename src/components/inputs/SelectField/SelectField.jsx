@@ -20,9 +20,9 @@ const SelectField = ({ selectOptions }) => {
 		<div>
 			{selectOptions.map((option, idx) => {
 				return (
-					<RadioBtn name="category" value={option.label} key={idx}>
+					<DropdownRadio name="category" value={option.label} key={idx}>
 						{option.label}
-					</RadioBtn>
+					</DropdownRadio>
 				);
 			})}
 		</div>
