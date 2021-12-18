@@ -33,17 +33,27 @@ const EstimationModal = () => {
 		{ label: "fire in building" },
 		{ label: "acoustic" },
 	];
+	const estimationScale = [
+		{ label: "zone" },
+		{ label: "building" },
+		{ label: "city" },
+	];
 	return (
 		<Formik
 			initialValues={{
 				newOrPrevProject: "newProject",
 				newProjectName: "",
 				prevProjectName: "",
-				category: "choose one",
+				estimationCategory: "choose one",
+				estimationScale: "choose one",
 			}}
 		>
 			<Form className="flex flex-col gap-y-2">
-				<SelectField selectOptions={estimationCategory} name="category" />
+				<SelectField
+					selectOptions={estimationCategory}
+					name="estimationCategory"
+				/>
+				<SelectField selectOptions={estimationScale} name="estimationScale" />
 				<RadioBtn name="newOrPrevProject" value="newProject">
 					new project
 				</RadioBtn>
