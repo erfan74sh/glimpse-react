@@ -28,9 +28,10 @@ const ProjectName = () => {
 
 const EstimationModal = () => {
 	const estimationCategory = [
-		{ name: "category", label: "first" },
-		{ name: "category", label: "second" },
-		{ name: "category", label: "third" },
+		{ label: "energy, daylight and thermal comfort" },
+		{ label: "structure" },
+		{ label: "fire in building" },
+		{ label: "acoustic" },
 	];
 	return (
 		<Formik
