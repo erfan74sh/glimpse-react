@@ -1,10 +1,11 @@
 import React from "react";
 import { useField } from "formik";
 
-const TextField = ({ ...props }) => {
+const TextField = ({ label, ...props }) => {
 	const [field, meta] = useField(props);
 	return (
-		<div className="relative">
+		<div className="relative flex flex-col gap-y-1 capitalize">
+			<label>{label}</label>
 			<input
 				{...field}
 				{...props}
