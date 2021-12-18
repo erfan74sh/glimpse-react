@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useField, useFormikContext } from "formik";
-// components
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// icons
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const DropdownRadio = ({ children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
@@ -23,7 +25,14 @@ const SelectField = ({ selectOptions, name }) => {
 				className="flex justify-between items-center p-2 border border-gray-300 rounded-md outline-none"
 			>
 				<span>{values[name]}</span>
-				<span> {">"} </span>
+				<span className="px-3">
+					<FontAwesomeIcon
+						icon={faCaretDown}
+						className={`transform transition duration-300 ease-in-out text-gray-600  ${
+							showDropdown ? "-scale-y-1" : "scale-y-1"
+						}`}
+					/>
+				</span>
 			</div>
 			<ul
 				onChange={() => setShowDropdown(false)}
