@@ -1,4 +1,6 @@
 import React from "react";
+// components
+import RadioBtn from "../../../components/inputs/RadioBtn";
 
 const EstimationModal = () => {
 	return (
@@ -7,10 +9,7 @@ const EstimationModal = () => {
 			<input type="text" />
 			<label>type</label>
 			<input type="text" />
-			<label>
-				<input type="radio" name="test" />
-				new project
-			</label>
+			<RadioBtn></RadioBtn>
 			<label>
 				<input type="radio" name="test" />
 				prev projects
