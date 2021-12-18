@@ -15,12 +15,12 @@ const DropdownRadio = ({ children, ...props }) => {
 const SelectField = ({ selectOptions, name }) => {
 	const { values } = useFormikContext();
 	return (
-		<div>
+		<div className="relative">
 			<div className="flex justify-between items-center p-2 border border-gray-300 rounded-md outline-none">
 				<span>{values[name]}</span>
 				<span> {">"} </span>
 			</div>
-			<ul>
+			<ul className="flex flex-col absolute -bottom-1 transform translate-y-full w-full p-2 z-10 rounded-md bg-red-350">
 				{selectOptions.map((option, idx) => {
 					return (
 						<li key={idx}>
