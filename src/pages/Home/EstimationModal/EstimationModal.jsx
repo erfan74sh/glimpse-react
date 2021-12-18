@@ -26,6 +26,30 @@ const ProjectName = () => {
 	);
 };
 
+const ChooseOrCreateProject = () => {
+	const { values } = useFormikContext();
+	return (
+		<>
+			{values.estimationScale === "building" ||
+			values.estimationScale === "city" ? (
+				<div className="flex flex-col gap-y-1 capitalize">
+					<label className="normal-case">
+						Create new project or choose from previous ones
+					</label>
+					<div>
+						<RadioBtn name="newOrPrevProject" value="newProject">
+							new project
+						</RadioBtn>
+						<RadioBtn name="newOrPrevProject" value="prevProject">
+							prev project
+						</RadioBtn>
+					</div>
+				</div>
+			) : null}
+		</>
+	);
+};
+
 const EstimationModal = () => {
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
@@ -59,12 +83,7 @@ const EstimationModal = () => {
 					name="estimationScale"
 					label="estimation scale"
 				/>
-				<RadioBtn name="newOrPrevProject" value="newProject">
-					new project
-				</RadioBtn>
-				<RadioBtn name="newOrPrevProject" value="prevProject">
-					prev project
-				</RadioBtn>
+				<ChooseOrCreateProject />
 				<ProjectName />
 				<button
 					type="submit"
