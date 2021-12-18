@@ -68,8 +68,8 @@ const EstimationModal = () => {
 	return (
 		<Formik
 			initialValues={{
-				estimationCategory: "choose one",
-				estimationScale: "choose one",
+				estimationCategory: "",
+				estimationScale: "",
 				newOrPrevProject: "newProject",
 				newProjectName: "",
 				prevProjectName: "",
@@ -91,6 +91,16 @@ const EstimationModal = () => {
 					.string()
 					.required("choose scale")
 					.oneOf(["zone", "building", "city"], "pick from provided list"),
+				newProjectName: yup.string().when("newOrPrevProject", {
+					is: "newProject",
+					then: yup.string().required("new projec name is required"),
+					otherwise: yup.string(),
+				}),
+				prevProjectName: yup.string().when("newOrPrevProject", {
+					is: "prevProject",
+					then: yup.string().required("pev [roject name is required"),
+					otherwise: yup.string(),
+				}),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4">
