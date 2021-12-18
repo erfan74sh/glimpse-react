@@ -74,6 +74,10 @@ const EstimationModal = () => {
 				newProjectName: "",
 				prevProjectName: "",
 			}}
+			onSubmit={
+				// todo: edit handle submit
+				(values) => console.log(values)
+			}
 			validationSchema={yup.object({
 				estimationCategory: yup
 					.string()
