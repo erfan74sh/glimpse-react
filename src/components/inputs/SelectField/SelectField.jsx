@@ -1,7 +1,6 @@
 import React from "react";
 import { useField } from "formik";
 // components
-import RadioBtn from "../RadioBtn";
 
 const DropdownRadio = ({ children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
@@ -18,13 +17,21 @@ const DropdownRadio = ({ children, ...props }) => {
 const SelectField = ({ selectOptions }) => {
 	return (
 		<div>
-			{selectOptions.map((option, idx) => {
-				return (
-					<DropdownRadio name="category" value={option.label} key={idx}>
-						{option.label}
-					</DropdownRadio>
-				);
-			})}
+			<div>
+				<span>value</span>
+				<span> {">"} </span>
+			</div>
+			<ul>
+				{selectOptions.map((option, idx) => {
+					return (
+						<li key={idx}>
+							<DropdownRadio name="category" value={option.label}>
+								{option.label}
+							</DropdownRadio>
+						</li>
+					);
+				})}
+			</ul>
 		</div>
 	);
 };
