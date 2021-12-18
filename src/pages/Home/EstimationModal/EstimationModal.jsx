@@ -9,11 +9,8 @@ const EstimationModal = () => {
 			<input type="text" />
 			<label>type</label>
 			<input type="text" />
-			<RadioBtn></RadioBtn>
-			<label>
-				<input type="radio" name="test" />
-				prev projects
-			</label>
+			<RadioBtn name="newOrPrevProject">new project</RadioBtn>
+			<RadioBtn name="newOrPrevProject">prev project</RadioBtn>
 			<button type="submit">next</button>
 		</form>
 	);
