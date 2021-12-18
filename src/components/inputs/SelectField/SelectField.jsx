@@ -5,8 +5,8 @@ import { useField, useFormikContext } from "formik";
 const DropdownRadio = ({ children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
-		<label>
-			<input type="radio" {...field} {...props} />
+		<label className="block cursor-pointer">
+			<input type="radio" {...field} {...props} className="hidden" />
 			{children}
 		</label>
 	);
