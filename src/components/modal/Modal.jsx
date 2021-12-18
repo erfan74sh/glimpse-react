@@ -3,11 +3,11 @@ import React from "react";
 const Modal = ({ closeModal, title, children }) => {
 	return (
 		<div
-			className="h-screen w-screen fixed flex items-center justify-center bg-white bg-opacity-80 z-30"
+			className="h-screen w-screen fixed flex items-center justify-center bg-gray-500 bg-opacity-80 z-30"
 			onClick={closeModal}
 		>
 			<section
-				className="p-5 bg-white rounded-lg w-1/3 h-1/2"
+				className="p-5 bg-white rounded-lg w-1/3"
 				onClick={(e) => {
 					e.stopPropagation();
 				}}
@@ -18,7 +18,7 @@ const Modal = ({ closeModal, title, children }) => {
 						x
 					</button>
 				</header>
-				<section>{children}</section>
+				<section className="px-1 py-5">{children}</section>
 			</section>
 		</div>
 	);
