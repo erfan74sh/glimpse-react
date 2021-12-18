@@ -1,5 +1,5 @@
 import React from "react";
-import { useField } from "formik";
+import { useField, useFormikContext } from "formik";
 // components
 
 const DropdownRadio = ({ children, ...props }) => {
@@ -12,11 +12,12 @@ const DropdownRadio = ({ children, ...props }) => {
 	);
 };
 
-const SelectField = ({ selectOptions }) => {
+const SelectField = ({ selectOptions, name }) => {
+	const { values } = useFormikContext();
 	return (
 		<div>
 			<div>
-				<span>value</span>
+				<span>{values[name]}</span>
 				<span> {">"} </span>
 			</div>
 			<ul>
