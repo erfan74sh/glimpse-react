@@ -14,7 +14,7 @@ const DropdownRadio = ({ children, ...props }) => {
 	);
 };
 
-const SelectField = ({ selectOptions, name, label }) => {
+const SelectField = ({ selectOptions, name, label, placeholder }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 	const { values, errors, touched } = useFormikContext();
 	console.log(errors);
@@ -29,7 +29,12 @@ const SelectField = ({ selectOptions, name, label }) => {
 					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
 				}  rounded-md outline-none`}
 			>
-				<span>{values[name]}</span>
+				{values[name] ? (
+					<span>{values[name]}</span>
+				) : (
+					<span className="text-gray-400">{placeholder}</span>
+				)}
+
 				<span className="px-3">
 					<FontAwesomeIcon
 						icon={faCaretDown}
