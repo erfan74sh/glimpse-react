@@ -9,7 +9,7 @@ const RadioBtn = ({ children, ...props }) => {
 				<input type="radio" {...field} {...props} />
 				{children}
 			</label>
-			{meta.touched && meta.error ? <span>{meta.error}</span> : null}
+			{/* {meta.touched && meta.error ? <span>{meta.error}</span> : null} */}
 		</div>
 	);
 };
