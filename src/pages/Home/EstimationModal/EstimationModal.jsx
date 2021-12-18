@@ -7,12 +7,12 @@ const EstimationModal = () => {
 	return (
 		<Formik>
 			<Form className="flex flex-col gap-y-2">
-				<label>category</label>
-				<input type="text" />
-				<label>type</label>
-				<input type="text" />
-				<RadioBtn name="newOrPrevProject">new project</RadioBtn>
-				<RadioBtn name="newOrPrevProject">prev project</RadioBtn>
+				<RadioBtn name="newOrPrevProject" value="newProject">
+					new project
+				</RadioBtn>
+				<RadioBtn name="newOrPrevProject" value="prevProject">
+					prev project
+				</RadioBtn>
 				<button type="submit">next</button>
 			</Form>
 		</Formik>
