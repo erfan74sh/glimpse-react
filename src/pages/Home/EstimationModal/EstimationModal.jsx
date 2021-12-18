@@ -66,7 +66,12 @@ const EstimationModal = () => {
 					prev project
 				</RadioBtn>
 				<ProjectName />
-				<button type="submit">next</button>
+				<button
+					type="submit"
+					className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+				>
+					next
+				</button>
 			</Form>
 		</Formik>
 	);
