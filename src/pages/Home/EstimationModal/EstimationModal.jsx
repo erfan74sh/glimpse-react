@@ -48,12 +48,17 @@ const EstimationModal = () => {
 				estimationScale: "choose one",
 			}}
 		>
-			<Form className="flex flex-col gap-y-2">
+			<Form className="flex flex-col gap-y-4">
 				<SelectField
 					selectOptions={estimationCategory}
 					name="estimationCategory"
+					label="estimation category"
 				/>
-				<SelectField selectOptions={estimationScale} name="estimationScale" />
+				<SelectField
+					selectOptions={estimationScale}
+					name="estimationScale"
+					label="estimation scale"
+				/>
 				<RadioBtn name="newOrPrevProject" value="newProject">
 					new project
 				</RadioBtn>
