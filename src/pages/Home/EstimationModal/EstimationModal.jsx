@@ -120,7 +120,7 @@ const EstimationModal = () => {
 				<ProjectName />
 				<button
 					type="submit"
-					className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
 				>
 					next
 				</button>
