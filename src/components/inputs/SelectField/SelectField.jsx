@@ -5,12 +5,10 @@ import { useField } from "formik";
 const DropdownRadio = ({ children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
-		<div>
-			<label>
-				<input type="radio" {...field} {...props} />
-				{children}
-			</label>
-		</div>
+		<label>
+			<input type="radio" {...field} {...props} />
+			{children}
+		</label>
 	);
 };
 
