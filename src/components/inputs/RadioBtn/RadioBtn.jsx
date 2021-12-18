@@ -4,10 +4,13 @@ import { useField } from "formik";
 const RadioBtn = ({ children, ...props }) => {
 	const [field, meta] = useField({ ...props, type: "radio" });
 	return (
-		<label>
-			<input type="radio" {...props} />
-			{children}
-		</label>
+		<div>
+			<label>
+				<input type="radio" {...field} {...props} />
+				{children}
+			</label>
+			{meta.touched && meta.error ? <span>{meta.error}</span> : null}
+		</div>
 	);
 };
 
