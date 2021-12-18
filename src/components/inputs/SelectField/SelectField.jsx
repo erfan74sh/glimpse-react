@@ -16,7 +16,7 @@ const SelectField = ({ selectOptions, name }) => {
 	const { values } = useFormikContext();
 	return (
 		<div>
-			<div>
+			<div className="flex justify-between items-center p-2 border border-gray-300 rounded-md outline-none">
 				<span>{values[name]}</span>
 				<span> {">"} </span>
 			</div>
