@@ -13,12 +13,14 @@ const ProjectName = () => {
 				<TextField
 					type="text"
 					name="newProjectName"
+					label="project name"
 					placeholder="enter a name for your project"
 				/>
 			) : (
 				<TextField
 					type="text"
 					name="prevProjectName"
+					label="project name"
 					placeholder="choose from prev projects"
 				/>
 			)}
