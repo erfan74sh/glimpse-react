@@ -24,6 +24,9 @@ module.exports = {
 				152: "38rem",
 				160: "40rem",
 			},
+			scale: {
+				"-1": "-1",
+			},
 			fontFamily: {
 				gothic: ["gothic", "Helvetica", "Arial", "sans-serif"],
 			},
