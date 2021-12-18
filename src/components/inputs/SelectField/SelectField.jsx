@@ -34,7 +34,7 @@ const SelectField = ({ selectOptions, name }) => {
 				{selectOptions.map((option, idx) => {
 					return (
 						<li key={idx}>
-							<DropdownRadio name="category" value={option.label}>
+							<DropdownRadio name={name} value={option.label}>
 								{option.label}
 							</DropdownRadio>
 						</li>
