@@ -17,7 +17,6 @@ const DropdownRadio = ({ children, ...props }) => {
 const SelectField = ({ selectOptions, name, label, placeholder }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 	const { values, errors, touched } = useFormikContext();
-	console.log(errors);
 	return (
 		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label>{label}</label>
