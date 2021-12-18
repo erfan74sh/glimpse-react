@@ -108,11 +108,13 @@ const EstimationModal = () => {
 					selectOptions={estimationCategory}
 					name="estimationCategory"
 					label="estimation category"
+					placeholder="choose category"
 				/>
 				<SelectField
 					selectOptions={estimationScale}
 					name="estimationScale"
 					label="estimation scale"
+					placeholder="choose scale"
 				/>
 				<ChooseOrCreateProject />
 				<ProjectName />
