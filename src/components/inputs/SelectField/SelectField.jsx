@@ -16,14 +16,18 @@ const DropdownRadio = ({ children, ...props }) => {
 
 const SelectField = ({ selectOptions, name, label }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
-	const { values } = useFormikContext();
-
+	const { values, errors, touched } = useFormikContext();
+	console.log(errors);
 	return (
 		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label>{label}</label>
 			<div
-				onClick={() => setShowDropdown(!showDropdown)}
-				className="flex justify-between items-center p-2 border border-gray-300 rounded-md outline-none"
+				onClick={() => {
+					setShowDropdown(!showDropdown);
+				}}
+				className={`flex justify-between items-center p-2 border ${
+					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
+				}  rounded-md outline-none`}
 			>
 				<span>{values[name]}</span>
 				<span className="px-3">
@@ -35,6 +39,11 @@ const SelectField = ({ selectOptions, name, label }) => {
 					/>
 				</span>
 			</div>
+			{errors[name] && touched[name] && (
+				<span className="absolute bottom-0 left-1 transform translate-y-full text-xs text-red-600">
+					{errors[name]}
+				</span>
+			)}
 			<ul
 				onChange={() => setShowDropdown(false)}
 				className={`${
