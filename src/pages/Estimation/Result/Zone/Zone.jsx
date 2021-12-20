@@ -82,9 +82,12 @@ const Zone = () => {
 				<Chart series={series} />
 			</section>
 			<section className="flex flex-col h-96 px-40 mt-20">
-				<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-					alternatives
-				</h2>
+				<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
+					<h2>alternatives</h2>
+					<button className=" px-3 py-1 self-center text-base text-white rounded-md bg-blue-550 ">
+						<Link to="/estimation">new alternative</Link>
+					</button>
+				</header>
 				<ul className="flex flex-col gap-y-9">
 					{series.map((entry, i) => (
 						<>
@@ -180,9 +183,6 @@ const Zone = () => {
 						</>
 					))}
 				</ul>
-				<button className="mt-10 px-3 py-1 self-center text-white rounded-md bg-blue-550 ">
-					<Link to="/estimation">new alternative</Link>
-				</button>
 			</section>
 		</>
 	);
