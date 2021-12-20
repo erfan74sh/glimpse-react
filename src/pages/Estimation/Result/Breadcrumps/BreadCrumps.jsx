@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
+// style
+import "./BreadCrumps.scss";
 
 const Category = ({ steps, handleCategory }) => {
 	return (
 		<div>
 			{steps.category !== "" ? (
-				<span>{`${steps.category} > `}</span>
+				<div>
+					<span>{steps.category}</span>
+					<span>{`>`}</span>
+				</div>
 			) : (
-				<form onChange={handleCategory}>
+				<form onChange={handleCategory} className="breadcrumps__form">
 					<fieldset>category:</fieldset>
-					<label>
+					<label className="breadcrumps__label">
 						energy
 						<input
 							type="radio"
@@ -17,7 +22,7 @@ const Category = ({ steps, handleCategory }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						structure
 						<input
 							type="radio"
@@ -26,7 +31,7 @@ const Category = ({ steps, handleCategory }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						fire
 						<input
 							type="radio"
@@ -35,7 +40,7 @@ const Category = ({ steps, handleCategory }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						acoustic
 						<input
 							type="radio"
@@ -53,15 +58,18 @@ const Scale = ({ steps, handleScale }) => {
 	return (
 		<div>
 			{steps.scale !== "" ? (
-				<span>{`${steps.scale} > `}</span>
+				<div>
+					<span>{steps.scale}</span>
+					<span>{`>`}</span>
+				</div>
 			) : (
-				<form onChange={handleScale}>
+				<form onChange={handleScale} className="breadcrumps__form">
 					<fieldset>scale:</fieldset>
-					<label>
+					<label className="breadcrumps__label">
 						zone
 						<input type="radio" name="scale" value="zone" className="hidden" />
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						building
 						<input
 							type="radio"
@@ -70,7 +78,7 @@ const Scale = ({ steps, handleScale }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						city
 						<input type="radio" name="scale" value="city" className="hidden" />
 					</label>
@@ -83,11 +91,14 @@ const Project = ({ steps, handleProject }) => {
 	return (
 		<div>
 			{steps.project !== "" ? (
-				<span>{`${steps.project} > `}</span>
+				<div>
+					<span>{steps.project}</span>
+					<span>{`>`}</span>
+				</div>
 			) : (
-				<form onChange={handleProject}>
+				<form onChange={handleProject} className="breadcrumps__form">
 					<fieldset>project:</fieldset>
-					<label>
+					<label className="breadcrumps__label">
 						project1
 						<input
 							type="radio"
@@ -96,7 +107,7 @@ const Project = ({ steps, handleProject }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						project2
 						<input
 							type="radio"
@@ -105,7 +116,7 @@ const Project = ({ steps, handleProject }) => {
 							className="hidden"
 						/>
 					</label>
-					<label>
+					<label className="breadcrumps__label">
 						project3
 						<input
 							type="radio"
@@ -123,6 +134,7 @@ const Zone = () => {
 	return <div>zone</div>;
 };
 
+// main component
 const BreadCrumps = () => {
 	const [steps, setSteps] = useState({
 		category: "",
@@ -140,7 +152,7 @@ const BreadCrumps = () => {
 	}, []);
 
 	return (
-		<div className="flex gap-x-2">
+		<div className="breadcrumps flex gap-x-2">
 			<Category
 				steps={steps}
 				handleCategory={(e) => {
