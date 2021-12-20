@@ -63,9 +63,12 @@ const BreadCrumps = () => {
 					handleStep(e);
 				}}
 			/>
-			<Scale steps={steps} />
-			<Project steps={steps} />
-			<Zone steps={steps} />
+			{steps.category !== "" && <Scale steps={steps} />}
+			{steps.scale !== "" && steps.scale !== "zone" && (
+				<Project steps={steps} />
+			)}
+			{steps.project !== "" ||
+				(steps.scale === "zone" && <Zone steps={steps} />)}
 		</div>
 	);
 };
