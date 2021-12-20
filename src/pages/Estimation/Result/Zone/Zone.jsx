@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
@@ -180,6 +180,9 @@ const Zone = () => {
 						</>
 					))}
 				</ul>
+				<button className="mt-10 px-3 py-1 self-center text-white rounded-md bg-blue-550 ">
+					<Link to="/estimation">new alternative</Link>
+				</button>
 			</section>
 		</>
 	);
