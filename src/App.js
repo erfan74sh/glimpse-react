@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 // path: estimation
 import Estimation from "./pages/Estimation";
 import Result from "./pages/Estimation/Result";
+import Zone from "./pages/Estimation/Result/Zone/Zone";
 import Estimate from "./pages/Estimation/Estimate";
 //
 import Profile from "./pages/Profile";
@@ -25,7 +26,9 @@ function App() {
 			<Route path="/estimation" element={<Estimation />}>
 				<Route index element={<Estimate />} />
 				<Route path="estimate" element={<Estimate />} />
-				<Route path="result" element={<Result />} />
+				<Route path="result" element={<Result />}>
+					<Route path=":zoneId" element={<Zone />} />
+				</Route>
 			</Route>
 			<Route path="profile" element={<Profile />} />
 			<Route path="about-us" element={<AboutUs />} />
