@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 const Category = () => {
 	return <div>category</div>;
 };
+const Scale = () => {
+	return <div>scale</div>;
+};
 
 const BreadCrumps = () => {
 	const [steps, setSteps] = useState({
@@ -18,6 +21,7 @@ const BreadCrumps = () => {
 	return (
 		<div>
 			<Category />
+			<Scale />
 		</div>
 	);
 };
