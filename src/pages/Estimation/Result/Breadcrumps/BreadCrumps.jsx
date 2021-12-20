@@ -54,8 +54,30 @@ const Scale = ({ steps, handleScale }) => {
 		</div>
 	);
 };
-const Project = () => {
-	return <div>project</div>;
+const Project = ({ steps, handleProject }) => {
+	return (
+		<div>
+			{steps.project !== "" ? (
+				<span>{`${steps.project} > `}</span>
+			) : (
+				<form onChange={handleProject}>
+					<fieldset>project:</fieldset>
+					<label>
+						project1
+						<input type="radio" name="project" value="project1" />
+					</label>
+					<label>
+						project2
+						<input type="radio" name="project" value="project2" />
+					</label>
+					<label>
+						project3
+						<input type="radio" name="project" value="project3" />
+					</label>
+				</form>
+			)}
+		</div>
+	);
 };
 const Zone = () => {
 	return <div>zone</div>;
@@ -94,10 +116,11 @@ const BreadCrumps = () => {
 				/>
 			)}
 			{steps.scale !== "" && steps.scale !== "zone" && (
-				<Project steps={steps} />
+				<Project steps={steps} handleProject={(e) => handleStep(e)} />
 			)}
-			{steps.project !== "" ||
-				(steps.scale === "zone" && <Zone steps={steps} />)}
+			{(steps.project !== "" || steps.scale === "zone") && (
+				<Zone steps={steps} />
+			)}
 		</div>
 	);
 };
