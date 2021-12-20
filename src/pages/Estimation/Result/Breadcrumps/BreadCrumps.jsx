@@ -29,8 +29,30 @@ const Category = ({ steps, handleCategory }) => {
 		</div>
 	);
 };
-const Scale = () => {
-	return <div>scale</div>;
+const Scale = ({ steps, handleScale }) => {
+	return (
+		<div>
+			{steps.scale !== "" ? (
+				<span>{`${steps.scale} > `}</span>
+			) : (
+				<form onChange={handleScale}>
+					<fieldset>scale:</fieldset>
+					<label>
+						zone
+						<input type="radio" name="scale" value="zone" />
+					</label>
+					<label>
+						building
+						<input type="radio" name="scale" value="building" />
+					</label>
+					<label>
+						city
+						<input type="radio" name="scale" value="city" />
+					</label>
+				</form>
+			)}
+		</div>
+	);
 };
 const Project = () => {
 	return <div>project</div>;
@@ -63,7 +85,14 @@ const BreadCrumps = () => {
 					handleStep(e);
 				}}
 			/>
-			{steps.category !== "" && <Scale steps={steps} />}
+			{steps.category !== "" && (
+				<Scale
+					steps={steps}
+					handleScale={(e) => {
+						handleStep(e);
+					}}
+				/>
+			)}
 			{steps.scale !== "" && steps.scale !== "zone" && (
 				<Project steps={steps} />
 			)}
