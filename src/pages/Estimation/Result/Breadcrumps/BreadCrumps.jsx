@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+const Category = () => {
+	return <div>category</div>;
+};
+
 const BreadCrumps = () => {
 	const [steps, setSteps] = useState({
 		category: "",
@@ -11,7 +15,11 @@ const BreadCrumps = () => {
 		// todo: fetch data and update state here if user has filled some inputs before
 	}, []);
 
-	return <div>breadcrumps</div>;
+	return (
+		<div>
+			<Category />
+		</div>
+	);
 };
 
 export default BreadCrumps;
