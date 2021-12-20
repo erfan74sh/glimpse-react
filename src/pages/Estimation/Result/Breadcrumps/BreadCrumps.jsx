@@ -9,6 +9,9 @@ const Scale = () => {
 const Project = () => {
 	return <div>project</div>;
 };
+const Zone = () => {
+	return <div>zone</div>;
+};
 
 const BreadCrumps = () => {
 	const [steps, setSteps] = useState({
@@ -26,6 +29,7 @@ const BreadCrumps = () => {
 			<Category />
 			<Scale />
 			<Project />
+			<Zone />
 		</div>
 	);
 };
