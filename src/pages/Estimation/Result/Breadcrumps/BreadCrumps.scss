@@ -4,5 +4,8 @@
 	}
 	&__label {
 		@apply px-3 py-1 text-sm bg-blue-300 text-white rounded-md cursor-pointer transition hover:bg-blue-550;
+		&--selected {
+			@apply bg-blue-550;
+		}
 	}
 }
