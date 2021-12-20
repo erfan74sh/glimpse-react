@@ -4,7 +4,7 @@ import "./BreadCrumps.scss";
 
 const Category = ({ steps, handleCategory }) => {
 	return (
-		<div>
+		<>
 			{steps.category !== "" ? (
 				<div>
 					<span>{steps.category}</span>
@@ -51,12 +51,12 @@ const Category = ({ steps, handleCategory }) => {
 					</label>
 				</form>
 			)}
-		</div>
+		</>
 	);
 };
 const Scale = ({ steps, handleScale }) => {
 	return (
-		<div>
+		<>
 			{steps.scale !== "" ? (
 				<div>
 					<span>{steps.scale}</span>
@@ -84,17 +84,17 @@ const Scale = ({ steps, handleScale }) => {
 					</label>
 				</form>
 			)}
-		</div>
+		</>
 	);
 };
 const Project = ({ steps, handleProject }) => {
 	return (
-		<div>
+		<>
 			{steps.project !== "" ? (
-				<div>
+				<>
 					<span>{steps.project}</span>
 					<span>{`>`}</span>
-				</div>
+				</>
 			) : (
 				<form onChange={handleProject} className="breadcrumps__form">
 					<fieldset>project:</fieldset>
@@ -127,7 +127,7 @@ const Project = ({ steps, handleProject }) => {
 					</label>
 				</form>
 			)}
-		</div>
+		</>
 	);
 };
 const Zone = () => {
@@ -152,7 +152,7 @@ const BreadCrumps = () => {
 	}, []);
 
 	return (
-		<div className="breadcrumps flex gap-x-2">
+		<div className="breadcrumps flex items-center gap-x-2">
 			<Category
 				steps={steps}
 				handleCategory={(e) => {
