@@ -10,19 +10,39 @@ const Category = ({ steps, handleCategory }) => {
 					<fieldset>category:</fieldset>
 					<label>
 						energy
-						<input type="radio" name="category" value="energy" />
+						<input
+							type="radio"
+							name="category"
+							value="energy"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						structure
-						<input type="radio" name="category" value="structure" />
+						<input
+							type="radio"
+							name="category"
+							value="structure"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						fire
-						<input type="radio" name="category" value="fire" />
+						<input
+							type="radio"
+							name="category"
+							value="fire"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						acoustic
-						<input type="radio" name="category" value="acoustic" />
+						<input
+							type="radio"
+							name="category"
+							value="acoustic"
+							className="hidden"
+						/>
 					</label>
 				</form>
 			)}
@@ -39,15 +59,20 @@ const Scale = ({ steps, handleScale }) => {
 					<fieldset>scale:</fieldset>
 					<label>
 						zone
-						<input type="radio" name="scale" value="zone" />
+						<input type="radio" name="scale" value="zone" className="hidden" />
 					</label>
 					<label>
 						building
-						<input type="radio" name="scale" value="building" />
+						<input
+							type="radio"
+							name="scale"
+							value="building"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						city
-						<input type="radio" name="scale" value="city" />
+						<input type="radio" name="scale" value="city" className="hidden" />
 					</label>
 				</form>
 			)}
@@ -64,15 +89,30 @@ const Project = ({ steps, handleProject }) => {
 					<fieldset>project:</fieldset>
 					<label>
 						project1
-						<input type="radio" name="project" value="project1" />
+						<input
+							type="radio"
+							name="project"
+							value="project1"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						project2
-						<input type="radio" name="project" value="project2" />
+						<input
+							type="radio"
+							name="project"
+							value="project2"
+							className="hidden"
+						/>
 					</label>
 					<label>
 						project3
-						<input type="radio" name="project" value="project3" />
+						<input
+							type="radio"
+							name="project"
+							value="project3"
+							className="hidden"
+						/>
 					</label>
 				</form>
 			)}
@@ -100,7 +140,7 @@ const BreadCrumps = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="flex gap-x-2">
 			<Category
 				steps={steps}
 				handleCategory={(e) => {
