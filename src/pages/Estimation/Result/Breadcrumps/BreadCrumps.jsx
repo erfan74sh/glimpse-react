@@ -130,8 +130,38 @@ const Project = ({ steps, handleProject }) => {
 		</>
 	);
 };
-const Zone = () => {
-	return <div>zone</div>;
+const Zone = ({ steps, handleZone }) => {
+	return (
+		<>
+			<form onChange={handleZone} className="breadcrumps__form">
+				<fieldset>zone:</fieldset>
+				<label
+					className={`breadcrumps__label ${
+						steps.zone === "zone1" ? "breadcrumps__label--selected" : ""
+					}`}
+				>
+					zone1
+					<input type="radio" name="zone" value="zone1" className="hidden" />
+				</label>
+				<label
+					className={`breadcrumps__label ${
+						steps.zone === "zone2" ? "breadcrumps__label--selected" : ""
+					}`}
+				>
+					zone2
+					<input type="radio" name="zone" value="zone2" className="hidden" />
+				</label>
+				<label
+					className={`breadcrumps__label ${
+						steps.zone === "zone3" ? "breadcrumps__label--selected" : ""
+					}`}
+				>
+					zone3
+					<input type="radio" name="zone" value="zone3" className="hidden" />
+				</label>
+			</form>
+		</>
+	);
 };
 
 // main component
@@ -171,7 +201,7 @@ const BreadCrumps = () => {
 				<Project steps={steps} handleProject={(e) => handleStep(e)} />
 			)}
 			{(steps.project !== "" || steps.scale === "zone") && (
-				<Zone steps={steps} />
+				<Zone steps={steps} handleZone={(e) => handleStep(e)} />
 			)}
 		</div>
 	);
