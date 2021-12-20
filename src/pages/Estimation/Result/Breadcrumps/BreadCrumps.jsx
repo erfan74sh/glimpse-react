@@ -1,7 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-const Category = () => {
-	return <div>category</div>;
+const Category = ({ steps }) => {
+	return (
+		<div>
+			{steps.category !== "" ? (
+				<span>{`${steps.category} > `}</span>
+			) : (
+				<form>
+					<fieldset>category:</fieldset>
+					<label>
+						energy
+						<input type="radio" name="category" />
+					</label>
+					<label>
+						structure
+						<input type="radio" name="category" />
+					</label>
+					<label>
+						fire
+						<input type="radio" name="category" />
+					</label>
+					<label>
+						acoustic
+						<input type="radio" name="category" />
+					</label>
+				</form>
+			)}
+		</div>
+	);
 };
 const Scale = () => {
 	return <div>scale</div>;
@@ -26,10 +52,10 @@ const BreadCrumps = () => {
 
 	return (
 		<div>
-			<Category />
-			<Scale />
-			<Project />
-			<Zone />
+			<Category steps={steps} />
+			<Scale steps={steps} />
+			<Project steps={steps} />
+			<Zone steps={steps} />
 		</div>
 	);
 };
