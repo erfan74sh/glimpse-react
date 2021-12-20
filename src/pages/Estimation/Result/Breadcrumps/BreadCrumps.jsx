@@ -159,6 +159,12 @@ const Zone = ({ steps, handleZone }) => {
 					zone3
 					<input type="radio" name="zone" value="zone3" className="hidden" />
 				</label>
+				<input
+					type="text"
+					placeholder="enter zone name"
+					className="px-2 py-1 rounded-md text-sm border border-gray-300 outline-none"
+				/>
+				<button type="submit">add</button>
 			</form>
 		</>
 	);
