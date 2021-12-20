@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // compoents
+import BreadCrumps from "./Breadcrumps/BreadCrumps";
 import Chart from "./Chart";
 import PdfDoc from "./PdfDoc";
 // style
@@ -79,6 +80,9 @@ const Result = () => {
 				<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
 					result
 				</h1>
+				<nav>
+					<BreadCrumps />
+				</nav>
 			</header>
 			<main className="">
 				<section className="flex justify-center items-center max-h-152 px-20 overflow-hidden">
