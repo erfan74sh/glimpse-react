@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 // style
 import "./BreadCrumps.scss";
 
@@ -135,28 +136,37 @@ const Zone = ({ steps, handleZone }) => {
 		<>
 			<form onChange={handleZone} className="breadcrumps__form">
 				<fieldset>zone:</fieldset>
-				<label
-					className={`breadcrumps__label ${
-						steps.zone === "zone1" ? "breadcrumps__label--selected" : ""
-					}`}
-				>
-					zone1
+				<label>
+					<NavLink
+						to="/estimation/result/1"
+						className={({ isActive }) =>
+							`breadcrumps__links ${isActive ? "bg-blue-550" : "bg-blue-300"}`
+						}
+					>
+						zone1
+					</NavLink>
 					<input type="radio" name="zone" value="zone1" className="hidden" />
 				</label>
-				<label
-					className={`breadcrumps__label ${
-						steps.zone === "zone2" ? "breadcrumps__label--selected" : ""
-					}`}
-				>
-					zone2
+				<label>
+					<NavLink
+						to="/estimation/result/2"
+						className={({ isActive }) =>
+							`breadcrumps__links ${isActive ? "bg-blue-550" : "bg-blue-300"}`
+						}
+					>
+						zone2
+					</NavLink>
 					<input type="radio" name="zone" value="zone2" className="hidden" />
 				</label>
-				<label
-					className={`breadcrumps__label ${
-						steps.zone === "zone3" ? "breadcrumps__label--selected" : ""
-					}`}
-				>
-					zone3
+				<label>
+					<NavLink
+						to="/estimation/result/3"
+						className={({ isActive }) =>
+							`breadcrumps__links ${isActive ? "bg-blue-550" : "bg-blue-300"}`
+						}
+					>
+						zone3
+					</NavLink>
 					<input type="radio" name="zone" value="zone3" className="hidden" />
 				</label>
 				<input
