@@ -73,8 +73,11 @@ const Zone = () => {
 		setSeries(tempState);
 	};
 	return (
-		<div>
-			<h2>zone: {params.zoneId}</h2>
+		<>
+			<h2 className="text-lg font-medium">
+				zone:
+				<span className="font-bold text-blue-550 ml-1">{params.zoneId}</span>
+			</h2>
 			<section className="flex justify-center items-center max-h-152 px-20 overflow-hidden">
 				<Chart series={series} />
 			</section>
@@ -178,7 +181,7 @@ const Zone = () => {
 					))}
 				</ul>
 			</section>
-		</div>
+		</>
 	);
 };
 
