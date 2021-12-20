@@ -6,6 +6,9 @@ const Category = () => {
 const Scale = () => {
 	return <div>scale</div>;
 };
+const Project = () => {
+	return <div>project</div>;
+};
 
 const BreadCrumps = () => {
 	const [steps, setSteps] = useState({
@@ -22,6 +25,7 @@ const BreadCrumps = () => {
 		<div>
 			<Category />
 			<Scale />
+			<Project />
 		</div>
 	);
 };
