@@ -16,9 +16,12 @@ const markers = [
 	{ lat: 29.591768, lng: 52.583698 },
 ];
 
+const libraries = ["places"];
+
 const ModalMap = () => {
 	const { isLoaded, loadError } = useLoadScript({
 		googleMapsApiKey: "AIzaSyAJ141ObenmuFdj9mIj7YogQBoS7vstB0U",
+		libraries,
 	});
 	if (loadError) return "error loading map";
 	if (!isLoaded) return "loading map";
