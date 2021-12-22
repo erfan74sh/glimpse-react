@@ -68,13 +68,9 @@ const StepOne = ({ nextStep, formData }) => {
 	return (
 		<Formik
 			initialValues={formData}
-			onSubmit={
-				// todo: edit handle submit
-				(values) => {
-					nextStep(values);
-					console.log(formData);
-				}
-			}
+			onSubmit={(values) => {
+				nextStep(values);
+			}}
 			validationSchema={yup.object({
 				estimationCategory: yup
 					.string()
@@ -133,7 +129,13 @@ const StepOne = ({ nextStep, formData }) => {
 
 const StepTwo = ({ prevStep, formData }) => {
 	return (
-		<Formik initialValues={formData}>
+		<Formik
+			initialValues={formData}
+			onSubmit={(values) => {
+				// todo: send data to server and delete console.log
+				console.log(values);
+			}}
+		>
 			<Form>
 				<TextField
 					type="text"
