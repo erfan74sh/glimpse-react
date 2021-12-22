@@ -143,10 +143,19 @@ const StepTwo = ({ prevStep, formData }) => {
 					label="location"
 					placeholder="enter location of your project"
 				/>
-				<button type="button" onClick={prevStep}>
+				<button
+					type="button"
+					className="mt-4 px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+					onClick={prevStep}
+				>
 					prev
 				</button>
-				<button type="submit">start estimation</button>
+				<button
+					type="submit"
+					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+				>
+					start estimation
+				</button>
 			</Form>
 		</Formik>
 	);
