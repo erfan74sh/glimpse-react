@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
+
 // components
 import RadioBtn from "../../../components/inputs/RadioBtn";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
+import SearchPlacesField from "./SearchPLacesField/SearchPlacesField";
 // style
 import "./EstimationModal.scss";
 
@@ -150,6 +152,7 @@ const StepTwo = ({ prevStep, formData }) => {
 						label="location"
 						placeholder="enter location of your project"
 					/>
+					<SearchPlacesField />
 					<div className="flex justify-center gap-x-2 mt-8">
 						<button
 							type="button"
