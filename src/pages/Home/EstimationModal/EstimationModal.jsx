@@ -5,6 +5,7 @@ import * as yup from "yup";
 import RadioBtn from "../../../components/inputs/RadioBtn";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
+import ModalMap from "./ModalMap/ModalMap";
 // style
 import "./EstimationModal.scss";
 
@@ -165,6 +166,7 @@ const StepTwo = ({ prevStep, formData }) => {
 						</button>
 					</div>
 				</Form>
+				<ModalMap />
 			</div>
 		</Formik>
 	);
