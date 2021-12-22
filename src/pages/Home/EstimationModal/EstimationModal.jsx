@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
 // components
@@ -58,6 +58,7 @@ const ChooseLocation = () => {
 };
 
 const EstimationModal = () => {
+	const [step, setStep] = useState("basic-informations");
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
 		{ label: "structure" },
