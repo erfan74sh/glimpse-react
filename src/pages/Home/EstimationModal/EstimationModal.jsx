@@ -164,7 +164,8 @@ const EstimationModal = () => {
 
 	const [currentStep, setCurrentStep] = useState(0);
 
-	const handleNextStep = () => {
+	const handleNextStep = (newData) => {
+		setFormData((prev) => ({ ...prev, ...newData }));
 		setCurrentStep((prev) => prev + 1);
 	};
 	const handlePrevStep = () => {
