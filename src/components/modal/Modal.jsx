@@ -10,7 +10,7 @@ const Modal = ({ closeModal, title, children }) => {
 			onClick={closeModal}
 		>
 			<section
-				className="p-5 bg-white rounded-lg w-1/3"
+				className="p-5 bg-white rounded-lg"
 				onClick={(e) => {
 					e.stopPropagation();
 				}}
