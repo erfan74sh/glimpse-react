@@ -141,6 +141,8 @@ const StepTwo = ({ prevStep, formData }) => {
 					label="location"
 					placeholder="enter location of your project"
 				/>
+				<button type="button">prev</button>
+				<button type="submit">start estimation</button>
 			</Form>
 		</Formik>
 	);
