@@ -155,6 +155,13 @@ const EstimationModal = () => {
 	const [currentStep, setCurrentStep] = useState(0);
 	const steps = [<StepOne />, <StepTwo />];
 
+	const handleNextStep = () => {
+		setCurrentStep((prev) => prev + 1);
+	};
+	const handlePrevStep = () => {
+		setCurrentStep((prev) => prev - 1);
+	};
+
 	return <>{steps[currentStep]}</>;
 };
 
