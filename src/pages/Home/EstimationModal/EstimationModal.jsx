@@ -53,6 +53,10 @@ const ChooseOrCreateProject = () => {
 	);
 };
 
+const ChooseLocation = () => {
+	return <span>google map here</span>;
+};
+
 const EstimationModal = () => {
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
