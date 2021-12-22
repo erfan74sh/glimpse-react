@@ -82,7 +82,10 @@ const EstimationModal = () => {
 			}}
 			onSubmit={
 				// todo: edit handle submit
-				(values) => console.log(values)
+				(values) => {
+					console.log(values);
+					setStep("choose-location");
+				}
 			}
 			validationSchema={yup.object({
 				estimationCategory: yup
