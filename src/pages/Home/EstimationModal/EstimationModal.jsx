@@ -131,9 +131,9 @@ const StepOne = ({ nextStep, formData }) => {
 	);
 };
 
-const StepTwo = ({ prevStep }) => {
+const StepTwo = ({ prevStep, formData }) => {
 	return (
-		<Formik>
+		<Formik initialValues={formData}>
 			<Form>
 				<TextField
 					type="text"
