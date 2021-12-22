@@ -124,6 +124,7 @@ const EstimationModal = () => {
 					then: yup.string().required("pev [roject name is required"),
 					otherwise: yup.string(),
 				}),
+				location: yup.string().required("you should choose a location"),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4">
