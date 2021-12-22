@@ -88,6 +88,7 @@ const EstimationModal = () => {
 				newOrPrevProject: "newProject",
 				newProjectName: "",
 				prevProjectName: "",
+				location: "",
 			}}
 			onSubmit={
 				// todo: edit handle submit
