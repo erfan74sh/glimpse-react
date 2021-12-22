@@ -27,6 +27,7 @@
 		"react-scripts": "4.0.3",
 		"recharts": "^2.1.6",
 		"three": "^0.134.0",
+		"use-places-autocomplete": "^1.11.0",
 		"yup": "^0.32.11"
 	},
 	"scripts": {
