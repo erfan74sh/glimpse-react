@@ -53,7 +53,7 @@ const ChooseOrCreateProject = () => {
 	);
 };
 
-const ChooseLocation = () => {
+const StepTwo = () => {
 	return (
 		<span>
 			<TextField
@@ -146,7 +146,7 @@ const EstimationModal = () => {
 						<ProjectName />
 					</>
 				) : (
-					<ChooseLocation />
+					<StepTwo />
 				)}
 				<button
 					type="submit"
