@@ -152,14 +152,10 @@ const StepTwo = () => {
 };
 
 const EstimationModal = () => {
-	const [step, setStep] = useState("basic-informations");
+	const [currentStep, setCurrentStep] = useState(0);
+	const steps = [<StepOne />, <StepTwo />];
 
-	return (
-		<>
-			<StepOne />
-			<StepTwo />
-		</>
-	);
+	return <>{steps[currentStep]}</>;
 };
 
 export default EstimationModal;
