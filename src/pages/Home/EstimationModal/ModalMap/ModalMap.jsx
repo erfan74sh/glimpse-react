@@ -27,7 +27,16 @@ const ModalMap = () => {
 		<div>
 			<GoogleMap mapContainerStyle={mapContainerStyle} zoom={5} center={center}>
 				{markers.map((marker, idx) => (
-					<Marker key={idx} position={{ lat: marker.lat, lng: marker.lng }} />
+					<Marker
+						key={idx}
+						position={{ lat: marker.lat, lng: marker.lng }}
+						icon={{
+							url: "/MapMarker.svg",
+							scaledSize: new window.google.maps.Size(20, 20),
+							origin: new window.google.maps.Point(0, 0),
+							anchor: new window.google.maps.Point(10, 10),
+						}}
+					/>
 				))}
 			</GoogleMap>
 		</div>
