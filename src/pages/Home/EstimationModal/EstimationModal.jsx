@@ -135,6 +135,9 @@ const StepTwo = ({ prevStep, formData }) => {
 				// todo: send data to server and delete console.log
 				console.log(values);
 			}}
+			validationSchema={yup.object({
+				location: yup.string().required("you should pick a location"),
+			})}
 		>
 			<Form>
 				<TextField
@@ -143,19 +146,21 @@ const StepTwo = ({ prevStep, formData }) => {
 					label="location"
 					placeholder="enter location of your project"
 				/>
-				<button
-					type="button"
-					className="mt-4 px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
-					onClick={prevStep}
-				>
-					prev
-				</button>
-				<button
-					type="submit"
-					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
-				>
-					start estimation
-				</button>
+				<div className="flex justify-center gap-x-2 mt-8">
+					<button
+						type="button"
+						className="px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+						onClick={prevStep}
+					>
+						prev
+					</button>
+					<button
+						type="submit"
+						className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+					>
+						start estimation
+					</button>
+				</div>
 			</Form>
 		</Formik>
 	);
