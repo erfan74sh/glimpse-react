@@ -53,24 +53,7 @@ const ChooseOrCreateProject = () => {
 	);
 };
 
-const StepTwo = () => {
-	return (
-		<Formik>
-			<Form>
-				<TextField
-					type="text"
-					name="location"
-					label="location"
-					placeholder="enter location of your project"
-				/>
-			</Form>
-		</Formik>
-	);
-};
-
-const EstimationModal = () => {
-	const [step, setStep] = useState("basic-informations");
-
+const StepOne = () => {
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
 		{ label: "structure" },
@@ -90,13 +73,11 @@ const EstimationModal = () => {
 				newOrPrevProject: "newProject",
 				newProjectName: "",
 				prevProjectName: "",
-				location: "",
 			}}
 			onSubmit={
 				// todo: edit handle submit
 				(values) => {
 					console.log(values);
-					setStep("choose-location");
 				}
 			}
 			validationSchema={yup.object({
@@ -126,30 +107,24 @@ const EstimationModal = () => {
 					then: yup.string().required("pev [roject name is required"),
 					otherwise: yup.string(),
 				}),
-				location: yup.string().required("you should choose a location"),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4">
-				{step === "basic-informations" ? (
-					<>
-						<SelectField
-							selectOptions={estimationCategory}
-							name="estimationCategory"
-							label="estimation category"
-							placeholder="choose category"
-						/>
-						<SelectField
-							selectOptions={estimationScale}
-							name="estimationScale"
-							label="estimation scale"
-							placeholder="choose scale"
-						/>
-						<ChooseOrCreateProject />
-						<ProjectName />
-					</>
-				) : (
-					<StepTwo />
-				)}
+				<SelectField
+					selectOptions={estimationCategory}
+					name="estimationCategory"
+					label="estimation category"
+					placeholder="choose category"
+				/>
+				<SelectField
+					selectOptions={estimationScale}
+					name="estimationScale"
+					label="estimation scale"
+					placeholder="choose scale"
+				/>
+				<ChooseOrCreateProject />
+				<ProjectName />
+
 				<button
 					type="submit"
 					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
@@ -158,6 +133,32 @@ const EstimationModal = () => {
 				</button>
 			</Form>
 		</Formik>
+	);
+};
+
+const StepTwo = () => {
+	return (
+		<Formik>
+			<Form>
+				<TextField
+					type="text"
+					name="location"
+					label="location"
+					placeholder="enter location of your project"
+				/>
+			</Form>
+		</Formik>
+	);
+};
+
+const EstimationModal = () => {
+	const [step, setStep] = useState("basic-informations");
+
+	return (
+		<>
+			<StepOne />
+			<StepTwo />
+		</>
 	);
 };
 
