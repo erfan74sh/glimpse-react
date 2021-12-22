@@ -53,7 +53,7 @@ const ChooseOrCreateProject = () => {
 	);
 };
 
-const StepOne = ({ nextStep }) => {
+const StepOne = ({ nextStep, formData }) => {
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
 		{ label: "structure" },
@@ -67,18 +67,12 @@ const StepOne = ({ nextStep }) => {
 	];
 	return (
 		<Formik
-			initialValues={{
-				estimationCategory: "",
-				estimationScale: "",
-				newOrPrevProject: "newProject",
-				newProjectName: "",
-				prevProjectName: "",
-			}}
+			initialValues={formData}
 			onSubmit={
 				// todo: edit handle submit
 				(values) => {
-					console.log(values);
-					nextStep();
+					nextStep(values);
+					console.log(formData);
 				}
 			}
 			validationSchema={yup.object({
@@ -173,8 +167,8 @@ const EstimationModal = () => {
 	};
 
 	const steps = [
-		<StepOne nextStep={handleNextStep} />,
-		<StepTwo prevStep={handlePrevStep} />,
+		<StepOne nextStep={handleNextStep} formData={formData} />,
+		<StepTwo prevStep={handlePrevStep} formData={formData} />,
 	];
 	return <>{steps[currentStep]}</>;
 };
