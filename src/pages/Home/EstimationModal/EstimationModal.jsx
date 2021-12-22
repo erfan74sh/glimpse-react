@@ -59,6 +59,7 @@ const ChooseLocation = () => {
 
 const EstimationModal = () => {
 	const [step, setStep] = useState("basic-informations");
+
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
 		{ label: "structure" },
@@ -113,20 +114,26 @@ const EstimationModal = () => {
 			})}
 		>
 			<Form className="flex flex-col gap-y-4">
-				<SelectField
-					selectOptions={estimationCategory}
-					name="estimationCategory"
-					label="estimation category"
-					placeholder="choose category"
-				/>
-				<SelectField
-					selectOptions={estimationScale}
-					name="estimationScale"
-					label="estimation scale"
-					placeholder="choose scale"
-				/>
-				<ChooseOrCreateProject />
-				<ProjectName />
+				{step === "basic-informations" ? (
+					<>
+						<SelectField
+							selectOptions={estimationCategory}
+							name="estimationCategory"
+							label="estimation category"
+							placeholder="choose category"
+						/>
+						<SelectField
+							selectOptions={estimationScale}
+							name="estimationScale"
+							label="estimation scale"
+							placeholder="choose scale"
+						/>
+						<ChooseOrCreateProject />
+						<ProjectName />
+					</>
+				) : (
+					<ChooseLocation />
+				)}
 				<button
 					type="submit"
 					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
