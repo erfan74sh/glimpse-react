@@ -55,14 +55,16 @@ const ChooseOrCreateProject = () => {
 
 const StepTwo = () => {
 	return (
-		<span>
-			<TextField
-				type="text"
-				name="location"
-				label="location"
-				placeholder="enter location of your project"
-			/>
-		</span>
+		<Formik>
+			<Form>
+				<TextField
+					type="text"
+					name="location"
+					label="location"
+					placeholder="enter location of your project"
+				/>
+			</Form>
+		</Formik>
 	);
 };
 
