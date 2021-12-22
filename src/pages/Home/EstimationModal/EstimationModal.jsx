@@ -54,7 +54,16 @@ const ChooseOrCreateProject = () => {
 };
 
 const ChooseLocation = () => {
-	return <span>google map here</span>;
+	return (
+		<span>
+			<TextField
+				type="text"
+				name="location"
+				label="location"
+				placeholder="enter location of your project"
+			/>
+		</span>
+	);
 };
 
 const EstimationModal = () => {
