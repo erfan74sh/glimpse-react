@@ -5,6 +5,8 @@ import * as yup from "yup";
 import RadioBtn from "../../../components/inputs/RadioBtn";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
+// style
+import "./EstimationModal.scss";
 
 const ProjectName = () => {
 	const { values } = useFormikContext();
@@ -139,29 +141,31 @@ const StepTwo = ({ prevStep, formData }) => {
 				location: yup.string().required("you should pick a location"),
 			})}
 		>
-			<Form>
-				<TextField
-					type="text"
-					name="location"
-					label="location"
-					placeholder="enter location of your project"
-				/>
-				<div className="flex justify-center gap-x-2 mt-8">
-					<button
-						type="button"
-						className="px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
-						onClick={prevStep}
-					>
-						prev
-					</button>
-					<button
-						type="submit"
-						className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
-					>
-						start estimation
-					</button>
-				</div>
-			</Form>
+			<div className="estimation-modal__map-container">
+				<Form>
+					<TextField
+						type="text"
+						name="location"
+						label="location"
+						placeholder="enter location of your project"
+					/>
+					<div className="flex justify-center gap-x-2 mt-8">
+						<button
+							type="button"
+							className="px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+							onClick={prevStep}
+						>
+							prev
+						</button>
+						<button
+							type="submit"
+							className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+						>
+							start estimation
+						</button>
+					</div>
+				</Form>
+			</div>
 		</Formik>
 	);
 };
