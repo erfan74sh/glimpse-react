@@ -53,7 +53,7 @@ const ChooseOrCreateProject = () => {
 	);
 };
 
-const StepOne = () => {
+const StepOne = ({ nextStep }) => {
 	const estimationCategory = [
 		{ label: "energy, daylight and thermal comfort" },
 		{ label: "structure" },
@@ -136,7 +136,7 @@ const StepOne = () => {
 	);
 };
 
-const StepTwo = () => {
+const StepTwo = ({ prevStep }) => {
 	return (
 		<Formik>
 			<Form>
@@ -153,7 +153,10 @@ const StepTwo = () => {
 
 const EstimationModal = () => {
 	const [currentStep, setCurrentStep] = useState(0);
-	const steps = [<StepOne />, <StepTwo />];
+	const steps = [
+		<StepOne nextStep={handleNextStep} />,
+		<StepTwo prevStep={handlePrevStep} />,
+	];
 
 	const handleNextStep = () => {
 		setCurrentStep((prev) => prev + 1);
