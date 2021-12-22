@@ -78,6 +78,7 @@ const StepOne = ({ nextStep }) => {
 				// todo: edit handle submit
 				(values) => {
 					console.log(values);
+					nextStep();
 				}
 			}
 			validationSchema={yup.object({
@@ -152,11 +153,16 @@ const StepTwo = ({ prevStep }) => {
 };
 
 const EstimationModal = () => {
+	const [formData, setFormData] = useState({
+		estimationCategory: "",
+		estimationScale: "",
+		newOrPrevProject: "newProject",
+		newProjectName: "",
+		prevProjectName: "",
+		location: "",
+	});
+
 	const [currentStep, setCurrentStep] = useState(0);
-	const steps = [
-		<StepOne nextStep={handleNextStep} />,
-		<StepTwo prevStep={handlePrevStep} />,
-	];
 
 	const handleNextStep = () => {
 		setCurrentStep((prev) => prev + 1);
@@ -165,6 +171,10 @@ const EstimationModal = () => {
 		setCurrentStep((prev) => prev - 1);
 	};
 
+	const steps = [
+		<StepOne nextStep={handleNextStep} />,
+		<StepTwo prevStep={handlePrevStep} />,
+	];
 	return <>{steps[currentStep]}</>;
 };
 
