@@ -9,7 +9,7 @@ import {
 import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
 
-const Geometry = ({ handleStep }) => {
+const Geometry = ({ nextStep }) => {
 	// const [xDim, setXDim] = useState("");
 	// const [yDim, setYDim] = useState("");
 	// const [wwrNorth, setWwrNorth] = useState("");
@@ -19,10 +19,6 @@ const Geometry = ({ handleStep }) => {
 	const data = useSelector(selectInput);
 
 	const dispatch = useDispatch();
-
-	const handleNextStep = (e) => {
-		handleStep(e);
-	};
 
 	const handleXDimValue = (e) => {
 		// setXDim(e.target.value);
@@ -115,7 +111,7 @@ const Geometry = ({ handleStep }) => {
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
-					onClick={handleNextStep}
+					onClick={nextStep}
 					value="material"
 				>
 					next <span className="text-xs lowercase">(material)</span>
