@@ -17,16 +17,21 @@ const Estimate = () => {
 	const inputData = useSelector(selectInput);
 	const [step, setStep] = useState(0);
 
-	const steps = [<Geometry />, <Material />, <SitePlan />, <Review />];
-
-	const handleStep = (e) => {
-		setStep(e.currentTarget.value);
+	const handleNextStep = () => {
+		setStep((prev) => prev + 1);
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// todo: send data to server
 	};
+
+	const steps = [
+		<Geometry nextStep={handleNextStep} />,
+		<Material nextStep={handleNextStep} />,
+		<SitePlan nextStep={handleNextStep} />,
+		<Review nextStep={handleNextStep} />,
+	];
 
 	return (
 		<main className=" px-24 py-16" id="estimate__main">
@@ -42,7 +47,8 @@ const Estimate = () => {
 						className=" h-full flex flex-col"
 						onSubmit={handleSubmit}
 					>
-						{step === "geometry" && (
+						{steps[step]}
+						{/* {step === "geometry" && (
 							<Geometry handleStep={(e) => handleStep(e)} />
 						)}
 						{step === "material" && (
@@ -51,7 +57,7 @@ const Estimate = () => {
 						{step === "site plan" && (
 							<SitePlan handleStep={(e) => handleStep(e)} />
 						)}
-						{step === "review" && <Review handleStep={(e) => handleStep(e)} />}
+						{step === "review" && <Review handleStep={(e) => handleStep(e)} />} */}
 					</form>
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
