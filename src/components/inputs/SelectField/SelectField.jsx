@@ -24,7 +24,7 @@ const SelectField = ({ selectOptions, name, label, placeholder }) => {
 				onClick={() => {
 					setShowDropdown(!showDropdown);
 				}}
-				className={`flex justify-between items-center p-2 border ${
+				className={`flex justify-between items-center p-2 border bg-white ${
 					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
 				}  rounded-md outline-none`}
 			>
