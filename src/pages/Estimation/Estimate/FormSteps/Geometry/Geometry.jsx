@@ -18,7 +18,7 @@ const Geometry = ({ nextStep }) => {
 	// const [wwrSouth, setWwrSouth] = useState("");
 	// const [shadingType, setShadingType] = useState("");
 
-	// const data = useSelector(selectInput);
+	const data = useSelector(selectInput);
 
 	// const dispatch = useDispatch();
 
@@ -68,12 +68,23 @@ const Geometry = ({ nextStep }) => {
 	// 	);
 	// };
 
-	const shadingOptions = ["vertical", "horizontal", "horizantal louver"];
+	const shadingOptions = [
+		{ label: "vertical" },
+		{ label: "horizantal" },
+		{ label: "louver" },
+	];
 
 	return (
 		<>
-			<Formik>
-				<Form>{/* <SelectField/> */}</Form>
+			<Formik initialValues={data}>
+				<Form>
+					<SelectField
+						selectOptions={shadingOptions}
+						name="shadingType"
+						label="shading type"
+						placeholder="choose one type"
+					/>
+				</Form>
 			</Formik>
 			{/* <fieldset className="flex flex-col gap-y-9 pr-10">
 				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
