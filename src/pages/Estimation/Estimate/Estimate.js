@@ -21,6 +21,10 @@ const Estimate = () => {
 		setStep((prev) => prev + 1);
 	};
 
+	const handlePrevStep = () => {
+		setStep((prev) => prev - 1);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// todo: send data to server
