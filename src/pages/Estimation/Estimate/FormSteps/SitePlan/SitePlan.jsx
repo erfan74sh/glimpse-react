@@ -8,7 +8,7 @@ import {
 // components
 import InputRange from "../../../../../components/inputs/InputRange";
 
-const SitePlan = ({ handleStep }) => {
+const SitePlan = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
 
 	const dispatch = useDispatch();
@@ -58,14 +58,6 @@ const SitePlan = ({ handleStep }) => {
 		);
 	};
 
-	const handlePrevStep = (e) => {
-		handleStep(e);
-	};
-
-	const handleNextStep = (e) => {
-		handleStep(e);
-	};
-
 	return (
 		<>
 			<fieldset className="flex flex-col gap-y-9 pr-10">
@@ -106,14 +98,14 @@ const SitePlan = ({ handleStep }) => {
 					type="button"
 					className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
 					value="material"
-					onClick={handlePrevStep}
+					onClick={prevStep}
 				>
 					prev <span className="text-xs lowercase">(material)</span>
 				</button>
 				<button
 					type="button"
 					className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
-					onClick={handleNextStep}
+					onClick={nextStep}
 					value="review"
 				>
 					next <span className="text-xs lowercase">(review)</span>
