@@ -70,12 +70,12 @@ const Estimate = () => {
 						type="submit"
 						form="energy-and-comfort"
 						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-							step !== "review" && "opacity-25 pointer-events-none"
+							step !== 3 && "opacity-25 pointer-events-none"
 						}`}
 					>
 						<Link
 							to="result"
-							className={`${step !== "review" && "pointer-events-none"}`}
+							className={`${step !== 3 && "pointer-events-none"}`}
 						>
 							start estimate
 						</Link>
