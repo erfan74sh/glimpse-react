@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 const Box = ({ xDim, yDim, position, rotation }) => {
 	// const data = useSelector(selectInput);
 	const mesh = useRef(null);
-	console.log(xDim, yDim);
+	// console.log(xDim, yDim);
 	// const [expand, setExpand] = useState(false);
 
 	// const { scale } = useSpring({ scale: expand ? [1.5, 1.5, 1.5] : [1, 1, 1] });
