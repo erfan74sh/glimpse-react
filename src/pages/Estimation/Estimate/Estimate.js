@@ -12,9 +12,6 @@ import Model3D from "./3D/_3D";
 import { selectInput } from "../../../features/data/inputDataSlice";
 // style
 import "./Estimate.scss";
-// asset
-// import ArrowRight from "../../../assets/images/arrow-right.svg";
-// import ArrowLeft from "../../../assets/images/arrow-left.svg";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
@@ -63,17 +60,10 @@ const Estimate = () => {
 						3D view
 					</h2>
 					<div className="">
-						{/* <button>
-							<img src={ArrowLeft} alt="arrow left" />
-						</button> */}
 						<div className="w-full px-10 h-96">
 							<Model3D xDim={inputData.xDim} yDim={inputData.yDim} />
 						</div>
-						{/* <button>
-							<img src={ArrowRight} alt="arrow right" />
-						</button> */}
 					</div>
-
 					<button
 						type="submit"
 						form="energy-and-comfort"
