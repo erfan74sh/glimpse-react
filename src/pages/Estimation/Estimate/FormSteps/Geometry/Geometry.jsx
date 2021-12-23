@@ -7,7 +7,6 @@ import {
 	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // components
-import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../components/inputs/SelectField/SelectField";
 
@@ -78,9 +77,37 @@ const Geometry = ({ nextStep }) => {
 		<>
 			<Formik initialValues={data}>
 				<Form>
+					<InputRange
+						name="xDim"
+						label="X-Dimention"
+						min="8"
+						max="24"
+						step="0.5"
+					/>
+					<InputRange
+						name="yDim"
+						label="Y-Dimention"
+						min="3"
+						max="10"
+						step="0.5"
+					/>
+					<InputRange
+						name="wwrNorth"
+						label="WWR-North"
+						min="10"
+						max="80"
+						step="10"
+					/>
+					<InputRange
+						name="wwrSouth"
+						label="WWR-South"
+						min="10"
+						max="80"
+						step="10"
+					/>
 					<SelectField
-						selectOptions={shadingOptions}
 						name="shadingType"
+						selectOptions={shadingOptions}
 						label="shading type"
 						placeholder="choose one type"
 					/>
