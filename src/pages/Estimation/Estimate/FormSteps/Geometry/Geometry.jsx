@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Form, Formik } from "formik";
 // state
 import {
 	selectInput,
@@ -8,6 +9,7 @@ import {
 // components
 import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
+import SelectField from "../../../../../components/inputs/SelectField/SelectField";
 
 const Geometry = ({ nextStep }) => {
 	// const [xDim, setXDim] = useState("");
@@ -16,59 +18,62 @@ const Geometry = ({ nextStep }) => {
 	// const [wwrSouth, setWwrSouth] = useState("");
 	// const [shadingType, setShadingType] = useState("");
 
-	const data = useSelector(selectInput);
+	// const data = useSelector(selectInput);
 
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
-	const handleXDimValue = (e) => {
-		// setXDim(e.target.value);
-		dispatch(
-			updateData({
-				...data,
-				xDim: e.target.value,
-			})
-		);
-	};
-	const handleYDimValue = (e) => {
-		// setYDim(e.target.value);
-		dispatch(
-			updateData({
-				...data,
-				yDim: e.target.value,
-			})
-		);
-	};
-	const handleWwrNorthValue = (e) => {
-		// setWwrNorth(e.target.value);
-		dispatch(
-			updateData({
-				...data,
-				wwrNorth: e.target.value,
-			})
-		);
-	};
-	const handleWwrSouthValue = (e) => {
-		// setWwrSouth(e.target.value);
-		dispatch(
-			updateData({
-				...data,
-				wwrSouth: e.target.value,
-			})
-		);
-	};
-	const handleShadingTypeValue = (e) => {
-		// setShadingType(e.target.dataset.value);
-		dispatch(
-			updateData({
-				...data,
-				shadingType: e.target.dataset.value,
-			})
-		);
-	};
+	// const handleXDimValue = (e) => {
+	// 	// setXDim(e.target.value);
+	// 	dispatch(
+	// 		updateData({
+	// 			...data,
+	// 			xDim: e.target.value,
+	// 		})
+	// 	);
+	// };
+	// const handleYDimValue = (e) => {
+	// 	// setYDim(e.target.value);
+	// 	dispatch(
+	// 		updateData({
+	// 			...data,
+	// 			yDim: e.target.value,
+	// 		})
+	// 	);
+	// };
+	// const handleWwrNorthValue = (e) => {
+	// 	// setWwrNorth(e.target.value);
+	// 	dispatch(
+	// 		updateData({
+	// 			...data,
+	// 			wwrNorth: e.target.value,
+	// 		})
+	// 	);
+	// };
+	// const handleWwrSouthValue = (e) => {
+	// 	// setWwrSouth(e.target.value);
+	// 	dispatch(
+	// 		updateData({
+	// 			...data,
+	// 			wwrSouth: e.target.value,
+	// 		})
+	// 	);
+	// };
+	// const handleShadingTypeValue = (e) => {
+	// 	// setShadingType(e.target.dataset.value);
+	// 	dispatch(
+	// 		updateData({
+	// 			...data,
+	// 			shadingType: e.target.dataset.value,
+	// 		})
+	// 	);
+	// };
 
 	return (
 		<>
-			<fieldset className="flex flex-col gap-y-9 pr-10">
+			<Formik>
+				<Form>{/* <SelectField/> */}</Form>
+			</Formik>
+			{/* <fieldset className="flex flex-col gap-y-9 pr-10">
 				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 					geometry
 				</legend>
@@ -106,7 +111,7 @@ const Geometry = ({ nextStep }) => {
 					items={["Horizontal", "Horizontal Louvre", "Vertical", "All modes"]}
 					handleValue={(e) => handleShadingTypeValue(e)}
 				/>
-			</fieldset>
+			</fieldset> */}
 			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 				<button
 					type="button"
