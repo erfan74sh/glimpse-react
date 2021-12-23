@@ -52,16 +52,6 @@ const Estimate = () => {
 						onSubmit={handleSubmit}
 					>
 						{steps[step]}
-						{/* {step === "geometry" && (
-							<Geometry handleStep={(e) => handleStep(e)} />
-						)}
-						{step === "material" && (
-							<Material handleStep={(e) => handleStep(e)} />
-						)}
-						{step === "site plan" && (
-							<SitePlan handleStep={(e) => handleStep(e)} />
-						)}
-						{step === "review" && <Review handleStep={(e) => handleStep(e)} />} */}
 					</form>
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
