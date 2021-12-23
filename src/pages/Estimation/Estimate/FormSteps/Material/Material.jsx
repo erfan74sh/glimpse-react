@@ -9,7 +9,7 @@ import {
 import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
 
-const Material = ({ handleStep }) => {
+const Material = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
 
 	// const [wallMaterial, setWallMaterial] = useState("");
@@ -18,14 +18,6 @@ const Material = ({ handleStep }) => {
 	// const [glassMaterial, setGlassMaterial] = useState("");
 
 	const dispatch = useDispatch();
-
-	const handleNextStep = (e) => {
-		handleStep(e);
-	};
-
-	const handlePrevStep = (e) => {
-		handleStep(e);
-	};
 
 	const handleWallMaterialValue = (e) => {
 		// setWallMaterial(e.target.value);
@@ -114,7 +106,7 @@ const Material = ({ handleStep }) => {
 					type="button"
 					className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
 					value="geometry"
-					onClick={handlePrevStep}
+					onClick={prevStep}
 				>
 					prev <span className="text-xs lowercase">(geometry)</span>
 				</button>
@@ -122,7 +114,7 @@ const Material = ({ handleStep }) => {
 					type="button"
 					className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
 					value="site plan"
-					onClick={handleNextStep}
+					onClick={nextStep}
 				>
 					next <span className="text-xs lowercase">(site plan)</span>
 				</button>
