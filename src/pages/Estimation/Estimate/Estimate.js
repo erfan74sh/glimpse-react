@@ -32,9 +32,9 @@ const Estimate = () => {
 
 	const steps = [
 		<Geometry nextStep={handleNextStep} />,
-		<Material nextStep={handleNextStep} />,
-		<SitePlan nextStep={handleNextStep} />,
-		<Review nextStep={handleNextStep} />,
+		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
+		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
+		<Review prevStep={handlePrevStep} />,
 	];
 
 	return (
