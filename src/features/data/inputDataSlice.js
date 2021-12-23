@@ -7,7 +7,7 @@ const initialState = {
 		rotation: 0,
 		wwrNorth: 0,
 		wwrSouth: 0,
-		shadingType: 1,
+		shadingType: "",
 		wallMaterial: 0,
 		ceilingMaterial: 0,
 		floorMaterial: 0,
