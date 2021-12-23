@@ -68,6 +68,8 @@ const Geometry = ({ nextStep }) => {
 	// 	);
 	// };
 
+	const shadingOptions = ["vertical", "horizontal", "horizantal louver"];
+
 	return (
 		<>
 			<Formik>
