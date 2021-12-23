@@ -3,12 +3,8 @@ import { useSelector } from "react-redux";
 // state
 import { selectInput } from "../../../../../features/data/inputDataSlice";
 
-const Review = ({ handleStep }) => {
+const Review = ({ prevStep }) => {
 	const data = useSelector(selectInput);
-
-	const handlePrevStep = (e) => {
-		handleStep(e);
-	};
 
 	return (
 		<>
@@ -101,7 +97,7 @@ const Review = ({ handleStep }) => {
 				<button
 					type="button"
 					className="flex items-center justify-between px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
-					onClick={handlePrevStep}
+					onClick={prevStep}
 					value="site plan"
 				>
 					prev <span className="text-xs lowercase">(SitePlan)</span>
