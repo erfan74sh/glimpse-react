@@ -15,7 +15,9 @@ import "./Estimate.scss";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
-	const [step, setStep] = useState("geometry");
+	const [step, setStep] = useState(0);
+
+	const steps = [<Geometry />, <Material />, <SitePlan />, <Review />];
 
 	const handleStep = (e) => {
 		setStep(e.currentTarget.value);
