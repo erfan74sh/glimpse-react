@@ -14,14 +14,14 @@ const Header = () => {
 
 	return (
 		<nav className="bg-gray-650 text-white">
-			<ul className="flex justify-between items-center px-9 py-5">
+			<ul className="flex justify-between items-center px-9 py-4">
 				<li>
 					<Link to="/">
 						<img src={Logo} alt="glimpse logo" />
 					</Link>
 				</li>
 				<li>
-					<ul className="flex justify-items-center items-center gap-x-28 text-xl font-normal capitalize">
+					<ul className="flex justify-items-center items-center gap-x-28 text-lg font-normal capitalize">
 						<li>
 							<Link to="/">home</Link>
 						</li>
