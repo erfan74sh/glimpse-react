@@ -19,42 +19,42 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	// const [northNeighborDist, setNorthNeighborDist] = useState("");
 	// const [northNeighborHeight, setNorthNeighborHeight] = useState("");
 
-	const handleSouthNeighborDistValue = (e) => {
+	const handleSouthNeighborDistValue = (v) => {
 		// setSouthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				southNeighborDist: e.target.value,
+				southNeighborDist: v,
 			})
 		);
 	};
 
-	const handleSouthNeighborHeightValue = (e) => {
+	const handleSouthNeighborHeightValue = (v) => {
 		// setSouthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				southNeighborHeight: e.target.value,
+				southNeighborHeight: v,
 			})
 		);
 	};
 
-	const handleNorthNeighborDistValue = (e) => {
+	const handleNorthNeighborDistValue = (v) => {
 		// setNorthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				northNeighborDist: e.target.value,
+				northNeighborDist: v,
 			})
 		);
 	};
 
-	const handleNorthNeighborHeightValue = (e) => {
+	const handleNorthNeighborHeightValue = (v) => {
 		// setNorthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				northNeighborHeight: e.target.value,
+				northNeighborHeight: v,
 			})
 		);
 	};
@@ -73,7 +73,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 							min="2"
 							max="8"
 							step="1"
-							handleValue={(e) => handleSouthNeighborDistValue(e)}
+							handleValue={handleSouthNeighborDistValue}
 						/>
 						<InputRange
 							name="southNeighborHeight"
@@ -81,7 +81,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 							min="4"
 							max="10"
 							step="1"
-							handleValue={(e) => handleSouthNeighborHeightValue(e)}
+							handleValue={handleSouthNeighborHeightValue}
 						/>
 						<InputRange
 							name="northNeighborDist"
@@ -89,7 +89,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 							min="2"
 							max="8"
 							step="1"
-							handleValue={(e) => handleNorthNeighborDistValue(e)}
+							handleValue={handleNorthNeighborDistValue}
 						/>
 						<InputRange
 							name="northNeighborHeight"
@@ -97,7 +97,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 							min="4"
 							max="10"
 							step="1"
-							handleValue={(e) => handleNorthNeighborHeightValue(e)}
+							handleValue={handleNorthNeighborHeightValue}
 						/>
 					</fieldset>
 				</Form>
