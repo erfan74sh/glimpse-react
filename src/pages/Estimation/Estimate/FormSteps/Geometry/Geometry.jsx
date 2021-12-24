@@ -19,26 +19,26 @@ const Geometry = ({ nextStep }) => {
 
 	const data = useSelector(selectInput);
 
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-	// const handleXDimValue = (e) => {
-	// 	// setXDim(e.target.value);
-	// 	dispatch(
-	// 		updateData({
-	// 			...data,
-	// 			xDim: e.target.value,
-	// 		})
-	// 	);
-	// };
-	// const handleYDimValue = (e) => {
-	// 	// setYDim(e.target.value);
-	// 	dispatch(
-	// 		updateData({
-	// 			...data,
-	// 			yDim: e.target.value,
-	// 		})
-	// 	);
-	// };
+	const handleXDimValue = (v) => {
+		// setXDim(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				xDim: v,
+			})
+		);
+	};
+	const handleYDimValue = (v) => {
+		// setYDim(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				yDim: v,
+			})
+		);
+	};
 	// const handleWwrNorthValue = (e) => {
 	// 	// setWwrNorth(e.target.value);
 	// 	dispatch(
@@ -83,6 +83,7 @@ const Geometry = ({ nextStep }) => {
 						min="8"
 						max="24"
 						step="0.5"
+						handleValue={handleXDimValue}
 					/>
 					<InputRange
 						name="yDim"
@@ -90,6 +91,7 @@ const Geometry = ({ nextStep }) => {
 						min="3"
 						max="10"
 						step="0.5"
+						handleValue={handleYDimValue}
 					/>
 					<InputRange
 						name="wwrNorth"
