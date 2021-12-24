@@ -34,6 +34,9 @@ const Header = () => {
 							<DropdownMenu showDropdown={showMenuDropdown} />
 						</li>
 						<li>
+							<Link to="/pricing">pricing</Link>
+						</li>
+						<li>
 							<Link to="/about-us">about us</Link>
 						</li>
 						<li>
