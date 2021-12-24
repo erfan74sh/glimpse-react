@@ -105,7 +105,7 @@ const StepOne = ({ nextStep, formData }) => {
 				}),
 			})}
 		>
-			<Form className="flex flex-col gap-y-4">
+			<Form className="flex flex-col gap-y-4 w-100">
 				<SelectField
 					selectOptions={estimationCategory}
 					name="estimationCategory"
