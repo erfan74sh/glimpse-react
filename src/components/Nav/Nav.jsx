@@ -33,7 +33,7 @@ const Header = () => {
 							onMouseEnter={() => setShowMenuDropdown(true)}
 							onMouseLeave={() => setShowMenuDropdown(false)}
 						>
-							<Link to="/estimation">simulations</Link>
+							<Link to="/estimation/result">simulations</Link>
 							<DropdownMenu showDropdown={showMenuDropdown} />
 						</li>
 						<li>
