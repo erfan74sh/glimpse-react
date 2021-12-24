@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Formik, Form } from "formik";
 // state
 import {
 	selectInput,
@@ -60,39 +61,47 @@ const SitePlan = ({ nextStep, prevStep }) => {
 
 	return (
 		<>
-			<fieldset className="flex flex-col gap-y-9 pr-10">
-				<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-					site plan
-				</legend>
-				<InputRange
-					label="South neighbor distance"
-					min="2"
-					max="8"
-					step="1"
-					handleValue={(e) => handleSouthNeighborDistValue(e)}
-				/>
-				<InputRange
-					label="South neighbor height"
-					min="4"
-					max="10"
-					step="1"
-					handleValue={(e) => handleSouthNeighborHeightValue(e)}
-				/>
-				<InputRange
-					label="North neighbor distance"
-					min="2"
-					max="8"
-					step="1"
-					handleValue={(e) => handleNorthNeighborDistValue(e)}
-				/>
-				<InputRange
-					label="North neighbor height"
-					min="4"
-					max="10"
-					step="1"
-					handleValue={(e) => handleNorthNeighborHeightValue(e)}
-				/>
-			</fieldset>
+			<Formik initialValues={data}>
+				<Form>
+					<fieldset className="flex flex-col gap-y-9 pr-10">
+						<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+							site plan
+						</legend>
+						<InputRange
+							name="southNeighborDist"
+							label="South neighbor distance"
+							min="2"
+							max="8"
+							step="1"
+							handleValue={(e) => handleSouthNeighborDistValue(e)}
+						/>
+						<InputRange
+							name="southNeighborHeight"
+							label="South neighbor height"
+							min="4"
+							max="10"
+							step="1"
+							handleValue={(e) => handleSouthNeighborHeightValue(e)}
+						/>
+						<InputRange
+							name="northNeighborDist"
+							label="North neighbor distance"
+							min="2"
+							max="8"
+							step="1"
+							handleValue={(e) => handleNorthNeighborDistValue(e)}
+						/>
+						<InputRange
+							name="northNeighborHeight"
+							label="North neighbor height"
+							min="4"
+							max="10"
+							step="1"
+							handleValue={(e) => handleNorthNeighborHeightValue(e)}
+						/>
+					</fieldset>
+				</Form>
+			</Formik>
 			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
 				<button
 					type="button"
