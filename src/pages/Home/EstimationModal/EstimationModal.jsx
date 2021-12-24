@@ -146,13 +146,16 @@ const StepTwo = ({ prevStep, formData }) => {
 		>
 			<div className="estimation-modal__map-container">
 				<Form>
-					<TextField
-						type="text"
-						name="location"
-						label="location"
-						placeholder="enter location of your project"
-					/>
-					<SearchPlacesField />
+					<div className=" mb-5">
+						<TextField
+							type="text"
+							name="location"
+							label="location"
+							placeholder="enter location of your project"
+						/>
+					</div>
+					{/* <SearchPlacesField /> */}
+					<ModalMap />
 					<div className="flex justify-center gap-x-2 mt-8">
 						<button
 							type="button"
@@ -169,7 +172,6 @@ const StepTwo = ({ prevStep, formData }) => {
 						</button>
 					</div>
 				</Form>
-				<ModalMap />
 			</div>
 		</Formik>
 	);
