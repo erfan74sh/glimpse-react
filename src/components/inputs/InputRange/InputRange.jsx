@@ -4,8 +4,8 @@ import { useField } from "formik";
 const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 	const [field] = useField({ ...props, type: "range" });
 
-	const handleInput = () => {
-		handleValue(field.value);
+	const handleInput = (e) => {
+		handleValue(Number(e.target.value));
 	};
 
 	return (
