@@ -8,7 +8,7 @@ import RadioBtn from "../../../components/inputs/RadioBtn";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
-import SearchPlacesField from "./SearchPLacesField/SearchPlacesField";
+// import SearchPlacesField from "./SearchPLacesField/SearchPlacesField";
 // style
 import "./EstimationModal.scss";
 

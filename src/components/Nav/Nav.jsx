@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Profile from "../profile/Profile";
 import DropdownMenu from "../dropdowns/dropDownMenu";
 import DropdownProfile from "../dropdowns/dropdownProfile";
-import Auth from "../Auth";
+// import Auth from "../Auth";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 
@@ -13,7 +13,7 @@ const Header = () => {
 
 	const [showMenuDropdown, setShowMenuDropdown] = useState(false);
 
-	const [isLogin, setIsLogin] = useState(true);
+	// const [isLogin, setIsLogin] = useState(true);
 
 	return (
 		<nav className="bg-gray-650 text-white">
@@ -53,7 +53,7 @@ const Header = () => {
 						setShowProfileDropdown(!showProfileDropdown);
 					}}
 				>
-					{isLogin ? <Profile /> : <Auth />}
+					<Profile />
 
 					<DropdownProfile showDropdown={showProfileDropdown} />
 				</li>
