@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 
 const DropdownMenu = ({ showDropdown }) => {
 	const items = [
-		{ title: "Energy, Daylight and Thermal Comfort", path: "/estimation" },
-		{ title: "Structure", path: "/" },
-		{ title: "Fire in building", path: "/" },
-		{ title: "Acoustic", path: "/" },
+		{
+			title: "Energy, Daylight and Thermal Comfort",
+			path: "/estimation/result",
+		},
+		{ title: "Structure", path: "/estimation/result" },
+		{ title: "Fire in building", path: "/estimation/result" },
+		{ title: "Acoustic", path: "/estimation/result" },
 	];
 
 	return (
