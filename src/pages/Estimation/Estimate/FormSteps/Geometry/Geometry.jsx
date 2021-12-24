@@ -79,7 +79,7 @@ const Geometry = ({ nextStep }) => {
 				<Form>
 					<fieldset className="flex flex-col gap-y-9 pr-10">
 						<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-							site plan
+							geometry
 						</legend>
 						<InputRange
 							name="xDim"
