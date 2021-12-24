@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
 
@@ -133,11 +134,13 @@ const StepOne = ({ nextStep, formData }) => {
 };
 
 const StepTwo = ({ prevStep, formData }) => {
+	let navigate = useNavigate();
 	return (
 		<Formik
 			initialValues={formData}
 			onSubmit={(values) => {
 				// todo: send data to server and delete console.log
+				navigate("/estimation");
 				console.log(values);
 			}}
 			validationSchema={yup.object({
