@@ -39,24 +39,24 @@ const Geometry = ({ nextStep }) => {
 			})
 		);
 	};
-	// const handleWwrNorthValue = (e) => {
-	// 	// setWwrNorth(e.target.value);
-	// 	dispatch(
-	// 		updateData({
-	// 			...data,
-	// 			wwrNorth: e.target.value,
-	// 		})
-	// 	);
-	// };
-	// const handleWwrSouthValue = (e) => {
-	// 	// setWwrSouth(e.target.value);
-	// 	dispatch(
-	// 		updateData({
-	// 			...data,
-	// 			wwrSouth: e.target.value,
-	// 		})
-	// 	);
-	// };
+	const handleWwrNorthValue = (v) => {
+		// setWwrNorth(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				wwrNorth: v,
+			})
+		);
+	};
+	const handleWwrSouthValue = (v) => {
+		// setWwrSouth(e.target.value);
+		dispatch(
+			updateData({
+				...data,
+				wwrSouth: v,
+			})
+		);
+	};
 	// const handleShadingTypeValue = (e) => {
 	// 	// setShadingType(e.target.dataset.value);
 	// 	dispatch(
@@ -103,6 +103,7 @@ const Geometry = ({ nextStep }) => {
 							min="10"
 							max="80"
 							step="10"
+							handleValue={handleWwrNorthValue}
 						/>
 						<InputRange
 							name="wwrSouth"
@@ -110,6 +111,7 @@ const Geometry = ({ nextStep }) => {
 							min="10"
 							max="80"
 							step="10"
+							handleValue={handleWwrSouthValue}
 						/>
 						<SelectField
 							name="shadingType"
