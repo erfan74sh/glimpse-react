@@ -77,42 +77,47 @@ const Geometry = ({ nextStep }) => {
 		<>
 			<Formik initialValues={data}>
 				<Form>
-					<InputRange
-						name="xDim"
-						label="X-Dimention"
-						min="8"
-						max="24"
-						step="0.5"
-						handleValue={handleXDimValue}
-					/>
-					<InputRange
-						name="yDim"
-						label="Y-Dimention"
-						min="3"
-						max="10"
-						step="0.5"
-						handleValue={handleYDimValue}
-					/>
-					<InputRange
-						name="wwrNorth"
-						label="WWR-North"
-						min="10"
-						max="80"
-						step="10"
-					/>
-					<InputRange
-						name="wwrSouth"
-						label="WWR-South"
-						min="10"
-						max="80"
-						step="10"
-					/>
-					<SelectField
-						name="shadingType"
-						selectOptions={shadingOptions}
-						label="shading type"
-						placeholder="choose one type"
-					/>
+					<fieldset className="flex flex-col gap-y-9 pr-10">
+						<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+							site plan
+						</legend>
+						<InputRange
+							name="xDim"
+							label="X-Dimention"
+							min="8"
+							max="24"
+							step="0.5"
+							handleValue={handleXDimValue}
+						/>
+						<InputRange
+							name="yDim"
+							label="Y-Dimention"
+							min="3"
+							max="10"
+							step="0.5"
+							handleValue={handleYDimValue}
+						/>
+						<InputRange
+							name="wwrNorth"
+							label="WWR-North"
+							min="10"
+							max="80"
+							step="10"
+						/>
+						<InputRange
+							name="wwrSouth"
+							label="WWR-South"
+							min="10"
+							max="80"
+							step="10"
+						/>
+						<SelectField
+							name="shadingType"
+							selectOptions={shadingOptions}
+							label="shading type"
+							placeholder="choose one type"
+						/>
+					</fieldset>
 				</Form>
 			</Formik>
 			{/* <fieldset className="flex flex-col gap-y-9 pr-10">
