@@ -17,7 +17,7 @@ const InputSelect = ({ placeHolder, items, handleValue }) => {
 	};
 
 	return (
-		<div className="relative mr-8 px-4 py-3.5 rounded-md shadow-full-sm bg-white">
+		<div className="relative px-4 py-3.5 rounded-md shadow-full-sm bg-white">
 			<div className="flex items-center justify-between">
 				{selectedValue.length !== 0 ? (
 					<span>{selectedValue}</span>
