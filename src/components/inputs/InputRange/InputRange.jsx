@@ -1,8 +1,12 @@
 import React from "react";
 import { useField } from "formik";
 
-const InputRange = ({ label, min, max, step, ...props }) => {
+const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 	const [field] = useField({ ...props, type: "range" });
+
+	const handleInput = () => {
+		handleValue(field.value);
+	};
 
 	return (
 		<div className="mr-8">
@@ -18,6 +22,9 @@ const InputRange = ({ label, min, max, step, ...props }) => {
 				{...field}
 				{...props}
 				className="w-full"
+				onInput={(e) => {
+					handleInput(e);
+				}}
 			/>
 		</div>
 	);
