@@ -20,32 +20,32 @@ const Material = ({ nextStep, prevStep }) => {
 
 	const dispatch = useDispatch();
 
-	const handleWallMaterialValue = (e) => {
+	const handleWallMaterialValue = (v) => {
 		// setWallMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				wallMaterial: e.target.value,
+				wallMaterial: v,
 			})
 		);
 	};
 
-	const handleCeilingMaterialValue = (e) => {
+	const handleCeilingMaterialValue = (v) => {
 		// setCeilingMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				ceilingMaterial: e.target.value,
+				ceilingMaterial: v,
 			})
 		);
 	};
 
-	const handleFloorMaterialValue = (e) => {
+	const handleFloorMaterialValue = (v) => {
 		// setFloorMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
-				floorMaterial: e.target.value,
+				floorMaterial: v,
 			})
 		);
 	};
@@ -74,9 +74,7 @@ const Material = ({ nextStep, prevStep }) => {
 							min=".2"
 							max=".7"
 							step=".05"
-							handleValue={(e) => {
-								handleWallMaterialValue(e);
-							}}
+							handleValue={handleWallMaterialValue}
 						/>
 
 						<InputRange
@@ -85,9 +83,7 @@ const Material = ({ nextStep, prevStep }) => {
 							min=".2"
 							max=".7"
 							step=".05"
-							handleValue={(e) => {
-								handleCeilingMaterialValue(e);
-							}}
+							handleValue={handleCeilingMaterialValue}
 						/>
 						<InputRange
 							name="floorMaterial"
@@ -95,9 +91,7 @@ const Material = ({ nextStep, prevStep }) => {
 							min=".2"
 							max=".7"
 							step=".05"
-							handleValue={(e) => {
-								handleFloorMaterialValue(e);
-							}}
+							handleValue={handleFloorMaterialValue}
 						/>
 						<InputSelect
 							name="glassMaterial"
