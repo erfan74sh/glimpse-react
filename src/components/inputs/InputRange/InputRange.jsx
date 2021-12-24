@@ -9,7 +9,7 @@ const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 	};
 
 	return (
-		<div className="mr-8">
+		<div className="">
 			<div className="flex justify-between">
 				<label>{label}</label>
 				<span>{field.value}</span>
