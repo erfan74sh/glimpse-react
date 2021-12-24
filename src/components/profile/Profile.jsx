@@ -5,7 +5,7 @@ import AvatarImg from "../../assets/avatars/avatar-01.png";
 const Profile = () => {
 	return (
 		<button type="button" className="flex gap-x-6 items-center">
-			<span className="text-xl">User name</span>
+			<span className="text-lg">User name</span>
 			<img src={AvatarImg} alt="avatr" className="w-10 h-10 object-cover" />
 		</button>
 	);
