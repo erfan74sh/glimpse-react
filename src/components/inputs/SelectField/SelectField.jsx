@@ -4,17 +4,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-const DropdownRadio = ({ children, ...props }) => {
+const DropdownRadio = ({ handleValue, children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
 		<label className="block cursor-pointer">
-			<input type="radio" {...field} {...props} className="hidden" />
+			<input
+				type="radio"
+				{...field}
+				{...props}
+				className="hidden"
+				onInput={(e) => handleValue(e.target.value)}
+			/>
 			{children}
 		</label>
 	);
 };
 
-const SelectField = ({ selectOptions, name, label, placeholder }) => {
+const SelectField = ({
+	selectOptions,
+	name,
+	label,
+	placeholder,
+	handleValue,
+}) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 	const { values, errors, touched } = useFormikContext();
 	return (
@@ -49,7 +61,9 @@ const SelectField = ({ selectOptions, name, label, placeholder }) => {
 				</span>
 			)}
 			<ul
-				onChange={() => setShowDropdown(false)}
+				onChange={() => {
+					setShowDropdown(false);
+				}}
 				className={`${
 					showDropdown ? "flex" : "hidden"
 				} flex-col absolute -bottom-1 transform translate-y-full w-full p-2 px-3 z-10 rounded-md bg-white shadow-full-sm`}
@@ -60,7 +74,11 @@ const SelectField = ({ selectOptions, name, label, placeholder }) => {
 							key={idx}
 							className={`py-1 transition text-gray-500 hover:text-gray-900`}
 						>
-							<DropdownRadio name={name} value={option.label}>
+							<DropdownRadio
+								name={name}
+								value={option.label}
+								handleValue={handleValue}
+							>
 								{option.label}
 							</DropdownRadio>
 						</li>
