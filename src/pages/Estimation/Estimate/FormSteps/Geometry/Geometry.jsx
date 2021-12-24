@@ -57,15 +57,15 @@ const Geometry = ({ nextStep }) => {
 			})
 		);
 	};
-	// const handleShadingTypeValue = (e) => {
-	// 	// setShadingType(e.target.dataset.value);
-	// 	dispatch(
-	// 		updateData({
-	// 			...data,
-	// 			shadingType: e.target.dataset.value,
-	// 		})
-	// 	);
-	// };
+	const handleShadingTypeValue = (v) => {
+		// setShadingType(e.target.dataset.value);
+		dispatch(
+			updateData({
+				...data,
+				shadingType: v,
+			})
+		);
+	};
 
 	const shadingOptions = [
 		{ label: "vertical" },
@@ -118,6 +118,7 @@ const Geometry = ({ nextStep }) => {
 							selectOptions={shadingOptions}
 							label="shading type"
 							placeholder="choose one type"
+							handleValue={handleShadingTypeValue}
 						/>
 					</fieldset>
 				</Form>
