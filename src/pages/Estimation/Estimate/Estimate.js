@@ -61,7 +61,12 @@ const Estimate = () => {
 					</h2>
 					<div className="">
 						<div className="w-full px-10 h-96">
-							<Model3D xDim={inputData.xDim} yDim={inputData.yDim} />
+							<Model3D
+								xDim={inputData.xDim}
+								yDim={inputData.yDim}
+								wwrNorth={inputData.wwrNorth}
+								wwrSouth={inputData.wwrSouth}
+							/>
 						</div>
 					</div>
 					<button
