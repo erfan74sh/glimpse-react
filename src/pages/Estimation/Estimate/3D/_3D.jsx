@@ -84,7 +84,7 @@ const ShaderType1 = ({ xDim, yDim, height }) => {
 	);
 };
 
-const _3D = ({ xDim, yDim, wwrNorth, wwrSouth }) => {
+const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 	return (
 		<Canvas
 			colorManagement
@@ -109,11 +109,13 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth }) => {
 			</TransformControls> */}
 			{wwrSouth !== 0 && <Window1 xDim={xDim} yDim={yDim} />}
 			<Window2 xDim={xDim} yDim={yDim} />
-			<group>
-				<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
-				<ShaderType1 xDim={xDim} yDim={yDim} height={0.06} />
-				<ShaderType1 xDim={xDim} yDim={yDim} height={-0.06} />
-			</group>
+			{shadingType === "louver" && (
+				<group>
+					<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
+					<ShaderType1 xDim={xDim} yDim={yDim} height={0.06} />
+					<ShaderType1 xDim={xDim} yDim={yDim} height={-0.06} />
+				</group>
+			)}
 			<OrbitControls />
 		</Canvas>
 	);
