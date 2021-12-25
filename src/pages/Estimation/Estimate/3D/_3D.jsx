@@ -109,7 +109,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			</TransformControls> */}
 			{wwrSouth !== 0 && (
 				<group>
-					<Window1 xDim={xDim} yDim={yDim} />
+					<Window1 xDim={xDim} yDim={yDim} wwrSouth={wwrSouth} />
 					{shadingType === "louver" && (
 						<group>
 							<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
