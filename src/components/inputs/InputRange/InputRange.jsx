@@ -9,9 +9,13 @@ const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 	};
 
 	return (
-		<div className="">
+		<div className="relative">
 			<div className="flex justify-between">
-				<label>{label}</label>
+				<label
+					className={`${meta.touched && meta.error ? "text-red-600" : ""}`}
+				>
+					{label}
+				</label>
 				<span>{field.value}</span>
 			</div>
 			<input
@@ -26,7 +30,11 @@ const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 					handleInput(e);
 				}}
 			/>
-			{meta.touched && meta.error && <div>{meta.error}</div>}
+			{meta.touched && meta.error && (
+				<span className="absolute bottom-0 left-1 transform translate-y-full text-xs text-red-600">
+					{meta.error}
+				</span>
+			)}
 		</div>
 	);
 };
