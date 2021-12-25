@@ -38,7 +38,7 @@ const WindowSouth = ({ xDim, yDim, dimentions }) => {
 	);
 };
 
-const WindowNorth = ({ xDim, yDim }) => {
+const WindowNorth = ({ xDim, yDim, dimentions }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh
@@ -85,6 +85,10 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 	const southWindowDimentions = {
 		width: (xDim / 10) * (wwrSouth / 100),
+		height: (3.5 / 10) * (3 / 5),
+	};
+	const northWindowDimentions = {
+		width: (xDim / 10) * (wwrNorth / 100),
 		height: (3.5 / 10) * (3 / 5),
 	};
 	return (
@@ -141,7 +145,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					)}
 				</group>
 			)}
-			<WindowNorth xDim={xDim} yDim={yDim} />
+			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
 			<OrbitControls />
 		</Canvas>
 	);
