@@ -2,7 +2,7 @@ import React from "react";
 import { useField } from "formik";
 
 const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
-	const [field] = useField({ ...props, type: "range" });
+	const [field, meta] = useField({ ...props, type: "range" });
 
 	const handleInput = (e) => {
 		handleValue(Number(e.target.value));
@@ -26,6 +26,7 @@ const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 					handleInput(e);
 				}}
 			/>
+			{meta.touched && meta.error && <div>{meta.error}</div>}
 		</div>
 	);
 };
