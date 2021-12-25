@@ -24,13 +24,14 @@ const Box = ({ xDim, yDim, position, rotation }) => {
 	);
 };
 
-const Window1 = ({ xDim, yDim }) => {
+const Window1 = ({ xDim, yDim, dimentions }) => {
 	const mesh = useRef(null);
+
 	return (
 		<mesh ref={mesh} position={[0, 0, yDim / 10 / 2 + 0.001]}>
 			<planeBufferGeometry
 				attach="geometry"
-				args={[(xDim / 10 / 4) * 3, (3.5 / 10 / 5) * 3]}
+				args={[dimentions.width, dimentions.height]}
 			/>
 			<meshStandardMaterial attach="material" color="white" />
 		</mesh>
@@ -85,6 +86,10 @@ const ShaderType1 = ({ xDim, yDim, height }) => {
 };
 
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
+	const southWindowDimentions = {
+		width: (xDim / 10) * (wwrSouth / 100),
+		height: (3.5 / 10) * (3 / 5),
+	};
 	return (
 		<Canvas
 			colorManagement
@@ -109,7 +114,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			</TransformControls> */}
 			{wwrSouth !== 0 && (
 				<group>
-					<Window1 xDim={xDim} yDim={yDim} wwrSouth={wwrSouth} />
+					<Window1 xDim={xDim} yDim={yDim} dimentions={southWindowDimentions} />
 					{shadingType === "louver" && (
 						<group>
 							<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
