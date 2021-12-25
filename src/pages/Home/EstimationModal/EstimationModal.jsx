@@ -112,12 +112,14 @@ const StepOne = ({ nextStep, formData }) => {
 					name="estimationCategory"
 					label="estimation category"
 					placeholder="choose category"
+					handleValue={() => null}
 				/>
 				<SelectField
 					selectOptions={estimationScale}
 					name="estimationScale"
 					label="estimation scale"
 					placeholder="choose scale"
+					handleValue={() => null}
 				/>
 				<ChooseOrCreateProject />
 				<ProjectName />
