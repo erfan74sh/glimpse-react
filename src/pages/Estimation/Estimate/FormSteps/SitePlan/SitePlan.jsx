@@ -60,67 +60,65 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	return (
-		<>
-			<Formik initialValues={data}>
-				<Form>
-					<fieldset className="flex flex-col gap-y-9 pr-10">
-						<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-							site plan
-						</legend>
-						<InputRange
-							name="southNeighborDist"
-							label="South neighbor distance"
-							min="2"
-							max="8"
-							step="1"
-							handleValue={handleSouthNeighborDistValue}
-						/>
-						<InputRange
-							name="southNeighborHeight"
-							label="South neighbor height"
-							min="4"
-							max="10"
-							step="1"
-							handleValue={handleSouthNeighborHeightValue}
-						/>
-						<InputRange
-							name="northNeighborDist"
-							label="North neighbor distance"
-							min="2"
-							max="8"
-							step="1"
-							handleValue={handleNorthNeighborDistValue}
-						/>
-						<InputRange
-							name="northNeighborHeight"
-							label="North neighbor height"
-							min="4"
-							max="10"
-							step="1"
-							handleValue={handleNorthNeighborHeightValue}
-						/>
-					</fieldset>
-				</Form>
-			</Formik>
-			<section className="flex justify-center gap-x-4 mt-auto mr-8 pr-10">
-				<button
-					type="button"
-					className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
-					value="material"
-					onClick={prevStep}
-				>
-					prev <span className="text-xs lowercase">(material)</span>
-				</button>
-				<button
-					type="button"
-					className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
-					onClick={nextStep}
-					value="review"
-				>
-					next <span className="text-xs lowercase">(review)</span>
-				</button>
-			</section>
-		</>
+		<Formik initialValues={data}>
+			<Form className="h-full flex flex-col">
+				<fieldset className="flex flex-col gap-y-9 pr-10">
+					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+						site plan
+					</legend>
+					<InputRange
+						name="southNeighborDist"
+						label="South neighbor distance"
+						min="2"
+						max="8"
+						step="1"
+						handleValue={handleSouthNeighborDistValue}
+					/>
+					<InputRange
+						name="southNeighborHeight"
+						label="South neighbor height"
+						min="4"
+						max="10"
+						step="1"
+						handleValue={handleSouthNeighborHeightValue}
+					/>
+					<InputRange
+						name="northNeighborDist"
+						label="North neighbor distance"
+						min="2"
+						max="8"
+						step="1"
+						handleValue={handleNorthNeighborDistValue}
+					/>
+					<InputRange
+						name="northNeighborHeight"
+						label="North neighbor height"
+						min="4"
+						max="10"
+						step="1"
+						handleValue={handleNorthNeighborHeightValue}
+					/>
+				</fieldset>
+				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+					<button
+						type="button"
+						className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
+						value="material"
+						onClick={prevStep}
+					>
+						prev <span className="text-xs lowercase">(material)</span>
+					</button>
+					<button
+						type="button"
+						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						onClick={nextStep}
+						value="review"
+					>
+						next <span className="text-xs lowercase">(review)</span>
+					</button>
+				</section>
+			</Form>
+		</Formik>
 	);
 };
 
