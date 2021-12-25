@@ -84,7 +84,7 @@ const ShaderType1 = ({ xDim, yDim, height }) => {
 	);
 };
 
-const _3D = ({ xDim, yDim }) => {
+const _3D = ({ xDim, yDim, wwrNorth, wwrSouth }) => {
 	return (
 		<Canvas
 			colorManagement
@@ -107,7 +107,7 @@ const _3D = ({ xDim, yDim }) => {
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
-			<Window1 xDim={xDim} yDim={yDim} />
+			{wwrSouth !== 0 && <Window1 xDim={xDim} yDim={yDim} />}
 			<Window2 xDim={xDim} yDim={yDim} />
 			<group>
 				<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
