@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form } from "formik";
+import * as yup from "yup";
 // state
 import {
 	selectInput,
@@ -67,6 +68,28 @@ const SitePlan = ({ nextStep, prevStep }) => {
 				console.log(values);
 				nextStep();
 			}}
+			validationSchema={yup.object({
+				southNeighborDist: yup
+					.number()
+					.min(2, "must be between 2 and 8")
+					.max(8, "must be between 2 and 8")
+					.required("required"),
+				southNeighborHeight: yup
+					.number()
+					.min(4, "must be between 4 and 10")
+					.max(10, "must be between 4 and 10")
+					.required("required"),
+				northNeighborDist: yup
+					.number()
+					.min(2, "must be between 2 and 8")
+					.max(8, "must be between 2 and 8")
+					.required("required"),
+				northNeighborHeight: yup
+					.number()
+					.min(4, "must be between 4 and 10")
+					.max(10, "must be between 4 and 10")
+					.required("required"),
+			})}
 		>
 			<Form className="h-full flex flex-col">
 				<fieldset className="flex flex-col gap-y-9 pr-10">
