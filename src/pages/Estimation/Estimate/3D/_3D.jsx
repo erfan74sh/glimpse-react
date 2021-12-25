@@ -107,15 +107,19 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
-			{wwrSouth !== 0 && <Window1 xDim={xDim} yDim={yDim} />}
-			<Window2 xDim={xDim} yDim={yDim} />
-			{shadingType === "louver" && (
+			{wwrSouth !== 0 && (
 				<group>
-					<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
-					<ShaderType1 xDim={xDim} yDim={yDim} height={0.06} />
-					<ShaderType1 xDim={xDim} yDim={yDim} height={-0.06} />
+					<Window1 xDim={xDim} yDim={yDim} />
+					{shadingType === "louver" && (
+						<group>
+							<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
+							<ShaderType1 xDim={xDim} yDim={yDim} height={0.06} />
+							<ShaderType1 xDim={xDim} yDim={yDim} height={-0.06} />
+						</group>
+					)}
 				</group>
 			)}
+			<Window2 xDim={xDim} yDim={yDim} />
 			<OrbitControls />
 		</Canvas>
 	);
