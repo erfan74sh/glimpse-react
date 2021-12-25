@@ -107,8 +107,8 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			orthographic
 		>
 			<ambientLight intensity={0.5} />
-			<directionalLight position={[1, 10, 5]} intensity={1.2} />
-			<directionalLight position={[-1, 10, -5]} intensity={1.2} />
+			<directionalLight position={[1, 10, 5]} intensity={1.5} />
+			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 			<Box xDim={xDim} yDim={yDim} />
 			<Roof xDim={xDim} yDim={yDim} />
 
