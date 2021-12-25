@@ -2,16 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	data: {
-		xDim: 8,
+		xDim: 2,
 		yDim: 3,
 		rotation: 0,
-		wwrNorth: 0,
-		wwrSouth: 0,
+		wwrNorth: 100,
+		wwrSouth: 100,
 		shadingType: "",
 		wallMaterial: 0,
 		ceilingMaterial: 0,
 		floorMaterial: 0,
-		glassMaterial: 0.58,
+		glassMaterial: 0,
 		southNeighborDist: 3,
 		southNeighborHeight: 4,
 		northNeighborDist: 3,
