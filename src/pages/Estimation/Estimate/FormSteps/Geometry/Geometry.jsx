@@ -88,6 +88,11 @@ const Geometry = ({ nextStep }) => {
 					.min(8, "x-dimention must be equal or greater than 8")
 					.max(24, "x-dimention must be equal or less than 24")
 					.required("required"),
+				yDim: yup
+					.number()
+					.min(3, "y-dimention must be between 3 and 10")
+					.max(10, "y-dimention must be between 3 and 10")
+					.required("required"),
 			})}
 		>
 			<Form className="h-full flex flex-col">
