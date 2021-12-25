@@ -24,7 +24,7 @@ const Box = ({ xDim, yDim, position, rotation }) => {
 	);
 };
 
-const Window1 = ({ xDim, yDim, dimentions }) => {
+const WindowSouth = ({ xDim, yDim, dimentions }) => {
 	const mesh = useRef(null);
 
 	return (
@@ -38,13 +38,13 @@ const Window1 = ({ xDim, yDim, dimentions }) => {
 	);
 };
 
-const Window2 = ({ xDim, yDim }) => {
+const WindowNorth = ({ xDim, yDim }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh
 			ref={mesh}
-			position={[xDim / 10 / 2 + 0.001, 0, 0]}
-			rotation={[0, Math.PI / 2, 0]}
+			position={[0, 0, -yDim / 10 / 2 - 0.001]}
+			rotation={[0, Math.PI, 0]}
 		>
 			<planeBufferGeometry
 				attach="geometry"
@@ -112,7 +112,11 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			</TransformControls> */}
 			{wwrSouth !== 0 && (
 				<group>
-					<Window1 xDim={xDim} yDim={yDim} dimentions={southWindowDimentions} />
+					<WindowSouth
+						xDim={xDim}
+						yDim={yDim}
+						dimentions={southWindowDimentions}
+					/>
 					{shadingType === "louver" && (
 						<group>
 							<ShaderType1
@@ -137,7 +141,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					)}
 				</group>
 			)}
-			<Window2 xDim={xDim} yDim={yDim} />
+			<WindowNorth xDim={xDim} yDim={yDim} />
 			<OrbitControls />
 		</Canvas>
 	);
