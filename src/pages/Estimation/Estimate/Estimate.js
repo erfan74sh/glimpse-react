@@ -49,9 +49,7 @@ const Estimate = () => {
 			</header>
 			<main className="flex">
 				<section className="w-2/5 pr-10 relative">
-					<div id="energy-and-comfort" className=" h-full flex flex-col">
-						{steps[step]}
-					</div>
+					{steps[step]}
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
 						<ProgressBar step={step} />
 					</div>
