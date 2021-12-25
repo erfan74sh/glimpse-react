@@ -7,8 +7,8 @@ import {
 	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // components
-import InputSelect from "../../../../../components/inputs/InputSelect";
 import InputRange from "../../../../../components/inputs/InputRange";
+import SelectField from "../../../../../components/inputs/SelectField/SelectField";
 
 const Material = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
@@ -50,15 +50,22 @@ const Material = ({ nextStep, prevStep }) => {
 		);
 	};
 
-	const handleGlassMaterialValue = (e) => {
+	const handleGlassMaterialValue = (v) => {
 		// setGlassMaterial(e.target.dataset.value);
 		dispatch(
 			updateData({
 				...data,
-				glassMaterial: e.target.dataset.value,
+				glassMaterial: v,
 			})
 		);
 	};
+
+	const glassMaterialOptions = [
+		{ label: 0.58 },
+		{ label: 0.72 },
+		{ label: 0.8 },
+		{ label: 0.9 },
+	];
 
 	return (
 		<>
@@ -93,13 +100,12 @@ const Material = ({ nextStep, prevStep }) => {
 							step=".05"
 							handleValue={handleFloorMaterialValue}
 						/>
-						<InputSelect
+						<SelectField
 							name="glassMaterial"
-							placeHolder="Glass-material"
-							items={["0.58", "0.72", "0.8", "0.9"]}
-							handleValue={(e) => {
-								handleGlassMaterialValue(e);
-							}}
+							selectOptions={glassMaterialOptions}
+							label="Glass-material"
+							placeholder="choose one type"
+							handleValue={handleGlassMaterialValue}
 						/>
 					</fieldset>
 				</Form>
