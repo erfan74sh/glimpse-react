@@ -69,7 +69,14 @@ const Material = ({ nextStep, prevStep }) => {
 
 	return (
 		<>
-			<Formik initialValues={data}>
+			<Formik
+				initialValues={data}
+				onSubmit={(values) => {
+					// todo: edit submit function
+					console.log(values);
+					nextStep();
+				}}
+			>
 				<Form className="h-full flex flex-col">
 					<fieldset className="flex flex-col gap-y-9 pr-10">
 						<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
@@ -117,10 +124,8 @@ const Material = ({ nextStep, prevStep }) => {
 							prev <span className="text-xs lowercase">(geometry)</span>
 						</button>
 						<button
-							type="button"
+							type="submit"
 							className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
-							value="site plan"
-							onClick={nextStep}
 						>
 							next <span className="text-xs lowercase">(site plan)</span>
 						</button>
