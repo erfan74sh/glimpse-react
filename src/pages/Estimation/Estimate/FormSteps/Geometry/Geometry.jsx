@@ -93,6 +93,16 @@ const Geometry = ({ nextStep }) => {
 					.min(3, "y-dimention must be between 3 and 10")
 					.max(10, "y-dimention must be between 3 and 10")
 					.required("required"),
+				wwrNorth: yup
+					.number()
+					.min(0, "wwr-north must be between 0 and 80")
+					.max(80, "wwr-north must be between 0 and 80")
+					.required("required"),
+				wwrSouth: yup
+					.number()
+					.min(0, "wwr-south must be between 0 and 80")
+					.max(80, "wwr-south must be between 0 and 80")
+					.required("required"),
 				shadingType: yup
 					.string()
 					.oneOf(["vertical", "horizantal", "louver"])
