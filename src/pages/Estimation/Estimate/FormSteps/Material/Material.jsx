@@ -1,6 +1,7 @@
 import React from "react";
-import { Formik, Form } from "formik";
 import { useDispatch, useSelector } from "react-redux";
+import { Formik, Form } from "formik";
+import * as yup from "yup";
 // state
 import {
 	selectInput,
@@ -76,6 +77,27 @@ const Material = ({ nextStep, prevStep }) => {
 					console.log(values);
 					nextStep();
 				}}
+				validationSchema={yup.object({
+					wallMaterial: yup
+						.number()
+						.min(0.2, "must be between 0.2 and 0.7")
+						.max(0.7, "")
+						.required("required"),
+					ceilingMaterial: yup
+						.number()
+						.min(0.2, "must be between 0.2 and 0.7")
+						.max(0.7, "")
+						.required("required"),
+					floorMaterial: yup
+						.number()
+						.min(0.2, "must be between 0.2 and 0.7")
+						.max(0.7, "")
+						.required("required"),
+					glassMaterial: yup
+						.number()
+						.oneOf([0.58, 0.72, 0.8, 0.9], "choose one")
+						.required("required"),
+				})}
 			>
 				<Form className="h-full flex flex-col">
 					<fieldset className="flex flex-col gap-y-9 pr-10">
