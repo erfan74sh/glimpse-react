@@ -48,7 +48,7 @@ const WindowNorth = ({ xDim, yDim, dimentions }) => {
 		>
 			<planeBufferGeometry
 				attach="geometry"
-				args={[(yDim / 10 / 4) * 3, (3.5 / 10 / 5) * 1.5]}
+				args={[dimentions.width, dimentions.height]}
 			/>
 			<meshStandardMaterial attach="material" color="white" />
 		</mesh>
