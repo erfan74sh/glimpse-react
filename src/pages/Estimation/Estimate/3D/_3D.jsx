@@ -68,7 +68,7 @@ const Roof = ({ xDim, yDim }) => {
 	);
 };
 
-const ShaderType1 = ({ xDim, yDim, height }) => {
+const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh
@@ -76,10 +76,7 @@ const ShaderType1 = ({ xDim, yDim, height }) => {
 			rotation={[-Math.PI / 2, 0, 0]}
 			position={[0, height, yDim / 10 / 2 + 0.05 / 2]}
 		>
-			<planeBufferGeometry
-				attach="geometry"
-				args={[(xDim / 10 / 4) * 3, 0.05]}
-			/>
+			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.05]} />
 			<meshStandardMaterial attach="material" color="gray" />
 		</mesh>
 	);
@@ -117,9 +114,24 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					<Window1 xDim={xDim} yDim={yDim} dimentions={southWindowDimentions} />
 					{shadingType === "louver" && (
 						<group>
-							<ShaderType1 xDim={xDim} yDim={yDim} height={0} />
-							<ShaderType1 xDim={xDim} yDim={yDim} height={0.06} />
-							<ShaderType1 xDim={xDim} yDim={yDim} height={-0.06} />
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={0}
+								dimentions={southWindowDimentions}
+							/>
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={0.06}
+								dimentions={southWindowDimentions}
+							/>
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={-0.06}
+								dimentions={southWindowDimentions}
+							/>
 						</group>
 					)}
 				</group>
