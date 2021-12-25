@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
@@ -15,6 +15,7 @@ import "./Estimate.scss";
 
 const Estimate = () => {
 	const inputData = useSelector(selectInput);
+	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
 	const handleNextStep = () => {
@@ -28,6 +29,8 @@ const Estimate = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// todo: send data to server
+		console.log(inputData);
+		navigate("/estimation/result");
 	};
 
 	const steps = [
@@ -46,11 +49,7 @@ const Estimate = () => {
 			</header>
 			<main className="flex">
 				<section className="w-2/5 pr-10 relative">
-					<div
-						id="energy-and-comfort"
-						className=" h-full flex flex-col"
-						onSubmit={handleSubmit}
-					>
+					<div id="energy-and-comfort" className=" h-full flex flex-col">
 						{steps[step]}
 					</div>
 					<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
@@ -69,16 +68,12 @@ const Estimate = () => {
 					<button
 						type="submit"
 						form="energy-and-comfort"
+						onClick={(e) => handleSubmit(e)}
 						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
 							step !== 3 && "opacity-25 pointer-events-none"
 						}`}
 					>
-						<Link
-							to="result"
-							className={`${step !== 3 && "pointer-events-none"}`}
-						>
-							start estimate
-						</Link>
+						start estimate
 					</button>
 				</section>
 			</main>
