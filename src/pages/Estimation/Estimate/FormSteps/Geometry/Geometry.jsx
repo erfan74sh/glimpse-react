@@ -133,7 +133,7 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="wwrNorth"
 						label="WWR-North"
-						min="10"
+						min="0"
 						max="80"
 						step="10"
 						handleValue={handleWwrNorthValue}
@@ -141,7 +141,7 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="wwrSouth"
 						label="WWR-South"
-						min="10"
+						min="0"
 						max="80"
 						step="10"
 						handleValue={handleWwrSouthValue}
