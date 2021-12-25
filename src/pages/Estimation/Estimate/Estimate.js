@@ -41,10 +41,11 @@ const Estimate = () => {
 	];
 
 	return (
-		<main className=" px-24 py-16" id="estimate__main">
-			<header className="mb-14">
-				<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
-					energy and comfort
+		<main className=" px-24 py-10" id="estimate__main">
+			<header className="mb-10">
+				<h1 className="flex justify-between pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-2xl font-bold uppercase">
+					<span>energy and comfort</span>
+					<span>zone name</span>
 				</h1>
 			</header>
 			<main className="flex">
