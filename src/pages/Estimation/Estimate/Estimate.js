@@ -66,6 +66,7 @@ const Estimate = () => {
 								yDim={inputData.yDim}
 								wwrNorth={inputData.wwrNorth}
 								wwrSouth={inputData.wwrSouth}
+								shadingType={inputData.shadingType}
 							/>
 						</div>
 					</div>
