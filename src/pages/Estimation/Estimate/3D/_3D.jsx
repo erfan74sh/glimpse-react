@@ -82,6 +82,16 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 	);
 };
 
+const ShaderType2 = ({ yDim, dimentions }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[0, 0, yDim / 10 / 2 + 0.05 / 2]}>
+			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.05]} />
+			<meshStandardMaterial attach="material" color="gray" />
+		</mesh>
+	);
+};
+
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 	const southWindowDimentions = {
 		width: (xDim / 10) * (wwrSouth / 100),
@@ -145,6 +155,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					)}
 				</group>
 			)}
+			<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
 			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
 			<OrbitControls />
 		</Canvas>
