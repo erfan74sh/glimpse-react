@@ -99,7 +99,7 @@ const ShaderType2 = ({ yDim, dimentions }) => {
 const ShaderType3 = ({ dimentions }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[1, 1, 1]}>
+		<mesh ref={mesh} position={[dimentions.width / 2, 1, 1]}>
 			<boxBufferGeometry
 				attach="geometry"
 				args={[0.01, dimentions.height, 0.1]}
