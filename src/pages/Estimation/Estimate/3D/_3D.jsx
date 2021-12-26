@@ -74,9 +74,9 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 		<mesh
 			ref={mesh}
 			rotation={[-Math.PI / 2, 0, 0]}
-			position={[0, height, yDim / 10 / 2 + 0.05 / 2]}
+			position={[0, height, yDim / 10 / 2 + 0.03 / 2]}
 		>
-			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.05]} />
+			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.03]} />
 			<meshStandardMaterial attach="material" color="gray" />
 		</mesh>
 	);
