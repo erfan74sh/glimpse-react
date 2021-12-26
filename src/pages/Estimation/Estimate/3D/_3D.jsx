@@ -102,7 +102,7 @@ const ShaderType3 = ({ dimentions }) => {
 		<mesh ref={mesh} position={[1, 1, 1]}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[0.1, 0.1, dimentions.height]}
+				args={[0.01, dimentions.height, 0.1]}
 			/>
 			<meshStandardMaterial attach="material" color="gray" />
 		</mesh>
