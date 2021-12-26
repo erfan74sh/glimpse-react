@@ -70,8 +70,8 @@ const Geometry = ({ nextStep }) => {
 
 	const shadingOptions = [
 		{ label: "vertical" },
-		{ label: "horizantal" },
-		{ label: "louver" },
+		{ label: "horizontal" },
+		{ label: "horizontal louvre" },
 	];
 
 	return (
