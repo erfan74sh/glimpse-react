@@ -85,8 +85,12 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 const ShaderType2 = ({ yDim, dimentions }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[0, 0, yDim / 10 / 2 + 0.05 / 2]}>
-			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.05]} />
+		<mesh
+			ref={mesh}
+			position={[0, dimentions.height / 2, yDim / 10 / 2 + 0.1 / 2]}
+			rotation={[-Math.PI / 2, 0, 0]}
+		>
+			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.1]} />
 			<meshStandardMaterial attach="material" color="gray" />
 		</mesh>
 	);
@@ -153,6 +157,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 							/>
 						</group>
 					)}
+					{/* {shadingType === 'horizantal' && ()} */}
 				</group>
 			)}
 			<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
