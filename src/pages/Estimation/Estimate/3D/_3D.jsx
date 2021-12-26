@@ -163,7 +163,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 						yDim={yDim}
 						dimentions={southWindowDimentions}
 					/>
-					{shadingType === "louver" && (
+					{shadingType === "horizontal louvre" && (
 						<group>
 							<ShaderType1
 								xDim={xDim}
@@ -185,7 +185,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 							/>
 						</group>
 					)}
-					{shadingType === "horizantal" && (
+					{shadingType === "horizontal" && (
 						<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
 					)}
 					{shadingType === "vertical" && (
