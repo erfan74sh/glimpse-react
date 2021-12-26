@@ -157,10 +157,11 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 							/>
 						</group>
 					)}
-					{/* {shadingType === 'horizantal' && ()} */}
+					{shadingType === "horizantal" && (
+						<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
+					)}
 				</group>
 			)}
-			<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
 			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
 			<OrbitControls />
 		</Canvas>
