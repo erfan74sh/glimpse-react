@@ -105,7 +105,7 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				shadingType: yup
 					.string()
-					.oneOf(["vertical", "horizantal", "louver"])
+					.oneOf(["vertical", "horizontal", "horizontal louvre"])
 					.required("pick one"),
 			})}
 		>
