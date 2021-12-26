@@ -96,7 +96,7 @@ const ShaderType2 = ({ yDim, dimentions }) => {
 	);
 };
 
-const ShaderType3 = ({ dimentions }) => {
+const ShaderType3 = ({ yDim, dimentions }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh ref={mesh} position={[dimentions.width / 2, 1, 1]}>
@@ -175,7 +175,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					)}
 				</group>
 			)}
-			<ShaderType3 dimentions={southWindowDimentions} />
+			<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
 			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
 			<OrbitControls />
 		</Canvas>
