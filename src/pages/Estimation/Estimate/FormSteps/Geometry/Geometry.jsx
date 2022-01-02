@@ -122,11 +122,8 @@ const Geometry = ({ nextStep }) => {
 							max="24"
 							step="0.5"
 							handleValue={handleXDimValue}
+							description="this is description"
 						/>
-						<div>
-							<span>?</span>
-							<span>description</span>
-						</div>
 					</div>
 					<InputRange
 						name="yDim"
