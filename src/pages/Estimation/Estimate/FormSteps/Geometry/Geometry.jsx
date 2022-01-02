@@ -132,6 +132,7 @@ const Geometry = ({ nextStep }) => {
 						max="10"
 						step="0.5"
 						handleValue={handleYDimValue}
+						moreInfo="this is description"
 					/>
 					<InputRange
 						name="wwrNorth"
@@ -140,6 +141,7 @@ const Geometry = ({ nextStep }) => {
 						max="80"
 						step="10"
 						handleValue={handleWwrNorthValue}
+						moreInfo="this is description"
 					/>
 					<InputRange
 						name="wwrSouth"
@@ -148,6 +150,7 @@ const Geometry = ({ nextStep }) => {
 						max="80"
 						step="10"
 						handleValue={handleWwrSouthValue}
+						moreInfo="this is description"
 					/>
 					<SelectField
 						name="shadingType"
