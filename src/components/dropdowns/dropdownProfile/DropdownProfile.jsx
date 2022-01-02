@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ProfileIcon from "../../../assets/icons/Profile.svg";
 import ChargeIcon from "../../../assets/icons/charge.svg";
 import SignOutIcon from "../../../assets/icons/sign-out.svg";
+import ProjectHistory from "../../../assets/icons/project-history.png";
 
 const DropdownProfile = ({ showDropdown }) => {
 	return (
@@ -21,7 +22,7 @@ const DropdownProfile = ({ showDropdown }) => {
 			</li>
 			<li>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
-					<img src={ProfileIcon} alt="profile icon" className="w-6 h-auto" />
+					<img src={ProjectHistory} alt="profile icon" className="w-6 h-auto" />
 					<span>projects history</span>
 				</Link>
 			</li>
