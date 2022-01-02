@@ -25,14 +25,7 @@ const InputRange = ({
 					className={`${meta.touched && meta.error ? "text-red-600" : ""}`}
 				>
 					{label}
-					{moreInfo && (
-						<>
-							<span>!</span>
-							<span>
-								<MoreInfo moreInfo={moreInfo} />
-							</span>
-						</>
-					)}
+					{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 				</label>
 				<span>{field.value}</span>
 			</div>
