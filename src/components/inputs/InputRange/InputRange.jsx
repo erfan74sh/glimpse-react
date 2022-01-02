@@ -1,7 +1,15 @@
 import React from "react";
 import { useField } from "formik";
 
-const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
+const InputRange = ({
+	label,
+	min,
+	max,
+	step,
+	handleValue,
+	description,
+	...props
+}) => {
 	const [field, meta] = useField({ ...props, type: "range" });
 
 	const handleInput = (e) => {
@@ -15,6 +23,12 @@ const InputRange = ({ label, min, max, step, handleValue, ...props }) => {
 					className={`${meta.touched && meta.error ? "text-red-600" : ""}`}
 				>
 					{label}
+					{description && (
+						<>
+							<span>!</span>
+							<span>{description}</span>
+						</>
+					)}
 				</label>
 				<span>{field.value}</span>
 			</div>
