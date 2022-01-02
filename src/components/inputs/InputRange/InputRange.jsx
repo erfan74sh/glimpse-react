@@ -22,9 +22,11 @@ const InputRange = ({
 		<div className="relative">
 			<div className="flex justify-between">
 				<label
-					className={`${meta.touched && meta.error ? "text-red-600" : ""}`}
+					className={`${
+						meta.touched && meta.error ? "text-red-600" : ""
+					} flex items-center gap-x-1`}
 				>
-					{label}
+					<span>{label}</span>
 					{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 				</label>
 				<span>{field.value}</span>
