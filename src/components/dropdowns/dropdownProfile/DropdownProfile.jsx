@@ -20,10 +20,13 @@ const DropdownProfile = ({ showDropdown }) => {
 				</Link>
 			</li>
 			<li>
-				<Link
-					to="#"
-					className="flex gap-x-4 px-2 py-4 border-b-2 border-t-2 border-gray-300"
-				>
+				<Link to="#" className="flex gap-x-4 px-2 py-4">
+					<img src={ProfileIcon} alt="profile icon" />
+					<span>projects history</span>
+				</Link>
+			</li>
+			<li>
+				<Link to="#" className="flex gap-x-4 px-2 py-4">
 					<img src={ChargeIcon} alt="charge icon" />
 					<span>charge account</span>
 				</Link>
