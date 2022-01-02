@@ -114,14 +114,20 @@ const Geometry = ({ nextStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						geometry
 					</legend>
-					<InputRange
-						name="xDim"
-						label="X-Dimention"
-						min="8"
-						max="24"
-						step="0.5"
-						handleValue={handleXDimValue}
-					/>
+					<div>
+						<InputRange
+							name="xDim"
+							label="X-Dimention"
+							min="8"
+							max="24"
+							step="0.5"
+							handleValue={handleXDimValue}
+						/>
+						<div>
+							<span>?</span>
+							<span>description</span>
+						</div>
+					</div>
 					<InputRange
 						name="yDim"
 						label="Y-Dimention"
