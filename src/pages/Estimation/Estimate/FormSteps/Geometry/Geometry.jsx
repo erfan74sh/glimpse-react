@@ -122,7 +122,7 @@ const Geometry = ({ nextStep }) => {
 							max="24"
 							step="0.5"
 							handleValue={handleXDimValue}
-							description="this is description"
+							moreInfo="this is description"
 						/>
 					</div>
 					<InputRange
