@@ -87,6 +87,12 @@ const StepOne = ({ nextStep, formData }) => {
 		{ label: "structure" },
 		{ label: "energy and water" },
 	];
+	const buildingProgram = [
+		{ label: "office" },
+		{ label: "residential" },
+		{ label: "school" },
+		{ label: "hotel" },
+	];
 
 	return (
 		<Formik
@@ -136,7 +142,7 @@ const StepOne = ({ nextStep, formData }) => {
 				{/* <ProjectName /> */}
 				<Subset />
 				<SelectField
-					selectOptions={highPerformanceBuildings}
+					selectOptions={buildingProgram}
 					name="buildingProgram"
 					label="Building Program"
 					placeholder="choose program"
