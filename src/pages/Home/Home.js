@@ -25,7 +25,7 @@ const Home = () => {
 		<>
 			{showEstimateModal && (
 				<Modal
-					title="title here"
+					title="start estimation"
 					closeModal={() => setShowEstimateModal(false)}
 				>
 					<EstimationModal />
