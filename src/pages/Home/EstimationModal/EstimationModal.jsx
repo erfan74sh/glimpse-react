@@ -12,14 +12,18 @@ import ModalMap from "./ModalMap/ModalMap";
 // style
 import "./EstimationModal.scss";
 
-const Subset = ({ selectOptions }) => {
+const Subset = () => {
 	const { values } = useFormikContext();
+	console.log(values);
+	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
+	const energyWaterSubset = [{ label: "energy consumption" }];
+	const structureSubset = [{ label: "structure design" }];
 	return (
 		<SelectField
-			selectOptions={selectOptions}
-			name="buildingProgram"
-			label="Building Program"
-			placeholder="choose program"
+			selectOptions={ieqSubset}
+			name="subset"
+			label="Subset"
+			placeholder="choose category"
 			handleValue={() => null}
 		/>
 	);
@@ -78,9 +82,7 @@ const StepOne = ({ nextStep, formData }) => {
 		{ label: "structure" },
 		{ label: "energy and water" },
 	];
-	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
-	const energyWaterSubset = [{ label: "energy consumption" }];
-	const structureSubset = [{ label: "structure design" }];
+
 	return (
 		<Formik
 			initialValues={formData}
@@ -124,17 +126,17 @@ const StepOne = ({ nextStep, formData }) => {
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
-				<SelectField
-					selectOptions={ieqSubset}
-					name="subset"
-					label="Subset"
-					placeholder="choose category"
-					handleValue={() => null}
-				/>
 
 				{/* <ChooseOrCreateProject /> */}
 				{/* <ProjectName /> */}
-				<Subset selectOptions={ieqSubset} />
+				<Subset />
+				<SelectField
+					selectOptions={highPerformanceBuildings}
+					name="buildingProgram"
+					label="Building Program"
+					placeholder="choose program"
+					handleValue={() => null}
+				/>
 				<button
 					type="submit"
 					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
