@@ -4,7 +4,6 @@ import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
 
 // components
-import RadioBtn from "../../../components/inputs/RadioBtn";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
@@ -31,30 +30,6 @@ const Subset = () => {
 			placeholder="choose category"
 			handleValue={() => null}
 		/>
-	);
-};
-
-const ChooseOrCreateProject = () => {
-	const { values } = useFormikContext();
-	return (
-		<>
-			{values.estimationScale === "building" ||
-			values.estimationScale === "city" ? (
-				<div className="flex flex-col gap-y-1 capitalize">
-					<label className="normal-case">
-						Create new project or choose from previous ones
-					</label>
-					<div>
-						<RadioBtn name="newOrPrevProject" value="newProject">
-							new project
-						</RadioBtn>
-						<RadioBtn name="newOrPrevProject" value="prevProject">
-							prev project
-						</RadioBtn>
-					</div>
-				</div>
-			) : null}
-		</>
 	);
 };
 
