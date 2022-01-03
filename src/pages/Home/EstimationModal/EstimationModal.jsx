@@ -34,29 +34,6 @@ const Subset = () => {
 	);
 };
 
-const ProjectName = () => {
-	const { values } = useFormikContext();
-	return (
-		<>
-			{values.newOrPrevProject === "newProject" ? (
-				<TextField
-					type="text"
-					name="newProjectName"
-					label="project name"
-					placeholder="enter a name for your project"
-				/>
-			) : (
-				<TextField
-					type="text"
-					name="prevProjectName"
-					label="project name"
-					placeholder="choose from prev projects"
-				/>
-			)}
-		</>
-	);
-};
-
 const ChooseOrCreateProject = () => {
 	const { values } = useFormikContext();
 	return (
@@ -148,6 +125,12 @@ const StepOne = ({ nextStep, formData }) => {
 					placeholder="choose program"
 					handleValue={() => null}
 				/>
+				<TextField
+					type="text"
+					name="projectName"
+					label="project name"
+					placeholder="enter a name for your project"
+				/>
 				<button
 					type="submit"
 					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
@@ -211,7 +194,7 @@ const EstimationModal = () => {
 		highPerformanceBuildings: "",
 		subset: "",
 		buildingProgram: "",
-		newProjectName: "",
+		projectName: "",
 		location: "",
 	});
 
