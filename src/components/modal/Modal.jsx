@@ -15,7 +15,7 @@ const Modal = ({ closeModal, title, children }) => {
 					e.stopPropagation();
 				}}
 			>
-				<header className="pb-1 px-1 flex justify-between items-center border-b-2 border-gray-300">
+				<header className="pb-1 px-1 flex justify-between items-center border-b border-gray-400">
 					<h2 className="text-blue-550 font-medium capitalize">{title}</h2>
 					<button
 						className="w-8 text-gray-400 transition hover:text-gray-500"
