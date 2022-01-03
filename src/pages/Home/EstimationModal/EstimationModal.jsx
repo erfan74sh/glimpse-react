@@ -104,7 +104,7 @@ const StepOne = ({ nextStep, formData }) => {
 				projectName: yup.string().required("new projec name is required"),
 			})}
 		>
-			<Form className="flex flex-col gap-y-4 w-100">
+			<Form className="flex flex-col gap-y-4 w-96">
 				<SelectField
 					selectOptions={highPerformanceBuildings}
 					name="highPerformanceBuildings"
