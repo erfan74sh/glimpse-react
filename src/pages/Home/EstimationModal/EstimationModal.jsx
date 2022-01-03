@@ -85,10 +85,18 @@ const StepOne = ({ nextStep, formData }) => {
 						["IEQ", "structure", "energy and water"],
 						"pick from provided list"
 					),
-				estimationScale: yup
+				subset: yup
 					.string()
-					.required("choose scale")
-					.oneOf(["zone", "building", "city"], "pick from provided list"),
+					.required("choose subset")
+					.oneOf(
+						[
+							"visual comfort",
+							"thermal comfort",
+							"energy cunsumption",
+							"structure design",
+						],
+						"pick from provided list"
+					),
 				newProjectName: yup.string().when("newOrPrevProject", {
 					is: "newProject",
 					then: yup.string().required("new projec name is required"),
