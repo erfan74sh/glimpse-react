@@ -10,7 +10,7 @@ const Modal = ({ closeModal, title, children }) => {
 			onClick={closeModal}
 		>
 			<section
-				className="p-5 bg-white rounded-lg"
+				className="p-6 pt-7 bg-white rounded-lg"
 				onClick={(e) => {
 					e.stopPropagation();
 				}}
@@ -24,7 +24,7 @@ const Modal = ({ closeModal, title, children }) => {
 						<FontAwesomeIcon icon={faTimes} />
 					</button>
 				</header>
-				<section className="px-1 py-5">{children}</section>
+				<section className="px-1 pt-5">{children}</section>
 			</section>
 		</div>
 	);
