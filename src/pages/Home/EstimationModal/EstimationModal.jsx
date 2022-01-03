@@ -78,16 +78,11 @@ const StepOne = ({ nextStep, formData }) => {
 				nextStep(values);
 			}}
 			validationSchema={yup.object({
-				estimationCategory: yup
+				highPerformanceBuildings: yup
 					.string()
 					.required("please select one")
 					.oneOf(
-						[
-							"energy, daylight and thermal comfort",
-							"structure",
-							"fire in building",
-							"acoustic",
-						],
+						["IEQ", "structure", "energy and water"],
 						"pick from provided list"
 					),
 				estimationScale: yup
