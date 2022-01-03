@@ -97,11 +97,7 @@ const StepOne = ({ nextStep, formData }) => {
 						],
 						"pick from provided list"
 					),
-				newProjectName: yup.string().when("newOrPrevProject", {
-					is: "newProject",
-					then: yup.string().required("new projec name is required"),
-					otherwise: yup.string(),
-				}),
+				projectName: yup.string().required("new projec name is required"),
 				prevProjectName: yup.string().when("newOrPrevProject", {
 					is: "prevProject",
 					then: yup.string().required("pev [roject name is required"),
