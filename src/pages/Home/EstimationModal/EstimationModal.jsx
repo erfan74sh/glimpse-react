@@ -60,17 +60,12 @@ const ChooseOrCreateProject = () => {
 };
 
 const StepOne = ({ nextStep, formData }) => {
-	const estimationCategory = [
-		{ label: "energy, daylight and thermal comfort" },
+	const highPerformanceBuildings = [
+		{ label: "IEQ" },
 		{ label: "structure" },
-		{ label: "fire in building" },
-		{ label: "acoustic" },
+		{ label: "energy and water" },
 	];
-	const estimationScale = [
-		{ label: "zone" },
-		{ label: "building" },
-		{ label: "city" },
-	];
+	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
 	return (
 		<Formik
 			initialValues={formData}
@@ -108,21 +103,21 @@ const StepOne = ({ nextStep, formData }) => {
 		>
 			<Form className="flex flex-col gap-y-4 w-100">
 				<SelectField
-					selectOptions={estimationCategory}
+					selectOptions={highPerformanceBuildings}
 					name="estimationCategory"
 					label="High performance buildings"
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
 				<SelectField
-					selectOptions={estimationScale}
+					selectOptions={ieqSubset}
 					name="estimationScale"
 					label="Subset"
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
 				<SelectField
-					selectOptions={estimationScale}
+					selectOptions={ieqSubset}
 					name=""
 					label="Building Program"
 					placeholder="choose program"
