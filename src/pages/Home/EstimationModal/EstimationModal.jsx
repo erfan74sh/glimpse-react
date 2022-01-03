@@ -13,14 +13,19 @@ import ModalMap from "./ModalMap/ModalMap";
 import "./EstimationModal.scss";
 
 const Subset = () => {
-	const { values } = useFormikContext();
-	console.log(values);
+	const { highPerformanceBuildings } = useFormikContext().values;
 	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
 	const energyWaterSubset = [{ label: "energy consumption" }];
 	const structureSubset = [{ label: "structure design" }];
 	return (
 		<SelectField
-			selectOptions={ieqSubset}
+			selectOptions={
+				highPerformanceBuildings === "IEQ"
+					? ieqSubset
+					: highPerformanceBuildings === "structure"
+					? structureSubset
+					: energyWaterSubset
+			}
 			name="subset"
 			label="Subset"
 			placeholder="choose category"
