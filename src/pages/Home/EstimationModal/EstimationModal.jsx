@@ -66,6 +66,7 @@ const StepOne = ({ nextStep, formData }) => {
 		{ label: "energy and water" },
 	];
 	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
+	const energyWaterSubset = [{ label: "energy consumption" }];
 	return (
 		<Formik
 			initialValues={formData}
