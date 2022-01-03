@@ -98,11 +98,6 @@ const StepOne = ({ nextStep, formData }) => {
 						"pick from provided list"
 					),
 				projectName: yup.string().required("new projec name is required"),
-				prevProjectName: yup.string().when("newOrPrevProject", {
-					is: "prevProject",
-					then: yup.string().required("pev [roject name is required"),
-					otherwise: yup.string(),
-				}),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4 w-100">
