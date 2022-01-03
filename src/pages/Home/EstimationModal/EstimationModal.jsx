@@ -12,6 +12,19 @@ import ModalMap from "./ModalMap/ModalMap";
 // style
 import "./EstimationModal.scss";
 
+const Subset = ({ selectOptions }) => {
+	const { values } = useFormikContext();
+	return (
+		<SelectField
+			selectOptions={selectOptions}
+			name="buildingProgram"
+			label="Building Program"
+			placeholder="choose program"
+			handleValue={() => null}
+		/>
+	);
+};
+
 const ProjectName = () => {
 	const { values } = useFormikContext();
 	return (
@@ -106,28 +119,22 @@ const StepOne = ({ nextStep, formData }) => {
 			<Form className="flex flex-col gap-y-4 w-100">
 				<SelectField
 					selectOptions={highPerformanceBuildings}
-					name="estimationCategory"
+					name="highPerformanceBuildings"
 					label="High performance buildings"
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
 				<SelectField
 					selectOptions={ieqSubset}
-					name="estimationScale"
+					name="subset"
 					label="Subset"
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
-				<SelectField
-					selectOptions={ieqSubset}
-					name=""
-					label="Building Program"
-					placeholder="choose program"
-					handleValue={() => null}
-				/>
-				<ChooseOrCreateProject />
-				<ProjectName />
 
+				{/* <ChooseOrCreateProject /> */}
+				{/* <ProjectName /> */}
+				<Subset selectOptions={ieqSubset} />
 				<button
 					type="submit"
 					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
@@ -188,11 +195,10 @@ const StepTwo = ({ prevStep, formData }) => {
 
 const EstimationModal = () => {
 	const [formData, setFormData] = useState({
-		estimationCategory: "",
-		estimationScale: "",
-		newOrPrevProject: "newProject",
+		highPerformanceBuildings: "",
+		subset: "",
+		buildingProgram: "",
 		newProjectName: "",
-		prevProjectName: "",
 		location: "",
 	});
 
