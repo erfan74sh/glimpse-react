@@ -92,11 +92,15 @@ const StepOne = ({ nextStep, formData }) => {
 						[
 							"visual comfort",
 							"thermal comfort",
-							"energy cunsumption",
+							"energy consumption",
 							"structure design",
 						],
 						"pick from provided list"
 					),
+				buildingProgram: yup
+					.string()
+					.oneOf(["office", "residential", "school", "hotel"])
+					.required("required"),
 				projectName: yup.string().required("new projec name is required"),
 			})}
 		>
