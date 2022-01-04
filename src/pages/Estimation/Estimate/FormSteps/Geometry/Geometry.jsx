@@ -75,12 +75,12 @@ const Geometry = ({ nextStep }) => {
 	];
 
 	const floorLevelOptions = [
-		{ label: "0" },
-		{ label: "1" },
-		{ label: "2" },
-		{ label: "3" },
-		{ label: "4" },
-		{ label: "5" },
+		{ label: 0 },
+		{ label: 1 },
+		{ label: 2 },
+		{ label: 3 },
+		{ label: 4 },
+		{ label: 5 },
 	];
 
 	return (
@@ -92,6 +92,10 @@ const Geometry = ({ nextStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
+				floorLevel: yup
+					.number()
+					.oneOf([0, 1, 2, 3, 4, 5], "pick from list")
+					.required("floor level is required"),
 				xDim: yup
 					.number()
 					.min(8, "x-dimention must be equal or greater than 8")
