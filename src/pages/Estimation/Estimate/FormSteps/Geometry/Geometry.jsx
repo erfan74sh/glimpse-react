@@ -96,6 +96,11 @@ const Geometry = ({ nextStep }) => {
 					.number()
 					.oneOf([0, 1, 2, 3, 4, 5], "pick from list")
 					.required("floor level is required"),
+				rotation: yup
+					.number()
+					.min(-40, "must be more than -40")
+					.max(40, "must be less than 40")
+					.required("required"),
 				xDim: yup
 					.number()
 					.min(8, "x-dimention must be equal or greater than 8")
