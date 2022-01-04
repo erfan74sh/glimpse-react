@@ -15,6 +15,13 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 
 	// const dispatch = useDispatch();
 
+	const WallOptions = [{ label: "adiabatic" }, { label: "outdoor" }];
+	const floorOptions = [
+		{ label: "adiabatic" },
+		{ label: "outdoor" },
+		{ label: "ground" },
+	];
+
 	return (
 		<Formik
 			initialValues={data}
