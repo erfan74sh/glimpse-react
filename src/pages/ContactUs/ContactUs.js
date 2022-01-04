@@ -33,7 +33,34 @@ const ContactUs = () => {
 						</ul>
 					</section>
 					<section className="w-7/12 relative h-113">
-						<MapContainer />
+						{/* <MapContainer /> */}
+						<form>
+							<h2>How can we help you ?</h2>
+							<input
+								type="text"
+								name="name"
+								placeHolder="your name"
+								className="px-6 py-2 rounded-2xl bg-gray-200"
+							/>
+							<input
+								type="email"
+								name="email"
+								placeHolder="your email"
+								className="px-6 py-2 rounded-2xl bg-gray-200"
+							/>
+							<input
+								type="text"
+								name="subject"
+								placeHolder="subject"
+								className="px-6 py-2 rounded-2xl bg-gray-200"
+							/>
+							<textarea
+								name="message"
+								placeHolder="write your message here"
+								className="px-6 py-2 rounded-2xl bg-gray-200"
+							/>
+							<button type="submit">send</button>
+						</form>
 					</section>
 				</div>
 			</main>
