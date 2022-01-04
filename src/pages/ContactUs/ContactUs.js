@@ -16,23 +16,39 @@ const ContactUs = () => {
 					</h1>
 				</header>
 				<div className="flex">
-					<section className="w-7/12">
-						<ul className="flex flex-col gap-y-7 text-gray-650 text-2xl capitalize">
-							<li className="flex flex-col gap-y-2">
-								<h3 className="font-bold">phone</h3>
-								<span>09361759625</span>
-							</li>
-							<li className="flex flex-col gap-y-2">
-								<h3 className="font-bold">email</h3>
-								<span className="normal-case">Glimpse@gmail.com</span>
-							</li>
-							<li className="flex flex-col gap-y-2">
-								<h3 className="font-bold">address</h3>
-								<span>Beheshti University _ Tehran</span>
-							</li>
+					<section className="w-1/2">
+						<ul className="flex gap-x-2 text-gray-650 capitalize">
+							<div className="flex flex-col gap-y-6 flex-grow">
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">phone</h3>
+									<span>09121395045</span>
+								</li>
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">email</h3>
+									<span className="normal-case">info@bsp.grezen</span>
+								</li>
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">address</h3>
+									<span>Beheshti University _ Tehran</span>
+								</li>
+							</div>
+							<div className="flex flex-col gap-y-6 flex-grow">
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">instagram</h3>
+									<span>@glimpse.app</span>
+								</li>
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">linkedin</h3>
+									<span>glimpse.app</span>
+								</li>
+								<li className="flex flex-col gap-y-2">
+									<h3 className="font-bold">twitter</h3>
+									<span>@glimpse.app</span>
+								</li>
+							</div>
 						</ul>
 					</section>
-					<section className="w-5/12 relative h-113">
+					<section className="w-1/2 pl-14 relative h-113">
 						{/* <MapContainer /> */}
 						<form className="flex flex-col gap-y-6">
 							<h2 className="text-lg font-semibold text-gray-650">
