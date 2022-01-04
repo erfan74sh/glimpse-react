@@ -150,7 +150,7 @@ const Geometry = ({ nextStep }) => {
 					/>
 					<InputRange
 						name="xDim"
-						label="X-Dimention"
+						label="width"
 						min="8"
 						max="24"
 						step="0.5"
@@ -160,20 +160,11 @@ const Geometry = ({ nextStep }) => {
 
 					<InputRange
 						name="yDim"
-						label="Y-Dimention"
+						label="length"
 						min="3"
 						max="10"
 						step="0.5"
 						handleValue={handleYDimValue}
-						moreInfo="this is description"
-					/>
-					<InputRange
-						name="wwrNorth"
-						label="WWR-North"
-						min="0"
-						max="80"
-						step="10"
-						handleValue={handleWwrNorthValue}
 						moreInfo="this is description"
 					/>
 					<InputRange
@@ -183,7 +174,16 @@ const Geometry = ({ nextStep }) => {
 						max="80"
 						step="10"
 						handleValue={handleWwrSouthValue}
-						moreInfo="this is description"
+						moreInfo="نسبت مساحت پنجره به دیوار جنوبی"
+					/>
+					<InputRange
+						name="wwrNorth"
+						label="WWR-North"
+						min="0"
+						max="80"
+						step="10"
+						handleValue={handleWwrNorthValue}
+						moreInfo="نسبت مساحت پنجره به دیوار شمالی"
 					/>
 					<SelectField
 						name="shadingType"
@@ -191,6 +191,7 @@ const Geometry = ({ nextStep }) => {
 						label="shading type"
 						placeholder="choose one type"
 						handleValue={handleShadingTypeValue}
+						moreInfo="نوع سایبان"
 					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
