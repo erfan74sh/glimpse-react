@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import Geometry from "./FormSteps/Geometry";
+import BoundryCondition from "./FormSteps/BoundryCondition/BoundryCondition";
 import Material from "./FormSteps/Material";
 import SitePlan from "./FormSteps/SitePlan";
 import Review from "./FormSteps/Review";
@@ -35,6 +36,7 @@ const Estimate = () => {
 
 	const steps = [
 		<Geometry nextStep={handleNextStep} />,
+		<BoundryCondition nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Review prevStep={handlePrevStep} />,
