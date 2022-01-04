@@ -8,7 +8,7 @@ import {
 	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // // components
-// import SelectField from "../../../../../components/inputs/SelectField/SelectField";
+import SelectField from "../../../../../components/inputs/SelectField/SelectField";
 
 const BoundryCondition = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
@@ -39,13 +39,48 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						Boundry conditions
 					</legend>
-					{/* <SelectField
-						name="floorLevel"
-						selectOptions={floorLevelOptions}
-						label="floor level"
-						placeholder="choose level"
+					<SelectField
+						name="eastWallCondition"
+						selectOptions={WallOptions}
+						label="Boundry condition east wall"
+						placeholder="choose condition"
 						handleValue={() => null}
-					/> */}
+					/>
+					<SelectField
+						name="westWallCondition"
+						selectOptions={WallOptions}
+						label="Boundry condition west wall"
+						placeholder="choose condition"
+						handleValue={() => null}
+					/>
+					<SelectField
+						name="northWallCondition"
+						selectOptions={WallOptions}
+						label="Boundry condition north wall"
+						placeholder="choose condition"
+						handleValue={() => null}
+					/>
+					<SelectField
+						name="southWallCondition"
+						selectOptions={WallOptions}
+						label="Boundry condition south wall"
+						placeholder="choose condition"
+						handleValue={() => null}
+					/>
+					<SelectField
+						name="roofCondition"
+						selectOptions={WallOptions}
+						label="Boundry condition roof"
+						placeholder="choose condition"
+						handleValue={() => null}
+					/>
+					<SelectField
+						name="floorCondition"
+						selectOptions={floorOptions}
+						label="Boundry condition floor"
+						placeholder="choose condition"
+						handleValue={() => null}
+					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
 					<button
