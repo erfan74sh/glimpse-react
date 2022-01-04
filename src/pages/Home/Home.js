@@ -21,7 +21,7 @@ import "./Home.scss";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
-	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(true);
+	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(false);
 	const handleShowProjectHistoryModal = () => {
 		setShowProjectHistoryModal(true);
 	};
