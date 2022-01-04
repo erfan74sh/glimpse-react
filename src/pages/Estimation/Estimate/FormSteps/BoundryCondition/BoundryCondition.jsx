@@ -40,6 +40,22 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 						handleValue={() => null}
 					/> */}
 				</fieldset>
+				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+					<button
+						type="button"
+						className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
+						value="geometry"
+						onClick={prevStep}
+					>
+						prev <span className="text-xs lowercase">(geometry)</span>
+					</button>
+					<button
+						type="submit"
+						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+					>
+						next <span className="text-xs lowercase">(material)</span>
+					</button>
+				</section>
 			</Form>
 		</Formik>
 	);
