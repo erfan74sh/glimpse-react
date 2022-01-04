@@ -35,7 +35,9 @@ const ContactUs = () => {
 					<section className="w-7/12 relative h-113">
 						{/* <MapContainer /> */}
 						<form className="flex flex-col gap-y-6">
-							<h2>How can we help you ?</h2>
+							<h2 className="text-lg font-semibold text-gray-650">
+								How can we help you ?
+							</h2>
 							<input
 								type="text"
 								name="name"
