@@ -1,4 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faPhoneAlt,
+	faEnvelope,
+	faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+	faInstagramSquare,
+	faLinkedin,
+	faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 // components
 import Nav from "../../components/Nav";
 import MapContainer from "./MapContainer";
@@ -15,35 +26,56 @@ const ContactUs = () => {
 						contact us
 					</h1>
 				</header>
-				<div className="flex">
+				<div className="flex gap-x-14">
 					<section className="w-1/2">
-						<ul className="flex gap-x-2 text-gray-650 capitalize">
-							<div className="flex flex-col gap-y-6 flex-grow">
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">phone</h3>
-									<span>09121395045</span>
+						<ul className="flex gap-x-14 text-gray-650 capitalize">
+							<div className="flex flex-col divide-y-2 divide-gray-300 w-1/2">
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">phone</h3>
+										<span>09121395045</span>
+									</div>
 								</li>
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">email</h3>
-									<span className="normal-case">info@bsp.grezen</span>
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">email</h3>
+										<span className="normal-case">info@bsp.grezen</span>
+									</div>
 								</li>
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">address</h3>
-									<span>Beheshti University _ Tehran</span>
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon icon={faMapMarkerAlt} className="text-2xl" />
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">address</h3>
+										<span>Beheshti University _ Tehran</span>
+									</div>
 								</li>
 							</div>
-							<div className="flex flex-col gap-y-6 flex-grow">
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">instagram</h3>
-									<span>@glimpse.app</span>
+							<div className="flex flex-col divide-y-2 divide-gray-300 w-1/2">
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon
+										icon={faInstagramSquare}
+										className="text-2xl"
+									/>
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">instagram</h3>
+										<span>@glimpse.app</span>
+									</div>
 								</li>
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">linkedin</h3>
-									<span>glimpse.app</span>
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">linkedin</h3>
+										<span>glimpse.app</span>
+									</div>
 								</li>
-								<li className="flex flex-col gap-y-2">
-									<h3 className="font-bold">twitter</h3>
-									<span>@glimpse.app</span>
+								<li className="flex gap-x-3 py-3">
+									<FontAwesomeIcon icon={faTwitter} className="text-2xl" />
+									<div className="flex flex-col gap-y-2">
+										<h3 className="font-bold">twitter</h3>
+										<span>@glimpse.app</span>
+									</div>
 								</li>
 							</div>
 						</ul>
