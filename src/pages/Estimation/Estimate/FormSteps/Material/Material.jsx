@@ -98,17 +98,17 @@ const Material = ({ nextStep, prevStep }) => {
 				wallMaterial: yup
 					.number()
 					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "")
+					.max(0.7, "s")
 					.required("required"),
 				ceilingMaterial: yup
 					.number()
 					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "")
+					.max(0.7, "s")
 					.required("required"),
 				floorMaterial: yup
 					.number()
 					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "")
+					.max(0.7, "ss")
 					.required("required"),
 				glassMaterial: yup
 					.number()
@@ -123,21 +123,21 @@ const Material = ({ nextStep, prevStep }) => {
 					</legend>
 					<SelectField
 						name="wallMaterial"
-						label="Wall-material"
+						label="Wall material"
 						selectOptions={wallMaterialOptions}
 						placeholder="select type"
 						handleValue={handleWallMaterialValue}
 					/>
 					<SelectField
 						name="ceilingMaterial"
-						label="Ceiling-material"
+						label="roof material"
 						selectOptions={roofMaterialOptions}
 						placeholder="select type"
 						handleValue={handleCeilingMaterialValue}
 					/>
 					<SelectField
 						name="floorMaterial"
-						label="Floor-material"
+						label="Floor material"
 						selectOptions={floorMaterialOptions}
 						placeholder="select type"
 						handleValue={handleFloorMaterialValue}
@@ -145,7 +145,7 @@ const Material = ({ nextStep, prevStep }) => {
 					<SelectField
 						name="glassMaterial"
 						selectOptions={glassMaterialOptions}
-						label="Glass-material"
+						label="window material"
 						placeholder="select type"
 						handleValue={handleGlassMaterialValue}
 					/>
