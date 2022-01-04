@@ -21,6 +21,8 @@ const initialState = {
 		southNeighborHeight: 4,
 		northNeighborDist: 3,
 		northNeighborHeight: 4,
+		HVAC: "",
+		naturalVent: null,
 	},
 };
 
