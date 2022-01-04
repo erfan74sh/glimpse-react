@@ -34,7 +34,7 @@ const ContactUs = () => {
 					</section>
 					<section className="w-7/12 relative h-113">
 						{/* <MapContainer /> */}
-						<form>
+						<form className="flex flex-col gap-y-6">
 							<h2>How can we help you ?</h2>
 							<input
 								type="text"
