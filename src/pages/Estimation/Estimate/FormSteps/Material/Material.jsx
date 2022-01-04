@@ -61,6 +61,24 @@ const Material = ({ nextStep, prevStep }) => {
 		);
 	};
 
+	const wallMaterialOptions = [
+		{ label: 1.719 },
+		{ label: 1.649 },
+		{ label: 0.979 },
+		{ label: 0.225 },
+	];
+	const floorMaterialOptions = [
+		{ label: 0.37 },
+		{ label: 0.47 },
+		{ label: 0.65 },
+	];
+	const roofMaterialOptions = [
+		{ label: 0.878 },
+		{ label: 0.211 },
+		{ label: 0.393 },
+		{ label: 0.386 },
+		{ label: 1.092 },
+	];
 	const glassMaterialOptions = [
 		{ label: 0.58 },
 		{ label: 0.72 },
