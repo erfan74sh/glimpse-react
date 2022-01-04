@@ -13,6 +13,8 @@ const initialState = {
 		westWallCondition: "",
 		northWallCondition: "",
 		southWallCondition: "",
+		roofCondition: "",
+		floorCondition: "",
 		wallMaterial: 0,
 		ceilingMaterial: 0,
 		floorMaterial: 0,
