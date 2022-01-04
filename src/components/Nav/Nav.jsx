@@ -8,7 +8,7 @@ import DropdownProfile from "../dropdowns/dropdownProfile";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 
-const Header = () => {
+const Header = ({ handleShowProjectHistoryModal }) => {
 	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
 	const [showMenuDropdown, setShowMenuDropdown] = useState(false);
@@ -55,7 +55,10 @@ const Header = () => {
 				>
 					<Profile />
 
-					<DropdownProfile showDropdown={showProfileDropdown} />
+					<DropdownProfile
+						showDropdown={showProfileDropdown}
+						handleShowProjectHistoryModal={handleShowProjectHistoryModal}
+					/>
 				</li>
 			</ul>
 		</nav>
