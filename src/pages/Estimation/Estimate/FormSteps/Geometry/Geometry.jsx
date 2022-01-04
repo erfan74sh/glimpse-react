@@ -74,6 +74,15 @@ const Geometry = ({ nextStep }) => {
 		{ label: "horizontal louvre" },
 	];
 
+	const floorLevelOptions = [
+		{ label: "0" },
+		{ label: "1" },
+		{ label: "2" },
+		{ label: "3" },
+		{ label: "4" },
+		{ label: "5" },
+	];
+
 	return (
 		<Formik
 			initialValues={data}
@@ -116,7 +125,7 @@ const Geometry = ({ nextStep }) => {
 					</legend>
 					<SelectField
 						name="floorLevel"
-						selectOptions={shadingOptions}
+						selectOptions={floorLevelOptions}
 						label="floor level"
 						placeholder="choose level"
 						handleValue={() => null}
