@@ -61,7 +61,12 @@ const ContactUs = () => {
 								placeHolder="write your message here"
 								className="px-6 py-2 rounded-2xl bg-gray-200"
 							/>
-							<button type="submit">send</button>
+							<button
+								type="submit"
+								className="self-end px-8 py-1 text-white capitalize bg-blue-550 rounded-md transition hover:shadow-b-sm"
+							>
+								send
+							</button>
 						</form>
 					</section>
 				</div>
