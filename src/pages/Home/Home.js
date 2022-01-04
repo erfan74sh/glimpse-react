@@ -22,6 +22,9 @@ import "./Home.scss";
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
 	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(true);
+	const handleShowProjectHistoryModal = () => {
+		setShowProjectHistoryModal(true);
+	};
 
 	return (
 		<>
@@ -41,7 +44,7 @@ const Home = () => {
 					<ProjectHistoryModal />
 				</Modal>
 			)}
-			<Nav />
+			<Nav handleShowProjectHistoryModal={handleShowProjectHistoryModal} />
 			<header
 				className="relative flex flex-col items-center mt-10"
 				id="header__hero"
