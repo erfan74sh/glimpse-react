@@ -114,17 +114,23 @@ const Geometry = ({ nextStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						geometry
 					</legend>
-					<div>
-						<InputRange
-							name="xDim"
-							label="X-Dimention"
-							min="8"
-							max="24"
-							step="0.5"
-							handleValue={handleXDimValue}
-							moreInfo="this is description"
-						/>
-					</div>
+					<SelectField
+						name="floorLevel"
+						selectOptions={shadingOptions}
+						label="floor level"
+						placeholder="choose level"
+						handleValue={() => null}
+					/>
+					<InputRange
+						name="xDim"
+						label="X-Dimention"
+						min="8"
+						max="24"
+						step="0.5"
+						handleValue={handleXDimValue}
+						moreInfo="this is description"
+					/>
+
 					<InputRange
 						name="yDim"
 						label="Y-Dimention"
