@@ -8,7 +8,6 @@ import {
 	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // components
-import InputRange from "../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../components/inputs/SelectField/SelectField";
 
 const Material = ({ nextStep, prevStep }) => {
