@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // component
 import Profile from "../profile/Profile";
-import DropdownMenu from "../dropdowns/dropDownMenu";
 import DropdownProfile from "../dropdowns/dropdownProfile";
 // import Auth from "../Auth";
 // assets
@@ -10,8 +9,6 @@ import Logo from "../../assets/images/logo-02.png";
 
 const Header = ({ handleShowProjectHistoryModal }) => {
 	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-
-	const [showMenuDropdown, setShowMenuDropdown] = useState(false);
 
 	// const [isLogin, setIsLogin] = useState(true);
 
@@ -28,13 +25,8 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 						<li>
 							<Link to="/">home</Link>
 						</li>
-						<li
-							className="relative"
-							onMouseEnter={() => setShowMenuDropdown(true)}
-							onMouseLeave={() => setShowMenuDropdown(false)}
-						>
+						<li className="relative">
 							<Link to="/estimation/result">simulations</Link>
-							<DropdownMenu showDropdown={showMenuDropdown} />
 						</li>
 						<li>
 							<Link to="/pricing">pricing</Link>
