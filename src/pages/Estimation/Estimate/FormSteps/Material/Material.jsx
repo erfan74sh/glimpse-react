@@ -97,18 +97,15 @@ const Material = ({ nextStep, prevStep }) => {
 			validationSchema={yup.object({
 				wallMaterial: yup
 					.number()
-					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "s")
+					.oneOf([1.719, 1.649, 0.979, 0.225], "choose from list")
 					.required("required"),
 				ceilingMaterial: yup
 					.number()
-					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "s")
+					.oneOf([0.878, 0.211, 0.393, 0.386, 1.092], "choose from list")
 					.required("required"),
 				floorMaterial: yup
 					.number()
-					.min(0.2, "must be between 0.2 and 0.7")
-					.max(0.7, "ss")
+					.oneOf([0.37, 0.47, 0.65], "choose from list")
 					.required("required"),
 				glassMaterial: yup
 					.number()
