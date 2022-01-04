@@ -121,35 +121,32 @@ const Material = ({ nextStep, prevStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						material
 					</legend>
-					<InputRange
+					<SelectField
 						name="wallMaterial"
 						label="Wall-material"
-						min=".2"
-						max=".7"
-						step=".05"
+						selectOptions={wallMaterialOptions}
+						placeholder="select type"
 						handleValue={handleWallMaterialValue}
 					/>
-					<InputRange
+					<SelectField
 						name="ceilingMaterial"
 						label="Ceiling-material"
-						min=".2"
-						max=".7"
-						step=".05"
+						selectOptions={roofMaterialOptions}
+						placeholder="select type"
 						handleValue={handleCeilingMaterialValue}
 					/>
-					<InputRange
+					<SelectField
 						name="floorMaterial"
 						label="Floor-material"
-						min=".2"
-						max=".7"
-						step=".05"
+						selectOptions={floorMaterialOptions}
+						placeholder="select type"
 						handleValue={handleFloorMaterialValue}
 					/>
 					<SelectField
 						name="glassMaterial"
 						selectOptions={glassMaterialOptions}
 						label="Glass-material"
-						placeholder="choose one type"
+						placeholder="select type"
 						handleValue={handleGlassMaterialValue}
 					/>
 				</fieldset>
