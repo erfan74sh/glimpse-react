@@ -11,8 +11,9 @@ import MachineLearningIcon from "../../assets/icons/machine-learning.png";
 import ResultIcon from "../../assets/icons/result.png";
 import Logo from "../../assets/images/logo-02.png";
 import FooterImage from "../../assets/images/footer-image.png";
-import Modal from "../../components/modal/Modal";
-import EstimationModal from "./EstimationModal/EstimationModal";
+import Modal from "../../components/modal";
+import EstimationModal from "./EstimationModal";
+import ProjectHistoryModal from "../../components/ProjectHistoryModal";
 // icons
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
@@ -20,6 +21,7 @@ import "./Home.scss";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
+	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(true);
 
 	return (
 		<>
@@ -29,6 +31,14 @@ const Home = () => {
 					closeModal={() => setShowEstimateModal(false)}
 				>
 					<EstimationModal />
+				</Modal>
+			)}
+			{showProjectHistoryModal && (
+				<Modal
+					title="project history"
+					closeModal={() => setShowProjectHistoryModal(false)}
+				>
+					<ProjectHistoryModal />
 				</Modal>
 			)}
 			<Nav />
