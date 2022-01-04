@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
+const containerStyle = {
+	position: "relative",
+	width: "100%",
+	height: "240px",
+};
 
 export class MapContainer extends Component {
 	render() {
@@ -11,6 +16,7 @@ export class MapContainer extends Component {
 					lat: 35.79911916713814,
 					lng: 51.394691793335404,
 				}}
+				containerStyle={containerStyle}
 			>
 				<Marker onClick={this.onMarkerClick} name={"Current location"} />
 			</Map>
