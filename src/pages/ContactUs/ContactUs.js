@@ -26,8 +26,8 @@ const ContactUs = () => {
 						contact us
 					</h1>
 				</header>
-				<div className="flex gap-x-14">
-					<section className="w-1/2">
+				<div className="flex">
+					<section className="w-1/2 pr-20">
 						<ul className="flex gap-x-14 text-gray-650 capitalize">
 							<div className="flex flex-col divide-y-2 divide-gray-300 w-1/2">
 								<li className="flex gap-x-3 py-3">
@@ -79,9 +79,11 @@ const ContactUs = () => {
 								</li>
 							</div>
 						</ul>
+						<div className="mt-5">
+							<MapContainer />
+						</div>
 					</section>
 					<section className="w-1/2 pl-14 relative h-113">
-						{/* <MapContainer /> */}
 						<form className="flex flex-col gap-y-6">
 							<h2 className="text-lg font-semibold text-gray-650">
 								How can we help you ?
@@ -105,7 +107,7 @@ const ContactUs = () => {
 								className="px-6 py-2 rounded-2xl bg-gray-200"
 							/>
 							<textarea
-								rows={8}
+								rows={10}
 								name="message"
 								placeHolder="write your message here"
 								className="px-6 py-2 rounded-2xl bg-gray-200"
