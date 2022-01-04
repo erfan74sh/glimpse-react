@@ -135,6 +135,15 @@ const Geometry = ({ nextStep }) => {
 						handleValue={() => null}
 					/>
 					<InputRange
+						name="rotation"
+						label="rotation angle"
+						min="-40"
+						max="40"
+						step="10"
+						handleValue={() => null}
+						moreInfo="جهت‌گیری بنا"
+					/>
+					<InputRange
 						name="xDim"
 						label="X-Dimention"
 						min="8"
