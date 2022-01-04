@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Formik } from "formik";
-// import * as yup from "yup";
+import * as yup from "yup";
 // // state
 import {
 	selectInput,
@@ -30,9 +30,32 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 				console.log(values);
 				nextStep();
 			}}
-			// validationSchema={yup.object({
-
-			// })}
+			validationSchema={yup.object({
+				eastWallCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.required("required"),
+				westWallCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.required("required"),
+				northWallCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.required("required"),
+				southWallCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.required("required"),
+				roofCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.required("required"),
+				floorCondition: yup
+					.string()
+					.oneOf(["adiabatic", "outdoor", "ground"], "choose from list")
+					.required("required"),
+			})}
 		>
 			<Form className="h-full flex flex-col">
 				<fieldset className="flex flex-col gap-y-9 pr-10">
