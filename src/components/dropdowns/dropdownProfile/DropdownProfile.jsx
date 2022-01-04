@@ -7,7 +7,7 @@ import ChargeIcon from "../../../assets/icons/charge.svg";
 import SignOutIcon from "../../../assets/icons/sign-out.svg";
 import ProjectHistory from "../../../assets/icons/project-history.png";
 
-const DropdownProfile = ({ showDropdown }) => {
+const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 	return (
 		<ul
 			className={`${
@@ -20,7 +20,12 @@ const DropdownProfile = ({ showDropdown }) => {
 					<span>profile</span>
 				</Link>
 			</li>
-			<li>
+			<li
+				onClick={(e) => {
+					e.preventDefault();
+					handleShowProjectHistoryModal();
+				}}
+			>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
 					<img src={ProjectHistory} alt="profile icon" className="w-6 h-auto" />
 					<span>projects history</span>
