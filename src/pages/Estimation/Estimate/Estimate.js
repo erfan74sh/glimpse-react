@@ -81,7 +81,7 @@ const Estimate = () => {
 						3D view
 					</h2>
 					<div className="">
-						<div className="w-full px-10 h-96"></div>
+						<div className="w-full px-10 h-96">{visualSteps[step]}</div>
 					</div>
 					<button
 						type="submit"
