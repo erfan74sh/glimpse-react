@@ -9,6 +9,12 @@ import Material from "./FormSteps/Material";
 import SitePlan from "./FormSteps/SitePlan";
 import Review from "./FormSteps/Review";
 import Model3D from "./3D/_3D";
+import VisualBoundryCondition from "./VisualSteps/BoundryCondition";
+import VisualGeometry from "./VisualSteps/Geometry";
+import VisualMaterial from "./VisualSteps/Material";
+import VisualSitePlan from "./VisualSteps/SitePlan";
+import VisualHvac from "./VisualSteps/Hvac";
+
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
 // style
@@ -43,22 +49,27 @@ const Estimate = () => {
 	];
 
 	const visualSteps = [
-		<Model3D
-			xDim={inputData.xDim}
-			yDim={inputData.yDim}
-			wwrNorth={inputData.wwrNorth}
-			wwrSouth={inputData.wwrSouth}
-			shadingType={inputData.shadingType}
-		/>,
-		<Model3D
-			xDim={inputData.xDim}
-			yDim={inputData.yDim}
-			wwrNorth={inputData.wwrNorth}
-			wwrSouth={inputData.wwrSouth}
-			shadingType={inputData.shadingType}
-		/>,
-		<div>step 3</div>,
-		<div>step 4</div>,
+		<VisualGeometry />,
+		<VisualBoundryCondition />,
+		<VisualMaterial />,
+		<VisualSitePlan />,
+		<VisualHvac />,
+		// <Model3D
+		// 	xDim={inputData.xDim}
+		// 	yDim={inputData.yDim}
+		// 	wwrNorth={inputData.wwrNorth}
+		// 	wwrSouth={inputData.wwrSouth}
+		// 	shadingType={inputData.shadingType}
+		// />,
+		// <Model3D
+		// 	xDim={inputData.xDim}
+		// 	yDim={inputData.yDim}
+		// 	wwrNorth={inputData.wwrNorth}
+		// 	wwrSouth={inputData.wwrSouth}
+		// 	shadingType={inputData.shadingType}
+		// />,
+		// <div>step 3</div>,
+		// <div>step 4</div>,
 	];
 
 	return (
