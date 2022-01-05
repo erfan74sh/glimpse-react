@@ -42,6 +42,25 @@ const Estimate = () => {
 		<Review prevStep={handlePrevStep} />,
 	];
 
+	const visualSteps = [
+		<Model3D
+			xDim={inputData.xDim}
+			yDim={inputData.yDim}
+			wwrNorth={inputData.wwrNorth}
+			wwrSouth={inputData.wwrSouth}
+			shadingType={inputData.shadingType}
+		/>,
+		<Model3D
+			xDim={inputData.xDim}
+			yDim={inputData.yDim}
+			wwrNorth={inputData.wwrNorth}
+			wwrSouth={inputData.wwrSouth}
+			shadingType={inputData.shadingType}
+		/>,
+		<div>step 3</div>,
+		<div>step 4</div>,
+	];
+
 	return (
 		<main className=" px-24 py-10" id="estimate__main">
 			<header className="mb-10">
@@ -62,15 +81,7 @@ const Estimate = () => {
 						3D view
 					</h2>
 					<div className="">
-						<div className="w-full px-10 h-96">
-							<Model3D
-								xDim={inputData.xDim}
-								yDim={inputData.yDim}
-								wwrNorth={inputData.wwrNorth}
-								wwrSouth={inputData.wwrSouth}
-								shadingType={inputData.shadingType}
-							/>
-						</div>
+						<div className="w-full px-10 h-96"></div>
 					</div>
 					<button
 						type="submit"
