@@ -88,12 +88,7 @@ const Estimate = () => {
 					</div>
 				</section>
 				<section className="flex flex-col w-3/5 pl-24">
-					<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-						3D view
-					</h2>
-					<div className="">
-						<div className="w-full px-10 h-96">{visualSteps[step]}</div>
-					</div>
+					{visualSteps[step]}
 					<button
 						type="submit"
 						form="energy-and-comfort"
