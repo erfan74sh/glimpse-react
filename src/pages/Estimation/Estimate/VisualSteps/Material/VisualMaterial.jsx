@@ -40,6 +40,12 @@ const VisualMaterial = () => {
 		{ val: "0.47", url: floor2 },
 		{ val: "0.65", url: floor3 },
 	];
+	const windowImages = [
+		{ val: "0.58", url: win1 },
+		{ val: "0.72", url: win2 },
+		{ val: "0.8", url: win3 },
+		{ val: "0.9", url: win4 },
+	];
 
 	return (
 		<>
