@@ -1,4 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
+// state
+import { selectInput } from "../../../../../features/data/inputDataSlice";
 // assets
 import wall1 from "../../../../../assets/images/materials/wall1.png";
 import wall2 from "../../../../../assets/images/materials/wall2.png";
@@ -18,6 +21,7 @@ import win3 from "../../../../../assets/images/materials/win3.png";
 import win4 from "../../../../../assets/images/materials/win4.png";
 
 const VisualMaterial = () => {
+	const data = useSelector(selectInput);
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
