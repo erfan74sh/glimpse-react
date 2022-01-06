@@ -35,6 +35,12 @@ const VisualMaterial = () => {
 		{ val: "0.386", url: roof4 },
 		{ val: "1.092", url: roof5 },
 	];
+	const floorImages = [
+		{ val: "0.37", url: floor1 },
+		{ val: "0.47", url: floor2 },
+		{ val: "0.65", url: floor3 },
+	];
+
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
