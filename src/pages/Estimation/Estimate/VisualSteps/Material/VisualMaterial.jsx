@@ -43,7 +43,11 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<img
-									src={wall1}
+									src={
+										wallImages.filter(
+											(material) => material.val === data.wallMaterial
+										)[0].url
+									}
 									alt="wall 1"
 									className="w-full h-full object-contain"
 								/>
