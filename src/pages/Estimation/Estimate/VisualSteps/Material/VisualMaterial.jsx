@@ -22,6 +22,12 @@ import win4 from "../../../../../assets/images/materials/win4.png";
 
 const VisualMaterial = () => {
 	const data = useSelector(selectInput);
+	const wallImages = [
+		{ val: "1.719", url: wall1 },
+		{ val: "1.649", url: wall2 },
+		{ val: "0.979", url: wall3 },
+		{ val: "0.225", url: wall4 },
+	];
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
