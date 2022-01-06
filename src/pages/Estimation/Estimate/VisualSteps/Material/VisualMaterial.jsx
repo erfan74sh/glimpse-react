@@ -28,6 +28,13 @@ const VisualMaterial = () => {
 		{ val: "0.979", url: wall3 },
 		{ val: "0.225", url: wall4 },
 	];
+	const roofImages = [
+		{ val: "0.878", url: roof1 },
+		{ val: "0.211", url: roof2 },
+		{ val: "0.393", url: roof3 },
+		{ val: "0.386", url: roof4 },
+		{ val: "1.092", url: roof5 },
+	];
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
