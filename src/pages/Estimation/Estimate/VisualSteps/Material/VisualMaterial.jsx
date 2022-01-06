@@ -79,7 +79,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain"
+										className="w-full h-full object-contain transition group-hover:opacity-60"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -109,7 +109,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain"
+										className="w-full h-full object-contain transition group-hover:opacity-60"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -141,7 +141,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain"
+										className="w-full h-full object-contain transition group-hover:opacity-60"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -171,7 +171,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain"
+										className="w-full h-full object-contain transition group-hover:opacity-60"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
