@@ -8,7 +8,11 @@ const VisualHvac = () => {
 			</h2>
 			<div className="">
 				<div className="w-full px-10 h-96 flex justify-center">
-					<div className="h-full w-96 bg-gray-400"></div>
+					<div className="h-full w-96 flex justify-center items-center rounded-2xl bg-gray-400">
+						<span className="text-xl font-semibold text-white uppercase">
+							HVAC system
+						</span>
+					</div>
 				</div>
 			</div>
 		</>
