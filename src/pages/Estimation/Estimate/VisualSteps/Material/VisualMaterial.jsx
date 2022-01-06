@@ -7,7 +7,12 @@ const VisualMaterial = () => {
 				details
 			</h2>
 			<div className="">
-				<div className="w-full px-10 h-96">content material</div>
+				<div className="w-full flex gap-10 flex-wrap justify-center px-10 pt-5">
+					<aticle className="inline-block w-52 h-52 rounded-2xl bg-gray-400"></aticle>
+					<aticle className="inline-block w-52 h-52 rounded-2xl bg-gray-400"></aticle>
+					<aticle className="inline-block w-52 h-52 rounded-2xl bg-gray-400"></aticle>
+					<aticle className="inline-block w-52 h-52 rounded-2xl bg-gray-400"></aticle>
+				</div>
 			</div>
 		</>
 	);
