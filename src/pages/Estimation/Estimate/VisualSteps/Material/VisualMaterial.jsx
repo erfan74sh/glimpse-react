@@ -1,4 +1,21 @@
 import React from "react";
+// assets
+import wall1 from "../../../../../assets/images/materials/wall1.png";
+import wall2 from "../../../../../assets/images/materials/wall2.png";
+import wall3 from "../../../../../assets/images/materials/wall3.png";
+import wall4 from "../../../../../assets/images/materials/wall4.png";
+import roof1 from "../../../../../assets/images/materials/roof1.png";
+import roof2 from "../../../../../assets/images/materials/roof2.png";
+import roof3 from "../../../../../assets/images/materials/roof3.png";
+import roof4 from "../../../../../assets/images/materials/roof4.png";
+import roof5 from "../../../../../assets/images/materials/roof5.png";
+import floor1 from "../../../../../assets/images/materials/floor1.png";
+import floor2 from "../../../../../assets/images/materials/floor2.png";
+import floor3 from "../../../../../assets/images/materials/floor3.png";
+import win1 from "../../../../../assets/images/materials/win1.png";
+import win2 from "../../../../../assets/images/materials/win2.png";
+import win3 from "../../../../../assets/images/materials/win3.png";
+import win4 from "../../../../../assets/images/materials/win4.png";
 
 const VisualMaterial = () => {
 	return (
