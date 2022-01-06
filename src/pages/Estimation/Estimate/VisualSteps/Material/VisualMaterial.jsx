@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // state
 import { selectInput } from "../../../../../features/data/inputDataSlice";
 // assets
@@ -19,6 +20,8 @@ import win1 from "../../../../../assets/images/materials/win1.png";
 import win2 from "../../../../../assets/images/materials/win2.png";
 import win3 from "../../../../../assets/images/materials/win3.png";
 import win4 from "../../../../../assets/images/materials/win4.png";
+// icons
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const VisualMaterial = () => {
 	const data = useSelector(selectInput);
@@ -55,22 +58,34 @@ const VisualMaterial = () => {
 			<div className="">
 				<div className="w-full flex flex-col gap-y-10 justify-center px-10 pt-5">
 					<div className="flex gap-x-10 justify-center">
-						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
+						<article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400 group">
 							{data.wallMaterial === 0 ? (
 								<span className="text-xl font-semibold text-white uppercase">
 									wall
 								</span>
 							) : (
-								<img
-									src={
-										wallImages.filter(
-											(material) => material.val === data.wallMaterial
-										)[0].url
+								<div
+									className="w-full h-full relative"
+									onClick={(e) =>
+										e.currentTarget
+											.getElementsByTagName("img")[0]
+											.requestFullscreen()
 									}
-									alt="wall 1"
-									className="w-full h-full object-contain"
-									onClick={(e) => e.target.requestFullscreen()}
-								/>
+								>
+									<img
+										src={
+											wallImages.filter(
+												(material) => material.val === data.wallMaterial
+											)[0].url
+										}
+										alt="wall 1"
+										className="w-full h-full object-contain"
+									/>
+									<FontAwesomeIcon
+										icon={faExpand}
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+									/>
+								</div>
 							)}
 						</article>
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
