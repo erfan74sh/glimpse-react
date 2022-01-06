@@ -31,26 +31,58 @@ const VisualMaterial = () => {
 				<div className="w-full flex flex-col gap-y-10 justify-center px-10 pt-5">
 					<div className="flex gap-x-10 justify-center">
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
-							<span className="text-xl font-semibold text-white uppercase">
-								wall
-							</span>
+							{data.wallMaterial === 0 ? (
+								<span className="text-xl font-semibold text-white uppercase">
+									wall
+								</span>
+							) : (
+								<img
+									src={wall1}
+									alt="wall 1"
+									className="w-full h-full object-contain"
+								/>
+							)}
 						</article>
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
-							<span className="text-xl font-semibold text-white uppercase">
-								roof
-							</span>
+							{data.ceilingMaterial === 0 ? (
+								<span className="text-xl font-semibold text-white uppercase">
+									roof
+								</span>
+							) : (
+								<img
+									src={wall1}
+									alt="wall 1"
+									className="w-full h-full object-contain"
+								/>
+							)}
 						</article>
 					</div>
 					<div className="flex gap-x-10 justify-center">
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
-							<span className="text-xl font-semibold text-white uppercase">
-								floor
-							</span>
+							{data.floorMaterial === 0 ? (
+								<span className="text-xl font-semibold text-white uppercase">
+									roof
+								</span>
+							) : (
+								<img
+									src={wall1}
+									alt="wall 1"
+									className="w-full h-full object-contain"
+								/>
+							)}
 						</article>
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
-							<span className="text-xl font-semibold text-white uppercase">
-								window
-							</span>
+							{data.glassMaterial === 0 ? (
+								<span className="text-xl font-semibold text-white uppercase">
+									roof
+								</span>
+							) : (
+								<img
+									src={wall1}
+									alt="wall 1"
+									className="w-full h-full object-contain"
+								/>
+							)}
 						</article>
 					</div>
 				</div>
