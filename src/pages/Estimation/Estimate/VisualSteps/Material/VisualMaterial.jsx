@@ -69,6 +69,7 @@ const VisualMaterial = () => {
 									}
 									alt="wall 1"
 									className="w-full h-full object-contain"
+									onClick={(e) => e.target.requestFullscreen()}
 								/>
 							)}
 						</article>
