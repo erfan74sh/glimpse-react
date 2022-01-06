@@ -7,7 +7,9 @@ const VisualHvac = () => {
 				details
 			</h2>
 			<div className="">
-				<div className="w-full px-10 h-96">content hvac</div>
+				<div className="w-full px-10 h-96 flex justify-center">
+					<div className="h-full w-96 bg-gray-400"></div>
+				</div>
 			</div>
 		</>
 	);
