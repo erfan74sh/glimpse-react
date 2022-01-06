@@ -61,28 +61,28 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const wallMaterialOptions = [
-		{ label: 1.719 },
-		{ label: 1.649 },
-		{ label: 0.979 },
-		{ label: 0.225 },
+		{ label: "1.719" },
+		{ label: "1.649" },
+		{ label: "0.979" },
+		{ label: "0.225" },
 	];
 	const floorMaterialOptions = [
-		{ label: 0.37 },
-		{ label: 0.47 },
-		{ label: 0.65 },
+		{ label: "0.37" },
+		{ label: "0.47" },
+		{ label: "0.65" },
 	];
 	const roofMaterialOptions = [
-		{ label: 0.878 },
-		{ label: 0.211 },
-		{ label: 0.393 },
-		{ label: 0.386 },
-		{ label: 1.092 },
+		{ label: "0.878" },
+		{ label: "0.211" },
+		{ label: "0.393" },
+		{ label: "0.386" },
+		{ label: "1.092" },
 	];
 	const glassMaterialOptions = [
-		{ label: 0.58 },
-		{ label: 0.72 },
-		{ label: 0.8 },
-		{ label: 0.9 },
+		{ label: "0.58" },
+		{ label: "0.72" },
+		{ label: "0.8" },
+		{ label: "0.9" },
 	];
 
 	return (
@@ -95,20 +95,23 @@ const Material = ({ nextStep, prevStep }) => {
 			}}
 			validationSchema={yup.object({
 				wallMaterial: yup
-					.number()
-					.oneOf([1.719, 1.649, 0.979, 0.225], "choose from list")
+					.string()
+					.oneOf(["1.719", "1.649", "0.979", "0.225"], "choose from list")
 					.required("required"),
 				ceilingMaterial: yup
-					.number()
-					.oneOf([0.878, 0.211, 0.393, 0.386, 1.092], "choose from list")
+					.string()
+					.oneOf(
+						["0.878", "0.211", "0.393", "0.386", "1.092"],
+						"choose from list"
+					)
 					.required("required"),
 				floorMaterial: yup
-					.number()
-					.oneOf([0.37, 0.47, 0.65], "choose from list")
+					.string()
+					.oneOf(["0.37", "0.47", "0.65"], "choose from list")
 					.required("required"),
 				glassMaterial: yup
-					.number()
-					.oneOf([0.58, 0.72, 0.8, 0.9], "choose one")
+					.string()
+					.oneOf(["0.58", "0.72", "0.8", "0.9"], "choose one")
 					.required("required"),
 			})}
 		>
