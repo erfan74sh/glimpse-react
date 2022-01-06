@@ -61,7 +61,7 @@ const VisualMaterial = () => {
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
 							{data.floorMaterial === 0 ? (
 								<span className="text-xl font-semibold text-white uppercase">
-									roof
+									floor
 								</span>
 							) : (
 								<img
@@ -74,7 +74,7 @@ const VisualMaterial = () => {
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
 							{data.glassMaterial === 0 ? (
 								<span className="text-xl font-semibold text-white uppercase">
-									roof
+									window
 								</span>
 							) : (
 								<img
