@@ -79,11 +79,11 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain transition group-hover:opacity-60"
+										className="w-full h-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
-										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl cursor-pointer text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
 									/>
 								</div>
 							)}
@@ -109,11 +109,11 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain transition group-hover:opacity-60"
+										className="w-full h-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
-										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl cursor-pointer text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
 									/>
 								</div>
 							)}
@@ -141,11 +141,11 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain transition group-hover:opacity-60"
+										className="w-full h-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
-										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl cursor-pointer text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
 									/>
 								</div>
 							)}
@@ -171,11 +171,11 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="w-full h-full object-contain transition group-hover:opacity-60"
+										className="w-full h-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
-										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl cursor-pointer text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
 									/>
 								</div>
 							)}
