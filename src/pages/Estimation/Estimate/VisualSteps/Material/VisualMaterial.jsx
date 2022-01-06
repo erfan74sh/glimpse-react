@@ -58,14 +58,14 @@ const VisualMaterial = () => {
 			<div className="">
 				<div className="w-full flex flex-col gap-y-10 justify-center px-10 pt-5">
 					<div className="flex gap-x-10 justify-center">
-						<article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400 group">
+						<article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
 							{data.wallMaterial === 0 ? (
 								<span className="text-xl font-semibold text-white uppercase">
 									wall
 								</span>
 							) : (
 								<div
-									className="w-full h-full relative"
+									className="w-full h-full relative group"
 									onClick={(e) =>
 										e.currentTarget
 											.getElementsByTagName("img")[0]
@@ -95,7 +95,7 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<div
-									className="w-full h-full relative"
+									className="w-full h-full relative group"
 									onClick={(e) =>
 										e.currentTarget
 											.getElementsByTagName("img")[0]
@@ -127,7 +127,7 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<div
-									className="w-full h-full relative"
+									className="w-full h-full relative group"
 									onClick={(e) =>
 										e.currentTarget
 											.getElementsByTagName("img")[0]
@@ -157,7 +157,7 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<div
-									className="w-full h-full relative"
+									className="w-full h-full relative group"
 									onClick={(e) =>
 										e.currentTarget
 											.getElementsByTagName("img")[0]
