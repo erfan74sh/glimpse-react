@@ -79,7 +79,11 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<img
-									src={wall1}
+									src={
+										roofImages.filter(
+											(material) => material.val === data.ceilingMaterial
+										)[0].url
+									}
 									alt="wall 1"
 									className="w-full h-full object-contain"
 								/>
@@ -94,7 +98,11 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<img
-									src={wall1}
+									src={
+										floorImages.filter(
+											(material) => material.val === data.floorMaterial
+										)[0].url
+									}
 									alt="wall 1"
 									className="w-full h-full object-contain"
 								/>
@@ -107,7 +115,11 @@ const VisualMaterial = () => {
 								</span>
 							) : (
 								<img
-									src={wall1}
+									src={
+										windowImages.filter(
+											(material) => material.val === data.glassMaterial
+										)[0].url
+									}
 									alt="wall 1"
 									className="w-full h-full object-contain"
 								/>
