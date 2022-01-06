@@ -94,15 +94,28 @@ const VisualMaterial = () => {
 									roof
 								</span>
 							) : (
-								<img
-									src={
-										roofImages.filter(
-											(material) => material.val === data.ceilingMaterial
-										)[0].url
+								<div
+									className="w-full h-full relative"
+									onClick={(e) =>
+										e.currentTarget
+											.getElementsByTagName("img")[0]
+											.requestFullscreen()
 									}
-									alt="wall 1"
-									className="w-full h-full object-contain"
-								/>
+								>
+									<img
+										src={
+											roofImages.filter(
+												(material) => material.val === data.ceilingMaterial
+											)[0].url
+										}
+										alt="wall 1"
+										className="w-full h-full object-contain"
+									/>
+									<FontAwesomeIcon
+										icon={faExpand}
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+									/>
+								</div>
 							)}
 						</article>
 					</div>
@@ -113,15 +126,28 @@ const VisualMaterial = () => {
 									floor
 								</span>
 							) : (
-								<img
-									src={
-										floorImages.filter(
-											(material) => material.val === data.floorMaterial
-										)[0].url
+								<div
+									className="w-full h-full relative"
+									onClick={(e) =>
+										e.currentTarget
+											.getElementsByTagName("img")[0]
+											.requestFullscreen()
 									}
-									alt="wall 1"
-									className="w-full h-full object-contain"
-								/>
+								>
+									<img
+										src={
+											floorImages.filter(
+												(material) => material.val === data.floorMaterial
+											)[0].url
+										}
+										alt="wall 1"
+										className="w-full h-full object-contain"
+									/>
+									<FontAwesomeIcon
+										icon={faExpand}
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+									/>
+								</div>
 							)}
 						</article>
 						<article className="flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
@@ -130,15 +156,28 @@ const VisualMaterial = () => {
 									window
 								</span>
 							) : (
-								<img
-									src={
-										windowImages.filter(
-											(material) => material.val === data.glassMaterial
-										)[0].url
+								<div
+									className="w-full h-full relative"
+									onClick={(e) =>
+										e.currentTarget
+											.getElementsByTagName("img")[0]
+											.requestFullscreen()
 									}
-									alt="wall 1"
-									className="w-full h-full object-contain"
-								/>
+								>
+									<img
+										src={
+											windowImages.filter(
+												(material) => material.val === data.glassMaterial
+											)[0].url
+										}
+										alt="wall 1"
+										className="w-full h-full object-contain"
+									/>
+									<FontAwesomeIcon
+										icon={faExpand}
+										className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+									/>
+								</div>
 							)}
 						</article>
 					</div>
