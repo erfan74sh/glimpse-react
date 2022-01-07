@@ -18,7 +18,7 @@ const Building = () => {
 const NorthNeighbor = ({ northNeighbor }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[northNeighbor.dist, 0, 0]}>
+		<mesh ref={mesh} position={[northNeighbor.dist, northNeighbor.origin, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
 				args={[4 / 10, northNeighbor.height, 6 / 10]}
@@ -31,7 +31,7 @@ const NorthNeighbor = ({ northNeighbor }) => {
 const SouthNeighbor = ({ soutNeighbor }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[-soutNeighbor.dist, 0, 0]}>
+		<mesh ref={mesh} position={[-soutNeighbor.dist, soutNeighbor.origin, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
 				args={[4 / 10, soutNeighbor.height, 6 / 10]}
@@ -47,10 +47,12 @@ const SitePlan3D = () => {
 	const soutNeighbor = {
 		height: data.southNeighborHeight / 10,
 		dist: (data.southNeighborDist + 6) / 10,
+		origin: (data.southNeighborHeight / 2 - 3.5 / 2) / 10,
 	};
 	const northNeighbor = {
 		height: data.northNeighborHeight / 10,
 		dist: (data.northNeighborDist + 6) / 10,
+		origin: (data.northNeighborHeight / 2 - 3.5 / 2) / 10,
 	};
 
 	return (
