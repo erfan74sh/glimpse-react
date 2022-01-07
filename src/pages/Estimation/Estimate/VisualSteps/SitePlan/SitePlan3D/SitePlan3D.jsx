@@ -9,7 +9,7 @@ const Building = () => {
 	const mesh = useRef(null);
 	return (
 		<mesh ref={mesh}>
-			<boxBufferGeometry attach="geometry" args={[4 / 10, 3.5 / 10, 6 / 10]} />
+			<boxBufferGeometry attach="geometry" args={[8 / 10, 3.5 / 10, 6 / 10]} />
 			<meshStandardMaterial attach="material" color="#4d6ab9" />
 		</mesh>
 	);
@@ -46,11 +46,11 @@ const SitePlan3D = () => {
 
 	const soutNeighbor = {
 		height: data.southNeighborHeight / 10,
-		dist: data.southNeighborDist / 10,
+		dist: (data.southNeighborDist + 6) / 10,
 	};
 	const northNeighbor = {
 		height: data.northNeighborHeight / 10,
-		dist: data.northNeighborDist / 10,
+		dist: (data.northNeighborDist + 6) / 10,
 	};
 
 	return (
