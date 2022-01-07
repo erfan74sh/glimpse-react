@@ -22,6 +22,8 @@ const Hvac = ({ nextStep, prevStep }) => {
 		{ label: "fan coil units + DOAS" },
 	];
 
+	const naturalVentilationOptions = [{ label: "yes" }, { label: "no" }];
+
 	return (
 		<Formik
 			initialValues={data}
