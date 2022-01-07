@@ -101,6 +101,21 @@ const Roof = ({ xDim, yDim, roofCondition }) => {
 		</mesh>
 	);
 };
+const Floor = ({ xDim, yDim, floorCondition }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 0.1 / 10 / 2, 0]}>
+			<boxBufferGeometry
+				attach="geometry"
+				args={[xDim / 10, 0.1 / 10, yDim / 10]}
+			/>
+			<meshStandardMaterial
+				attach="material"
+				color={floorCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
+		</mesh>
+	);
+};
 
 const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 	const mesh = useRef(null);
