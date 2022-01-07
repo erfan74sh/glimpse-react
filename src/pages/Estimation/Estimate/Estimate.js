@@ -79,7 +79,7 @@ const Estimate = () => {
 						form="energy-and-comfort"
 						onClick={(e) => handleSubmit(e)}
 						className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-							step !== 3 && "opacity-25 pointer-events-none"
+							step !== 5 && "opacity-25 pointer-events-none"
 						}`}
 					>
 						start estimate
