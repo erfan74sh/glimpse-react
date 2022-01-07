@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 // state
-import { selectInput } from "../../../../features/data/inputDataSlice";
+import { selectInput } from "../../../../../../features/data/inputDataSlice";
 
 const Material3D = () => {
 	const mesh = useRef(null);
