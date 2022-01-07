@@ -84,14 +84,14 @@ const Hvac = ({ nextStep, prevStep }) => {
 						label="HVAC system"
 						selectOptions={hvacOptions}
 						placeholder="select type"
-						handleValue={() => null}
+						handleValue={handleHvacValue}
 					/>
 					<SelectField
 						name="naturalVent"
 						label="natural ventilation"
 						selectOptions={naturalVentilationOptions}
 						placeholder="select type"
-						handleValue={() => null}
+						handleValue={handleNaturalVentValue}
 					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
