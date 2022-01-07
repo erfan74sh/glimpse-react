@@ -35,6 +35,15 @@ const Hvac = ({ nextStep, prevStep }) => {
 		);
 	};
 
+	const handleNaturalVentValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				naturalVent: v,
+			})
+		);
+	};
+
 	return (
 		<Formik
 			initialValues={data}
