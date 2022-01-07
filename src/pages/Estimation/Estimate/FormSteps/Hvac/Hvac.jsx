@@ -59,34 +59,20 @@ const Hvac = ({ nextStep, prevStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						hvac & natural ventilation
 					</legend>
-					{/* <SelectField
-						name="wallMaterial"
-						label="Wall material"
-						selectOptions={wallMaterialOptions}
+					<SelectField
+						name="HVAC"
+						label="HVAC system"
+						selectOptions={hvacOptions}
 						placeholder="select type"
-						handleValue={handleWallMaterialValue}
+						handleValue={() => null}
 					/>
 					<SelectField
-						name="ceilingMaterial"
-						label="roof material"
-						selectOptions={roofMaterialOptions}
+						name="naturalVent"
+						label="natural ventilation"
+						selectOptions={naturalVentilationOptions}
 						placeholder="select type"
-						handleValue={handleCeilingMaterialValue}
+						handleValue={() => null}
 					/>
-					<SelectField
-						name="floorMaterial"
-						label="Floor material"
-						selectOptions={floorMaterialOptions}
-						placeholder="select type"
-						handleValue={handleFloorMaterialValue}
-					/>
-					<SelectField
-						name="glassMaterial"
-						selectOptions={glassMaterialOptions}
-						label="window material"
-						placeholder="select type"
-						handleValue={handleGlassMaterialValue}
-					/> */}
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
 					<button
