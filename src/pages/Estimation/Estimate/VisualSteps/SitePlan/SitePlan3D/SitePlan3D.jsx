@@ -23,7 +23,7 @@ const NorthNeighbor = ({ northNeighbor }) => {
 				attach="geometry"
 				args={[4 / 10, northNeighbor.height, 6 / 10]}
 			/>
-			<meshStandardMaterial attach="material" color="#4d6ab9" />
+			<meshStandardMaterial attach="material" color="#2D4263" />
 		</mesh>
 	);
 };
@@ -36,7 +36,7 @@ const SouthNeighbor = ({ soutNeighbor }) => {
 				attach="geometry"
 				args={[4 / 10, soutNeighbor.height, 6 / 10]}
 			/>
-			<meshStandardMaterial attach="material" color="#4d6ab9" />
+			<meshStandardMaterial attach="material" color="#2D4263" />
 		</mesh>
 	);
 };
@@ -46,7 +46,7 @@ const Ground = () => {
 	return (
 		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 1 / 2 / 10, 0]}>
 			<boxBufferGeometry attach="geometry" args={[5, 1 / 10, 2]} />
-			<meshStandardMaterial attach="material" color="gray" />
+			<meshStandardMaterial attach="material" color="#727272" />
 		</mesh>
 	);
 };
