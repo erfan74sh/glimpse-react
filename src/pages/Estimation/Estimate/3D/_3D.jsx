@@ -19,7 +19,12 @@ const Box = ({ xDim, yDim, position, rotation }) => {
 				attach="geometry"
 				args={[xDim / 10, 3.5 / 10, yDim / 10]}
 			/>
-			<meshStandardMaterial attach="material" color="#4d6ab9" />
+			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
+			<meshStandardMaterial attachArray="material" color="#D6C27C" />
+			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
+			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
+			<meshStandardMaterial attachArray="material" color="#C79ACD" />
+			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
 		</mesh>
 	);
 };
