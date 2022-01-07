@@ -1,14 +1,11 @@
 import React from "react";
-import {
-	// useDispatch,
-	useSelector,
-} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 // state
 import {
 	selectInput,
-	// updateData,
+	updateData,
 } from "../../../../../features/data/inputDataSlice";
 // components
 import SelectField from "../../../../../components/inputs/SelectField/SelectField";
@@ -16,7 +13,56 @@ import SelectField from "../../../../../components/inputs/SelectField/SelectFiel
 const BoundryCondition = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
 
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
+
+	const handleEastWallConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				eastWallCondition: v,
+			})
+		);
+	};
+	const handleWestWallConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				westWallCondition: v,
+			})
+		);
+	};
+	const handleNorthWallConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				northWallCondition: v,
+			})
+		);
+	};
+	const handleSouthWallConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				southWallCondition: v,
+			})
+		);
+	};
+	const handleRoofConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				roofCondition: v,
+			})
+		);
+	};
+	const handleFloorConditionValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				floorCondition: v,
+			})
+		);
+	};
 
 	const WallOptions = [{ label: "adiabatic" }, { label: "outdoor" }];
 	const floorOptions = [
