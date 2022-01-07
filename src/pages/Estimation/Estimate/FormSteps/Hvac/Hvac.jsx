@@ -12,6 +12,16 @@ import SelectField from "../../../../../components/inputs/SelectField/SelectFiel
 
 const Hvac = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectInput);
+
+	const hvacOptions = [
+		{ label: "ideal air loads" },
+		{ label: "PTAC | residential" },
+		{ label: "PTHP | residential" },
+		{ label: "VAV w/reheat" },
+		{ label: "VAV w/PFP boxes" },
+		{ label: "fan coil units + DOAS" },
+	];
+
 	return (
 		<Formik
 			initialValues={data}
