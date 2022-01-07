@@ -52,27 +52,22 @@ const Hvac = ({ nextStep, prevStep }) => {
 				console.log(values);
 				nextStep();
 			}}
-			// validationSchema={yup.object({
-			// 	wallMaterial: yup
-			// 		.string()
-			// 		.oneOf(["1.719", "1.649", "0.979", "0.225"], "choose from list")
-			// 		.required("required"),
-			// 	ceilingMaterial: yup
-			// 		.string()
-			// 		.oneOf(
-			// 			["0.878", "0.211", "0.393", "0.386", "1.092"],
-			// 			"choose from list"
-			// 		)
-			// 		.required("required"),
-			// 	floorMaterial: yup
-			// 		.string()
-			// 		.oneOf(["0.37", "0.47", "0.65"], "choose from list")
-			// 		.required("required"),
-			// 	glassMaterial: yup
-			// 		.string()
-			// 		.oneOf(["0.58", "0.72", "0.8", "0.9"], "choose one")
-			// 		.required("required"),
-			// })}
+			validationSchema={yup.object({
+				HVAC: yup
+					.string()
+					.oneOf(
+						[
+							"ideal air loads",
+							"PTAC | residential",
+							"PTHP | residential",
+							"VAV w/reheat",
+							"VAV w/PFP boxes",
+							"fan coil units + DOAS",
+						],
+						"choose from list"
+					)
+					.required("required"),
+			})}
 		>
 			<Form className="h-full flex flex-col">
 				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
