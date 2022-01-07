@@ -15,6 +15,16 @@ const Building = () => {
 	);
 };
 
+const NorthNeighbor = () => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[-1, 0, 0]}>
+			<boxBufferGeometry attach="geometry" args={[4 / 10, 3.5 / 10, 6 / 10]} />
+			<meshStandardMaterial attach="material" color="#4d6ab9" />
+		</mesh>
+	);
+};
+
 const SitePlan3D = () => {
 	return (
 		<Canvas
@@ -35,6 +45,7 @@ const SitePlan3D = () => {
 			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 			<Building />
+			<NorthNeighbor />
 			<OrbitControls />
 		</Canvas>
 	);
