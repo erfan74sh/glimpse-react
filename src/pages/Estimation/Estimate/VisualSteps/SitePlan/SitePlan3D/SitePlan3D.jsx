@@ -41,6 +41,16 @@ const SouthNeighbor = ({ soutNeighbor }) => {
 	);
 };
 
+const Ground = () => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 1 / 2 / 10, 0]}>
+			<boxBufferGeometry attach="geometry" args={[5, 1 / 10, 2]} />
+			<meshStandardMaterial attach="material" color="gray" />
+		</mesh>
+	);
+};
+
 const SitePlan3D = () => {
 	const data = useSelector(selectInput);
 
@@ -60,7 +70,7 @@ const SitePlan3D = () => {
 			colorManagement
 			camera={{
 				position: [0, 0, 2],
-				zoom: 100,
+				zoom: 200,
 				near: 0.01,
 				far: 10000,
 				top: 500,
@@ -76,6 +86,7 @@ const SitePlan3D = () => {
 			<SouthNeighbor soutNeighbor={soutNeighbor} />
 			<Building />
 			<NorthNeighbor northNeighbor={northNeighbor} />
+			<Ground />
 			<OrbitControls />
 		</Canvas>
 	);
