@@ -15,7 +15,7 @@ const Building = () => {
 	);
 };
 
-const Material3D = () => {
+const SitePlan3D = () => {
 	return (
 		<Canvas
 			colorManagement
@@ -40,4 +40,4 @@ const Material3D = () => {
 	);
 };
 
-export default Material3D;
+export default SitePlan3D;
