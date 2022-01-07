@@ -86,7 +86,7 @@ const WindowNorth = ({ xDim, yDim, dimentions }) => {
 	);
 };
 
-const Roof = ({ xDim, yDim }) => {
+const Roof = ({ xDim, yDim, roofCondition }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.1 / 10 / 2, 0]}>
@@ -94,7 +94,10 @@ const Roof = ({ xDim, yDim }) => {
 				attach="geometry"
 				args={[xDim / 10, 0.1 / 10, yDim / 10]}
 			/>
-			<meshStandardMaterial attach="material" color="gray" />
+			<meshStandardMaterial
+				attach="material"
+				color={roofCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
 		</mesh>
 	);
 };
@@ -184,7 +187,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 			<Box xDim={xDim} yDim={yDim} data={data} />
-			<Roof xDim={xDim} yDim={yDim} />
+			<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
