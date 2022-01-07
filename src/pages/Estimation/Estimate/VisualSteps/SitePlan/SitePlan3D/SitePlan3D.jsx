@@ -16,7 +16,28 @@ const Building = () => {
 };
 
 const Material3D = () => {
-	return <div>3d</div>;
+	return (
+		<Canvas
+			colorManagement
+			camera={{
+				position: [0, 0, 2],
+				zoom: 210,
+				near: 0.01,
+				far: 10000,
+				top: 500,
+				bottom: -500,
+				right: 500,
+				left: -500,
+			}}
+			orthographic
+		>
+			<ambientLight intensity={0.5} />
+			<directionalLight position={[1, 10, 5]} intensity={1.5} />
+			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
+			<Building />
+			<OrbitControls />
+		</Canvas>
+	);
 };
 
 export default Material3D;
