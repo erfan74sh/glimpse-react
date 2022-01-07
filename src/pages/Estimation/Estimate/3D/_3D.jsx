@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
+import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-const Box = ({ xDim, yDim, position, rotation }) => {
-	// const data = useSelector(selectInput);
+// state
+import { selectInput } from "../../../../features/data/inputDataSlice";
+const Box = ({ xDim, yDim, position, rotation, data }) => {
 	const mesh = useRef(null);
 	// console.log(xDim, yDim);
 	// const [expand, setExpand] = useState(false);
@@ -19,12 +21,36 @@ const Box = ({ xDim, yDim, position, rotation }) => {
 				attach="geometry"
 				args={[xDim / 10, 3.5 / 10, yDim / 10]}
 			/>
-			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
-			<meshStandardMaterial attachArray="material" color="#D6C27C" />
-			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
-			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
-			<meshStandardMaterial attachArray="material" color="#C79ACD" />
-			<meshStandardMaterial attachArray="material" color="#4d6ab9" />
+			<meshStandardMaterial
+				attachArray="material"
+				color={data.eastWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
+			<meshStandardMaterial
+				attachArray="material"
+				color={data.westWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
+			<meshStandardMaterial
+				attachArray="material"
+				color={data.roofCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
+			<meshStandardMaterial
+				attachArray="material"
+				color={
+					data.floorCondition === "adiabatic"
+						? "#C79ACD"
+						: data.floorCondition === "outdoor"
+						? "#4d6ab9"
+						: "#D6C27C"
+				}
+			/>
+			<meshStandardMaterial
+				attachArray="material"
+				color={data.southWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
+			<meshStandardMaterial
+				attachArray="material"
+				color={data.northWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+			/>
 		</mesh>
 	);
 };
@@ -130,6 +156,7 @@ const ShaderType3 = ({ yDim, dimentions }) => {
 };
 
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
+	const data = useSelector(selectInput);
 	const southWindowDimentions = {
 		width: (xDim / 10) * (wwrSouth / 100),
 		height: (3.5 / 10) * (3 / 5),
@@ -156,7 +183,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			<ambientLight intensity={0.5} />
 			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
-			<Box xDim={xDim} yDim={yDim} />
+			<Box xDim={xDim} yDim={yDim} data={data} />
 			<Roof xDim={xDim} yDim={yDim} />
 
 			{/* <TransformControls mode="scale">
