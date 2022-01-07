@@ -1,4 +1,6 @@
 import React from "react";
+// component
+import SitePlan3D from "../SitePlan/SitePlan3D";
 
 const VisualSitePlan = () => {
 	return (
@@ -7,7 +9,9 @@ const VisualSitePlan = () => {
 				details
 			</h2>
 			<div className="">
-				<div className="w-full px-10 h-96">content site plan</div>
+				<div className="w-full px-10 h-96">
+					<SitePlan3D />
+				</div>
 			</div>
 		</>
 	);
