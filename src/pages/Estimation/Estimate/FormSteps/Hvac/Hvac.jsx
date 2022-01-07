@@ -101,13 +101,13 @@ const Hvac = ({ nextStep, prevStep }) => {
 						value="geometry"
 						onClick={prevStep}
 					>
-						prev <span className="text-xs lowercase">(geometry)</span>
+						prev <span className="text-xs lowercase">(material)</span>
 					</button>
 					<button
 						type="submit"
 						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
 					>
-						next <span className="text-xs lowercase">(site plan)</span>
+						next <span className="text-xs lowercase">(review)</span>
 					</button>
 				</section>
 			</Form>
