@@ -43,8 +43,8 @@ const Estimate = () => {
 	const steps = [
 		<Geometry nextStep={handleNextStep} />,
 		<BoundryCondition nextStep={handleNextStep} prevStep={handlePrevStep} />,
-		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
+		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Hvac nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Review prevStep={handlePrevStep} />,
 	];
@@ -52,8 +52,8 @@ const Estimate = () => {
 	const visualSteps = [
 		<VisualGeometry />,
 		<VisualBoundryCondition />,
-		<VisualMaterial />,
 		<VisualSitePlan />,
+		<VisualMaterial />,
 		<VisualHvac />,
 	];
 
