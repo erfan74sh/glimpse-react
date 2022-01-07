@@ -111,7 +111,13 @@ const Floor = ({ xDim, yDim, floorCondition }) => {
 			/>
 			<meshStandardMaterial
 				attach="material"
-				color={floorCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={
+					floorCondition === "adiabatic"
+						? "#C79ACD"
+						: floorCondition === "outdoor"
+						? "#4d6ab9"
+						: "#D6C27C"
+				}
 			/>
 		</mesh>
 	);
@@ -203,6 +209,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 			<Box xDim={xDim} yDim={yDim} data={data} />
 			<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
+			<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
