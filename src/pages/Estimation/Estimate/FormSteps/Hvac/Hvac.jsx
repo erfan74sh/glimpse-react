@@ -45,7 +45,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 			<Form className="h-full flex flex-col">
 				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
-						material
+						hvac & natural ventilation
 					</legend>
 					{/* <SelectField
 						name="wallMaterial"
