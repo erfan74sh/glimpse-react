@@ -22,6 +22,14 @@ const Geometry = ({ nextStep }) => {
 
 	const dispatch = useDispatch();
 
+	const handleFloorLevelValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				floorLevel: v,
+			})
+		);
+	};
 	const handleXDimValue = (v) => {
 		// setXDim(e.target.value);
 		dispatch(
@@ -75,12 +83,12 @@ const Geometry = ({ nextStep }) => {
 	];
 
 	const floorLevelOptions = [
-		{ label: 0 },
-		{ label: 1 },
-		{ label: 2 },
-		{ label: 3 },
-		{ label: 4 },
-		{ label: 5 },
+		{ label: "0" },
+		{ label: "1" },
+		{ label: "2" },
+		{ label: "3" },
+		{ label: "4" },
+		{ label: "5" },
 	];
 
 	return (
@@ -93,8 +101,8 @@ const Geometry = ({ nextStep }) => {
 			}}
 			validationSchema={yup.object({
 				floorLevel: yup
-					.number()
-					.oneOf([0, 1, 2, 3, 4, 5], "pick from list")
+					.string()
+					.oneOf(["0", "1", "2", "3", "4", "5"], "pick from list")
 					.required("floor level is required"),
 				rotation: yup
 					.number()
@@ -137,7 +145,7 @@ const Geometry = ({ nextStep }) => {
 						selectOptions={floorLevelOptions}
 						label="floor level"
 						placeholder="choose level"
-						handleValue={() => null}
+						handleValue={handleFloorLevelValue}
 					/>
 					<InputRange
 						name="rotation"
