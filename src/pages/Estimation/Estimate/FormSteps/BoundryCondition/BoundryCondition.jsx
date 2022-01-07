@@ -116,42 +116,42 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 						selectOptions={WallOptions}
 						label="Boundry condition east wall"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleEastWallConditionValue}
 					/>
 					<SelectField
 						name="westWallCondition"
 						selectOptions={WallOptions}
 						label="Boundry condition west wall"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleWestWallConditionValue}
 					/>
 					<SelectField
 						name="northWallCondition"
 						selectOptions={WallOptions}
 						label="Boundry condition north wall"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleNorthWallConditionValue}
 					/>
 					<SelectField
 						name="southWallCondition"
 						selectOptions={WallOptions}
 						label="Boundry condition south wall"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleSouthWallConditionValue}
 					/>
 					<SelectField
 						name="roofCondition"
 						selectOptions={WallOptions}
 						label="Boundry condition roof"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleRoofConditionValue}
 					/>
 					<SelectField
 						name="floorCondition"
 						selectOptions={floorOptions}
 						label="Boundry condition floor"
 						placeholder="choose condition"
-						handleValue={() => null}
+						handleValue={handleFloorConditionValue}
 					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
