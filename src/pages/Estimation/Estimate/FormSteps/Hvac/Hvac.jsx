@@ -24,6 +24,17 @@ const Hvac = ({ nextStep, prevStep }) => {
 
 	const naturalVentilationOptions = [{ label: "yes" }, { label: "no" }];
 
+	const dispatch = useDispatch();
+
+	const handleHvacValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				HVAC: v,
+			})
+		);
+	};
+
 	return (
 		<Formik
 			initialValues={data}
