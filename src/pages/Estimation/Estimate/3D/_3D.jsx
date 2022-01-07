@@ -89,10 +89,10 @@ const WindowNorth = ({ xDim, yDim, dimentions }) => {
 const Roof = ({ xDim, yDim, roofCondition }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.1 / 10 / 2, 0]}>
+		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.2 / 10 / 2, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[xDim / 10, 0.1 / 10, yDim / 10]}
+				args={[xDim / 10, 0.2 / 10, yDim / 10]}
 			/>
 			<meshStandardMaterial
 				attach="material"
@@ -104,10 +104,10 @@ const Roof = ({ xDim, yDim, roofCondition }) => {
 const Floor = ({ xDim, yDim, floorCondition }) => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 0.1 / 10 / 2, 0]}>
+		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 0.2 / 10 / 2, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[xDim / 10, 0.1 / 10, yDim / 10]}
+				args={[xDim / 10, 0.2 / 10, yDim / 10]}
 			/>
 			<meshStandardMaterial
 				attach="material"
