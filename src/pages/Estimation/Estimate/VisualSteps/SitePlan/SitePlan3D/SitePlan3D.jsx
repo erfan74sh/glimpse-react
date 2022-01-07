@@ -83,10 +83,12 @@ const SitePlan3D = () => {
 			<ambientLight intensity={0.5} />
 			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
-			<SouthNeighbor soutNeighbor={soutNeighbor} />
-			<Building />
-			<NorthNeighbor northNeighbor={northNeighbor} />
-			<Ground />
+			<group position={[0, -0.5, 0]}>
+				<SouthNeighbor soutNeighbor={soutNeighbor} />
+				<Building />
+				<NorthNeighbor northNeighbor={northNeighbor} />
+				<Ground />
+			</group>
 			<OrbitControls />
 		</Canvas>
 	);
