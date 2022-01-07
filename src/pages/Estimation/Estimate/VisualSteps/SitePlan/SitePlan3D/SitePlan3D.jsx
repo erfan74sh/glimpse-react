@@ -18,16 +18,6 @@ const Building = () => {
 const NorthNeighbor = () => {
 	const mesh = useRef(null);
 	return (
-		<mesh ref={mesh} position={[-1, 0, 0]}>
-			<boxBufferGeometry attach="geometry" args={[4 / 10, 3.5 / 10, 6 / 10]} />
-			<meshStandardMaterial attach="material" color="#4d6ab9" />
-		</mesh>
-	);
-};
-
-const SouthNeighbor = () => {
-	const mesh = useRef(null);
-	return (
 		<mesh ref={mesh} position={[1, 0, 0]}>
 			<boxBufferGeometry attach="geometry" args={[4 / 10, 3.5 / 10, 6 / 10]} />
 			<meshStandardMaterial attach="material" color="#4d6ab9" />
@@ -35,13 +25,31 @@ const SouthNeighbor = () => {
 	);
 };
 
+const SouthNeighbor = ({ soutNeighbor }) => {
+	const mesh = useRef(null);
+	return (
+		<mesh ref={mesh} position={[-soutNeighbor.dist, 0, 0]}>
+			<boxBufferGeometry
+				attach="geometry"
+				args={[4 / 10, soutNeighbor.height, 6 / 10]}
+			/>
+			<meshStandardMaterial attach="material" color="#4d6ab9" />
+		</mesh>
+	);
+};
+
 const SitePlan3D = () => {
+	const data = useSelector(selectInput);
+	const soutNeighbor = {
+		height: data.southNeighborHeight / 10,
+		dist: data.southNeighborDist / 10,
+	};
 	return (
 		<Canvas
 			colorManagement
 			camera={{
 				position: [0, 0, 2],
-				zoom: 210,
+				zoom: 100,
 				near: 0.01,
 				far: 10000,
 				top: 500,
@@ -54,7 +62,7 @@ const SitePlan3D = () => {
 			<ambientLight intensity={0.5} />
 			<directionalLight position={[1, 10, 5]} intensity={1.5} />
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
-			<SouthNeighbor />
+			<SouthNeighbor soutNeighbor={soutNeighbor} />
 			<Building />
 			<NorthNeighbor />
 			<OrbitControls />
