@@ -117,6 +117,12 @@ const StepOne = ({ nextStep, formData }) => {
 
 const StepTwo = ({ prevStep, formData }) => {
 	let navigate = useNavigate();
+	const locationOptions = [
+		{ label: "tehran" },
+		{ label: "yazd" },
+		{ label: "bushehr" },
+		{ label: "sari" },
+	];
 	return (
 		<Formik
 			initialValues={formData}
@@ -132,11 +138,12 @@ const StepTwo = ({ prevStep, formData }) => {
 			<div className="estimation-modal__map-container">
 				<Form>
 					<div className=" mb-5">
-						<TextField
-							type="text"
+						<SelectField
+							selectOptions={locationOptions}
 							name="location"
 							label="location"
-							placeholder="enter location of your project"
+							placeholder="choose location"
+							handleValue={() => null}
 						/>
 					</div>
 					{/* <SearchPlacesField /> */}
