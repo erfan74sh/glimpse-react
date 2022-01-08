@@ -8,8 +8,12 @@ const ResultOptions = () => {
 				<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
 					new zone
 				</button>
-				<div>
-					<input type="text" placeholder="enter zone name" />
+				<div className="flex gap-x-4 items-baseline">
+					<input
+						type="text"
+						placeholder="enter zone name"
+						className="py-1.5 text-sm outline-none px-2 rounded-md border border-gray-300"
+					/>
 					<span>+</span>
 				</div>
 			</div>
