@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 // components
 import Nav from "../../components/Nav";
-import ContactUsMap from "./ContactUsmap";
+import ContactUsMap from "./ContactUsMap";
 
 const ContactUs = () => {
 	return (
