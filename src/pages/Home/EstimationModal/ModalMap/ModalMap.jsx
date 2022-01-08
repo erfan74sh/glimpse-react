@@ -15,6 +15,17 @@ const markers = [
 	{ name: "sari", latLng: [36.514051, 53.0484] },
 ];
 
+const LocationTooltip = ({ location }) => {
+	const selected = markers.filter((marker) => marker.name === location)[0];
+	return (
+		<Overlay anchor={selected.latLng} offset={[0, 0]}>
+			<div className="flex flex-col bg-gray-600 p-2 rounded-md bg-opacity-50">
+				<span>city:{selected.name}</span> <span>climate:{selected.name}</span>
+			</div>
+		</Overlay>
+	);
+};
+
 const ModalMap = () => {
 	const [center, setCenter] = useState(initialCenter);
 	const [zoom, setZoom] = useState(5);
@@ -42,13 +53,6 @@ const ModalMap = () => {
 			>
 				{markers.map((marker, idx) => (
 					<Marker anchor={marker.latLng} width={40} color="#147CDD" key={idx} />
-				))}
-				{markers.map((marker, idx) => (
-					<Overlay anchor={marker.latLng} offset={[0, 0]} key={idx}>
-						<div className="flex flex-col bg-gray-600 p-2 rounded-md bg-opacity-50">
-							<span>city:{marker.name}</span> <span>climate:{marker.name}</span>
-						</div>
-					</Overlay>
 				))}
 			</Map>
 		</div>
