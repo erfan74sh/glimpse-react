@@ -3,7 +3,7 @@ import React from "react";
 
 const ResultOptions = () => {
 	return (
-		<section>
+		<section className="flex gap-x-8">
 			<div>
 				<button>new zone</button>
 			</div>
