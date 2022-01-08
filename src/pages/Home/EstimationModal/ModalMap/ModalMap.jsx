@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Map, Marker } from "pigeon-maps";
 import { useFormikContext } from "formik";
 
@@ -19,7 +19,15 @@ const ModalMap = () => {
 	const [center, setCenter] = useState(initialCenter);
 	const [zoom, setZoom] = useState(5);
 	const { values } = useFormikContext();
-	console.log(values);
+	useEffect(() => {
+		if (values.location !== "") {
+			const selected = markers.filter(
+				(marker) => marker.name === values.location
+			)[0];
+			setCenter(selected.latLng);
+			setZoom(10);
+		}
+	}, [values.location]);
 	return (
 		<div>
 			<Map
@@ -36,14 +44,6 @@ const ModalMap = () => {
 					<Marker anchor={marker.latLng} key={idx} />
 				))}
 			</Map>
-			<button
-				onClick={() => {
-					setCenter([36.514051, 53.0484]);
-					setZoom(7);
-				}}
-			>
-				change
-			</button>
 		</div>
 	);
 };
