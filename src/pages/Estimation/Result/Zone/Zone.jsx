@@ -83,6 +83,9 @@ const Zone = () => {
 				<Chart series={series} />
 			</section>
 			<section>
+				<h2 className="mb-4 px-8 text-xl font-normal uppercase">
+					points and grades
+				</h2>
 				<PointsAndGrades />
 			</section>
 			<section className="flex flex-col h-96 px-40 mt-20">
