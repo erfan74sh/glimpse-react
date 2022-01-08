@@ -137,32 +137,33 @@ const StepTwo = ({ prevStep, formData }) => {
 		>
 			<div className="estimation-modal__map-container">
 				<Form>
-					<div className=" mb-5">
-						<SelectField
-							selectOptions={locationOptions}
-							name="location"
-							label="location"
-							placeholder="choose location"
-							handleValue={() => null}
-						/>
+					<div className="flex items-end gap-x-10 mb-8">
+						<div className="w-3/5">
+							<SelectField
+								selectOptions={locationOptions}
+								name="location"
+								label="location"
+								placeholder="choose location"
+								handleValue={() => null}
+							/>
+						</div>
+						<div className="flex gap-x-3 w-2/5">
+							<button
+								type="button"
+								className="w-1/2 px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+								onClick={prevStep}
+							>
+								prev
+							</button>
+							<button
+								type="submit"
+								className="w-1/2 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+							>
+								start estimation
+							</button>
+						</div>
 					</div>
-					{/* <SearchPlacesField /> */}
 					<ModalMap />
-					<div className="flex justify-center gap-x-2 mt-8">
-						<button
-							type="button"
-							className="px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
-							onClick={prevStep}
-						>
-							prev
-						</button>
-						<button
-							type="submit"
-							className="px-3 py-1 rounded-md uppercase text-white bg-blue-550"
-						>
-							start estimation
-						</button>
-					</div>
 				</Form>
 			</div>
 		</Formik>
