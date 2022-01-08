@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 // components
 import Nav from "../../components/Nav";
-import MapContainer from "./MapContainer";
+import ContactUsMap from "./ContactUsmap";
 
 const ContactUs = () => {
 	return (
@@ -80,7 +80,7 @@ const ContactUs = () => {
 							</div>
 						</ul>
 						<div className="mt-5">
-							<MapContainer />
+							<ContactUsMap />
 						</div>
 					</section>
 					<section className="w-1/2 pl-14 relative h-113">
