@@ -8,8 +8,6 @@
 		"@fortawesome/free-brands-svg-icons": "^5.15.4",
 		"@fortawesome/free-solid-svg-icons": "^5.15.4",
 		"@fortawesome/react-fontawesome": "^0.1.16",
-		"@googlemaps/react-wrapper": "^1.1.17",
-		"@react-google-maps/api": "^2.7.0",
 		"@react-pdf/renderer": "^2.0.21",
 		"@react-spring/three": "^9.3.0",
 		"@react-three/drei": "^7.22.6",
@@ -19,7 +17,6 @@
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
 		"formik": "^2.2.9",
-		"google-maps-react": "^2.0.6",
 		"pigeon-maps": "^0.19.7",
 		"react": "^17.0.2",
 		"react-custom-scrollbars": "^4.2.1",
@@ -29,7 +26,6 @@
 		"react-scripts": "4.0.3",
 		"recharts": "^2.1.6",
 		"three": "^0.134.0",
-		"use-places-autocomplete": "^1.11.0",
 		"yup": "^0.32.11"
 	},
 	"scripts": {
