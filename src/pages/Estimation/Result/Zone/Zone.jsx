@@ -5,6 +5,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
 import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
+import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import {
 	faEye,
@@ -80,6 +81,9 @@ const Zone = () => {
 			</h2>
 			<section className="flex justify-center items-center max-h-152 px-20 overflow-hidden">
 				<Chart series={series} />
+			</section>
+			<section>
+				<PointsAndGrades />
 			</section>
 			<section className="flex flex-col h-96 px-40 mt-20">
 				<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
