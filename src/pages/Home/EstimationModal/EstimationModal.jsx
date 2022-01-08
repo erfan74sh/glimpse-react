@@ -150,14 +150,14 @@ const StepTwo = ({ prevStep, formData }) => {
 						<div className="flex gap-x-3 w-2/5">
 							<button
 								type="button"
-								className="w-1/2 px-3 py-1 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+								className="w-1/2 px-3 py-2 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
 								onClick={prevStep}
 							>
 								prev
 							</button>
 							<button
 								type="submit"
-								className="w-1/2 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+								className="w-1/2 px-3 py-2 rounded-md uppercase text-white bg-blue-550"
 							>
 								start estimation
 							</button>
