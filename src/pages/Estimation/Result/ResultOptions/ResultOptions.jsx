@@ -4,12 +4,16 @@ import React from "react";
 const ResultOptions = () => {
 	return (
 		<section className="flex gap-x-8">
-			<div>
+			<div className="flex gap-x-4">
 				<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
 					new zone
 				</button>
+				<div>
+					<input type="text" placeholder="enter zone name" />
+					<span>+</span>
+				</div>
 			</div>
-			<div>
+			<div className="flex gap-x-4">
 				<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
 					new alternative
 				</button>
