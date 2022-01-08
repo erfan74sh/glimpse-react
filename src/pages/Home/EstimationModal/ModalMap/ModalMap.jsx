@@ -41,7 +41,7 @@ const ModalMap = () => {
 				}}
 			>
 				{markers.map((marker, idx) => (
-					<Marker anchor={marker.latLng} key={idx} />
+					<Marker anchor={marker.latLng} width={50} color="#147CDD" key={idx} />
 				))}
 			</Map>
 		</div>
