@@ -8,7 +8,7 @@ const ResultOptions = () => {
 	const [showNewZone, setShowNewZone] = useState(false);
 	const [showNewAlter, setShowNewAlter] = useState(false);
 	return (
-		<section className="flex gap-x-8">
+		<section className="flex gap-x-8 mt-8">
 			<div className="flex gap-x-4 overflow-hidden">
 				<button
 					className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md"
@@ -48,7 +48,7 @@ const ResultOptions = () => {
 				>
 					<input
 						type="text"
-						placeholder="enter zone name"
+						placeholder="enter alternative name"
 						className="py-1.5 text-sm outline-none px-2 rounded-md border border-gray-300"
 					/>
 					<button>
