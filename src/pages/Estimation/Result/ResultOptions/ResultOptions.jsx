@@ -14,8 +14,8 @@ const ResultOptions = () => {
 				</button>
 				<div
 					className={` ${
-						showNewZone ? "max-w-3xl" : "w-0"
-					} flex gap-x-4 items-baseline`}
+						showNewZone ? "max-w-3xl" : ""
+					} max-w-0 flex gap-x-4 items-baseline transition-all duration-200`}
 				>
 					<input
 						type="text"
