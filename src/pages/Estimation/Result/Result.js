@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 
 // compoents
 import BreadCrumps from "./Breadcrumps/BreadCrumps";
+import ResultOptions from "./ResultOptions/ResultOptions";
 
 // style
 import "./Result.scss";
@@ -17,6 +18,7 @@ const Result = () => {
 				<nav>
 					<BreadCrumps />
 				</nav>
+				<ResultOptions />
 			</header>
 			<main className="">
 				<Outlet />
