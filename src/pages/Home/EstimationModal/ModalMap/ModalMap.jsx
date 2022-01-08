@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Map, Marker } from "pigeon-maps";
+import { Map, Marker, Overlay } from "pigeon-maps";
 import { useFormikContext } from "formik";
 
 const mapContainerStyle = {
@@ -41,7 +41,14 @@ const ModalMap = () => {
 				}}
 			>
 				{markers.map((marker, idx) => (
-					<Marker anchor={marker.latLng} width={50} color="#147CDD" key={idx} />
+					<Marker anchor={marker.latLng} width={40} color="#147CDD" key={idx} />
+				))}
+				{markers.map((marker, idx) => (
+					<Overlay anchor={marker.latLng} offset={[0, 0]} key={idx}>
+						<div className="flex flex-col bg-gray-600 p-2 rounded-md bg-opacity-50">
+							<span>city:{marker.name}</span> <span>climate:{marker.name}</span>
+						</div>
+					</Overlay>
 				))}
 			</Map>
 		</div>
