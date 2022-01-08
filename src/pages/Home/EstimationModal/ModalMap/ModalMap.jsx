@@ -48,8 +48,15 @@ const ModalMap = () => {
 				))}
 				{values.location !== "" && (
 					<Overlay anchor={selected.latLng} offset={[0, 0]}>
-						<div className="flex flex-col bg-gray-600 p-2 rounded-md bg-opacity-50">
-							<span>city:{selected.name}</span> <span>climate:?</span>
+						<div className="flex flex-col bg-gray-500 py-2 px-3 rounded-md bg-opacity-50">
+							<div>
+								<span>city:</span>
+								<span>{selected.name}</span>
+							</div>
+							<div>
+								<span>climate:</span>
+								<span> ? </span>
+							</div>
 						</div>
 					</Overlay>
 				)}
