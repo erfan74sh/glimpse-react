@@ -19,16 +19,19 @@ const ResultOptions = () => {
 				<div
 					className={` ${
 						showNewZone ? "max-w-3xl" : ""
-					} max-w-0 flex gap-x-4 items-baseline transition-all duration-200`}
+					} max-w-0 flex gap-x-2 items-center transition-all duration-200`}
 				>
 					<input
 						type="text"
 						placeholder="enter zone name"
 						className="py-1.5 text-sm outline-none px-2 rounded-md border border-gray-300"
 					/>
-					<span>
-						<FontAwesomeIcon icon={faPlusCircle} />
-					</span>
+					<button>
+						<FontAwesomeIcon
+							icon={faPlusCircle}
+							className="text-3xl text-gray-400 transition-all hover:text-blue-550"
+						/>
+					</button>
 				</div>
 			</div>
 			<div className="flex gap-x-4 overflow-hidden">
@@ -41,14 +44,19 @@ const ResultOptions = () => {
 				<div
 					className={` ${
 						showNewAlter ? "max-w-3xl" : ""
-					} max-w-0 flex gap-x-4 items-baseline transition-all duration-200`}
+					} max-w-0 flex gap-x-2 items-center transition-all duration-200`}
 				>
 					<input
 						type="text"
 						placeholder="enter zone name"
 						className="py-1.5 text-sm outline-none px-2 rounded-md border border-gray-300"
 					/>
-					<span>+</span>
+					<button>
+						<FontAwesomeIcon
+							icon={faPlusCircle}
+							className="text-3xl text-gray-400 transition-all hover:text-blue-550"
+						/>
+					</button>
 				</div>
 			</div>
 			<div>
