@@ -3,7 +3,7 @@ import { Map, Marker, Overlay } from "pigeon-maps";
 import { useFormikContext } from "formik";
 
 const mapContainerStyle = {
-	width: "65vw",
+	width: "60vw",
 	height: "55vh",
 };
 const initialCenter = [32.42791, 53.688046];
