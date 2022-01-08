@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// icons
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const ResultOptions = () => {
 	const [showNewZone, setShowNewZone] = useState(false);
@@ -23,7 +26,9 @@ const ResultOptions = () => {
 						placeholder="enter zone name"
 						className="py-1.5 text-sm outline-none px-2 rounded-md border border-gray-300"
 					/>
-					<span>+</span>
+					<span>
+						<FontAwesomeIcon icon={faPlusCircle} />
+					</span>
 				</div>
 			</div>
 			<div className="flex gap-x-4 overflow-hidden">
