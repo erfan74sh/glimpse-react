@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const ResultOptions = () => {
 	const [showNewZone, setShowNewZone] = useState(false);
+	const [showNewAlter, setShowNewAlter] = useState(false);
 	return (
 		<section className="flex gap-x-8">
 			<div className="flex gap-x-4 overflow-hidden">
@@ -26,12 +27,15 @@ const ResultOptions = () => {
 				</div>
 			</div>
 			<div className="flex gap-x-4 overflow-hidden">
-				<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
+				<button
+					className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md"
+					onClick={() => setShowNewAlter(!showNewAlter)}
+				>
 					new alternative
 				</button>
 				<div
 					className={` ${
-						showNewZone ? "max-w-3xl" : ""
+						showNewAlter ? "max-w-3xl" : ""
 					} max-w-0 flex gap-x-4 items-baseline transition-all duration-200`}
 				>
 					<input
