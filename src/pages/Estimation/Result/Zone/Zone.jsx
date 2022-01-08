@@ -82,7 +82,7 @@ const Zone = () => {
 			<section className="flex justify-center items-center max-h-152 px-20 overflow-hidden">
 				<Chart series={series} />
 			</section>
-			<section>
+			<section className="mt-18">
 				<h2 className="mb-4 px-8 text-xl font-normal uppercase">
 					points and grades
 				</h2>
