@@ -125,6 +125,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="Wall material"
 						selectOptions={wallMaterialOptions}
 						placeholder="select type"
+						unit="w/m.k"
 						handleValue={handleWallMaterialValue}
 					/>
 					<SelectField
@@ -132,6 +133,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="roof material"
 						selectOptions={roofMaterialOptions}
 						placeholder="select type"
+						unit="w/m.k"
 						handleValue={handleCeilingMaterialValue}
 					/>
 					<SelectField
@@ -139,6 +141,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="Floor material"
 						selectOptions={floorMaterialOptions}
 						placeholder="select type"
+						unit="w/m.k"
 						handleValue={handleFloorMaterialValue}
 					/>
 					<SelectField
@@ -146,6 +149,7 @@ const Material = ({ nextStep, prevStep }) => {
 						selectOptions={glassMaterialOptions}
 						label="window material"
 						placeholder="select type"
+						unit="w/m.k"
 						handleValue={handleGlassMaterialValue}
 					/>
 				</fieldset>
