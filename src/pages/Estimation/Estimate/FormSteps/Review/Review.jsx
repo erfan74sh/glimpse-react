@@ -15,13 +15,25 @@ const Review = ({ prevStep }) => {
 				<ul className="flex flex-col gap-y-2">
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							X-dimention:
+							floor:
+						</span>
+						<span>{data.floorLevel}</span>
+					</li>
+					<li className="flex justify-between border-b border-gray-400 text-gray-650">
+						<span className="text-gray-900 font-semibold capitalize">
+							rotation:
+						</span>
+						<span>{data.rotation}</span>
+					</li>
+					<li className="flex justify-between border-b border-gray-400 text-gray-650">
+						<span className="text-gray-900 font-semibold capitalize">
+							width:
 						</span>
 						<span>{data.xDim}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							Y-dimention:
+							length:
 						</span>
 						<span>{data.yDim}</span>
 					</li>
@@ -45,51 +57,27 @@ const Review = ({ prevStep }) => {
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							wall material:
+							wall u-value:
 						</span>
 						<span>{data.wallMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							ceiling material:
+							roof u-value:
 						</span>
 						<span>{data.ceilingMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							floor material:
+							floor u-value:
 						</span>
 						<span>{data.floorMaterial}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							glass material:
+							window u-value:
 						</span>
 						<span>{data.glassMaterial}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							south neighbor distance:
-						</span>
-						<span>{data.southNeighborDist}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							south neighbor height:
-						</span>
-						<span>{data.southNeighborHeight}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							north neighbor distance:
-						</span>
-						<span>{data.northNeighborDist}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							north neighbor height:
-						</span>
-						<span>{data.northNeighborHeight}</span>
 					</li>
 				</ul>
 			</section>
