@@ -15,6 +15,7 @@ import VisualMaterial from "./VisualSteps/Material";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
+import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
@@ -65,6 +66,9 @@ const Estimate = () => {
 				<h1 className="flex justify-between pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-2xl font-bold uppercase">
 					energy and comfort
 				</h1>
+				<section>
+					<BreadCrumbs />
+				</section>
 			</header>
 			<main className="flex">
 				<section className="w-2/5 pr-10 relative">
