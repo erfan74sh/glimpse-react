@@ -16,7 +16,7 @@ const DropdownMenu = ({ items, name }) => {
 				className="flex justify-between items-center"
 				onClick={() => setShowMenu(!showMenu)}
 			>
-				<span>{selectedItem ? selectedItem : "choose project"}</span>
+				<span>{selectedItem ? selectedItem : `choose ${name}`}</span>
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
@@ -49,10 +49,11 @@ const DropdownMenu = ({ items, name }) => {
 
 const BreadCrumps = () => {
 	const projectItems = ["project 1", "project 2", "project 3"];
+	const zoneItems = ["zone 1", "zone 2", "zone 3", "zone 4"];
 	return (
 		<div>
-			<DropdownMenu items={projectItems} name="projects" />
-			{/* <DropdownMenu /> */}
+			<DropdownMenu items={projectItems} name="project" />
+			<DropdownMenu items={zoneItems} name="zone" />
 		</div>
 	);
 };
