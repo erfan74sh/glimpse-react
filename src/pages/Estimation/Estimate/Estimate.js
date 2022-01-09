@@ -66,7 +66,7 @@ const Estimate = () => {
 				<h1 className="flex justify-between pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-2xl font-bold uppercase">
 					energy and comfort
 				</h1>
-				<section>
+				<section className="px-5 pt-10 pb-4">
 					<BreadCrumbs />
 				</section>
 			</header>
