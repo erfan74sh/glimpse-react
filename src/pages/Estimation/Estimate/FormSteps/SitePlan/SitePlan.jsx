@@ -102,6 +102,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="2"
 						max="8"
 						step="1"
+						unit="m"
 						handleValue={handleSouthNeighborDistValue}
 					/>
 					<InputRange
@@ -110,6 +111,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="4"
 						max="10"
 						step="1"
+						unit="m"
 						handleValue={handleSouthNeighborHeightValue}
 					/>
 					<InputRange
@@ -118,6 +120,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="2"
 						max="8"
 						step="1"
+						unit="m"
 						handleValue={handleNorthNeighborDistValue}
 					/>
 					<InputRange
@@ -126,6 +129,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="4"
 						max="10"
 						step="1"
+						unit="m"
 						handleValue={handleNorthNeighborHeightValue}
 					/>
 				</fieldset>
