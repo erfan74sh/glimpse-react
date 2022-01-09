@@ -102,6 +102,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="2"
 						max="8"
 						step="1"
+						moreInfo="فاصله از همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborDistValue}
 					/>
@@ -111,6 +112,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="4"
 						max="10"
 						step="1"
+						moreInfo="ارتفاع همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborHeightValue}
 					/>
@@ -120,6 +122,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="2"
 						max="8"
 						step="1"
+						moreInfo="فاصله از همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborDistValue}
 					/>
@@ -129,6 +132,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						min="4"
 						max="10"
 						step="1"
+						moreInfo="ارتفاع همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborHeightValue}
 					/>
