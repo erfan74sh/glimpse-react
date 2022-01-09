@@ -165,7 +165,10 @@ const Zone = () => {
 								<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 								<span>{` ${entry.name}`}</span>
 								<span className="ml-1 text-xs">({entry.date})</span>
-								<button className="ml-auto mr-4" onClick={handleVisibility}>
+								<button className="ml-auto mr-4 capitalize underline">
+									<Link to="/estimation">edit</Link>
+								</button>
+								<button className=" mr-4" onClick={handleVisibility}>
 									{entry.visible ? (
 										<FontAwesomeIcon icon={faEye} />
 									) : (
