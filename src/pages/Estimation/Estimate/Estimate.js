@@ -5,15 +5,16 @@ import { useSelector } from "react-redux";
 import ProgressBar from "../../../components/progress-bar/ProgressBar";
 import Geometry from "./FormSteps/Geometry";
 import BoundryCondition from "./FormSteps/BoundryCondition/BoundryCondition";
-import Material from "./FormSteps/Material";
 import SitePlan from "./FormSteps/SitePlan";
+import Material from "./FormSteps/Material";
+import Hvac from "./FormSteps/Hvac/Hvac";
 import Review from "./FormSteps/Review";
 import VisualBoundryCondition from "./VisualSteps/BoundryCondition";
 import VisualGeometry from "./VisualSteps/Geometry";
 import VisualMaterial from "./VisualSteps/Material";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
-import Hvac from "./FormSteps/Hvac/Hvac";
+import VisualReview from "./VisualSteps/Review/VisualReview";
 
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
@@ -55,6 +56,7 @@ const Estimate = () => {
 		<VisualSitePlan />,
 		<VisualMaterial />,
 		<VisualHvac />,
+		<VisualReview />,
 	];
 
 	return (
