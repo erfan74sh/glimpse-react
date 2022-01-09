@@ -111,13 +111,13 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				xDim: yup
 					.number()
-					.min(8, "x-dimention must be equal or greater than 8")
-					.max(24, "x-dimention must be equal or less than 24")
+					.min(3, "x-dimention must be equal or greater than 8")
+					.max(10, "x-dimention must be equal or less than 24")
 					.required("required"),
 				yDim: yup
 					.number()
-					.min(3, "y-dimention must be between 3 and 10")
-					.max(10, "y-dimention must be between 3 and 10")
+					.min(8, "y-dimention must be between 3 and 10")
+					.max(24, "y-dimention must be between 3 and 10")
 					.required("required"),
 				wwrNorth: yup
 					.number()
@@ -145,6 +145,7 @@ const Geometry = ({ nextStep }) => {
 						selectOptions={floorLevelOptions}
 						label="floor level"
 						placeholder="choose level"
+						moreInfo="طبقه"
 						handleValue={handleFloorLevelValue}
 					/>
 					<InputRange
@@ -160,22 +161,22 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="xDim"
 						label="width"
-						min="8"
-						max="24"
+						min="3"
+						max="10"
 						step="0.5"
 						handleValue={handleXDimValue}
-						moreInfo="this is description"
+						moreInfo="عرض بنا"
 						unit="m"
 					/>
 
 					<InputRange
 						name="yDim"
 						label="length"
-						min="3"
-						max="10"
+						min="8"
+						max="24"
 						step="0.5"
 						handleValue={handleYDimValue}
-						moreInfo="this is description"
+						moreInfo="طول بنا"
 						unit="m"
 					/>
 					<InputRange
