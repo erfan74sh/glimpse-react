@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Model3D from "../../3D";
 // state
 import { selectInput } from "../../../../../features/data/inputDataSlice";
+import MoreInfo from "../../../../../components/moreInfo/MoreInfo";
 
 const VisualBoundryCondition = () => {
 	const inputData = useSelector(selectInput);
@@ -26,8 +27,10 @@ const VisualBoundryCondition = () => {
 					<ul className="flex gap-x-10 justify-center">
 						<li className="flex items-center gap-x-4">
 							<span className="inline-block w-7 h-7 rounded-lg bg-blue-550"></span>
-							<span>adiabatic</span>
-							<span></span>
+							<div className="flex gap-x-1">
+								<span>adiabatic</span>
+								<MoreInfo moreInfo="فاقد تبادل حرارتی با فضای بیرون" />
+							</div>
 						</li>
 					</ul>
 				</section>
