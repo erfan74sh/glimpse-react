@@ -23,8 +23,8 @@ const VisualBoundryCondition = () => {
 						shadingType={inputData.shadingType}
 					/>
 				</div>
-				<section>
-					<ul className="flex gap-x-10 justify-center">
+				<section className="pt-2">
+					<ul className="flex gap-x-12 justify-center">
 						<li className="flex items-center gap-x-4">
 							<span className="inline-block w-7 h-7 rounded-lg bg-pink-250"></span>
 							<div className="flex gap-x-1">
