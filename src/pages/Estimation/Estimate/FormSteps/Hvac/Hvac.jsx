@@ -83,6 +83,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 						label="HVAC system"
 						selectOptions={hvacOptions}
 						placeholder="select type"
+						moreInfo="نوع سیستم تأسیسات مکانیکی مطبوع"
 						handleValue={handleHvacValue}
 					/>
 					<SelectField
@@ -90,6 +91,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 						label="natural ventilation"
 						selectOptions={naturalVentilationOptions}
 						placeholder="select type"
+						moreInfo="تهویه طبیعی"
 						handleValue={handleNaturalVentValue}
 					/>
 				</fieldset>
