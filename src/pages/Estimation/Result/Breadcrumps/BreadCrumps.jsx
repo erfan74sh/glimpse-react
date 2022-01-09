@@ -51,8 +51,9 @@ const BreadCrumps = () => {
 	const projectItems = ["project 1", "project 2", "project 3"];
 	const zoneItems = ["zone 1", "zone 2", "zone 3", "zone 4"];
 	return (
-		<div>
+		<div className="flex gap-x-8 items-center">
 			<DropdownMenu items={projectItems} name="project" />
+			<span>{`>`}</span>
 			<DropdownMenu items={zoneItems} name="zone" />
 		</div>
 	);
