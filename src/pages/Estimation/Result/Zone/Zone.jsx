@@ -10,7 +10,7 @@ import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 import {
 	faEye,
 	faEyeSlash,
-	faSortDown,
+	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 // assets
 import ModelImage from "../../../../assets/images/3dmodel-result.png";
@@ -180,7 +180,7 @@ const Zone = () => {
 									onClick={handleShowResultDropdown}
 								>
 									<FontAwesomeIcon
-										icon={faSortDown}
+										icon={faCaretDown}
 										className={`${
 											entry.showDropdown ? "transform rotate-180" : ""
 										} transition-all`}
