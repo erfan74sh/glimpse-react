@@ -248,6 +248,30 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 					{shadingType === "vertical" && (
 						<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
 					)}
+					{shadingType === "all modes" && (
+						<group>
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={0}
+								dimentions={southWindowDimentions}
+							/>
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={0.06}
+								dimentions={southWindowDimentions}
+							/>
+							<ShaderType1
+								xDim={xDim}
+								yDim={yDim}
+								height={-0.06}
+								dimentions={southWindowDimentions}
+							/>
+							<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
+							<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
+						</group>
+					)}
 				</group>
 			)}
 			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
