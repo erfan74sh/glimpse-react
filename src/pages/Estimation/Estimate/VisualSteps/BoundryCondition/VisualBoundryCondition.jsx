@@ -22,6 +22,15 @@ const VisualBoundryCondition = () => {
 						shadingType={inputData.shadingType}
 					/>
 				</div>
+				<section>
+					<ul>
+						<li>
+							<span></span>
+							<span>adiabatic</span>
+							<span></span>
+						</li>
+					</ul>
+				</section>
 			</div>
 		</>
 	);
