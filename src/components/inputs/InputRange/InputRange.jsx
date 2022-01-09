@@ -10,6 +10,7 @@ const InputRange = ({
 	step,
 	handleValue,
 	moreInfo,
+	unit,
 	...props
 }) => {
 	const [field, meta] = useField({ ...props, type: "range" });
@@ -26,7 +27,9 @@ const InputRange = ({
 						meta.touched && meta.error ? "text-red-600" : ""
 					} flex items-center gap-x-1`}
 				>
-					<span>{label}</span>
+					<span>
+						{label} {unit && `(${unit})`}
+					</span>
 					{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 				</label>
 				<span>{field.value}</span>
