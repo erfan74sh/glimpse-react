@@ -49,7 +49,7 @@ const DropdownMenu = ({ items, name }) => {
 
 const AlternativeList = ({ items }) => {
 	return (
-		<ul className="flex gap-x-1">
+		<ul className="flex gap-x-1 items-center text-blue-550">
 			{items.map((alternative, idx) => {
 				return (
 					<li key={idx}>
@@ -67,7 +67,7 @@ const BreadCrumps = () => {
 	const zoneItems = ["zone 1", "zone 2", "zone 3", "zone 4"];
 	const alternativeItems = ["alter 1", "alter 2", "alter 3"];
 	return (
-		<div className="flex gap-x-8 items-center">
+		<div className="flex gap-x-5 items-center">
 			<DropdownMenu items={projectItems} name="project" />
 			<span>{`>`}</span>
 			<DropdownMenu items={zoneItems} name="zone" />
