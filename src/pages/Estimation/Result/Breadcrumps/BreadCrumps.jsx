@@ -53,7 +53,7 @@ const AlternativeList = ({ items }) => {
 			{items.map((alternative, idx) => {
 				return (
 					<li key={idx}>
-						{idx !== 0 && <span>{`/ `}</span>}
+						{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
 						<span>{alternative}</span>
 					</li>
 				);
