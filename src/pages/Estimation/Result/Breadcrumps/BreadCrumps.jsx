@@ -54,7 +54,7 @@ const AlternativeList = ({ items }) => {
 				return (
 					<li key={idx}>
 						{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
-						<label>
+						<label className="cursor-pointer">
 							{alternative}
 							<input
 								type="radio"
