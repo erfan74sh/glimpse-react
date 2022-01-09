@@ -14,7 +14,11 @@ const DropdownMenu = ({ items, name }) => {
 				<span>selected item</span>
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
-			<ul className="absolute flex flex-col gap-y-2 min-w-full left-0 -bottom-1 transform translate-y-full p-2 rounded-md bg-gray-350">
+			<ul
+				className={`absolute flex-col gap-y-2 min-w-full ${
+					showMenu ? "flex" : "hidden"
+				} left-0 -bottom-1 transform translate-y-full p-2 rounded-md bg-gray-350 z-10`}
+			>
 				{items.map((item, idx) => {
 					return (
 						<li key={idx}>
