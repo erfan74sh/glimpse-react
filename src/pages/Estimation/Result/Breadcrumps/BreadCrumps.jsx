@@ -32,6 +32,7 @@ const DropdownMenu = ({ items, name }) => {
 									type="radio"
 									name={name}
 									value={item}
+									className="hidden"
 									onChange={(e) => {
 										handleSelectItem(e);
 									}}
