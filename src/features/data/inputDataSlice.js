@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	data: {
 		floorLevel: "",
-		xDim: 8,
-		yDim: 3,
+		xDim: 3,
+		yDim: 8,
 		rotation: 0,
 		wwrNorth: 0,
 		wwrSouth: 0,
