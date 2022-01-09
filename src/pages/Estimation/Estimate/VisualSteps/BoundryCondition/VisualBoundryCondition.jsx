@@ -23,7 +23,7 @@ const VisualBoundryCondition = () => {
 					/>
 				</div>
 				<section>
-					<ul>
+					<ul className="flex gap-x-10 justify-center">
 						<li>
 							<span></span>
 							<span>adiabatic</span>
