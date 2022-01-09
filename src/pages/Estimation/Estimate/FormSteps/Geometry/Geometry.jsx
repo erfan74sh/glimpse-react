@@ -155,6 +155,7 @@ const Geometry = ({ nextStep }) => {
 						step="10"
 						handleValue={() => null}
 						moreInfo="جهت‌گیری بنا"
+						unit="degree"
 					/>
 					<InputRange
 						name="xDim"
@@ -164,6 +165,7 @@ const Geometry = ({ nextStep }) => {
 						step="0.5"
 						handleValue={handleXDimValue}
 						moreInfo="this is description"
+						unit="m"
 					/>
 
 					<InputRange
@@ -174,6 +176,7 @@ const Geometry = ({ nextStep }) => {
 						step="0.5"
 						handleValue={handleYDimValue}
 						moreInfo="this is description"
+						unit="m"
 					/>
 					<InputRange
 						name="wwrSouth"
@@ -183,6 +186,7 @@ const Geometry = ({ nextStep }) => {
 						step="10"
 						handleValue={handleWwrSouthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار جنوبی"
+						unit="%"
 					/>
 					<InputRange
 						name="wwrNorth"
@@ -192,6 +196,7 @@ const Geometry = ({ nextStep }) => {
 						step="10"
 						handleValue={handleWwrNorthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار شمالی"
+						unit="%"
 					/>
 					<SelectField
 						name="shadingType"
