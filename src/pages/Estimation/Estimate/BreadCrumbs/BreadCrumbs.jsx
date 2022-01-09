@@ -2,7 +2,7 @@ import React from "react";
 
 const BreadCrumbs = () => {
 	return (
-		<ul className="flex gap-x-1 text-lg">
+		<ul className="flex gap-x-1 text-xl">
 			<li>{`project name >`}</li>
 			<li>{`zone name :`}</li>
 			<li>alternative name</li>
