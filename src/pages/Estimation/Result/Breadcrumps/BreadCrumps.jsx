@@ -1,19 +1,40 @@
 import React from "react";
 
-const DropdownMenu = ({ options }) => {
+const DropdownMenu = ({ items, name }) => {
 	return (
 		<div>
 			<ul>
-				<li>project 1</li>
-				<li>project 2</li>
-				<li>project 3</li>
+				<li>
+					<label>
+						<input type="radio" name={name} />
+						project 1
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="radio" name={name} />
+						project 1
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="radio" name={name} />
+						project 1
+					</label>
+				</li>
 			</ul>
 		</div>
 	);
 };
 
 const BreadCrumps = () => {
-	return <div>sds</div>;
+	const projectItems = ["project 1", "project 2", "project 3"];
+	return (
+		<div>
+			<DropdownMenu items={projectItems} name="projects" />
+			<DropdownMenu />
+		</div>
+	);
 };
 
 export default BreadCrumps;
