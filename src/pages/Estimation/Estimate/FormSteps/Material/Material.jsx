@@ -125,6 +125,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="Wall material"
 						selectOptions={wallMaterialOptions}
 						placeholder="select type"
+						moreInfo="ضریب هدایتی دیوار"
 						unit="w/m.k"
 						handleValue={handleWallMaterialValue}
 					/>
@@ -133,6 +134,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="roof material"
 						selectOptions={roofMaterialOptions}
 						placeholder="select type"
+						moreInfo="ضریب هدایتی بام"
 						unit="w/m.k"
 						handleValue={handleCeilingMaterialValue}
 					/>
@@ -141,6 +143,7 @@ const Material = ({ nextStep, prevStep }) => {
 						label="Floor material"
 						selectOptions={floorMaterialOptions}
 						placeholder="select type"
+						moreInfo="ضریب هدایتی کف"
 						unit="w/m.k"
 						handleValue={handleFloorMaterialValue}
 					/>
@@ -149,6 +152,7 @@ const Material = ({ nextStep, prevStep }) => {
 						selectOptions={glassMaterialOptions}
 						label="window material"
 						placeholder="select type"
+						moreInfo="ضریب هدایتی پنجره"
 						unit="w/m.k"
 						handleValue={handleGlassMaterialValue}
 					/>
