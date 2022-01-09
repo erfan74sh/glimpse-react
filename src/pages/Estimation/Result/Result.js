@@ -15,7 +15,7 @@ const Result = () => {
 				<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
 					result
 				</h1>
-				<nav>
+				<nav className="mt-14">
 					<BreadCrumps />
 				</nav>
 				<ResultOptions />
