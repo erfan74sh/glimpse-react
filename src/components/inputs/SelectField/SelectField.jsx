@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useField, useFormikContext } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// components
+import MoreInfo from "../../moreInfo/MoreInfo";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,15 +28,19 @@ const SelectField = ({
 	label,
 	placeholder,
 	handleValue,
+	moreInfo,
 	unit,
 }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 	const { values, errors, touched } = useFormikContext();
 	return (
 		<div className="relative flex flex-col gap-y-1 capitalize">
-			<label>
-				{label}
-				{unit && ` (${unit})`}
+			<label className="flex items-center gap-x-1">
+				<span>
+					{label}
+					{unit && ` (${unit})`}
+				</span>
+				{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 			</label>
 			<div
 				onClick={() => {
