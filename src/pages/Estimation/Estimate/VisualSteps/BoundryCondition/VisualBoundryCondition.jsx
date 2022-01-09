@@ -32,6 +32,20 @@ const VisualBoundryCondition = () => {
 								<MoreInfo moreInfo="فاقد تبادل حرارتی با فضای بیرون" />
 							</div>
 						</li>
+						<li className="flex items-center gap-x-4">
+							<span className="inline-block w-7 h-7 rounded-lg bg-blue-550"></span>
+							<div className="flex gap-x-1">
+								<span>outdoor</span>
+								<MoreInfo moreInfo="فاقد تبادل حرارتی با فضای بیرون" />
+							</div>
+						</li>
+						<li className="flex items-center gap-x-4">
+							<span className="inline-block w-7 h-7 rounded-lg bg-blue-550"></span>
+							<div className="flex gap-x-1">
+								<span>ground</span>
+								<MoreInfo moreInfo="فاقد تبادل حرارتی با فضای بیرون" />
+							</div>
+						</li>
 					</ul>
 				</section>
 			</div>
