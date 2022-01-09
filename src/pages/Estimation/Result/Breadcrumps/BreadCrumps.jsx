@@ -5,13 +5,18 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const DropdownMenu = ({ items, name }) => {
 	const [showMenu, setShowMenu] = useState(false);
+	const [selectedItem, setSelectedItem] = useState("");
+	const handleSelectItem = (e) => {
+		setSelectedItem(e.target.value);
+		setShowMenu(false);
+	};
 	return (
 		<div className="relative px-2 py-1.5 w-36 text-sm text-white bg-gray-350 uppercase rounded-md">
 			<div
 				className="flex justify-between items-center"
 				onClick={() => setShowMenu(!showMenu)}
 			>
-				<span>selected item</span>
+				<span>{selectedItem ? selectedItem : "choose project"}</span>
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
@@ -23,7 +28,14 @@ const DropdownMenu = ({ items, name }) => {
 					return (
 						<li key={idx}>
 							<label>
-								<input type="radio" name={name} />
+								<input
+									type="radio"
+									name={name}
+									value={item}
+									onChange={(e) => {
+										handleSelectItem(e);
+									}}
+								/>
 								{item}
 							</label>
 						</li>
