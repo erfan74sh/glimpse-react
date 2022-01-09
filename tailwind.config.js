@@ -13,6 +13,12 @@ module.exports = {
 				red: {
 					350: "#FF647C",
 				},
+				pink: {
+					250: "#C79ACD",
+				},
+				yellow: {
+					250: "#D6C27C",
+				},
 			},
 			spacing: {
 				18: "4.5rem",
