@@ -25,7 +25,7 @@ const VisualBoundryCondition = () => {
 				<section>
 					<ul className="flex gap-x-10 justify-center">
 						<li>
-							<span></span>
+							<span className="inline-block w-7 h-7 rounded-lg bg-blue-550"></span>
 							<span>adiabatic</span>
 							<span></span>
 						</li>
