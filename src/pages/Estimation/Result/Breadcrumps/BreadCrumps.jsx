@@ -49,9 +49,14 @@ const DropdownMenu = ({ items, name }) => {
 
 const AlternativeList = ({ items }) => {
 	return (
-		<ul>
+		<ul className="flex gap-x-1">
 			{items.map((alternative, idx) => {
-				return <li key={idx}>{alternative}</li>;
+				return (
+					<li key={idx}>
+						{idx !== 0 && <span>{`/ `}</span>}
+						<span>{alternative}</span>
+					</li>
+				);
 			})}
 		</ul>
 	);
