@@ -27,7 +27,7 @@ const DropdownMenu = ({ items, name }) => {
 				{items.map((item, idx) => {
 					return (
 						<li key={idx}>
-							<label>
+							<label className="cursor-pointer">
 								<input
 									type="radio"
 									name={name}
@@ -54,7 +54,16 @@ const AlternativeList = ({ items }) => {
 				return (
 					<li key={idx}>
 						{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
-						<span>{alternative}</span>
+						<label>
+							{alternative}
+							<input
+								type="radio"
+								name="alternative"
+								className="hidden"
+								value={alternative}
+								onChange={(e) => console.log(e.target.value)}
+							/>
+						</label>
 					</li>
 				);
 			})}
