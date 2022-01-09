@@ -34,7 +34,7 @@ const SelectField = ({
 		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label>
 				{label}
-				{unit && `(${unit})`}
+				{unit && ` (${unit})`}
 			</label>
 			<div
 				onClick={() => {
