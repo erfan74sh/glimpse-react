@@ -8,6 +8,7 @@ module.exports = {
 					550: "#147CDD",
 				},
 				gray: {
+					350: "#AEAEAE",
 					650: "#323232",
 				},
 				red: {
