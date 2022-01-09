@@ -4,24 +4,16 @@ const DropdownMenu = ({ items, name }) => {
 	return (
 		<div>
 			<ul>
-				<li>
-					<label>
-						<input type="radio" name={name} />
-						project 1
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="radio" name={name} />
-						project 1
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="radio" name={name} />
-						project 1
-					</label>
-				</li>
+				{items.map((item, idx) => {
+					return (
+						<li key={idx}>
+							<label>
+								<input type="radio" name={name} />
+								{item}
+							</label>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);
@@ -32,7 +24,7 @@ const BreadCrumps = () => {
 	return (
 		<div>
 			<DropdownMenu items={projectItems} name="projects" />
-			<DropdownMenu />
+			{/* <DropdownMenu /> */}
 		</div>
 	);
 };
