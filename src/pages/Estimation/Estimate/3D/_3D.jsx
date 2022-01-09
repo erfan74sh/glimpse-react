@@ -2,8 +2,17 @@ import React, { useRef } from "react";
 import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { useLoader } from "@react-three/fiber";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
+
+const NorthSign = () => {
+	const obj = useLoader(OBJLoader, "./NorthSign.obj");
+	console.log(obj);
+	return <primitive object={obj} scale={0.1} position={[-1, 0, 0]} />;
+};
+
 const Box = ({ xDim, yDim, position, rotation, data }) => {
 	const mesh = useRef(null);
 	// console.log(xDim, yDim);
@@ -210,6 +219,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			<Box xDim={xDim} yDim={yDim} data={data} />
 			<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
 			<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
+			<NorthSign />
 
 			{/* <TransformControls mode="scale">
 			</TransformControls> */}
