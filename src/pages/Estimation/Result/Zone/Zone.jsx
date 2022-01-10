@@ -128,9 +128,6 @@ const Zone = () => {
 			<section className="flex flex-col h-96 px-40 mt-20">
 				<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
 					<h2>alternatives</h2>
-					<button className=" px-3 py-1 self-center text-base text-white rounded-md bg-blue-550 ">
-						<Link to="/estimation">new alternative</Link>
-					</button>
 				</header>
 				<ul className="flex flex-col gap-y-9">
 					{series.map((entry, i) => (
