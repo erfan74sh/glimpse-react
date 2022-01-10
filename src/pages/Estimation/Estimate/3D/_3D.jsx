@@ -3,14 +3,23 @@ import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
+import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { useLoader } from "@react-three/fiber";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
 
-const NorthSign = () => {
-	const obj = useLoader(OBJLoader, "./NorthSign.obj");
+const NorthSign = ({ xDim, yDim }) => {
+	const materials = useLoader(MTLLoader, "NorthSign.mtl");
+	const obj = useLoader(OBJLoader, "NorthSign.obj", (loader) => {
+		materials.preload();
+		loader.setMaterials(materials);
+	});
 	return (
-		<primitive object={obj} scale={0.07} position={[0, -3.5 / 10 / 2, 1.6]} />
+		<primitive
+			object={obj}
+			scale={0.07}
+			position={[-(xDim / 2 + 3) / 10, -3.5 / 10 / 2, (yDim / 2 + 3) / 10]}
+		/>
 	);
 };
 
@@ -204,7 +213,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			colorManagement
 			camera={{
 				position: [2, 2, 2],
-				zoom: 210,
+				zoom: 180,
 				near: 0.01,
 				far: 10000,
 				top: 500,
@@ -221,7 +230,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 				<Box xDim={xDim} yDim={yDim} data={data} />
 				<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
 				<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
-				<NorthSign />
+				<NorthSign xDim={xDim} yDim={yDim} />
 
 				{/* <TransformControls mode="scale">
 			</TransformControls> */}
