@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -9,7 +9,6 @@ import { selectInput } from "../../../../features/data/inputDataSlice";
 
 const NorthSign = () => {
 	const obj = useLoader(OBJLoader, "./NorthSign.obj");
-	console.log(obj);
 	return <primitive object={obj} scale={0.1} position={[-1, 0, 0]} />;
 };
 
@@ -213,79 +212,85 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 			}}
 			orthographic
 		>
-			<ambientLight intensity={0.5} />
-			<directionalLight position={[1, 10, 5]} intensity={1.5} />
-			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
-			<Box xDim={xDim} yDim={yDim} data={data} />
-			<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
-			<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
-			<NorthSign />
+			<Suspense fallback={null}>
+				<ambientLight intensity={0.5} />
+				<directionalLight position={[1, 10, 5]} intensity={1.5} />
+				<directionalLight position={[-1, 10, -5]} intensity={0.7} />
+				<Box xDim={xDim} yDim={yDim} data={data} />
+				<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
+				<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
+				<NorthSign />
 
-			{/* <TransformControls mode="scale">
+				{/* <TransformControls mode="scale">
 			</TransformControls> */}
-			{wwrSouth !== 0 && (
-				<group>
-					<WindowSouth
-						xDim={xDim}
-						yDim={yDim}
-						dimentions={southWindowDimentions}
-					/>
-					{shadingType === "horizontal louvre" && (
-						<group>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={0}
-								dimentions={southWindowDimentions}
-							/>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={0.06}
-								dimentions={southWindowDimentions}
-							/>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={-0.06}
-								dimentions={southWindowDimentions}
-							/>
-						</group>
-					)}
-					{shadingType === "horizontal" && (
-						<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
-					)}
-					{shadingType === "vertical" && (
-						<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
-					)}
-					{shadingType === "all modes" && (
-						<group>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={0}
-								dimentions={southWindowDimentions}
-							/>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={0.06}
-								dimentions={southWindowDimentions}
-							/>
-							<ShaderType1
-								xDim={xDim}
-								yDim={yDim}
-								height={-0.06}
-								dimentions={southWindowDimentions}
-							/>
-							<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
+				{wwrSouth !== 0 && (
+					<group>
+						<WindowSouth
+							xDim={xDim}
+							yDim={yDim}
+							dimentions={southWindowDimentions}
+						/>
+						{shadingType === "horizontal louvre" && (
+							<group>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={0}
+									dimentions={southWindowDimentions}
+								/>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={0.06}
+									dimentions={southWindowDimentions}
+								/>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={-0.06}
+									dimentions={southWindowDimentions}
+								/>
+							</group>
+						)}
+						{shadingType === "horizontal" && (
 							<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
-						</group>
-					)}
-				</group>
-			)}
-			<WindowNorth xDim={xDim} yDim={yDim} dimentions={northWindowDimentions} />
-			<OrbitControls />
+						)}
+						{shadingType === "vertical" && (
+							<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
+						)}
+						{shadingType === "all modes" && (
+							<group>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={0}
+									dimentions={southWindowDimentions}
+								/>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={0.06}
+									dimentions={southWindowDimentions}
+								/>
+								<ShaderType1
+									xDim={xDim}
+									yDim={yDim}
+									height={-0.06}
+									dimentions={southWindowDimentions}
+								/>
+								<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
+								<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
+							</group>
+						)}
+					</group>
+				)}
+				<WindowNorth
+					xDim={xDim}
+					yDim={yDim}
+					dimentions={northWindowDimentions}
+				/>
+				<OrbitControls />
+			</Suspense>
 		</Canvas>
 	);
 };
