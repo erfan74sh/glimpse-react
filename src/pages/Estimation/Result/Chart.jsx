@@ -180,11 +180,11 @@ const Chart = ({ series }) => {
 	return (
 		<ResponsiveContainer width="100%" height={400}>
 			<LineChart
-				width={1000}
+				width={1200}
 				height={300}
-				margin={{ top: 100, right: 50, bottom: 20, left: 50 }}
+				margin={{ top: 120, right: 50, bottom: 20, left: 50 }}
 			>
-				<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
+				<CartesianGrid stroke="#000" strokeWidth="2" horizontal={false} />
 				{series
 					.filter((s) => s.visible)
 					.map((s) => {
@@ -212,6 +212,7 @@ const Chart = ({ series }) => {
 					axisLine={false}
 					tick={<CustomizedAxisTick />}
 					tickSize="0"
+					interval={0}
 				/>
 				<YAxis hide={true} />
 				<Tooltip content={<CustomTooltip />} />
