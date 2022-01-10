@@ -54,9 +54,10 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 				x={0}
 				y={0}
 				dy={-10}
-				textAnchor="middle"
+				textAnchor="start"
 				fill={stroke}
 				strokeWidth={strokeWidth}
+				transform="rotate(-45)"
 			>
 				{payload.value}
 			</text>
