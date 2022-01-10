@@ -39,14 +39,14 @@ const CustomizedDot = ({ cx, cy, stroke, strokeOpacity }) => {
 
 const CustomizedAxisTick = ({ x, y, payload }) => {
 	let stroke = "#3F3356";
-	let strokeWidth = 1;
+	let fontWeight = 400;
 	if (
 		payload.value === "cooling load" ||
 		payload.value === "heating load" ||
 		payload.value === "electric light"
 	) {
 		stroke = "#4093E1";
-		strokeWidth = 10;
+		fontWeight = 700;
 	}
 	return (
 		<g transform={`translate(${x},${y})`}>
@@ -56,9 +56,10 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 				dy={-10}
 				textAnchor="start"
 				fill={stroke}
-				strokeWidth={strokeWidth}
+				// strokeWidth={strokeWidth}
 				transform="rotate(-45)"
 				className="text-sm"
+				fontWeight={fontWeight}
 			>
 				{payload.value}
 			</text>
