@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import {
+	Link,
+	// useParams
+} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
@@ -17,7 +20,7 @@ import ModelImage from "../../../../assets/images/3dmodel-result.png";
 import PDFIcon from "../../../../assets/images/pdf-icon.png";
 
 const Zone = () => {
-	const params = useParams();
+	// const params = useParams();
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const data = [
