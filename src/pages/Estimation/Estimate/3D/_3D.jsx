@@ -9,7 +9,9 @@ import { selectInput } from "../../../../features/data/inputDataSlice";
 
 const NorthSign = () => {
 	const obj = useLoader(OBJLoader, "./NorthSign.obj");
-	return <primitive object={obj} scale={0.1} position={[-1, 0, 0]} />;
+	return (
+		<primitive object={obj} scale={0.07} position={[0, -3.5 / 10 / 2, 1.6]} />
+	);
 };
 
 const Box = ({ xDim, yDim, position, rotation, data }) => {
