@@ -58,6 +58,7 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 				fill={stroke}
 				strokeWidth={strokeWidth}
 				transform="rotate(-45)"
+				className="text-sm"
 			>
 				{payload.value}
 			</text>
@@ -177,11 +178,11 @@ const Chart = ({ series }) => {
 	};
 
 	return (
-		<ResponsiveContainer width="100%" height={300}>
+		<ResponsiveContainer width="100%" height={400}>
 			<LineChart
 				width={1000}
 				height={300}
-				margin={{ top: 20, right: 50, bottom: 20, left: 50 }}
+				margin={{ top: 100, right: 50, bottom: 20, left: 50 }}
 			>
 				<CartesianGrid stroke="#000" strokeWidth="3" horizontal={false} />
 				{series
