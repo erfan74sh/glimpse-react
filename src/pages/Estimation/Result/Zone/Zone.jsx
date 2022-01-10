@@ -113,10 +113,6 @@ const Zone = () => {
 	};
 	return (
 		<>
-			<h2 className="text-lg font-medium">
-				zone:
-				<span className="font-bold text-blue-550 ml-1">{params.zoneId}</span>
-			</h2>
 			<section className="flex justify-center items-center max-h-152 overflow-hidden">
 				<Chart series={series} />
 			</section>
