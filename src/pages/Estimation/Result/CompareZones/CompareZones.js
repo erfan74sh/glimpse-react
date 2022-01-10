@@ -6,9 +6,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
-// import Chart from "../Chart";
+import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
-// import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
+import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import {
 	faEye,
@@ -121,6 +121,15 @@ const CompareZones = () => {
 				</h1>
 			</header>
 			<main className="">
+				<section className="flex justify-center items-center max-h-152 overflow-hidden">
+					<Chart series={series} />
+				</section>
+				<section className="mt-18">
+					<h2 className="mb-4 px-8 text-xl font-normal uppercase">
+						points and grades
+					</h2>
+					<PointsAndGrades />
+				</section>
 				<section className="flex flex-col h-96 px-40 mt-20">
 					<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
 						<h2>alternatives</h2>
