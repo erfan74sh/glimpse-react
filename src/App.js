@@ -7,6 +7,7 @@ import Estimation from "./pages/Estimation";
 import Result from "./pages/Estimation/Result";
 import Zone from "./pages/Estimation/Result/Zone/Zone";
 import Estimate from "./pages/Estimation/Estimate";
+import CompareZones from "./pages/Estimation/Result/CompareZones/CompareZones";
 //
 import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
@@ -29,6 +30,7 @@ function App() {
 				<Route path="result" element={<Result />}>
 					<Route path=":zoneId" element={<Zone />} />
 				</Route>
+				<Route path="compare-zones" element={<CompareZones />} />
 			</Route>
 			<Route path="profile" element={<Profile />} />
 			<Route path="about-us" element={<AboutUs />} />
