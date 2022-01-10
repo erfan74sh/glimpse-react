@@ -8,7 +8,7 @@ import { useLoader } from "@react-three/fiber";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
 
-const NorthSign = ({ xDim, yDim }) => {
+const NorthSign = ({ xDim, yDim, rotation }) => {
 	const materials = useLoader(MTLLoader, "NorthSign.mtl");
 	const obj = useLoader(OBJLoader, "NorthSign.obj", (loader) => {
 		materials.preload();
@@ -19,6 +19,7 @@ const NorthSign = ({ xDim, yDim }) => {
 			object={obj}
 			scale={0.07}
 			position={[-(xDim / 2 + 3) / 10, -3.5 / 10 / 2, (yDim / 2 + 3) / 10]}
+			rotation={[0, (rotation / 180) * Math.PI, 0]}
 		/>
 	);
 };
@@ -230,7 +231,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 				<Box xDim={xDim} yDim={yDim} data={data} />
 				<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
 				<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
-				<NorthSign xDim={xDim} yDim={yDim} />
+				<NorthSign xDim={xDim} yDim={yDim} rotation={data.rotation} />
 
 				{/* <TransformControls mode="scale">
 			</TransformControls> */}
