@@ -48,6 +48,14 @@ const Geometry = ({ nextStep }) => {
 			})
 		);
 	};
+	const handleRotationValue = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				rotation: v,
+			})
+		);
+	};
 	const handleWwrNorthValue = (v) => {
 		// setWwrNorth(e.target.value);
 		dispatch(
@@ -155,7 +163,7 @@ const Geometry = ({ nextStep }) => {
 						min="-40"
 						max="40"
 						step="10"
-						handleValue={() => null}
+						handleValue={handleRotationValue}
 						moreInfo="جهت‌گیری بنا"
 						unit="degree"
 					/>
