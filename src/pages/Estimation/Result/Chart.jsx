@@ -41,9 +41,9 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 	let stroke = "#3F3356";
 	let strokeWidth = 1;
 	if (
-		payload.value === "UDI" ||
-		payload.value === "ASE" ||
-		payload.value === "SDA"
+		payload.value === "cooling load" ||
+		payload.value === "heating load" ||
+		payload.value === "electric light"
 	) {
 		stroke = "#4093E1";
 		strokeWidth = 10;
