@@ -122,7 +122,7 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					label="project name"
 					placeholder="enter a name for your project"
 				/>
-				<div className="flex gap-x-8 mt-4">
+				<div className="flex gap-x-4 mt-4">
 					<button
 						type="submit"
 						className=" px-3 py-1 rounded-md uppercase text-blue-550 bg-white border border-blue-550 flex-grow"
