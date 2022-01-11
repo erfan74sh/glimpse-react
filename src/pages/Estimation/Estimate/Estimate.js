@@ -42,7 +42,7 @@ const Estimate = () => {
 		e.preventDefault();
 		// todo: send data to server
 		console.log(inputData);
-		navigate("/estimation/result");
+		navigate("/estimation/result/0");
 	};
 
 	const steps = [

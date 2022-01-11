@@ -26,7 +26,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 							<Link to="/">home</Link>
 						</li>
 						<li className="relative">
-							<Link to="/estimation/result">simulations</Link>
+							<Link to="/estimation/result/0">simulations</Link>
 						</li>
 						<li>
 							<Link to="/pricing">pricing</Link>
