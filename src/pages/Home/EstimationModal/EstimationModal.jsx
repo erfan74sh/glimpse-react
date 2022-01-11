@@ -104,7 +104,7 @@ const StepOne = ({ nextStep, formData }) => {
 	);
 };
 
-const StepTwo = ({ nextStep, formData }) => {
+const StepTwo = ({ nextStep, prevStep, formData }) => {
 	return (
 		<Formik
 			initialValues={formData}
@@ -122,12 +122,21 @@ const StepTwo = ({ nextStep, formData }) => {
 					label="project name"
 					placeholder="enter a name for your project"
 				/>
-				<button
-					type="submit"
-					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
-				>
-					next
-				</button>
+				<div className="flex gap-x-8 mt-4">
+					<button
+						type="submit"
+						className=" px-3 py-1 rounded-md uppercase text-blue-550 bg-white border border-blue-550 flex-grow"
+						onClick={prevStep}
+					>
+						prev
+					</button>
+					<button
+						type="submit"
+						className="px-3 py-1 rounded-md uppercase text-white bg-blue-550 flex-grow"
+					>
+						next
+					</button>
+				</div>
 			</Form>
 		</Formik>
 	);
