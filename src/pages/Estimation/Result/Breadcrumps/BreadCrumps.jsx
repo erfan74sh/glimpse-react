@@ -27,7 +27,7 @@ const DropdownMenu = ({ items, name }) => {
 				{items.map((item, idx) => {
 					return (
 						<li key={idx}>
-							<label className="cursor-pointer">
+							<label className="block cursor-pointer">
 								<input
 									type="radio"
 									name={name}
