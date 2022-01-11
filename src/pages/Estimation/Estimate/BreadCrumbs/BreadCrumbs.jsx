@@ -1,11 +1,11 @@
 import React from "react";
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ projectName, zoneName, alternativeName }) => {
 	return (
 		<ul className="flex gap-x-1 text-xl text-gray-650">
-			<li>{`project name >`}</li>
-			<li>{`zone name :`}</li>
-			<li>alternative name</li>
+			<li>{`${projectName} >`}</li>
+			<li>{`${zoneName} :`}</li>
+			<li>{alternativeName}</li>
 		</ul>
 	);
 };
