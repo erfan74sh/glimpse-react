@@ -7,7 +7,6 @@ import * as yup from "yup";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
-// import SearchPlacesField from "./SearchPLacesField/SearchPlacesField";
 // style
 import "./EstimationModal.scss";
 
@@ -115,7 +114,11 @@ const StepOne = ({ nextStep, formData }) => {
 	);
 };
 
-const StepTwo = ({ prevStep, formData }) => {
+const StepTwo = () => {
+	return <div>two</div>;
+};
+
+const StepThree = ({ prevStep, formData }) => {
 	let navigate = useNavigate();
 	const locationOptions = [
 		{ label: "tehran" },
@@ -192,6 +195,7 @@ const EstimationModal = () => {
 	const steps = [
 		<StepOne nextStep={handleNextStep} formData={formData} />,
 		<StepTwo prevStep={handlePrevStep} formData={formData} />,
+		<StepThree prevStep={handlePrevStep} formData={formData} />,
 	];
 	return <>{steps[currentStep]}</>;
 };
