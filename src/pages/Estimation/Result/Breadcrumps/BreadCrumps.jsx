@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const DropdownMenu = ({ items, name }) => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -49,21 +50,19 @@ const DropdownMenu = ({ items, name }) => {
 
 const AlternativeList = ({ items }) => {
 	return (
-		<ul className="flex gap-x-1 items-center text-blue-550">
+		<ul className="flex gap-x-1 items-center text-gray-500">
 			{items.map((alternative, idx) => {
 				return (
 					<li key={idx}>
 						{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
-						<label className="cursor-pointer">
+						<NavLink
+							to={`${idx}`}
+							className={({ isActive }) =>
+								isActive ? "text-blue-550" : "text-gray-500"
+							}
+						>
 							{alternative}
-							<input
-								type="radio"
-								name="alternative"
-								className="hidden"
-								value={alternative}
-								onChange={(e) => console.log(e.target.value)}
-							/>
-						</label>
+						</NavLink>
 					</li>
 				);
 			})}
