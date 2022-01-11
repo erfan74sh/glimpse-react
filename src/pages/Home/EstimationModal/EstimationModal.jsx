@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
@@ -7,6 +8,11 @@ import * as yup from "yup";
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
+// state
+import {
+	selectPrimaryData,
+	updateData,
+} from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
 import "./EstimationModal.scss";
 
@@ -155,6 +161,7 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 };
 
 const StepThree = ({ prevStep, formData }) => {
+	const dispatch = useDispatch();
 	let navigate = useNavigate();
 	const locationOptions = [
 		{ label: "tehran" },
@@ -167,6 +174,7 @@ const StepThree = ({ prevStep, formData }) => {
 			initialValues={formData}
 			onSubmit={(values) => {
 				// todo: send data to server and delete console.log
+				dispatch(updateData({ ...values }));
 				navigate("/estimation");
 				console.log(values);
 			}}
@@ -210,6 +218,8 @@ const StepThree = ({ prevStep, formData }) => {
 };
 
 const EstimationModal = () => {
+	const primaryData = useSelector(selectPrimaryData);
+	console.log(primaryData);
 	const [formData, setFormData] = useState({
 		highPerformanceBuildings: "",
 		subset: "",
