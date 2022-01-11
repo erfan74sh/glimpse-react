@@ -19,10 +19,13 @@ import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 
 // state
 import { selectInput } from "../../../features/data/inputDataSlice";
+import { selectPrimaryData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
 import "./Estimate.scss";
 
 const Estimate = () => {
+	const primaryData = useSelector(selectPrimaryData);
+
 	const inputData = useSelector(selectInput);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
@@ -67,7 +70,11 @@ const Estimate = () => {
 					energy and comfort
 				</h1>
 				<section className="px-5 pt-10 pb-4">
-					<BreadCrumbs />
+					<BreadCrumbs
+						projectName={primaryData.projectName}
+						zoneName={primaryData.zoneName}
+						alternativeName={primaryData.alternativeName}
+					/>
 				</section>
 			</header>
 			<main className="flex">
