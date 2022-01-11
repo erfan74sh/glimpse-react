@@ -12,8 +12,8 @@ const initialState = {
 	},
 };
 
-export const EstimationPrimDataSlice = createSlice({
-	name: "PrimaryData",
+export const estimationPrimDataSlice = createSlice({
+	name: "primaryData",
 	initialState,
 	reducers: {
 		updateData(state, action) {
@@ -21,3 +21,7 @@ export const EstimationPrimDataSlice = createSlice({
 		},
 	},
 });
+
+export const { updateData } = estimationPrimDataSlice.actions;
+export const selectPrimaryData = (state) => state.primaryData.data;
+export default estimationPrimDataSlice.reducer;
