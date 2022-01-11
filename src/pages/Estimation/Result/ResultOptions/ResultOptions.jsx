@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const ResultOptions = () => {
 	const [showNewZone, setShowNewZone] = useState(false);
@@ -60,9 +61,11 @@ const ResultOptions = () => {
 				</div>
 			</div>
 			<div>
-				<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
-					compare zones
-				</button>
+				<Link to="/estimation/compare-zones">
+					<button className="p-1 py-1.5 w-36 text-sm text-white bg-blue-550 uppercase rounded-md">
+						compare zones
+					</button>
+				</Link>
 			</div>
 		</section>
 	);
