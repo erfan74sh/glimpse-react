@@ -119,6 +119,11 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 			}}
 			validationSchema={yup.object({
 				projectName: yup.string().required("new projec name is required"),
+				zoneName: yup
+					.string()
+					.min(2, "zone name must be more than 2 characters")
+					.max(40, "zone name must be less than 40 characters")
+					.required("zone name is required"),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4 w-84">
