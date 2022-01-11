@@ -124,6 +124,11 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					.min(2, "zone name must be more than 2 characters")
 					.max(40, "zone name must be less than 40 characters")
 					.required("zone name is required"),
+				alternativeName: yup
+					.string()
+					.min(2, "alternative name must be more than 2 characters")
+					.max(40, "alternative name must be less than 40 characters")
+					.required("alternative name is required"),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4 w-84">
