@@ -75,7 +75,6 @@ const StepOne = ({ nextStep, formData }) => {
 					.string()
 					.oneOf(["office", "residential", "school", "hotel"])
 					.required("required"),
-				projectName: yup.string().required("new projec name is required"),
 			})}
 		>
 			<Form className="flex flex-col gap-y-4 w-84">
@@ -86,9 +85,6 @@ const StepOne = ({ nextStep, formData }) => {
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
-
-				{/* <ChooseOrCreateProject /> */}
-				{/* <ProjectName /> */}
 				<Subset />
 				<SelectField
 					selectOptions={buildingProgram}
@@ -97,6 +93,29 @@ const StepOne = ({ nextStep, formData }) => {
 					placeholder="choose program"
 					handleValue={() => null}
 				/>
+				<button
+					type="submit"
+					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+				>
+					next
+				</button>
+			</Form>
+		</Formik>
+	);
+};
+
+const StepTwo = ({ nextStep, formData }) => {
+	return (
+		<Formik
+			initialValues={formData}
+			onSubmit={(values) => {
+				nextStep(values);
+			}}
+			validationSchema={yup.object({
+				projectName: yup.string().required("new projec name is required"),
+			})}
+		>
+			<Form className="flex flex-col gap-y-4 w-84">
 				<TextField
 					type="text"
 					name="projectName"
@@ -112,10 +131,6 @@ const StepOne = ({ nextStep, formData }) => {
 			</Form>
 		</Formik>
 	);
-};
-
-const StepTwo = () => {
-	return <div>two</div>;
 };
 
 const StepThree = ({ prevStep, formData }) => {
@@ -194,7 +209,11 @@ const EstimationModal = () => {
 
 	const steps = [
 		<StepOne nextStep={handleNextStep} formData={formData} />,
-		<StepTwo prevStep={handlePrevStep} formData={formData} />,
+		<StepTwo
+			prevStep={handlePrevStep}
+			nextStep={handleNextStep}
+			formData={formData}
+		/>,
 		<StepThree prevStep={handlePrevStep} formData={formData} />,
 	];
 	return <>{steps[currentStep]}</>;
