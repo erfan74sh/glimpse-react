@@ -215,6 +215,8 @@ const EstimationModal = () => {
 		subset: "",
 		buildingProgram: "",
 		projectName: "",
+		zoneName: "",
+		alternativeName: "",
 		location: "",
 	});
 
