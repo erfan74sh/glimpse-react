@@ -13,7 +13,7 @@ const DropdownMenu = ({ items, name }) => {
 	return (
 		<div className="relative px-2 py-1.5 w-36 text-sm text-white bg-gray-350 uppercase rounded-md">
 			<div
-				className="flex justify-between items-center"
+				className="flex justify-between items-center cursor-pointer"
 				onClick={() => setShowMenu(!showMenu)}
 			>
 				<span>{selectedItem ? selectedItem : `choose ${name}`}</span>
