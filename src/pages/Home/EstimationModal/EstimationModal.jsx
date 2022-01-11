@@ -122,6 +122,12 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					label="project name"
 					placeholder="enter a name for your project"
 				/>
+				<TextField
+					type="text"
+					name="zoneName"
+					label="zone name"
+					placeholder="enter a name for your zone"
+				/>
 				<div className="flex gap-x-4 mt-4">
 					<button
 						type="submit"
