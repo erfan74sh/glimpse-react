@@ -13,7 +13,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 	// const [isLogin, setIsLogin] = useState(true);
 
 	return (
-		<nav className="bg-gray-650 text-white">
+		<nav className="bg-gray-650 text-gray-300">
 			<ul className="flex justify-between items-center px-9 py-4">
 				<li>
 					<Link to="/">
@@ -23,19 +23,64 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 				<li>
 					<ul className="flex justify-items-center items-center gap-x-28 text-lg font-normal capitalize">
 						<li>
-							<NavLink to="/">home</NavLink>
+							<NavLink
+								to="/"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5`
+								}
+							>
+								home
+							</NavLink>
 						</li>
 						<li className="relative">
-							<NavLink to="/estimation/result/0">simulations</NavLink>
+							<NavLink
+								to="/estimation/result/0"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5`
+								}
+							>
+								simulations
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/pricing">pricing</NavLink>
+							<NavLink
+								to="/pricing"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5`
+								}
+							>
+								pricing
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/about-us">about us</NavLink>
+							<NavLink
+								to="/about-us"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5`
+								}
+							>
+								about us
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/contact-us">contact us</NavLink>
+							<NavLink
+								to="/contact-us"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5`
+								}
+							>
+								contact us
+							</NavLink>
 						</li>
 					</ul>
 				</li>
