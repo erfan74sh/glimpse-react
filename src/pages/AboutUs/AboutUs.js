@@ -59,10 +59,22 @@ const AboutUs = () => {
 			image: pic02,
 		},
 		{
+			fullName: "Mohammad Tabatabaei",
+			position: "Master of Energy and Architecture",
+			job: "",
+			image: pic03,
+		},
+		{
 			fullName: "Sogand saadat",
 			position: "Master of Architectural technology",
 			job: "",
 			image: pic07,
+		},
+		{
+			fullName: "Erfan Shafiee",
+			position: "Master of Architectural design",
+			job: "",
+			image: pic10,
 		},
 	];
 
@@ -94,113 +106,6 @@ const AboutUs = () => {
 								</article>
 							);
 						})}
-						{/* <article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic05}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">
-								mohamad tahsildoost
-							</h4>
-							<p>Associate Professor SBU</p>
-							<span className="leading-none">Architect</span>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic08}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">
-								Mahsa Zomorodian
-							</h4>
-							<p>Associate Professor SBU</p>
-							<span className="leading-none">Architect</span>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic09}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">Roham Afghani</h4>
-							<p>Associate Professor SBU</p>
-							<span className="leading-none">Architect</span>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic01}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">
-								Mohammad Rajaian
-							</h4>
-							<p>Master of Architectural technology</p>
-						</article>
-					</div>
-					<div className="flex">
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic04}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">
-								Haniyeh Noorkajouri
-							</h4>
-							<p>Master of energy and architecture</p>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic06}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">Pegah Ishraqi</h4>
-							<p>Master of energy and architecture</p>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic02}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">Arman Nikkhah</h4>
-							<p>Master of energy and architecture</p>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic03}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">
-								mohammad tabatabaei
-							</h4>
-							<p>Master of energy and architecture</p>
-						</article>
-					</div>
-					<div className="flex">
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic07}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">Sogand saadat</h4>
-							<p>Master of energy and architecture</p>
-						</article>
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
-							<img
-								src={pic10}
-								alt="profile pic"
-								className="w-45 h-45 mb-5 rounded-full object-cover overflow-hidden"
-							/>
-							<h4 className="text-xl font-bold text-blue-550">Erfan shafiee</h4>
-							<p>Master of architecture</p>
-						</article> */}
 					</div>
 				</main>
 			</main>
