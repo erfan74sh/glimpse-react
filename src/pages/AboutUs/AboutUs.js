@@ -1,5 +1,7 @@
 import React from "react";
+// components
 import Nav from "../../components/Nav";
+import MemberCard from "./memberCard/MemberCard";
 
 import pic01 from "./../../assets/profile/01.png";
 import pic02 from "./../../assets/profile/02.png";
@@ -11,7 +13,6 @@ import pic07 from "./../../assets/profile/07.png";
 import pic08 from "./../../assets/profile/08.png";
 import pic09 from "./../../assets/profile/09.png";
 import pic10 from "./../../assets/profile/10.jpg";
-import MemberCard from "./memberCard/MemberCard";
 
 const AboutUs = () => {
 	const members = [
@@ -31,7 +32,7 @@ const AboutUs = () => {
 			fullName: "Roham Afghani ",
 			position: "Associate Professor SBU",
 			job: "Architect",
-			image: pic01,
+			image: pic09,
 		},
 		{
 			fullName: "Mohammad Rajaian",
