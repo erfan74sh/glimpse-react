@@ -28,7 +28,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 								className={({ isActive }) =>
 									` ${
 										isActive && "border-b-2 border-white text-white"
-									} py-1.5 px-0.5`
+									} py-1.5 px-0.5 transition-all hover:text-white`
 								}
 							>
 								home
@@ -40,7 +40,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 								className={({ isActive }) =>
 									` ${
 										isActive && "border-b-2 border-white text-white"
-									} py-1.5 px-0.5`
+									} py-1.5 px-0.5 transition-all hover:text-white`
 								}
 							>
 								simulations
@@ -52,7 +52,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 								className={({ isActive }) =>
 									` ${
 										isActive && "border-b-2 border-white text-white"
-									} py-1.5 px-0.5`
+									} py-1.5 px-0.5 transition-all hover:text-white`
 								}
 							>
 								pricing
@@ -64,7 +64,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 								className={({ isActive }) =>
 									` ${
 										isActive && "border-b-2 border-white text-white"
-									} py-1.5 px-0.5`
+									} py-1.5 px-0.5 transition-all hover:text-white`
 								}
 							>
 								about us
@@ -76,7 +76,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 								className={({ isActive }) =>
 									` ${
 										isActive && "border-b-2 border-white text-white"
-									} py-1.5 px-0.5`
+									} py-1.5 px-0.5 transition-all hover:text-white`
 								}
 							>
 								contact us
