@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // component
 import Profile from "../profile/Profile";
 import DropdownProfile from "../dropdowns/dropdownProfile";
@@ -23,19 +23,19 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 				<li>
 					<ul className="flex justify-items-center items-center gap-x-28 text-lg font-normal capitalize">
 						<li>
-							<Link to="/">home</Link>
+							<NavLink to="/">home</NavLink>
 						</li>
 						<li className="relative">
-							<Link to="/estimation/result/0">simulations</Link>
+							<NavLink to="/estimation/result/0">simulations</NavLink>
 						</li>
 						<li>
-							<Link to="/pricing">pricing</Link>
+							<NavLink to="/pricing">pricing</NavLink>
 						</li>
 						<li>
-							<Link to="/about-us">about us</Link>
+							<NavLink to="/about-us">about us</NavLink>
 						</li>
 						<li>
-							<Link to="/contact-us">contact us</Link>
+							<NavLink to="/contact-us">contact us</NavLink>
 						</li>
 					</ul>
 				</li>
