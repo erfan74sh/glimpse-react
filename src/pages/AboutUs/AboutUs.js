@@ -11,6 +11,7 @@ import pic07 from "./../../assets/profile/07.png";
 import pic08 from "./../../assets/profile/08.png";
 import pic09 from "./../../assets/profile/09.png";
 import pic10 from "./../../assets/profile/10.jpg";
+import MemberCard from "./memberCard/MemberCard";
 
 const AboutUs = () => {
 	const members = [
@@ -76,8 +77,23 @@ const AboutUs = () => {
 					</h1>
 				</header>
 				<main className="flex flex-col gap-y-14 text-center">
-					<div className="flex">
-						<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
+					<div className="flex flex-wrap gap-y-10">
+						{members.map((member, idx) => {
+							return (
+								<article
+									key={idx}
+									className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize"
+								>
+									<MemberCard
+										fullName={member.fullName}
+										position={member.position}
+										job={member.job}
+										image={member.image}
+									/>
+								</article>
+							);
+						})}
+						{/* <article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
 							<img
 								src={pic05}
 								alt="profile pic"
@@ -183,7 +199,7 @@ const AboutUs = () => {
 							/>
 							<h4 className="text-xl font-bold text-blue-550">Erfan shafiee</h4>
 							<p>Master of architecture</p>
-						</article>
+						</article> */}
 					</div>
 				</main>
 			</main>
