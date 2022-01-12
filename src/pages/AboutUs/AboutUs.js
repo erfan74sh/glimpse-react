@@ -95,7 +95,7 @@ const AboutUs = () => {
 							return (
 								<article
 									key={idx}
-									className="w-1/4 px-8 flex flex-col items-center font-normal text-gray-650 capitalize"
+									className="w-1/4 px-16 flex flex-col items-center font-normal text-gray-650 capitalize"
 								>
 									<MemberCard
 										fullName={member.fullName}
