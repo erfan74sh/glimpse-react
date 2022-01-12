@@ -89,13 +89,13 @@ const AboutUs = () => {
 						our team
 					</h1>
 				</header>
-				<main className="flex flex-col gap-y-14 text-center">
+				<section className="flex flex-col gap-y-14 px-16 text-center">
 					<div className="flex flex-wrap gap-y-10">
 						{members.map((member, idx) => {
 							return (
 								<article
 									key={idx}
-									className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize"
+									className="w-1/4 px-8 flex flex-col items-center font-normal text-gray-650 capitalize"
 								>
 									<MemberCard
 										fullName={member.fullName}
@@ -107,7 +107,7 @@ const AboutUs = () => {
 							);
 						})}
 					</div>
-				</main>
+				</section>
 			</main>
 		</div>
 	);
