@@ -2,7 +2,7 @@ import React from "react";
 
 const MemberCard = ({ fullName, position, job, image }) => {
 	return (
-		<article className="w-1/4 px-8 flex flex-col items-center text-lg font-normal text-gray-650 capitalize">
+		<>
 			<img
 				src={image}
 				alt="profile pic"
@@ -11,7 +11,7 @@ const MemberCard = ({ fullName, position, job, image }) => {
 			<h4 className="text-xl font-bold text-blue-550">{fullName}</h4>
 			<p>{position}</p>
 			<span className="leading-none">{job}</span>
-		</article>
+		</>
 	);
 };
 
