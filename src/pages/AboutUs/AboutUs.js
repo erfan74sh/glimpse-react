@@ -13,56 +13,56 @@ import pic09 from "./../../assets/profile/09.png";
 import pic10 from "./../../assets/profile/10.jpg";
 
 const AboutUs = () => {
-	// const [members, setMembers] = useState([
-	// 	{
-	// 		fullName: "mohamad tahsildoost",
-	// 		position: "Associate Professor SBU",
-	// 		job: "Architect",
-	// 		image: pic05,
-	// 	},
-	// 	{
-	// 		fullName: "Mahsa Zomorodian",
-	// 		position: "Associate Professor SBU",
-	// 		job: "Architect",
-	// 		image: pic08,
-	// 	},
-	// 	{
-	// 		fullName: "Roham Afghani ",
-	// 		position: "Associate Professor SBU",
-	// 		job: "Architect",
-	// 		image: pic01,
-	// 	},
-	// 	{
-	// 		fullName: "Mohammad Rajaian",
-	// 		position: "Master of Architectural technology",
-	// 		job: "",
-	// 		image: pic01,
-	// 	},
-	// 	{
-	// 		fullName: "Haniyeh Noorkajouri",
-	// 		position: "Master of Architectural technology",
-	// 		job: "",
-	// 		image: pic04,
-	// 	},
-	// 	{
-	// 		fullName: "Pegah Ishraqi",
-	// 		position: "Master of Architectural technology",
-	// 		job: "",
-	// 		image: pic06,
-	// 	},
-	// 	{
-	// 		fullName: "Arman Nikkhah",
-	// 		position: "Master of Architectural technology",
-	// 		job: "",
-	// 		image: pic02,
-	// 	},
-	// 	{
-	// 		fullName: "Sogand saadat",
-	// 		position: "Master of Architectural technology",
-	// 		job: "",
-	// 		image: pic07,
-	// 	},
-	// ]);
+	const members = [
+		{
+			fullName: "mohamad tahsildoost",
+			position: "Associate Professor SBU",
+			job: "Architect",
+			image: pic05,
+		},
+		{
+			fullName: "Mahsa Zomorodian",
+			position: "Associate Professor SBU",
+			job: "Architect",
+			image: pic08,
+		},
+		{
+			fullName: "Roham Afghani ",
+			position: "Associate Professor SBU",
+			job: "Architect",
+			image: pic01,
+		},
+		{
+			fullName: "Mohammad Rajaian",
+			position: "Master of Architectural technology",
+			job: "",
+			image: pic01,
+		},
+		{
+			fullName: "Haniyeh Noorkajouri",
+			position: "Master of Architectural technology",
+			job: "",
+			image: pic04,
+		},
+		{
+			fullName: "Pegah Ishraqi",
+			position: "Master of Architectural technology",
+			job: "",
+			image: pic06,
+		},
+		{
+			fullName: "Arman Nikkhah",
+			position: "Master of Architectural technology",
+			job: "",
+			image: pic02,
+		},
+		{
+			fullName: "Sogand saadat",
+			position: "Master of Architectural technology",
+			job: "",
+			image: pic07,
+		},
+	];
 
 	return (
 		<div className="min-h-screen ">
