@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
-import BoundryCondition from "./FormSteps/BoundryCondition/BoundryCondition";
+import Material from "./FormSteps/Material/Material";
 import SitePlan from "./FormSteps/SitePlan";
 import Review from "./FormSteps/Review";
 import VisualBoundryCondition from "./VisualSteps/BoundryCondition";
@@ -36,7 +36,7 @@ const ThermalComfort = () => {
 
 	const steps = [
 		<Geometry nextStep={handleNextStep} />,
-		<BoundryCondition nextStep={handleNextStep} prevStep={handlePrevStep} />,
+		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Review prevStep={handlePrevStep} />,
 	];
