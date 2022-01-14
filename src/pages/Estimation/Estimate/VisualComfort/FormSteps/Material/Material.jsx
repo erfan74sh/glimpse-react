@@ -9,57 +9,18 @@ import {
 } from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
+import InputRange from "../../../../../../components/inputs/InputRange";
 
 const Material = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectVisualComfortData);
 
 	const dispatch = useDispatch();
 
-	const handleEastWallConditionValue = (v) => {
+	const handleReflectanCeWall = (v) => {
 		dispatch(
 			updateData({
 				...data,
-				eastWallCondition: v,
-			})
-		);
-	};
-	const handleWestWallConditionValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				westWallCondition: v,
-			})
-		);
-	};
-	const handleNorthWallConditionValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				northWallCondition: v,
-			})
-		);
-	};
-	const handleSouthWallConditionValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				southWallCondition: v,
-			})
-		);
-	};
-	const handleRoofConditionValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				roofCondition: v,
-			})
-		);
-	};
-	const handleFloorConditionValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				floorCondition: v,
+				reflectanCeWall: v,
 			})
 		);
 	};
@@ -88,47 +49,22 @@ const Material = ({ nextStep, prevStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						Boundry conditions
 					</legend>
-					<SelectField
-						name="eastWallCondition"
+					{/* <SelectField
+						name="reflectanCeWall"
 						selectOptions={WallOptions}
 						label="Boundry condition east wall"
 						placeholder="choose condition"
 						handleValue={handleEastWallConditionValue}
-					/>
-					<SelectField
-						name="westWallCondition"
-						selectOptions={WallOptions}
-						label="Boundry condition west wall"
-						placeholder="choose condition"
-						handleValue={handleWestWallConditionValue}
-					/>
-					<SelectField
-						name="northWallCondition"
-						selectOptions={WallOptions}
-						label="Boundry condition north wall"
-						placeholder="choose condition"
-						handleValue={handleNorthWallConditionValue}
-					/>
-					<SelectField
-						name="southWallCondition"
-						selectOptions={WallOptions}
-						label="Boundry condition south wall"
-						placeholder="choose condition"
-						handleValue={handleSouthWallConditionValue}
-					/>
-					<SelectField
-						name="roofCondition"
-						selectOptions={WallOptions}
-						label="Boundry condition roof"
-						placeholder="choose condition"
-						handleValue={handleRoofConditionValue}
-					/>
-					<SelectField
-						name="floorCondition"
-						selectOptions={floorOptions}
-						label="Boundry condition floor"
-						placeholder="choose condition"
-						handleValue={handleFloorConditionValue}
+					/> */}
+					<InputRange
+						name="reflectanCeWall"
+						label="reflectan ce_wall"
+						min="0.2"
+						max="0.7"
+						step="0.05"
+						handleValue={handleReflectanCeWall}
+						moreInfo="?"
+						unit="?"
 					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
