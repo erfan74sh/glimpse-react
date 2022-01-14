@@ -6,7 +6,7 @@ import Model3D from "../../../3D";
 import { selectInput } from "../../../../../../features/data/inputDataSlice";
 import MoreInfo from "../../../../../../components/moreInfo/MoreInfo";
 
-const VisualBoundryCondition = () => {
+const VisualMaterial = () => {
 	const inputData = useSelector(selectInput);
 	return (
 		<>
@@ -53,4 +53,4 @@ const VisualBoundryCondition = () => {
 	);
 };
 
-export default VisualBoundryCondition;
+export default VisualMaterial;
