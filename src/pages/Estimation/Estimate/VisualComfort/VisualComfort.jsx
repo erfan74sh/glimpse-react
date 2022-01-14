@@ -7,7 +7,7 @@ import Geometry from "./FormSteps/Geometry";
 import Material from "./FormSteps/Material/Material";
 import SitePlan from "./FormSteps/SitePlan";
 import Review from "./FormSteps/Review";
-import VisualBoundryCondition from "./VisualSteps/BoundryCondition";
+import VisualMaterial from "./VisualSteps/Material";
 import VisualGeometry from "./VisualSteps/Geometry";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
@@ -43,7 +43,7 @@ const ThermalComfort = () => {
 
 	const visualSteps = [
 		<VisualGeometry />,
-		<VisualBoundryCondition />,
+		<VisualMaterial />,
 		<VisualSitePlan />,
 		<VisualReview />,
 	];
