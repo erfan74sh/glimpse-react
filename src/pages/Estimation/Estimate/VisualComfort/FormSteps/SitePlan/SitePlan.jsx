@@ -4,24 +4,18 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 // state
 import {
-	selectInput,
+	selectVisualComfortData,
 	updateData,
-} from "../../../../../../features/data/inputDataSlice";
+} from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 
 const SitePlan = ({ nextStep, prevStep }) => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectVisualComfortData);
 
 	const dispatch = useDispatch();
 
-	// const [southNeighborDist, setSouthNeighborDist] = useState("");
-	// const [southNeighborHeight, setSouthNeighborHeight] = useState("");
-	// const [northNeighborDist, setNorthNeighborDist] = useState("");
-	// const [northNeighborHeight, setNorthNeighborHeight] = useState("");
-
 	const handleSouthNeighborDistValue = (v) => {
-		// setSouthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -31,7 +25,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleSouthNeighborHeightValue = (v) => {
-		// setSouthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -41,7 +34,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleNorthNeighborDistValue = (v) => {
-		// setNorthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -51,7 +43,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleNorthNeighborHeightValue = (v) => {
-		// setNorthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
