@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
-import Geometry from "../FormSteps/Geometry";
-import BoundryCondition from "../FormSteps/BoundryCondition/BoundryCondition";
-import SitePlan from "../FormSteps/SitePlan";
-import Material from "../FormSteps/Material";
-import Hvac from "../FormSteps/Hvac/Hvac";
-import Review from "../FormSteps/Review";
-import VisualBoundryCondition from "../VisualSteps/BoundryCondition";
-import VisualGeometry from "../VisualSteps/Geometry";
-import VisualMaterial from "../VisualSteps/Material";
-import VisualSitePlan from "../VisualSteps/SitePlan";
-import VisualHvac from "../VisualSteps/Hvac";
-import VisualReview from "../VisualSteps/Review/VisualReview";
+import Geometry from "./FormSteps/Geometry";
+import BoundryCondition from "./FormSteps/BoundryCondition/BoundryCondition";
+import SitePlan from "./FormSteps/SitePlan";
+import Material from "./FormSteps/Material";
+import Hvac from "./FormSteps/Hvac/Hvac";
+import Review from "./FormSteps/Review";
+import VisualBoundryCondition from "./VisualSteps/BoundryCondition";
+import VisualGeometry from "./VisualSteps/Geometry";
+import VisualMaterial from "./VisualSteps/Material";
+import VisualSitePlan from "./VisualSteps/SitePlan";
+import VisualHvac from "./VisualSteps/Hvac";
+import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
 
