@@ -4,21 +4,15 @@ import { Form, Formik } from "formik";
 import * as yup from "yup";
 // state
 import {
-	selectInput,
+	selectVisualComfortData,
 	updateData,
-} from "../../../../../../features/data/inputDataSlice";
+} from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 
 const Geometry = ({ nextStep }) => {
-	// const [xDim, setXDim] = useState("");
-	// const [yDim, setYDim] = useState("");
-	// const [wwrNorth, setWwrNorth] = useState("");
-	// const [wwrSouth, setWwrSouth] = useState("");
-	// const [shadingType, setShadingType] = useState("");
-
-	const data = useSelector(selectInput);
+	const data = useSelector(selectVisualComfortData);
 
 	const dispatch = useDispatch();
 
@@ -31,7 +25,6 @@ const Geometry = ({ nextStep }) => {
 		);
 	};
 	const handleXDimValue = (v) => {
-		// setXDim(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -40,7 +33,6 @@ const Geometry = ({ nextStep }) => {
 		);
 	};
 	const handleYDimValue = (v) => {
-		// setYDim(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -57,7 +49,6 @@ const Geometry = ({ nextStep }) => {
 		);
 	};
 	const handleWwrNorthValue = (v) => {
-		// setWwrNorth(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -66,7 +57,6 @@ const Geometry = ({ nextStep }) => {
 		);
 	};
 	const handleWwrSouthValue = (v) => {
-		// setWwrSouth(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -75,7 +65,6 @@ const Geometry = ({ nextStep }) => {
 		);
 	};
 	const handleShadingTypeValue = (v) => {
-		// setShadingType(e.target.dataset.value);
 		dispatch(
 			updateData({
 				...data,
