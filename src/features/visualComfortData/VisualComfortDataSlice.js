@@ -11,7 +11,7 @@ const initialState = {
 		shadingType: "",
 		reflectanCeWall: 0.2,
 		reflectanCeCeiling: 0.2,
-		reflectanCefloor: 0.2,
+		reflectanCeFloor: 0.2,
 		vtGlass: "",
 		southNeighborDist: 3,
 		southNeighborHeight: 4,
