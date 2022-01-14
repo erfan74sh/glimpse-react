@@ -4,14 +4,14 @@ import { Form, Formik } from "formik";
 import * as yup from "yup";
 // state
 import {
-	selectInput,
+	selectVisualComfortData,
 	updateData,
-} from "../../../../../../features/data/inputDataSlice";
+} from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 
 const Material = ({ nextStep, prevStep }) => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectVisualComfortData);
 
 	const dispatch = useDispatch();
 
@@ -80,30 +80,7 @@ const Material = ({ nextStep, prevStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				eastWallCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
-					.required("required"),
-				westWallCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
-					.required("required"),
-				northWallCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
-					.required("required"),
-				southWallCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
-					.required("required"),
-				roofCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
-					.required("required"),
-				floorCondition: yup
-					.string()
-					.oneOf(["adiabatic", "outdoor", "ground"], "choose from list")
-					.required("required"),
+				reflectanCeWall: yup.string().required("required"),
 			})}
 		>
 			<Form className="h-full flex flex-col">
