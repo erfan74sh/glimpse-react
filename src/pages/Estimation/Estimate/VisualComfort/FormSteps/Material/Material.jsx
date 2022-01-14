@@ -24,12 +24,36 @@ const Material = ({ nextStep, prevStep }) => {
 			})
 		);
 	};
+	const handleReflectanCeCeiling = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				reflectanCeCeiling: v,
+			})
+		);
+	};
+	const handleReflectanCeFloor = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				reflectanCeFloor: v,
+			})
+		);
+	};
+	const handleVtGlass = (v) => {
+		dispatch(
+			updateData({
+				...data,
+				vtGlass: v,
+			})
+		);
+	};
 
-	const WallOptions = [{ label: "adiabatic" }, { label: "outdoor" }];
-	const floorOptions = [
-		{ label: "adiabatic" },
-		{ label: "outdoor" },
-		{ label: "ground" },
+	const vtGlassOptions = [
+		{ label: "0.58" },
+		{ label: "0.72" },
+		{ label: "0.80" },
+		{ label: "0.90" },
 	];
 
 	return (
@@ -49,13 +73,7 @@ const Material = ({ nextStep, prevStep }) => {
 					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 						Boundry conditions
 					</legend>
-					{/* <SelectField
-						name="reflectanCeWall"
-						selectOptions={WallOptions}
-						label="Boundry condition east wall"
-						placeholder="choose condition"
-						handleValue={handleEastWallConditionValue}
-					/> */}
+
 					<InputRange
 						name="reflectanCeWall"
 						label="reflectan ce_wall"
@@ -65,6 +83,33 @@ const Material = ({ nextStep, prevStep }) => {
 						handleValue={handleReflectanCeWall}
 						moreInfo="?"
 						unit="?"
+					/>
+					<InputRange
+						name="reflectanCeCeiling"
+						label="reflectan ce_ceiling"
+						min="0.2"
+						max="0.7"
+						step="0.05"
+						handleValue={handleReflectanCeCeiling}
+						moreInfo="?"
+						unit="?"
+					/>
+					<InputRange
+						name="reflectanCeFloor"
+						label="reflectan ce_floor"
+						min="0.2"
+						max="0.7"
+						step="0.05"
+						handleValue={handleReflectanCeFloor}
+						moreInfo="?"
+						unit="?"
+					/>
+					<SelectField
+						name="vtGlass"
+						selectOptions={vtGlassOptions}
+						label="Vt-glass"
+						placeholder="choose ?"
+						handleValue={handleVtGlass}
 					/>
 				</fieldset>
 				<section className="flex justify-center gap-x-4 mt-auto pr-10">
