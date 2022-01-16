@@ -15,3 +15,9 @@ const signUp = async (userInfo) => {
 		}
 	}
 };
+
+const authService = {
+	signUp,
+};
+
+export default authService;
