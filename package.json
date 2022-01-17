@@ -2,6 +2,7 @@
 	"name": "glimpse",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "https://bspsim.app/api/v1",
 	"dependencies": {
 		"@craco/craco": "^6.4.0",
 		"@fortawesome/fontawesome-svg-core": "^1.2.36",
