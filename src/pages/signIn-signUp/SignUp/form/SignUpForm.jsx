@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 // import Axios from "axios";
@@ -8,16 +9,11 @@ import TextField from "../../../../components/inputs/TextField/TextField";
 import SelectField from "../../../../components/inputs/SelectField";
 
 const SignUpForm = () => {
-	const register = async () => {
-		const test = {
-			email: "erfan12323sh@gmail.com",
-			scope_of_activity: "Architect",
-			phone_number: "string",
-			full_name: "erfan shaf",
-			password: "123456",
-		};
+	const navigate = useNavigate();
+	const register = async (formVal) => {
 		try {
-			await authService.signUp(test);
+			const res = await authService.signUp(formVal);
+			console.log(res);
 		} catch (err) {
 			// console.log(err);
 			console.log("eeeeeeeeeeeer");
@@ -50,22 +46,27 @@ const SignUpForm = () => {
 	return (
 		<Formik
 			initialValues={{
-				"full-name": "",
 				email: "",
+				scope_of_activity: "",
+				phone_number: "",
+				full_name: "",
 				password: "",
-				"phone-number": "",
-				"scope-of-activity": "",
 			}}
 			validationSchema={validate}
 			onSubmit={(values) => {
-				console.log(values);
-				register();
+				// console.log(values);
+				try {
+					register(values);
+					// navigate("/");
+				} catch (err) {
+					console.log("adsadsaddddddddddddddddd");
+				}
 			}}
 		>
 			<Form className="flex flex-col items-center gap-y-7">
 				<TextField
 					type="text"
-					name="full-name"
+					name="full_name"
 					placeholder="fullname"
 					label="fullname"
 				/>
@@ -83,13 +84,13 @@ const SignUpForm = () => {
 				/>
 				<TextField
 					type="text"
-					name="phone-number"
+					name="phone_number"
 					placeholder="phone number"
 					label="phone number"
 				/>
 				<SelectField
 					selectOptions={scopeOfActivityOptions}
-					name="scope-of-activity"
+					name="scope_of_activity"
 					label="scope of activity"
 					placeholder="select option"
 					handleValue={() => null}
