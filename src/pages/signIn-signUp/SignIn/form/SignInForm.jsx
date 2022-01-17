@@ -3,8 +3,24 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
+import authService from "../../../../services/auth.service";
 
 const SignInForm = () => {
+	const logIn = async (formVal) => {
+		try {
+			const res = await authService.logIn(formVal);
+			console.log(res);
+		} catch (err) {
+			// console.log(err);
+			console.log("eeeeeeeeeeeer");
+		}
+		// const response = await Axios.post(
+		// 	"https://bspsim.app/api/v1/users/",
+		// 	test
+		// ).catch((err) => console.log("Error:", err));
+		// console.log(response);
+	};
+
 	const validate = yup.object({
 		userName: yup.string().required("required"),
 		password: yup
