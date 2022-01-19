@@ -6,23 +6,20 @@ import TextField from "../../../../components/inputs/TextField/TextField";
 import authService from "../../../../services/auth.service";
 
 const SignInForm = () => {
-	const logIn = async (formVal) => {
+	const logIn = async (username, password) => {
 		try {
-			const res = await authService.logIn(formVal);
+			const res = await authService.logIn(
+				`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`
+			);
 			console.log(res);
 		} catch (err) {
 			// console.log(err);
 			console.log("eeeeeeeeeeeer");
 		}
-		// const response = await Axios.post(
-		// 	"https://bspsim.app/api/v1/users/",
-		// 	test
-		// ).catch((err) => console.log("Error:", err));
-		// console.log(response);
 	};
 
 	const validate = yup.object({
-		userName: yup.string().required("required"),
+		username: yup.string().required("required"),
 		password: yup
 			.string()
 			.min(6, "password must be at least 6 characters")
@@ -32,14 +29,16 @@ const SignInForm = () => {
 	return (
 		<Formik
 			initialValues={{
-				userName: "",
+				username: "",
 				password: "",
 			}}
 			validationSchema={validate}
-			onSubmit={(values) => console.log(values)}
+			onSubmit={(values) => {
+				logIn(values.username, values.password);
+			}}
 		>
 			<Form className="flex flex-col items-center gap-y-7">
-				<TextField type="text" name="userName" placeholder="username" />
+				<TextField type="text" name="username" placeholder="username" />
 				<TextField type="password" name="password" placeholder="password" />
 				<button
 					type="submit"
