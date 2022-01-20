@@ -1,3 +1,4 @@
+import authHeader from "./auth-header";
 import { axios } from "./axios";
 
 const signUp = async (userInfo) => {
@@ -40,7 +41,7 @@ const logOut = () => {
 };
 
 const getCurrentUser = () => {
-	return JSON.parse(localStorage.getItem("user"));
+	return axios.get("/users/me", { headers: authHeader() });
 };
 
 const authService = {
