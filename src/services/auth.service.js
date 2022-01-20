@@ -19,6 +19,9 @@ const signUp = async (userInfo) => {
 const logIn = async (userInfo) => {
 	try {
 		const response = await axios.post("/login/access-token", userInfo);
+		if (response && response.data["access_token"]) {
+			localStorage.setItem("user", JSON.stringify(response.data));
+		}
 		return response;
 	} catch (err) {
 		if (err.response) {
