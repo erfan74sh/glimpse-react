@@ -46,6 +46,8 @@ const getCurrentUser = () => {
 const authService = {
 	signUp,
 	logIn,
+	logOut,
+	getCurrentUser,
 };
 
 export default authService;
