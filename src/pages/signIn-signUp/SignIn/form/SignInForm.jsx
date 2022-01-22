@@ -1,21 +1,32 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
 import authService from "../../../../services/auth.service";
 
+import { login } from "../../../../features/auth/authSlice";
+
 const SignInForm = () => {
-	const logIn = async (username, password) => {
-		try {
-			const res = await authService.logIn(
+	const dispatch = useDispatch();
+	// const handleLogin = async (username, password) => {
+	// 	try {
+	// 		const res = await authService.logIn(
+	// 			`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`
+	// 		);
+	// 		console.log(res);
+	// 	} catch (err) {
+	// 		// console.log(err);
+	// 		console.log("eeeeeeeeeeeer");
+	// 	}
+	// };
+	const handleLogin = (username, password) => {
+		dispatch(
+			login(
 				`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`
-			);
-			console.log(res);
-		} catch (err) {
-			// console.log(err);
-			console.log("eeeeeeeeeeeer");
-		}
+			)
+		);
 	};
 
 	const validate = yup.object({
@@ -34,7 +45,7 @@ const SignInForm = () => {
 			}}
 			validationSchema={validate}
 			onSubmit={(values) => {
-				logIn(values.username, values.password);
+				handleLogin(values.username, values.password);
 			}}
 		>
 			<Form className="flex flex-col items-center gap-y-7">
