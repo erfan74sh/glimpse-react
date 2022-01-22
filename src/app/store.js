@@ -4,6 +4,7 @@ import userInfoSlice from "../features/userInfo/UserInfoSlice";
 import EstimationPrimDataSlice from "../features/estimationPrimData/EstimationPrimDataSlice";
 import VisualComfortDataSlice from "../features/visualComfortData/VisualComfortDataSlice";
 import messageSlice from "../features/message/messageSlice";
+import authReducer from "../features/auth/authSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
 		primaryData: EstimationPrimDataSlice,
 		visualComfortData: VisualComfortDataSlice,
 		message: messageSlice,
+		auth: authReducer,
 	},
 });
