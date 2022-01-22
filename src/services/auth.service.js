@@ -48,7 +48,9 @@ const logOut = () => {
 };
 
 const getCurrentUser = () => {
-	return axios.get("/users/me", { headers: authHeader() });
+	return axios
+		.get("/users/me", { headers: authHeader() })
+		.then((response) => response.data);
 };
 
 const authService = {
