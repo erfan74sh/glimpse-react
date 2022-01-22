@@ -37,14 +37,14 @@ const logIn = (userInfo) => {
 	// }
 	return axios.post("/login/access-token", userInfo).then((response) => {
 		if (response.data["access_token"]) {
-			localStorage.setItem("user", JSON.stringify(response.data));
+			localStorage.setItem("userAuth", JSON.stringify(response.data));
 		}
 		return response.data;
 	});
 };
 
 const logOut = () => {
-	localStorage.removeItem("user");
+	localStorage.removeItem("userAuth");
 };
 
 const getCurrentUser = () => {
