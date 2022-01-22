@@ -5,6 +5,7 @@ import authService from "../../services/auth.service";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
+console.log(user);
 export const signin = createAsyncThunk(
 	"auth/signin",
 	async (userInfo, thunkAPI) => {
@@ -46,6 +47,7 @@ export const login = createAsyncThunk(
 		try {
 			await authService.logIn(userInfo);
 			const data = await authService.getCurrentUser();
+			localStorage.setItem("user", JSON.stringify(data));
 			return { user: data };
 		} catch (error) {
 			const message =
@@ -94,4 +96,5 @@ const authSlice = createSlice({
 });
 
 const { reducer } = authSlice;
+export const selectUser = (state) => state.auth;
 export default reducer;
