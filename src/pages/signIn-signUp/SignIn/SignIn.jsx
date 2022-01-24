@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 // components
 import SignInForm from "./form";
 // assets
 import Logo from "../../../assets/images/logo-02.png";
 // slice
-import { selectMessage } from "../../../features/message/messageSlice";
+import {
+	clearMessage,
+	selectMessage,
+} from "../../../features/message/messageSlice";
 
 const SignIn = () => {
+	const dispatch = useDispatch();
 	const { message } = useSelector(selectMessage);
-	console.log(message);
+	useEffect(() => {
+		dispatch(clearMessage());
+	}, [dispatch]);
 	return (
 		<div className="flex flex-col items-center px-12 py-12 gap-y-9 bg-white rounded-md shadow-full">
 			<img src={Logo} alt="logo" className="w-60 h-auto" />
