@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 // component
 import Profile from "../profile/Profile";
 import DropdownProfile from "../dropdowns/dropdownProfile";
-// import Auth from "../Auth";
+// slice
+import { selectUser } from "../../features/auth/authSlice";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 
 const Header = ({ handleShowProjectHistoryModal }) => {
 	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-	// const [isLogin, setIsLogin] = useState(true);
+	const { isLoggedIn } = useSelector(selectUser);
 
 	return (
 		<nav className="bg-gray-650 text-gray-300">
@@ -90,12 +92,20 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 						setShowProfileDropdown(!showProfileDropdown);
 					}}
 				>
-					<Profile />
-
-					<DropdownProfile
-						showDropdown={showProfileDropdown}
-						handleShowProjectHistoryModal={handleShowProjectHistoryModal}
-					/>
+					{isLoggedIn ? (
+						<>
+							<Profile />
+							<DropdownProfile
+								showDropdown={showProfileDropdown}
+								handleShowProjectHistoryModal={handleShowProjectHistoryModal}
+							/>
+						</>
+					) : (
+						<div className="">
+							<Link to="/auth/sign-in">login</Link>/
+							<Link to="/auth/sign-up">register</Link>
+						</div>
+					)}
 				</li>
 			</ul>
 		</nav>
