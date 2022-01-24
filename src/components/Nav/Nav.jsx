@@ -112,7 +112,7 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 							>
 								login
 							</NavLink>
-
+							<span className="mx-2">{`/`}</span>
 							<NavLink
 								to="/auth/sign-up"
 								className={({ isActive }) =>
