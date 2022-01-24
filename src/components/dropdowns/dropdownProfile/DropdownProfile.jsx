@@ -38,9 +38,9 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 				</Link>
 			</li>
 			<li>
-				<Link to="#" className="flex gap-x-4 px-2 py-4">
+				<Link to="/auth" className="flex gap-x-4 px-2 py-4">
 					<img src={SignOutIcon} alt="sign out icon" className="w-6 h-auto" />
-					<span className="text-red-350">sign out</span>
+					<span className="text-red-350">logout</span>
 				</Link>
 			</li>
 		</ul>
