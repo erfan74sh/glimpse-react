@@ -11,7 +11,11 @@ import {
 } from "../../../features/message/messageSlice";
 
 const SignUp = () => {
+	const dispatch = useDispatch();
 	const { message } = useSelector(selectMessage);
+	useEffect(() => {
+		dispatch(clearMessage());
+	}, [dispatch]);
 	return (
 		<div className="flex flex-col items-center px-12 py-12 gap-y-9 bg-white rounded-md shadow-full">
 			<img src={Logo} alt="logo" className="w-60 h-auto" />
