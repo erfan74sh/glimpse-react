@@ -5,7 +5,6 @@ import authService from "../../services/auth.service";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-console.log(user);
 export const signin = createAsyncThunk(
 	"auth/signin",
 	async (userInfo, thunkAPI) => {
