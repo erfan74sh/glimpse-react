@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import authService from "../../services/auth.service";
 // asset
 import AvatarImg from "../../assets/avatars/avatar-01.png";
 // state
 import { selectUser } from "../../features/auth/authSlice";
 
 const Profile = () => {
-	const [userFullame, setUserFullname] = useState("");
 	const { isLoggedIn, user } = useSelector(selectUser);
-	useEffect(() => {
-		// authService.getCurrentUser().then(
-		// 	(response) => {
-		// 		setUserFullname(response.data["full_name"]);
-		// 		console.log(response.data);
-		// 	},
-		// 	(error) => {
-		// 		console.log("errore", error.response);
-		// 		if (ErrorEvent.response && ErrorEvent.response.status === 403) {
-		// 			console.log("unvalid");
-		// 		}
-		// 	}
-		// );
-	}, []);
 	return (
 		<button type="button" className="flex gap-x-6 items-center">
 			<span className="text-lg">
