@@ -1,15 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
-import authService from "../../../../services/auth.service";
 
 import { login } from "../../../../features/auth/authSlice";
 
 const SignInForm = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	// const handleLogin = async (username, password) => {
 	// 	try {
 	// 		const res = await authService.logIn(
@@ -26,7 +27,13 @@ const SignInForm = () => {
 			login(
 				`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`
 			)
-		);
+		)
+			.unwrap()
+			.then(() => {
+				navigate("/");
+				window.location.reload();
+			})
+			.catch((er) => console.log(er));
 	};
 
 	const validate = yup.object({
