@@ -1,9 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
-// import authService from "../../../../services/auth.service";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
 import SelectField from "../../../../components/inputs/SelectField";
@@ -11,24 +10,14 @@ import SelectField from "../../../../components/inputs/SelectField";
 import { signin } from "../../../../features/auth/authSlice";
 
 const SignUpForm = () => {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	// const register = async (formVal) => {
-	// 	try {
-	// 		const res = await authService.signUp(formVal);
-	// 		console.log(res);
-	// 	} catch (err) {
-	// 		// console.log(err);
-	// 		console.log("eeeeeeeeeeeer");
-	// 	}
-	// 	// const response = await Axios.post(
-	// 	// 	"https://bspsim.app/api/v1/users/",
-	// 	// 	test
-	// 	// ).catch((err) => console.log("Error:", err));
-	// 	// console.log(response);
-	// };
+
 	const handleSignup = (formVal) => {
-		dispatch(signin(formVal));
+		dispatch(signin(formVal))
+			.unwrap()
+			.then(() => console.log("success"))
+			.catch(() => console.log("faild"));
 	};
 
 	const scopeOfActivityOptions = [{ label: "Architect" }];
