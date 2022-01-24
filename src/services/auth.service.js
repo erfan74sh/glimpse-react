@@ -45,6 +45,7 @@ const logIn = (userInfo) => {
 
 const logOut = () => {
 	localStorage.removeItem("userAuth");
+	localStorage.removeItem("user");
 };
 
 const getCurrentUser = () => {
