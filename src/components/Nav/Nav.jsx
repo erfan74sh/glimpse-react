@@ -101,10 +101,29 @@ const Header = ({ handleShowProjectHistoryModal }) => {
 							/>
 						</>
 					) : (
-						<div className="">
-							<Link to="/auth/sign-in">login</Link>/
-							<Link to="/auth/sign-up">register</Link>
-						</div>
+						<>
+							<NavLink
+								to="/auth/sign-in"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5 transition-all hover:text-white`
+								}
+							>
+								login
+							</NavLink>
+
+							<NavLink
+								to="/auth/sign-up"
+								className={({ isActive }) =>
+									` ${
+										isActive && "border-b-2 border-white text-white"
+									} py-1.5 px-0.5 transition-all hover:text-white`
+								}
+							>
+								register
+							</NavLink>
+						</>
 					)}
 				</li>
 			</ul>
