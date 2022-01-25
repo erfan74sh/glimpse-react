@@ -30,20 +30,24 @@ const SignUpForm = ({ handleSuccessful }) => {
 	const scopeOfActivityOptions = [{ label: "Architect" }];
 
 	const validate = yup.object({
-		// firstName: yup
-		// 	.string()
-		// 	.max(15, "must be 15 characters or less")
-		// 	.required("required"),
-		// lastName: yup
-		// 	.string()
-		// 	.max(15, "must be 15 characters or less")
-		// 	.required("required"),
-		// email: yup.string().email("email is invalid").required("required"),
-		// password: yup
-		// 	.string()
-		// 	.min(6, "password must be at least 6 characters")
-		// 	.max(20, "password must be 20 characters or less")
-		// 	.required("required"),
+		full_name: yup
+			.string()
+			.max(35, "must be 35 characters or less")
+			.required("required"),
+		email: yup.string().email("email is invalid").required("required"),
+		password: yup
+			.string()
+			.min(6, "password must be at least 6 characters")
+			.max(20, "password must be 20 characters or less")
+			.required("required"),
+		phone_number: yup
+			.string()
+			.matches(
+				/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/,
+				"invalid phone number"
+			)
+			.required("required"),
+		scope_of_activity: yup.string().oneOf(["Architect"]).required("requierd"),
 	});
 	return (
 		<Formik
