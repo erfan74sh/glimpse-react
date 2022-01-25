@@ -45,7 +45,7 @@ const SignInForm = () => {
 				handleLogin(values.username, values.password);
 			}}
 		>
-			<Form className="flex flex-col items-center gap-y-7">
+			<Form className="flex flex-col w-full gap-y-7">
 				<TextField type="text" name="username" placeholder="username" />
 				<TextField type="password" name="password" placeholder="password" />
 				<button
