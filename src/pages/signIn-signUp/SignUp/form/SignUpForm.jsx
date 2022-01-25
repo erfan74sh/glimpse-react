@@ -27,7 +27,12 @@ const SignUpForm = ({ handleSuccessful }) => {
 			.catch(() => handleSuccessful(false));
 	};
 
-	const scopeOfActivityOptions = [{ label: "Architect" }];
+	const scopeOfActivityOptions = [
+		{ label: "Architect", value: "Architect" },
+		{ label: "Energy Designer", value: "Energy_Designer" },
+		{ label: "Data Analyser", value: "Data_Analyser" },
+		{ label: "Other", value: "Other" },
+	];
 
 	const validate = yup.object({
 		full_name: yup
@@ -46,7 +51,10 @@ const SignUpForm = ({ handleSuccessful }) => {
 				/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/,
 				"invalid phone number"
 			),
-		scope_of_activity: yup.string().oneOf(["Architect"]).required("requierd"),
+		scope_of_activity: yup
+			.string()
+			.oneOf(["Architect", "Energy_Designer", "Data_Analyser", "Other"])
+			.required("requierd"),
 	});
 	return (
 		<Formik
