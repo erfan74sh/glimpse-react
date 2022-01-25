@@ -46,8 +46,18 @@ const SignInForm = () => {
 			}}
 		>
 			<Form className="flex flex-col w-full gap-y-7">
-				<TextField type="text" name="username" placeholder="username" />
-				<TextField type="password" name="password" placeholder="password" />
+				<TextField
+					type="email"
+					name="username"
+					placeholder="enter your email"
+					label="email"
+				/>
+				<TextField
+					type="password"
+					name="password"
+					placeholder="enter your password"
+					label="password"
+				/>
 				<button
 					type="submit"
 					className="py-1 px-4 rounded-md capitalize bg-blue-550 text-white transition-all hover:shadow-b-sm"
