@@ -16,17 +16,17 @@ const PricingPlans = () => {
 				<Nav />
 			</header>
 			<main id="pricing-container" className="px-24 py-16">
-				<header className="text-center text-4xl text-gray-650 font-bold">
-					<h1>
-						Choose a plan that’s right
-						<br />
-						for you
-					</h1>
+				<header className="text-center text-3xl text-gray-650 font-bold">
+					<h1>Choose a plan that’s right for you</h1>
 				</header>
 				<section className="flex gap-x-10 justify-center py-16">
 					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
-						<img src={GoldBadge} alt="gold badge" />
-						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
+						<img
+							src={GoldBadge}
+							alt="gold badge"
+							className="w-36 h-48 object-contain"
+						/>
+						<h3 className="mb-4 text-3xl font-bold text-blue-550 uppercase">
 							gold
 						</h3>
 						<ul className="flex flex-col items-center">
@@ -46,8 +46,12 @@ const PricingPlans = () => {
 						</button>
 					</article>
 					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
-						<img src={SilverBadge} alt="gold badge" />
-						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
+						<img
+							src={SilverBadge}
+							alt="gold badge"
+							className="w-36 h-48 object-contain"
+						/>
+						<h3 className="mb-4 text-3xl font-bold text-blue-550 uppercase">
 							silver
 						</h3>
 						<ul className="flex flex-col items-center">
@@ -67,8 +71,12 @@ const PricingPlans = () => {
 					</article>
 
 					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
-						<img src={BronzeBadge} alt="gold badge" />
-						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
+						<img
+							src={BronzeBadge}
+							alt="gold badge"
+							className="w-36 h-48 object-contain"
+						/>
+						<h3 className="mb-4 text-3xl font-bold text-blue-550 uppercase">
 							bronze
 						</h3>
 						<ul className="flex flex-col items-center">
