@@ -26,7 +26,7 @@ const SignUp = () => {
 			<img src={Logo} alt="logo" className="w-60 h-auto" />
 			{!successful ? (
 				<>
-					<SignUpForm />
+					<SignUpForm handleSuccessful={handleSuccessful} />
 					{message && <div className="text-red-500">{message}</div>}
 					<span className="text-lg font-normal text-blue-550 capitalize">
 						or{" "}
