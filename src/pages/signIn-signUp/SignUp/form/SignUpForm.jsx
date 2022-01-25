@@ -63,7 +63,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				handleSignup(values);
 			}}
 		>
-			<Form className="flex flex-col items-center gap-y-7">
+			<Form className="flex flex-col w-100 gap-y-7">
 				<TextField
 					type="text"
 					name="full_name"
@@ -82,19 +82,25 @@ const SignUpForm = ({ handleSuccessful }) => {
 					placeholder="password"
 					label="password"
 				/>
-				<TextField
-					type="text"
-					name="phone_number"
-					placeholder="phone number"
-					label="phone number"
-				/>
-				<SelectField
-					selectOptions={scopeOfActivityOptions}
-					name="scope_of_activity"
-					label="scope of activity"
-					placeholder="select option"
-					handleValue={() => null}
-				/>
+				<div className="flex gap-x-5">
+					<div className="w-1/2">
+						<TextField
+							type="text"
+							name="phone_number"
+							placeholder="phone number"
+							label="phone number"
+						/>
+					</div>
+					<div className="w-1/2">
+						<SelectField
+							selectOptions={scopeOfActivityOptions}
+							name="scope_of_activity"
+							label="scope of activity"
+							placeholder="select option"
+							handleValue={() => null}
+						/>
+					</div>
+				</div>
 				<button
 					type="submit"
 					className="py-1 px-4 rounded-md capitalize bg-blue-550 text-white transition-all hover:shadow-b-sm"
