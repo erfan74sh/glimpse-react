@@ -10,7 +10,7 @@ export const signin = createAsyncThunk(
 	async (userInfo, thunkAPI) => {
 		try {
 			const response = await authService.signUp(userInfo);
-			thunkAPI.dispatch(setMessage("ثبت‌نام شما با موفقیت انجام شد"));
+			thunkAPI.dispatch(setMessage("you registered successfuly!"));
 			console.log(response);
 			return response.data;
 		} catch (error) {
