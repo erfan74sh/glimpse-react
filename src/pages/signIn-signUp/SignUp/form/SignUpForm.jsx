@@ -16,7 +16,14 @@ const SignUpForm = ({ handleSuccessful }) => {
 	const handleSignup = (formVal) => {
 		dispatch(signin(formVal))
 			.unwrap()
-			.then(() => handleSuccessful(true))
+			.then(() => {
+				handleSuccessful(true);
+			})
+			.then(() => {
+				setTimeout(() => {
+					navigate("/auth/sign-in");
+				}, 2000);
+			})
 			.catch(() => handleSuccessful(false));
 	};
 
