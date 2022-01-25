@@ -6,7 +6,7 @@ import MoreInfo from "../../moreInfo/MoreInfo";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-const DropdownRadio = ({ handleValue, children, ...props }) => {
+const DropdownRadio = ({ handleValue, handleSelected, children, ...props }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
 		<label className="block cursor-pointer">
@@ -15,7 +15,10 @@ const DropdownRadio = ({ handleValue, children, ...props }) => {
 				{...field}
 				{...props}
 				className="hidden"
-				onInput={(e) => handleValue(e.target.value)}
+				onInput={(e) => {
+					handleValue(e.target.value);
+					handleSelected(e);
+				}}
 			/>
 			{children}
 		</label>
@@ -32,7 +35,16 @@ const SelectField = ({
 	unit,
 }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
-	const { values, errors, touched } = useFormikContext();
+	const { errors, touched } = useFormikContext();
+	const [selected, setSelected] = useState("");
+	const handleSelected = (e) => {
+		const selectedOption = selectOptions.filter((option) => {
+			return option.value
+				? option.value === e.target.value
+				: option.label === e.target.value;
+		})?.[0];
+		setSelected(selectedOption.label);
+	};
 	return (
 		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label className="flex items-center gap-x-1">
@@ -50,8 +62,8 @@ const SelectField = ({
 					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
 				}  rounded-md outline-none`}
 			>
-				{values[name] ? (
-					<span>{values[name]}</span>
+				{selected ? (
+					<span>{selected}</span>
 				) : (
 					<span className="text-gray-400">{placeholder}</span>
 				)}
@@ -86,8 +98,9 @@ const SelectField = ({
 						>
 							<DropdownRadio
 								name={name}
-								value={option.label}
+								value={option.value || option.label}
 								handleValue={handleValue}
+								handleSelected={handleSelected}
 							>
 								{option.label}
 							</DropdownRadio>
