@@ -25,26 +25,6 @@ const PricingPlans = () => {
 				</header>
 				<section className="flex gap-x-10 justify-center py-16">
 					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
-						<img src={SilverBadge} alt="gold badge" />
-						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
-							silver
-						</h3>
-						<ul className="flex flex-col items-center">
-							<li>15 Calculation </li>
-							<li>20 Revision</li>
-							<li>Numerical Results</li>
-							<li>Simulation</li>
-							<li>Rhino And Revit</li>
-							<li>Exports</li>
-						</ul>
-						<button
-							type="button"
-							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg transition-all hover:shadow-b-sm"
-						>
-							<Link to="#">buy now</Link>
-						</button>
-					</article>
-					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
 						<img src={GoldBadge} alt="gold badge" />
 						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
 							gold
@@ -65,6 +45,27 @@ const PricingPlans = () => {
 							<Link to="#">buy now</Link>
 						</button>
 					</article>
+					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
+						<img src={SilverBadge} alt="gold badge" />
+						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
+							silver
+						</h3>
+						<ul className="flex flex-col items-center">
+							<li>15 Calculation </li>
+							<li>20 Revision</li>
+							<li>Numerical Results</li>
+							<li>Simulation</li>
+							<li>Rhino And Revit</li>
+							<li>Exports</li>
+						</ul>
+						<button
+							type="button"
+							className="mt-auto px-8 py-1 text-white text-lg bg-blue-550 rounded-lg transition-all hover:shadow-b-sm"
+						>
+							<Link to="#">buy now</Link>
+						</button>
+					</article>
+
 					<article className="w-84 h-133 flex flex-col items-center px-10 py-7 pt-3 bg-white rounded-3xl shadow-full transition-all transform hover:scale-110">
 						<img src={BronzeBadge} alt="gold badge" />
 						<h3 className="mb-4 text-4xl font-bold text-blue-550 uppercase">
