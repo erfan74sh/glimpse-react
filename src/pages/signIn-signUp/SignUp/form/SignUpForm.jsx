@@ -9,15 +9,15 @@ import SelectField from "../../../../components/inputs/SelectField";
 
 import { signin } from "../../../../features/auth/authSlice";
 
-const SignUpForm = () => {
+const SignUpForm = ({ handleSuccessful }) => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const handleSignup = (formVal) => {
 		dispatch(signin(formVal))
 			.unwrap()
-			.then(() => console.log("success"))
-			.catch(() => console.log("faild"));
+			.then(() => handleSuccessful(true))
+			.catch(() => handleSuccessful(false));
 	};
 
 	const scopeOfActivityOptions = [{ label: "Architect" }];
