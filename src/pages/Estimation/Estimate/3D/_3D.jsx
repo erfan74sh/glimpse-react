@@ -199,7 +199,7 @@ const ShaderType3 = ({ yDim, dimentions }) => {
 	);
 };
 
-const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
+const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 	const data = useSelector(selectInput);
 	const southWindowDimentions = {
 		width: (xDim / 10) * (wwrSouth / 100),
@@ -231,7 +231,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType }) => {
 				<Box xDim={xDim} yDim={yDim} data={data} />
 				<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
 				<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
-				<NorthSign xDim={xDim} yDim={yDim} rotation={data.rotation} />
+				<NorthSign xDim={xDim} yDim={yDim} rotation={rotation} />
 
 				{/* <TransformControls mode="scale">
 			</TransformControls> */}
