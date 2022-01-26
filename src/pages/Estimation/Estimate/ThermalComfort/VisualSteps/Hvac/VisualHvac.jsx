@@ -29,7 +29,7 @@ const VisualHvac = () => {
 			</h2>
 			<div className="">
 				<div className="w-full px-10 h-96 flex justify-center">
-					{/* <article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
+					<article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
 						{HVAC === "" ? (
 							<span className="text-xl font-semibold text-white uppercase">
 								HVAC System
@@ -45,11 +45,9 @@ const VisualHvac = () => {
 							>
 								<img
 									src={
-										wallImages.filter(
-											(material) => material.val === HVAC
-										)[0].url
+										hvacOptions.filter((option) => option.val === HVAC)[0].url
 									}
-									alt="wall 1"
+									alt={HVAC}
 									className="w-full h-full object-contain"
 								/>
 								<FontAwesomeIcon
@@ -58,7 +56,7 @@ const VisualHvac = () => {
 								/>
 							</div>
 						)}
-					</article> */}
+					</article>
 				</div>
 			</div>
 		</>
