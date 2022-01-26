@@ -29,7 +29,11 @@ const VisualHvac = () => {
 			</h2>
 			<div className="">
 				<div className="w-full px-10 h-96 flex justify-center">
-					<article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
+					<article
+						className={`relative flex justify-center items-center w-52 h-52 rounded-2xl ${
+							HVAC !== "" ? "bg-white" : "bg-gray-400"
+						} overflow-hidden`}
+					>
 						{HVAC === "" ? (
 							<span className="text-xl font-semibold text-white uppercase">
 								HVAC System
