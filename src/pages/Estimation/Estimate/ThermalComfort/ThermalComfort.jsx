@@ -60,7 +60,7 @@ const ThermalComfort = () => {
 			<section className="w-2/5 pr-10 relative">
 				{steps[step]}
 				<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
-					<ProgressBar step={step} />
+					<ProgressBar currentStep={step} totalSteps={5} />
 				</div>
 			</section>
 			<section className="flex flex-col w-3/5 pl-24">
