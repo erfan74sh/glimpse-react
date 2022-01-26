@@ -30,7 +30,7 @@ const VisualHvac = () => {
 			<div className="">
 				<div className="w-full px-10 h-96 flex justify-center">
 					<article
-						className={`relative flex justify-center items-center w-52 h-52 rounded-2xl ${
+						className={`relative flex justify-center items-center w-96 h-96 rounded-2xl ${
 							HVAC !== "" ? "bg-white" : "bg-gray-400"
 						} overflow-hidden`}
 					>
