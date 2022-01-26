@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 // state
-import { selectInput } from "../../../../../../features/data/inputDataSlice";
+import { selectVisualComfortData } from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 
 const VisualReview = () => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectVisualComfortData);
 
 	return (
 		<div className="h-full flex flex-col">
@@ -13,42 +13,6 @@ const VisualReview = () => {
 					review
 				</h2>
 				<ul className="flex flex-col gap-y-2">
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							east wall boundry condition:
-						</span>
-						<span>{data.eastWallCondition}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							west wall boundry condition:
-						</span>
-						<span>{data.westWallCondition}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							south wall boundry condition:
-						</span>
-						<span>{data.southWallCondition}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							north wall boundry condition:
-						</span>
-						<span>{data.northWallCondition}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							roof boundry condition:
-						</span>
-						<span>{data.roofCondition}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							floor boundry condition:
-						</span>
-						<span>{data.floorCondition}</span>
-					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
 							south neighbor distance:
@@ -72,18 +36,6 @@ const VisualReview = () => {
 							north neighbor height:
 						</span>
 						<span>{data.northNeighborHeight}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							HVAC system:
-						</span>
-						<span>{data.HVAC}</span>
-					</li>
-					<li className="flex justify-between border-b border-gray-400 text-gray-650">
-						<span className="text-gray-900 font-semibold capitalize">
-							natural ventilation:
-						</span>
-						<span>{data.naturalVent}</span>
 					</li>
 				</ul>
 			</section>

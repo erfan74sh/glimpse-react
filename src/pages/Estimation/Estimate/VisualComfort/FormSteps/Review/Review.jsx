@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 // state
-import { selectInput } from "../../../../../../features/data/inputDataSlice";
+import { selectVisualComfortData } from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 
 const Review = ({ prevStep }) => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectVisualComfortData);
 
 	return (
 		<div className="h-full flex flex-col">
@@ -57,27 +57,27 @@ const Review = ({ prevStep }) => {
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							wall u-value:
+							reflectance wall:
 						</span>
-						<span>{data.wallMaterial}</span>
+						<span>{data.reflectanCeWall}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							roof u-value:
+							reflectance ceiling:
 						</span>
-						<span>{data.ceilingMaterial}</span>
+						<span>{data.reflectanCeCeiling}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							floor u-value:
+							reflectance floor:
 						</span>
-						<span>{data.floorMaterial}</span>
+						<span>{data.reflectanCeFloor}</span>
 					</li>
 					<li className="flex justify-between border-b border-gray-400 text-gray-650">
 						<span className="text-gray-900 font-semibold capitalize">
-							window u-value:
+							VT glass:
 						</span>
-						<span>{data.glassMaterial}</span>
+						<span>{data.vtGlass}</span>
 					</li>
 				</ul>
 			</section>
