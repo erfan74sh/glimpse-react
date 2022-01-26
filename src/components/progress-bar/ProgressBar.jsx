@@ -7,12 +7,19 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
 	const stepsArr = Array.from({ length: totalSteps }, (v, i) => i + 1);
 	return (
 		<div className="flex h-full flex-col items-center justify-between relative">
-			{/* <div className="absolute top-0 left-1/2 w-1 h-full bg-gray-200 transform -translate-x-1/2"></div>
+			{/* whole progress */}
+			<div className="absolute top-0 left-1/2 w-1 h-full bg-gray-200 transform -translate-x-1/2"></div>
+			{/* completed progress */}
 			<div
 				className={`absolute top-0 left-1/2 w-1 ${
-					step === 0 ? "h-0" : step === 1 ? "h-1/2" : "h-full"
+					currentStep === 0
+						? "h-0"
+						: currentStep === totalSteps - 1 || currentStep === totalSteps
+						? "h-full"
+						: `h-${currentStep}/${totalSteps - 1}`
 				} bg-gray-400 transform -translate-x-1/2 transition-all`}
-			></div> */}
+			></div>
+			{/* progress steps */}
 			{stepsArr.map((stepNum) => {
 				return (
 					<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
