@@ -8,7 +8,7 @@ const Review = ({ prevStep }) => {
 
 	return (
 		<div className="h-full flex flex-col">
-			<section className="flex flex-col pr-10">
+			<section className="flex flex-col mb-8 pr-10 ">
 				<h2 className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
 					review
 				</h2>
