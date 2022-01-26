@@ -14,6 +14,14 @@ import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const VisualHvac = () => {
 	const { HVAC } = useSelector(selectInput);
+	const hvacOptions = [
+		{ val: "ideal air loads", url: Fancoil },
+		{ val: "PTAC | residential", url: Ptac },
+		{ val: "PTHP | residential", url: Pthp },
+		{ val: "VAV w/reheat", url: VavRe },
+		{ val: "VAV w/PFP boxes", url: VavPfp },
+		{ val: "fan coil units + DOAS", url: Fancoil },
+	];
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
@@ -22,9 +30,9 @@ const VisualHvac = () => {
 			<div className="">
 				<div className="w-full px-10 h-96 flex justify-center">
 					{/* <article className="relative flex justify-center items-center w-52 h-52 rounded-2xl bg-gray-400">
-						{data.wallMaterial === 0 ? (
+						{HVAC === "" ? (
 							<span className="text-xl font-semibold text-white uppercase">
-								wall
+								HVAC System
 							</span>
 						) : (
 							<div
@@ -38,7 +46,7 @@ const VisualHvac = () => {
 								<img
 									src={
 										wallImages.filter(
-											(material) => material.val === data.wallMaterial
+											(material) => material.val === HVAC
 										)[0].url
 									}
 									alt="wall 1"
