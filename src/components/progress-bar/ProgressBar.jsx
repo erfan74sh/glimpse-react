@@ -2,7 +2,7 @@ import React from "react";
 // asset
 import TickIcon from "../../assets/icons/tick.png";
 
-const ProgressBar = ({ step, totalSteps }) => {
+const ProgressBar = ({ currentStep, totalSteps }) => {
 	// create array from totalSteps
 	const stepsArr = Array.from({ length: totalSteps }, (v, i) => i + 1);
 	return (
@@ -17,7 +17,7 @@ const ProgressBar = ({ step, totalSteps }) => {
 				return (
 					<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
 						<span className="text-xs font-light text-white">
-							{step > stepNum - 1 ? (
+							{currentStep > stepNum - 1 ? (
 								<img src={TickIcon} alt="tick icon" />
 							) : (
 								stepNum
