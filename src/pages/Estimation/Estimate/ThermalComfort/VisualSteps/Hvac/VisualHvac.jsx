@@ -1,6 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
+// slice
+import { selectInput } from "../../../../../../features/data/inputDataSlice";
+// assets
+import Fancoil from "../../../../../../assets/images/HVAC/FANCOIL.png";
+import Ptac from "../../../../../../assets/images/HVAC/PTAC.png";
+import Pthp from "../../../../../../assets/images/HVAC/PTHP.png";
+import VavPfp from "../../../../../../assets/images/HVAC/VAVPFP.png";
+import VavRe from "../../../../../../assets/images/HVAC/VAVRE.png";
 
 const VisualHvac = () => {
+	const { HVAC } = useSelector(selectInput);
 	return (
 		<>
 			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
