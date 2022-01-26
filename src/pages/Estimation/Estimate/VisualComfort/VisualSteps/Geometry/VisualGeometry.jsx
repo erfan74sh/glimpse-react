@@ -20,6 +20,7 @@ const VisualGeometry = () => {
 						wwrNorth={inputData.wwrNorth}
 						wwrSouth={inputData.wwrSouth}
 						shadingType={inputData.shadingType}
+						rotation={inputData.rotation}
 					/>
 				</div>
 			</div>
