@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 import ThermalComfort from "./ThermalComfort";
 import VisualComfort from "./VisualComfort";
+import EnergyConsumption from "./EnergyConsumption";
 // state
 import { selectPrimaryData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
@@ -29,6 +30,7 @@ const Estimate = () => {
 			<main className="flex">
 				{primaryData.subset === "thermal comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual comfort" && <VisualComfort />}
+				{primaryData.subset === "energy consumption" && <EnergyConsumption />}
 			</main>
 		</main>
 	);
