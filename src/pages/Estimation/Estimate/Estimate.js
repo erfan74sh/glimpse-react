@@ -5,6 +5,7 @@ import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 import ThermalComfort from "./ThermalComfort";
 import VisualComfort from "./VisualComfort";
 import EnergyConsumption from "./EnergyConsumption";
+import StructureDesign from "./StructureDesign";
 // state
 import { selectPrimaryData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
@@ -31,6 +32,7 @@ const Estimate = () => {
 				{primaryData.subset === "thermal comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual comfort" && <VisualComfort />}
 				{primaryData.subset === "energy consumption" && <EnergyConsumption />}
+				{primaryData.subset === "structure design" && <StructureDesign />}
 			</main>
 		</main>
 	);
