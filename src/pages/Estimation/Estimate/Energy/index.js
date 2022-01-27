@@ -1,1 +1,1 @@
-export { default } from "./ThermalComfort";
+export { default } from "./Energy";
