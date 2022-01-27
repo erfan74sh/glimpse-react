@@ -18,7 +18,7 @@ import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
 
-const Energy = () => {
+const EnergyConsumption = () => {
 	const inputData = useSelector(selectInput);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
@@ -80,4 +80,4 @@ const Energy = () => {
 	);
 };
 
-export default Energy;
+export default EnergyConsumption;
