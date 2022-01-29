@@ -4,24 +4,18 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 // state
 import {
-	selectInput,
+	selectEnergyConsumptionData,
 	updateData,
-} from "../../../../../../features/data/inputDataSlice";
+} from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 
 const Material = ({ nextStep, prevStep }) => {
-	const data = useSelector(selectInput);
-
-	// const [wallMaterial, setWallMaterial] = useState("");
-	// const [ceilingMaterial, setCeilingMaterial] = useState("");
-	// const [floorMaterial, setFloorMaterial] = useState("");
-	// const [glassMaterial, setGlassMaterial] = useState("");
+	const data = useSelector(selectEnergyConsumptionData);
 
 	const dispatch = useDispatch();
 
 	const handleWallMaterialValue = (v) => {
-		// setWallMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -31,7 +25,6 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const handleCeilingMaterialValue = (v) => {
-		// setCeilingMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -41,7 +34,6 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const handleFloorMaterialValue = (v) => {
-		// setFloorMaterial(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -51,7 +43,6 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const handleGlassMaterialValue = (v) => {
-		// setGlassMaterial(e.target.dataset.value);
 		dispatch(
 			updateData({
 				...data,
@@ -115,9 +106,9 @@ const Material = ({ nextStep, prevStep }) => {
 					.required("required"),
 			})}
 		>
-			<Form className="h-full flex flex-col">
-				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
-					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<Form className="flex h-full flex-col">
+				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
+					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 						material
 					</legend>
 					<SelectField
@@ -157,10 +148,10 @@ const Material = ({ nextStep, prevStep }) => {
 						handleValue={handleGlassMaterialValue}
 					/>
 				</fieldset>
-				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
+						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
 						value="geometry"
 						onClick={prevStep}
 					>
@@ -168,7 +159,7 @@ const Material = ({ nextStep, prevStep }) => {
 					</button>
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(site plan)</span>
 					</button>
