@@ -17,6 +17,8 @@ import PricingPlans from "./pages/PricingPlans";
 import SignInSignUp from "./pages/signIn-signUp";
 import SignIn from "./pages/signIn-signUp/SignIn";
 import SignUp from "./pages/signIn-signUp/SignUp";
+// protectedRoute
+import ProtectedRoutes from "./router/ProtectedRoutes";
 // style
 import "./App.scss";
 
@@ -32,7 +34,9 @@ function App() {
 				</Route>
 				<Route path="compare-zones" element={<CompareZones />} />
 			</Route>
-			<Route path="profile" element={<Profile />} />
+			<Route element={<ProtectedRoutes />}>
+				<Route path="profile" element={<Profile />} />
+			</Route>
 			<Route path="about-us" element={<AboutUs />} />
 			<Route path="contact-us" element={<ContactUs />} />
 			<Route path="pricing" element={<PricingPlans />} />
