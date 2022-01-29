@@ -26,15 +26,15 @@ function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />} />
-			<Route path="/estimation" element={<Estimation />}>
-				<Route index element={<Estimate />} />
-				<Route path="estimate" element={<Estimate />} />
-				<Route path="result" element={<Result />}>
-					<Route path=":zoneId" element={<Zone />} />
-				</Route>
-				<Route path="compare-zones" element={<CompareZones />} />
-			</Route>
 			<Route element={<ProtectedRoutes />}>
+				<Route path="/estimation" element={<Estimation />}>
+					<Route index element={<Estimate />} />
+					<Route path="estimate" element={<Estimate />} />
+					<Route path="result" element={<Result />}>
+						<Route path=":zoneId" element={<Zone />} />
+					</Route>
+					<Route path="compare-zones" element={<CompareZones />} />
+				</Route>
 				<Route path="profile" element={<Profile />} />
 			</Route>
 			<Route path="about-us" element={<AboutUs />} />
