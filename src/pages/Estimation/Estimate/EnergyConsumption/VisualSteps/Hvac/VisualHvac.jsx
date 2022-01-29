@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // slice
-import { selectInput } from "../../../../../../features/data/inputDataSlice";
+import { selectEnergyConsumptionData } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // assets
 import Fancoil from "../../../../../../assets/images/HVAC/FANCOIL.png";
 import Ptac from "../../../../../../assets/images/HVAC/PTAC.png";
@@ -13,7 +13,7 @@ import VavRe from "../../../../../../assets/images/HVAC/VAVRE.png";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const VisualHvac = () => {
-	const { HVAC } = useSelector(selectInput);
+	const { HVAC } = useSelector(selectEnergyConsumptionData);
 	const hvacOptions = [
 		{ val: "ideal air loads", url: Fancoil },
 		{ val: "PTAC | residential", url: Ptac },
@@ -24,23 +24,23 @@ const VisualHvac = () => {
 	];
 	return (
 		<>
-			<h2 className=" mb-9 mx-8 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 				details
 			</h2>
 			<div className="">
-				<div className="w-full px-10 h-96 flex justify-center">
+				<div className="flex h-96 w-full justify-center px-10">
 					<article
-						className={`relative flex justify-center items-center w-96 h-96 rounded-2xl ${
+						className={`relative flex h-96 w-96 items-center justify-center rounded-2xl ${
 							HVAC !== "" ? "bg-white" : "bg-gray-400"
 						} overflow-hidden`}
 					>
 						{HVAC === "" ? (
-							<span className="text-xl font-semibold text-white uppercase">
+							<span className="text-xl font-semibold uppercase text-white">
 								HVAC System
 							</span>
 						) : (
 							<div
-								className="w-full h-full relative group"
+								className="group relative h-full w-full"
 								onClick={(e) =>
 									e.currentTarget
 										.getElementsByTagName("img")[0]
@@ -52,11 +52,11 @@ const VisualHvac = () => {
 										hvacOptions.filter((option) => option.val === HVAC)[0].url
 									}
 									alt={HVAC}
-									className="w-full h-full object-contain"
+									className="h-full w-full object-contain"
 								/>
 								<FontAwesomeIcon
 									icon={faExpand}
-									className="absolute bottom-0 right-0 transform -translate-y-4 -translate-x-4 text-2xl cursor-pointer text-gray-600 transition group-hover:text-gray-700 group-hover:scale-125"
+									className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
 								/>
 							</div>
 						)}
