@@ -4,24 +4,18 @@ import { Formik, Form } from "formik";
 import * as yup from "yup";
 // state
 import {
-	selectInput,
+	selectEnergyConsumptionData,
 	updateData,
-} from "../../../../../../features/data/inputDataSlice";
+} from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 
 const SitePlan = ({ nextStep, prevStep }) => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectEnergyConsumptionData);
 
 	const dispatch = useDispatch();
 
-	// const [southNeighborDist, setSouthNeighborDist] = useState("");
-	// const [southNeighborHeight, setSouthNeighborHeight] = useState("");
-	// const [northNeighborDist, setNorthNeighborDist] = useState("");
-	// const [northNeighborHeight, setNorthNeighborHeight] = useState("");
-
 	const handleSouthNeighborDistValue = (v) => {
-		// setSouthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -31,7 +25,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleSouthNeighborHeightValue = (v) => {
-		// setSouthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -41,7 +34,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleNorthNeighborDistValue = (v) => {
-		// setNorthNeighborDist(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -51,7 +43,6 @@ const SitePlan = ({ nextStep, prevStep }) => {
 	};
 
 	const handleNorthNeighborHeightValue = (v) => {
-		// setNorthNeighborHeight(e.target.value);
 		dispatch(
 			updateData({
 				...data,
@@ -91,9 +82,9 @@ const SitePlan = ({ nextStep, prevStep }) => {
 					.required("required"),
 			})}
 		>
-			<Form className="h-full flex flex-col">
-				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
-					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<Form className="flex h-full flex-col">
+				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
+					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 						site plan
 					</legend>
 					<InputRange
@@ -137,17 +128,17 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						handleValue={handleNorthNeighborHeightValue}
 					/>
 				</fieldset>
-				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
+						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
 						onClick={prevStep}
 					>
 						prev <span className="text-xs lowercase">(material)</span>
 					</button>
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(review)</span>
 					</button>
