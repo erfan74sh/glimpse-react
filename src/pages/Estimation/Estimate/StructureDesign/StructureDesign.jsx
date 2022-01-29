@@ -49,20 +49,20 @@ const StructureDesign = () => {
 	];
 	return (
 		<>
-			<section className="w-2/5 pr-10 relative">
+			<section className="relative w-2/5 pr-10">
 				{steps[step]}
-				<div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-3/4">
+				<div className="absolute right-0 top-1/2 h-3/4 -translate-y-1/2 transform">
 					<ProgressBar currentStep={step} totalSteps={3} />
 				</div>
 			</section>
-			<section className="flex flex-col w-3/5 pl-24">
+			<section className="flex w-3/5 flex-col pl-24">
 				{visualSteps[step]}
 				<button
 					type="submit"
 					form="energy-and-comfort"
 					onClick={(e) => handleSubmit(e)}
-					className={`self-center mt-16 px-10 py-2 text-white font-medium uppercase rounded-md bg-blue-550 ${
-						step !== 3 && "opacity-25 pointer-events-none"
+					className={`bg-blue-550 mt-16 self-center rounded-md px-10 py-2 font-medium uppercase text-white ${
+						step !== 3 && "pointer-events-none opacity-25"
 					}`}
 				>
 					start estimate
