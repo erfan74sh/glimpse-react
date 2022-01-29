@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 // state
-import { selectInput } from "../../../../../../../features/data/inputDataSlice";
+import { selectEnergyConsumptionData } from "../../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
 const Building = () => {
 	const mesh = useRef(null);
@@ -52,7 +52,7 @@ const Ground = () => {
 };
 
 const SitePlan3D = () => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectEnergyConsumptionData);
 
 	const soutNeighbor = {
 		height: data.southNeighborHeight / 10,
