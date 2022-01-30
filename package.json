@@ -27,10 +27,12 @@
 		"react-router-dom": "^6.0.2",
 		"react-scripts": "4.0.3",
 		"recharts": "^2.1.6",
+		"source-map-explorer": "^2.5.2",
 		"three": "^0.134.0",
 		"yup": "^0.32.11"
 	},
 	"scripts": {
+		"analyze": "source-map-explorer 'build/static/js/*.js'",
 		"start": "craco start",
 		"build": "craco build",
 		"test": "craco test",
