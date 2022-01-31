@@ -6,13 +6,19 @@ import SignIn from "./pages/signIn-signUp/SignIn";
 import SignUp from "./pages/signIn-signUp/SignUp";
 // protectedRoute
 import ProtectedRoutes from "./router/ProtectedRoutes";
-import Result from "./pages/Estimation/Result";
-import Zone from "./pages/Estimation/Result/Zone/Zone";
-import Estimate from "./pages/Estimation/Estimate";
-import CompareZones from "./pages/Estimation/Result/CompareZones/CompareZones";
+// import Result from "./pages/Estimation/Result";
+// import Zone from "./pages/Estimation/Result/Zone/Zone";
+// import Estimate from "./pages/Estimation/Estimate";
+// import CompareZones from "./pages/Estimation/Result/CompareZones/CompareZones";
 import "./App.scss";
 //
 //
+const Result = lazy(() => import("./pages/Estimation/Result"));
+const Zone = lazy(() => import("./pages/Estimation/Result/Zone/Zone"));
+const Estimate = lazy(() => import("./pages/Estimation/Estimate"));
+const CompareZones = lazy(() =>
+	import("./pages/Estimation/Result/CompareZones/CompareZones")
+);
 // pages
 const Home = lazy(() => import("./pages/Home"));
 // import Home from "./pages/Home";
