@@ -12,7 +12,7 @@ const Result = () => {
 	return (
 		<main className=" px-24 py-16" id="result__main">
 			<header className="mb-10">
-				<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
+				<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
 					result
 				</h1>
 				<nav className="mt-14">
