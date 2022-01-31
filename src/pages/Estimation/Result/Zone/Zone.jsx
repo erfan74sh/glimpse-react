@@ -131,7 +131,10 @@ const Zone = () => {
 										document={<PdfDoc />}
 										fileName={`${entry.name}.pdf`}
 									>
-										<FontAwesomeIcon icon={faFilePdf} className="text-xl" />
+										<FontAwesomeIcon
+											icon={faFilePdf}
+											className="text-xl opacity-70 transition hover:opacity-90"
+										/>
 									</PDFDownloadLink>
 								</button>
 								<button className="ml-auto mr-4 capitalize underline">
