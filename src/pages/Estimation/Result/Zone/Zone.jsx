@@ -116,7 +116,7 @@ const Zone = () => {
 	};
 	return (
 		<>
-			<section className="flex justify-center items-center max-h-152 overflow-hidden">
+			<section className="max-h-152 flex items-center justify-center overflow-hidden">
 				<Chart series={series} />
 			</section>
 			<section className="mt-18">
@@ -125,8 +125,8 @@ const Zone = () => {
 				</h2>
 				<PointsAndGrades />
 			</section>
-			<section className="flex flex-col h-96 px-40 mt-20">
-				<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
+			<section className="mt-20 flex h-96 flex-col px-40">
+				<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 					<h2>alternatives</h2>
 				</header>
 				<ul className="flex flex-col gap-y-9">
@@ -134,71 +134,20 @@ const Zone = () => {
 						<>
 							<li
 								key={i}
-								className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-full-sm bg-white"
+								className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
 								data-name={entry.name}
 							>
-								<article
-									className={`${
-										entry.showDropdown ? "visible" : "hidden"
-									} block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-full-sm`}
-								>
-									<div className="flex justify-between">
-										<div>
-											<h3 className="mb-5 font-bold text-blue-550 text-base uppercase">
-												result
-											</h3>
-											<ul>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-												<li>
-													<span>parameter</span>
-													<span>[unit]:</span>
-													<span>10</span>
-												</li>
-											</ul>
-										</div>
-										<img src={ModelImage} alt="model" />
-									</div>
-									<button className="absolute top-5 right-5">
-										<PDFDownloadLink
-											document={<PdfDoc />}
-											fileName={`${entry.name}.pdf`}
-										>
-											<img src={PDFIcon} alt="download pdf icon" />
-										</PDFDownloadLink>
-									</button>
-								</article>
 								<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 								<span>{` ${entry.name}`}</span>
 								<span className="ml-1 text-xs">({entry.date})</span>
+								<button className="ml-4">
+									<PDFDownloadLink
+										document={<PdfDoc />}
+										fileName={`${entry.name}.pdf`}
+									>
+										<img src={PDFIcon} alt="download pdf icon" />
+									</PDFDownloadLink>
+								</button>
 								<button className="ml-auto mr-4 capitalize underline">
 									<Link to="/estimation">edit</Link>
 								</button>
@@ -211,17 +160,6 @@ const Zone = () => {
 											className="text-gray-500"
 										/>
 									)}
-								</button>
-								<button
-									className="relative text-base leading-5 text-gray-500"
-									onClick={handleShowResultDropdown}
-								>
-									<FontAwesomeIcon
-										icon={faCaretDown}
-										className={`${
-											entry.showDropdown ? "transform rotate-180" : ""
-										} transition-all`}
-									/>
 								</button>
 							</li>
 						</>
