@@ -10,15 +10,8 @@ import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
-import {
-	faEye,
-	faEyeSlash,
-	faCaretDown,
-} from "@fortawesome/free-solid-svg-icons";
-// assets
-import ModelImage from "../../../../assets/images/3dmodel-result.png";
-import PDFIcon from "../../../../assets/images/pdf-icon.png";
-
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 const Zone = () => {
 	// const params = useParams();
 	const [series, setSeries] = useState([]);
@@ -107,13 +100,6 @@ const Zone = () => {
 		item.visible = !item.visible;
 		setSeries(temState);
 	};
-	const handleShowResultDropdown = (e) => {
-		const name = e.currentTarget.parentNode.dataset.name;
-		let tempState = [...series];
-		let item = tempState.filter((entry) => entry.name === name)[0];
-		item.showDropdown = !item.showDropdown;
-		setSeries(tempState);
-	};
 	return (
 		<>
 			<section className="max-h-152 flex items-center justify-center overflow-hidden">
@@ -145,7 +131,7 @@ const Zone = () => {
 										document={<PdfDoc />}
 										fileName={`${entry.name}.pdf`}
 									>
-										<img src={PDFIcon} alt="download pdf icon" />
+										<FontAwesomeIcon icon={faFilePdf} className="text-xl" />
 									</PDFDownloadLink>
 								</button>
 								<button className="ml-auto mr-4 capitalize underline">
