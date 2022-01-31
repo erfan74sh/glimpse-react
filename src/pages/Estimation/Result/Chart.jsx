@@ -56,7 +56,6 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 				dy={-10}
 				textAnchor="start"
 				fill={stroke}
-				// strokeWidth={strokeWidth}
 				transform="rotate(-45)"
 				className="text-sm"
 				fontWeight={fontWeight}
@@ -89,8 +88,8 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 	}
 	if (active && payload && payload.length) {
 		return (
-			<div className="p-3 bg-gray-200 bg-opacity-50 border border-blue-550 border-opacity-40">
-				<h4 className="text-blue-550 font-semibold text-sm">{label}</h4>
+			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-50 p-3">
+				<h4 className="text-blue-550 text-sm font-semibold">{label}</h4>
 				{payload.map((p, i) => {
 					return (
 						<p
@@ -115,11 +114,11 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 
 const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 	return (
-		<ul className="flex flex-col gap-y-2 content-center">
+		<ul className="flex flex-col content-center gap-y-2">
 			{payload.map((entry) => {
 				return (
 					<li
-						className="px-1 py-0.5 rounded-lg text-white text-xs font-normal capitalize cursor-pointer"
+						className="cursor-pointer rounded-lg px-1 py-0.5 text-xs font-normal capitalize text-white"
 						style={{ backgroundColor: entry.color }}
 						onMouseEnter={changeOpacity}
 						onMouseLeave={resetOpacity}
