@@ -16,19 +16,11 @@ const Geometry = ({ nextStep }) => {
 
 	const dispatch = useDispatch();
 
-	const handleFloorLevelValue = (v) => {
-		dispatch(
-			updateData({
-				...data,
-				floorLevel: v,
-			})
-		);
-	};
 	const handleXDimValue = (v) => {
 		dispatch(
 			updateData({
 				...data,
-				xDim: v,
+				x_dim: v,
 			})
 		);
 	};
@@ -36,7 +28,7 @@ const Geometry = ({ nextStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				yDim: v,
+				y_dim: v,
 			})
 		);
 	};
@@ -44,7 +36,7 @@ const Geometry = ({ nextStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				rotation: v,
+				rotation_angle: v,
 			})
 		);
 	};
@@ -52,7 +44,7 @@ const Geometry = ({ nextStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				wwrNorth: v,
+				wwr_north: v,
 			})
 		);
 	};
@@ -60,7 +52,7 @@ const Geometry = ({ nextStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				wwrSouth: v,
+				wwr_south: v,
 			})
 		);
 	};
@@ -68,7 +60,7 @@ const Geometry = ({ nextStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				shadingType: v,
+				shading_type: v,
 			})
 		);
 	};
@@ -80,15 +72,6 @@ const Geometry = ({ nextStep }) => {
 		{ label: "all modes" },
 	];
 
-	const floorLevelOptions = [
-		{ label: "0" },
-		{ label: "1" },
-		{ label: "2" },
-		{ label: "3" },
-		{ label: "4" },
-		{ label: "5" },
-	];
-
 	return (
 		<Formik
 			initialValues={data}
@@ -98,56 +81,44 @@ const Geometry = ({ nextStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				floorLevel: yup
-					.string()
-					.oneOf(["0", "1", "2", "3", "4", "5"], "pick from list")
-					.required("floor level is required"),
-				rotation: yup
+				rotation_angle: yup
 					.number()
 					.min(-40, "must be more than -40")
 					.max(40, "must be less than 40")
 					.required("required"),
-				xDim: yup
+				x_dim: yup
 					.number()
 					.min(3, "x-dimention must be equal or greater than 8")
 					.max(10, "x-dimention must be equal or less than 24")
 					.required("required"),
-				yDim: yup
+				y_dim: yup
 					.number()
 					.min(8, "y-dimention must be between 3 and 10")
 					.max(24, "y-dimention must be between 3 and 10")
 					.required("required"),
-				wwrNorth: yup
+				wwr_north: yup
 					.number()
 					.min(0, "wwr-north must be between 0 and 80")
 					.max(80, "wwr-north must be between 0 and 80")
 					.required("required"),
-				wwrSouth: yup
+				wwr_south: yup
 					.number()
 					.min(0, "wwr-south must be between 0 and 80")
 					.max(80, "wwr-south must be between 0 and 80")
 					.required("required"),
-				shadingType: yup
+				shading_type: yup
 					.string()
 					.oneOf(["vertical", "horizontal", "horizontal louvre", "all modes"])
 					.required("pick one"),
 			})}
 		>
-			<Form className="h-full flex flex-col">
-				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
-					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<Form className="flex h-full flex-col">
+				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
+					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 						geometry
 					</legend>
-					<SelectField
-						name="floorLevel"
-						selectOptions={floorLevelOptions}
-						label="floor level"
-						placeholder="choose level"
-						moreInfo="طبقه"
-						handleValue={handleFloorLevelValue}
-					/>
 					<InputRange
-						name="rotation"
+						name="rotation_angle"
 						label="rotation angle"
 						min="-40"
 						max="40"
@@ -157,7 +128,7 @@ const Geometry = ({ nextStep }) => {
 						unit="degree"
 					/>
 					<InputRange
-						name="xDim"
+						name="x_dim"
 						label="width"
 						min="3"
 						max="10"
@@ -168,7 +139,7 @@ const Geometry = ({ nextStep }) => {
 					/>
 
 					<InputRange
-						name="yDim"
+						name="y_dim"
 						label="length"
 						min="8"
 						max="24"
@@ -178,7 +149,7 @@ const Geometry = ({ nextStep }) => {
 						unit="m"
 					/>
 					<InputRange
-						name="wwrSouth"
+						name="wwr_south"
 						label="WWR-South"
 						min="0"
 						max="80"
@@ -188,7 +159,7 @@ const Geometry = ({ nextStep }) => {
 						unit="%"
 					/>
 					<InputRange
-						name="wwrNorth"
+						name="wwr_north"
 						label="WWR-North"
 						min="0"
 						max="80"
@@ -198,7 +169,7 @@ const Geometry = ({ nextStep }) => {
 						unit="%"
 					/>
 					<SelectField
-						name="shadingType"
+						name="shading_type"
 						selectOptions={shadingOptions}
 						label="shading type"
 						placeholder="choose one type"
@@ -206,10 +177,10 @@ const Geometry = ({ nextStep }) => {
 						moreInfo="نوع سایبان"
 					/>
 				</fieldset>
-				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(material)</span>
 					</button>
