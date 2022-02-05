@@ -19,7 +19,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				southNeighborDist: v,
+				south_neighbor_distance: v,
 			})
 		);
 	};
@@ -28,7 +28,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				southNeighborHeight: v,
+				south_neighbor_height: v,
 			})
 		);
 	};
@@ -37,7 +37,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				northNeighborDist: v,
+				north_neighbor_distance: v,
 			})
 		);
 	};
@@ -46,7 +46,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				northNeighborHeight: v,
+				north_neighbor_height: v,
 			})
 		);
 	};
@@ -60,35 +60,35 @@ const SitePlan = ({ nextStep, prevStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				southNeighborDist: yup
+				south_neighbor_distance: yup
 					.number()
 					.min(2, "must be between 2 and 8")
 					.max(8, "must be between 2 and 8")
 					.required("required"),
-				southNeighborHeight: yup
+				south_neighbor_height: yup
 					.number()
 					.min(4, "must be between 4 and 10")
 					.max(10, "must be between 4 and 10")
 					.required("required"),
-				northNeighborDist: yup
+				north_neighbor_distance: yup
 					.number()
 					.min(2, "must be between 2 and 8")
 					.max(8, "must be between 2 and 8")
 					.required("required"),
-				northNeighborHeight: yup
+				north_neighbor_height: yup
 					.number()
 					.min(4, "must be between 4 and 10")
 					.max(10, "must be between 4 and 10")
 					.required("required"),
 			})}
 		>
-			<Form className="h-full flex flex-col">
-				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
-					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<Form className="flex h-full flex-col">
+				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
+					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 						site plan
 					</legend>
 					<InputRange
-						name="southNeighborDist"
+						name="south_neighbor_distance"
 						label="South neighbor distance"
 						min="2"
 						max="8"
@@ -98,7 +98,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						handleValue={handleSouthNeighborDistValue}
 					/>
 					<InputRange
-						name="southNeighborHeight"
+						name="south_neighbor_height"
 						label="South neighbor height"
 						min="4"
 						max="10"
@@ -108,7 +108,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						handleValue={handleSouthNeighborHeightValue}
 					/>
 					<InputRange
-						name="northNeighborDist"
+						name="north_neighbor_distance"
 						label="North neighbor distance"
 						min="2"
 						max="8"
@@ -118,7 +118,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						handleValue={handleNorthNeighborDistValue}
 					/>
 					<InputRange
-						name="northNeighborHeight"
+						name="north_neighbor_height"
 						label="North neighbor height"
 						min="4"
 						max="10"
@@ -128,17 +128,17 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						handleValue={handleNorthNeighborHeightValue}
 					/>
 				</fieldset>
-				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="flex items-center gap-x-1 px-5 py-1 text-blue-550 font-medium uppercase rounded-md bg-white border-2 border-blue-550"
+						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
 						onClick={prevStep}
 					>
 						prev <span className="text-xs lowercase">(material)</span>
 					</button>
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(review)</span>
 					</button>
