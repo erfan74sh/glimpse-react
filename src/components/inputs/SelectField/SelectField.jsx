@@ -58,7 +58,7 @@ const SelectField = ({
 				onClick={() => {
 					setShowDropdown(!showDropdown);
 				}}
-				className={`flex justify-between items-center p-2 border bg-white ${
+				className={`flex items-center justify-between border bg-white p-2 ${
 					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
 				}  rounded-md outline-none`}
 			>
@@ -71,14 +71,14 @@ const SelectField = ({
 				<span className="px-3">
 					<FontAwesomeIcon
 						icon={faCaretDown}
-						className={`transform transition duration-300 ease-in-out text-gray-600  ${
+						className={`transform text-gray-600 transition duration-300 ease-in-out  ${
 							showDropdown ? "-scale-y-1" : "scale-y-1"
 						}`}
 					/>
 				</span>
 			</div>
 			{errors[name] && touched[name] && (
-				<span className="absolute bottom-0 left-1 transform translate-y-full text-xs text-red-600">
+				<span className="absolute bottom-0 left-1 translate-y-full transform text-xs text-red-600">
 					{errors[name]}
 				</span>
 			)}
@@ -88,13 +88,13 @@ const SelectField = ({
 				}}
 				className={`${
 					showDropdown ? "flex" : "hidden"
-				} flex-col absolute -bottom-1 transform translate-y-full w-full p-2 px-3 z-10 rounded-md bg-white shadow-full-sm`}
+				} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2 px-3`}
 			>
 				{selectOptions.map((option, idx) => {
 					return (
 						<li
 							key={idx}
-							className={`py-1 transition text-gray-500 hover:text-gray-900`}
+							className={`py-1 text-gray-500 transition hover:text-gray-900`}
 						>
 							<DropdownRadio
 								name={name}
