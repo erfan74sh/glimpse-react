@@ -55,14 +55,14 @@ const SitePlan3D = () => {
 	const data = useSelector(selectVisualComfortData);
 
 	const soutNeighbor = {
-		height: data.southNeighborHeight / 10,
-		dist: (data.southNeighborDist + 6) / 10,
-		origin: (data.southNeighborHeight / 2 - 3.5 / 2) / 10,
+		height: data.south_neighbor_height / 10,
+		dist: (data.south_neighbor_distance + 6) / 10,
+		origin: (data.south_neighbor_height / 2 - 3.5 / 2) / 10,
 	};
 	const northNeighbor = {
-		height: data.northNeighborHeight / 10,
-		dist: (data.northNeighborDist + 6) / 10,
-		origin: (data.northNeighborHeight / 2 - 3.5 / 2) / 10,
+		height: data.north_neighbor_height / 10,
+		dist: (data.north_neighbor_distance + 6) / 10,
+		origin: (data.north_neighbor_height / 2 - 3.5 / 2) / 10,
 	};
 
 	return (
