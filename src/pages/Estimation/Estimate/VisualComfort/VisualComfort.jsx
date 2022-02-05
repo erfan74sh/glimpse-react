@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { axios } from "../../../../services/axios";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -13,6 +14,7 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectVisualComfortData } from "../../../../features/visualComfortData/VisualComfortDataSlice";
+import authHeader from "../../../../services/auth-header";
 
 const ThermalComfort = () => {
 	const inputData = useSelector(selectVisualComfortData);
@@ -31,6 +33,9 @@ const ThermalComfort = () => {
 		e.preventDefault();
 		// todo: send data to server
 		console.log(inputData);
+		axios
+			.post("daylights/", inputData, { headers: authHeader() })
+			.then((res) => console.log(res));
 		navigate("/estimation/result/0");
 	};
 
