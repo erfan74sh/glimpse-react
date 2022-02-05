@@ -66,10 +66,10 @@ const Geometry = ({ nextStep }) => {
 	};
 
 	const shadingOptions = [
-		{ label: "vertical" },
-		{ label: "horizontal" },
-		{ label: "horizontal louvre" },
-		{ label: "all modes" },
+		{ label: "vertical", value: "3" },
+		{ label: "horizontal", value: "1" },
+		{ label: "horizontal louvre", value: "2" },
+		{ label: "all modes", value: "4" },
 	];
 
 	return (
@@ -106,10 +106,7 @@ const Geometry = ({ nextStep }) => {
 					.min(0, "wwr-south must be between 0 and 80")
 					.max(80, "wwr-south must be between 0 and 80")
 					.required("required"),
-				shading_type: yup
-					.string()
-					.oneOf(["vertical", "horizontal", "horizontal louvre", "all modes"])
-					.required("pick one"),
+				shading_type: yup.number().oneOf([1, 2, 3, 4]).required("pick one"),
 			})}
 		>
 			<Form className="flex h-full flex-col">
