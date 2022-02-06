@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
@@ -13,11 +13,14 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectVisualComfortData } from "../../../../features/visualComfortData/VisualComfortDataSlice";
+import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
+
 // services
 import visualComfortServices from "../../../../services/estimations/visualComfort.service";
 
 const ThermalComfort = () => {
 	const inputData = useSelector(selectVisualComfortData);
+	const primData = useSelector(selectPrimaryData);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
@@ -35,7 +38,11 @@ const ThermalComfort = () => {
 		try {
 			const response = await visualComfortServices.estimate(inputData);
 			console.log(response.data);
-			navigate(`/estimation/result/${response.data.id}`);
+			let ali = "ali";
+			navigate({
+				pathname: "/result",
+				search: `?${createSearchParams({ ali })}`,
+			});
 		} catch (err) {
 			console.log("errore from visual comfort service", err);
 		}
