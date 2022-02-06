@@ -88,13 +88,13 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				x_dim: yup
 					.number()
-					.min(3, "x-dimention must be equal or greater than 8")
-					.max(10, "x-dimention must be equal or less than 24")
+					.min(8, "x-dimention must be equal or greater than 8")
+					.max(24, "x-dimention must be equal or less than 24")
 					.required("required"),
 				y_dim: yup
 					.number()
-					.min(8, "y-dimention must be between 3 and 10")
-					.max(24, "y-dimention must be between 3 and 10")
+					.min(3, "y-dimention must be between 3 and 10")
+					.max(10, "y-dimention must be between 3 and 10")
 					.required("required"),
 				wwr_north: yup
 					.number()
@@ -127,8 +127,8 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="x_dim"
 						label="width"
-						min="3"
-						max="10"
+						min="8"
+						max="24"
 						step="0.5"
 						handleValue={handleXDimValue}
 						moreInfo="عرض بنا"
@@ -138,8 +138,8 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="y_dim"
 						label="length"
-						min="8"
-						max="24"
+						min="3"
+						max="10"
 						step="0.5"
 						handleValue={handleYDimValue}
 						moreInfo="طول بنا"
