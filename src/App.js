@@ -48,11 +48,11 @@ function App() {
 					<Route path="/estimation" element={<Estimation />}>
 						<Route index element={<Estimate />} />
 						<Route path="estimate" element={<Estimate />} />
-						<Route path="result" element={<Result />}>
-							<Route path=":zoneId" element={<Zone />} />
-						</Route>
-						<Route path="compare-zones" element={<CompareZones />} />
 					</Route>
+					<Route path="result" element={<Result />}>
+						<Route path=":zoneId" element={<Zone />} />
+					</Route>
+					<Route path="compare-zones" element={<CompareZones />} />
 					<Route path="profile" element={<Profile />} />
 				</Route>
 				<Route path="about-us" element={<AboutUs />} />
