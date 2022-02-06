@@ -20,7 +20,9 @@ import visualComfortServices from "../../../../services/estimations/visualComfor
 
 const ThermalComfort = () => {
 	const inputData = useSelector(selectVisualComfortData);
-	const primData = useSelector(selectPrimaryData);
+	const { subset, projectName, zoneName, alternativeName } =
+		useSelector(selectPrimaryData);
+	console.log(projectName);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
@@ -38,10 +40,14 @@ const ThermalComfort = () => {
 		try {
 			const response = await visualComfortServices.estimate(inputData);
 			console.log(response.data);
-			let ali = "ali";
 			navigate({
 				pathname: "/result",
-				search: `?${createSearchParams({ ali })}`,
+				search: `?${createSearchParams({
+					subset,
+					projectName,
+					zoneName,
+					alternativeName,
+				})}`,
 			});
 		} catch (err) {
 			console.log("errore from visual comfort service", err);
