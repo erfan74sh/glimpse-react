@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { axios } from "../../../../services/axios";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -14,7 +13,8 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectVisualComfortData } from "../../../../features/visualComfortData/VisualComfortDataSlice";
-import authHeader from "../../../../services/auth-header";
+// services
+import visualComfortServices from "../../../../services/estimations/visualComfort.service";
 
 const ThermalComfort = () => {
 	const inputData = useSelector(selectVisualComfortData);
@@ -29,14 +29,16 @@ const ThermalComfort = () => {
 		setStep((prev) => prev - 1);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// todo: send data to server
-		console.log(inputData);
-		axios
-			.post("daylights/", inputData, { headers: authHeader() })
-			.then((res) => console.log(res));
-		navigate("/estimation/result/0");
+		// todo: edit error handling
+		try {
+			const response = await visualComfortServices.estimate(inputData);
+			console.log(response.data);
+			navigate(`/estimation/result/${response.data.id}`);
+		} catch (err) {
+			console.log("errore from visual comfort service", err);
+		}
 	};
 
 	const steps = [
