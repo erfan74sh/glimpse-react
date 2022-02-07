@@ -57,7 +57,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 			}}
 			validationSchema={yup.object({
 				hvac: yup
-					.number()
+					.string()
 					.oneOf(["1", "2", "3", "4", "5", "6"], "choose from list")
 					.required("required"),
 				natural_ventilation: yup.boolean().required("required"),
