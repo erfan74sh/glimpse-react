@@ -13,14 +13,14 @@ import VavRe from "../../../../../../assets/images/HVAC/VAVRE.png";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const VisualHvac = () => {
-	const { HVAC } = useSelector(selectEnergyConsumptionData);
+	const { hvac } = useSelector(selectEnergyConsumptionData);
 	const hvacOptions = [
-		{ val: "ideal air loads", url: Fancoil },
-		{ val: "PTAC | residential", url: Ptac },
-		{ val: "PTHP | residential", url: Pthp },
-		{ val: "VAV w/reheat", url: VavRe },
-		{ val: "VAV w/PFP boxes", url: VavPfp },
-		{ val: "fan coil units + DOAS", url: Fancoil },
+		{ val: "1", url: Fancoil },
+		{ val: "2", url: Ptac },
+		{ val: "3", url: Pthp },
+		{ val: "4", url: VavRe },
+		{ val: "5", url: VavPfp },
+		{ val: "6", url: Fancoil },
 	];
 	return (
 		<>
@@ -31,10 +31,10 @@ const VisualHvac = () => {
 				<div className="flex h-96 w-full justify-center px-10">
 					<article
 						className={`relative flex h-96 w-96 items-center justify-center rounded-2xl ${
-							HVAC !== "" ? "bg-white" : "bg-gray-400"
+							hvac !== "" ? "bg-white" : "bg-gray-400"
 						} overflow-hidden`}
 					>
-						{HVAC === "" ? (
+						{hvac === "" ? (
 							<span className="text-xl font-semibold uppercase text-white">
 								HVAC System
 							</span>
@@ -49,9 +49,9 @@ const VisualHvac = () => {
 							>
 								<img
 									src={
-										hvacOptions.filter((option) => option.val === HVAC)[0].url
+										hvacOptions.filter((option) => option.val === hvac)[0].url
 									}
-									alt={HVAC}
+									alt={hvac}
 									className="h-full w-full object-contain"
 								/>
 								<FontAwesomeIcon
