@@ -19,7 +19,7 @@ const Material = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				wallMaterial: v,
+				wall_uvalue: v,
 			})
 		);
 	};
@@ -28,7 +28,7 @@ const Material = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				ceilingMaterial: v,
+				roof_uvalue: v,
 			})
 		);
 	};
@@ -37,7 +37,7 @@ const Material = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				floorMaterial: v,
+				floor_uvalue: v,
 			})
 		);
 	};
@@ -46,7 +46,7 @@ const Material = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				glassMaterial: v,
+				window_uvalue: v,
 			})
 		);
 	};
@@ -85,22 +85,22 @@ const Material = ({ nextStep, prevStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				wallMaterial: yup
+				wall_uvalue: yup
 					.string()
 					.oneOf(["1.719", "1.649", "0.979", "0.225"], "choose from list")
 					.required("required"),
-				ceilingMaterial: yup
+				roof_uvalue: yup
 					.string()
 					.oneOf(
 						["0.878", "0.211", "0.393", "0.386", "1.092"],
 						"choose from list"
 					)
 					.required("required"),
-				floorMaterial: yup
+				floor_uvalue: yup
 					.string()
 					.oneOf(["0.37", "0.47", "0.65"], "choose from list")
 					.required("required"),
-				glassMaterial: yup
+				window_uvalue: yup
 					.string()
 					.oneOf(["0.58", "0.72", "0.8", "0.9"], "choose one")
 					.required("required"),
@@ -112,7 +112,7 @@ const Material = ({ nextStep, prevStep }) => {
 						material
 					</legend>
 					<SelectField
-						name="wallMaterial"
+						name="wall_uvalue"
 						label="Wall material"
 						selectOptions={wallMaterialOptions}
 						placeholder="select type"
@@ -121,7 +121,7 @@ const Material = ({ nextStep, prevStep }) => {
 						handleValue={handleWallMaterialValue}
 					/>
 					<SelectField
-						name="ceilingMaterial"
+						name="roof_uvalue"
 						label="roof material"
 						selectOptions={roofMaterialOptions}
 						placeholder="select type"
@@ -130,7 +130,7 @@ const Material = ({ nextStep, prevStep }) => {
 						handleValue={handleCeilingMaterialValue}
 					/>
 					<SelectField
-						name="floorMaterial"
+						name="floor_uvalue"
 						label="Floor material"
 						selectOptions={floorMaterialOptions}
 						placeholder="select type"
@@ -139,7 +139,7 @@ const Material = ({ nextStep, prevStep }) => {
 						handleValue={handleFloorMaterialValue}
 					/>
 					<SelectField
-						name="glassMaterial"
+						name="window_uvalue"
 						selectOptions={glassMaterialOptions}
 						label="window material"
 						placeholder="select type"
