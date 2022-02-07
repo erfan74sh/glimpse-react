@@ -57,18 +57,8 @@ const Hvac = ({ nextStep, prevStep }) => {
 			}}
 			validationSchema={yup.object({
 				hvac: yup
-					.string()
-					.oneOf(
-						[
-							"ideal air loads",
-							"PTAC | residential",
-							"PTHP | residential",
-							"VAV w/reheat",
-							"VAV w/PFP boxes",
-							"fan coil units + DOAS",
-						],
-						"choose from list"
-					)
+					.number()
+					.oneOf(["1", "2", "3", "4", "5", "6"], "choose from list")
 					.required("required"),
 				natural_ventilation: yup
 					.string()
