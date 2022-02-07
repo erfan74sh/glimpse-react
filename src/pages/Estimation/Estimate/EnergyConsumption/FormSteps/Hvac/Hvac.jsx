@@ -14,12 +14,12 @@ const Hvac = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectEnergyConsumptionData);
 
 	const hvacOptions = [
-		{ label: "ideal air loads" },
-		{ label: "PTAC | residential" },
-		{ label: "PTHP | residential" },
-		{ label: "VAV w/reheat" },
-		{ label: "VAV w/PFP boxes" },
-		{ label: "fan coil units + DOAS" },
+		{ label: "ideal air loads", value: "1" },
+		{ label: "PTAC | residential", value: "2" },
+		{ label: "PTHP | residential", value: "3" },
+		{ label: "VAV w/reheat", value: "4" },
+		{ label: "VAV w/PFP boxes", value: "5" },
+		{ label: "fan coil units + DOAS", value: "6" },
 	];
 
 	const naturalVentilationOptions = [{ label: "yes" }, { label: "no" }];
