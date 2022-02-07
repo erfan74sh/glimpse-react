@@ -23,8 +23,8 @@ const Hvac = ({ nextStep, prevStep }) => {
 	];
 
 	const naturalVentilationOptions = [
-		{ label: "yes", value: true },
-		{ label: "no", value: false },
+		{ label: "yes", value: "true" },
+		{ label: "no", value: "false" },
 	];
 
 	const dispatch = useDispatch();
@@ -60,7 +60,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 					.string()
 					.oneOf(["1", "2", "3", "4", "5", "6"], "choose from list")
 					.required("required"),
-				natural_ventilation: yup.boolean().required("required"),
+				// natural_ventilation: yup.boolean().required("required"),
 			})}
 		>
 			<Form className="flex h-full flex-col">
