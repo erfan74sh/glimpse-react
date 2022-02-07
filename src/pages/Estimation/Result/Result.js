@@ -1,6 +1,7 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { Outlet, useSearchParams } from "react-router-dom";
+import { axios } from "../../../services/axios";
+import authHeader from "../../../services/auth-header";
 // compoents
 import Nav from "../../../components/Nav";
 import BreadCrumps from "./Breadcrumps/BreadCrumps";
@@ -8,8 +9,30 @@ import ResultOptions from "./ResultOptions/ResultOptions";
 
 // style
 import "./Result.scss";
+import Zone from "./Zone/Zone";
 
 const Result = () => {
+	const [params] = useSearchParams();
+	const currentSubset = params.get("subset");
+	const currentProjectName = params.get("project_name");
+	const currentZoneName = params.get("zone_name");
+	const [alternatives, setAlternatives] = useState([]);
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await axios.get(
+				`/daylights/project_name/${currentProjectName}`,
+				{ headers: authHeader() }
+			);
+			const filteredData = data.data.filter((alt) => {
+				return (
+					alt.subset === currentSubset && alt.zone_name === currentZoneName
+				);
+			});
+			setAlternatives(filteredData);
+			console.log("new", filteredData);
+		};
+		fetchData();
+	}, [currentProjectName, currentSubset, currentZoneName]);
 	return (
 		<>
 			<Nav />
@@ -24,7 +47,8 @@ const Result = () => {
 					<ResultOptions />
 				</header>
 				<main className="">
-					<Outlet />
+					<Zone />
+					{/* <Outlet /> */}
 				</main>
 			</main>
 		</>
