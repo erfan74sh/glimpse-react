@@ -105,12 +105,7 @@ const Zone = () => {
 			<section className="max-h-152 flex items-center justify-center overflow-hidden">
 				<Chart series={series} />
 			</section>
-			<section className="mt-18">
-				<h2 className="mb-4 px-8 text-xl font-normal uppercase">
-					points and grades
-				</h2>
-				<PointsAndGrades />
-			</section>
+			<PointsAndGrades />
 			<section className="mt-20 flex h-96 flex-col px-40">
 				<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 					<h2>alternatives</h2>
