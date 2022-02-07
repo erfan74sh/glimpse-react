@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	data: {
-		highPerformanceBuildings: "",
+		high_performance_building_index: "",
 		subset: "",
-		buildingProgram: "",
-		projectName: "",
-		zoneName: "",
-		alternativeName: "",
+		building_program: "",
+		project_name: "",
+		alternative_name: "",
+		zone_name: "",
 		location: "",
 	},
 };
