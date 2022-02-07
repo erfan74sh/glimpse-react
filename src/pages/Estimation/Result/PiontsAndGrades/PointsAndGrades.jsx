@@ -10,15 +10,15 @@ const PointsAndGrades = ({ subset, alternatives }) => {
 					<h2 className="mb-4 px-8 text-xl font-normal uppercase">
 						points and grades
 					</h2>
-					<div className="shadow-full rounded-md bg-white px-8 py-7">
-						<ul className="flex flex-col gap-y-3">
+					<div className="shadow-full flex flex-col gap-y-5 rounded-md bg-white px-8 py-7">
+						<div className="flex flex-col gap-y-3">
 							{subset === "energy consumption" && (
 								<EnergyConsumptionGrades alternatives={alternatives} />
 							)}
 							{subset === "visual comfort" && (
 								<VisualComfortGrades alternatives={alternatives} />
 							)}
-						</ul>
+						</div>
 					</div>
 				</section>
 			)}
