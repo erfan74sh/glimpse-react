@@ -74,10 +74,10 @@ const Geometry = ({ nextStep }) => {
 	};
 
 	const shadingOptions = [
-		{ label: "vertical" },
-		{ label: "horizontal" },
-		{ label: "horizontal louvre" },
-		{ label: "all modes" },
+		{ label: "vertical", value: "3" },
+		{ label: "horizontal", value: "1" },
+		{ label: "horizontal louvre", value: "2" },
+		{ label: "all modes", value: "4" },
 	];
 
 	const floorLevelOptions = [
@@ -129,7 +129,7 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				shading_type: yup
 					.string()
-					.oneOf(["vertical", "horizontal", "horizontal louvre", "all modes"])
+					.oneOf(["1", "2", "3", "4"])
 					.required("pick one"),
 			})}
 		>
