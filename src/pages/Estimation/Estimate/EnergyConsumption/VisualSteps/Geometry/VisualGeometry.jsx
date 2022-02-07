@@ -15,12 +15,12 @@ const VisualGeometry = () => {
 			<div className="">
 				<div className="h-96 w-full px-10">
 					<Model3D
-						xDim={inputData.xDim}
-						yDim={inputData.yDim}
-						wwrNorth={inputData.wwrNorth}
-						wwrSouth={inputData.wwrSouth}
-						shadingType={inputData.shadingType}
-						rotation={inputData.rotation}
+						xDim={inputData.x_dim}
+						yDim={inputData.y_dim}
+						wwrNorth={inputData.wwr_north}
+						wwrSouth={inputData.wwr_south}
+						shadingType={inputData.shading_type}
+						rotation={inputData.rotation_angle}
 					/>
 				</div>
 			</div>
