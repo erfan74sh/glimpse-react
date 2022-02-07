@@ -16,23 +16,29 @@ const Result = () => {
 	const currentSubset = params.get("subset");
 	const currentProjectName = params.get("project_name");
 	const currentZoneName = params.get("zone_name");
-	const [alternatives, setAlternatives] = useState([]);
+	const [projectsInSubset, setProjectInsSubset] = useState([]);
 	useEffect(() => {
-		const fetchData = async () => {
-			const data = await axios.get(
-				`/daylights/project_name/${currentProjectName}`,
-				{ headers: authHeader() }
-			);
-			const filteredData = data.data.filter((alt) => {
-				return (
-					alt.subset === currentSubset && alt.zone_name === currentZoneName
-				);
+		const getProjects = async () => {
+			const allProjects = await axios.get("/daylights/", {
+				headers: authHeader(),
 			});
-			setAlternatives(filteredData);
-			console.log("new", filteredData);
+			const filteredProjects = allProjects.filter(
+				(project) => project.subset === currentSubset
+			);
+			setProjectInsSubset(filteredProjects);
 		};
-		fetchData();
-	}, [currentProjectName, currentSubset, currentZoneName]);
+		getProjects();
+	}, []);
+	const [alternatives, setAlternatives] = useState([]);
+	// useEffect(() => {
+	// 		const filteredData = projectsInSubset.filter((alt) => {
+	// 			return (
+	// 				alt.subset === currentSubset && alt.zone_name === currentZoneName
+	// 			);
+	// 		});
+	// 		setAlternatives(filteredData);
+	// 	}
+	// , [currentProjectName, currentSubset, currentZoneName]);
 	return (
 		<>
 			<Nav />
