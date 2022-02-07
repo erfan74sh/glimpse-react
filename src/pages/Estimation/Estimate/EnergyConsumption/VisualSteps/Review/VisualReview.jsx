@@ -17,73 +17,73 @@ const VisualReview = () => {
 						<span className="font-semibold capitalize text-gray-900">
 							east wall boundry condition:
 						</span>
-						<span>{data.eastWallCondition}</span>
+						<span>{data.east_wall_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							west wall boundry condition:
 						</span>
-						<span>{data.westWallCondition}</span>
+						<span>{data.west_wall_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							south wall boundry condition:
 						</span>
-						<span>{data.southWallCondition}</span>
+						<span>{data.south_wall_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							north wall boundry condition:
 						</span>
-						<span>{data.northWallCondition}</span>
+						<span>{data.north_wall_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							roof boundry condition:
 						</span>
-						<span>{data.roofCondition}</span>
+						<span>{data.roof_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							floor boundry condition:
 						</span>
-						<span>{data.floorCondition}</span>
+						<span>{data.floor_bc}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							south neighbor distance:
 						</span>
-						<span>{data.southNeighborDist}</span>
+						<span>{data.south_neighbor_distance}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							south neighbor height:
 						</span>
-						<span>{data.southNeighborHeight}</span>
+						<span>{data.south_neighbor_height}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							north neighbor distance:
 						</span>
-						<span>{data.northNeighborDist}</span>
+						<span>{data.north_neighbor_distance}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							north neighbor height:
 						</span>
-						<span>{data.northNeighborHeight}</span>
+						<span>{data.north_neighbor_height}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							HVAC system:
 						</span>
-						<span>{data.HVAC}</span>
+						<span>{data.hvac}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							natural ventilation:
 						</span>
-						<span>{data.naturalVent}</span>
+						<span>{data.natural_ventilation}</span>
 					</li>
 				</ul>
 			</section>
