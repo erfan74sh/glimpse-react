@@ -6,7 +6,9 @@ const VisualComfortGrades = ({ alternatives }) => {
 			{alternatives.map((alt) => {
 				return (
 					<article>
-						<h4 className="border-blue-550 border-b py-1">{alt.name}</h4>
+						<h4 className="border-blue-550 border-b py-1 font-medium">
+							{alt.name}
+						</h4>
 						<ul className="mt-1">
 							<li className="flex gap-x-1">
 								<span className="text-blue-550 font-medium capitalize">{`cooling load >`}</span>
