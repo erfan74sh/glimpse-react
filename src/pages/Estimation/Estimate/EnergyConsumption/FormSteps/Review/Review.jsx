@@ -17,67 +17,67 @@ const Review = ({ prevStep }) => {
 						<span className="font-semibold capitalize text-gray-900">
 							floor:
 						</span>
-						<span>{data.floorLevel}</span>
+						<span>{data.number_of_floor}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							rotation:
 						</span>
-						<span>{data.rotation}</span>
+						<span>{data.rotation_angle}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							width:
 						</span>
-						<span>{data.xDim}</span>
+						<span>{data.x_dim}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							length:
 						</span>
-						<span>{data.yDim}</span>
+						<span>{data.y_dim}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							WWR-north:
 						</span>
-						<span>{data.wwrNorth}</span>
+						<span>{data.wwr_north}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							WWR-south:
 						</span>
-						<span>{data.wwrSouth}</span>
+						<span>{data.wwr_south}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							shading type:
 						</span>
-						<span>{data.shadingType}</span>
+						<span>{data.shading_type}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							wall u-value:
 						</span>
-						<span>{data.wallMaterial}</span>
+						<span>{data.wall_uvalue}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							roof u-value:
 						</span>
-						<span>{data.ceilingMaterial}</span>
+						<span>{data.roof_uvalue}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							floor u-value:
 						</span>
-						<span>{data.floorMaterial}</span>
+						<span>{data.floor_uvalue}</span>
 					</li>
 					<li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							window u-value:
 						</span>
-						<span>{data.glassMaterial}</span>
+						<span>{data.window_uvalue}</span>
 					</li>
 				</ul>
 			</section>
