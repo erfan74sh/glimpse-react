@@ -17,22 +17,22 @@ const Estimate = () => {
 	return (
 		<main className=" px-24 py-10" id="estimate__main">
 			<header className="mb-10">
-				<h1 className="flex justify-between pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-2xl font-bold uppercase">
+				<h1 className="border-blue-550 text-blue-550 flex justify-between border-l-8 pl-3 text-2xl font-bold uppercase leading-8">
 					{primaryData.subset}
 				</h1>
 				<section className="px-5 pt-10 pb-4">
 					<BreadCrumbs
-						projectName={primaryData.projectName}
-						zoneName={primaryData.zoneName}
-						alternativeName={primaryData.alternativeName}
+						projectName={primaryData.project_name}
+						zoneName={primaryData.zone_name}
+						alternativeName={primaryData.alternative_name}
 					/>
 				</section>
 			</header>
 			<main className="flex">
-				{primaryData.subset === "thermal comfort" && <ThermalComfort />}
-				{primaryData.subset === "visual comfort" && <VisualComfort />}
-				{primaryData.subset === "energy consumption" && <EnergyConsumption />}
-				{primaryData.subset === "structure design" && <StructureDesign />}
+				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
+				{primaryData.subset === "visual_comfort" && <VisualComfort />}
+				{primaryData.subset === "energy_consumption" && <EnergyConsumption />}
+				{primaryData.subset === "structure_design" && <StructureDesign />}
 			</main>
 		</main>
 	);
