@@ -19,7 +19,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				eastWallCondition: v,
+				east_wall_bc: v,
 			})
 		);
 	};
@@ -27,7 +27,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				westWallCondition: v,
+				west_wall_bc: v,
 			})
 		);
 	};
@@ -35,7 +35,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				northWallCondition: v,
+				north_wall_bc: v,
 			})
 		);
 	};
@@ -43,7 +43,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				southWallCondition: v,
+				south_wall_bc: v,
 			})
 		);
 	};
@@ -51,7 +51,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				roofCondition: v,
+				roof_bc: v,
 			})
 		);
 	};
@@ -59,7 +59,7 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				floorCondition: v,
+				floor_bc: v,
 			})
 		);
 	};
@@ -80,27 +80,27 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				eastWallCondition: yup
+				east_wall_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor"], "choose from list")
 					.required("required"),
-				westWallCondition: yup
+				west_wall_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor"], "choose from list")
 					.required("required"),
-				northWallCondition: yup
+				north_wall_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor"], "choose from list")
 					.required("required"),
-				southWallCondition: yup
+				south_wall_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor"], "choose from list")
 					.required("required"),
-				roofCondition: yup
+				roof_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor"], "choose from list")
 					.required("required"),
-				floorCondition: yup
+				floor_bc: yup
 					.string()
 					.oneOf(["adiabatic", "outdoor", "ground"], "choose from list")
 					.required("required"),
@@ -112,42 +112,42 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 						Boundry conditions
 					</legend>
 					<SelectField
-						name="eastWallCondition"
+						name="east_wall_bc"
 						selectOptions={WallOptions}
 						label="Boundry condition east wall"
 						placeholder="choose condition"
 						handleValue={handleEastWallConditionValue}
 					/>
 					<SelectField
-						name="westWallCondition"
+						name="west_wall_bc"
 						selectOptions={WallOptions}
 						label="Boundry condition west wall"
 						placeholder="choose condition"
 						handleValue={handleWestWallConditionValue}
 					/>
 					<SelectField
-						name="northWallCondition"
+						name="north_wall_bc"
 						selectOptions={WallOptions}
 						label="Boundry condition north wall"
 						placeholder="choose condition"
 						handleValue={handleNorthWallConditionValue}
 					/>
 					<SelectField
-						name="southWallCondition"
+						name="south_wall_bc"
 						selectOptions={WallOptions}
 						label="Boundry condition south wall"
 						placeholder="choose condition"
 						handleValue={handleSouthWallConditionValue}
 					/>
 					<SelectField
-						name="roofCondition"
+						name="roof_bc"
 						selectOptions={WallOptions}
 						label="Boundry condition roof"
 						placeholder="choose condition"
 						handleValue={handleRoofConditionValue}
 					/>
 					<SelectField
-						name="floorCondition"
+						name="floor_bc"
 						selectOptions={floorOptions}
 						label="Boundry condition floor"
 						placeholder="choose condition"
