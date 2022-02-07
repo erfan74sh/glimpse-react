@@ -59,7 +59,7 @@ const VisualMaterial = () => {
 				<div className="flex w-full flex-col justify-center gap-y-10 px-10 pt-5">
 					<div className="flex justify-center gap-x-10">
 						<article className="relative flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{data.wallMaterial === 0 ? (
+							{!data.wall_uvalue ? (
 								<span className="text-xl font-semibold uppercase text-white">
 									wall
 								</span>
@@ -75,7 +75,7 @@ const VisualMaterial = () => {
 									<img
 										src={
 											wallImages.filter(
-												(material) => material.val === data.wallMaterial
+												(material) => material.val === data.wall_uvalue
 											)[0].url
 										}
 										alt="wall 1"
@@ -89,7 +89,7 @@ const VisualMaterial = () => {
 							)}
 						</article>
 						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{data.ceilingMaterial === 0 ? (
+							{!data.roof_uvalue ? (
 								<span className="text-xl font-semibold uppercase text-white">
 									roof
 								</span>
@@ -105,7 +105,7 @@ const VisualMaterial = () => {
 									<img
 										src={
 											roofImages.filter(
-												(material) => material.val === data.ceilingMaterial
+												(material) => material.val === data.roof_uvalue
 											)[0].url
 										}
 										alt="wall 1"
@@ -121,7 +121,7 @@ const VisualMaterial = () => {
 					</div>
 					<div className="flex justify-center gap-x-10">
 						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{data.floorMaterial === 0 ? (
+							{!data.floor_uvalue ? (
 								<span className="text-xl font-semibold uppercase text-white">
 									floor
 								</span>
@@ -137,7 +137,7 @@ const VisualMaterial = () => {
 									<img
 										src={
 											floorImages.filter(
-												(material) => material.val === data.floorMaterial
+												(material) => material.val === data.floor_uvalue
 											)[0].url
 										}
 										alt="wall 1"
@@ -151,7 +151,7 @@ const VisualMaterial = () => {
 							)}
 						</article>
 						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{data.glassMaterial === 0 ? (
+							{!data.window_uvalue ? (
 								<span className="text-xl font-semibold uppercase text-white">
 									window
 								</span>
@@ -167,7 +167,7 @@ const VisualMaterial = () => {
 									<img
 										src={
 											windowImages.filter(
-												(material) => material.val === data.glassMaterial
+												(material) => material.val === data.window_uvalue
 											)[0].url
 										}
 										alt="wall 1"
