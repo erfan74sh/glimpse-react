@@ -100,9 +100,9 @@ const Zone = () => {
 			id: 1,
 			outputs: {
 				svd: 10,
-				ase: 25,
-				sda: 75,
-				udi: 64,
+				ase: 5,
+				sda: 90,
+				udi: 85,
 			},
 		},
 		{
@@ -136,41 +136,39 @@ const Zone = () => {
 				</header>
 				<ul className="flex flex-col gap-y-9">
 					{series.map((entry, i) => (
-						<>
-							<li
-								key={i}
-								className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
-								data-name={entry.name}
-							>
-								<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
-								<span>{` ${entry.name}`}</span>
-								<span className="ml-1 text-xs">({entry.date})</span>
-								<button className="ml-4">
-									<PDFDownloadLink
-										document={<PdfDoc />}
-										fileName={`${entry.name}.pdf`}
-									>
-										<FontAwesomeIcon
-											icon={faFilePdf}
-											className="text-xl opacity-70 transition hover:opacity-90"
-										/>
-									</PDFDownloadLink>
-								</button>
-								<button className="ml-auto mr-4 capitalize underline">
-									<Link to="/estimation">edit</Link>
-								</button>
-								<button className=" mr-4" onClick={handleVisibility}>
-									{entry.visible ? (
-										<FontAwesomeIcon icon={faEye} />
-									) : (
-										<FontAwesomeIcon
-											icon={faEyeSlash}
-											className="text-gray-500"
-										/>
-									)}
-								</button>
-							</li>
-						</>
+						<li
+							key={i}
+							className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
+							data-name={entry.name}
+						>
+							<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
+							<span>{` ${entry.name}`}</span>
+							<span className="ml-1 text-xs">({entry.date})</span>
+							<button className="ml-4">
+								<PDFDownloadLink
+									document={<PdfDoc />}
+									fileName={`${entry.name}.pdf`}
+								>
+									<FontAwesomeIcon
+										icon={faFilePdf}
+										className="text-xl opacity-70 transition hover:opacity-90"
+									/>
+								</PDFDownloadLink>
+							</button>
+							<button className="ml-auto mr-4 capitalize underline">
+								<Link to="/estimation">edit</Link>
+							</button>
+							<button className=" mr-4" onClick={handleVisibility}>
+								{entry.visible ? (
+									<FontAwesomeIcon icon={faEye} />
+								) : (
+									<FontAwesomeIcon
+										icon={faEyeSlash}
+										className="text-gray-500"
+									/>
+								)}
+							</button>
+						</li>
 					))}
 				</ul>
 			</section>
