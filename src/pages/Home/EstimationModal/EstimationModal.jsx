@@ -17,16 +17,23 @@ import {
 import "./EstimationModal.scss";
 
 const Subset = () => {
-	const { highPerformanceBuildings } = useFormikContext().values;
-	const ieqSubset = [{ label: "visual comfort" }, { label: "thermal comfort" }];
-	const energyWaterSubset = [{ label: "energy consumption" }];
-	const structureSubset = [{ label: "structure design" }];
+	const { high_performance_building_index } = useFormikContext().values;
+	const ieqSubset = [
+		{ label: "visual comfort", value: "visual_comfort" },
+		{ label: "thermal comfort", value: "thermal_comfort" },
+	];
+	const energyWaterSubset = [
+		{ label: "energy consumption", value: "energy_consumption" },
+	];
+	const structureSubset = [
+		{ label: "structure design", value: "structure_design" },
+	];
 	return (
 		<SelectField
 			selectOptions={
-				highPerformanceBuildings === "IEQ"
+				high_performance_building_index === "IEQ"
 					? ieqSubset
-					: highPerformanceBuildings === "structure"
+					: high_performance_building_index === "structure"
 					? structureSubset
 					: energyWaterSubset
 			}
@@ -39,12 +46,12 @@ const Subset = () => {
 };
 
 const StepOne = ({ nextStep, formData }) => {
-	const highPerformanceBuildings = [
+	const highPerformanceBuildingsOptions = [
 		{ label: "IEQ", value: "IEQ" },
 		{ label: "structure", value: "structure" },
 		{ label: "energy and water", value: "energy_and_water" },
 	];
-	const buildingProgram = [
+	const buildingProgramOptions = [
 		{ label: "office" },
 		{ label: "residential" },
 		{ label: "school" },
@@ -58,11 +65,11 @@ const StepOne = ({ nextStep, formData }) => {
 				nextStep(values);
 			}}
 			validationSchema={yup.object({
-				highPerformanceBuildings: yup
+				high_performance_building_index: yup
 					.string()
 					.required("please select one")
 					.oneOf(
-						["IEQ", "structure", "energy and water"],
+						["IEQ", "structure", "energy_and_water"],
 						"pick from provided list"
 					),
 				subset: yup
@@ -70,14 +77,14 @@ const StepOne = ({ nextStep, formData }) => {
 					.required("choose subset")
 					.oneOf(
 						[
-							"visual comfort",
-							"thermal comfort",
-							"energy consumption",
-							"structure design",
+							"visual_comfort",
+							"thermal_comfort",
+							"energy_consumption",
+							"structure_design",
 						],
 						"pick from provided list"
 					),
-				buildingProgram: yup
+				building_program: yup
 					.string()
 					.oneOf(["office", "residential", "school", "hotel"])
 					.required("required"),
@@ -85,16 +92,16 @@ const StepOne = ({ nextStep, formData }) => {
 		>
 			<Form className="w-84 flex flex-col gap-y-4">
 				<SelectField
-					selectOptions={highPerformanceBuildings}
-					name="highPerformanceBuildings"
+					selectOptions={highPerformanceBuildingsOptions}
+					name="high_performance_building_index"
 					label="High performance buildings"
 					placeholder="choose category"
 					handleValue={() => null}
 				/>
 				<Subset />
 				<SelectField
-					selectOptions={buildingProgram}
-					name="buildingProgram"
+					selectOptions={buildingProgramOptions}
+					name="building_program"
 					label="Building Program"
 					placeholder="choose program"
 					handleValue={() => null}
@@ -118,17 +125,17 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 				nextStep(values);
 			}}
 			validationSchema={yup.object({
-				projectName: yup
+				project_name: yup
 					.string()
 					.min(2, "project name must be more than 2 characters")
 					.max(40, "project name must be less than 40 characters")
 					.required("project name is required"),
-				zoneName: yup
+				zone_name: yup
 					.string()
 					.min(2, "zone name must be more than 2 characters")
 					.max(40, "zone name must be less than 40 characters")
 					.required("zone name is required"),
-				alternativeName: yup
+				alternative_name: yup
 					.string()
 					.min(2, "alternative name must be more than 2 characters")
 					.max(40, "alternative name must be less than 40 characters")
@@ -138,19 +145,19 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 			<Form className="w-84 flex flex-col gap-y-4">
 				<TextField
 					type="text"
-					name="projectName"
+					name="project_name"
 					label="project name"
 					placeholder="enter a name for your project"
 				/>
 				<TextField
 					type="text"
-					name="zoneName"
+					name="zone_name"
 					label="zone name"
 					placeholder="enter a name for your zone"
 				/>
 				<TextField
 					type="text"
-					name="alternativeName"
+					name="alternative_name"
 					label="alternative name"
 					placeholder="enter a name for your alternative"
 				/>
@@ -232,15 +239,15 @@ const StepThree = ({ prevStep, formData }) => {
 };
 
 const EstimationModal = () => {
-	const primaryData = useSelector(selectPrimaryData);
-	console.log(primaryData);
+	// const primaryData = useSelector(selectPrimaryData);
+	// console.log(primaryData);
 	const [formData, setFormData] = useState({
-		highPerformanceBuildings: "",
+		high_performance_building_index: "",
 		subset: "",
-		buildingProgram: "",
-		projectName: "",
-		zoneName: "",
-		alternativeName: "",
+		building_program: "",
+		project_name: "",
+		alternative_name: "",
+		zone_name: "",
 		location: "",
 	});
 
