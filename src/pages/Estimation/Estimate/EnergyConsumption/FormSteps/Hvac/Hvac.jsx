@@ -22,7 +22,10 @@ const Hvac = ({ nextStep, prevStep }) => {
 		{ label: "fan coil units + DOAS", value: "6" },
 	];
 
-	const naturalVentilationOptions = [{ label: "yes" }, { label: "no" }];
+	const naturalVentilationOptions = [
+		{ label: "yes", value: true },
+		{ label: "no", value: false },
+	];
 
 	const dispatch = useDispatch();
 
