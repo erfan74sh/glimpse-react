@@ -30,7 +30,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				HVAC: v,
+				hvac: v,
 			})
 		);
 	};
@@ -39,7 +39,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 		dispatch(
 			updateData({
 				...data,
-				naturalVent: v,
+				natural_ventilation: v,
 			})
 		);
 	};
@@ -53,7 +53,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 				nextStep();
 			}}
 			validationSchema={yup.object({
-				HVAC: yup
+				hvac: yup
 					.string()
 					.oneOf(
 						[
@@ -67,7 +67,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 						"choose from list"
 					)
 					.required("required"),
-				naturalVent: yup
+				natural_ventilation: yup
 					.string()
 					.oneOf(["yes", "no"], "choose from list")
 					.required("required"),
@@ -79,7 +79,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 						hvac & natural ventilation
 					</legend>
 					<SelectField
-						name="HVAC"
+						name="hvac"
 						label="HVAC system"
 						selectOptions={hvacOptions}
 						placeholder="select type"
@@ -87,7 +87,7 @@ const Hvac = ({ nextStep, prevStep }) => {
 						handleValue={handleHvacValue}
 					/>
 					<SelectField
-						name="naturalVent"
+						name="natural_ventilation"
 						label="natural ventilation"
 						selectOptions={naturalVentilationOptions}
 						placeholder="select type"
