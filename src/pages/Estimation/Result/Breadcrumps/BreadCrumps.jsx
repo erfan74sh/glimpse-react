@@ -12,23 +12,23 @@ const DropdownMenu = ({ items, name }) => {
 		setShowMenu(false);
 	};
 	return (
-		<div className="relative px-2 py-1.5 w-36 text-sm font-medium text-white bg-gray-350 uppercase rounded-md">
+		<div className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium uppercase text-white">
 			<div
-				className="flex justify-between items-center cursor-pointer"
+				className="flex cursor-pointer items-center justify-between"
 				onClick={() => setShowMenu(!showMenu)}
 			>
 				<span>{selectedItem ? selectedItem : `choose ${name}`}</span>
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
-				className={`absolute flex-col gap-y-2 min-w-full ${
+				className={`absolute min-w-full flex-col gap-y-2 ${
 					showMenu ? "flex" : "hidden"
-				} left-0 -bottom-1 transform translate-y-full p-2 rounded-md bg-gray-350 z-10`}
+				} bg-gray-350 left-0 -bottom-1 z-10 translate-y-full transform rounded-md p-2`}
 			>
 				{items.map((item, idx) => {
 					return (
 						<li key={idx}>
-							<label className="block cursor-pointer transition-all hover:text-blue-550">
+							<label className="hover:text-blue-550 block cursor-pointer transition-all">
 								<input
 									type="radio"
 									name={name}
@@ -50,7 +50,7 @@ const DropdownMenu = ({ items, name }) => {
 
 const AlternativeList = ({ items }) => {
 	return (
-		<ul className="flex gap-x-1 items-center text-gray-500">
+		<ul className="flex items-center gap-x-1 text-gray-500">
 			{items.map((alternative, idx) => {
 				return (
 					<li key={idx}>
@@ -75,7 +75,7 @@ const BreadCrumps = () => {
 	const zoneItems = ["zone 1", "zone 2", "zone 3", "zone 4"];
 	const alternativeItems = ["alter 1", "alter 2", "alter 3"];
 	return (
-		<div className="flex gap-x-5 items-center">
+		<div className="flex items-center gap-x-5">
 			<DropdownMenu items={projectItems} name="project" />
 			<span>{`>`}</span>
 			<DropdownMenu items={zoneItems} name="zone" />
