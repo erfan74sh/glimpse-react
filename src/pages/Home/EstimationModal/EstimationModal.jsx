@@ -40,9 +40,9 @@ const Subset = () => {
 
 const StepOne = ({ nextStep, formData }) => {
 	const highPerformanceBuildings = [
-		{ label: "IEQ" },
-		{ label: "structure" },
-		{ label: "energy and water" },
+		{ label: "IEQ", value: "IEQ" },
+		{ label: "structure", value: "structure" },
+		{ label: "energy and water", value: "energy_and_water" },
 	];
 	const buildingProgram = [
 		{ label: "office" },
@@ -83,7 +83,7 @@ const StepOne = ({ nextStep, formData }) => {
 					.required("required"),
 			})}
 		>
-			<Form className="flex flex-col gap-y-4 w-84">
+			<Form className="w-84 flex flex-col gap-y-4">
 				<SelectField
 					selectOptions={highPerformanceBuildings}
 					name="highPerformanceBuildings"
@@ -101,7 +101,7 @@ const StepOne = ({ nextStep, formData }) => {
 				/>
 				<button
 					type="submit"
-					className="mt-4 px-3 py-1 rounded-md uppercase text-white bg-blue-550"
+					className="bg-blue-550 mt-4 rounded-md px-3 py-1 uppercase text-white"
 				>
 					next
 				</button>
@@ -135,7 +135,7 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					.required("alternative name is required"),
 			})}
 		>
-			<Form className="flex flex-col gap-y-4 w-84">
+			<Form className="w-84 flex flex-col gap-y-4">
 				<TextField
 					type="text"
 					name="projectName"
@@ -154,17 +154,17 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					label="alternative name"
 					placeholder="enter a name for your alternative"
 				/>
-				<div className="flex gap-x-4 mt-4">
+				<div className="mt-4 flex gap-x-4">
 					<button
 						type="submit"
-						className=" px-3 py-1 rounded-md uppercase text-blue-550 bg-white border border-blue-550 flex-grow"
+						className=" text-blue-550 border-blue-550 flex-grow rounded-md border bg-white px-3 py-1 uppercase"
 						onClick={prevStep}
 					>
 						prev
 					</button>
 					<button
 						type="submit"
-						className="px-3 py-1 rounded-md uppercase text-white bg-blue-550 flex-grow"
+						className="bg-blue-550 flex-grow rounded-md px-3 py-1 uppercase text-white"
 					>
 						next
 					</button>
@@ -198,7 +198,7 @@ const StepThree = ({ prevStep, formData }) => {
 		>
 			<div className="estimation-modal__map-container">
 				<Form>
-					<div className="flex items-end gap-x-7 mb-8">
+					<div className="mb-8 flex items-end gap-x-7">
 						<div className="w-7/12">
 							<SelectField
 								selectOptions={locationOptions}
@@ -208,17 +208,17 @@ const StepThree = ({ prevStep, formData }) => {
 								handleValue={() => null}
 							/>
 						</div>
-						<div className="flex gap-x-3 w-5/12">
+						<div className="flex w-5/12 gap-x-3">
 							<button
 								type="button"
-								className="w-1/2 px-3 py-2 rounded-md uppercase border border-blue-550 text-blue-550 bg-white"
+								className="border-blue-550 text-blue-550 w-1/2 rounded-md border bg-white px-3 py-2 uppercase"
 								onClick={prevStep}
 							>
 								prev
 							</button>
 							<button
 								type="submit"
-								className="w-1/2 px-3 py-2 rounded-md uppercase text-white bg-blue-550"
+								className="bg-blue-550 w-1/2 rounded-md px-3 py-2 uppercase text-white"
 							>
 								start estimation
 							</button>
