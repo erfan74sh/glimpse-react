@@ -13,68 +13,82 @@ import pic07 from "./../../assets/profile/07.png";
 import pic08 from "./../../assets/profile/08.png";
 import pic09 from "./../../assets/profile/09.png";
 import pic10 from "./../../assets/profile/10.jpg";
+import pic11 from "./../../assets/profile/11.jpg";
+import pic12 from "./../../assets/profile/12.jpg";
 
 const AboutUs = () => {
 	const members = [
 		{
 			fullName: "mohamad tahsildoost",
-			position: "Associate Professor SBU",
+			education: "Associate Professor SBU",
 			job: "Architect",
 			image: pic05,
 		},
 		{
 			fullName: "Mahsa Zomorodian",
-			position: "Associate Professor SBU",
+			education: "Associate Professor SBU",
 			job: "Architect",
 			image: pic08,
 		},
 		{
 			fullName: "Roham Afghani ",
-			position: "Associate Professor SBU",
+			education: "Associate Professor SBU",
 			job: "Architect",
 			image: pic09,
 		},
 		{
 			fullName: "Mohammad Rajaian",
-			position: "Master of Architectural technology",
+			education: "Master of Architectural technology",
 			job: "",
 			image: pic01,
 		},
 		{
 			fullName: "Haniyeh Noorkajouri",
-			position: "Master of Energy and Architecture",
+			education: "Master of Energy and Architecture",
 			job: "",
 			image: pic04,
 		},
 		{
 			fullName: "Pegah Eshraghi",
-			position: "PHD Researcher in Energy and Architecture",
+			education: "PHD Researcher in Energy and Architecture",
 			job: "",
 			image: pic06,
 		},
 		{
 			fullName: "Arman Nikkhah",
-			position: "Master of Energy and Architecture",
+			education: "Master of Energy and Architecture",
 			job: "",
 			image: pic02,
 		},
 		{
 			fullName: "Mohammad Tabatabaei",
-			position: "Master of Energy and Architecture",
+			education: "Master of Energy and Architecture",
 			job: "",
 			image: pic03,
 		},
 		{
 			fullName: "Sogand Haghighat",
-			position: "Master of Energy and Architecture",
+			education: "Master of Energy and Architecture",
 			job: "",
 			image: pic07,
 		},
 		{
 			fullName: "Erfan Shafiee",
-			position: "Master of Architectural design",
+			education: "Master of Architectural design",
 			job: "",
 			image: pic10,
+		},
+		{
+			fullName: "Amirmohammad Rabani Jalali",
+			education: "Master of Energy and Architecture",
+			job: "",
+			image: pic11,
+		},
+		{
+			fullName: "Mohammadreza Vatankhah",
+			education: "Master of Software engineer",
+			job: "",
+			image: pic12,
 		},
 	];
 
@@ -99,7 +113,7 @@ const AboutUs = () => {
 								>
 									<MemberCard
 										fullName={member.fullName}
-										position={member.position}
+										education={member.education}
 										job={member.job}
 										image={member.image}
 									/>
