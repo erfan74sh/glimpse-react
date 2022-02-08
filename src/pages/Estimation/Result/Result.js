@@ -79,7 +79,11 @@ const Result = () => {
 						result
 					</h1>
 					<nav className="mt-14">
-						<BreadCrumps />
+						<BreadCrumps
+							projectsList={projectsList}
+							zoneList={zoneList}
+							alternativesList={alternativesList}
+						/>
 					</nav>
 					<ResultOptions />
 					<button onClick={() => setSearchParams({ zone_name: "somth" })}>
