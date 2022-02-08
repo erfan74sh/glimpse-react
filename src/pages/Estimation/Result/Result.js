@@ -28,9 +28,9 @@ const Result = () => {
 			//? get all projects in currentSubset
 			const allProjects = await visualComfortData.data;
 			const list = Array.from(allProjects, (project) => project.project_name);
-
+			const uniqueList = Array.from(new Set(list));
 			setProjectsInSubset(allProjects);
-			setProjectsList(list);
+			setProjectsList(uniqueList);
 			console.log("h1");
 		};
 		getProjects();
@@ -45,7 +45,8 @@ const Result = () => {
 				(estimatedData) => estimatedData.project_name === currentProjectName
 			);
 			const list = Array.from(allZones, (zone) => zone.zone_name);
-			setZoneList(list);
+			const uniqueList = Array.from(new Set(list));
+			setZoneList(uniqueList);
 		}
 		console.log("h2");
 	}, [projectsInSubset, currentProjectName]);
@@ -72,9 +73,9 @@ const Result = () => {
 
 	const handleSearchParams = (paramToChange, event) => {
 		setSearchParams({
-			currentSubset,
-			currentProjectName,
-			currentZoneName,
+			subset: currentSubset,
+			project_name: currentProjectName,
+			zone_name: currentZoneName,
 			[paramToChange]: event.target.value,
 		});
 	};
