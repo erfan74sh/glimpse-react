@@ -39,43 +39,43 @@ const AboutUs = () => {
 		{
 			fullName: "Mohammad Rajaian",
 			education: "Master of Architectural technology",
-			activityScope: "",
+			activityScope: "Structure",
 			image: pic01,
 		},
 		{
 			fullName: "Haniyeh Noorkajouri",
 			education: "Master of Energy and Architecture",
-			activityScope: "",
+			activityScope: "Daylight - Fire resilience",
 			image: pic04,
 		},
 		{
 			fullName: "Pegah Eshraghi",
 			education: "PHD Researcher in Energy and Architecture",
-			activityScope: "",
+			activityScope: "Energy consumption - Thermal comfort",
 			image: pic06,
 		},
 		{
 			fullName: "Arman Nikkhah",
 			education: "Master of Energy and Architecture",
-			activityScope: "",
+			activityScope: "Data Analyzer",
 			image: pic02,
 		},
 		{
 			fullName: "Mohammad Tabatabaei",
 			education: "Master of Energy and Architecture",
-			activityScope: "",
+			activityScope: "Computational Design",
 			image: pic03,
 		},
 		{
 			fullName: "Sogand Haghighat",
 			education: "Master of Energy and Architecture",
-			activityScope: "",
+			activityScope: "Mechanical - Graphic",
 			image: pic07,
 		},
 		{
 			fullName: "Erfan Shafiee",
 			education: "Master of Architectural design",
-			activityScope: "",
+			activityScope: "frontend developer",
 			image: pic10,
 		},
 		{
@@ -87,7 +87,7 @@ const AboutUs = () => {
 		{
 			fullName: "Mohammadreza Vatankhah",
 			education: "Master of Software engineer",
-			activityScope: "",
+			activityScope: "backend developer",
 			image: pic12,
 		},
 	];
