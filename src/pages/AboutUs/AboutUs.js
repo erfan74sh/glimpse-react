@@ -73,16 +73,16 @@ const AboutUs = () => {
 			image: pic07,
 		},
 		{
+			fullName: "Amirmohammad Rabani Jalali",
+			education: "Master of Energy and Architecture",
+			activityScope: "structure",
+			image: pic11,
+		},
+		{
 			fullName: "Erfan Shafiee",
 			education: "Master of Architectural design",
 			activityScope: "frontend developer",
 			image: pic10,
-		},
-		{
-			fullName: "Amirmohammad Rabani Jalali",
-			education: "Master of Energy and Architecture",
-			activityScope: "",
-			image: pic11,
 		},
 		{
 			fullName: "Mohammadreza Vatankhah",
