@@ -25,24 +25,25 @@ const DropdownMenu = ({ items, name }) => {
 					showMenu ? "flex" : "hidden"
 				} bg-gray-350 left-0 -bottom-1 z-10 translate-y-full transform rounded-md p-2`}
 			>
-				{items.map((item, idx) => {
-					return (
-						<li key={idx}>
-							<label className="hover:text-blue-550 block cursor-pointer transition-all">
-								<input
-									type="radio"
-									name={name}
-									value={item}
-									className="hidden"
-									onChange={(e) => {
-										handleSelectItem(e);
-									}}
-								/>
-								{item}
-							</label>
-						</li>
-					);
-				})}
+				{items &&
+					items.map((item, idx) => {
+						return (
+							<li key={idx}>
+								<label className="hover:text-blue-550 block cursor-pointer transition-all">
+									<input
+										type="radio"
+										name={name}
+										value={item}
+										className="hidden"
+										onChange={(e) => {
+											handleSelectItem(e);
+										}}
+									/>
+									{item}
+								</label>
+							</li>
+						);
+					})}
 			</ul>
 		</div>
 	);
@@ -51,21 +52,22 @@ const DropdownMenu = ({ items, name }) => {
 const AlternativeList = ({ items }) => {
 	return (
 		<ul className="flex items-center gap-x-1 text-gray-500">
-			{items.map((alternative, idx) => {
-				return (
-					<li key={idx}>
-						{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
-						<NavLink
-							to={`${idx}`}
-							className={({ isActive }) =>
-								isActive ? "text-blue-550" : "text-gray-500"
-							}
-						>
-							{alternative}
-						</NavLink>
-					</li>
-				);
-			})}
+			{items &&
+				items.map((alternative, idx) => {
+					return (
+						<li key={idx}>
+							{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
+							<NavLink
+								to={`${idx}`}
+								className={({ isActive }) =>
+									isActive ? "text-blue-550" : "text-gray-500"
+								}
+							>
+								{alternative}
+							</NavLink>
+						</li>
+					);
+				})}
 		</ul>
 	);
 };
