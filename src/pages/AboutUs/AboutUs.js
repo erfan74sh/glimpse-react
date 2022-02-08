@@ -21,73 +21,73 @@ const AboutUs = () => {
 		{
 			fullName: "mohamad tahsildoost",
 			education: "Associate Professor SBU",
-			job: "Architect",
+			activityScope: "Architect",
 			image: pic05,
 		},
 		{
 			fullName: "Mahsa Zomorodian",
 			education: "Associate Professor SBU",
-			job: "Architect",
+			activityScope: "Architect",
 			image: pic08,
 		},
 		{
 			fullName: "Roham Afghani ",
 			education: "Associate Professor SBU",
-			job: "Architect",
+			activityScope: "Architect",
 			image: pic09,
 		},
 		{
 			fullName: "Mohammad Rajaian",
 			education: "Master of Architectural technology",
-			job: "",
+			activityScope: "",
 			image: pic01,
 		},
 		{
 			fullName: "Haniyeh Noorkajouri",
 			education: "Master of Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic04,
 		},
 		{
 			fullName: "Pegah Eshraghi",
 			education: "PHD Researcher in Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic06,
 		},
 		{
 			fullName: "Arman Nikkhah",
 			education: "Master of Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic02,
 		},
 		{
 			fullName: "Mohammad Tabatabaei",
 			education: "Master of Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic03,
 		},
 		{
 			fullName: "Sogand Haghighat",
 			education: "Master of Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic07,
 		},
 		{
 			fullName: "Erfan Shafiee",
 			education: "Master of Architectural design",
-			job: "",
+			activityScope: "",
 			image: pic10,
 		},
 		{
 			fullName: "Amirmohammad Rabani Jalali",
 			education: "Master of Energy and Architecture",
-			job: "",
+			activityScope: "",
 			image: pic11,
 		},
 		{
 			fullName: "Mohammadreza Vatankhah",
 			education: "Master of Software engineer",
-			job: "",
+			activityScope: "",
 			image: pic12,
 		},
 	];
@@ -114,7 +114,7 @@ const AboutUs = () => {
 									<MemberCard
 										fullName={member.fullName}
 										education={member.education}
-										job={member.job}
+										activityScope={member.activityScope}
 										image={member.image}
 									/>
 								</article>
