@@ -93,6 +93,8 @@ const Result = () => {
 							projectsList={projectsList}
 							zoneList={zoneList}
 							alternativesList={alternativesList}
+							currentProjectName={currentProjectName}
+							currentZoneName={currentZoneName}
 							handleSearchParams={handleSearchParams}
 						/>
 					</nav>
