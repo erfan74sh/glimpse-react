@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
-const DropdownMenu = ({ items, name }) => {
+const DropdownMenu = ({ items, name, handleSearchParams }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [selectedItem, setSelectedItem] = useState("");
 	const handleSelectItem = (e) => {
 		setSelectedItem(e.target.value);
+		handleSearchParams(name, e);
 		setShowMenu(false);
 	};
 	return (
@@ -20,7 +21,6 @@ const DropdownMenu = ({ items, name }) => {
 				<span className={`${selectedItem ? "" : "capitalize text-gray-100"}`}>
 					{selectedItem ? selectedItem : `choose ${name}`}
 				</span>
-
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
@@ -75,12 +75,25 @@ const AlternativeList = ({ items }) => {
 	);
 };
 
-const BreadCrumps = ({ projectsList, zoneList, alternativeList }) => {
+const BreadCrumps = ({
+	projectsList,
+	zoneList,
+	alternativeList,
+	handleSearchParams,
+}) => {
 	return (
 		<div className="flex items-center gap-x-5">
-			<DropdownMenu items={projectsList} name="project" />
+			<DropdownMenu
+				items={projectsList}
+				name="project_name"
+				handleSearchParams={handleSearchParams}
+			/>
 			<span>{`>`}</span>
-			<DropdownMenu items={zoneList} name="zone" />
+			<DropdownMenu
+				items={zoneList}
+				name="zone_name"
+				handleSearchParams={handleSearchParams}
+			/>
 			<AlternativeList items={alternativeList} />
 		</div>
 	);
