@@ -12,7 +12,7 @@ import "./Result.scss";
 import Zone from "./Zone/Zone";
 
 const Result = () => {
-	const [params] = useSearchParams();
+	const [params, setParams] = useSearchParams();
 	const currentSubset = params.get("subset");
 	const currentProjectName = params.get("project_name");
 	const currentZoneName = params.get("zone_name");
@@ -22,7 +22,7 @@ const Result = () => {
 			const allProjects = await axios.get("/daylights/", {
 				headers: authHeader(),
 			});
-			const filteredProjects = allProjects.filter(
+			const filteredProjects = allProjects.data.filter(
 				(project) => project.subset === currentSubset
 			);
 			setProjectInsSubset(filteredProjects);
@@ -51,6 +51,7 @@ const Result = () => {
 						<BreadCrumps />
 					</nav>
 					<ResultOptions />
+					<button onClick={() => setParams({ name: "er" })}>click</button>
 				</header>
 				<main className="">
 					<Zone />
