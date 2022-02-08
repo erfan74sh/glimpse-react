@@ -12,12 +12,15 @@ const DropdownMenu = ({ items, name }) => {
 		setShowMenu(false);
 	};
 	return (
-		<div className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium uppercase text-white">
+		<div className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium text-white">
 			<div
 				className="flex cursor-pointer items-center justify-between"
 				onClick={() => setShowMenu(!showMenu)}
 			>
-				<span>{selectedItem ? selectedItem : `choose ${name}`}</span>
+				<span className={`${selectedItem ? "" : "capitalize text-gray-100"}`}>
+					{selectedItem ? selectedItem : `choose ${name}`}
+				</span>
+
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
