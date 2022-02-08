@@ -70,16 +70,13 @@ const AlternativeList = ({ items }) => {
 	);
 };
 
-const BreadCrumps = () => {
-	const projectItems = ["project 1", "project 2", "project 3"];
-	const zoneItems = ["zone 1", "zone 2", "zone 3", "zone 4"];
-	const alternativeItems = ["alter 1", "alter 2", "alter 3"];
+const BreadCrumps = ({ projectsList, zoneList, alternativeList }) => {
 	return (
 		<div className="flex items-center gap-x-5">
-			<DropdownMenu items={projectItems} name="project" />
+			<DropdownMenu items={projectsList} name="project" />
 			<span>{`>`}</span>
-			<DropdownMenu items={zoneItems} name="zone" />
-			<AlternativeList items={alternativeItems} />
+			<DropdownMenu items={zoneList} name="zone" />
+			<AlternativeList items={alternativeList} />
 		</div>
 	);
 };
