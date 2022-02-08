@@ -16,7 +16,9 @@ const Result = () => {
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
 	const currentZoneName = searchParams.get("zone_name");
+
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
+	const [projectsList, setProjectsList] = useState([]);
 	console.log("renderd!");
 	useEffect(() => {
 		const getProjects = async () => {
@@ -25,9 +27,10 @@ const Result = () => {
 			});
 			//? get all projects in currentSubset
 			const allProjects = await visualComfortData.data;
+			const list = Array.from(allProjects, (project) => project.project_name);
 
 			setProjectsInSubset(allProjects);
-
+			setProjectsList(list);
 			console.log("h1");
 		};
 		getProjects();
