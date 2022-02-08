@@ -12,33 +12,61 @@ import "./Result.scss";
 import Zone from "./Zone/Zone";
 
 const Result = () => {
-	const [params, setParams] = useSearchParams();
-	const currentSubset = params.get("subset");
-	const currentProjectName = params.get("project_name");
-	const currentZoneName = params.get("zone_name");
-	const [projectsInSubset, setProjectInsSubset] = useState([]);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const currentSubset = searchParams.get("subset");
+	const currentProjectName = searchParams.get("project_name");
+	const currentZoneName = searchParams.get("zone_name");
+	const [projectsInSubset, setProjectsInSubset] = useState([]);
+	console.log("renderd!");
 	useEffect(() => {
 		const getProjects = async () => {
-			const allProjects = await axios.get("/daylights/", {
+			const visualComfortData = await axios.get("/daylights/", {
 				headers: authHeader(),
 			});
-			const filteredProjects = allProjects.data.filter(
-				(project) => project.subset === currentSubset
-			);
-			setProjectInsSubset(filteredProjects);
+			//? get all projects in currentSubset
+			const allProjects = await visualComfortData.data;
+
+			setProjectsInSubset(allProjects);
+
+			console.log("h1");
 		};
 		getProjects();
 	}, []);
-	const [alternatives, setAlternatives] = useState([]);
-	// useEffect(() => {
-	// 		const filteredData = projectsInSubset.filter((alt) => {
-	// 			return (
-	// 				alt.subset === currentSubset && alt.zone_name === currentZoneName
-	// 			);
-	// 		});
-	// 		setAlternatives(filteredData);
-	// 	}
-	// , [currentProjectName, currentSubset, currentZoneName]);
+
+	const [zoneList, setZoneList] = useState([]);
+	// ! this useEffect is not efficient
+	useEffect(() => {
+		// ? get all zones in currentProject
+		if (projectsInSubset.length !== 0) {
+			const allZones = projectsInSubset.filter(
+				(estimatedData) => estimatedData.project_name === currentProjectName
+			);
+			const list = Array.from(allZones, (zone) => zone.zone_name);
+			setZoneList(list);
+		}
+		console.log("h2");
+	}, [projectsInSubset, currentProjectName]);
+
+	const [alternativesList, setAlternativesList] = useState([]);
+	// ! this useEffect is not efficient
+	useEffect(() => {
+		// ? get all alternatives in currentZone
+		if (projectsInSubset.length !== 0) {
+			const allAlternatives = projectsInSubset.filter(
+				(estimatedData) =>
+					estimatedData.project_name === currentProjectName &&
+					estimatedData.zone_name === currentZoneName
+			);
+			const list = Array.from(
+				allAlternatives,
+				(alternative) => alternative.alternative_name
+			);
+			setAlternativesList(list);
+			console.log(list);
+		}
+		console.log("h3");
+	}, [projectsInSubset, currentZoneName, currentProjectName]);
+
 	return (
 		<>
 			<Nav />
@@ -51,7 +79,9 @@ const Result = () => {
 						<BreadCrumps />
 					</nav>
 					<ResultOptions />
-					<button onClick={() => setParams({ name: "er" })}>click</button>
+					<button onClick={() => setSearchParams({ zone_name: "somth" })}>
+						click
+					</button>
 				</header>
 				<main className="">
 					<Zone />
