@@ -70,6 +70,15 @@ const Result = () => {
 		console.log("h3");
 	}, [projectsInSubset, currentZoneName, currentProjectName]);
 
+	const handleSearchParams = (paramToChange, event) => {
+		setSearchParams({
+			currentSubset,
+			currentProjectName,
+			currentZoneName,
+			[paramToChange]: event.target.value,
+		});
+	};
+
 	return (
 		<>
 			<Nav />
@@ -83,6 +92,7 @@ const Result = () => {
 							projectsList={projectsList}
 							zoneList={zoneList}
 							alternativesList={alternativesList}
+							handleSearchParams={handleSearchParams}
 						/>
 					</nav>
 					<ResultOptions />
