@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
-const DropdownMenu = ({ items, name, handleSearchParams }) => {
+const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 	const [showMenu, setShowMenu] = useState(false);
-	const [selectedItem, setSelectedItem] = useState("");
+	const [selectedItem, setSelectedItem] = useState(selected || "");
 	const handleSelectItem = (e) => {
 		setSelectedItem(e.target.value);
 		handleSearchParams(name, e);
@@ -79,6 +79,8 @@ const BreadCrumps = ({
 	projectsList,
 	zoneList,
 	alternativeList,
+	currentProjectName,
+	currentZoneName,
 	handleSearchParams,
 }) => {
 	return (
@@ -86,12 +88,14 @@ const BreadCrumps = ({
 			<DropdownMenu
 				items={projectsList}
 				name="project_name"
+				selected={currentProjectName}
 				handleSearchParams={handleSearchParams}
 			/>
 			<span>{`>`}</span>
 			<DropdownMenu
 				items={zoneList}
 				name="zone_name"
+				selected={currentZoneName}
 				handleSearchParams={handleSearchParams}
 			/>
 			<AlternativeList items={alternativeList} />
