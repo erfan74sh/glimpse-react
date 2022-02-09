@@ -43,7 +43,12 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 	if (
 		payload.value === "cooling load" ||
 		payload.value === "heating load" ||
-		payload.value === "electric light"
+		payload.value === "electric light" ||
+		payload.value === "udi" ||
+		payload.value === "sda" ||
+		payload.value === "ase" ||
+		payload.value === "svd" ||
+		payload.value === "mda"
 	) {
 		stroke = "#4093E1";
 		fontWeight = 700;
