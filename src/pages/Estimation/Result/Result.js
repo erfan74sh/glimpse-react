@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { axios } from "../../../services/axios";
 import authHeader from "../../../services/auth-header";
 // compoents
