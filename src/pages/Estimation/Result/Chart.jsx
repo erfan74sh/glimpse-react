@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	LineChart,
 	Line,
@@ -133,8 +133,14 @@ const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 };
 
 const Chart = ({ series }) => {
-	const [lineOpacity, setLineOpacity] = useState({ output_1: 1, output_2: 1 });
-	// todo: define lineOpacity in useEffect and fix the issue
+	const [lineOpacity, setLineOpacity] = useState({});
+	useEffect(() => {
+		let lineOpacity = {};
+		series.forEach((serie) => {
+			lineOpacity[serie.name] = 1;
+		});
+		setLineOpacity(lineOpacity);
+	}, [series]);
 
 	const handleMouseEnterLegend = (e) => {
 		let tempState = { ...lineOpacity };
