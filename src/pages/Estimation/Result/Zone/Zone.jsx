@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-	Link,
-	// useParams
-} from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
@@ -12,8 +9,15 @@ import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
-const Zone = () => {
-	// const params = useParams();
+const Zone = ({ projects }) => {
+	const [searchParams] = useSearchParams();
+	const currentProject = searchParams.get("project_name");
+	const currentZone = searchParams.get("zone_name");
+	const alts = projects.filter(
+		(value) =>
+			value.project_name === currentProject && value.zone_name === currentZone
+	);
+	console.log(alts);
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const data = [
