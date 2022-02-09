@@ -104,13 +104,9 @@ const Result = () => {
 						/>
 					</nav>
 					<ResultOptions />
-					<button onClick={() => setSearchParams({ zone_name: "somth" })}>
-						click
-					</button>
 				</header>
 				<main className="">
 					<Zone projects={projectsInSubset} />
-					{/* <Outlet /> */}
 				</main>
 			</main>
 		</>
