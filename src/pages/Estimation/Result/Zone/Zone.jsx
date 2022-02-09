@@ -17,7 +17,6 @@ const Zone = ({ projects }) => {
 		(value) =>
 			value.project_name === currentProject && value.zone_name === currentZone
 	);
-	console.log(alts);
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const data = [

@@ -19,7 +19,6 @@ const Result = () => {
 
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	const [projectsList, setProjectsList] = useState([]);
-	console.log("renderd!");
 	useEffect(() => {
 		const getProjects = async () => {
 			const visualComfortData = await axios.get("/daylights/", {
@@ -31,7 +30,6 @@ const Result = () => {
 			const uniqueList = Array.from(new Set(list));
 			setProjectsInSubset(allProjects);
 			setProjectsList(uniqueList);
-			console.log("h1");
 		};
 		getProjects();
 	}, []);
@@ -48,7 +46,6 @@ const Result = () => {
 			const uniqueList = Array.from(new Set(list));
 			setZoneList(uniqueList);
 		}
-		console.log("h2");
 	}, [projectsInSubset, currentProjectName]);
 
 	const [alternativesList, setAlternativesList] = useState([]);
@@ -66,9 +63,7 @@ const Result = () => {
 				(alternative) => alternative.alternative_name
 			);
 			setAlternativesList(list);
-			console.log(list);
 		}
-		console.log("h3");
 	}, [projectsInSubset, currentZoneName, currentProjectName]);
 
 	const handleSearchParams = (paramToChange, event) => {
