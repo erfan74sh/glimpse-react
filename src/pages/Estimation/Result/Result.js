@@ -72,12 +72,22 @@ const Result = () => {
 	}, [projectsInSubset, currentZoneName, currentProjectName]);
 
 	const handleSearchParams = (paramToChange, event) => {
-		setSearchParams({
-			subset: currentSubset,
-			project_name: currentProjectName,
-			zone_name: currentZoneName,
-			[paramToChange]: event.target.value,
-		});
+		if (paramToChange === "project_name") {
+			const zonesInProject = projectsInSubset.filter(
+				(estimatedData) => estimatedData.project_name === event.target.value
+			);
+			setSearchParams({
+				subset: currentSubset,
+				project_name: event.target.value,
+				zone_name: zonesInProject[0].zone_name,
+			});
+		} else {
+			setSearchParams({
+				subset: currentSubset,
+				project_name: currentProjectName,
+				zone_name: event.target.value,
+			});
+		}
 	};
 
 	return (
