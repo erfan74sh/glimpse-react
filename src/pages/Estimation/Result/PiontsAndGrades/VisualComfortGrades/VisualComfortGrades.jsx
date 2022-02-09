@@ -19,9 +19,11 @@ const VisualComfortGrades = ({ alternatives }) => {
 			tempOutput.push({
 				name: alter.name,
 				id: alter.id,
+				stroke: alter.stroke,
 				outputs: tempData,
 			});
 		});
+		console.log(tempOutput);
 		setOutputData(tempOutput);
 	}, [alternatives]);
 
@@ -31,7 +33,10 @@ const VisualComfortGrades = ({ alternatives }) => {
 				const { svd, sda, udi, ase } = alt.outputs;
 				return (
 					<article key={idx}>
-						<h4 className="border-blue-550 border-b py-1 font-medium">
+						<h4
+							className=" border-b-2 py-1 font-medium"
+							style={{ color: alt.stroke, borderColor: alt.stroke }}
+						>
 							{alt.name}
 						</h4>
 						<ul className=" mt-1 flex flex-col gap-y-1.5">
