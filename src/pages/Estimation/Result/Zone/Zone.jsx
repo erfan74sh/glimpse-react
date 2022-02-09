@@ -13,10 +13,36 @@ const Zone = ({ projects }) => {
 	const [searchParams] = useSearchParams();
 	const currentProject = searchParams.get("project_name");
 	const currentZone = searchParams.get("zone_name");
-	const alts = projects.filter(
-		(value) =>
-			value.project_name === currentProject && value.zone_name === currentZone
-	);
+
+	useEffect(() => {
+		const alts = projects.filter(
+			(value) =>
+				value.project_name === currentProject && value.zone_name === currentZone
+		);
+		const outputs = alts.map((output) => {
+			let outputData = [];
+			let primaryData = {};
+			for (const item in output) {
+				if (
+					item === "subset" ||
+					item === "building_program" ||
+					item === "location" ||
+					item === "high_performance_building_index" ||
+					item === "project_name" ||
+					item === "alternative_name" ||
+					item === "zone_name" ||
+					item === "id" ||
+					item === "user_id"
+				) {
+					primaryData[item] = output[item];
+				} else {
+					outputData.push({ name: item, amt: output[item] });
+				}
+			}
+			return { ...primaryData, data: outputData };
+		});
+		console.log(outputs);
+	}, [projects, currentProject, currentZone]);
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const data = [
@@ -28,32 +54,32 @@ const Zone = ({ projects }) => {
 				visible: true,
 				showDropdown: false,
 				data: [
-					{ name: "floor level", uv: 400, amt: 5 },
-					{ name: "X- Dimention", uv: 400, amt: 24 },
-					{ name: "Y- Dimention", uv: 450, amt: 10 },
-					{ name: "rotation angle", uv: 450, amt: 20 },
-					{ name: "WWR south", uv: 450, amt: 80 },
-					{ name: "WWR north", uv: 450, amt: 80 },
-					{ name: "south Shading type", uv: 410, amt: 45 },
-					{ name: "boundry condition east wall", uv: 410, amt: 55 },
-					{ name: "boundry condition west wall", uv: 410, amt: 50 },
-					{ name: "boundry condition north wall", uv: 410, amt: 60 },
-					{ name: "boundry condition south wall", uv: 410, amt: 10 },
-					{ name: "boundry condition roof", uv: 410, amt: 35 },
-					{ name: "boundry condition floor", uv: 410, amt: 20 },
-					{ name: "wall u-value", uv: 380, amt: 70 },
-					{ name: "roof u-value", uv: 380, amt: 50 },
-					{ name: "floor u-value", uv: 380, amt: 40 },
-					{ name: "window u-value", uv: 380, amt: 5 },
-					{ name: "south neighbor distance", uv: 380, amt: 35 },
-					{ name: "south neighbor height", uv: 380, amt: 25 },
-					{ name: "north neighbor distance", uv: 380, amt: 40 },
-					{ name: "north neighbor height", uv: 380, amt: 10 },
-					{ name: "HVAC", uv: 380, amt: 30 },
-					{ name: "natural ventilation", uv: 380, amt: 15 },
-					{ name: "cooling load", uv: 410, amt: 70 },
-					{ name: "heating load", uv: 410, amt: 40 },
-					{ name: "electric light", uv: 410, amt: 20 },
+					{ name: "floor level", amt: 5 },
+					{ name: "X- Dimention", amt: 24 },
+					{ name: "Y- Dimention", amt: 10 },
+					{ name: "rotation angle", amt: 20 },
+					{ name: "WWR south", amt: 80 },
+					{ name: "WWR north", amt: 80 },
+					{ name: "south Shading type", amt: 45 },
+					{ name: "boundry condition east wall", amt: 55 },
+					{ name: "boundry condition west wall", amt: 50 },
+					{ name: "boundry condition north wall", amt: 60 },
+					{ name: "boundry condition south wall", amt: 10 },
+					{ name: "boundry condition roof", amt: 35 },
+					{ name: "boundry condition floor", amt: 20 },
+					{ name: "wall u-value", amt: 70 },
+					{ name: "roof u-value", amt: 50 },
+					{ name: "floor u-value", amt: 40 },
+					{ name: "window u-value", amt: 5 },
+					{ name: "south neighbor distance", amt: 35 },
+					{ name: "south neighbor height", amt: 25 },
+					{ name: "north neighbor distance", amt: 40 },
+					{ name: "north neighbor height", amt: 10 },
+					{ name: "HVAC", amt: 30 },
+					{ name: "natural ventilation", amt: 15 },
+					{ name: "cooling load", amt: 70 },
+					{ name: "heating load", amt: 40 },
+					{ name: "electric light", amt: 20 },
 				],
 			},
 			{
@@ -64,32 +90,32 @@ const Zone = ({ projects }) => {
 				visible: true,
 				showDropdown: false,
 				data: [
-					{ name: "floor level", uv: 400, amt: 2 },
-					{ name: "X- Dimention", uv: 400, amt: 8 },
-					{ name: "Y- Dimention", uv: 450, amt: 20 },
-					{ name: "rotation angle", uv: 450, amt: 40 },
-					{ name: "WWR south", uv: 450, amt: 80 },
-					{ name: "WWR north", uv: 450, amt: 50 },
-					{ name: "south Shading type", uv: 410, amt: 20 },
-					{ name: "boundry condition east wall", uv: 410, amt: 10 },
-					{ name: "boundry condition west wall", uv: 410, amt: 90 },
-					{ name: "boundry condition north wall", uv: 410, amt: 40 },
-					{ name: "boundry condition south wall", uv: 410, amt: 60 },
-					{ name: "boundry condition roof", uv: 410, amt: 10 },
-					{ name: "boundry condition floor", uv: 410, amt: 70 },
-					{ name: "wall u-value", uv: 380, amt: 30 },
-					{ name: "roof u-value", uv: 380, amt: 50 },
-					{ name: "floor u-value", uv: 380, amt: 20 },
-					{ name: "window u-value", uv: 380, amt: 10 },
-					{ name: "south neighbor distance", uv: 380, amt: 4 },
-					{ name: "south neighbor height", uv: 380, amt: 10 },
-					{ name: "north neighbor distance", uv: 380, amt: 30 },
-					{ name: "north neighbor height", uv: 380, amt: 40 },
-					{ name: "HVAC", uv: 380, amt: 5 },
-					{ name: "natural ventilation", uv: 380, amt: 50 },
-					{ name: "cooling load", uv: 410, amt: 65 },
-					{ name: "heating load", uv: 410, amt: 80 },
-					{ name: "electric light", uv: 410, amt: 35 },
+					{ name: "floor level", amt: 2 },
+					{ name: "X- Dimention", amt: 8 },
+					{ name: "Y- Dimention", amt: 20 },
+					{ name: "rotation angle", amt: 40 },
+					{ name: "WWR south", amt: 80 },
+					{ name: "WWR north", amt: 50 },
+					{ name: "south Shading type", amt: 20 },
+					{ name: "boundry condition east wall", amt: 10 },
+					{ name: "boundry condition west wall", amt: 90 },
+					{ name: "boundry condition north wall", amt: 40 },
+					{ name: "boundry condition south wall", amt: 60 },
+					{ name: "boundry condition roof", amt: 10 },
+					{ name: "boundry condition floor", amt: 70 },
+					{ name: "wall u-value", amt: 30 },
+					{ name: "roof u-value", amt: 50 },
+					{ name: "floor u-value", amt: 20 },
+					{ name: "window u-value", amt: 10 },
+					{ name: "south neighbor distance", amt: 4 },
+					{ name: "south neighbor height", amt: 10 },
+					{ name: "north neighbor distance", amt: 30 },
+					{ name: "north neighbor height", amt: 40 },
+					{ name: "HVAC", amt: 5 },
+					{ name: "natural ventilation", amt: 50 },
+					{ name: "cooling load", amt: 65 },
+					{ name: "heating load", amt: 80 },
+					{ name: "electric light", amt: 35 },
 				],
 			},
 		];
