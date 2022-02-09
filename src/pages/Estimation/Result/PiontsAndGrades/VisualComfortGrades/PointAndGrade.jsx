@@ -13,7 +13,7 @@ const PointAndGrade = ({ alt }) => {
 				{alt.name}
 			</h4>
 			<div
-				className={`mt-1  overflow-hidden ${
+				className={`mt-1  overflow-hidden transition-all duration-300 ${
 					showDropdown ? "max-h-screen" : "max-h-0"
 				}`}
 			>
