@@ -114,7 +114,7 @@ const Result = () => {
 					</button>
 				</header>
 				<main className="">
-					<Zone />
+					<Zone projects={projectsInSubset} />
 					{/* <Outlet /> */}
 				</main>
 			</main>
