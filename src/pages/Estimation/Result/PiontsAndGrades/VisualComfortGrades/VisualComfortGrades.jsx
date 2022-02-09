@@ -39,7 +39,7 @@ const VisualComfortGrades = ({ alternatives }) => {
 						>
 							{alt.name}
 						</h4>
-						<ul className=" mt-1 flex flex-col gap-y-1.5">
+						<ul className=" mt-1 flex flex-col gap-y-1.5 p-2 text-sm">
 							<li className="flex gap-x-1">
 								<span className="text-blue-550 font-medium">{`UDI >`}</span>
 								{udi < 75 ? (
