@@ -14,7 +14,6 @@ import "./App.scss";
 //
 //
 const Result = lazy(() => import("./pages/Estimation/Result"));
-const Zone = lazy(() => import("./pages/Estimation/Result/Zone/Zone"));
 const Estimate = lazy(() => import("./pages/Estimation/Estimate"));
 const CompareZones = lazy(() =>
 	import("./pages/Estimation/Result/CompareZones/CompareZones")
@@ -49,9 +48,7 @@ function App() {
 						<Route index element={<Estimate />} />
 						<Route path="estimate" element={<Estimate />} />
 					</Route>
-					<Route path="result" element={<Result />}>
-						{/* <Route path=":zoneId" element={<Zone />} /> */}
-					</Route>
+					<Route path="result" element={<Result />}></Route>
 					<Route path="compare-zones" element={<CompareZones />} />
 					<Route path="profile" element={<Profile />} />
 				</Route>
