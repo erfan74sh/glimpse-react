@@ -64,33 +64,8 @@ const Zone = ({ projects }) => {
 				data: outputData,
 			};
 		});
-		console.log(outputs);
 		setSeries(outputs);
 	}, [projects, currentProject, currentZone]);
-
-	// todo: get alternatives data from server and remove hardcodings
-	const alternatives = [
-		{
-			name: "output 1",
-			id: 1,
-			outputs: {
-				svd: 10,
-				ase: 5,
-				sda: 90,
-				udi: 85,
-			},
-		},
-		{
-			name: "output 2",
-			id: 1,
-			outputs: {
-				svd: 25,
-				ase: 35,
-				sda: 45,
-				udi: 95,
-			},
-		},
-	];
 
 	const handleVisibility = (e) => {
 		const name = e.currentTarget.parentNode.dataset.name;
@@ -104,7 +79,7 @@ const Zone = ({ projects }) => {
 			<section className="max-h-152 flex items-center justify-center overflow-hidden">
 				<Chart series={series} />
 			</section>
-			<PointsAndGrades subset="visual comfort" alternatives={alternatives} />
+			<PointsAndGrades subset="visual comfort" alternatives={series} />
 			<section className="mt-20 flex h-96 flex-col px-40">
 				<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 					<h2>alternatives</h2>
