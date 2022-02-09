@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -7,11 +7,16 @@ import { NavLink } from "react-router-dom";
 const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [selectedItem, setSelectedItem] = useState(selected || "");
+	useEffect(() => {
+		setSelectedItem(selected);
+	}, [selected]);
+
 	const handleSelectItem = (e) => {
 		setSelectedItem(e.target.value);
 		handleSearchParams(name, e);
 		setShowMenu(false);
 	};
+
 	return (
 		<div className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium text-white">
 			<div
