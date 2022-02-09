@@ -9,11 +9,13 @@ import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+
 const Zone = ({ projects }) => {
 	const [searchParams] = useSearchParams();
 	const currentProject = searchParams.get("project_name");
 	const currentZone = searchParams.get("zone_name");
 
+	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const alts = projects.filter(
 			(value) =>
@@ -39,8 +41,10 @@ const Zone = ({ projects }) => {
 					outputData.push({ name: item, amt: output[item] });
 				}
 			}
+
 			return {
 				...primaryData,
+				name: output.alternative_name,
 				date: "2021.11.20",
 				stroke: "#926ECB",
 				opacity: 1,
@@ -50,85 +54,8 @@ const Zone = ({ projects }) => {
 			};
 		});
 		console.log(outputs);
+		setSeries(outputs);
 	}, [projects, currentProject, currentZone]);
-	const [series, setSeries] = useState([]);
-	useEffect(() => {
-		const data = [
-			{
-				name: "output_1",
-				date: "2021.11.20",
-				stroke: "#926ECB",
-				opacity: 1,
-				visible: true,
-				showDropdown: false,
-				data: [
-					{ name: "floor level", amt: 5 },
-					{ name: "X- Dimention", amt: 24 },
-					{ name: "Y- Dimention", amt: 10 },
-					{ name: "rotation angle", amt: 20 },
-					{ name: "WWR south", amt: 80 },
-					{ name: "WWR north", amt: 80 },
-					{ name: "south Shading type", amt: 45 },
-					{ name: "boundry condition east wall", amt: 55 },
-					{ name: "boundry condition west wall", amt: 50 },
-					{ name: "boundry condition north wall", amt: 60 },
-					{ name: "boundry condition south wall", amt: 10 },
-					{ name: "boundry condition roof", amt: 35 },
-					{ name: "boundry condition floor", amt: 20 },
-					{ name: "wall u-value", amt: 70 },
-					{ name: "roof u-value", amt: 50 },
-					{ name: "floor u-value", amt: 40 },
-					{ name: "window u-value", amt: 5 },
-					{ name: "south neighbor distance", amt: 35 },
-					{ name: "south neighbor height", amt: 25 },
-					{ name: "north neighbor distance", amt: 40 },
-					{ name: "north neighbor height", amt: 10 },
-					{ name: "HVAC", amt: 30 },
-					{ name: "natural ventilation", amt: 15 },
-					{ name: "cooling load", amt: 70 },
-					{ name: "heating load", amt: 40 },
-					{ name: "electric light", amt: 20 },
-				],
-			},
-			{
-				name: "output_2",
-				date: "2021.06.09",
-				stroke: "#00C48C",
-				opacity: 1,
-				visible: true,
-				showDropdown: false,
-				data: [
-					{ name: "floor level", amt: 2 },
-					{ name: "X- Dimention", amt: 8 },
-					{ name: "Y- Dimention", amt: 20 },
-					{ name: "rotation angle", amt: 40 },
-					{ name: "WWR south", amt: 80 },
-					{ name: "WWR north", amt: 50 },
-					{ name: "south Shading type", amt: 20 },
-					{ name: "boundry condition east wall", amt: 10 },
-					{ name: "boundry condition west wall", amt: 90 },
-					{ name: "boundry condition north wall", amt: 40 },
-					{ name: "boundry condition south wall", amt: 60 },
-					{ name: "boundry condition roof", amt: 10 },
-					{ name: "boundry condition floor", amt: 70 },
-					{ name: "wall u-value", amt: 30 },
-					{ name: "roof u-value", amt: 50 },
-					{ name: "floor u-value", amt: 20 },
-					{ name: "window u-value", amt: 10 },
-					{ name: "south neighbor distance", amt: 4 },
-					{ name: "south neighbor height", amt: 10 },
-					{ name: "north neighbor distance", amt: 30 },
-					{ name: "north neighbor height", amt: 40 },
-					{ name: "HVAC", amt: 5 },
-					{ name: "natural ventilation", amt: 50 },
-					{ name: "cooling load", amt: 65 },
-					{ name: "heating load", amt: 80 },
-					{ name: "electric light", amt: 35 },
-				],
-			},
-		];
-		setSeries(data);
-	}, []);
 
 	// todo: get alternatives data from server and remove hardcodings
 	const alternatives = [
