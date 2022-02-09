@@ -39,7 +39,15 @@ const Zone = ({ projects }) => {
 					outputData.push({ name: item, amt: output[item] });
 				}
 			}
-			return { ...primaryData, data: outputData };
+			return {
+				...primaryData,
+				date: "2021.11.20",
+				stroke: "#926ECB",
+				opacity: 1,
+				visible: true,
+				showDropdown: false,
+				data: outputData,
+			};
 		});
 		console.log(outputs);
 	}, [projects, currentProject, currentZone]);
