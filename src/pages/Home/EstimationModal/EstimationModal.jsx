@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
@@ -9,10 +9,7 @@ import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
 import ModalMap from "./ModalMap/ModalMap";
 // state
-import {
-	selectPrimaryData,
-	updateData,
-} from "../../../features/estimationPrimData/EstimationPrimDataSlice";
+import { updateData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
 import "./EstimationModal.scss";
 
@@ -239,8 +236,6 @@ const StepThree = ({ prevStep, formData }) => {
 };
 
 const EstimationModal = () => {
-	// const primaryData = useSelector(selectPrimaryData);
-	// console.log(primaryData);
 	const [formData, setFormData] = useState({
 		high_performance_building_index: "",
 		subset: "",
