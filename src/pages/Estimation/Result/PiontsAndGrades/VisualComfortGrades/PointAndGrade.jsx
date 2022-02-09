@@ -10,7 +10,7 @@ const PointAndGrade = ({ alt }) => {
 		<>
 			<h4
 				className=" flex justify-between border-b-2 py-1 font-medium"
-				style={{ color: alt.stroke, borderColor: alt.stroke }}
+				style={{ color: alt.stroke }}
 				onClick={() => setShowDropdown(!showDropdown)}
 			>
 				{alt.name}
