@@ -147,7 +147,7 @@ const Chart = ({ series }) => {
 		for (let name in tempState) {
 			console.log(name);
 			if (name !== e.target.innerHTML) {
-				tempState[name] = 0.3;
+				tempState[name] = 0.2;
 			}
 		}
 		setLineOpacity(tempState);
