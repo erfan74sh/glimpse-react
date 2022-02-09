@@ -16,12 +16,23 @@ const Zone = ({ projects }) => {
 	const currentZone = searchParams.get("zone_name");
 
 	const [series, setSeries] = useState([]);
+
 	useEffect(() => {
+		const colorPallet = [
+			"#784AC1",
+			"#00C48C",
+			"#B5008E",
+			"#0085D3",
+			"#003576",
+			"#8b5cf6",
+			"#a21caf",
+			"#f43f5e",
+		];
 		const alts = projects.filter(
 			(value) =>
 				value.project_name === currentProject && value.zone_name === currentZone
 		);
-		const outputs = alts.map((output) => {
+		const outputs = alts.map((output, idx) => {
 			let outputData = [];
 			let primaryData = {};
 			for (const item in output) {
@@ -46,7 +57,7 @@ const Zone = ({ projects }) => {
 				...primaryData,
 				name: output.alternative_name,
 				date: "2021.11.20",
-				stroke: "#926ECB",
+				stroke: colorPallet[idx],
 				opacity: 1,
 				visible: true,
 				showDropdown: false,
