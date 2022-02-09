@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// icon
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const PointAndGrade = ({ alt }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
@@ -6,11 +9,19 @@ const PointAndGrade = ({ alt }) => {
 	return (
 		<>
 			<h4
-				className=" border-b-2 py-1 font-medium"
+				className=" flex justify-between border-b-2 py-1 font-medium"
 				style={{ color: alt.stroke, borderColor: alt.stroke }}
 				onClick={() => setShowDropdown(!showDropdown)}
 			>
 				{alt.name}
+				<span className="text-gray-350 px-2">
+					<FontAwesomeIcon
+						icon={faCaretDown}
+						className={`transform transition-all ${
+							showDropdown && "rotate-180"
+						}`}
+					/>
+				</span>
 			</h4>
 			<div
 				className={`mt-1  overflow-hidden transition-all duration-300 ${
