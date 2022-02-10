@@ -38,35 +38,50 @@ const ProjectsInSubset = ({ subset }) => {
 		};
 		fetchData();
 	}, [subset]);
+
+	const [showDropdown, setShowDropdown] = useState(false);
+
 	return (
 		<article>
-			<h4 className="flex items-center justify-between border-b-2">
+			<h4
+				className="flex items-center justify-between border-b-2"
+				onClick={() => setShowDropdown(!showDropdown)}
+			>
 				<span className="text-gray-650 px-0.5 font-medium">{subset}</span>
 				<span className="px-2">
 					<FontAwesomeIcon icon={faCaretDown} className="text-gray-500" />
 				</span>
 			</h4>
-			<ul className="flex flex-col gap-y-5 py-5 px-2">
-				{projectsInSubset.map((project, idx) => {
-					return (
-						<li className="w-133 shadow-full-sm rounded-md bg-white" key={idx}>
-							<Link
-								to={{
-									pathname: "/result",
-									search: `?subset=visual_comfort&project_name=${project.project_name}&zone_name=${project.zone_name}`,
-								}}
-								target="_blank"
-								className="flex items-center justify-between p-3 text-gray-600"
+			<div
+				className={`overflow-hidden ${
+					showDropdown ? "max-h-screen" : "max-h-0"
+				}`}
+			>
+				<ul className="flex flex-col gap-y-5 py-5 px-2">
+					{projectsInSubset.map((project, idx) => {
+						return (
+							<li
+								className="w-133 shadow-full-sm rounded-md bg-white"
+								key={idx}
 							>
-								<span className="font-semibold ">{`${idx + 1} _ ${
-									project.project_name
-								}`}</span>
-								<span className="text-xs">Last edit :1/2/2022</span>
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
+								<Link
+									to={{
+										pathname: "/result",
+										search: `?subset=visual_comfort&project_name=${project.project_name}&zone_name=${project.zone_name}`,
+									}}
+									target="_blank"
+									className="flex items-center justify-between p-3 text-gray-600"
+								>
+									<span className="font-semibold ">{`${idx + 1} _ ${
+										project.project_name
+									}`}</span>
+									<span className="text-xs">Last edit :1/2/2022</span>
+								</Link>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
 		</article>
 	);
 };
