@@ -44,10 +44,10 @@ const VisualMaterial = () => {
 		{ val: "0.65", url: floor3 },
 	];
 	const windowImages = [
-		{ val: "0.58", url: win1 },
-		{ val: "0.72", url: win2 },
-		{ val: "0.8", url: win3 },
-		{ val: "0.9", url: win4 },
+		{ val: "1.7", url: win1 },
+		{ val: "2.6", url: win2 },
+		{ val: "3.1", url: win3 },
+		{ val: "5.7", url: win4 },
 	];
 
 	return (

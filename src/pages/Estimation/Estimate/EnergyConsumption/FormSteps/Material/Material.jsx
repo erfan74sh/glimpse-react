@@ -70,10 +70,10 @@ const Material = ({ nextStep, prevStep }) => {
 		{ label: "1.092" },
 	];
 	const glassMaterialOptions = [
-		{ label: "0.58" },
-		{ label: "0.72" },
-		{ label: "0.8" },
-		{ label: "0.9" },
+		{ label: "1.7" },
+		{ label: "2.6" },
+		{ label: "3.1" },
+		{ label: "5.7" },
 	];
 
 	return (
@@ -102,7 +102,7 @@ const Material = ({ nextStep, prevStep }) => {
 					.required("required"),
 				window_uvalue: yup
 					.string()
-					.oneOf(["0.58", "0.72", "0.8", "0.9"], "choose one")
+					.oneOf(["5.7", "3.1", "2.6", "1.7"], "choose one")
 					.required("required"),
 			})}
 		>
