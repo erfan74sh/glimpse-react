@@ -17,8 +17,12 @@ import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
 import { selectInput } from "../../../../features/data/inputDataSlice";
+import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
+// services
+import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 
 const EnergyConsumption = () => {
+	const primData = useSelector(selectPrimaryData);
 	const inputData = useSelector(selectInput);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
@@ -31,11 +35,26 @@ const EnergyConsumption = () => {
 		setStep((prev) => prev - 1);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// todo: send data to server
-		console.log(inputData);
-		navigate("/result/0");
+		// todo: edit error handling
+		try {
+			const response = await energyConsumptionServices.estimate({
+				...inputData,
+				...primData,
+			});
+			console.log(response.data);
+			// navigate({
+			// 	pathname: "/result",
+			// 	search: `?${createSearchParams({
+			// 		subset,
+			// 		project_name,
+			// 		zone_name,
+			// 	})}`,
+			// });
+		} catch (err) {
+			console.log("errore from visual comfort service", err);
+		}
 	};
 
 	const steps = [
