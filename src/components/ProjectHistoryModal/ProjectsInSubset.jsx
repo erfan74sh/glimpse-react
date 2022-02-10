@@ -42,18 +42,23 @@ const ProjectsInSubset = ({ subset }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
 
 	return (
-		<article>
+		<article className="mb-2">
 			<h4
-				className="flex items-center justify-between border-b-2"
+				className="flex cursor-default items-center justify-between border-b-2 py-1"
 				onClick={() => setShowDropdown(!showDropdown)}
 			>
 				<span className="text-gray-650 px-0.5 font-medium">{subset}</span>
 				<span className="px-2">
-					<FontAwesomeIcon icon={faCaretDown} className="text-gray-500" />
+					<FontAwesomeIcon
+						icon={faCaretDown}
+						className={`transform text-gray-500 transition-all delay-300 ${
+							showDropdown && "rotate-180"
+						}`}
+					/>
 				</span>
 			</h4>
 			<div
-				className={`overflow-hidden ${
+				className={`overflow-hidden transition-all duration-300 ${
 					showDropdown ? "max-h-screen" : "max-h-0"
 				}`}
 			>
