@@ -19,6 +19,55 @@ const Zone = ({ projects }) => {
 	const [series, setSeries] = useState([]);
 
 	useEffect(() => {
+		const unitOptions = {
+			x_dim: "m",
+			y_dim: "m",
+			rotation_angle: "deg",
+			wwr_north: "%",
+			wwr_south: "%",
+			shading_type: "",
+			hvac: "",
+			wall_uvalue: "w/m.k",
+			roof_uvalue: "w/m.k",
+			floor_uvalue: "w/m.k",
+			window_uvalue: "w/m.k",
+			natural_ventilation: "",
+			south_neighbor_distance: "m",
+			south_neighbor_height: "m",
+			north_neighbor_distance: "m",
+			north_neighbor_height: "m",
+			number_of_floor: "",
+			south_wall_bc: "",
+			north_wall_bc: "",
+			east_wall_bc: "",
+			west_wall_bc: "",
+			floor_bc: "",
+			roof_bc: "",
+
+			coolingload: "kWh/m2",
+			heatingload: "kWh/m2",
+			electriclight: "kWh/m2",
+			fanger20: "",
+			fanger10: "",
+			adaptiveashrae80: "",
+			adaptiveashrae90: "",
+			adaptiveencalss2por: "",
+			overheatot_occupied_hours: "",
+			underheatot_occupied_hours: "",
+			verheatdbt_occupied_hours: "",
+			underheatdbt_occupied_hours: "",
+
+			reflectance_wall: "",
+			reflectance_celing: "",
+			reflectance_floor: "",
+			vt_glass: "",
+
+			udi: "",
+			mda: "",
+			svd: "",
+			ase: "",
+			sda: "",
+		};
 		const colorPallet = [
 			"#784AC1",
 			"#00C48C",
@@ -50,7 +99,11 @@ const Zone = ({ projects }) => {
 				) {
 					primaryData[item] = output[item];
 				} else {
-					outputData.push({ name: item, amt: output[item] });
+					outputData.push({
+						name: item,
+						amt: output[item],
+						unit: unitOptions[item],
+					});
 				}
 			}
 
