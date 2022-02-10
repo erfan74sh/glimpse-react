@@ -13,7 +13,6 @@ import Logo from "../../assets/images/logo-02.png";
 import FooterImage from "../../assets/images/footer-image.png";
 import Modal from "../../components/modal";
 import EstimationModal from "./EstimationModal";
-import ProjectHistoryModal from "../../components/ProjectHistoryModal";
 // icons
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
@@ -21,10 +20,6 @@ import "./Home.scss";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
-	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(false);
-	const handleShowProjectHistoryModal = () => {
-		setShowProjectHistoryModal(true);
-	};
 
 	return (
 		<>
@@ -36,27 +31,19 @@ const Home = () => {
 					<EstimationModal />
 				</Modal>
 			)}
-			{showProjectHistoryModal && (
-				<Modal
-					title="project history"
-					closeModal={() => setShowProjectHistoryModal(false)}
-				>
-					<ProjectHistoryModal />
-				</Modal>
-			)}
-			<Nav handleShowProjectHistoryModal={handleShowProjectHistoryModal} />
+			<Nav />
 			<header
-				className="relative flex flex-col items-center mt-10"
+				className="relative mt-10 flex flex-col items-center"
 				id="header__hero"
 			>
-				<div className="h-screen relative w-1/2">
+				<div className="relative h-screen w-1/2">
 					<section className="absolute bottom-44 left-0 w-max ">
-						<h1 className="mb-4 text-5xl text-white font-extrabold">
+						<h1 className="mb-4 text-5xl font-extrabold text-white">
 							platform title here
 						</h1>
 						<button
 							type="button"
-							className="px-9 py-4 bg-white rounded-b-full rounded-t-full text-lg text-blue-550 font-medium border-none outline-none hover:bg-blue-550 hover:text-white transition-all"
+							className="text-blue-550 hover:bg-blue-550 rounded-b-full rounded-t-full border-none bg-white px-9 py-4 text-lg font-medium outline-none transition-all hover:text-white"
 							onClick={() => setShowEstimateModal(true)}
 						>
 							calculate now
@@ -64,7 +51,7 @@ const Home = () => {
 					</section>
 				</div>
 				<section className="w-1/2 text-lg font-medium">
-					<h2 className="mb-2 text-center text-blue-550 font-bold">Glimpse</h2>
+					<h2 className="text-blue-550 mb-2 text-center font-bold">Glimpse</h2>
 					<p className="text-justify leading-6">
 						Civil engineering is a professional engineering discipline that
 						deals with the design, construction, and maintenance of the physical
@@ -78,54 +65,54 @@ const Home = () => {
 					</p>
 				</section>
 			</header>
-			<main className="bg-gray-100 mt-24">
+			<main className="mt-24 bg-gray-100">
 				<header className="bg-white text-center">
 					<h2 className="text-blue-550 font-medium">Work Frame</h2>
 				</header>
 				<div id="work-frame">
 					<section>
 						<header className="bg-white text-center">
-							<h3 className="text-2xl font-bold text-gray-650">
+							<h3 className="text-gray-650 text-2xl font-bold">
 								Our Working Process
 							</h3>
 						</header>
 						<ul className="flex justify-between px-56 py-16">
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
+								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
 									<img
 										src={SimulationIcon}
 										alt="icon"
-										className="w-1/2 h-1/2 object-contain"
+										className="h-1/2 w-1/2 object-contain"
 									/>
 								</div>
 								<span className="font-medium">Simulation</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
+								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
 									<img
 										src={AnalyzingIcon}
 										alt="icon"
-										className="w-1/2 h-1/2 object-contain"
+										className="h-1/2 w-1/2 object-contain"
 									/>
 								</div>
 								<span className="font-medium">Analysing</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
+								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
 									<img
 										src={DataSetIcon}
 										alt="icon"
-										className="w-1/2 h-1/2 object-contain"
+										className="h-1/2 w-1/2 object-contain"
 									/>
 								</div>
 								<span className="font-medium">Bulding Data-set</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
+								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
 									<img
 										src={MachineLearningIcon}
 										alt="icon"
-										className="w-1/2 h-1/2 object-contain"
+										className="h-1/2 w-1/2 object-contain"
 									/>
 								</div>
 								<span className="text-center font-medium">
@@ -134,11 +121,11 @@ const Home = () => {
 								</span>
 							</li>
 							<li className="flex flex-col items-center">
-								<div className="flex items-center justify-center w-32 h-32 rounded-full bg-gray-100 shadow-neo">
+								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
 									<img
 										src={ResultIcon}
 										alt="icon"
-										className="w-3/5 h-3/5 object-contain"
+										className="h-3/5 w-3/5 object-contain"
 									/>
 								</div>
 								<span className="font-medium">Results</span>
@@ -147,49 +134,49 @@ const Home = () => {
 					</section>
 					<section className="pt-20 pb-28">
 						<header className="pb-6">
-							<h3 className="text-2xl text-center font-bold text-blue-550">
+							<h3 className="text-blue-550 text-center text-2xl font-bold">
 								Number of Simulations
 							</h3>
 						</header>
 						<ul className="flex justify-center gap-x-24">
 							<li
 								id="structure-simulations"
-								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 							>
-								<span className="font-medium text-gray-650">Structure</span>
-								<span className="text-xl text-gray-600 font-bold">+7500</span>
+								<span className="text-gray-650 font-medium">Structure</span>
+								<span className="text-xl font-bold text-gray-600">+7500</span>
 							</li>
 							<li
 								id="energy-simulations"
-								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 							>
-								<span className="font-medium text-gray-650">Energy</span>
-								<span className="text-xl text-gray-600 font-bold">+5800</span>
+								<span className="text-gray-650 font-medium">Energy</span>
+								<span className="text-xl font-bold text-gray-600">+5800</span>
 							</li>
 							<li
 								id="ieq-simulations"
-								className="w-40 h-56 flex flex-col items-center gap-y-4 pt-4 text-lg rounded-lg"
+								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 							>
-								<span className="font-medium text-gray-650">IEQ</span>
-								<span className="text-xl text-gray-600 font-bold">+5900</span>
+								<span className="text-gray-650 font-medium">IEQ</span>
+								<span className="text-xl font-bold text-gray-600">+5900</span>
 							</li>
 						</ul>
 					</section>
 				</div>
 				<section className="pb-40">
 					<header className="flex flex-col-reverse items-center pb-36">
-						<h3 className="text-2xl font-bold text-gray-650">
+						<h3 className="text-gray-650 text-2xl font-bold">
 							Our Pricing Plans
 						</h3>
 						<span className="text-blue-550 font-medium">Best Pricing</span>
 					</header>
 					<section className="flex justify-center gap-x-12">
-						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-18 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+						<article className="group relative flex flex-col items-center">
+							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
 								<h5 className="text-xl font-medium">Basic</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>2 Calculation</li>
@@ -198,18 +185,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
+									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
-						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-18 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+						<article className="group relative flex flex-col items-center">
+							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
 								<span>12000</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
 								<h5 className="text-xl font-medium">Standard</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>15 Calculation</li>
@@ -220,18 +207,18 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
+									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
 								>
 									buy now
 								</button>
 							</section>
 						</article>
-						<article className="flex flex-col items-center relative group">
-							<header className=" absolute -top-18 flex flex-col items-center justify-center w-36 h-36 rounded-full text-xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+						<article className="group relative flex flex-col items-center">
+							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
 								<span>1200</span>
 								<span>Rls</span>
 							</header>
-							<section className="w-80 h-100 flex flex-col items-center gap-y-2 pt-20 pb-5 px-5 rounded-5xl bg-gray-100 shadow-neo border-2 border-gray-100 group-hover:border-blue-550 transition-all">
+							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
 								<h5 className="text-xl font-medium">Business</h5>
 								<ul className="flex flex-col items-center text-lg">
 									<li>30 Calculation</li>
@@ -244,7 +231,7 @@ const Home = () => {
 								</ul>
 								<button
 									type="button"
-									className="mt-auto py-1 px-4 rounded-full text-gray-600 font-medium bg-gray-100 shadow-neo-sm hover:bg-blue-550 hover:text-white transition-all"
+									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
 								>
 									buy now
 								</button>
@@ -254,44 +241,44 @@ const Home = () => {
 				</section>
 			</main>
 			<footer className="bg-gray-100 ">
-				<div className="pt-10 mx-80 border-t-2 border-blue-550 flex gap-x-28 relative">
+				<div className="border-blue-550 relative mx-80 flex gap-x-28 border-t-2 pt-10">
 					<section className="flex flex-col gap-y-8">
-						<h4 className="text-2xl font-medium text-gray-650">
+						<h4 className="text-gray-650 text-2xl font-medium">
 							want to talk with us?
 						</h4>
-						<ul className="flex flex-col justify-between gap-y-4 flex-grow">
+						<ul className="flex flex-grow flex-col justify-between gap-y-4">
 							<li className="flex items-center gap-x-3">
-								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 shadow-neo-sm">
+								<span className="shadow-neo-sm flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
 									<FontAwesomeIcon
 										icon={faPhoneAlt}
 										size="lg"
 										className="text-blue-550"
 									/>
 								</span>
-								<span className="text-gray-500 font-medium">
+								<span className="font-medium text-gray-500">
 									contact@glimpse.com
 								</span>
 							</li>
 							<li className="flex items-center gap-x-3">
-								<span className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 shadow-neo-sm">
+								<span className="shadow-neo-sm flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
 									<FontAwesomeIcon
 										icon={faEnvelope}
 										size="lg"
 										className="text-blue-550"
 									/>
 								</span>
-								<span className="text-gray-500 font-medium">0913-333-7004</span>
+								<span className="font-medium text-gray-500">0913-333-7004</span>
 							</li>
 						</ul>
 					</section>
 					<section className="flex flex-col gap-y-8">
-						<h4 className="text-2xl font-medium text-gray-650">Our Company</h4>
+						<h4 className="text-gray-650 text-2xl font-medium">Our Company</h4>
 						<nav className="flex-grow">
-							<ul className="h-full flex flex-col justify-between text-gray-500 ">
+							<ul className="flex h-full flex-col justify-between text-gray-500 ">
 								<li>
 									<Link
 										to="/"
-										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
 									>
 										About Us
 									</Link>
@@ -299,7 +286,7 @@ const Home = () => {
 								<li>
 									<Link
 										to=""
-										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
 									>
 										Contact Us
 									</Link>
@@ -307,7 +294,7 @@ const Home = () => {
 								<li>
 									<Link
 										to=""
-										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
 									>
 										Our Technology
 									</Link>
@@ -315,7 +302,7 @@ const Home = () => {
 								<li>
 									<Link
 										to=""
-										className="hover:text-gray-600 border-b-2 border-transparent hover:border-gray-600 transition-all"
+										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
 									>
 										Latest Paper
 									</Link>
@@ -323,22 +310,22 @@ const Home = () => {
 							</ul>
 						</nav>
 					</section>
-					<form className="flex flex-col gap-y-4 flex-grow">
+					<form className="flex flex-grow flex-col gap-y-4">
 						<input
 							type="email"
 							placeholder="Email Address"
-							className="py-3 px-4 bg-gray-100 shadow-neo rounded-full outline-none border-none"
+							className="shadow-neo rounded-full border-none bg-gray-100 py-3 px-4 outline-none"
 						/>
 						<textarea
 							placeholder="message"
-							className="py-3 px-4 bg-gray-100 shadow-neo rounded-2xl outline-none border-none flex-grow"
+							className="shadow-neo flex-grow rounded-2xl border-none bg-gray-100 py-3 px-4 outline-none"
 						/>
 					</form>
 				</div>
-				<img src={FooterImage} alt="" className="-mt-45 w-2/3 h-auto mx-auto" />
+				<img src={FooterImage} alt="" className="-mt-45 mx-auto h-auto w-2/3" />
 				<section className="flex flex-col items-center py-10">
-					<img src={Logo} alt="glimpse logo" className="w-48 h-auto" />
-					<p className="text-gray-500 text-sm font-normal">
+					<img src={Logo} alt="glimpse logo" className="h-auto w-48" />
+					<p className="text-sm font-normal text-gray-500">
 						Designed By Glimpse Team
 					</p>
 				</section>
