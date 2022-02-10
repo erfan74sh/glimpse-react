@@ -10,6 +10,19 @@ const ProjectHistoryModal = () => {
 			try {
 				const response = await visualComfortServices.getEstimations();
 				console.log(response.data);
+				//? get all projects in currentSubset
+				const allProjects = await response.data;
+				const list = Array.from(allProjects, (project) => project.project_name);
+				const uniqueListOfProjectWithZoneName = Array.from(
+					new Set(list),
+					(project) => {
+						const firstZone = allProjects.find(
+							(el) => el.project_name === project
+						).zone_name;
+						return { project_name: project, zone_name: firstZone };
+					}
+				);
+				setVisualComfortProjects(uniqueListOfProjectWithZoneName);
 			} catch (error) {
 				console.log("errore from projectHistoryModal:", error);
 			}
