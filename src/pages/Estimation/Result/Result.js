@@ -20,10 +20,19 @@ const Result = () => {
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	const [projectsList, setProjectsList] = useState([]);
 	useEffect(() => {
+		const subsetOptions = {
+			visual_comfort: "daylights",
+			thermal_comfort: "",
+			energy_consumption: "energies",
+			structure_design: "",
+		};
 		const getProjects = async () => {
-			const visualComfortData = await axios.get("/daylights/", {
-				headers: authHeader(),
-			});
+			const visualComfortData = await axios.get(
+				`/${subsetOptions[currentSubset]}/`,
+				{
+					headers: authHeader(),
+				}
+			);
 			//? get all projects in currentSubset
 			const allProjects = await visualComfortData.data;
 			const list = Array.from(allProjects, (project) => project.project_name);
@@ -32,7 +41,7 @@ const Result = () => {
 			setProjectsList(uniqueList);
 		};
 		getProjects();
-	}, []);
+	}, [currentSubset]);
 
 	const [zoneList, setZoneList] = useState([]);
 	// ! this useEffect is not efficient
