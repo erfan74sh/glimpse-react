@@ -34,51 +34,21 @@ const ProjectHistoryModal = () => {
 	);
 	return (
 		<ul className="flex flex-col gap-y-5 py-5">
-			<li className="w-133 shadow-full-sm rounded-md bg-white">
-				<Link
-					to="#"
-					className="flex items-center justify-between p-3 text-gray-600"
-				>
-					<span className="font-semibold ">1 - project name</span>
-					<span className="text-xs">Last edit :1/2/2022</span>
-				</Link>
-			</li>
-			<li className="w-133 shadow-full-sm rounded-md bg-white">
-				<Link
-					to="#"
-					className="flex items-center justify-between p-3 text-gray-600"
-				>
-					<span className="font-semibold ">1 - project name</span>
-					<span className="text-xs">Last edit :1/2/2022</span>
-				</Link>
-			</li>
-			<li className="w-133 shadow-full-sm rounded-md bg-white">
-				<Link
-					to="#"
-					className="flex items-center justify-between p-3 text-gray-600"
-				>
-					<span className="font-semibold ">1 - project name</span>
-					<span className="text-xs">Last edit :1/2/2022</span>
-				</Link>
-			</li>
-			<li className="w-133 shadow-full-sm rounded-md bg-white">
-				<Link
-					to="#"
-					className="flex items-center justify-between p-3 text-gray-600"
-				>
-					<span className="font-semibold ">1 - project name</span>
-					<span className="text-xs">Last edit :1/2/2022</span>
-				</Link>
-			</li>
-			<li className="w-133 shadow-full-sm rounded-md bg-white">
-				<Link
-					to="#"
-					className="flex items-center justify-between p-3 text-gray-600"
-				>
-					<span className="font-semibold ">1 - project name</span>
-					<span className="text-xs">Last edit :1/2/2022</span>
-				</Link>
-			</li>
+			{visualComfortProjects.map((project, idx) => {
+				return (
+					<li className="w-133 shadow-full-sm rounded-md bg-white">
+						<Link
+							to="#"
+							className="flex items-center justify-between p-3 text-gray-600"
+						>
+							<span className="font-semibold ">{`${idx + 1} _ ${
+								project.project_name
+							}`}</span>
+							<span className="text-xs">Last edit :1/2/2022</span>
+						</Link>
+					</li>
+				);
+			})}
 		</ul>
 	);
 };
