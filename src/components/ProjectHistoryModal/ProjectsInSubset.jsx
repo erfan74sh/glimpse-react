@@ -1,15 +1,21 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// services
 import visualComfortServices from "../../services/estimations/visualComfort.service";
+import energyConsumptionServices from "../../services/estimations/energyConsumption.service";
 
-const ProjectsInSubset = () => {
+const ProjectsInSubset = ({ subset }) => {
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await visualComfortServices.getEstimations();
-				console.log(response.data);
+				// todo: change condition for other subsets
+				const response =
+					subset === "visual comfort"
+						? await visualComfortServices.getEstimations()
+						: await energyConsumptionServices.getEstimations();
+
 				//? get all projects in currentSubset
 				const allProjects = await response.data;
 				const list = Array.from(allProjects, (project) => project.project_name);
@@ -22,13 +28,14 @@ const ProjectsInSubset = () => {
 						return { project_name: project, zone_name: firstZone };
 					}
 				);
+
 				setProjectsInSubset(uniqueListOfProjectWithZoneName);
 			} catch (error) {
 				console.log("errore from projectHistoryModal:", error);
 			}
 		};
 		fetchData();
-	}, []);
+	}, [subset]);
 	return (
 		<ul className="flex flex-col gap-y-5 py-5">
 			{projectsInSubset.map((project, idx) => {
