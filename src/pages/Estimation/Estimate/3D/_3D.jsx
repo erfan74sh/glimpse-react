@@ -242,7 +242,7 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 							yDim={yDim}
 							dimentions={southWindowDimentions}
 						/>
-						{shadingType === "horizontal louvre" && (
+						{shadingType === "2" && (
 							<group>
 								<ShaderType1
 									xDim={xDim}
@@ -264,13 +264,13 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 								/>
 							</group>
 						)}
-						{shadingType === "horizontal" && (
+						{shadingType === "1" && (
 							<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
 						)}
-						{shadingType === "vertical" && (
+						{shadingType === "3" && (
 							<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
 						)}
-						{shadingType === "all modes" && (
+						{shadingType === "4" && (
 							<group>
 								<ShaderType1
 									xDim={xDim}
