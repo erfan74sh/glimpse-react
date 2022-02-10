@@ -10,10 +10,18 @@ const EnergyConsumptionGrades = ({ alternatives }) => {
 			let tempData = {};
 			const data = alter.data.filter(
 				(v) =>
-					v.name === "udi" ||
-					v.name === "sda" ||
-					v.name === "ase" ||
-					v.name === "svd"
+					v.name === "coolingload" ||
+					v.name === "heatingload" ||
+					v.name === "electriclight" ||
+					v.name === "fanger20" ||
+					v.name === "fanger10" ||
+					v.name === "adaptiveashrae80" ||
+					v.name === "adaptiveashrae90" ||
+					v.name === "adaptiveencalss2por" ||
+					v.name === "overheatot_occupied_hours" ||
+					v.name === "underheatot_occupied_hours" ||
+					v.name === "verheatdbt_occupied_hours" ||
+					v.name === "underheatdbt_occupied_hours"
 			);
 			data.forEach((element) => {
 				tempData[element.name] = element.amt;
