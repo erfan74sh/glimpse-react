@@ -3,12 +3,12 @@ import {
 	Page,
 	Text,
 	View,
-	Image,
+	// Image,
 	Document,
 	StyleSheet,
 } from "@react-pdf/renderer";
 
-import img from "../../../../assets/images/3dmodel-result.png";
+// import img from "../../../../assets/images/3dmodel-result.png";
 
 // Create styles
 const styles = StyleSheet.create({
