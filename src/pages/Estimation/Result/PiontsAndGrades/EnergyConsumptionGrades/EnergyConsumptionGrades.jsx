@@ -1,24 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+// components
+import PointAndGrade from "./PointAndGrade";
 
-const EnergyConsumptionGrades = () => {
+const EnergyConsumptionGrades = ({ alternatives }) => {
+	const [outputData, setOutputData] = useState([]);
+	useEffect(() => {
+		const tempOutput = [];
+		alternatives.forEach((alter) => {
+			let tempData = {};
+			const data = alter.data.filter(
+				(v) =>
+					v.name === "udi" ||
+					v.name === "sda" ||
+					v.name === "ase" ||
+					v.name === "svd"
+			);
+			data.forEach((element) => {
+				tempData[element.name] = element.amt;
+			});
+			tempOutput.push({
+				name: alter.name,
+				id: alter.id,
+				stroke: alter.stroke,
+				outputs: tempData,
+			});
+		});
+		console.log(tempOutput);
+		setOutputData(tempOutput);
+	}, [alternatives]);
+
 	return (
 		<>
-			<li className="flex gap-x-1">
-				<span className="text-blue-550 font-medium capitalize">{`cooling load >`}</span>
-				<span>
-					your Alternative can earn{" "}
-					<span className="text-blue-550 font-medium">EC++</span> from 19th
-					topic of National Building Regulations of Iran
-				</span>
-			</li>
-			<li className="flex gap-x-1">
-				<span className="text-blue-550 font-medium capitalize">{`heating load >`}</span>
-				<span>
-					your Alternative can earn{" "}
-					<span className="text-blue-550 font-medium">EC++</span> from 19th
-					topic of National Building Regulations of Iran
-				</span>
-			</li>
+			{outputData.map((alt, idx) => {
+				return (
+					<article key={idx}>
+						<PointAndGrade alt={alt} />
+					</article>
+				);
+			})}
 		</>
 	);
 };
