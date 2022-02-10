@@ -7,8 +7,13 @@ const estimate = (energyConsumptionInputs) => {
 	});
 };
 
+const getEstimations = () => {
+	return axios.get("/energies/", { headers: authHeader() });
+};
+
 const energyConsumptionServices = {
 	estimate,
+	getEstimations,
 };
 
 export default energyConsumptionServices;
