@@ -30,7 +30,7 @@ const Subset = () => {
 			selectOptions={
 				high_performance_building_index === "IEQ"
 					? ieqSubset
-					: high_performance_building_index === "structure"
+					: high_performance_building_index === "Structure"
 					? structureSubset
 					: energyWaterSubset
 			}
@@ -45,8 +45,8 @@ const Subset = () => {
 const StepOne = ({ nextStep, formData }) => {
 	const highPerformanceBuildingsOptions = [
 		{ label: "IEQ", value: "IEQ" },
-		{ label: "structure", value: "structure" },
-		{ label: "energy and water", value: "energy_and_water" },
+		{ label: "structure", value: "Structure" },
+		{ label: "energy and water", value: "Energy_and_water" },
 	];
 	const buildingProgramOptions = [
 		{ label: "office" },
@@ -66,7 +66,7 @@ const StepOne = ({ nextStep, formData }) => {
 					.string()
 					.required("please select one")
 					.oneOf(
-						["IEQ", "structure", "energy_and_water"],
+						["IEQ", "Structure", "Energy_and_water"],
 						"pick from provided list"
 					),
 				subset: yup
