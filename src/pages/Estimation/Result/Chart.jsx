@@ -98,7 +98,7 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 				{payload.map((p, i) => {
 					return (
 						<p
-							key={p.name}
+							key={i}
 							style={{ color: color[i] }}
 							className="text-xs font-medium"
 						>{`${p.name} : ${
@@ -120,14 +120,14 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 const CustomLegend = ({ payload, changeOpacity, resetOpacity }) => {
 	return (
 		<ul className="flex flex-col content-center gap-y-2">
-			{payload.map((entry) => {
+			{payload.map((entry, idx) => {
 				return (
 					<li
 						className="cursor-pointer rounded-lg px-1 py-0.5 text-xs font-normal capitalize text-white"
 						style={{ backgroundColor: entry.color }}
 						onMouseEnter={changeOpacity}
 						onMouseLeave={resetOpacity}
-						key={entry.value}
+						key={idx}
 					>
 						{entry.value}
 					</li>
@@ -150,7 +150,6 @@ const Chart = ({ series }) => {
 	const handleMouseEnterLegend = (e) => {
 		let tempState = { ...lineOpacity };
 		for (let name in tempState) {
-			console.log(name);
 			if (name !== e.target.innerHTML) {
 				tempState[name] = 0.2;
 			}
