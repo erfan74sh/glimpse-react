@@ -45,10 +45,18 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 		payload.value === "heating load" ||
 		payload.value === "electric light" ||
 		payload.value === "udi" ||
-		payload.value === "sda" ||
-		payload.value === "ase" ||
-		payload.value === "svd" ||
-		payload.value === "mda"
+		payload.value === "coolingload" ||
+		payload.value === "heatingload" ||
+		payload.value === "electriclight" ||
+		payload.value === "fanger20" ||
+		payload.value === "fanger10" ||
+		payload.value === "adaptiveashrae80" ||
+		payload.value === "adaptiveashrae90" ||
+		payload.value === "adaptiveencalss2por" ||
+		payload.value === "overheatot_occupied_hours" ||
+		payload.value === "underheatot_occupied_hours" ||
+		payload.value === "verheatdbt_occupied_hours" ||
+		payload.value === "underheatdbt_occupied_hours"
 	) {
 		stroke = "#4093E1";
 		fontWeight = 700;
