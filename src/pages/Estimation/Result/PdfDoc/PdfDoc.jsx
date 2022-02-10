@@ -47,13 +47,28 @@ const styles = StyleSheet.create({
 		fontWeight: "normal",
 		textTransform: "capitalize",
 	},
+	test: {
+		maxWidth: "100%",
+	},
 });
 
-const PdfDoc = () => {
+const PdfDoc = ({ data }) => {
+	const ouputs = data.data;
+	console.log(data);
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>
 				<View>
+					<Text
+						style={styles.header}
+					>{`${data.subset}>${data.project_name}>${data.zone_name}>${data.alternative_name}>`}</Text>
+				</View>
+				<View>
+					{ouputs.map((output, idx) => {
+						return <Text key={idx}>{JSON.stringify(output)}</Text>;
+					})}
+				</View>
+				{/* <View>
 					<Text style={styles.header}>output_1</Text>
 				</View>
 				<View style={styles.container}>
@@ -110,7 +125,7 @@ const PdfDoc = () => {
 					<View style={styles.imageSec}>
 						<Image src={img} />
 					</View>
-				</View>
+				</View> */}
 			</Page>
 		</Document>
 	);
