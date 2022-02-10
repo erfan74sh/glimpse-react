@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProjectHistoryModal = () => {
+	const [visualComfortProjects, setVisualComfortProjects] = useState([]);
+	useEffect(() => {
+		console.log("test");
+	}, []);
+	const [energyConsumptionProjects, setEnergyConsumptionProjects] = useState(
+		[]
+	);
 	return (
 		<ul className="flex flex-col gap-y-5 py-5">
-			<li className="w-133 bg-white shadow-full-sm rounded-md">
+			<li className="w-133 shadow-full-sm rounded-md bg-white">
 				<Link
 					to="#"
 					className="flex items-center justify-between p-3 text-gray-600"
@@ -13,7 +21,7 @@ const ProjectHistoryModal = () => {
 					<span className="text-xs">Last edit :1/2/2022</span>
 				</Link>
 			</li>
-			<li className="w-133 bg-white shadow-full-sm rounded-md">
+			<li className="w-133 shadow-full-sm rounded-md bg-white">
 				<Link
 					to="#"
 					className="flex items-center justify-between p-3 text-gray-600"
@@ -22,7 +30,7 @@ const ProjectHistoryModal = () => {
 					<span className="text-xs">Last edit :1/2/2022</span>
 				</Link>
 			</li>
-			<li className="w-133 bg-white shadow-full-sm rounded-md">
+			<li className="w-133 shadow-full-sm rounded-md bg-white">
 				<Link
 					to="#"
 					className="flex items-center justify-between p-3 text-gray-600"
@@ -31,7 +39,7 @@ const ProjectHistoryModal = () => {
 					<span className="text-xs">Last edit :1/2/2022</span>
 				</Link>
 			</li>
-			<li className="w-133 bg-white shadow-full-sm rounded-md">
+			<li className="w-133 shadow-full-sm rounded-md bg-white">
 				<Link
 					to="#"
 					className="flex items-center justify-between p-3 text-gray-600"
@@ -40,7 +48,7 @@ const ProjectHistoryModal = () => {
 					<span className="text-xs">Last edit :1/2/2022</span>
 				</Link>
 			</li>
-			<li className="w-133 bg-white shadow-full-sm rounded-md">
+			<li className="w-133 shadow-full-sm rounded-md bg-white">
 				<Link
 					to="#"
 					className="flex items-center justify-between p-3 text-gray-600"
