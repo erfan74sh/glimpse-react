@@ -27,14 +27,11 @@ const Result = () => {
 			structure_design: "",
 		};
 		const getProjects = async () => {
-			const visualComfortData = await axios.get(
-				`/${subsetOptions[currentSubset]}/`,
-				{
-					headers: authHeader(),
-				}
-			);
+			const fetchData = await axios.get(`/${subsetOptions[currentSubset]}/`, {
+				headers: authHeader(),
+			});
 			//? get all projects in currentSubset
-			const allProjects = await visualComfortData.data;
+			const allProjects = await fetchData.data;
 			const list = Array.from(allProjects, (project) => project.project_name);
 			const uniqueList = Array.from(new Set(list));
 			setProjectsInSubset(allProjects);
