@@ -75,7 +75,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 	// console.log(payload);
 	if (active && payload && payload.length) {
 		return (
-			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-50 p-3">
+			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-80 p-3">
 				<h4 className="text-blue-550 text-sm font-semibold">{label}</h4>
 				{payload.map((p, i) => {
 					return (
