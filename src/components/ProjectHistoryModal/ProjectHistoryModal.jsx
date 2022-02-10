@@ -1,11 +1,20 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import visualComfortServices from "../../services/estimations/visualComfort.service";
 
 const ProjectHistoryModal = () => {
 	const [visualComfortProjects, setVisualComfortProjects] = useState([]);
 	useEffect(() => {
-		console.log("test");
+		const fetchData = async () => {
+			try {
+				const response = await visualComfortServices.getEstimations();
+				console.log(response.data);
+			} catch (error) {
+				console.log("errore from projectHistoryModal:", error);
+			}
+		};
+		fetchData();
 	}, []);
 	const [energyConsumptionProjects, setEnergyConsumptionProjects] = useState(
 		[]
