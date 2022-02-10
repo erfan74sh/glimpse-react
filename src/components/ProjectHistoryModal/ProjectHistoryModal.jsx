@@ -36,7 +36,7 @@ const ProjectHistoryModal = () => {
 		<ul className="flex flex-col gap-y-5 py-5">
 			{visualComfortProjects.map((project, idx) => {
 				return (
-					<li className="w-133 shadow-full-sm rounded-md bg-white">
+					<li className="w-133 shadow-full-sm rounded-md bg-white" key={idx}>
 						<Link
 							to="#"
 							className="flex items-center justify-between p-3 text-gray-600"
