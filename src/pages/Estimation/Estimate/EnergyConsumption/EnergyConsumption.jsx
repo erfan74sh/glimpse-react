@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
@@ -23,6 +23,7 @@ import energyConsumptionServices from "../../../../services/estimations/energyCo
 
 const EnergyConsumption = () => {
 	const primData = useSelector(selectPrimaryData);
+	const { subset, project_name, zone_name } = primData;
 	const inputData = useSelector(selectEnergyConsumptionData);
 	console.log(primData, inputData);
 	const navigate = useNavigate();
@@ -45,14 +46,14 @@ const EnergyConsumption = () => {
 				...primData,
 			});
 			console.log(response.data);
-			// navigate({
-			// 	pathname: "/result",
-			// 	search: `?${createSearchParams({
-			// 		subset,
-			// 		project_name,
-			// 		zone_name,
-			// 	})}`,
-			// });
+			navigate({
+				pathname: "/result",
+				search: `?${createSearchParams({
+					subset,
+					project_name,
+					zone_name,
+				})}`,
+			});
 		} catch (err) {
 			console.log("errore from visual comfort service", err);
 		}
