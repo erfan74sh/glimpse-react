@@ -97,7 +97,7 @@ const Zone = ({ projects }) => {
 							<span className="ml-1 text-xs">({entry.date})</span>
 							<button className="ml-4">
 								<PDFDownloadLink
-									document={<PdfDoc />}
+									document={<PdfDoc data={entry} />}
 									fileName={`${entry.name}.pdf`}
 								>
 									<FontAwesomeIcon
