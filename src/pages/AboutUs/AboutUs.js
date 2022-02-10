@@ -15,6 +15,7 @@ import pic09 from "./../../assets/profile/09.png";
 import pic10 from "./../../assets/profile/10.jpg";
 import pic11 from "./../../assets/profile/11.jpg";
 import pic12 from "./../../assets/profile/12.jpg";
+import pic13 from "./../../assets/profile/13.jpg";
 
 const AboutUs = () => {
 	const members = [
@@ -89,6 +90,12 @@ const AboutUs = () => {
 			education: "Master of Software engineer",
 			activityScope: "backend developer",
 			image: pic12,
+		},
+		{
+			fullName: "Parsa Bagherzadeh",
+			education: "phd of computer science",
+			activityScope: "Artificial Intelligence",
+			image: pic13,
 		},
 	];
 
