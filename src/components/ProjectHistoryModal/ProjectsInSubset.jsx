@@ -42,8 +42,8 @@ const ProjectsInSubset = ({ subset }) => {
 		<article>
 			<h4 className="flex items-center justify-between border-b-2">
 				<span>{subset}</span>
-				<span>
-					<FontAwesomeIcon icon={faCaretDown} />
+				<span className="px-2">
+					<FontAwesomeIcon icon={faCaretDown} className="text-gray-500" />
 				</span>
 			</h4>
 			<ul className="flex flex-col gap-y-5 py-5 px-2">
