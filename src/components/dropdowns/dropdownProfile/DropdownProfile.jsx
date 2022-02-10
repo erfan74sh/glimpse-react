@@ -20,11 +20,11 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 		<ul
 			className={`${
 				showDropdown ? "max-h-screen" : "max-h-0"
-			} absolute flex flex-col px-3 text-gray-500 font-normal bg-white shadow-full-sm top-full right-0 w-max divide-y-2 capitalize rounded-md transform translate-y-9 overflow-hidden z-10 transition-all`}
+			} shadow-full-sm absolute top-full right-0 z-10 flex w-max translate-y-9 transform flex-col divide-y-2 overflow-hidden rounded-md bg-white px-3 font-normal capitalize text-gray-500 transition-all`}
 		>
 			<li>
 				<Link to="/profile" className="flex gap-x-4 px-2 py-4">
-					<img src={ProfileIcon} alt="profile icon" className="w-6 h-auto" />
+					<img src={ProfileIcon} alt="profile icon" className="h-auto w-6" />
 					<span>profile</span>
 				</Link>
 			</li>
@@ -35,13 +35,13 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 				}}
 			>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
-					<img src={ProjectHistory} alt="profile icon" className="w-6 h-auto" />
+					<img src={ProjectHistory} alt="profile icon" className="h-auto w-6" />
 					<span>projects history</span>
 				</Link>
 			</li>
 			<li>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
-					<img src={ChargeIcon} alt="charge icon" className="w-6 h-auto" />
+					<img src={ChargeIcon} alt="charge icon" className="h-auto w-6" />
 					<span>charge account</span>
 				</Link>
 			</li>
@@ -51,7 +51,7 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 					className="flex gap-x-4 px-2 py-4"
 					onClick={handleLogout}
 				>
-					<img src={SignOutIcon} alt="sign out icon" className="w-6 h-auto" />
+					<img src={SignOutIcon} alt="sign out icon" className="h-auto w-6" />
 					<span className="text-red-350">logout</span>
 				</Link>
 			</li>
