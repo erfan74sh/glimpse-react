@@ -12,6 +12,7 @@ import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 const Zone = ({ projects }) => {
 	const [searchParams] = useSearchParams();
+	const currentSubset = searchParams.get("subset");
 	const currentProject = searchParams.get("project_name");
 	const currentZone = searchParams.get("zone_name");
 
@@ -79,7 +80,7 @@ const Zone = ({ projects }) => {
 			<section className="max-h-152 flex items-center justify-center overflow-hidden">
 				<Chart series={series} />
 			</section>
-			<PointsAndGrades subset="visual comfort" alternatives={series} />
+			<PointsAndGrades subset={currentSubset} alternatives={series} />
 			<section className="mt-20 flex h-96 flex-col px-40">
 				<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 					<h2>alternatives</h2>
