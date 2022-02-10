@@ -148,25 +148,8 @@ const Chart = ({ series }) => {
 	};
 
 	const getValue = (data) => {
-		let val;
-		switch (data.name) {
-			case "X- Dimention":
-				val = `${data.amt}m`;
-				break;
-			case "Y- Dimention":
-				val = `${data.amt}m`;
-				break;
-			case "Material":
-				val = `type ${data.amt / 10}`;
-				break;
-			case "Shading":
-				val = `type ${data.amt / 10}`;
-				break;
-			default:
-				val = `${data.amt}%`;
-				break;
-		}
-		return val;
+		let value = data.amt + data.unit;
+		return value;
 	};
 
 	return (
