@@ -72,24 +72,7 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 };
 
 const CustomTooltip = ({ active, payload, label }) => {
-	let title;
-	switch (label) {
-		case "X- Dimention":
-			title = "m";
-			break;
-		case "Y- Dimention":
-			title = "m";
-			break;
-		case "Material":
-			title = `type`;
-			break;
-		case "Shading":
-			title = `type`;
-			break;
-		default:
-			title = `%`;
-			break;
-	}
+	// console.log(payload);
 	if (active && payload && payload.length) {
 		return (
 			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-50 p-3">
@@ -106,7 +89,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 								: label === "Material"
 								? p.value / 10
 								: p.value
-						} ${title}`}</p>
+						} ${p.payload.unit}`}</p>
 					);
 				})}
 			</div>
@@ -208,6 +191,7 @@ const Chart = ({ series }) => {
 								strokeWidth="2"
 								strokeOpacity={lineOpacity[s.name]}
 								dot={<CustomizedDot />}
+								unit="m"
 							>
 								<LabelList dataKey={getValue} content={renderCustomeLabel} />
 							</Line>
