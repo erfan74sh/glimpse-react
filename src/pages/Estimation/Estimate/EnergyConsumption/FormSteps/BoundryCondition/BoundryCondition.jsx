@@ -64,11 +64,14 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 		);
 	};
 
-	const WallOptions = [{ label: "adiabatic" }, { label: "outdoor" }];
+	const WallOptions = [
+		{ label: "adiabatic", value: "0" },
+		{ label: "outdoor", value: "1" },
+	];
 	const floorOptions = [
-		{ label: "adiabatic" },
-		{ label: "outdoor" },
-		{ label: "ground" },
+		{ label: "adiabatic", value: "0" },
+		{ label: "outdoor", value: "1" },
+		{ label: "ground", value: "2" },
 	];
 
 	return (
@@ -82,27 +85,27 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 			validationSchema={yup.object({
 				east_wall_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.oneOf(["0", "1"], "choose from list")
 					.required("required"),
 				west_wall_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.oneOf(["0", "1"], "choose from list")
 					.required("required"),
 				north_wall_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.oneOf(["0", "1"], "choose from list")
 					.required("required"),
 				south_wall_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.oneOf(["0", "1"], "choose from list")
 					.required("required"),
 				roof_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor"], "choose from list")
+					.oneOf(["0", "1"], "choose from list")
 					.required("required"),
 				floor_bc: yup
 					.string()
-					.oneOf(["adiabatic", "outdoor", "ground"], "choose from list")
+					.oneOf(["0", "1", "2"], "choose from list")
 					.required("required"),
 			})}
 		>
