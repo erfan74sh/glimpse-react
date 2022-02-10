@@ -33,7 +33,6 @@ const EnergyConsumptionGrades = ({ alternatives }) => {
 				outputs: tempData,
 			});
 		});
-		console.log(tempOutput);
 		setOutputData(tempOutput);
 	}, [alternatives]);
 
