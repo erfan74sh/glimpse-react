@@ -7,8 +7,13 @@ const estimate = (visualComfortInputs) => {
 	});
 };
 
+const getEstimations = () => {
+	return axios.get("/daylights/", { headers: authHeader() });
+};
+
 const visualComfortServices = {
 	estimate,
+	getEstimations,
 };
 
 export default visualComfortServices;
