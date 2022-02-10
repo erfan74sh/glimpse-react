@@ -16,14 +16,15 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // state
-import { selectInput } from "../../../../features/data/inputDataSlice";
+import { selectEnergyConsumptionData } from "../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 
 const EnergyConsumption = () => {
 	const primData = useSelector(selectPrimaryData);
-	const inputData = useSelector(selectInput);
+	const inputData = useSelector(selectEnergyConsumptionData);
+	console.log(primData, inputData);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
