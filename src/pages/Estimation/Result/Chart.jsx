@@ -71,9 +71,8 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 	);
 };
 
-const CustomTooltip = ({ active, payload, label, stroke }) => {
+const CustomTooltip = ({ active, payload, label }) => {
 	let title;
-	let color = ["#784AC1", "#00C48C"];
 	switch (label) {
 		case "X- Dimention":
 			title = "m";
@@ -99,7 +98,7 @@ const CustomTooltip = ({ active, payload, label, stroke }) => {
 					return (
 						<p
 							key={i}
-							style={{ color: color[i] }}
+							style={{ color: p.stroke }}
 							className="text-xs font-medium"
 						>{`${p.name} : ${
 							label === "Shading"
