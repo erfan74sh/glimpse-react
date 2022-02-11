@@ -72,7 +72,13 @@ const ProjectsInSubset = ({ subset }) => {
 								<Link
 									to={{
 										pathname: "/result",
-										search: `?subset=visual_comfort&project_name=${project.project_name}&zone_name=${project.zone_name}`,
+										search: `?subset=${
+											subset === "visual comfort"
+												? "visual_comfort"
+												: "energy_consumption"
+										}&project_name=${project.project_name}&zone_name=${
+											project.zone_name
+										}`,
 									}}
 									target="_blank"
 									className="flex items-center justify-between p-3 text-gray-600"
