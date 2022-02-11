@@ -45,6 +45,10 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 		payload.value === "heating load" ||
 		payload.value === "electric light" ||
 		payload.value === "udi" ||
+		payload.value === "mda" ||
+		payload.value === "svd" ||
+		payload.value === "ase" ||
+		payload.value === "sda" ||
 		payload.value === "coolingload" ||
 		payload.value === "heatingload" ||
 		payload.value === "electriclight" ||
