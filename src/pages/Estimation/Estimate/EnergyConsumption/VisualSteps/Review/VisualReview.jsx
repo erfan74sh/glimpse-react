@@ -87,78 +87,32 @@ const VisualReview = () => {
 					review
 				</h2>
 				<ul className="flex flex-col gap-y-2">
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							east wall boundry condition:
-						</span>
-						<span>{data.east_wall_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							west wall boundry condition:
-						</span>
-						<span>{data.west_wall_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							south wall boundry condition:
-						</span>
-						<span>{data.south_wall_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							north wall boundry condition:
-						</span>
-						<span>{data.north_wall_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							roof boundry condition:
-						</span>
-						<span>{data.roof_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							floor boundry condition:
-						</span>
-						<span>{data.floor_bc}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							south neighbor distance:
-						</span>
-						<span>{data.south_neighbor_distance}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							south neighbor height:
-						</span>
-						<span>{data.south_neighbor_height}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							north neighbor distance:
-						</span>
-						<span>{data.north_neighbor_distance}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							north neighbor height:
-						</span>
-						<span>{data.north_neighbor_height}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							HVAC system:
-						</span>
-						<span>{data.hvac}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							natural ventilation:
-						</span>
-						<span>{data.natural_ventilation}</span>
-					</li>
+					{fullData.map((item, idx) => {
+						return (
+							<li
+								className="text-gray-650 flex justify-between border-b border-gray-400"
+								key={idx}
+							>
+								<span className="font-semibold capitalize text-gray-900">
+									{item.label}:
+								</span>
+								<div>
+									<span>
+										{typeof item.value === "object"
+											? item.value[data[item.name]]
+											: data[item.name] === "true"
+											? "yes"
+											: data[item.name] === "false"
+											? "no"
+											: item.value}
+									</span>
+									<span className="text-sm normal-case text-gray-800">
+										{item.unit && ` ${item.unit}`}
+									</span>
+								</div>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 		</div>
