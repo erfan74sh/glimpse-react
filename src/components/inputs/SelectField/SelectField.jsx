@@ -55,7 +55,7 @@ const SelectField = ({
 	});
 
 	return (
-		<div className="relative flex flex-col gap-y-1 capitalize" ref={ref}>
+		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label className="flex items-center gap-x-1">
 				<span>{label}</span>
 				<span className="text-sm normal-case text-gray-700">
@@ -67,6 +67,7 @@ const SelectField = ({
 				onClick={() => {
 					setShowDropdown(!showDropdown);
 				}}
+				ref={ref}
 				className={`flex items-center justify-between border bg-white p-2 ${
 					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
 				}  rounded-md outline-none`}
