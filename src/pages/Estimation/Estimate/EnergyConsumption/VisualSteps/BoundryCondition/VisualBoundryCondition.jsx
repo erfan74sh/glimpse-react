@@ -35,7 +35,7 @@ const VisualBoundryCondition = () => {
 						<li className="flex items-center gap-x-4">
 							<span className="inline-block h-7 w-7 rounded-lg bg-blue-400"></span>
 							<div className="flex gap-x-1">
-								<span>outdoor</span>
+								<span>external</span>
 								<MoreInfo moreInfo="دارای تبادل حرارتی با فضای بیرون" />
 							</div>
 						</li>

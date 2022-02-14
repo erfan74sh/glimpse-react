@@ -66,11 +66,11 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 
 	const WallOptions = [
 		{ label: "adiabatic", value: "0" },
-		{ label: "outdoor", value: "1" },
+		{ label: "external", value: "1" },
 	];
 	const floorOptions = [
 		{ label: "adiabatic", value: "0" },
-		{ label: "outdoor", value: "1" },
+		{ label: "external", value: "1" },
 		{ label: "ground", value: "2" },
 	];
 
