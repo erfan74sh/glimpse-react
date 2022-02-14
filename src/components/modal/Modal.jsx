@@ -1,21 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// hooks
 // icons
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({ closeModal, title, children }) => {
+	// ! if want to close modal onClicking outside =>
+	// ! => import useClickOutside hook and attach it's ref to section element bellow and
+	// ! it's second arg to closeModal function from props
 	return (
-		<div
-			className="h-screen w-screen fixed flex items-center justify-center bg-gray-500 bg-opacity-80 z-30"
-			onClick={closeModal}
-		>
-			<section
-				className="p-6 pt-7 bg-white rounded-lg"
-				onClick={(e) => {
-					e.stopPropagation();
-				}}
-			>
-				<header className="pb-1 px-1 flex justify-between items-center border-b border-gray-400">
+		<div className="fixed z-30 flex h-screen w-screen items-center justify-center bg-gray-500 bg-opacity-80">
+			<section className="rounded-lg bg-white p-6 pt-7">
+				<header className="flex items-center justify-between border-b border-gray-400 px-1 pb-1">
 					<h2 className="text-blue-550 font-medium capitalize">{title}</h2>
 					<button
 						className="w-8 text-gray-400 transition hover:text-gray-500"
