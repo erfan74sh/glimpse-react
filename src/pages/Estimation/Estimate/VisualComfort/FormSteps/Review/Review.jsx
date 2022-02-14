@@ -6,6 +6,49 @@ import { selectVisualComfortData } from "../../../../../../features/visualComfor
 const Review = ({ prevStep }) => {
 	const data = useSelector(selectVisualComfortData);
 
+	const fullData = [
+		{
+			name: "rotation_angle",
+			label: "rotation angle",
+			unit: "degree",
+			value: data.rotation_angle,
+		},
+		{ name: "x_dim", label: "width", unit: "m", value: data.x_dim },
+		{ name: "y_dim", label: "length", unit: "m", value: data.y_dim },
+		{ name: "wwr_north", label: "wwr_north", unit: "%", value: data.wwr_north },
+		{ name: "wwr_south", label: "wwr_south", unit: "%", value: data.wwr_south },
+		{
+			name: "shading_type",
+			label: "shading type",
+			unit: "",
+			value: {
+				1: "horizontal",
+				2: "horizontal louvre",
+				3: "vertical",
+				4: "all modes",
+			},
+		},
+		{
+			name: "reflectance_wall",
+			label: "reflectance wall",
+			unit: "",
+			value: data.reflectance_wall,
+		},
+		{
+			name: "reflectance_celing",
+			label: "reflectance ceiling",
+			unit: "",
+			value: data.reflectance_celing,
+		},
+		{
+			name: "reflectance_floor",
+			label: "reflectance floor",
+			unit: "",
+			value: data.reflectance_floor,
+		},
+		{ name: "vt_glass", label: "VT glass", unit: "", value: data.vt_glass },
+	];
+
 	return (
 		<div className="flex h-full flex-col">
 			<section className="mb-8 flex flex-col pr-10 ">
@@ -13,66 +56,28 @@ const Review = ({ prevStep }) => {
 					review
 				</h2>
 				<ul className="flex flex-col gap-y-2">
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							rotation:
-						</span>
-						<span>{data.rotation_angle}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							width:
-						</span>
-						<span>{data.x_dim}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							length:
-						</span>
-						<span>{data.y_dim}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							WWR-north:
-						</span>
-						<span>{data.wwr_north}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							WWR-south:
-						</span>
-						<span>{data.wwr_south}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							shading type:
-						</span>
-						<span>{data.shading_type}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							reflectance wall:
-						</span>
-						<span>{data.reflectance_wall}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							reflectance ceiling:
-						</span>
-						<span>{data.reflectance_celing}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							reflectance floor:
-						</span>
-						<span>{data.reflectance_floor}</span>
-					</li>
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
-						<span className="font-semibold capitalize text-gray-900">
-							VT glass:
-						</span>
-						<span>{data.vt_glass}</span>
-					</li>
+					{fullData.map((item, idx) => {
+						return (
+							<li
+								className="text-gray-650 flex justify-between border-b border-gray-400"
+								key={idx}
+							>
+								<span className="font-semibold capitalize text-gray-900">
+									{item.label}:
+								</span>
+								<div>
+									<span>
+										{typeof item.value !== "object"
+											? item.value
+											: item.value[data[item.name]]}
+									</span>
+									<span className="text-sm normal-case text-gray-800">
+										{item.unit && ` ${item.unit}`}
+									</span>
+								</div>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 			<section className="mt-auto flex justify-center gap-x-4 pr-10">
