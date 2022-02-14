@@ -66,7 +66,22 @@ const Review = ({ prevStep }) => {
 					review
 				</h2>
 				<ul className="flex flex-col gap-y-2">
-					<li className="text-gray-650 flex justify-between border-b border-gray-400">
+					{fullData.map((item, idx) => {
+						return (
+							<li className="text-gray-650 flex justify-between border-b border-gray-400">
+								<span className="font-semibold capitalize text-gray-900">
+									{item.label}
+									<span>{item.unit}</span>:
+								</span>
+								<span>
+									{typeof item.value !== "object"
+										? item.value
+										: item.value[data[item.name]]}
+								</span>
+							</li>
+						);
+					})}
+					{/* <li className="text-gray-650 flex justify-between border-b border-gray-400">
 						<span className="font-semibold capitalize text-gray-900">
 							floor:
 						</span>
@@ -131,7 +146,7 @@ const Review = ({ prevStep }) => {
 							window u-value:
 						</span>
 						<span>{data.window_uvalue}</span>
-					</li>
+					</li> */}
 				</ul>
 			</section>
 			<section className="mt-auto flex justify-center gap-x-4 pr-10">
