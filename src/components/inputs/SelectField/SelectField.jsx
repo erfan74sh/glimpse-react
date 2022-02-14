@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useField, useFormikContext } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
@@ -37,9 +37,23 @@ const SelectField = ({
 	unit,
 }) => {
 	const ref = useRef(null);
+
 	const [showDropdown, setShowDropdown] = useState(false);
-	const { errors, touched } = useFormikContext();
+
+	const { values, errors, touched } = useFormikContext();
+
 	const [selected, setSelected] = useState("");
+	useEffect(() => {
+		const selectedOption = selectOptions.filter((option) => {
+			return option.value
+				? option.value === values[name]
+				: option.label === values[name];
+		})?.[0];
+		if (selectedOption) {
+			setSelected(selectedOption.label);
+		}
+	}, [values, name, selectOptions]);
+
 	const handleSelected = (e) => {
 		const selectedOption = selectOptions.filter((option) => {
 			return option.value
