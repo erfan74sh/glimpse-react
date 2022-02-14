@@ -5,6 +5,59 @@ import { selectEnergyConsumptionData } from "../../../../../../features/energyCo
 
 const Review = ({ prevStep }) => {
 	const data = useSelector(selectEnergyConsumptionData);
+	const fullData = [
+		{
+			name: "number_of_floor",
+			label: "floor level",
+			unit: "",
+			value: data.number_of_floor,
+		},
+		{
+			name: "rotation_angle",
+			label: "rotation angle",
+			unit: "degree",
+			value: data.rotation_angle,
+		},
+		{ name: "x_dim", label: "width", unit: "m", value: data.x_dim },
+		{ name: "y_dim", label: "length", unit: "m", value: data.y_dim },
+		{ name: "wwr_north", label: "wwr_north", unit: "%", value: data.wwr_north },
+		{ name: "wwr_south", label: "wwr_south", unit: "%", value: data.wwr_south },
+		{
+			name: "shading_type",
+			label: "shading type",
+			unit: "",
+			value: {
+				1: "vertical",
+				2: "horizontal",
+				3: "horizontal louvers",
+				4: "all modes",
+			},
+		},
+		{
+			name: "wall_uvalue",
+			label: "wall U value",
+			unit: "",
+			value: data.wall_uvalue,
+		},
+		{
+			name: "floor_uvalue",
+			label: "floor U value",
+			unit: "",
+			value: data.floor_uvalue,
+		},
+		{
+			name: "roof_uvalue",
+			label: "roof U value",
+			unit: "",
+			value: data.roof_uvalue,
+		},
+		{
+			name: "window_uvalue",
+			label: "window U value",
+			unit: "",
+			value: data.window_uvalue,
+		},
+	];
 
 	return (
 		<div className="flex h-full flex-col">
