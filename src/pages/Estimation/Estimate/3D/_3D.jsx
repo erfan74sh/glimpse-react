@@ -5,8 +5,8 @@ import { OrbitControls } from "@react-three/drei";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { useLoader } from "@react-three/fiber";
-// state
-import { selectInput } from "../../../../features/data/inputDataSlice";
+// slice
+import { selectEnergyConsumptionData } from "../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
 const NorthSign = ({ xDim, yDim, rotation }) => {
 	const materials = useLoader(MTLLoader, "NorthSign.mtl");
@@ -192,7 +192,7 @@ const ShaderType3 = ({ yDim, dimentions }) => {
 };
 
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
-	const data = useSelector(selectInput);
+	const data = useSelector(selectEnergyConsumptionData);
 	const southWindowDimentions = {
 		width: (xDim / 10) * (wwrSouth / 100),
 		height: (3.5 / 10) * (3 / 5),
