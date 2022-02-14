@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useField, useFormikContext } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import MoreInfo from "../../moreInfo/MoreInfo";
+// hooks
+import useOutsideClick from "../../../hooks/useOutsideClick";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,7 +17,7 @@ const DropdownRadio = ({ handleValue, handleSelected, children, ...props }) => {
 				{...field}
 				{...props}
 				className="hidden"
-				onInput={(e) => {
+				onClick={(e) => {
 					handleValue(e.target.value);
 					handleSelected(e);
 				}}
@@ -34,6 +36,7 @@ const SelectField = ({
 	moreInfo,
 	unit,
 }) => {
+	const ref = useRef(null);
 	const [showDropdown, setShowDropdown] = useState(false);
 	const { errors, touched } = useFormikContext();
 	const [selected, setSelected] = useState("");
@@ -44,9 +47,15 @@ const SelectField = ({
 				: option.label === e.target.value;
 		})?.[0];
 		setSelected(selectedOption.label);
+		setShowDropdown(false);
 	};
+
+	useOutsideClick(ref, () => {
+		setShowDropdown(false);
+	});
+
 	return (
-		<div className="relative flex flex-col gap-y-1 capitalize">
+		<div className="relative flex flex-col gap-y-1 capitalize" ref={ref}>
 			<label className="flex items-center gap-x-1">
 				<span>{label}</span>
 				<span className="text-sm normal-case text-gray-700">
