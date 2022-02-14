@@ -15,7 +15,7 @@ import VisualMaterial from "./VisualSteps/Material";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
-// state
+// slice
 import { selectEnergyConsumptionData } from "../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
 // services
@@ -25,7 +25,6 @@ const EnergyConsumption = () => {
 	const primData = useSelector(selectPrimaryData);
 	const { subset, project_name, zone_name } = primData;
 	const inputData = useSelector(selectEnergyConsumptionData);
-	console.log(primData, inputData);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
