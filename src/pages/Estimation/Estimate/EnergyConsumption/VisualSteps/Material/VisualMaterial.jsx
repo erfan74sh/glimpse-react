@@ -53,7 +53,7 @@ const VisualMaterial = () => {
 	return (
 		<>
 			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
-				details
+				construction
 			</h2>
 			<div className="">
 				<div className="flex w-full flex-col justify-center gap-y-10 px-10 pt-5">
