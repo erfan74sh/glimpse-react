@@ -26,16 +26,8 @@ const NorthSign = ({ xDim, yDim, rotation }) => {
 
 const Box = ({ xDim, yDim, position, rotation, data }) => {
 	const mesh = useRef(null);
-	// console.log(xDim, yDim);
-	// const [expand, setExpand] = useState(false);
-
-	// const { scale } = useSpring({ scale: expand ? [1.5, 1.5, 1.5] : [1, 1, 1] });
 
 	return (
-		// <animated.mesh ref={mesh} scale={scale} onClick={() => setExpand(!expand)}>
-		// 	<boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-		// 	<meshStandardMaterial attach="material" color="blue" />
-		// </animated.mesh>
 		<mesh ref={mesh}>
 			<boxBufferGeometry
 				attach="geometry"
@@ -43,33 +35,33 @@ const Box = ({ xDim, yDim, position, rotation, data }) => {
 			/>
 			<meshStandardMaterial
 				attachArray="material"
-				color={data.eastWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={data.east_wall_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
-				color={data.westWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={data.west_wall_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
-				color={data.roofCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={data.roof_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
 				color={
-					data.floorCondition === "adiabatic"
+					data.floor_bc === "0"
 						? "#C79ACD"
-						: data.floorCondition === "outdoor"
+						: data.floor_bc === "1"
 						? "#4d6ab9"
 						: "#D6C27C"
 				}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
-				color={data.southWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={data.south_wall_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
-				color={data.northWallCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={data.north_wall_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 		</mesh>
 	);
@@ -106,7 +98,7 @@ const WindowNorth = ({ xDim, yDim, dimentions }) => {
 	);
 };
 
-const Roof = ({ xDim, yDim, roofCondition }) => {
+const Roof = ({ xDim, yDim, roof_bc }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.2 / 10 / 2, 0]}>
@@ -116,12 +108,12 @@ const Roof = ({ xDim, yDim, roofCondition }) => {
 			/>
 			<meshStandardMaterial
 				attach="material"
-				color={roofCondition === "adiabatic" ? "#C79ACD" : "#4d6ab9"}
+				color={roof_bc === "0" ? "#C79ACD" : "#4d6ab9"}
 			/>
 		</mesh>
 	);
 };
-const Floor = ({ xDim, yDim, floorCondition }) => {
+const Floor = ({ xDim, yDim, floor_bc }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 0.2 / 10 / 2, 0]}>
@@ -132,9 +124,9 @@ const Floor = ({ xDim, yDim, floorCondition }) => {
 			<meshStandardMaterial
 				attach="material"
 				color={
-					floorCondition === "adiabatic"
+					floor_bc === "0"
 						? "#C79ACD"
-						: floorCondition === "outdoor"
+						: floor_bc === "1"
 						? "#4d6ab9"
 						: "#D6C27C"
 				}
@@ -229,8 +221,8 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 				<directionalLight position={[1, 10, 5]} intensity={1.5} />
 				<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 				<Box xDim={xDim} yDim={yDim} data={data} />
-				<Roof xDim={xDim} yDim={yDim} roofCondition={data.roofCondition} />
-				<Floor xDim={xDim} yDim={yDim} floorCondition={data.floorCondition} />
+				<Roof xDim={xDim} yDim={yDim} roof_bc={data.roof_bc} />
+				<Floor xDim={xDim} yDim={yDim} floor_bc={data.floor_bc} />
 				<NorthSign xDim={xDim} yDim={yDim} rotation={rotation} />
 
 				{/* <TransformControls mode="scale">
