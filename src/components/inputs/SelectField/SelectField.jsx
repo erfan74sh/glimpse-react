@@ -48,8 +48,8 @@ const SelectField = ({
 	return (
 		<div className="relative flex flex-col gap-y-1 capitalize">
 			<label className="flex items-center gap-x-1">
-				<span>
-					{label}
+				<span>{label}</span>
+				<span className="text-sm normal-case text-gray-700">
 					{unit && ` (${unit})`}
 				</span>
 				{moreInfo && <MoreInfo moreInfo={moreInfo} />}

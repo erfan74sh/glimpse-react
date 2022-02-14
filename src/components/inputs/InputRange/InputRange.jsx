@@ -27,8 +27,9 @@ const InputRange = ({
 						meta.touched && meta.error ? "text-red-600" : ""
 					} flex items-center gap-x-1`}
 				>
-					<span>
-						{label} {unit && `(${unit})`}
+					<span>{label}</span>
+					<span className="text-sm normal-case text-gray-700">
+						{unit && ` (${unit})`}
 					</span>
 					{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 				</label>
@@ -47,7 +48,7 @@ const InputRange = ({
 				}}
 			/>
 			{meta.touched && meta.error && (
-				<span className="absolute bottom-0 left-1 transform translate-y-full text-xs text-red-600">
+				<span className="absolute bottom-0 left-1 translate-y-full transform text-xs text-red-600">
 					{meta.error}
 				</span>
 			)}
