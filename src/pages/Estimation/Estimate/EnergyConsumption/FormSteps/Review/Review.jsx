@@ -68,7 +68,10 @@ const Review = ({ prevStep }) => {
 				<ul className="flex flex-col gap-y-2">
 					{fullData.map((item, idx) => {
 						return (
-							<li className="text-gray-650 flex justify-between border-b border-gray-400">
+							<li
+								className="text-gray-650 flex justify-between border-b border-gray-400"
+								key={idx}
+							>
 								<span className="font-semibold capitalize text-gray-900">
 									{item.label}:
 								</span>
