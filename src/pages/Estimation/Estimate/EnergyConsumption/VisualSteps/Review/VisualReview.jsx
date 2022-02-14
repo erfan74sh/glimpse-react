@@ -10,37 +10,61 @@ const VisualReview = () => {
 			name: "east_wall_bc",
 			label: "east wall boundry condition",
 			unit: "",
-			value: data.east_wall_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "west_wall_bc",
 			label: "west wall boundry condition",
 			unit: "",
-			value: data.west_wall_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "south_wall_bc",
 			label: "south wall boundry condition",
 			unit: "",
-			value: data.south_wall_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "north_wall_bc",
 			label: "north wall boundry condition",
 			unit: "",
-			value: data.north_wall_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "roof_bc",
 			label: "roof boundry condition",
 			unit: "",
-			value: data.roof_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "floor_bc",
 			label: "floor boundry condition",
 			unit: "",
-			value: data.floor_bc,
+			value: {
+				0: "adiabatic",
+				1: "external",
+				2: "ground",
+			},
 		},
 		{
 			name: "north_neighbor_distance",
