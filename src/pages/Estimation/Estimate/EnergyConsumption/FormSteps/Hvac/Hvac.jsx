@@ -60,7 +60,6 @@ const Hvac = ({ nextStep, prevStep }) => {
 					.string()
 					.oneOf(["1", "2", "3", "4", "5", "6"], "choose from list")
 					.required("required"),
-				// natural_ventilation: yup.boolean().required("required"),
 			})}
 		>
 			<Form className="flex h-full flex-col">
