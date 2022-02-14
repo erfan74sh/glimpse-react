@@ -76,7 +76,7 @@ const Material = ({ nextStep, prevStep }) => {
 
 					<InputRange
 						name="reflectance_wall"
-						label="reflectan ce_wall"
+						label="Wall reflection"
 						min="0.2"
 						max="0.7"
 						step="0.05"
@@ -86,7 +86,7 @@ const Material = ({ nextStep, prevStep }) => {
 					/>
 					<InputRange
 						name="reflectance_celing"
-						label="reflectan ce_ceiling"
+						label="Ceiling reflection"
 						min="0.2"
 						max="0.7"
 						step="0.05"
@@ -96,7 +96,7 @@ const Material = ({ nextStep, prevStep }) => {
 					/>
 					<InputRange
 						name="reflectance_floor"
-						label="reflectan ce_floor"
+						label="Floor reflection"
 						min="0.2"
 						max="0.7"
 						step="0.05"
