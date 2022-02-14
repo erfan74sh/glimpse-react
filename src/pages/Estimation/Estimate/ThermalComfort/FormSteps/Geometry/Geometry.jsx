@@ -144,9 +144,9 @@ const Geometry = ({ nextStep }) => {
 					.required("pick one"),
 			})}
 		>
-			<Form className="h-full flex flex-col">
-				<fieldset className="flex flex-col gap-y-5 pr-10 mb-8">
-					<legend className="w-full mb-9 pb-4 border-b text-xl font-normal uppercase border-gray-500">
+			<Form className="flex h-full flex-col">
+				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
+					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 						geometry
 					</legend>
 					<SelectField
@@ -154,7 +154,7 @@ const Geometry = ({ nextStep }) => {
 						selectOptions={floorLevelOptions}
 						label="floor level"
 						placeholder="choose level"
-						moreInfo="طبقه"
+						moreInfo="شماره طبقه"
 						handleValue={handleFloorLevelValue}
 					/>
 					<InputRange
@@ -217,10 +217,10 @@ const Geometry = ({ nextStep }) => {
 						moreInfo="نوع سایبان"
 					/>
 				</fieldset>
-				<section className="flex justify-center gap-x-4 mt-auto pr-10">
+				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 px-5 py-1 text-white font-medium uppercase rounded-md bg-blue-550 border-2 border-blue-550"
+						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(material)</span>
 					</button>

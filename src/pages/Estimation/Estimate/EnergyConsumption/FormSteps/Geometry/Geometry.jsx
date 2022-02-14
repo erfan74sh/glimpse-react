@@ -143,7 +143,7 @@ const Geometry = ({ nextStep }) => {
 						selectOptions={floorLevelOptions}
 						label="floor level"
 						placeholder="choose level"
-						moreInfo="طبقه"
+						moreInfo="شماره طبقه"
 						handleValue={handleFloorLevelValue}
 					/>
 					<InputRange
