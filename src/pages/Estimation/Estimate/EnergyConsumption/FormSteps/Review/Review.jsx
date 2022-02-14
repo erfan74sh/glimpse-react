@@ -88,7 +88,7 @@ const Review = ({ prevStep }) => {
 					onClick={prevStep}
 					value="site plan"
 				>
-					prev <span className="text-xs lowercase">(SitePlan)</span>
+					prev <span className="text-xs lowercase">(ventilation)</span>
 				</button>
 			</section>
 		</div>

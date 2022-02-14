@@ -211,7 +211,7 @@ const Geometry = ({ nextStep }) => {
 						type="submit"
 						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
-						next <span className="text-xs lowercase">(material)</span>
+						next <span className="text-xs lowercase">(boundry condition)</span>
 					</button>
 				</section>
 			</Form>

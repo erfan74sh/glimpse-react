@@ -155,13 +155,13 @@ const Material = ({ nextStep, prevStep }) => {
 						value="geometry"
 						onClick={prevStep}
 					>
-						prev <span className="text-xs lowercase">(geometry)</span>
+						prev <span className="text-xs lowercase">(site plan)</span>
 					</button>
 					<button
 						type="submit"
 						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
-						next <span className="text-xs lowercase">(site plan)</span>
+						next <span className="text-xs lowercase">(ventilation)</span>
 					</button>
 				</section>
 			</Form>
