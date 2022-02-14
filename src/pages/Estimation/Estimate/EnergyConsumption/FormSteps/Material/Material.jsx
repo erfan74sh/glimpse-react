@@ -113,7 +113,7 @@ const Material = ({ nextStep, prevStep }) => {
 					</legend>
 					<SelectField
 						name="wall_uvalue"
-						label="Wall material"
+						label="Wall"
 						selectOptions={wallMaterialOptions}
 						placeholder="select type"
 						moreInfo="ضریب هدایتی دیوار"
@@ -122,7 +122,7 @@ const Material = ({ nextStep, prevStep }) => {
 					/>
 					<SelectField
 						name="roof_uvalue"
-						label="roof material"
+						label="roof"
 						selectOptions={roofMaterialOptions}
 						placeholder="select type"
 						moreInfo="ضریب هدایتی بام"
@@ -131,7 +131,7 @@ const Material = ({ nextStep, prevStep }) => {
 					/>
 					<SelectField
 						name="floor_uvalue"
-						label="Floor material"
+						label="Floor"
 						selectOptions={floorMaterialOptions}
 						placeholder="select type"
 						moreInfo="ضریب هدایتی کف"
@@ -141,7 +141,7 @@ const Material = ({ nextStep, prevStep }) => {
 					<SelectField
 						name="window_uvalue"
 						selectOptions={glassMaterialOptions}
-						label="window material"
+						label="window"
 						placeholder="select type"
 						moreInfo="ضریب هدایتی پنجره"
 						unit="w/m.k"
