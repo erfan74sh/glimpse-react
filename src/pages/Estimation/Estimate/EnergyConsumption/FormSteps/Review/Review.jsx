@@ -10,7 +10,14 @@ const Review = ({ prevStep }) => {
 			name: "number_of_floor",
 			label: "floor level",
 			unit: "",
-			value: data.number_of_floor,
+			value: {
+				0: "ground floor",
+				1: "1st floor",
+				2: "2nd floor",
+				3: "3rd floor",
+				4: "4th floor",
+				5: "5th floor",
+			},
 		},
 		{
 			name: "rotation_angle",
@@ -27,9 +34,9 @@ const Review = ({ prevStep }) => {
 			label: "shading type",
 			unit: "",
 			value: {
-				1: "vertical",
-				2: "horizontal",
-				3: "horizontal louvers",
+				1: "horizontal",
+				2: "horizontal louvre",
+				3: "vertical",
 				4: "all modes",
 			},
 		},
