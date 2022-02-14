@@ -74,19 +74,19 @@ const Geometry = ({ nextStep }) => {
 	};
 
 	const shadingOptions = [
-		{ label: "vertical", value: "3" },
 		{ label: "horizontal", value: "1" },
 		{ label: "horizontal louvre", value: "2" },
+		{ label: "vertical", value: "3" },
 		{ label: "all modes", value: "4" },
 	];
 
 	const floorLevelOptions = [
-		{ label: "0" },
-		{ label: "1" },
-		{ label: "2" },
-		{ label: "3" },
-		{ label: "4" },
-		{ label: "5" },
+		{ label: "ground floor", value: "0" },
+		{ label: "1st floor", value: "1" },
+		{ label: "2nd floor", value: "2" },
+		{ label: "3rd floor", value: "3" },
+		{ label: "4th floor", value: "4" },
+		{ label: "5th floor", value: "5" },
 	];
 
 	return (
