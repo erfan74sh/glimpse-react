@@ -69,10 +69,10 @@ const Review = ({ prevStep }) => {
 					{fullData.map((item, idx) => {
 						return (
 							<li className="text-gray-650 flex justify-between border-b border-gray-400">
-								<span className="font-semibold capitalize text-gray-900">
-									{item.label}
-									<span>{item.unit}</span>:
-								</span>
+								<div className="font-semibold capitalize text-gray-900">
+									<span>{item.label}</span>
+									<span>{item.unit && `(${item.unit})`}</span>:
+								</div>
 								<span>
 									{typeof item.value !== "object"
 										? item.value
