@@ -44,9 +44,9 @@ const Subset = () => {
 
 const StepOne = ({ nextStep, formData }) => {
 	const highPerformanceBuildingsOptions = [
-		{ label: "IEQ", value: "IEQ" },
+		{ label: "comfort", value: "IEQ" },
 		{ label: "structure", value: "Structure" },
-		{ label: "energy and water", value: "Energy_and_water" },
+		{ label: "energy and carbon", value: "Energy_and_water" },
 	];
 	const buildingProgramOptions = [
 		{ label: "office" },
@@ -99,7 +99,7 @@ const StepOne = ({ nextStep, formData }) => {
 				<SelectField
 					selectOptions={buildingProgramOptions}
 					name="building_program"
-					label="Building Program"
+					label="Building Type"
 					placeholder="choose program"
 					handleValue={() => null}
 				/>
