@@ -12,7 +12,6 @@ import {
 } from "recharts";
 
 const CustomizedLabel = (props) => {
-	console.log("from custom label", props);
 	const { x, y, value, strokeOpacity } = props;
 	return (
 		<text
@@ -175,14 +174,14 @@ const Chart = ({ series }) => {
 				<CartesianGrid stroke="#000" strokeWidth="2" horizontal={false} />
 				{series
 					.filter((s) => s.visible)
-					.map((s) => {
+					.map((s, idx) => {
 						return (
 							<Line
 								type="linear"
 								dataKey="amt"
 								data={s.data}
 								name={s.name}
-								key={s.name}
+								key={idx}
 								stroke={s.stroke}
 								strokeWidth="2"
 								strokeOpacity={lineOpacity[s.name]}
