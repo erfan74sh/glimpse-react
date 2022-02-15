@@ -123,9 +123,10 @@ const Zone = ({ projects }) => {
 				) {
 					outputData.push({
 						name: item,
-						amt: output[item],
+						amt: +(Math.round(output[item] + "e+2") + "e-2"),
 						unit: unitOptions[item],
 					});
+					console.log(output[item]);
 				} else {
 					inputData.push({
 						name: item,
