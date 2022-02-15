@@ -83,6 +83,7 @@ const Zone = ({ projects }) => {
 				value.project_name === currentProject && value.zone_name === currentZone
 		);
 		const outputs = alts.map((output, idx) => {
+			let inputData = [];
 			let outputData = [];
 			let primaryData = {};
 			for (const item in output) {
@@ -98,8 +99,35 @@ const Zone = ({ projects }) => {
 					item === "user_id"
 				) {
 					primaryData[item] = output[item];
-				} else {
+				} else if (
+					// visual-comfort outputs
+					item === "udi" ||
+					item === "ase" ||
+					item === "svd" ||
+					item === "mda" ||
+					item === "sda" ||
+					// energy outputs
+					item === "coolingload" ||
+					item === "heatingload" ||
+					item === "electriclight" ||
+					item === "fanger20" ||
+					item === "fanger10" ||
+					item === "adaptiveashrae80" ||
+					item === "adaptiveashrae90" ||
+					item === "adaptiveencalss2por" ||
+					item === "overheatot_occupied_hours" ||
+					item === "underheatot_occupied_hours" ||
+					item === "verheatdbt_occupied_hours" ||
+					item === "underheatdbt_occupied_hours"
+					// todo: include other subset outputs here
+				) {
 					outputData.push({
+						name: item,
+						amt: output[item],
+						unit: unitOptions[item],
+					});
+				} else {
+					inputData.push({
 						name: item,
 						amt: output[item],
 						unit: unitOptions[item],
@@ -116,6 +144,7 @@ const Zone = ({ projects }) => {
 				visible: true,
 				showDropdown: false,
 				data: outputData,
+				inputData,
 			};
 		});
 		setSeries(outputs);
