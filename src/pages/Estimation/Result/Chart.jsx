@@ -158,14 +158,12 @@ const Chart = ({ series }) => {
 		setLineOpacity(tempState);
 	};
 
-	const getValue = (data) => {
-		let value = data.amt + data.unit;
-		return value;
-	};
-
-	const getData = (data) => {
-		return data.amt;
-	};
+	// ! to add unit to labels in line pass this function to "dataKey" attribute
+	// ! of <LabelList /> component
+	// const getValue = (data) => {
+	// 	let value = data.amt + data.unit;
+	// 	return value;
+	// };
 
 	return (
 		<ResponsiveContainer width="100%" height={400}>
@@ -181,7 +179,7 @@ const Chart = ({ series }) => {
 						return (
 							<Line
 								type="linear"
-								dataKey={getData}
+								dataKey="amt"
 								data={s.data}
 								name={s.name}
 								key={s.name}
@@ -190,7 +188,7 @@ const Chart = ({ series }) => {
 								strokeOpacity={lineOpacity[s.name]}
 								dot={<CustomizedDot />}
 							>
-								<LabelList dataKey={getValue} content={renderCustomeLabel} />
+								<LabelList dataKey="amt" content={renderCustomeLabel} />
 							</Line>
 						);
 					})}
