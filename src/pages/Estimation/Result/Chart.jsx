@@ -187,6 +187,7 @@ const Chart = ({ series }) => {
 								strokeWidth="2"
 								strokeOpacity={lineOpacity[s.name]}
 								dot={<CustomizedDot />}
+								isAnimationActive={false}
 							>
 								<LabelList
 									dataKey="amt"
