@@ -160,7 +160,7 @@ const Zone = ({ projects }) => {
 	return (
 		<>
 			<section className="max-h-152 flex items-center justify-center overflow-hidden">
-				<Chart series={series} />
+				{series.length > 0 ? <Chart series={series} /> : "loading..."}
 			</section>
 			<PointsAndGrades subset={currentSubset} alternatives={series} />
 			<section className="mt-20 flex h-96 flex-col px-40">
