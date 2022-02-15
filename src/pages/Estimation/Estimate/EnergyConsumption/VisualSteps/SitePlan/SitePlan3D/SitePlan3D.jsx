@@ -5,10 +5,11 @@ import { OrbitControls } from "@react-three/drei";
 // state
 import { selectEnergyConsumptionData } from "../../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
-const Building = () => {
+const Building = ({ floorLevel }) => {
 	const mesh = useRef(null);
+	console.log(floorLevel);
 	return (
-		<mesh ref={mesh}>
+		<mesh ref={mesh} position={[0, (3.5 / 10) * floorLevel, 0]}>
 			<boxBufferGeometry attach="geometry" args={[8 / 10, 3.5 / 10, 6 / 10]} />
 			<meshStandardMaterial attach="material" color="#4d6ab9" />
 		</mesh>
@@ -85,7 +86,7 @@ const SitePlan3D = () => {
 			<directionalLight position={[-1, 10, -5]} intensity={0.7} />
 			<group position={[0, -0.5, 0]}>
 				<SouthNeighbor soutNeighbor={soutNeighbor} />
-				<Building />
+				<Building floorLevel={data.number_of_floor} />
 				<NorthNeighbor northNeighbor={northNeighbor} />
 				<Ground />
 			</group>
