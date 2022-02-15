@@ -164,7 +164,6 @@ const Chart = ({ series }) => {
 	};
 
 	const getData = (data) => {
-		// console.log(data);
 		return data.amt;
 	};
 
@@ -179,9 +178,6 @@ const Chart = ({ series }) => {
 				{series
 					.filter((s) => s.visible)
 					.map((s) => {
-						const arrOfValues = Array.from(s.data, (item) => item.amt);
-						const minVal = Math.min(...arrOfValues);
-						const maxVal = Math.max(...arrOfValues);
 						return (
 							<Line
 								type="linear"
@@ -208,10 +204,7 @@ const Chart = ({ series }) => {
 					tickSize="0"
 					interval={0}
 				/>
-				<YAxis hide={true} />
-				{/* <YAxis /> */}
-				{/* <YAxis orientation="right" /> */}
-				{/* <YAxis /> */}
+				<YAxis hide={true} scale="log" domain={["auto", "auto"]} />
 				<Tooltip content={<CustomTooltip />} />
 				<Legend
 					align="left"
