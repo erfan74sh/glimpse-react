@@ -42,6 +42,33 @@ const SouthNeighbor = ({ soutNeighbor }) => {
 	);
 };
 
+const LowerFloors = ({ floorLevel }) => {
+	const mesh = useRef(null);
+	if (floorLevel > 0) {
+		const floorsList = Array.from(
+			{ length: floorLevel },
+			(value, index) => index
+		);
+		return (
+			<group>
+				{floorsList.map((floor, idx) => {
+					return (
+						<mesh ref={mesh} position={[0, (3.5 / 10) * floor, 0]} key={idx}>
+							<boxBufferGeometry
+								attach="geometry"
+								args={[8 / 10, 3.5 / 10, 6 / 10]}
+							/>
+							<meshStandardMaterial attach="material" color="#fff" />
+						</mesh>
+					);
+				})}
+			</group>
+		);
+	} else {
+		return null;
+	}
+};
+
 const Ground = () => {
 	const mesh = useRef(null);
 	return (
@@ -87,6 +114,7 @@ const SitePlan3D = () => {
 			<group position={[0, -0.5, 0]}>
 				<SouthNeighbor soutNeighbor={soutNeighbor} />
 				<Building floorLevel={data.number_of_floor} />
+				<LowerFloors floorLevel={data.number_of_floor} />
 				<NorthNeighbor northNeighbor={northNeighbor} />
 				<Ground />
 			</group>
