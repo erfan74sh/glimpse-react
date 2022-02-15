@@ -11,17 +11,17 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 
-const renderCustomeLabel = (props) => {
-	const { x, y, stroke, value, opacity } = props;
+const CustomizedLabel = (props) => {
+	console.log("from custom label", props);
+	const { x, y, value, strokeOpacity } = props;
 	return (
 		<text
 			x={x - 22}
 			y={y}
 			dy={8}
-			fill={stroke}
 			fontSize={10}
 			textAnchor="middle"
-			opacity={opacity}
+			fillOpacity={strokeOpacity}
 		>
 			{value}
 		</text>
@@ -188,7 +188,12 @@ const Chart = ({ series }) => {
 								strokeOpacity={lineOpacity[s.name]}
 								dot={<CustomizedDot />}
 							>
-								<LabelList dataKey="amt" content={renderCustomeLabel} />
+								<LabelList
+									dataKey="amt"
+									content={
+										<CustomizedLabel strokeOpacity={lineOpacity[s.name]} />
+									}
+								/>
 							</Line>
 						);
 					})}
