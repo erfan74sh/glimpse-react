@@ -36,7 +36,52 @@ const CustomizedDot = ({ cx, cy, stroke, strokeOpacity }) => {
 	);
 };
 
-const CustomizedAxisTick = ({ x, y, payload }) => {
+const CustomizedAxisTick = ({ x, y, payload, ...rest }) => {
+	const labelOptions = {
+		x_dim: "width",
+		y_dim: "length",
+		rotation_angle: "rotation angle",
+		wwr_north: "wwr-north",
+		wwr_south: "wwr-south",
+		shading_type: "shading type",
+		hvac: "HVAC system",
+		wall_uvalue: "wall",
+		roof_uvalue: "w/m.k",
+		floor_uvalue: "w/m.k",
+		window_uvalue: "w/m.k",
+		natural_ventilation: "",
+		south_neighbor_distance: "m",
+		south_neighbor_height: "m",
+		north_neighbor_distance: "m",
+		north_neighbor_height: "m",
+		number_of_floor: "",
+		south_wall_bc: "",
+		north_wall_bc: "",
+		east_wall_bc: "",
+		west_wall_bc: "",
+		floor_bc: "",
+		roof_bc: "",
+
+		coolingload: "cooling load",
+		heatingload: "kWh/heating load",
+		electriclight: "electric light",
+		fanger20: "fanger 20",
+		fanger10: "fanger 10",
+		adaptiveashrae80: "adaptive ashrae 80",
+		adaptiveashrae90: "adaptive ashrae 90",
+		adaptiveencalss2por: "?",
+		overheatot_occupied_hours: "overheatot occupied hours",
+		underheatot_occupied_hours: "underheatot occupied hours",
+		verheatdbt_occupied_hours: "verheatdbt occupied hours",
+		underheatdbt_occupied_hours: "underheatdbt occupied hours",
+
+		udi: "UDI",
+		mda: "mDA",
+		svd: "sVD",
+		ase: "ASE",
+		sda: "sDA",
+	};
+
 	let stroke = "#3F3356";
 	let fontWeight = 400;
 	if (
@@ -76,7 +121,7 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 				className="text-sm"
 				fontWeight={fontWeight}
 			>
-				{payload.value}
+				{labelOptions[payload.value]}
 			</text>
 		</g>
 	);
