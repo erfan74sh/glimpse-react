@@ -84,7 +84,6 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 };
 
 const CustomTooltip = ({ active, payload, label }) => {
-	// console.log(payload);
 	if (active && payload && payload.length) {
 		return (
 			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-80 p-3">
@@ -164,6 +163,11 @@ const Chart = ({ series }) => {
 		return value;
 	};
 
+	const getData = (data) => {
+		// console.log(data);
+		return data.amt;
+	};
+
 	return (
 		<ResponsiveContainer width="100%" height={400}>
 			<LineChart
@@ -175,10 +179,13 @@ const Chart = ({ series }) => {
 				{series
 					.filter((s) => s.visible)
 					.map((s) => {
+						const arrOfValues = Array.from(s.data, (item) => item.amt);
+						const minVal = Math.min(...arrOfValues);
+						const maxVal = Math.max(...arrOfValues);
 						return (
 							<Line
 								type="linear"
-								dataKey="amt"
+								dataKey={getData}
 								data={s.data}
 								name={s.name}
 								key={s.name}
@@ -186,7 +193,6 @@ const Chart = ({ series }) => {
 								strokeWidth="2"
 								strokeOpacity={lineOpacity[s.name]}
 								dot={<CustomizedDot />}
-								unit="m"
 							>
 								<LabelList dataKey={getValue} content={renderCustomeLabel} />
 							</Line>
@@ -203,6 +209,9 @@ const Chart = ({ series }) => {
 					interval={0}
 				/>
 				<YAxis hide={true} />
+				{/* <YAxis /> */}
+				{/* <YAxis orientation="right" /> */}
+				{/* <YAxis /> */}
 				<Tooltip content={<CustomTooltip />} />
 				<Legend
 					align="left"
