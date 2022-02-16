@@ -63,10 +63,8 @@ const styles = StyleSheet.create({
 		width: "25mm",
 	},
 	container: {
-		flexDirection: "row",
-		justifyContent: "space-between",
 		paddingVertical: 25,
-		paddingHorizontal: 10,
+		paddingHorizontal: 20,
 	},
 	informationsSec: {
 		flexDirection: "column",
@@ -97,7 +95,7 @@ const PdfDoc = ({ data }) => {
 					<Image src={Logo} style={styles.logoImage} />
 					<Text>نتایج خروجی شبیه‌سازی بخش انرژی</Text>
 				</View>
-				<View>
+				<View style={styles.container}>
 					{ouputs.map((output, idx) => {
 						return <Text key={idx}>{JSON.stringify(output)}</Text>;
 					})}
