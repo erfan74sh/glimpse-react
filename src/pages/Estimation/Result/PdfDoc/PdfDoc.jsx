@@ -40,13 +40,10 @@ Font.register({
 // Create styles
 const styles = StyleSheet.create({
 	page: {
-		// flexDirection: "column",
-		// backgroundColor: "white",
-		// padding: 20,
-		// paddingTop: 40,
-		// borderTop: "5px solid #147CDD",
 		fontFamily: "Noto Sans Arabic",
 	},
+
+	// header
 	header: {
 		display: "flex",
 		flexDirection: "row",
@@ -62,10 +59,27 @@ const styles = StyleSheet.create({
 		height: "auto",
 		width: "25mm",
 	},
-	container: {
+	// end header
+
+	// main sections
+	main: {
 		paddingVertical: 25,
 		paddingHorizontal: 20,
 	},
+	//
+	section: {},
+
+	section_inputs_items_content: {
+		display: "flex",
+		flexDirection: "row",
+		flexWrap: "wrap",
+	},
+
+	section_inputs_items_content_item: {
+		width: "25%",
+	},
+
+	// end main sections
 	informationsSec: {
 		flexDirection: "column",
 	},
@@ -91,73 +105,46 @@ const PdfDoc = ({ data }) => {
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>
+				{/* header */}
 				<View style={styles.header}>
 					<Image src={Logo} style={styles.logoImage} />
 					<Text>نتایج خروجی شبیه‌سازی بخش انرژی</Text>
 				</View>
-				<View style={styles.container}>
-					{ouputs.map((output, idx) => {
+				{/* end header */}
+				{/* main */}
+				<View style={styles.main}>
+					<View style={styles.section}>
+						<Text style={styles.section_header}>پارامترهای ورودی</Text>
+						<View style={styles.section_inputs}>
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									تایتل سکشن
+								</Text>
+								<View style={styles.section_inputs_items_content}>
+									<Text style={styles.section_inputs_items_content_item}>
+										item 1
+									</Text>
+									<Text style={styles.section_inputs_items_content_item}>
+										item 1
+									</Text>
+									<Text style={styles.section_inputs_items_content_item}>
+										item 1
+									</Text>
+									<Text style={styles.section_inputs_items_content_item}>
+										item 1
+									</Text>
+									<Text style={styles.section_inputs_items_content_item}>
+										item 1
+									</Text>
+								</View>
+							</View>
+						</View>
+					</View>
+					{/* {ouputs.map((output, idx) => {
 						return <Text key={idx}>{JSON.stringify(output)}</Text>;
-					})}
+					})} */}
 				</View>
-				{/* <View>
-					<Text style={styles.header}>output_1</Text>
-				</View>
-				<View style={styles.container}>
-					<View style={styles.informationsSec}>
-						<View style={styles.flexGroup}>
-							<Text>depth [cm]:</Text>
-							<Text>10</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>Height [cm]:</Text>
-							<Text>3</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>Orientation:</Text>
-							<Text>135</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>WWR [%]:</Text>
-							<Text>3</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>SHD :</Text>
-							<Text>0</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>Cooling [KWh] :</Text>
-							<Text>1636.58</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>Heating [KWh] :</Text>
-							<Text>1636.58</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>Lighting [KWh] :</Text>
-							<Text>1636.58</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>DA [%] :</Text>
-							<Text>29.4444</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>UDI [%] :</Text>
-							<Text>43.3333</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>CDA [%] :</Text>
-							<Text>40</Text>
-						</View>
-						<View style={styles.flexGroup}>
-							<Text>SDA [Area%] :</Text>
-							<Text>37.56</Text>
-						</View>
-					</View>
-					<View style={styles.imageSec}>
-						<Image src={img} />
-					</View>
-				</View> */}
+				{/* end main */}
 			</Page>
 		</Document>
 	);
