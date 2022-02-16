@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "row",
 		flexWrap: "wrap",
+		paddingHorizontal: 5,
 	},
 
 	section_inputs_items_content_item: {
@@ -199,7 +200,7 @@ const PdfDoc = ({ data }) => {
 							{/*	 geometry section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									air conditioning
+									geometry specifications
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
@@ -288,7 +289,7 @@ const PdfDoc = ({ data }) => {
 							{/*	 air conditioning section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									geometry specifications
+									air conditioning
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
@@ -299,12 +300,19 @@ const PdfDoc = ({ data }) => {
 											{inputs.hvac}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={[
+											styles.section_inputs_items_content_item,
+											{ flexGrow: 1 },
+										]}
+									>
 										<Text>natural ventilation: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.natural_ventilation ? "has it" : "does not have"}
+											{inputs.natural_ventilation
+												? " has it"
+												: " does not have"}
 										</Text>
 									</View>
 								</View>
