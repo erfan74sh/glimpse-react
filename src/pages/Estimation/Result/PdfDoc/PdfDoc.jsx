@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Page,
 	Text,
@@ -81,8 +81,24 @@ const styles = StyleSheet.create({
 });
 
 const PdfDoc = ({ data }) => {
-	const inputs = data.inputData;
-	const outputs = data.data;
+	const [inputs, setInputs] = useState({});
+	useEffect(() => {
+		let tempInput = {};
+		data.inputData.forEach((element) => {
+			tempInput[element.name] = element.amt;
+		});
+		setInputs(tempInput);
+	}, [data]);
+
+	const [outputs, setOutputs] = useState({});
+	useEffect(() => {
+		let tempOutputs = {};
+		data.data.forEach((element) => {
+			tempOutputs[element.name] = element.amt;
+		});
+		setOutputs(tempOutputs);
+	}, [data]);
+
 	console.log(data);
 	return (
 		<Document>
@@ -135,7 +151,7 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>floor level:</Text>
-										<Text>{inputs.number_of_floors}</Text>
+										<Text>{inputs.number_of_floor}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>rotation angle:</Text>
