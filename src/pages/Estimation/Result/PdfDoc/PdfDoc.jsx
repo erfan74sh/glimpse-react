@@ -69,6 +69,8 @@ const styles = StyleSheet.create({
 
 	section_output_col: {
 		width: "47.5%",
+		display: "flex",
+		flexDirection: "column",
 	},
 
 	section_header: {
@@ -96,9 +98,22 @@ const styles = StyleSheet.create({
 		flexWrap: "wrap",
 		paddingHorizontal: 5,
 	},
+	section_outputs_items_content: {
+		display: "flex",
+		flexDirection: "column",
+		paddingHorizontal: 5,
+	},
 
 	section_inputs_items_content_item: {
 		width: "30%",
+		display: "flex",
+		flexDirection: "row",
+		marginVertical: 1,
+		fontWeight: "medium",
+		color: "#323232",
+	},
+
+	section_outputs_items_content_item: {
 		display: "flex",
 		flexDirection: "row",
 		marginVertical: 1,
@@ -465,50 +480,34 @@ const PdfDoc = ({ data }) => {
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
-								{/* general specifivations section */}
+								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
 									<Text style={styles.section_inputs_items_title}>
-										General specifications
+										amount of carbon emitted
 									</Text>
-									<View style={styles.section_inputs_items_content}>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>project name: </Text>
+									<View style={styles.section_outputs_items_content}>
+										<View style={styles.section_outputs_items_content_item}>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
 												{data.project_name}
 											</Text>
 										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>zone name: </Text>
+									</View>
+								</View>
+								{/* end carbon emitted section */}
+								{/* general specifivations section */}
+								<View style={styles.section_inputs_items}>
+									<Text style={styles.section_inputs_items_title}>
+										General specifications
+									</Text>
+									<View style={styles.section_outputs_items_content}>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>project name: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.zone_name}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>alternative name: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.alternative_name}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>location: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.location}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>building type: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.building_program}
+												{data.project_name}
 											</Text>
 										</View>
 									</View>
@@ -522,44 +521,12 @@ const PdfDoc = ({ data }) => {
 										General specifications
 									</Text>
 									<View style={styles.section_inputs_items_content}>
-										<View style={styles.section_inputs_items_content_item}>
+										<View style={styles.section_outputs_items_content_item}>
 											<Text>project name: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
 												{data.project_name}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>zone name: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.zone_name}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>alternative name: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.alternative_name}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>location: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.location}
-											</Text>
-										</View>
-										<View style={styles.section_inputs_items_content_item}>
-											<Text>building type: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.building_program}
 											</Text>
 										</View>
 									</View>
