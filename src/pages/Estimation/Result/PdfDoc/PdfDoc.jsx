@@ -6,33 +6,61 @@ import {
 	Image,
 	Document,
 	StyleSheet,
+	Font,
 } from "@react-pdf/renderer";
 
 import Logo from "../../../../assets/images/logo-02.png";
 
+import font300 from "../../../../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Light.ttf";
+import font400 from "../../../../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf";
+import font600 from "../../../../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-SemiBold.ttf";
+import font700 from "../../../../assets/fonts/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf";
+
+Font.register({
+	family: "Noto Sans Arabic",
+	fonts: [
+		{
+			src: font400,
+			fontWeight: 300,
+		},
+		{
+			src: font400,
+		},
+		{
+			src: font600,
+			fontWeight: 600,
+		},
+		{
+			src: font700,
+			fontWeight: 700,
+		},
+	],
+});
+
 // Create styles
 const styles = StyleSheet.create({
 	page: {
-		flexDirection: "column",
-		backgroundColor: "white",
-		padding: 20,
-		paddingTop: 40,
-		borderTop: "5px solid #147CDD",
+		// flexDirection: "column",
+		// backgroundColor: "white",
+		// padding: 20,
+		// paddingTop: 40,
+		// borderTop: "5px solid #147CDD",
+		fontFamily: "Noto Sans Arabic",
 	},
 	header: {
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		padding: 5,
+		padding: 10,
 		color: "#147CDD",
 		backgroundColor: "#323232",
-		// fontSize: 24,
-		fontWeight: 700,
+		fontSize: 12,
+		fontWeight: "semibold",
 	},
 	logoImage: {
 		height: "auto",
-		width: "20mm",
+		width: "25mm",
 	},
 	container: {
 		flexDirection: "row",
@@ -64,7 +92,7 @@ const PdfDoc = ({ data }) => {
 	const ouputs = data.data;
 	return (
 		<Document>
-			<Page size="A4">
+			<Page size="A4" style={styles.page}>
 				<View style={styles.header}>
 					<Image src={Logo} style={styles.logoImage} />
 					<Text>نتایج خروجی شبیه‌سازی بخش انرژی</Text>
