@@ -78,10 +78,14 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "row",
 		flexWrap: "wrap",
+		justifyContent: "flex-end",
 	},
 
 	section_inputs_items_content_item: {
 		width: "25%",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "flex-end",
 	},
 
 	// end main sections
@@ -126,21 +130,54 @@ const PdfDoc = ({ data }) => {
 									تایتل سکشن
 								</Text>
 								<View style={styles.section_inputs_items_content} debug={true}>
-									<Text style={styles.section_inputs_items_content_item}>
-										item 1
-									</Text>
-									<Text style={styles.section_inputs_items_content_item}>
-										item 1
-									</Text>
-									<Text style={styles.section_inputs_items_content_item}>
-										item 1
-									</Text>
-									<Text style={styles.section_inputs_items_content_item}>
-										item 1
-									</Text>
-									<Text style={styles.section_inputs_items_content_item}>
-										item 1
-									</Text>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+								</View>
+							</View>
+							{/*  */}
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									تایتل سکشن
+								</Text>
+								<View style={styles.section_inputs_items_content} debug={true}>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>مقدار</Text>
+										<Text>جهت‌گیری فضا:</Text>
+									</View>
 								</View>
 							</View>
 						</View>
