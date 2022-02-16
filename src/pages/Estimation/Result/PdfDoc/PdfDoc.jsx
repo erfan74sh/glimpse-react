@@ -61,6 +61,12 @@ const styles = StyleSheet.create({
 	//
 	section: {},
 
+	section_output: {
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+	},
+
 	section_header: {
 		fontSize: 14,
 		fontWeight: "bold",
@@ -446,6 +452,66 @@ const PdfDoc = ({ data }) => {
 							{/*	 end boundry condition section */}
 						</View>
 					</View>
+					{/* end inputs section */}
+
+					{/* outputs section */}
+					<View style={styles.section}>
+						<Text style={[styles.section_header, { marginTop: 14 }]}>
+							Output Parameters
+						</Text>
+						<View style={styles.section_output}>
+							{/* general specifivations section */}
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									General specifications
+								</Text>
+								<View style={styles.section_inputs_items_content}>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>project name: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.project_name}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>zone name: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.zone_name}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>alternative name: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.alternative_name}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>location: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.location}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>building type: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.building_program}
+										</Text>
+									</View>
+								</View>
+							</View>
+							{/* end general specifivations section */}
+						</View>
+					</View>
+					{/* end outputs section */}
 					{/* {ouputs.map((output, idx) => {
 						return <Text key={idx}>{JSON.stringify(output)}</Text>;
 					})} */}
