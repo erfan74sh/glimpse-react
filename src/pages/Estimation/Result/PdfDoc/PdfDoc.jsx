@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
 	//
 	section: {},
 
+	section_inputs_items: {
+		marginVertical: 5,
+	},
 	section_inputs_items_title: {
 		borderBottom: "1 solid #323232",
 	},
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
 		width: "30%",
 		display: "flex",
 		flexDirection: "row",
+		marginVertical: 1,
 	},
 
 	// end main sections
