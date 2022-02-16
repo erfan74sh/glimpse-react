@@ -61,6 +61,13 @@ const styles = StyleSheet.create({
 	//
 	section: {},
 
+	section_header: {
+		fontSize: 14,
+		fontWeight: "bold",
+		color: "#147CDD",
+		marginBottom: 10,
+	},
+
 	section_inputs_items: {
 		marginVertical: 5,
 	},
@@ -82,6 +89,15 @@ const styles = StyleSheet.create({
 
 	section_inputs_items_content_item: {
 		width: "30%",
+		display: "flex",
+		flexDirection: "row",
+		marginVertical: 1,
+		fontWeight: "medium",
+		color: "#323232",
+	},
+
+	section_inputs_items_content_item_halfWidth: {
+		width: "50%",
 		display: "flex",
 		flexDirection: "row",
 		marginVertical: 1,
@@ -365,7 +381,9 @@ const PdfDoc = ({ data }) => {
 									boundries condition
 								</Text>
 								<View style={styles.section_inputs_items_content}>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>east wall boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -373,7 +391,9 @@ const PdfDoc = ({ data }) => {
 											{inputs.east_wall_bc}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>west wall boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -381,7 +401,9 @@ const PdfDoc = ({ data }) => {
 											{inputs.west_wall_bc}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>north wall boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -389,7 +411,9 @@ const PdfDoc = ({ data }) => {
 											{inputs.north_wall_bc}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>south wall boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -397,7 +421,9 @@ const PdfDoc = ({ data }) => {
 											{inputs.south_wall_bc}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>roof boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -405,7 +431,9 @@ const PdfDoc = ({ data }) => {
 											{inputs.roof_bc}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
 										<Text>floor boundry condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
