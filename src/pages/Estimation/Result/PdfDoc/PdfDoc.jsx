@@ -8,13 +8,31 @@ import {
 	StyleSheet,
 	Font,
 } from "@react-pdf/renderer";
+// fonts sources
+import Roboto400 from "../../../../assets/fonts/Roboto/Roboto-Regular.ttf";
+import Roboto500 from "../../../../assets/fonts/Roboto/Roboto-Medium.ttf";
+import Roboto700 from "../../../../assets/fonts/Roboto/Roboto-Bold.ttf";
+import Roboto900 from "../../../../assets/fonts/Roboto/Roboto-Black.ttf";
 
+// assets
 import Logo from "../../../../assets/images/logo-02.png";
+
+// font registration
+Font.register({
+	family: "Roboto",
+	fonts: [
+		{ src: Roboto400 }, // font-style: normal, font-weight: normal
+		{ src: Roboto500, fontWeight: 500 },
+		{ src: Roboto700, fontWeight: 700 },
+		{ src: Roboto900, fontWeight: 900 },
+	],
+});
 
 // Create styles
 const styles = StyleSheet.create({
 	page: {
 		fontSize: 12,
+		fontFamily: "Roboto",
 	},
 
 	// header
@@ -47,7 +65,12 @@ const styles = StyleSheet.create({
 		marginVertical: 5,
 	},
 	section_inputs_items_title: {
-		borderBottom: "1 solid #323232",
+		borderBottom: "1 solid #525252",
+		marginBottom: 5,
+		color: "#454545",
+		fontWeight: "bold",
+		fontSize: 13,
+		textTransform: "capitalize",
 	},
 
 	section_inputs_items_content: {
