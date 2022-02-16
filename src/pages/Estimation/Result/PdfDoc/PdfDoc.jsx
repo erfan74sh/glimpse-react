@@ -84,6 +84,12 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "row",
 		marginVertical: 1,
+		fontWeight: "medium",
+		color: "#323232",
+	},
+
+	section_inputs_items_content_item_value: {
+		fontWeight: "normal",
 	},
 
 	// end main sections
@@ -149,23 +155,43 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>project name: </Text>
-										<Text>{data.project_name}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.project_name}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>zone name: </Text>
-										<Text>{data.zone_name}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.zone_name}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>alternative name: </Text>
-										<Text>{data.alternative_name}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.alternative_name}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>location: </Text>
-										<Text>{data.location}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.location}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>building type: </Text>
-										<Text>{data.building_program}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{data.building_program}
+										</Text>
 									</View>
 								</View>
 							</View>
@@ -178,43 +204,83 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>floor level: </Text>
-										<Text>{inputs.number_of_floor}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.number_of_floor}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>rotation angle: </Text>
-										<Text>{inputs.rotation_angle}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.rotation_angle}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>width: </Text>
-										<Text>{inputs.x_dim}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.x_dim}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>length: </Text>
-										<Text>{inputs.y_dim}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.y_dim}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>wwr_north: </Text>
-										<Text>{inputs.wwr_north}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.wwr_north}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>wwr_south: </Text>
-										<Text>{inputs.wwr_south}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.wwr_south}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>south neighbor distance: </Text>
-										<Text>{inputs.south_neighbor_distance}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.south_neighbor_distance}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>south neighbor height: </Text>
-										<Text>{inputs.south_neighbor_height}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.south_neighbor_height}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>north neighbor distance: </Text>
-										<Text>{inputs.north_neighbor_distance}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.north_neighbor_distance}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>north neighbor height: </Text>
-										<Text>{inputs.north_neighbor_height}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.north_neighbor_height}
+										</Text>
 									</View>
 								</View>
 							</View>
@@ -227,11 +293,17 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>HVAC system: </Text>
-										<Text>{inputs.hvac}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.hvac}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>natural ventilation: </Text>
-										<Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
 											{inputs.natural_ventilation ? "has it" : "does not have"}
 										</Text>
 									</View>
@@ -246,19 +318,35 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>wall U value: </Text>
-										<Text>{inputs.wall_uvalue}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.wall_uvalue}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>floor U value: </Text>
-										<Text>{inputs.floor_uvalue}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.floor_uvalue}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>roof U value: </Text>
-										<Text>{inputs.roof_uvalue}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.roof_uvalue}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>window U value: </Text>
-										<Text>{inputs.window_uvalue}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.window_uvalue}
+										</Text>
 									</View>
 								</View>
 							</View>
@@ -271,27 +359,51 @@ const PdfDoc = ({ data }) => {
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>east wall boundry condition: </Text>
-										<Text>{inputs.east_wall_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.east_wall_bc}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>west wall boundry condition: </Text>
-										<Text>{inputs.west_wall_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.west_wall_bc}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>north wall boundry condition: </Text>
-										<Text>{inputs.north_wall_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.north_wall_bc}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>south wall boundry condition: </Text>
-										<Text>{inputs.south_wall_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.south_wall_bc}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>roof boundry condition: </Text>
-										<Text>{inputs.roof_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.roof_bc}
+										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
 										<Text>floor boundry condition: </Text>
-										<Text>{inputs.floor_bc}</Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{inputs.floor_bc}
+										</Text>
 									</View>
 								</View>
 							</View>
