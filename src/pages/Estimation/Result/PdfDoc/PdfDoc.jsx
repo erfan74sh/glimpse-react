@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
 	},
 
 	section_inputs_items: {
-		marginVertical: 5,
+		marginVertical: 8,
 	},
 	section_inputs_items_title: {
 		borderBottom: "1 solid #525252",
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 		width: "30%",
 		display: "flex",
 		flexDirection: "row",
-		marginVertical: 1,
+		marginVertical: 4,
 		fontWeight: "medium",
 		color: "#323232",
 	},
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
 	section_outputs_items_content_item: {
 		display: "flex",
 		flexDirection: "row",
-		marginVertical: 1,
+		marginVertical: 4,
 		fontWeight: "medium",
 		color: "#323232",
 	},
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
 		width: "50%",
 		display: "flex",
 		flexDirection: "row",
-		marginVertical: 1,
+		marginVertical: 4,
 		fontWeight: "medium",
 		color: "#323232",
 	},
@@ -530,14 +530,38 @@ const PdfDoc = ({ data }) => {
 								{/* end Thermal load section */}
 							</View>
 							<View style={styles.section_output_col}>
-								{/* Thermal load section */}
+								{/* Energy consumption section */}
 								<View style={styles.section_inputs_items}>
 									<Text style={styles.section_inputs_items_title}>
-										Thermal load
+										Energy consumption
 									</Text>
-									<View style={styles.section_inputs_items_content}>
+									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>project name: </Text>
+											<Text>Primary energy consumption: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{data.project_name}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Total energy consumption: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{data.project_name}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Electricity consumption: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{data.project_name}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Gas consumption: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
@@ -546,7 +570,7 @@ const PdfDoc = ({ data }) => {
 										</View>
 									</View>
 								</View>
-								{/* end Thermal load section */}
+								{/* end Energy consumption section */}
 							</View>
 						</View>
 					</View>
