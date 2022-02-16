@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
 	//
 	section: {},
 
+	section_inputs_items_title: {
+		borderBottom: "1 solid black",
+	},
+
 	section_inputs_items_content: {
 		display: "flex",
 		flexDirection: "row",
@@ -120,7 +124,7 @@ const PdfDoc = ({ data }) => {
 								<Text style={styles.section_inputs_items_title}>
 									تایتل سکشن
 								</Text>
-								<View style={styles.section_inputs_items_content}>
+								<View style={styles.section_inputs_items_content} debug={true}>
 									<Text style={styles.section_inputs_items_content_item}>
 										item 1
 									</Text>
