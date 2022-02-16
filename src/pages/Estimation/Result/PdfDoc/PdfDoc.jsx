@@ -146,52 +146,71 @@ const PdfDoc = ({ data }) => {
 							{/*	 geometry section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									geometry specifications
+									air conditioning
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>floor level:</Text>
+										<Text>floor level: </Text>
 										<Text>{inputs.number_of_floor}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>rotation angle:</Text>
+										<Text>rotation angle: </Text>
 										<Text>{inputs.rotation_angle}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>width:</Text>
+										<Text>width: </Text>
 										<Text>{inputs.x_dim}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>length:</Text>
+										<Text>length: </Text>
 										<Text>{inputs.y_dim}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_north:</Text>
+										<Text>wwr_north: </Text>
 										<Text>{inputs.wwr_north}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_south:</Text>
+										<Text>wwr_south: </Text>
 										<Text>{inputs.wwr_south}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor distance:</Text>
+										<Text>south neighbor distance: </Text>
 										<Text>{inputs.south_neighbor_distance}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor height:</Text>
+										<Text>south neighbor height: </Text>
 										<Text>{inputs.south_neighbor_height}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor distance:</Text>
+										<Text>north neighbor distance: </Text>
 										<Text>{inputs.north_neighbor_distance}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor height:</Text>
+										<Text>north neighbor height: </Text>
 										<Text>{inputs.north_neighbor_height}</Text>
 									</View>
 								</View>
 							</View>
 							{/*	 end geometry section */}
+							{/*	 air conditioning section */}
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									geometry specifications
+								</Text>
+								<View style={styles.section_inputs_items_content}>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>HVAC system: </Text>
+										<Text>{inputs.hvac}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>natural ventilation: </Text>
+										<Text>
+											{inputs.natural_ventilation ? "has it" : "does not have"}
+										</Text>
+									</View>
+								</View>
+							</View>
+							{/*	 end air conditioning section */}
 						</View>
 					</View>
 					{/* {ouputs.map((output, idx) => {
