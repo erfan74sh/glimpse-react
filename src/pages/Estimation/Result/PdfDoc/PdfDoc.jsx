@@ -514,10 +514,10 @@ const PdfDoc = ({ data }) => {
 								{/* end Comfort hours section */}
 							</View>
 							<View style={styles.section_output_col}>
-								{/* general specifivations section */}
+								{/* Thermal load section */}
 								<View style={styles.section_inputs_items}>
 									<Text style={styles.section_inputs_items_title}>
-										General specifications
+										Thermal load
 									</Text>
 									<View style={styles.section_inputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
@@ -530,7 +530,7 @@ const PdfDoc = ({ data }) => {
 										</View>
 									</View>
 								</View>
-								{/* end general specifivations section */}
+								{/* end Thermal load section */}
 							</View>
 						</View>
 					</View>
