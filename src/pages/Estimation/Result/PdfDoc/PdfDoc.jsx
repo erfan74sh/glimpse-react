@@ -3,12 +3,12 @@ import {
 	Page,
 	Text,
 	View,
-	// Image,
+	Image,
 	Document,
 	StyleSheet,
 } from "@react-pdf/renderer";
 
-// import img from "../../../../assets/images/3dmodel-result.png";
+import Logo from "../../../../assets/images/logo-02.png";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -20,11 +20,19 @@ const styles = StyleSheet.create({
 		borderTop: "5px solid #147CDD",
 	},
 	header: {
-		paddingLeft: 5,
-		borderLeft: "3px solid #147CDD",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		padding: 5,
 		color: "#147CDD",
-		fontSize: 24,
+		backgroundColor: "#323232",
+		// fontSize: 24,
 		fontWeight: 700,
+	},
+	logoImage: {
+		height: "auto",
+		width: "20mm",
 	},
 	container: {
 		flexDirection: "row",
@@ -56,11 +64,10 @@ const PdfDoc = ({ data }) => {
 	const ouputs = data.data;
 	return (
 		<Document>
-			<Page size="A4" style={styles.page}>
-				<View>
-					<Text
-						style={styles.header}
-					>{`${data.subset}>${data.project_name}>${data.zone_name}>${data.alternative_name}>`}</Text>
+			<Page size="A4">
+				<View style={styles.header}>
+					<Image src={Logo} style={styles.logoImage} />
+					<Text>نتایج خروجی شبیه‌سازی بخش انرژی</Text>
 				</View>
 				<View>
 					{ouputs.map((output, idx) => {
