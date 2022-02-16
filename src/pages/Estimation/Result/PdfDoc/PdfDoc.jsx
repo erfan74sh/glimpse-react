@@ -211,6 +211,31 @@ const PdfDoc = ({ data }) => {
 								</View>
 							</View>
 							{/*	 end air conditioning section */}
+							{/*	 Thermal specifications section */}
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									Thermal specifications of walls
+								</Text>
+								<View style={styles.section_inputs_items_content}>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>wall U value: </Text>
+										<Text>{inputs.wall_uvalue}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>floor U value: </Text>
+										<Text>{inputs.floor_uvalue}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>roof U value: </Text>
+										<Text>{inputs.roof_uvalue}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>window U value: </Text>
+										<Text>{inputs.window_uvalue}</Text>
+									</View>
+								</View>
+							</View>
+							{/*	 end Thermal specifications section */}
 						</View>
 					</View>
 					{/* {ouputs.map((output, idx) => {
