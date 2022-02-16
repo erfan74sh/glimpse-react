@@ -41,6 +41,7 @@ Font.register({
 const styles = StyleSheet.create({
 	page: {
 		fontFamily: "Noto Sans Arabic",
+		fontSize: 12,
 	},
 
 	// header
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
 	section: {},
 
 	section_inputs_items_title: {
-		borderBottom: "1 solid black",
+		borderBottom: "1 solid #323232",
 	},
 
 	section_inputs_items_content: {
