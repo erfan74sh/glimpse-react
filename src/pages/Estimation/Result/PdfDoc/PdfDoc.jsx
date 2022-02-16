@@ -236,6 +236,39 @@ const PdfDoc = ({ data }) => {
 								</View>
 							</View>
 							{/*	 end Thermal specifications section */}
+							{/*	 boundry condition section */}
+							<View style={styles.section_inputs_items}>
+								<Text style={styles.section_inputs_items_title}>
+									boundries condition
+								</Text>
+								<View style={styles.section_inputs_items_content}>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>east wall boundry condition: </Text>
+										<Text>{inputs.east_wall_bc}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>west wall boundry condition: </Text>
+										<Text>{inputs.west_wall_bc}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>north wall boundry condition: </Text>
+										<Text>{inputs.north_wall_bc}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>south wall boundry condition: </Text>
+										<Text>{inputs.south_wall_bc}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>roof boundry condition: </Text>
+										<Text>{inputs.roof_bc}</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>floor boundry condition: </Text>
+										<Text>{inputs.floor_bc}</Text>
+									</View>
+								</View>
+							</View>
+							{/*	 end boundry condition section */}
 						</View>
 					</View>
 					{/* {ouputs.map((output, idx) => {
