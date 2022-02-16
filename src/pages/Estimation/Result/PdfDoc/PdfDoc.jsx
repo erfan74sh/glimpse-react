@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
 });
 
 const PdfDoc = ({ data }) => {
-	const ouputs = data.data;
+	const inputs = data.inputData;
+	const outputs = data.data;
 	console.log(data);
 	return (
 		<Document>
@@ -97,81 +98,84 @@ const PdfDoc = ({ data }) => {
 					<View style={styles.section}>
 						<Text style={styles.section_header}>Input Parameters</Text>
 						<View style={styles.section_inputs}>
+							{/* general specifivations section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
 									General specifications
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>project name:</Text>
+										<Text>project name: </Text>
 										<Text>{data.project_name}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>zone name:</Text>
+										<Text>zone name: </Text>
 										<Text>{data.zone_name}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>alternative name:</Text>
+										<Text>alternative name: </Text>
 										<Text>{data.alternative_name}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>location:</Text>
+										<Text>location: </Text>
 										<Text>{data.location}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>building type:</Text>
+										<Text>building type: </Text>
 										<Text>{data.building_program}</Text>
 									</View>
 								</View>
 							</View>
-							{/*  */}
-							{/* <View style={styles.section_inputs_items}>
+							{/* end general specifivations section */}
+							{/*	 geometry section */}
+							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									مشخصات هندسی فضا
+									geometry specifications
 								</Text>
-								<View style={styles.section_inputs_items_content} debug={true}>
+								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>جهت‌گیری:</Text>
+										<Text>floor level:</Text>
+										<Text>{inputs.number_of_floors}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>طول:</Text>
+										<Text>rotation angle:</Text>
+										<Text>{inputs.rotation_angle}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>عرض:</Text>
+										<Text>width:</Text>
+										<Text>{inputs.x_dim}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>شماره طبقه:</Text>
+										<Text>length:</Text>
+										<Text>{inputs.y_dim}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>wwr شمالی:</Text>
+										<Text>wwr_north:</Text>
+										<Text>{inputs.wwr_north}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>wwr جنوبی:</Text>
+										<Text>wwr_south:</Text>
+										<Text>{inputs.wwr_south}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>ارتفاع همسایه جنوبی:</Text>
+										<Text>south neighbor distance:</Text>
+										<Text>{inputs.south_neighbor_distance}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>فاصله همسایه جنوبی:</Text>
+										<Text>south neighbor height:</Text>
+										<Text>{inputs.south_neighbor_height}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>ارتفاع همسایه شمالی:</Text>
+										<Text>north neighbor distance:</Text>
+										<Text>{inputs.north_neighbor_distance}</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>مقدار</Text>
-										<Text>فاصله همسایه شمالی:</Text>
+										<Text>north neighbor height:</Text>
+										<Text>{inputs.north_neighbor_height}</Text>
 									</View>
 								</View>
-							</View> */}
+							</View>
+							{/*	 end geometry section */}
 						</View>
 					</View>
 					{/* {ouputs.map((output, idx) => {
