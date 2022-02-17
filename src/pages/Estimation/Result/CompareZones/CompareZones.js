@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-	Link,
-	// useParams
-} from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
@@ -14,6 +11,10 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 const CompareZones = () => {
+	const [searchParams] = useSearchParams();
+	const currentSubset = searchParams.get("subset");
+	const currentProjectName = searchParams.get("project_name");
+
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const data = [
