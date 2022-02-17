@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
+import Nav from "../../../../components/Nav";
 import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
@@ -190,72 +191,77 @@ const CompareZones = () => {
 	};
 
 	return (
-		<main className=" px-24 py-16" id="compare-zone__main">
-			<header className="mb-10">
-				<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
-					compare zones
-				</h1>
-			</header>
-			<main className="">
-				<section className="max-h-152 flex items-center justify-center overflow-hidden">
-					{series.length > 0 ? <Chart series={series} /> : "loading..."}
-				</section>
-				<PointsAndGrades subset={currentSubset} alternatives={series} />
-				<section className="mt-20 flex h-96 flex-col gap-y-10 px-40">
-					{zoneList.map((zoneName, idx) => {
-						return (
-							<div key={idx}>
-								<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
-									<h2>{zoneName}</h2>
-								</header>
-								<ul className="flex flex-col gap-y-6">
-									{series
-										.filter((alternative) => alternative.zone_name === zoneName)
-										.map((entry, i) => (
-											<li
-												key={i}
-												className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
-												data-name={entry.name}
-											>
-												{/* <PDFViewer className="h-screen w-full">
+		<>
+			<Nav />
+			<main className=" px-24 py-16" id="compare-zone__main">
+				<header className="mb-10">
+					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
+						compare zones
+					</h1>
+				</header>
+				<div>
+					<section className="max-h-152 flex items-center justify-center overflow-hidden">
+						{series.length > 0 ? <Chart series={series} /> : "loading..."}
+					</section>
+					<PointsAndGrades subset={currentSubset} alternatives={series} />
+					<section className="mt-20 flex h-96 flex-col gap-y-10 px-40">
+						{zoneList.map((zoneName, idx) => {
+							return (
+								<div key={idx}>
+									<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
+										<h2>{zoneName}</h2>
+									</header>
+									<ul className="flex flex-col gap-y-6">
+										{series
+											.filter(
+												(alternative) => alternative.zone_name === zoneName
+											)
+											.map((entry, i) => (
+												<li
+													key={i}
+													className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
+													data-name={entry.name}
+												>
+													{/* <PDFViewer className="h-screen w-full">
 										<PdfDoc data={entry} />
 									</PDFViewer> */}
-												<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
-												<span>{` ${entry.name}`}</span>
-												<span className="ml-1 text-xs">({entry.date})</span>
-												<button className="ml-4">
-													<PDFDownloadLink
-														document={<PdfDoc data={entry} />}
-														fileName={`${entry.name}.pdf`}
-													>
-														<FontAwesomeIcon
-															icon={faFilePdf}
-															className="text-xl opacity-70 transition hover:opacity-90"
-														/>
-													</PDFDownloadLink>
-												</button>
-												<button className="ml-auto mr-4 capitalize underline">
-													<Link to="/estimation">edit</Link>
-												</button>
-												<button className=" mr-4" onClick={handleVisibility}>
-													{entry.visible ? (
-														<FontAwesomeIcon icon={faEye} />
-													) : (
-														<FontAwesomeIcon
-															icon={faEyeSlash}
-															className="text-gray-500"
-														/>
-													)}
-												</button>
-											</li>
-										))}
-								</ul>
-							</div>
-						);
-					})}
-				</section>
+													<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
+													<span>{` ${entry.name}`}</span>
+													<span className="ml-1 text-xs">({entry.date})</span>
+													<button className="ml-4">
+														<PDFDownloadLink
+															document={<PdfDoc data={entry} />}
+															fileName={`${entry.name}.pdf`}
+														>
+															<FontAwesomeIcon
+																icon={faFilePdf}
+																className="text-xl opacity-70 transition hover:opacity-90"
+															/>
+														</PDFDownloadLink>
+													</button>
+													<button className="ml-auto mr-4 capitalize underline">
+														<Link to="/estimation">edit</Link>
+													</button>
+													<button className=" mr-4" onClick={handleVisibility}>
+														{entry.visible ? (
+															<FontAwesomeIcon icon={faEye} />
+														) : (
+															<FontAwesomeIcon
+																icon={faEyeSlash}
+																className="text-gray-500"
+															/>
+														)}
+													</button>
+												</li>
+											))}
+									</ul>
+								</div>
+							);
+						})}
+					</section>
+				</div>
 			</main>
-		</main>
+		</>
 	);
 };
 
