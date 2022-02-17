@@ -18,7 +18,7 @@ const CompareZones = () => {
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
 
-	const [series2, setSeries2] = useState([]);
+	const [zones, setZones] = useState([]);
 	useEffect(() => {
 		const fetchData = async () => {
 			// todo: add more condition when other subset API's ready
@@ -32,90 +32,145 @@ const CompareZones = () => {
 							currentProjectName
 					  )
 					: null;
-
-			console.log(response);
+			// console.log(response);
+			setZones(response?.data);
 		};
 		fetchData();
-	});
+	}, [currentProjectName, currentSubset]);
 
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
-		const data = [
-			{
-				name: "output_1",
-				date: "2021.11.20",
-				stroke: "#926ECB",
-				opacity: 1,
-				visible: true,
-				showDropdown: false,
-				data: [
-					{ name: "floor level", uv: 400, amt: 5 },
-					{ name: "X- Dimention", uv: 400, amt: 24 },
-					{ name: "Y- Dimention", uv: 450, amt: 10 },
-					{ name: "rotation angle", uv: 450, amt: 20 },
-					{ name: "WWR south", uv: 450, amt: 80 },
-					{ name: "WWR north", uv: 450, amt: 80 },
-					{ name: "south Shading type", uv: 410, amt: 45 },
-					{ name: "boundry condition east wall", uv: 410, amt: 55 },
-					{ name: "boundry condition west wall", uv: 410, amt: 50 },
-					{ name: "boundry condition north wall", uv: 410, amt: 60 },
-					{ name: "boundry condition south wall", uv: 410, amt: 10 },
-					{ name: "boundry condition roof", uv: 410, amt: 35 },
-					{ name: "boundry condition floor", uv: 410, amt: 20 },
-					{ name: "wall u-value", uv: 380, amt: 70 },
-					{ name: "roof u-value", uv: 380, amt: 50 },
-					{ name: "floor u-value", uv: 380, amt: 40 },
-					{ name: "window u-value", uv: 380, amt: 5 },
-					{ name: "south neighbor distance", uv: 380, amt: 35 },
-					{ name: "south neighbor height", uv: 380, amt: 25 },
-					{ name: "north neighbor distance", uv: 380, amt: 40 },
-					{ name: "north neighbor height", uv: 380, amt: 10 },
-					{ name: "HVAC", uv: 380, amt: 30 },
-					{ name: "natural ventilation", uv: 380, amt: 15 },
-					{ name: "cooling load", uv: 410, amt: 70 },
-					{ name: "heating load", uv: 410, amt: 40 },
-					{ name: "electric light", uv: 410, amt: 20 },
-				],
-			},
-			{
-				name: "output_2",
-				date: "2021.06.09",
-				stroke: "#00C48C",
-				opacity: 1,
-				visible: true,
-				showDropdown: false,
-				data: [
-					{ name: "floor level", uv: 400, amt: 2 },
-					{ name: "X- Dimention", uv: 400, amt: 8 },
-					{ name: "Y- Dimention", uv: 450, amt: 20 },
-					{ name: "rotation angle", uv: 450, amt: 40 },
-					{ name: "WWR south", uv: 450, amt: 80 },
-					{ name: "WWR north", uv: 450, amt: 50 },
-					{ name: "south Shading type", uv: 410, amt: 20 },
-					{ name: "boundry condition east wall", uv: 410, amt: 10 },
-					{ name: "boundry condition west wall", uv: 410, amt: 90 },
-					{ name: "boundry condition north wall", uv: 410, amt: 40 },
-					{ name: "boundry condition south wall", uv: 410, amt: 60 },
-					{ name: "boundry condition roof", uv: 410, amt: 10 },
-					{ name: "boundry condition floor", uv: 410, amt: 70 },
-					{ name: "wall u-value", uv: 380, amt: 30 },
-					{ name: "roof u-value", uv: 380, amt: 50 },
-					{ name: "floor u-value", uv: 380, amt: 20 },
-					{ name: "window u-value", uv: 380, amt: 10 },
-					{ name: "south neighbor distance", uv: 380, amt: 4 },
-					{ name: "south neighbor height", uv: 380, amt: 10 },
-					{ name: "north neighbor distance", uv: 380, amt: 30 },
-					{ name: "north neighbor height", uv: 380, amt: 40 },
-					{ name: "HVAC", uv: 380, amt: 5 },
-					{ name: "natural ventilation", uv: 380, amt: 50 },
-					{ name: "cooling load", uv: 410, amt: 65 },
-					{ name: "heating load", uv: 410, amt: 80 },
-					{ name: "electric light", uv: 410, amt: 35 },
-				],
-			},
+		const unitOptions = {
+			x_dim: "m",
+			y_dim: "m",
+			rotation_angle: "deg",
+			wwr_north: "%",
+			wwr_south: "%",
+			shading_type: "",
+			hvac: "",
+			wall_uvalue: "w/m.k",
+			roof_uvalue: "w/m.k",
+			floor_uvalue: "w/m.k",
+			window_uvalue: "w/m.k",
+			natural_ventilation: "",
+			south_neighbor_distance: "m",
+			south_neighbor_height: "m",
+			north_neighbor_distance: "m",
+			north_neighbor_height: "m",
+			number_of_floor: "",
+			south_wall_bc: "",
+			north_wall_bc: "",
+			east_wall_bc: "",
+			west_wall_bc: "",
+			floor_bc: "",
+			roof_bc: "",
+
+			coolingload: "kWh/m2",
+			heatingload: "kWh/m2",
+			electriclight: "kWh/m2",
+			fanger20: "",
+			fanger10: "",
+			adaptiveashrae80: "",
+			adaptiveashrae90: "",
+			adaptiveencalss2por: "",
+			overheatot_occupied_hours: "",
+			underheatot_occupied_hours: "",
+			verheatdbt_occupied_hours: "",
+			underheatdbt_occupied_hours: "",
+
+			reflectance_wall: "",
+			reflectance_celing: "",
+			reflectance_floor: "",
+			vt_glass: "",
+
+			udi: "",
+			mda: "",
+			svd: "",
+			ase: "",
+			sda: "",
+		};
+		const colorPallet = [
+			"#784AC1",
+			"#00C48C",
+			"#B5008E",
+			"#0085D3",
+			"#003576",
+			"#8b5cf6",
+			"#a21caf",
+			"#f43f5e",
 		];
-		setSeries(data);
-	}, []);
+		// const alts = zones.filter(
+		// 	(value) =>
+		// 		value.project_name === currentProject && value.zone_name === currentZone
+		// );
+		const outputs = zones.map((output, idx) => {
+			let inputData = [];
+			let outputData = [];
+			let primaryData = {};
+			for (const item in output) {
+				if (
+					item === "subset" ||
+					item === "building_program" ||
+					item === "location" ||
+					item === "high_performance_building_index" ||
+					item === "project_name" ||
+					item === "alternative_name" ||
+					item === "zone_name" ||
+					item === "id" ||
+					item === "user_id"
+				) {
+					primaryData[item] = output[item];
+				} else if (
+					// visual-comfort outputs
+					item === "udi" ||
+					item === "ase" ||
+					item === "svd" ||
+					item === "mda" ||
+					item === "sda" ||
+					// energy outputs
+					item === "coolingload" ||
+					item === "heatingload" ||
+					item === "electriclight" ||
+					item === "fanger20" ||
+					item === "fanger10" ||
+					item === "adaptiveashrae80" ||
+					item === "adaptiveashrae90" ||
+					item === "adaptiveencalss2por" ||
+					item === "overheatot_occupied_hours" ||
+					item === "underheatot_occupied_hours" ||
+					item === "verheatdbt_occupied_hours" ||
+					item === "underheatdbt_occupied_hours"
+					// todo: include other subset outputs here
+				) {
+					outputData.push({
+						name: item,
+						amt: +(Math.round(output[item] + "e+2") + "e-2"),
+						unit: unitOptions[item],
+					});
+				} else {
+					inputData.push({
+						name: item,
+						amt: output[item],
+						unit: unitOptions[item],
+					});
+				}
+			}
+
+			return {
+				...primaryData,
+				name: output.alternative_name,
+				date: "2021.11.20",
+				stroke: colorPallet[idx],
+				opacity: 1,
+				visible: true,
+				showDropdown: false,
+				data: outputData,
+				inputData,
+			};
+		});
+		setSeries(outputs);
+		console.log("test", outputs);
+	}, [zones]);
 
 	const handleVisibility = (e) => {
 		const name = e.currentTarget.parentNode.dataset.name;
@@ -154,10 +209,9 @@ const CompareZones = () => {
 									className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
 									data-name={entry.name}
 								>
-									{/* todo: remove this */}
 									{/* <PDFViewer className="h-screen w-full">
-								<PdfDoc data={entry} />
-							</PDFViewer> */}
+										<PdfDoc data={entry} />
+									</PDFViewer> */}
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 									<span>{` ${entry.name}`}</span>
 									<span className="ml-1 text-xs">({entry.date})</span>
