@@ -120,8 +120,9 @@ const ResultOptions = ({ primData }) => {
 				<Link
 					to={{
 						pathname: "/compare-zones",
-						search: `?project_name=${primData.project_name}`,
+						search: `?subset=${primData.subset}&project_name=${primData.project_name}`,
 					}}
+					target={"_blank"}
 				>
 					<button className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white">
 						compare zones
