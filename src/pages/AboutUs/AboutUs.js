@@ -38,6 +38,12 @@ const AboutUs = () => {
 			image: pic09,
 		},
 		{
+			fullName: "Parsa Bagherzadeh",
+			education: "Ph.D. of computer science",
+			activityScope: "Artificial Intelligence",
+			image: pic13,
+		},
+		{
 			fullName: "Mohammad Rajaian",
 			education: "Master of Architectural technology",
 			activityScope: "Structure",
@@ -90,12 +96,6 @@ const AboutUs = () => {
 			education: "Master of Software engineer",
 			activityScope: "backend developer",
 			image: pic12,
-		},
-		{
-			fullName: "Parsa Bagherzadeh",
-			education: "phd of computer science",
-			activityScope: "Artificial Intelligence",
-			image: pic13,
 		},
 	];
 
