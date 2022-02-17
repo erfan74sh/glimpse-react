@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,12 +13,14 @@ import { updateData } from "../../../../features/estimationPrimData/EstimationPr
 
 const ResultOptions = ({ primData }) => {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const [showNewZone, setShowNewZone] = useState(false);
 	const [showNewAlter, setShowNewAlter] = useState(false);
 
 	const handleSubmit = (values) => {
-		updateData({ ...primData, ...values });
+		console.log("prime:", primData, "values:", values);
+		dispatch(updateData({ ...primData, ...values }));
 		navigate("/estimation");
 	};
 
