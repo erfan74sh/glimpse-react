@@ -117,7 +117,12 @@ const ResultOptions = ({ primData }) => {
 				</Formik>
 			</div>
 			<div>
-				<Link to="/estimation/compare-zones">
+				<Link
+					to={{
+						pathname: "/compare-zones",
+						search: `?project_name=${primData.project_name}`,
+					}}
+				>
 					<button className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white">
 						compare zones
 					</button>
