@@ -158,11 +158,13 @@ const styles = StyleSheet.create({
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
-		let tempInput = {};
-		data.inputData.forEach((element) => {
-			tempInput[element.name] = element.amt;
-		});
-		setInputs(tempInput);
+		if (data.inputData) {
+			let tempInput = {};
+			data.inputData.forEach((element) => {
+				tempInput[element.name] = element.amt;
+			});
+			setInputs(tempInput);
+		}
 	}, [data]);
 
 	const [outputs, setOutputs] = useState({});
