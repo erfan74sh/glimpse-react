@@ -204,7 +204,7 @@ const CompareZones = () => {
 						{series.length > 0 ? <Chart series={series} /> : "loading..."}
 					</section>
 					<PointsAndGrades subset={currentSubset} alternatives={series} />
-					<section className="mt-20 flex h-96 flex-col gap-y-10 px-40">
+					<section className="mt-20 flex flex-col gap-y-10 px-40">
 						{zoneList.map((zoneName, idx) => {
 							return (
 								<div key={idx}>
