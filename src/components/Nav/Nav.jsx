@@ -54,12 +54,16 @@ const Header = () => {
 							</li>
 							<li className="relative">
 								<NavLink
-									to="/estimation/result/0"
+									to="/result"
 									className={({ isActive }) =>
 										` ${
 											isActive && "border-b-2 border-white text-white"
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
+									onClick={(e) => {
+										e.preventDefault();
+										setShowProjectHistoryModal(true);
+									}}
 								>
 									simulations
 								</NavLink>
