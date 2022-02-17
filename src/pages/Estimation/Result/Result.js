@@ -54,7 +54,11 @@ const Result = () => {
 				zone_name,
 				alternative_name,
 				location,
-			} = projectsInSubset[0];
+			} = projectsInSubset.filter(
+				(item) =>
+					item.project_name === currentProjectName &&
+					item.zone_name === currentZoneName
+			)[0];
 			setPrimData({
 				high_performance_building_index,
 				subset,
@@ -65,7 +69,7 @@ const Result = () => {
 				location,
 			});
 		}
-	}, [projectsInSubset]);
+	}, [projectsInSubset, currentProjectName, currentZoneName]);
 
 	const [zoneList, setZoneList] = useState([]);
 	// ! this useEffect is not efficient
