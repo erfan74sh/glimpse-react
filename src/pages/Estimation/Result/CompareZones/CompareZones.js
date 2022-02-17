@@ -116,12 +116,12 @@ const CompareZones = () => {
 	return (
 		<main className=" px-24 py-16" id="compare-zone__main">
 			<header className="mb-10">
-				<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
+				<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
 					compare zones
 				</h1>
 			</header>
 			<main className="">
-				<section className="flex justify-center items-center max-h-152 overflow-hidden">
+				<section className="max-h-152 flex items-center justify-center overflow-hidden">
 					<Chart series={series} />
 				</section>
 				<section className="mt-18">
@@ -130,8 +130,8 @@ const CompareZones = () => {
 					</h2>
 					<PointsAndGrades />
 				</section>
-				<section className="flex flex-col h-96 px-40 mt-20">
-					<header className="flex items-center justify-between mb-9 mx-8 pb-2 border-b text-xl font-normal uppercase border-gray-500">
+				<section className="mt-20 flex h-96 flex-col px-40">
+					<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 						<h2>zone name</h2>
 					</header>
 					<ul className="flex flex-col gap-y-9">
@@ -139,17 +139,17 @@ const CompareZones = () => {
 							<>
 								<li
 									key={i}
-									className="flex content-between items-center relative mx-16 px-4 py-3.5 text-sm rounded-md shadow-full-sm bg-white"
+									className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
 									data-name={entry.name}
 								>
 									<article
 										className={`${
 											entry.showDropdown ? "visible" : "hidden"
-										} block w-5/6 px-14 pt-5 pb-10 rounded-md bg-white absolute left-1/2 top-0 transform -translate-x-1/2 translate-y-16 z-10 shadow-full-sm`}
+										} shadow-full-sm absolute left-1/2 top-0 z-10 block w-5/6 -translate-x-1/2 translate-y-16 transform rounded-md bg-white px-14 pt-5 pb-10`}
 									>
 										<div className="flex justify-between">
 											<div>
-												<h3 className="mb-5 font-bold text-blue-550 text-base uppercase">
+												<h3 className="text-blue-550 mb-5 text-base font-bold uppercase">
 													result
 												</h3>
 												<ul>
@@ -193,12 +193,12 @@ const CompareZones = () => {
 											<img src={ModelImage} alt="model" />
 										</div>
 										<button className="absolute top-5 right-5">
-											<PDFDownloadLink
+											{/* <PDFDownloadLink
 												document={<PdfDoc />}
 												fileName={`${entry.name}.pdf`}
 											>
 												<img src={PDFIcon} alt="download pdf icon" />
-											</PDFDownloadLink>
+											</PDFDownloadLink> */}
 										</button>
 									</article>
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
@@ -224,7 +224,7 @@ const CompareZones = () => {
 										<FontAwesomeIcon
 											icon={faCaretDown}
 											className={`${
-												entry.showDropdown ? "transform rotate-180" : ""
+												entry.showDropdown ? "rotate-180 transform" : ""
 											} transition-all`}
 										/>
 									</button>
