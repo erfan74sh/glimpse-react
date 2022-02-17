@@ -118,7 +118,7 @@ const ResultOptions = ({ primData }) => {
 			</div>
 			<div>
 				<Link to="/estimation/compare-zones">
-					<button className="bg-blue-550 w-36 rounded-md p-1 py-1.5 text-sm uppercase text-white">
+					<button className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white">
 						compare zones
 					</button>
 				</Link>
