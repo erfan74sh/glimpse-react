@@ -86,6 +86,13 @@ const ResultOptions = ({ primData }) => {
 					initialValues={{
 						alternative_name: "",
 					}}
+					validationSchema={yup.object({
+						alternative_name: yup
+							.string()
+							.min(2, "alternative name must be more than 2 characters")
+							.max(40, "alternative name must be less than 40 characters")
+							.required("alternative name is required"),
+					})}
 					onSubmit={(values) => {
 						handleSubmit(values);
 					}}
