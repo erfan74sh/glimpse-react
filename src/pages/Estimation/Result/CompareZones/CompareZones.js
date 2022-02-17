@@ -9,11 +9,34 @@ import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+// services
+import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
+import visualComfortServices from "../../../../services/estimations/visualComfort.service";
 
 const CompareZones = () => {
 	const [searchParams] = useSearchParams();
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
+
+	const [series2, setSeries2] = useState([]);
+	useEffect(() => {
+		const fetchData = async () => {
+			// todo: add more condition when other subset API's ready
+			const response =
+				currentSubset === "energy_consumption"
+					? await energyConsumptionServices.getEstimationByProjectName(
+							currentProjectName
+					  )
+					: currentSubset === "visual_comfort"
+					? await visualComfortServices.getEstimationByProjectName(
+							currentProjectName
+					  )
+					: null;
+
+			console.log(response);
+		};
+		fetchData();
+	});
 
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
