@@ -11,12 +11,12 @@ const MemberCard = ({ fullName, education, activityScope, image }) => {
 				/>
 				<div className="absolute top-0 flex h-full w-full content-center items-center overflow-hidden bg-white p-4 opacity-0 transition-all group-hover:opacity-70 ">
 					<span className="w-full text-lg font-medium text-black">
-						{activityScope}
+						{education}
 					</span>
 				</div>
 			</div>
 			<h4 className="text-blue-550 text-lg font-bold">{fullName}</h4>
-			<p>{education}</p>
+			<p>{activityScope}</p>
 		</>
 	);
 };
