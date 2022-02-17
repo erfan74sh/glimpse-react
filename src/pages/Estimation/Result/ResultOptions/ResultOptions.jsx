@@ -54,16 +54,6 @@ const ResultOptions = ({ primData }) => {
 							name="alternative_name"
 							placeholder="new alternative name"
 						/>
-						{/* <input
-						type="text"
-						placeholder="enter zone name"
-						className="rounded-md border border-gray-300 py-1.5 px-2 text-sm outline-none"
-					/>
-					<input
-						type="text"
-						placeholder="enter alternative name"
-						className="rounded-md border border-gray-300 py-1.5 px-2 text-sm outline-none"
-					/> */}
 						<button type="submit">
 							<FontAwesomeIcon
 								icon={faPlusCircle}
@@ -75,28 +65,37 @@ const ResultOptions = ({ primData }) => {
 			</div>
 			<div className="flex gap-x-4 overflow-hidden">
 				<button
-					className="bg-blue-550 w-36 rounded-md p-1 py-1.5 text-sm uppercase text-white"
+					className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white"
 					onClick={() => setShowNewAlter(!showNewAlter)}
 				>
 					new alternative
 				</button>
-				<div
-					className={` ${
-						showNewAlter ? "max-w-3xl" : ""
-					} flex max-w-0 items-center gap-x-2 transition-all duration-200`}
+				<Formik
+					initialValues={{
+						alternative_name: "",
+					}}
+					onSubmit={(values) => {
+						handleSubmit(values);
+					}}
 				>
-					<input
-						type="text"
-						placeholder="enter alternative name"
-						className="rounded-md border border-gray-300 py-1.5 px-2 text-sm outline-none"
-					/>
-					<button>
-						<FontAwesomeIcon
-							icon={faPlusCircle}
-							className="hover:text-blue-550 text-3xl text-gray-400 transition-all"
+					<Form
+						className={` ${
+							showNewAlter ? "max-w-3xl" : ""
+						} flex max-w-0 items-center gap-x-2 transition-all duration-200`}
+					>
+						<TextField
+							type="text"
+							name="alternative_name"
+							placeholder="new alternative name"
 						/>
-					</button>
-				</div>
+						<button type="submit">
+							<FontAwesomeIcon
+								icon={faPlusCircle}
+								className="hover:text-blue-550 text-3xl text-gray-400 transition-all"
+							/>
+						</button>
+					</Form>
+				</Formik>
 			</div>
 			<div>
 				<Link to="/estimation/compare-zones">
