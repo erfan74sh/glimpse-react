@@ -189,7 +189,7 @@ const CompareZones = () => {
 			</header>
 			<main className="">
 				<section className="max-h-152 flex items-center justify-center overflow-hidden">
-					<Chart series={series} />
+					{series.length > 0 ? <Chart series={series} /> : "loading..."}
 				</section>
 				<section className="mt-18">
 					<h2 className="mb-4 px-8 text-xl font-normal uppercase">
