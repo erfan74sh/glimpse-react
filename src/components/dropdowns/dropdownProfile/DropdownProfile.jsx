@@ -34,10 +34,10 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 					handleShowProjectHistoryModal();
 				}}
 			>
-				<Link to="#" className="flex gap-x-4 px-2 py-4">
+				<button className="flex gap-x-4 px-2 py-4">
 					<img src={ProjectHistory} alt="profile icon" className="h-auto w-6" />
 					<span>projects history</span>
-				</Link>
+				</button>
 			</li>
 			<li>
 				<Link to="#" className="flex gap-x-4 px-2 py-4">
