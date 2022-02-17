@@ -20,20 +20,20 @@ import pic13 from "./../../assets/profile/13.jpg";
 const AboutUs = () => {
 	const members = [
 		{
-			fullName: "mohamad tahsildoost",
-			education: "Associate Professor SBU",
+			fullName: "mohammad tahsildoost",
+			education: "Ph.D. of building science",
 			activityScope: "Architect",
 			image: pic05,
 		},
 		{
-			fullName: "Mahsa Zomorodian",
-			education: "Associate Professor SBU",
+			fullName: "Zahra Sadat Zomorodian",
+			education: "Ph.D. of Building Technology",
 			activityScope: "Architect",
 			image: pic08,
 		},
 		{
 			fullName: "Roham Afghani ",
-			education: "Associate Professor SBU",
+			education: "Ph.D. of Building Structure",
 			activityScope: "Architect",
 			image: pic09,
 		},
@@ -51,7 +51,7 @@ const AboutUs = () => {
 		},
 		{
 			fullName: "Pegah Eshraghi",
-			education: "PHD Researcher in Energy and Architecture",
+			education: "Ph.D. Researcher in Energy and Architecture",
 			activityScope: "Energy consumption - Thermal comfort",
 			image: pic06,
 		},
