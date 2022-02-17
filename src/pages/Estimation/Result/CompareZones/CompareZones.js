@@ -18,7 +18,7 @@ const CompareZones = () => {
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
 
-	const [zones, setZones] = useState([]);
+	const [altsInProject, setAltsInProject] = useState([]);
 	useEffect(() => {
 		const fetchData = async () => {
 			// todo: add more condition when other subset API's ready
@@ -33,7 +33,7 @@ const CompareZones = () => {
 					  )
 					: null;
 			// console.log(response);
-			setZones(response?.data);
+			setAltsInProject(response?.data);
 		};
 		fetchData();
 	}, [currentProjectName, currentSubset]);
@@ -103,7 +103,7 @@ const CompareZones = () => {
 		// 	(value) =>
 		// 		value.project_name === currentProject && value.zone_name === currentZone
 		// );
-		const outputs = zones.map((output, idx) => {
+		const outputs = altsInProject.map((output, idx) => {
 			let inputData = [];
 			let outputData = [];
 			let primaryData = {};
@@ -170,7 +170,18 @@ const CompareZones = () => {
 		});
 		setSeries(outputs);
 		console.log("test", outputs);
-	}, [zones]);
+	}, [altsInProject]);
+
+	const [zoneList, setZoneList] = useState([]);
+	// ! this useEffect is not efficient
+	useEffect(() => {
+		// ? get all zones in currentProject
+		if (altsInProject.length !== 0) {
+			const list = Array.from(altsInProject, (zone) => zone.zone_name);
+			const uniqueList = Array.from(new Set(list));
+			setZoneList(uniqueList);
+		}
+	}, [altsInProject]);
 
 	const handleVisibility = (e) => {
 		const name = e.currentTarget.parentNode.dataset.name;
@@ -191,12 +202,7 @@ const CompareZones = () => {
 				<section className="max-h-152 flex items-center justify-center overflow-hidden">
 					{series.length > 0 ? <Chart series={series} /> : "loading..."}
 				</section>
-				<section className="mt-18">
-					<h2 className="mb-4 px-8 text-xl font-normal uppercase">
-						points and grades
-					</h2>
-					<PointsAndGrades />
-				</section>
+				<PointsAndGrades subset={currentSubset} alternatives={series} />
 				<section className="mt-20 flex h-96 flex-col px-40">
 					<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
 						<h2>zone name</h2>
