@@ -174,7 +174,6 @@ const PdfDoc = ({ data }) => {
 		setOutputs(tempOutputs);
 	}, [data]);
 
-	console.log(data);
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>
