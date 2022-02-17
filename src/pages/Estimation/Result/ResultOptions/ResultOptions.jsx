@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,11 +7,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextField from "../../../../components/inputs/TextField/TextField";
 // icons
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+// slice
+import { updateData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
 
 const ResultOptions = ({ primData }) => {
+	const navigate = useNavigate();
+
 	const [showNewZone, setShowNewZone] = useState(false);
 	const [showNewAlter, setShowNewAlter] = useState(false);
+
+	const handleSubmit = (values) => {
+		updateData({ ...primData, ...values });
+		navigate("/estimation");
+	};
+
 	return (
 		<section className="mt-6 flex gap-x-8">
 			<div className="flex items-center gap-x-4 overflow-hidden">
@@ -24,14 +33,11 @@ const ResultOptions = ({ primData }) => {
 				<Formik
 					initialValues={{
 						alternative_name: "",
-						building_program: "",
-						high_performance_building_index: "",
-						location: "",
-						project_name: "",
-						subset: "",
 						zone_name: "",
 					}}
-					onSubmit={(values) => console.log(values)}
+					onSubmit={(values) => {
+						handleSubmit(values);
+					}}
 				>
 					<Form
 						className={` ${
