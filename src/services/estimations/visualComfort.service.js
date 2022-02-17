@@ -11,9 +11,16 @@ const getEstimations = () => {
 	return axios.get("/daylights/", { headers: authHeader() });
 };
 
+const getEstimationByProjectName = (projectName) => {
+	return axios.get(`/daylights/project_name/${projectName}`, {
+		headers: authHeader(),
+	});
+};
+
 const visualComfortServices = {
 	estimate,
 	getEstimations,
+	getEstimationByProjectName,
 };
 
 export default visualComfortServices;
