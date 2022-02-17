@@ -22,26 +22,26 @@ const ContactUs = () => {
 			</header>
 			<main className="px-24 py-16">
 				<header className="mb-10">
-					<h1 className="pl-3 leading-8 border-l-8 border-blue-550 text-blue-550 text-3xl font-bold uppercase">
+					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
 						contact us
 					</h1>
 				</header>
 				<div className="flex">
 					<section className="w-1/2 pr-20">
-						<ul className="flex gap-x-14 text-gray-650 capitalize">
-							<div className="flex flex-col divide-y-2 divide-gray-300 w-1/2">
+						<ul className="text-gray-650 flex gap-x-14 capitalize">
+							<div className="flex w-1/2 flex-col divide-y-2 divide-gray-300">
 								<li className="flex gap-x-3 py-3">
 									<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">phone</h3>
-										<span>09121395045</span>
+										<span>09936356080</span>
 									</div>
 								</li>
 								<li className="flex gap-x-3 py-3">
 									<FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">email</h3>
-										<span className="normal-case">info@bsp.grezen</span>
+										<span className="normal-case">Info@bsp.green</span>
 									</div>
 								</li>
 								<li className="flex gap-x-3 py-3">
@@ -52,7 +52,7 @@ const ContactUs = () => {
 									</div>
 								</li>
 							</div>
-							<div className="flex flex-col divide-y-2 divide-gray-300 w-1/2">
+							<div className="flex w-1/2 flex-col divide-y-2 divide-gray-300">
 								<li className="flex gap-x-3 py-3">
 									<FontAwesomeIcon
 										icon={faInstagramSquare}
@@ -83,38 +83,38 @@ const ContactUs = () => {
 							<ContactUsMap />
 						</div>
 					</section>
-					<section className="w-1/2 pl-14 relative h-113">
+					<section className="h-113 relative w-1/2 pl-14">
 						<form className="flex flex-col gap-y-6">
-							<h2 className="text-lg font-semibold text-gray-650">
+							<h2 className="text-gray-650 text-lg font-semibold">
 								How can we help you ?
 							</h2>
 							<input
 								type="text"
 								name="name"
 								placeHolder="your name"
-								className="px-6 py-2 rounded-2xl bg-gray-200"
+								className="rounded-2xl bg-gray-200 px-6 py-2"
 							/>
 							<input
 								type="email"
 								name="email"
 								placeHolder="your email"
-								className="px-6 py-2 rounded-2xl bg-gray-200"
+								className="rounded-2xl bg-gray-200 px-6 py-2"
 							/>
 							<input
 								type="text"
 								name="subject"
 								placeHolder="subject"
-								className="px-6 py-2 rounded-2xl bg-gray-200"
+								className="rounded-2xl bg-gray-200 px-6 py-2"
 							/>
 							<textarea
 								rows={10}
 								name="message"
 								placeHolder="write your message here"
-								className="px-6 py-2 rounded-2xl bg-gray-200"
+								className="rounded-2xl bg-gray-200 px-6 py-2"
 							/>
 							<button
 								type="submit"
-								className="self-end px-8 py-1 text-white capitalize bg-blue-550 rounded-md transition hover:shadow-b-sm"
+								className="bg-blue-550 hover:shadow-b-sm self-end rounded-md px-8 py-1 capitalize text-white transition"
 							>
 								send
 							</button>
