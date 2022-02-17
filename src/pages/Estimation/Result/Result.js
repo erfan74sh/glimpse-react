@@ -19,6 +19,7 @@ const Result = () => {
 
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	const [projectsList, setProjectsList] = useState([]);
+
 	useEffect(() => {
 		const subsetOptions = {
 			visual_comfort: "daylights",
@@ -39,6 +40,32 @@ const Result = () => {
 		};
 		getProjects();
 	}, [currentSubset]);
+
+	// todo: include redux persist in project and remove this state and it's useEffect
+	// todo: and access this data in final component that needs
+	const [primData, setPrimData] = useState([]);
+	useEffect(() => {
+		if (projectsInSubset[0]) {
+			const {
+				high_performance_building_index,
+				subset,
+				building_program,
+				project_name,
+				zone_name,
+				alternative_name,
+				location,
+			} = projectsInSubset[0];
+			setPrimData({
+				high_performance_building_index,
+				subset,
+				building_program,
+				project_name,
+				zone_name,
+				alternative_name,
+				location,
+			});
+		}
+	}, [projectsInSubset]);
 
 	const [zoneList, setZoneList] = useState([]);
 	// ! this useEffect is not efficient
@@ -109,7 +136,7 @@ const Result = () => {
 							handleSearchParams={handleSearchParams}
 						/>
 					</nav>
-					<ResultOptions />
+					<ResultOptions primData={primData} />
 				</header>
 				<main className="">
 					<Zone projects={projectsInSubset} />
