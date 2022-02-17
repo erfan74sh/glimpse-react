@@ -10,14 +10,8 @@ import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
-import {
-	faEye,
-	faEyeSlash,
-	faCaretDown,
-} from "@fortawesome/free-solid-svg-icons";
-// assets
-import ModelImage from "../../../../assets/images/3dmodel-result.png";
-import PDFIcon from "../../../../assets/images/pdf-icon.png";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 const CompareZones = () => {
 	const [series, setSeries] = useState([]);
@@ -106,13 +100,7 @@ const CompareZones = () => {
 		item.visible = !item.visible;
 		setSeries(temState);
 	};
-	const handleShowResultDropdown = (e) => {
-		const name = e.currentTarget.parentNode.dataset.name;
-		let tempState = [...series];
-		let item = tempState.filter((entry) => entry.name === name)[0];
-		item.showDropdown = !item.showDropdown;
-		setSeries(tempState);
-	};
+
 	return (
 		<main className=" px-24 py-16" id="compare-zone__main">
 			<header className="mb-10">
@@ -142,68 +130,24 @@ const CompareZones = () => {
 									className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
 									data-name={entry.name}
 								>
-									<article
-										className={`${
-											entry.showDropdown ? "visible" : "hidden"
-										} shadow-full-sm absolute left-1/2 top-0 z-10 block w-5/6 -translate-x-1/2 translate-y-16 transform rounded-md bg-white px-14 pt-5 pb-10`}
-									>
-										<div className="flex justify-between">
-											<div>
-												<h3 className="text-blue-550 mb-5 text-base font-bold uppercase">
-													result
-												</h3>
-												<ul>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-													<li>
-														<span>parameter</span>
-														<span>[unit]:</span>
-														<span>10</span>
-													</li>
-												</ul>
-											</div>
-											<img src={ModelImage} alt="model" />
-										</div>
-										<button className="absolute top-5 right-5">
-											{/* <PDFDownloadLink
-												document={<PdfDoc />}
-												fileName={`${entry.name}.pdf`}
-											>
-												<img src={PDFIcon} alt="download pdf icon" />
-											</PDFDownloadLink> */}
-										</button>
-									</article>
+									{/* todo: remove this */}
+									{/* <PDFViewer className="h-screen w-full">
+								<PdfDoc data={entry} />
+							</PDFViewer> */}
 									<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 									<span>{` ${entry.name}`}</span>
 									<span className="ml-1 text-xs">({entry.date})</span>
+									<button className="ml-4">
+										<PDFDownloadLink
+											document={<PdfDoc data={entry} />}
+											fileName={`${entry.name}.pdf`}
+										>
+											<FontAwesomeIcon
+												icon={faFilePdf}
+												className="text-xl opacity-70 transition hover:opacity-90"
+											/>
+										</PDFDownloadLink>
+									</button>
 									<button className="ml-auto mr-4 capitalize underline">
 										<Link to="/estimation">edit</Link>
 									</button>
@@ -216,17 +160,6 @@ const CompareZones = () => {
 												className="text-gray-500"
 											/>
 										)}
-									</button>
-									<button
-										className="relative text-base leading-5 text-gray-500"
-										onClick={handleShowResultDropdown}
-									>
-										<FontAwesomeIcon
-											icon={faCaretDown}
-											className={`${
-												entry.showDropdown ? "rotate-180 transform" : ""
-											} transition-all`}
-										/>
 									</button>
 								</li>
 							</>
