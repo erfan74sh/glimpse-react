@@ -11,7 +11,7 @@ import pic05 from "./../../assets/profile/05.png";
 import pic06 from "./../../assets/profile/06.png";
 import pic07 from "./../../assets/profile/07.png";
 import pic08 from "./../../assets/profile/08.png";
-import pic09 from "./../../assets/profile/09.png";
+import pic09 from "./../../assets/profile/09.jpg";
 import pic10 from "./../../assets/profile/10.jpg";
 import pic11 from "./../../assets/profile/11.jpg";
 import pic12 from "./../../assets/profile/12.jpg";
@@ -21,19 +21,19 @@ const AboutUs = () => {
 	const members = [
 		{
 			fullName: "mohammad tahsildoost",
-			education: "Ph.D. of building science",
+			education: "Ph.D. of arch. Building science",
 			activityScope: "Architect",
 			image: pic05,
 		},
 		{
 			fullName: "Zahra Sadat Zomorodian",
-			education: "Ph.D. of Building Technology",
+			education: "Ph.D. of arch. Building science",
 			activityScope: "Architect",
 			image: pic08,
 		},
 		{
 			fullName: "Roham Afghani ",
-			education: "Ph.D. of Building Structure",
+			education: "Ph.D. in Building Systems Engineering",
 			activityScope: "Architect",
 			image: pic09,
 		},
@@ -43,12 +43,7 @@ const AboutUs = () => {
 			activityScope: "Artificial Intelligence",
 			image: pic13,
 		},
-		{
-			fullName: "Mohammad Rajaian",
-			education: "Master of Architectural technology",
-			activityScope: "Structure",
-			image: pic01,
-		},
+
 		{
 			fullName: "Haniyeh Noorkajouri",
 			education: "Master of Energy and Architecture",
@@ -61,17 +56,24 @@ const AboutUs = () => {
 			activityScope: "Energy consumption - Thermal comfort",
 			image: pic06,
 		},
+
+		{
+			fullName: "Amirmohammad Rabani Jalali",
+			education: "Master of Energy and Architecture",
+			activityScope: "structure",
+			image: pic11,
+		},
+		{
+			fullName: "Mohammad Rajaian",
+			education: "Master of Architectural technology",
+			activityScope: "Structure",
+			image: pic01,
+		},
 		{
 			fullName: "Arman Nikkhah",
 			education: "Master of Energy and Architecture",
 			activityScope: "Data Analyzer",
 			image: pic02,
-		},
-		{
-			fullName: "Mohammad Tabatabaei",
-			education: "Master of Energy and Architecture",
-			activityScope: "Computational Design",
-			image: pic03,
 		},
 		{
 			fullName: "Sogand Haghighat",
@@ -80,10 +82,10 @@ const AboutUs = () => {
 			image: pic07,
 		},
 		{
-			fullName: "Amirmohammad Rabani Jalali",
+			fullName: "Mohammad Tabatabaei",
 			education: "Master of Energy and Architecture",
-			activityScope: "structure",
-			image: pic11,
+			activityScope: "Computational Design",
+			image: pic03,
 		},
 		{
 			fullName: "Erfan Shafiee",
