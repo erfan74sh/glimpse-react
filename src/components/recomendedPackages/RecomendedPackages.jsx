@@ -5,7 +5,7 @@ import PriceCard from "../cards/PriceCard";
 const packagesCategories = [
 	{
 		categoryName: "آزمایشی",
-		packagesList: [{ period: "۱۵ روزه", options: ["40 عدد شبیه‌سازی"] }],
+		packagesList: [{ period: "۱۵ روزه", options: ["۴۰ عدد شبیه‌سازی"] }],
 	},
 	{
 		categoryName: "دانشجویی",
