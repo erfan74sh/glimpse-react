@@ -3,11 +3,6 @@ import React from "react";
 const Simulations = () => {
 	return (
 		<section className="pt-20 pb-28">
-			<header className="pb-6">
-				<h3 className="text-blue-550 text-center text-2xl font-bold">
-					Number of Simulations
-				</h3>
-			</header>
 			<ul className="flex justify-center gap-x-24">
 				<li
 					id="structure-simulations"
