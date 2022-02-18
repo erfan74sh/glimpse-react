@@ -61,5 +61,5 @@ module.exports = {
 			borderRadius: ["hover", "group-hover"],
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwindcss-rtl")],
 };
