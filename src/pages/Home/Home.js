@@ -4,11 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import Nav from "../../components/Nav";
 // assets
-import SimulationIcon from "../../assets/icons/simulation.png";
-import AnalyzingIcon from "../../assets/icons/analysing.png";
-import DataSetIcon from "../../assets/icons/building-data-set.png";
-import MachineLearningIcon from "../../assets/icons/machine-learning.png";
-import ResultIcon from "../../assets/icons/result.png";
+
 import Logo from "../../assets/images/logo-02.png";
 import FooterImage from "../../assets/images/footer-image.png";
 import Modal from "../../components/modal";
@@ -18,6 +14,8 @@ import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
 import "./Home.scss";
 import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
+import WorkingProcess from "./WorkingProcess";
+import Simulations from "./Simulations";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
@@ -71,98 +69,8 @@ const Home = () => {
 					<h2 className="text-blue-550 font-medium">Work Frame</h2>
 				</header>
 				<div id="work-frame">
-					<section>
-						<header className="bg-white text-center">
-							<h3 className="text-gray-650 text-2xl font-bold">
-								Our Working Process
-							</h3>
-						</header>
-						<ul className="flex justify-between px-56 py-16">
-							<li className="flex flex-col items-center">
-								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
-									<img
-										src={SimulationIcon}
-										alt="icon"
-										className="h-1/2 w-1/2 object-contain"
-									/>
-								</div>
-								<span className="font-medium">Simulation</span>
-							</li>
-							<li className="flex flex-col items-center">
-								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
-									<img
-										src={AnalyzingIcon}
-										alt="icon"
-										className="h-1/2 w-1/2 object-contain"
-									/>
-								</div>
-								<span className="font-medium">Analysing</span>
-							</li>
-							<li className="flex flex-col items-center">
-								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
-									<img
-										src={DataSetIcon}
-										alt="icon"
-										className="h-1/2 w-1/2 object-contain"
-									/>
-								</div>
-								<span className="font-medium">Bulding Data-set</span>
-							</li>
-							<li className="flex flex-col items-center">
-								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
-									<img
-										src={MachineLearningIcon}
-										alt="icon"
-										className="h-1/2 w-1/2 object-contain"
-									/>
-								</div>
-								<span className="text-center font-medium">
-									Machine Learning
-									<br /> Process
-								</span>
-							</li>
-							<li className="flex flex-col items-center">
-								<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-gray-100">
-									<img
-										src={ResultIcon}
-										alt="icon"
-										className="h-3/5 w-3/5 object-contain"
-									/>
-								</div>
-								<span className="font-medium">Results</span>
-							</li>
-						</ul>
-					</section>
-					<section className="pt-20 pb-28">
-						<header className="pb-6">
-							<h3 className="text-blue-550 text-center text-2xl font-bold">
-								Number of Simulations
-							</h3>
-						</header>
-						<ul className="flex justify-center gap-x-24">
-							<li
-								id="structure-simulations"
-								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
-							>
-								<span className="text-gray-650 font-medium">Structure</span>
-								<span className="text-xl font-bold text-gray-600">+7500</span>
-							</li>
-							<li
-								id="energy-simulations"
-								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
-							>
-								<span className="text-gray-650 font-medium">Energy</span>
-								<span className="text-xl font-bold text-gray-600">+5800</span>
-							</li>
-							<li
-								id="ieq-simulations"
-								className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
-							>
-								<span className="text-gray-650 font-medium">IEQ</span>
-								<span className="text-xl font-bold text-gray-600">+5900</span>
-							</li>
-						</ul>
-					</section>
+					<WorkingProcess />
+					<Simulations />
 				</div>
 				<section className="pb-40">
 					<header className="flex flex-col-reverse items-center pb-12">
