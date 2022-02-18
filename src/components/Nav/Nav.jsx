@@ -35,7 +35,7 @@ const Header = () => {
 				<ul className="flex items-center justify-between px-9 py-4">
 					<li>
 						<Link to="/">
-							<img src={Logo} alt="glimpse logo" />
+							<img src={Logo} className="h-8 w-auto" alt="glimpse logo" />
 						</Link>
 					</li>
 					<li>
