@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PriceCard = ({ period, simulationNumber, price }) => {
+const PriceCard = ({ period, options, price }) => {
 	return (
 		<Link to="#">
 			<h4>{period && period}</h4>
 			<ul>
-				<li>{simulationNumber && simulationNumber} عدد شبیه‌سازی</li>
+				{options && options.map((option, idx) => <li key={idx}>{option}</li>)}
 			</ul>
 			<span>{price ? `${price} هزار تومان` : "رایگان"}</span>
 		</Link>
