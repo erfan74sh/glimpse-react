@@ -1,21 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import Nav from "../../components/Nav";
-// assets
-
-import Logo from "../../assets/images/logo-02.png";
-import FooterImage from "../../assets/images/footer-image.png";
 import Modal from "../../components/modal";
 import EstimationModal from "./EstimationModal";
-// icons
-import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// style
-import "./Home.scss";
 import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
 import WorkingProcess from "./WorkingProcess";
 import Simulations from "./Simulations";
+import Footer from "./Footer";
+// style
+import "./Home.scss";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
@@ -78,96 +71,7 @@ const Home = () => {
 					<RecomendedPackages />
 				</section>
 			</main>
-			<footer className="bg-gray-100 " dir="rtl">
-				<div className="border-blue-550 relative mx-80 flex gap-x-28 border-t-2 pt-10">
-					<section className="flex flex-col gap-y-8">
-						<h4 className="text-gray-650 text-2xl font-medium">
-							want to talk with us?
-						</h4>
-						<ul className="flex flex-grow flex-col justify-between gap-y-4">
-							<li className="flex items-center gap-x-3">
-								<span className="shadow-neo-sm flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
-									<FontAwesomeIcon
-										icon={faPhoneAlt}
-										size="lg"
-										className="text-blue-550"
-									/>
-								</span>
-								<span className="font-medium text-gray-500">
-									contact@glimpse.com
-								</span>
-							</li>
-							<li className="flex items-center gap-x-3">
-								<span className="shadow-neo-sm flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
-									<FontAwesomeIcon
-										icon={faEnvelope}
-										size="lg"
-										className="text-blue-550"
-									/>
-								</span>
-								<span className="font-medium text-gray-500">0913-333-7004</span>
-							</li>
-						</ul>
-					</section>
-					<section className="flex flex-col gap-y-8">
-						<h4 className="text-gray-650 text-2xl font-medium">Our Company</h4>
-						<nav className="flex-grow">
-							<ul className="flex h-full flex-col justify-between text-gray-500 ">
-								<li>
-									<Link
-										to="/"
-										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
-									>
-										About Us
-									</Link>
-								</li>
-								<li>
-									<Link
-										to=""
-										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
-									>
-										Contact Us
-									</Link>
-								</li>
-								<li>
-									<Link
-										to=""
-										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
-									>
-										Our Technology
-									</Link>
-								</li>
-								<li>
-									<Link
-										to=""
-										className="border-b-2 border-transparent transition-all hover:border-gray-600 hover:text-gray-600"
-									>
-										Latest Paper
-									</Link>
-								</li>
-							</ul>
-						</nav>
-					</section>
-					<form className="flex flex-grow flex-col gap-y-4">
-						<input
-							type="email"
-							placeholder="Email Address"
-							className="shadow-neo rounded-full border-none bg-gray-100 py-3 px-4 outline-none"
-						/>
-						<textarea
-							placeholder="message"
-							className="shadow-neo flex-grow rounded-2xl border-none bg-gray-100 py-3 px-4 outline-none"
-						/>
-					</form>
-				</div>
-				<img src={FooterImage} alt="" className="-mt-45 mx-auto h-auto w-2/3" />
-				<section className="flex flex-col items-center py-10">
-					<img src={Logo} alt="glimpse logo" className="h-auto w-48" />
-					<p className="text-sm font-normal text-gray-500">
-						Designed By Glimpse Team
-					</p>
-				</section>
-			</footer>
+			<Footer />
 		</>
 	);
 };
