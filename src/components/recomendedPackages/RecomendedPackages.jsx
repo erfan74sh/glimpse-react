@@ -1,4 +1,6 @@
 import React from "react";
+// components
+import PriceCard from "../cards/PriceCard";
 
 const packagesCategories = [
 	{
@@ -24,7 +26,30 @@ const packagesCategories = [
 ];
 
 const RecomendedPackages = () => {
-	return <div>RecomendedPackages</div>;
+	return (
+		<ul>
+			{packagesCategories.map((category, idx) => {
+				return (
+					<li key={idx}>
+						<h3>{category.categoryName}</h3>
+						<ul>
+							{category.packagesList.map((_package, idx) => {
+								return (
+									<li key={idx}>
+										<PriceCard
+											period={_package.period}
+											options={_package.options}
+											price={_package.price}
+										/>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+				);
+			})}
+		</ul>
+	);
 };
 
 export default RecomendedPackages;
