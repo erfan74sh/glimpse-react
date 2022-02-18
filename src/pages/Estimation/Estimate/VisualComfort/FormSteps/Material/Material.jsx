@@ -71,7 +71,7 @@ const Material = ({ nextStep, prevStep }) => {
 			<Form className="flex h-full flex-col">
 				<fieldset className="mb-8 flex flex-col gap-y-5 pr-10">
 					<legend className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
-						Boundry conditions
+						Material
 					</legend>
 
 					<InputRange
@@ -81,8 +81,7 @@ const Material = ({ nextStep, prevStep }) => {
 						max="0.7"
 						step="0.05"
 						handleValue={handleReflectanCeWall}
-						moreInfo="?"
-						unit="?"
+						moreInfo="ضریب بازتاب نور بر روی سطح دیوار"
 					/>
 					<InputRange
 						name="reflectance_celing"
@@ -91,8 +90,7 @@ const Material = ({ nextStep, prevStep }) => {
 						max="0.7"
 						step="0.05"
 						handleValue={handleReflectanCeCeiling}
-						moreInfo="?"
-						unit="?"
+						moreInfo="ضریب بازتاب نور بر روی سطح سقف"
 					/>
 					<InputRange
 						name="reflectance_floor"
@@ -101,15 +99,15 @@ const Material = ({ nextStep, prevStep }) => {
 						max="0.7"
 						step="0.05"
 						handleValue={handleReflectanCeFloor}
-						moreInfo="?"
-						unit="?"
+						moreInfo="ضریب بازتاب نور بر روی سطح کف"
 					/>
 					<SelectField
 						name="vt_glass"
 						selectOptions={vtGlassOptions}
-						label="Vt-glass"
-						placeholder="choose ?"
+						label="Glass Visible Transmittance"
+						placeholder="choose one"
 						handleValue={handleVtGlass}
+						moreInfo="ضریب انتقال نور از شیشه"
 					/>
 				</fieldset>
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
