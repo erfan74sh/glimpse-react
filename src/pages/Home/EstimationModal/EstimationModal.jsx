@@ -20,7 +20,7 @@ const Subset = () => {
 		{ label: "thermal comfort", value: "thermal_comfort" },
 	];
 	const energyWaterSubset = [
-		{ label: "energy consumption", value: "energy_consumption" },
+		{ label: "energy demand", value: "energy_consumption" },
 	];
 	const structureSubset = [
 		{ label: "structure design", value: "structure_design" },
@@ -51,8 +51,8 @@ const StepOne = ({ nextStep, formData }) => {
 	const buildingProgramOptions = [
 		{ label: "office" },
 		{ label: "residential" },
-		{ label: "school" },
-		{ label: "hotel" },
+		{ label: "educational" },
+		{ label: "Commercial" },
 	];
 
 	return (
