@@ -17,6 +17,7 @@ import EstimationModal from "./EstimationModal";
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // style
 import "./Home.scss";
+import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
@@ -171,72 +172,7 @@ const Home = () => {
 						<span className="text-blue-550 font-medium">Best Pricing</span>
 					</header>
 					<section className="flex justify-center gap-x-12">
-						<article className="group relative flex flex-col items-center">
-							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
-								<span>12000</span>
-								<span>Rls</span>
-							</header>
-							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
-								<h5 className="text-xl font-medium">Basic</h5>
-								<ul className="flex flex-col items-center text-lg">
-									<li>2 Calculation</li>
-									<li>4 Revision</li>
-									<li>Numerical Results</li>
-								</ul>
-								<button
-									type="button"
-									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
-								>
-									buy now
-								</button>
-							</section>
-						</article>
-						<article className="group relative flex flex-col items-center">
-							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
-								<span>12000</span>
-								<span>Rls</span>
-							</header>
-							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
-								<h5 className="text-xl font-medium">Standard</h5>
-								<ul className="flex flex-col items-center text-lg">
-									<li>15 Calculation</li>
-									<li>20 Revision</li>
-									<li>Numerical Results</li>
-									<li>Simulation</li>
-									<li>Rhino And Revit Exports</li>
-								</ul>
-								<button
-									type="button"
-									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
-								>
-									buy now
-								</button>
-							</section>
-						</article>
-						<article className="group relative flex flex-col items-center">
-							<header className=" -top-18 shadow-neo group-hover:border-blue-550 absolute flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-gray-100 bg-gray-100 text-xl transition-all">
-								<span>1200</span>
-								<span>Rls</span>
-							</header>
-							<section className="h-100 rounded-5xl shadow-neo group-hover:border-blue-550 flex w-80 flex-col items-center gap-y-2 border-2 border-gray-100 bg-gray-100 px-5 pt-20 pb-5 transition-all">
-								<h5 className="text-xl font-medium">Business</h5>
-								<ul className="flex flex-col items-center text-lg">
-									<li>30 Calculation</li>
-									<li>45 Revision</li>
-									<li>Numerical Results</li>
-									<li>Simulation</li>
-									<li>Rhino And Revit</li>
-									<li>Grasshopper Exports</li>
-									<li>Design Suggestions</li>
-								</ul>
-								<button
-									type="button"
-									className="shadow-neo-sm hover:bg-blue-550 mt-auto rounded-full bg-gray-100 py-1 px-4 font-medium text-gray-600 transition-all hover:text-white"
-								>
-									buy now
-								</button>
-							</section>
-						</article>
+						<RecomendedPackages />
 					</section>
 				</section>
 			</main>
