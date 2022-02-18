@@ -18,7 +18,13 @@ const Estimate = () => {
 		<main className=" px-24 py-10" id="estimate__main">
 			<header className="mb-10">
 				<h1 className="border-blue-550 text-blue-550 flex justify-between border-l-8 pl-3 text-2xl font-bold uppercase leading-8">
-					{primaryData.subset.replace("_", " ")}
+					{primaryData.subset === "energy_consumption"
+						? "energy demand"
+						: primaryData.subset === "visual_comfort"
+						? "visual comfort"
+						: primaryData.subset === "structure_design"
+						? "structure design"
+						: "thermal comfort"}
 				</h1>
 				<section className="px-5 pt-10 pb-4">
 					<BreadCrumbs
