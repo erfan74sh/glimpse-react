@@ -165,15 +165,12 @@ const Home = () => {
 					</section>
 				</div>
 				<section className="pb-40">
-					<header className="flex flex-col-reverse items-center pb-36">
-						<h3 className="text-gray-650 text-2xl font-bold">
-							Our Pricing Plans
+					<header className="flex flex-col-reverse items-center pb-12">
+						<h3 className="text-blue-550 text-2xl font-bold">
+							بسته‌های پیشنهادی
 						</h3>
-						<span className="text-blue-550 font-medium">Best Pricing</span>
 					</header>
-					<section className="flex justify-center gap-x-12">
-						<RecomendedPackages />
-					</section>
+					<RecomendedPackages />
 				</section>
 			</main>
 			<footer className="bg-gray-100 " dir="rtl">
