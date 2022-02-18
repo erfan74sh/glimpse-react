@@ -5,7 +5,7 @@ const mapContainerStyle = {
 	width: "100%",
 	height: "250px",
 };
-const companyLocation = [35.79905, 51.394711];
+const companyLocation = [35.796784220168966, 51.39476019337767];
 
 const ContactUsMap = () => {
 	return (
