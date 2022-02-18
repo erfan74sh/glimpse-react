@@ -64,10 +64,7 @@ const Home = () => {
 					</p>
 				</section>
 			</header>
-			<main className="mt-24 bg-gray-100" dir="rtl">
-				<header className="bg-white text-center">
-					<h2 className="text-blue-550 font-medium">Work Frame</h2>
-				</header>
+			<main className="mt-24" dir="rtl">
 				<div id="work-frame">
 					<WorkingProcess />
 					<Simulations />
