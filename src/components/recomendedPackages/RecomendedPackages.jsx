@@ -27,12 +27,14 @@ const packagesCategories = [
 
 const RecomendedPackages = () => {
 	return (
-		<ul>
+		<ul className="flex justify-center gap-x-28">
 			{packagesCategories.map((category, idx) => {
 				return (
-					<li key={idx}>
-						<h3>{category.categoryName}</h3>
-						<ul>
+					<li key={idx} className="flex flex-col items-center gap-y-10">
+						<h3 className="text-blue-550 text-3xl font-bold">
+							{category.categoryName}
+						</h3>
+						<ul className="flex flex-col gap-y-6">
 							{category.packagesList.map((_package, idx) => {
 								return (
 									<li key={idx}>
