@@ -7,7 +7,7 @@ const MemberCard = ({ fullName, education, activityScope, image }) => {
 				<img
 					src={image}
 					alt="profile pic"
-					className="w-45 h-45 mb-5 overflow-hidden rounded-full object-cover transition-all hover:rounded-none group-hover:rounded-none"
+					className="mb-5 h-40 w-40 overflow-hidden rounded-full object-cover transition-all hover:rounded-none group-hover:rounded-none"
 				/>
 				<div className="absolute top-0 flex h-full w-full content-center items-center overflow-hidden bg-white p-4 opacity-0 transition-all group-hover:opacity-70 ">
 					<span className="w-full text-lg font-medium text-black">
