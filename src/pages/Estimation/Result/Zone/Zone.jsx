@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 // components
 import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
@@ -47,26 +47,26 @@ const Zone = ({ projects }) => {
 			coolingload: "kWh/m2",
 			heatingload: "kWh/m2",
 			electriclight: "kWh/m2",
-			fanger20: "",
-			fanger10: "",
-			adaptiveashrae80: "",
-			adaptiveashrae90: "",
-			adaptiveencalss2por: "",
-			overheatot_occupied_hours: "",
-			underheatot_occupied_hours: "",
-			verheatdbt_occupied_hours: "",
-			underheatdbt_occupied_hours: "",
+			fanger20: "hr",
+			fanger10: "hr",
+			adaptiveashrae80: "hr",
+			adaptiveashrae90: "hr",
+			adaptiveencalss2por: "hr",
+			overheatot_occupied_hours: "hr",
+			underheatot_occupied_hours: "hr",
+			verheatdbt_occupied_hours: "hr",
+			underheatdbt_occupied_hours: "hr",
 
 			reflectance_wall: "",
 			reflectance_celing: "",
 			reflectance_floor: "",
 			vt_glass: "",
 
-			udi: "",
-			mda: "",
-			svd: "",
-			ase: "",
-			sda: "",
+			udi: "%",
+			mda: "%",
+			svd: "%",
+			ase: "%",
+			sda: "%",
 		};
 		const colorPallet = [
 			"#784AC1",
@@ -171,9 +171,13 @@ const Zone = ({ projects }) => {
 					{series.map((entry, i) => (
 						<li
 							key={i}
-							className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
+							className=" shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
 							data-name={entry.name}
 						>
+							{/* todo: remove this */}
+							{/* <PDFViewer className="h-screen w-full">
+								<PdfDoc data={entry} />
+							</PDFViewer> */}
 							<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 							<span>{` ${entry.name}`}</span>
 							<span className="ml-1 text-xs">({entry.date})</span>
