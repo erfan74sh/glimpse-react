@@ -13,22 +13,19 @@ const Simulations = () => {
 					id="structure-simulations"
 					className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 				>
-					<span className="text-gray-650 font-medium">Structure</span>
-					<span className="text-xl font-bold text-gray-600">+7500</span>
+					<span className="text-gray-650 font-bold">آسایش حرارتی</span>
 				</li>
 				<li
 					id="energy-simulations"
 					className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 				>
-					<span className="text-gray-650 font-medium">Energy</span>
-					<span className="text-xl font-bold text-gray-600">+5800</span>
+					<span className="text-gray-650 font-bold">مصرف انرژی</span>
 				</li>
 				<li
 					id="ieq-simulations"
 					className="flex h-56 w-40 flex-col items-center gap-y-4 rounded-lg pt-4 text-lg"
 				>
-					<span className="text-gray-650 font-medium">IEQ</span>
-					<span className="text-xl font-bold text-gray-600">+5900</span>
+					<span className="text-gray-650 font-bold">سازه</span>
 				</li>
 			</ul>
 		</section>
