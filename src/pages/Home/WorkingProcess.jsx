@@ -12,8 +12,11 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 const WorkingProcess = () => {
 	return (
 		<section>
-			<header className="bg-white text-center">
-				<h3 className="text-blue-550 text-2xl font-bold">ساختار کلی و مراحل</h3>
+			<header className="relative text-center">
+				<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform"></span>
+				<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
+					ساختار کلی و مراحل
+				</h3>
 			</header>
 			<ul className="flex items-center justify-evenly  px-56 py-16">
 				<li className="relative flex flex-col items-center">
