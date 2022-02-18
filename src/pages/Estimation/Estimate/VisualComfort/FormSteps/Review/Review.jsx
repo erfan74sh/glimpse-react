@@ -46,7 +46,12 @@ const Review = ({ prevStep }) => {
 			unit: "",
 			value: data.reflectance_floor,
 		},
-		{ name: "vt_glass", label: "VT glass", unit: "", value: data.vt_glass },
+		{
+			name: "vt_glass",
+			label: "Glass Visible Transmittance",
+			unit: "",
+			value: data.vt_glass,
+		},
 	];
 
 	return (
