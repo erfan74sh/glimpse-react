@@ -34,7 +34,7 @@ const ContactUs = () => {
 									<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">phone</h3>
-										<span>09936356080</span>
+										<span>021-88929017</span>
 									</div>
 								</li>
 								<li className="flex gap-x-3 py-3">
@@ -48,7 +48,10 @@ const ContactUs = () => {
 									<FontAwesomeIcon icon={faMapMarkerAlt} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">address</h3>
-										<span>Beheshti University _ Tehran</span>
+										<span>
+											Faculty of Architecture and Urban Planning, Building No.
+											2, Shahid Beheshti University
+										</span>
 									</div>
 								</li>
 							</div>
@@ -60,21 +63,21 @@ const ContactUs = () => {
 									/>
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">instagram</h3>
-										<span>@glimpse.app</span>
+										<span>BSP.sim</span>
 									</div>
 								</li>
 								<li className="flex gap-x-3 py-3">
 									<FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">linkedin</h3>
-										<span>glimpse.app</span>
+										<span>BSP.sim</span>
 									</div>
 								</li>
 								<li className="flex gap-x-3 py-3">
 									<FontAwesomeIcon icon={faTwitter} className="text-2xl" />
 									<div className="flex flex-col gap-y-2">
 										<h3 className="font-bold">twitter</h3>
-										<span>@glimpse.app</span>
+										<span>BSP.sim</span>
 									</div>
 								</li>
 							</div>
