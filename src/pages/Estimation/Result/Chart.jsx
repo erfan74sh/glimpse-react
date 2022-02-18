@@ -36,7 +36,7 @@ const CustomizedDot = ({ cx, cy, stroke, strokeOpacity }) => {
 	);
 };
 
-const CustomizedAxisTick = ({ x, y, payload, ...rest }) => {
+const CustomizedAxisTick = ({ x, y, payload }) => {
 	const labelOptions = {
 		x_dim: "width",
 		y_dim: "length",
@@ -62,18 +62,18 @@ const CustomizedAxisTick = ({ x, y, payload, ...rest }) => {
 		floor_bc: "",
 		roof_bc: "",
 
-		coolingload: "cooling load",
-		heatingload: "kWh/heating load",
-		electriclight: "electric light",
-		fanger20: "fanger 20",
-		fanger10: "fanger 10",
-		adaptiveashrae80: "adaptive ashrae 80",
-		adaptiveashrae90: "adaptive ashrae 90",
-		adaptiveencalss2por: "?",
-		overheatot_occupied_hours: "overheatot occupied hours",
-		underheatot_occupied_hours: "underheatot occupied hours",
-		verheatdbt_occupied_hours: "verheatdbt occupied hours",
-		underheatdbt_occupied_hours: "underheatdbt occupied hours",
+		coolingload: "Cooling load",
+		heatingload: "Heating load",
+		electriclight: "Electric Lighting",
+		fanger20: "Fanger 80%",
+		fanger10: "Fanger 90%",
+		adaptiveashrae80: "Adaptive ASHRAE 80%",
+		adaptiveashrae90: "Adaptive ASHRAE 90%",
+		adaptiveencalss2por: "Adaptive EN-Class",
+		overheatot_occupied_hours: "Overheat OT- Occupied hours",
+		underheatot_occupied_hours: "Underheat OT- Occupied hours",
+		verheatdbt_occupied_hours: "Overheat DbT- Occupied hours",
+		underheatdbt_occupied_hours: "Under heat DbT- Occupied hours",
 
 		udi: "UDI",
 		mda: "mDA",
