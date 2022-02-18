@@ -107,18 +107,35 @@ const AboutUs = () => {
 				<Nav />
 			</header>
 			<main className="px-24 py-16">
-				<header className="mb-14">
-					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
-						our team
-					</h1>
+				<header className=" mb-20 flex flex-col items-center gap-y-5 px-24 text-center">
+					<div className="relative block w-full  ">
+						<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-full translate-y-1/2 -translate-x-1/2 transform"></span>
+						<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
+							شکل‌گیری{" "}
+						</h3>
+					</div>
+					<p className="">
+						فعالیت BSPsim در پی احساس نیاز به ابزاری بومی، قابل دسترس، قابل
+						اتکا، معتبر، کارامد، و مطابق نیاز های کاربران و بهره برداران صنعت
+						ساختمان در دانشکده معماری و شهرسازی دانشگاه شهید بهشتی، آغاز شد.
+						مطالعات گسترده موضوعات مرتبط با ارزیابی عملکرد ساختمان، در زمینه های
+						مختلف از جمله علوم ساختمان، فناوری معماری، علوم کامپیوتر، و مهندسی
+						معماری را گرد هم آورده است. این گروه پس از کسب رتبه اول طرح "نوآ" در
+						پارک علم و فناوری دانشگاه شهیدبهشتی در تیرماه 1400، به صورت جدی به
+						توسعه ابزار و گسترش آن پرداخت و از اینرو با گذشت زمان تکمیل شده،
+						حوزه های جامع تر و فراگیر تری را در بر خواهد گرفت و به واسطه نوع
+						تدوین آن با الگویی یادگیرنده، هر لحظه دقیقتر و سریعتر از قبل خواهد
+						بود.
+					</p>
 				</header>
-				<section className="flex flex-col gap-y-14 px-16 text-center">
+
+				<section className="flex flex-col gap-y-14 px-24 text-center">
 					<div className="flex flex-wrap gap-y-10">
 						{members.map((member, idx) => {
 							return (
 								<article
 									key={idx}
-									className="text-gray-650 flex w-1/4 flex-col items-center px-16 font-normal capitalize"
+									className="text-gray-650 flex w-1/4 flex-col items-center px-5 font-normal capitalize"
 								>
 									<MemberCard
 										fullName={member.fullName}
