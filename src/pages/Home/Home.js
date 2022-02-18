@@ -66,7 +66,7 @@ const Home = () => {
 					</p>
 				</section>
 			</header>
-			<main className="mt-24 bg-gray-100">
+			<main className="mt-24 bg-gray-100" dir="rtl">
 				<header className="bg-white text-center">
 					<h2 className="text-blue-550 font-medium">Work Frame</h2>
 				</header>
@@ -176,7 +176,7 @@ const Home = () => {
 					</section>
 				</section>
 			</main>
-			<footer className="bg-gray-100 ">
+			<footer className="bg-gray-100 " dir="rtl">
 				<div className="border-blue-550 relative mx-80 flex gap-x-28 border-t-2 pt-10">
 					<section className="flex flex-col gap-y-8">
 						<h4 className="text-gray-650 text-2xl font-medium">
