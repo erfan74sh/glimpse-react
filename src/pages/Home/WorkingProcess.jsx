@@ -10,7 +10,7 @@ const WorkingProcess = () => {
 	return (
 		<section>
 			<header className="bg-white text-center">
-				<h3 className="text-gray-650 text-2xl font-bold">ساختار کلی و مراحل</h3>
+				<h3 className="text-blue-550 text-2xl font-bold">ساختار کلی و مراحل</h3>
 			</header>
 			<ul className="flex justify-between px-56 py-16">
 				<li className="flex flex-col items-center">
