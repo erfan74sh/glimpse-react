@@ -22,6 +22,8 @@ import win3 from "../../../../../../assets/images/materials/win3.png";
 import win4 from "../../../../../../assets/images/materials/win4.png";
 // icons
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
+// style
+import "./VisualMaterial.scss";
 
 const VisualMaterial = () => {
 	const data = useSelector(selectEnergyConsumptionData);
@@ -79,7 +81,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="h-full w-full object-contain"
+										className="fullscrn-bg-white h-full w-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -109,7 +111,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="h-full w-full object-contain"
+										className="fullscrn-bg-white h-full w-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -141,7 +143,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="h-full w-full object-contain"
+										className="fullscrn-bg-white h-full w-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
@@ -171,7 +173,7 @@ const VisualMaterial = () => {
 											)[0].url
 										}
 										alt="wall 1"
-										className="h-full w-full object-contain"
+										className="fullscrn-bg-white h-full w-full object-contain"
 									/>
 									<FontAwesomeIcon
 										icon={faExpand}
