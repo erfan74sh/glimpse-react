@@ -11,7 +11,7 @@ import { selectUser } from "../../features/auth/authSlice";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 
-const Header = () => {
+const Header = ({ lang }) => {
 	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
 	const { isLoggedIn } = useSelector(selectUser);
@@ -39,7 +39,10 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<ul className="flex items-center justify-items-center gap-x-28 text-lg font-normal capitalize">
+						<ul
+							className="flex items-center justify-items-center gap-x-28 text-lg font-normal capitalize"
+							dir={lang ? "rtl" : "ltr"}
+						>
 							<li>
 								<NavLink
 									to="/"
@@ -49,7 +52,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									home
+									{lang ? "صفحه اصلی" : "home"}
 								</NavLink>
 							</li>
 							<li className="relative">
@@ -65,7 +68,7 @@ const Header = () => {
 										setShowProjectHistoryModal(true);
 									}}
 								>
-									simulations
+									{lang ? "شبیه‌سازی‌ها" : "simulations"}
 								</NavLink>
 							</li>
 							<li>
@@ -77,7 +80,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									pricing
+									{lang ? "قیمت" : "pricing"}
 								</NavLink>
 							</li>
 							<li>
@@ -89,7 +92,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									about us
+									{lang ? "درباره ما" : "about us"}
 								</NavLink>
 							</li>
 							<li>
@@ -101,7 +104,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									contact us
+									{lang ? "تماس با ما" : "contact us"}
 								</NavLink>
 							</li>
 						</ul>
@@ -130,7 +133,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									login
+									{lang ? "ورود" : "login"}
 								</NavLink>
 								<span className="mx-2">{`/`}</span>
 								<NavLink
@@ -141,7 +144,7 @@ const Header = () => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									register
+									{lang ? "ثبت‌نام" : "register"}
 								</NavLink>
 							</>
 						)}
