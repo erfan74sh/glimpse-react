@@ -30,19 +30,19 @@ const Review = ({ prevStep }) => {
 		},
 		{
 			name: "reflectance_wall",
-			label: "wall reflection",
+			label: "wall reflectance factor",
 			unit: "",
 			value: data.reflectance_wall,
 		},
 		{
 			name: "reflectance_celing",
-			label: "ceiling reflection",
+			label: "ceiling reflectance factor",
 			unit: "",
 			value: data.reflectance_celing,
 		},
 		{
 			name: "reflectance_floor",
-			label: "floor reflection",
+			label: "floor reflectance factor",
 			unit: "",
 			value: data.reflectance_floor,
 		},
