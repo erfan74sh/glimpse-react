@@ -5,7 +5,7 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const PointAndGrade = ({ alt }) => {
 	const [showDropdown, setShowDropdown] = useState(false);
-	const { svd, sda, udi, ase } = alt.outputs;
+	const { svd, sda, udi, ase, mda } = alt.outputs;
 	return (
 		<>
 			<h4
@@ -97,6 +97,19 @@ const PointAndGrade = ({ alt }) => {
 								from "LEED" V.4
 							</span>
 						)}
+					</li>
+					<li className="flex gap-x-1">
+						<span className="text-blue-550 font-medium">{`mDA >`}</span>
+						<span>
+							your Alternative is{" "}
+							<span
+								className={`font-medium ${
+									mda < 50 ? "text-blue-550" : "text-red-500"
+								}`}
+							>
+								{mda < 50 ? "acceptabe." : "not acceptable."}
+							</span>{" "}
+						</span>
 					</li>
 				</ul>
 			</div>

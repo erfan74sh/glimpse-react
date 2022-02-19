@@ -12,6 +12,7 @@ const VisualComfortGrades = ({ alternatives }) => {
 					v.name === "udi" ||
 					v.name === "sda" ||
 					v.name === "ase" ||
+					v.name === "mda" ||
 					v.name === "svd"
 			);
 			data.forEach((element) => {
