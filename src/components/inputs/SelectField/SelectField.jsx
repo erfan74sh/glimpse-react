@@ -18,9 +18,7 @@ const DropdownRadio = ({
 	const [field] = useField({ ...props, type: "radio" });
 	return (
 		<label
-			className={`block ${
-				disable ? "pointer-events-none cursor-not-allowed" : "cursor-pointer"
-			}`}
+			className={`block ${disable ? "cursor-not-allowed" : "cursor-pointer"}`}
 		>
 			<input
 				type="radio"
@@ -28,8 +26,11 @@ const DropdownRadio = ({
 				{...props}
 				className="hidden"
 				onClick={(e) => {
-					handleValue(e.target.value);
-					handleSelected(e);
+					if (!disable) {
+						console.log(disable);
+						handleValue(e.target.value);
+						handleSelected(e);
+					}
 				}}
 				disabled={disable}
 			/>
@@ -88,66 +89,67 @@ const SelectField = ({
 				</span>
 				{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 			</label>
-			<div
-				onClick={() => {
-					setShowDropdown(!showDropdown);
-				}}
-				ref={ref}
-				className={`flex cursor-pointer items-center justify-between border bg-white p-2 ${
-					touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
-				}  rounded-md outline-none`}
-			>
-				{selected ? (
-					<span>{selected}</span>
-				) : (
-					<span className="text-gray-400">{placeholder}</span>
-				)}
+			<div ref={ref}>
+				<div
+					onClick={() => {
+						setShowDropdown(!showDropdown);
+					}}
+					className={`flex cursor-pointer items-center justify-between border bg-white p-2 ${
+						touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
+					}  rounded-md outline-none`}
+				>
+					{selected ? (
+						<span>{selected}</span>
+					) : (
+						<span className="text-gray-400">{placeholder}</span>
+					)}
 
-				<span className="px-3">
-					<FontAwesomeIcon
-						icon={faCaretDown}
-						className={`transform text-gray-600 transition duration-300 ease-in-out  ${
-							showDropdown ? "-scale-y-1" : "scale-y-1"
-						}`}
-					/>
-				</span>
-			</div>
-			{errors[name] && touched[name] && (
-				<span className="absolute bottom-0 left-1 translate-y-full transform text-xs text-red-600">
-					{errors[name]}
-				</span>
-			)}
-			<ul
-				onChange={() => {
-					setShowDropdown(false);
-				}}
-				className={`${
-					showDropdown ? "flex" : "hidden"
-				} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2`}
-			>
-				{selectOptions.map((option, idx) => {
-					return (
-						<li
-							key={idx}
-							className={`rounded py-1 px-2 transition-all  ${
-								option.disable
-									? "text-gray-400"
-									: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+					<span className="px-3">
+						<FontAwesomeIcon
+							icon={faCaretDown}
+							className={`transform text-gray-600 transition duration-300 ease-in-out  ${
+								showDropdown ? "-scale-y-1" : "scale-y-1"
 							}`}
-						>
-							<DropdownRadio
-								name={name}
-								value={option.value || option.label}
-								disable={option.disable ? true : false}
-								handleValue={handleValue}
-								handleSelected={handleSelected}
+						/>
+					</span>
+				</div>
+				{errors[name] && touched[name] && (
+					<span className="absolute bottom-0 left-1 translate-y-full transform text-xs text-red-600">
+						{errors[name]}
+					</span>
+				)}
+				<ul
+					onChange={() => {
+						setShowDropdown(false);
+					}}
+					className={`${
+						showDropdown ? "flex" : "hidden"
+					} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2`}
+				>
+					{selectOptions.map((option, idx) => {
+						return (
+							<li
+								key={idx}
+								className={`rounded py-1 px-2 transition-all  ${
+									option.disable
+										? "text-gray-400"
+										: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+								}`}
 							>
-								{option.label}
-							</DropdownRadio>
-						</li>
-					);
-				})}
-			</ul>
+								<DropdownRadio
+									name={name}
+									value={option.value || option.label}
+									disable={option.disable ? true : false}
+									handleValue={handleValue}
+									handleSelected={handleSelected}
+								>
+									{option.label}
+								</DropdownRadio>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
 		</div>
 	);
 };
