@@ -36,7 +36,7 @@ const PointAndGrade = ({ alt }) => {
 							<span className="text-blue-550 font-medium">
 								{coolingload < 80 ? "EC++" : coolingload < 100 ? "EC+" : "EC"}
 							</span>{" "}
-							from 19th topic of National Building Regulations of Iran
+							rank from "19th topic of National Building Regulations of Iran".
 						</span>
 					</li>
 					<li className="flex gap-x-1">
@@ -46,7 +46,7 @@ const PointAndGrade = ({ alt }) => {
 							<span className="text-blue-550 font-medium">
 								{heatingload < 80 ? "EC++" : coolingload < 100 ? "EC+" : "EC"}
 							</span>{" "}
-							from 19th topic of National Building Regulations of Iran
+							rank from "19th topic of National Building Regulations of Iran".
 						</span>
 					</li>
 				</ul>
