@@ -8,7 +8,13 @@ import useOutsideClick from "../../../hooks/useOutsideClick";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-const DropdownRadio = ({ handleValue, handleSelected, children, ...props }) => {
+const DropdownRadio = ({
+	handleValue,
+	handleSelected,
+	children,
+	disable,
+	...props
+}) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
 		<label className="block cursor-pointer">
@@ -21,6 +27,7 @@ const DropdownRadio = ({ handleValue, handleSelected, children, ...props }) => {
 					handleValue(e.target.value);
 					handleSelected(e);
 				}}
+				disabled={disable}
 			/>
 			{children}
 		</label>
@@ -123,6 +130,7 @@ const SelectField = ({
 							<DropdownRadio
 								name={name}
 								value={option.value || option.label}
+								disable={option.disable ? true : false}
 								handleValue={handleValue}
 								handleSelected={handleSelected}
 							>
