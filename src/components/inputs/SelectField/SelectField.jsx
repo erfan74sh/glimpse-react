@@ -99,7 +99,7 @@ const SelectField = ({
 					}  rounded-md outline-none`}
 				>
 					{selected ? (
-						<span>{selected}</span>
+						<span className="text-gray-650 font-medium">{selected}</span>
 					) : (
 						<span className="text-gray-400">{placeholder}</span>
 					)}
@@ -134,6 +134,8 @@ const SelectField = ({
 									option.disable
 										? "text-gray-400"
 										: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+								} ${
+									selected === option.label ? "text-gray-650 font-medium" : ""
 								}`}
 							>
 								<DropdownRadio
