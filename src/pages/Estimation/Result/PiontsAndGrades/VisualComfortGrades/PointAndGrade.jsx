@@ -33,13 +33,13 @@ const PointAndGrade = ({ alt }) => {
 						<span className="text-blue-550 font-medium">{`UDI >`}</span>
 						{udi < 75 ? (
 							<span>
-								your Alternative is{" "}
+								your alternative is{" "}
 								<span className="font-medium text-red-500">not acceptable</span>{" "}
 								in accordance with "LEED" V.4
 							</span>
 						) : (
 							<span>
-								your Alternative can earn{" "}
+								your alternative can earn{" "}
 								<span className="text-blue-550 font-medium">
 									{udi < 90 ? "2 points" : "3 points"}{" "}
 								</span>
@@ -48,9 +48,22 @@ const PointAndGrade = ({ alt }) => {
 						)}
 					</li>
 					<li className="flex gap-x-1">
+						<span className="text-blue-550 font-medium">{`mDA >`}</span>
+						<span>
+							your alternative is{" "}
+							<span
+								className={`font-medium ${
+									mda >= 50 ? "text-blue-550" : "text-red-500"
+								}`}
+							>
+								{mda >= 50 ? "acceptabe." : "not acceptable."}
+							</span>{" "}
+						</span>
+					</li>
+					<li className="flex gap-x-1">
 						<span className="text-blue-550 font-medium">{`sVD >`}</span>
 						<span>
-							your Alternative is{" "}
+							your alternative is{" "}
 							<span
 								className={`font-medium ${
 									svd <= 10 ? "text-blue-550" : "text-red-500"
@@ -63,7 +76,7 @@ const PointAndGrade = ({ alt }) => {
 					<li className="flex gap-x-1">
 						<span className="text-blue-550 font-medium">{`ASE >`}</span>
 						<span>
-							your Alternative is{" "}
+							your alternative is{" "}
 							<span
 								className={`font-medium ${
 									ase <= 10 ? "text-blue-550" : "text-red-500"
@@ -78,14 +91,14 @@ const PointAndGrade = ({ alt }) => {
 						<span className="text-blue-550 font-medium">{`sDA >`}</span>
 						{sda < 55 ? (
 							<span>
-								your Alternative is{" "}
+								your alternative is{" "}
 								<span className="font-medium text-red-500">not acceptable</span>{" "}
 								in accordance with "19th topic of National Building Regulations
 								of Iran"
 							</span>
 						) : (
 							<span>
-								your Alternative can earn{" "}
+								your alternative can earn{" "}
 								<span className="text-blue-550 font-medium">
 									{sda < 75 ? "EC" : sda < 85 ? "EC+" : "EC++"}
 								</span>{" "}
@@ -97,19 +110,6 @@ const PointAndGrade = ({ alt }) => {
 								from "LEED" V.4
 							</span>
 						)}
-					</li>
-					<li className="flex gap-x-1">
-						<span className="text-blue-550 font-medium">{`mDA >`}</span>
-						<span>
-							your Alternative is{" "}
-							<span
-								className={`font-medium ${
-									mda < 50 ? "text-blue-550" : "text-red-500"
-								}`}
-							>
-								{mda < 50 ? "acceptabe." : "not acceptable."}
-							</span>{" "}
-						</span>
 					</li>
 				</ul>
 			</div>
