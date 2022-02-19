@@ -28,7 +28,7 @@ const Home = () => {
 					<EstimationModal />
 				</Modal>
 			)}
-			<Nav />
+			<Nav lang="persian" />
 			<Header handleShowModal={handleShowEstimationModal} />
 			<main className="mt-24" dir="rtl">
 				<div id="work-frame">
