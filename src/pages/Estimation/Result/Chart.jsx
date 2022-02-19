@@ -11,6 +11,51 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 
+const labelOptions = {
+	x_dim: "width",
+	y_dim: "length",
+	rotation_angle: "rotation angle",
+	wwr_north: "wwr-north",
+	wwr_south: "wwr-south",
+	shading_type: "shading type",
+	hvac: "HVAC system",
+	wall_uvalue: "wall",
+	roof_uvalue: "w/m.k",
+	floor_uvalue: "w/m.k",
+	window_uvalue: "w/m.k",
+	natural_ventilation: "",
+	south_neighbor_distance: "m",
+	south_neighbor_height: "m",
+	north_neighbor_distance: "m",
+	north_neighbor_height: "m",
+	number_of_floor: "",
+	south_wall_bc: "",
+	north_wall_bc: "",
+	east_wall_bc: "",
+	west_wall_bc: "",
+	floor_bc: "",
+	roof_bc: "",
+
+	coolingload: "Cooling load",
+	heatingload: "Heating load",
+	electriclight: "Electric Lighting",
+	fanger20: "Fanger 80%",
+	fanger10: "Fanger 90%",
+	adaptiveashrae80: "Adaptive ASHRAE 80%",
+	adaptiveashrae90: "Adaptive ASHRAE 90%",
+	adaptiveencalss2por: "Adaptive EN-Class",
+	overheatot_occupied_hours: "Overheat OT- Occupied hours",
+	underheatot_occupied_hours: "Underheat OT- Occupied hours",
+	verheatdbt_occupied_hours: "Overheat DbT- Occupied hours",
+	underheatdbt_occupied_hours: "Under heat DbT- Occupied hours",
+
+	udi: "UDI",
+	mda: "mDA",
+	svd: "sVD",
+	ase: "ASE",
+	sda: "sDA",
+};
+
 const CustomizedLabel = (props) => {
 	const { x, y, value, strokeOpacity } = props;
 	return (
@@ -37,51 +82,6 @@ const CustomizedDot = ({ cx, cy, stroke, strokeOpacity }) => {
 };
 
 const CustomizedAxisTick = ({ x, y, payload }) => {
-	const labelOptions = {
-		x_dim: "width",
-		y_dim: "length",
-		rotation_angle: "rotation angle",
-		wwr_north: "wwr-north",
-		wwr_south: "wwr-south",
-		shading_type: "shading type",
-		hvac: "HVAC system",
-		wall_uvalue: "wall",
-		roof_uvalue: "w/m.k",
-		floor_uvalue: "w/m.k",
-		window_uvalue: "w/m.k",
-		natural_ventilation: "",
-		south_neighbor_distance: "m",
-		south_neighbor_height: "m",
-		north_neighbor_distance: "m",
-		north_neighbor_height: "m",
-		number_of_floor: "",
-		south_wall_bc: "",
-		north_wall_bc: "",
-		east_wall_bc: "",
-		west_wall_bc: "",
-		floor_bc: "",
-		roof_bc: "",
-
-		coolingload: "Cooling load",
-		heatingload: "Heating load",
-		electriclight: "Electric Lighting",
-		fanger20: "Fanger 80%",
-		fanger10: "Fanger 90%",
-		adaptiveashrae80: "Adaptive ASHRAE 80%",
-		adaptiveashrae90: "Adaptive ASHRAE 90%",
-		adaptiveencalss2por: "Adaptive EN-Class",
-		overheatot_occupied_hours: "Overheat OT- Occupied hours",
-		underheatot_occupied_hours: "Underheat OT- Occupied hours",
-		verheatdbt_occupied_hours: "Overheat DbT- Occupied hours",
-		underheatdbt_occupied_hours: "Under heat DbT- Occupied hours",
-
-		udi: "UDI",
-		mda: "mDA",
-		svd: "sVD",
-		ase: "ASE",
-		sda: "sDA",
-	};
-
 	let stroke = "#3F3356";
 	let fontWeight = 400;
 	if (
@@ -131,20 +131,16 @@ const CustomTooltip = ({ active, payload, label }) => {
 	if (active && payload && payload.length) {
 		return (
 			<div className="border-blue-550 border border-opacity-40 bg-gray-200 bg-opacity-80 p-3">
-				<h4 className="text-blue-550 text-sm font-semibold">{label}</h4>
+				<h4 className="text-blue-550 text-sm font-semibold">
+					{labelOptions[label]}
+				</h4>
 				{payload.map((p, i) => {
 					return (
 						<p
 							key={i}
 							style={{ color: p.stroke }}
 							className="text-xs font-medium"
-						>{`${p.name} : ${
-							label === "Shading"
-								? p.value / 10
-								: label === "Material"
-								? p.value / 10
-								: p.value
-						} ${p.payload.unit}`}</p>
+						>{`${p.name} : ${p.value} ${p.payload.unit}`}</p>
 					);
 				})}
 			</div>
