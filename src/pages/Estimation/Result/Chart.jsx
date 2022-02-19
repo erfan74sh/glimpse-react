@@ -206,11 +206,11 @@ const Chart = ({ series }) => {
 	// };
 
 	return (
-		<ResponsiveContainer width="100%" height={400}>
+		<ResponsiveContainer width="100%" height={420}>
 			<LineChart
 				width={1200}
-				height={300}
-				margin={{ top: 120, right: 50, bottom: 20, left: 50 }}
+				height={1000}
+				margin={{ top: 140, right: 150, bottom: 20, left: 100 }}
 			>
 				<CartesianGrid stroke="#000" strokeWidth="2" horizontal={false} />
 				{series
