@@ -50,9 +50,9 @@ const StepOne = ({ nextStep, formData }) => {
 	];
 	const buildingProgramOptions = [
 		{ label: "office" },
-		{ label: "residential" },
-		{ label: "educational" },
-		{ label: "Commercial" },
+		{ label: "residential", disable: true },
+		{ label: "educational", disable: true },
+		{ label: "Commercial", disable: true },
 	];
 
 	return (
