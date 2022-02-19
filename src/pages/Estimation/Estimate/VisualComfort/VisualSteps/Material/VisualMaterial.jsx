@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import Model3D from "../../../3D";
 // state
 import { selectVisualComfortData } from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
-import MoreInfo from "../../../../../../components/moreInfo/MoreInfo";
 
 const VisualMaterial = () => {
 	const inputData = useSelector(selectVisualComfortData);
@@ -23,31 +22,6 @@ const VisualMaterial = () => {
 						shadingType={inputData.shading_type}
 					/>
 				</div>
-				<section className="pt-2">
-					<ul className="flex justify-center gap-x-12">
-						<li className="flex items-center gap-x-4">
-							<span className="bg-pink-250 inline-block h-7 w-7 rounded-lg"></span>
-							<div className="flex gap-x-1">
-								<span>adiabatic</span>
-								<MoreInfo moreInfo="فاقد تبادل حرارتی با فضای بیرون" />
-							</div>
-						</li>
-						<li className="flex items-center gap-x-4">
-							<span className="inline-block h-7 w-7 rounded-lg bg-blue-400"></span>
-							<div className="flex gap-x-1">
-								<span>outdoor</span>
-								<MoreInfo moreInfo="دارای تبادل حرارتی با فضای بیرون" />
-							</div>
-						</li>
-						<li className="flex items-center gap-x-4">
-							<span className="bg-yellow-250 inline-block h-7 w-7 rounded-lg"></span>
-							<div className="flex gap-x-1">
-								<span>ground</span>
-								<MoreInfo moreInfo="؟؟؟؟؟؟" />
-							</div>
-						</li>
-					</ul>
-				</section>
 			</div>
 		</>
 	);
