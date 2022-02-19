@@ -35,7 +35,7 @@ const PointAndGrade = ({ alt }) => {
 							<span>
 								your Alternative is{" "}
 								<span className="font-medium text-red-500">not acceptable</span>{" "}
-								from LEED V.4
+								in accordance with "LEED" V.4
 							</span>
 						) : (
 							<span>
@@ -43,7 +43,7 @@ const PointAndGrade = ({ alt }) => {
 								<span className="text-blue-550 font-medium">
 									{udi < 90 ? "2 points" : "3 points"}{" "}
 								</span>
-								from LEED V.4
+								from "LEED" V.4
 							</span>
 						)}
 					</li>
@@ -56,10 +56,8 @@ const PointAndGrade = ({ alt }) => {
 									svd <= 10 ? "text-blue-550" : "text-red-500"
 								}`}
 							>
-								{svd <= 10 ? "acceptabe" : "not acceptable"}
+								{svd <= 10 ? "acceptabe." : "not acceptable."}
 							</span>{" "}
-							from "LEED" and "19th topic of National Building Regulations of
-							Iran"
 						</span>
 					</li>
 					<li className="flex gap-x-1">
@@ -73,8 +71,7 @@ const PointAndGrade = ({ alt }) => {
 							>
 								{ase <= 10 ? "acceptabe" : "not acceptable"}
 							</span>{" "}
-							from "LEED" and "19th topic of National Building Regulations of
-							Iran"
+							in accordance with "LEED" V.4
 						</span>
 					</li>
 					<li className="flex gap-x-1">
@@ -83,7 +80,8 @@ const PointAndGrade = ({ alt }) => {
 							<span>
 								your Alternative is{" "}
 								<span className="font-medium text-red-500">not acceptable</span>{" "}
-								from 19th topic of National Building Regulations of Iran
+								in accordance with "19th topic of National Building Regulations
+								of Iran"
 							</span>
 						) : (
 							<span>
@@ -91,11 +89,12 @@ const PointAndGrade = ({ alt }) => {
 								<span className="text-blue-550 font-medium">
 									{sda < 75 ? "EC" : sda < 85 ? "EC+" : "EC++"}
 								</span>{" "}
-								from 19th topic of National Building Regulations of Iran and{" "}
+								rank from "19th topic of National Building Regulations of Iran"
+								and{" "}
 								<span className="text-blue-550 font-medium">
 									{sda < 75 ? "2 points" : "3 points"}{" "}
 								</span>
-								from LEED V.4
+								from "LEED" V.4
 							</span>
 						)}
 					</li>
