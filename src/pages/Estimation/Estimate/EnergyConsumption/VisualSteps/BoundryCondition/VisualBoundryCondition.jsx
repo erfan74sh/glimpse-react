@@ -43,7 +43,7 @@ const VisualBoundryCondition = () => {
 							<span className="bg-yellow-250 inline-block h-7 w-7 rounded-lg"></span>
 							<div className="flex gap-x-1">
 								<span>ground</span>
-								<MoreInfo moreInfo="؟؟؟؟؟؟" />
+								<MoreInfo moreInfo="کف بیرونی" />
 							</div>
 						</li>
 					</ul>
