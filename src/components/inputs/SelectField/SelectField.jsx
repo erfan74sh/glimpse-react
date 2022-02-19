@@ -17,7 +17,11 @@ const DropdownRadio = ({
 }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
-		<label className="block cursor-pointer">
+		<label
+			className={`block ${
+				disable ? "pointer-events-none cursor-not-allowed" : "cursor-pointer"
+			}`}
+		>
 			<input
 				type="radio"
 				{...field}
@@ -119,13 +123,17 @@ const SelectField = ({
 				}}
 				className={`${
 					showDropdown ? "flex" : "hidden"
-				} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2 px-3`}
+				} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2`}
 			>
 				{selectOptions.map((option, idx) => {
 					return (
 						<li
 							key={idx}
-							className={`py-1 text-gray-500 transition hover:text-gray-900`}
+							className={`rounded py-1 px-2 transition-all  ${
+								option.disable
+									? "text-gray-400"
+									: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+							}`}
 						>
 							<DropdownRadio
 								name={name}
