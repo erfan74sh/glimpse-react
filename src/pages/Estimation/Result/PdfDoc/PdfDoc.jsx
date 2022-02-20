@@ -205,6 +205,36 @@ const unitOptions = {
 	sda: "%",
 };
 
+const shadingTypeOptions = {
+	1: "horizontal",
+	2: "horizontal louvre",
+	3: "vertical",
+	4: "all modes",
+};
+const boundryConditionOptions = {
+	0: "Adiabatic",
+	1: "External",
+	2: "Ground",
+};
+
+const hvacOptions = {
+	1: "ideal air loads",
+	2: "PTAC | residential",
+	3: "PTHP | residential",
+	4: "VAV w/reheat",
+	5: "VAV w/PFP boxes",
+	6: "fan coil units + DOAS",
+};
+
+const floorLevelOptions = {
+	0: "ground floor",
+	1: "1st floor",
+	2: "2nd floor",
+	3: "3rd floor",
+	4: "4th floor",
+	5: "5th floor",
+};
+
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
