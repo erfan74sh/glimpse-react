@@ -331,7 +331,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.number_of_floor}
+											{floorLevelOptions[inputs.number_of_floor]}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -372,6 +372,14 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{inputs.wwr_south} {unitOptions.wwr_south}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>shading type: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{shadingTypeOptions[inputs.shading_type]}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -424,7 +432,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.hvac}
+											{hvacOptions[inputs.hvac]}
 										</Text>
 									</View>
 									<View
@@ -499,7 +507,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.east_wall_bc}
+											{boundryConditionOptions[inputs.east_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -509,7 +517,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.west_wall_bc}
+											{boundryConditionOptions[inputs.west_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -519,7 +527,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.north_wall_bc}
+											{boundryConditionOptions[inputs.north_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -529,7 +537,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.south_wall_bc}
+											{boundryConditionOptions[inputs.south_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -539,7 +547,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.roof_bc}
+											{boundryConditionOptions[inputs.roof_bc]}
 										</Text>
 									</View>
 									<View
@@ -549,7 +557,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.floor_bc}
+											{boundryConditionOptions[inputs.floor_bc]}
 										</Text>
 									</View>
 								</View>
