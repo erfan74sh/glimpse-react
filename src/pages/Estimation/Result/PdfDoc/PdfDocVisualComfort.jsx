@@ -261,7 +261,7 @@ const PdfDoc = ({ data }) => {
 			<Page size="A4" style={styles.page}>
 				{/* header */}
 				<View style={styles.header}>
-					<Text>Energy sector simulation results</Text>
+					<Text>Visual Comfort simulation results</Text>
 					<Image src={Logo} style={styles.logoImage} />
 				</View>
 				{/* end header */}
