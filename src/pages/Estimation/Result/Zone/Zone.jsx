@@ -195,7 +195,7 @@ const Zone = ({ projects }) => {
 											<PdfDocVisualComfort data={entry} />
 										) : null
 									}
-									fileName={`${entry.name}.pdf`}
+									fileName={`${entry.subset}_${entry.project_name}_${entry.zone_name}_${entry.name}.pdf`}
 								>
 									<FontAwesomeIcon
 										icon={faFilePdf}
