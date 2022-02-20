@@ -477,117 +477,52 @@ const PdfDoc = ({ data }) => {
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
-								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
 									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Cooling Load: </Text>
+											<Text>UDI(Useful Daylight Illuminance): </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{outputs.coolingload} {unitOptions.coolingload}
+												{outputs.udi} {unitOptions.udi}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Heating Load: </Text>
+											<Text>mDA(Mean Daylight Autonomy): </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{outputs.heatingload} {unitOptions.heatingload}
+												{outputs.mda} {unitOptions.mda}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Electric Lighting: </Text>
+											<Text>sVD(Spatial Visual Discomfort): </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{outputs.electriclight} {unitOptions.electriclight}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Fanger 80%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.fanger20} {unitOptions.fanger20}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Fanger 90%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.fanger10} {unitOptions.fanger10}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive ASHRAE 80%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.adaptiveashrae80}{" "}
-												{unitOptions.adaptiveashrae80}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive ASHRAE 90%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.adaptiveashrae90}{" "}
-												{unitOptions.adaptiveashrae90}
+												{outputs.svd} {unitOptions.svd}
 											</Text>
 										</View>
 									</View>
 								</View>
 							</View>
 							<View style={styles.section_output_col}>
-								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
 									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive EN-Class: </Text>
+											<Text>ASE(Annual Sunlight Exposure): </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{outputs.adaptiveencalss2por}{" "}
-												{unitOptions.adaptiveencalss2por}
+												{outputs.ase} {unitOptions.ase}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat OT- Occupied hours: </Text>
+											<Text>sDA(Spatial Daylight Autonomy): </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{outputs.overheatot_occupied_hours}{" "}
-												{unitOptions.overheatot_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Underheat OT- Occupied hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.underheatot_occupied_hours}{" "}
-												{unitOptions.underheatot_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat DbT- Occupied hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.verheatdbt_occupied_hours}{" "}
-												{unitOptions.verheatdbt_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Under heat DbT- Occupied hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.underheatdbt_occupied_hours}{" "}
-												{unitOptions.underheatdbt_occupied_hours}
+												{outputs.sda} {unitOptions.sda}
 											</Text>
 										</View>
 									</View>
