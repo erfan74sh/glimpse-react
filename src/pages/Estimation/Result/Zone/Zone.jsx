@@ -5,6 +5,7 @@ import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 // components
 import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
+import PdfDocVisualComfort from "../PdfDoc/PdfDocVisualComfort";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -176,14 +177,24 @@ const Zone = ({ projects }) => {
 						>
 							{/* todo: remove this */}
 							{/* <PDFViewer className="h-screen w-full">
-								<PdfDoc data={entry} />
+								{currentSubset === "energy_consumption" ? (
+									<PdfDoc data={entry} />
+								) : currentSubset === "visual_comfort" ? (
+									<PdfDocVisualComfort data={entry} />
+								) : null}
 							</PDFViewer> */}
 							<span className="font-bold">{i + 1} -&nbsp; </span>{" "}
 							<span>{` ${entry.name}`}</span>
 							<span className="ml-1 text-xs">({entry.date})</span>
 							<button className="ml-4">
 								<PDFDownloadLink
-									document={<PdfDoc data={entry} />}
+									document={
+										currentSubset === "energy_consumption" ? (
+											<PdfDoc data={entry} />
+										) : currentSubset === "visual_comfort" ? (
+											<PdfDocVisualComfort data={entry} />
+										) : null
+									}
 									fileName={`${entry.name}.pdf`}
 								>
 									<FontAwesomeIcon
