@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
 	},
 
 	section_inputs_items_content_item: {
-		width: "30%",
+		width: "33%",
 		display: "flex",
 		flexDirection: "row",
 		marginVertical: 4,
@@ -155,6 +155,56 @@ const styles = StyleSheet.create({
 	},
 });
 
+const unitOptions = {
+	x_dim: "m",
+	y_dim: "m",
+	rotation_angle: "deg",
+	wwr_north: "%",
+	wwr_south: "%",
+	shading_type: "",
+	hvac: "",
+	wall_uvalue: "w/m.k",
+	roof_uvalue: "w/m.k",
+	floor_uvalue: "w/m.k",
+	window_uvalue: "w/m.k",
+	natural_ventilation: "",
+	south_neighbor_distance: "m",
+	south_neighbor_height: "m",
+	north_neighbor_distance: "m",
+	north_neighbor_height: "m",
+	number_of_floor: "",
+	south_wall_bc: "",
+	north_wall_bc: "",
+	east_wall_bc: "",
+	west_wall_bc: "",
+	floor_bc: "",
+	roof_bc: "",
+
+	coolingload: "kWh/m2",
+	heatingload: "kWh/m2",
+	electriclight: "kWh/m2",
+	fanger20: "hr",
+	fanger10: "hr",
+	adaptiveashrae80: "hr",
+	adaptiveashrae90: "hr",
+	adaptiveencalss2por: "hr",
+	overheatot_occupied_hours: "hr",
+	underheatot_occupied_hours: "hr",
+	verheatdbt_occupied_hours: "hr",
+	underheatdbt_occupied_hours: "hr",
+
+	reflectance_wall: "",
+	reflectance_celing: "",
+	reflectance_floor: "",
+	vt_glass: "",
+
+	udi: "%",
+	mda: "%",
+	svd: "%",
+	ase: "%",
+	sda: "%",
+};
+
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
@@ -187,6 +237,7 @@ const PdfDoc = ({ data }) => {
 				{/* end header */}
 				{/* main */}
 				<View style={styles.main}>
+					{/* inputs section */}
 					<View style={styles.section}>
 						<Text style={styles.section_header}>Input Parameters</Text>
 						<View style={styles.section_inputs}>
@@ -258,7 +309,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.rotation_angle}
+											{inputs.rotation_angle} {unitOptions.rotation_angle}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -266,7 +317,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.x_dim}
+											{inputs.x_dim} {unitOptions.x_dim}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -274,7 +325,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.y_dim}
+											{inputs.y_dim} {unitOptions.y_dim}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -282,7 +333,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wwr_north}
+											{inputs.wwr_north} {unitOptions.wwr_north}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -290,7 +341,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wwr_south}
+											{inputs.wwr_south} {unitOptions.wwr_south}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -298,7 +349,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.south_neighbor_distance}
+											{inputs.south_neighbor_distance}{" "}
+											{unitOptions.south_neighbor_distance}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -306,7 +358,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.south_neighbor_height}
+											{inputs.south_neighbor_height}{" "}
+											{unitOptions.south_neighbor_height}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -314,7 +367,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.north_neighbor_distance}
+											{inputs.north_neighbor_distance}{" "}
+											{unitOptions.north_neighbor_distance}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -322,7 +376,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.north_neighbor_height}
+											{inputs.north_neighbor_height}{" "}
+											{unitOptions.north_neighbor_height}
 										</Text>
 									</View>
 								</View>
@@ -476,109 +531,135 @@ const PdfDoc = ({ data }) => {
 
 					{/* outputs section */}
 					<View style={styles.section}>
-						<Text style={[styles.section_header, { marginTop: 14 }]}>
+						<Text
+							style={[
+								styles.section_header,
+								{ marginTop: 14, borderBottom: "1 solid #147CDD" },
+							]}
+						>
 							Output Parameters
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
 								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
-									<Text style={styles.section_inputs_items_title}>
-										amount of carbon emitted
-									</Text>
 									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
+											<Text>Cooling Load: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.project_name}
+												{outputs.coolingload} {unitOptions.coolingload}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Heating Load: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.heatingload} {unitOptions.heatingload}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Electric Lighting: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.electriclight} {unitOptions.electriclight}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Fanger 80%: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.fanger20} {unitOptions.fanger20}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Fanger 90%: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.fanger10} {unitOptions.fanger10}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Adaptive ASHRAE 80%: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.adaptiveashrae80}{" "}
+												{unitOptions.adaptiveashrae80}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Adaptive ASHRAE 90%: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.adaptiveashrae90}{" "}
+												{unitOptions.adaptiveashrae90}
 											</Text>
 										</View>
 									</View>
 								</View>
-								{/* end carbon emitted section */}
-								{/* Comfort hours section */}
-								<View style={styles.section_inputs_items}>
-									<Text style={styles.section_inputs_items_title}>
-										Comfort hours
-									</Text>
-									<View style={styles.section_outputs_items_content}>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.project_name}
-											</Text>
-										</View>
-									</View>
-								</View>
-								{/* end Comfort hours section */}
-								{/* Thermal load section */}
-								<View style={styles.section_inputs_items}>
-									<Text style={styles.section_inputs_items_title}>
-										Thermal load
-									</Text>
-									<View style={styles.section_outputs_items_content}>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{data.project_name}
-											</Text>
-										</View>
-									</View>
-								</View>
-								{/* end Thermal load section */}
 							</View>
 							<View style={styles.section_output_col}>
-								{/* Energy consumption section */}
+								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
-									<Text style={styles.section_inputs_items_title}>
-										Energy consumption
-									</Text>
 									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Primary energy consumption: </Text>
+											<Text>Adaptive EN-Class: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.project_name}
+												{outputs.adaptiveencalss2por}{" "}
+												{unitOptions.adaptiveencalss2por}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Total energy consumption: </Text>
+											<Text>Overheat OT- Occupied hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.project_name}
+												{outputs.overheatot_occupied_hours}{" "}
+												{unitOptions.overheatot_occupied_hours}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Electricity consumption: </Text>
+											<Text>Underheat OT- Occupied hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.project_name}
+												{outputs.underheatot_occupied_hours}{" "}
+												{unitOptions.underheatot_occupied_hours}
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Gas consumption: </Text>
+											<Text>Overheat DbT- Occupied hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
-												{data.project_name}
+												{outputs.verheatdbt_occupied_hours}{" "}
+												{unitOptions.verheatdbt_occupied_hours}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Under heat DbT- Occupied hours: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.underheatdbt_occupied_hours}{" "}
+												{unitOptions.underheatdbt_occupied_hours}
 											</Text>
 										</View>
 									</View>
 								</View>
-								{/* end Energy consumption section */}
 							</View>
 						</View>
 					</View>
 					{/* end outputs section */}
-					{/* {ouputs.map((output, idx) => {
-						return <Text key={idx}>{JSON.stringify(output)}</Text>;
-					})} */}
 				</View>
 				{/* end main */}
 			</Page>
