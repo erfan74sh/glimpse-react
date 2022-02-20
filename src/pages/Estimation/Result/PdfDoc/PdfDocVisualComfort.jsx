@@ -327,14 +327,6 @@ const PdfDoc = ({ data }) => {
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>floor level: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{floorLevelOptions[inputs.number_of_floor]}
-										</Text>
-									</View>
-									<View style={styles.section_inputs_items_content_item}>
 										<Text>rotation angle: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -421,148 +413,54 @@ const PdfDoc = ({ data }) => {
 								</View>
 							</View>
 							{/*	 end geometry section */}
-							{/*	 air conditioning section */}
+
+							{/*	 Materials */}
 							<View style={styles.section_inputs_items}>
-								<Text style={styles.section_inputs_items_title}>
-									air conditioning
-								</Text>
-								<View style={styles.section_inputs_items_content}>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>HVAC system: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{hvacOptions[inputs.hvac]}
-										</Text>
-									</View>
-									<View
-										style={[
-											styles.section_inputs_items_content_item,
-											{ flexGrow: 1 },
-										]}
-									>
-										<Text>natural ventilation: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{inputs.natural_ventilation
-												? " has it"
-												: " does not have"}
-										</Text>
-									</View>
-								</View>
-							</View>
-							{/*	 end air conditioning section */}
-							{/*	 Thermal specifications section */}
-							<View style={styles.section_inputs_items}>
-								<Text style={styles.section_inputs_items_title}>
-									Thermal specifications of walls
-								</Text>
-								<View style={styles.section_inputs_items_content}>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>wall U value: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{inputs.wall_uvalue}
-										</Text>
-									</View>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>floor U value: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{inputs.floor_uvalue}
-										</Text>
-									</View>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>roof U value: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{inputs.roof_uvalue}
-										</Text>
-									</View>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>window U value: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{inputs.window_uvalue}
-										</Text>
-									</View>
-								</View>
-							</View>
-							{/*	 end Thermal specifications section */}
-							{/*	 boundry condition section */}
-							<View style={styles.section_inputs_items}>
-								<Text style={styles.section_inputs_items_title}>
-									boundries condition
-								</Text>
+								<Text style={styles.section_inputs_items_title}>Materials</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>east wall boundry condition: </Text>
+										<Text>Wall Reflectance Factor: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.east_wall_bc]}
+											{inputs.reflectance_wall}
 										</Text>
 									</View>
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>west wall boundry condition: </Text>
+										<Text>Ceiling Reflectance Factor: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.west_wall_bc]}
+											{inputs.reflectance_celing}
 										</Text>
 									</View>
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>north wall boundry condition: </Text>
+										<Text>Floor Reflectance Factor: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.north_wall_bc]}
+											{inputs.reflectance_floor}
 										</Text>
 									</View>
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>south wall boundry condition: </Text>
+										<Text>Glass Visible Transmittance: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.south_wall_bc]}
-										</Text>
-									</View>
-									<View
-										style={styles.section_inputs_items_content_item_halfWidth}
-									>
-										<Text>roof boundry condition: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{boundryConditionOptions[inputs.roof_bc]}
-										</Text>
-									</View>
-									<View
-										style={styles.section_inputs_items_content_item_halfWidth}
-									>
-										<Text>floor boundry condition: </Text>
-										<Text
-											style={styles.section_inputs_items_content_item_value}
-										>
-											{boundryConditionOptions[inputs.floor_bc]}
+											{inputs.vt_glass}
 										</Text>
 									</View>
 								</View>
 							</View>
-							{/*	 end boundry condition section */}
+							{/*	 end Materials */}
 						</View>
 					</View>
 					{/* end inputs section */}
