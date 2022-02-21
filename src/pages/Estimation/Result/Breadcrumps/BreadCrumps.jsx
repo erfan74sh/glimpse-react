@@ -24,7 +24,7 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 
 	return (
 		<div
-			className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium text-white"
+			className="bg-gray-350 relative w-36 rounded-md p-2 text-sm font-medium text-white"
 			ref={selectRef}
 		>
 			<div
@@ -51,7 +51,7 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 										name={name}
 										value={item}
 										className="hidden"
-										onChange={(e) => {
+										onClick={(e) => {
 											handleSelectItem(e);
 										}}
 									/>
