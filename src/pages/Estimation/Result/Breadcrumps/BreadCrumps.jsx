@@ -24,7 +24,9 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 
 	return (
 		<div
-			className="bg-gray-350 relative w-36 rounded-md p-2 text-sm font-medium text-white"
+			className={`bg-gray-350 relative w-36 rounded-md p-2 text-sm font-medium text-white ${
+				showMenu && "ring-1 ring-gray-500"
+			}`}
 			ref={selectRef}
 		>
 			<div
