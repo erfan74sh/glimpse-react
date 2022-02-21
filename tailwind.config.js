@@ -35,7 +35,7 @@ module.exports = {
 				"-1": "-1",
 			},
 			fontFamily: {
-				gothic: ["gothic", "Helvetica", "Arial", "sans-serif"],
+				irancell: ["irancell", "Helvetica", "Arial", "sans-serif"],
 			},
 			boxShadow: {
 				"neo-sm": "6px 6px 16px #e3e5e8, -6px -6px 16px #ffffff;",
