@@ -9,8 +9,10 @@ const TextField = ({ label, ...props }) => {
 			<input
 				{...field}
 				{...props}
-				className={`w-full border p-2 ${
-					meta.touched && meta.error ? " border-red-600" : "border-gray-300"
+				className={`w-full border p-2 focus:ring-1 ${
+					meta.touched && meta.error
+						? " border-red-600 ring-red-400"
+						: "border-gray-300"
 				} rounded-md outline-none`}
 			/>
 			{meta.touched && meta.error ? (
