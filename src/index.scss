@@ -4,7 +4,19 @@
 
 @layer base {
 	@font-face {
-		font-family: "gothic";
-		src: local("gothic"), url(./assets/fonts/CenturyGothic.otf) format("otf");
+		font-family: "irancell";
+		font-weight: 400;
+		src: url(./assets/fonts/irancell/MTNIrancell-Light.ttf) format("truetype");
+	}
+	@font-face {
+		font-family: "irancell";
+		font-weight: 100;
+		src: url(./assets/fonts/irancell/MTNIrancell-ExtraLight.ttf)
+			format("truetype");
+	}
+	@font-face {
+		font-family: "irancell";
+		font-weight: 700;
+		src: url(./assets/fonts/irancell/MTNIrancell-Bold.ttf) format("truetype");
 	}
 }
