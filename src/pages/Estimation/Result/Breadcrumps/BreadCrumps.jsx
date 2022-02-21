@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+// hooks
+import useOutsideClick from "../../../../hooks/useOutsideClick";
 
 const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
+	const selectRef = useRef(null);
 	const [showMenu, setShowMenu] = useState(false);
 	const [selectedItem, setSelectedItem] = useState(selected || "");
 	useEffect(() => {
@@ -17,8 +20,13 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 		setShowMenu(false);
 	};
 
+	useOutsideClick(selectRef, () => setShowMenu(false));
+
 	return (
-		<div className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium text-white">
+		<div
+			className="bg-gray-350 relative w-36 rounded-md px-2 py-1.5 text-sm font-medium text-white"
+			ref={selectRef}
+		>
 			<div
 				className="flex cursor-pointer items-center justify-between"
 				onClick={() => setShowMenu(!showMenu)}
