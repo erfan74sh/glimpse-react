@@ -25,8 +25,8 @@ const ResultOptions = ({ primData }) => {
 	};
 
 	return (
-		<section className="mt-6 flex gap-x-8">
-			<div className="flex items-center gap-x-4 overflow-hidden">
+		<section className="mt-6 flex gap-x-8 ">
+			<div className="flex items-center gap-x-4 overflow-hidden py-1">
 				<button
 					className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white"
 					onClick={() => setShowNewZone(!showNewZone)}
@@ -78,7 +78,7 @@ const ResultOptions = ({ primData }) => {
 					</Form>
 				</Formik>
 			</div>
-			<div className="flex gap-x-4 overflow-hidden">
+			<div className="flex gap-x-4 overflow-hidden py-1">
 				<button
 					className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white"
 					onClick={() => setShowNewAlter(!showNewAlter)}
@@ -119,7 +119,7 @@ const ResultOptions = ({ primData }) => {
 					</Form>
 				</Formik>
 			</div>
-			<div>
+			<div className="flex items-center">
 				<Link
 					to={{
 						pathname: "/compare-zones",
