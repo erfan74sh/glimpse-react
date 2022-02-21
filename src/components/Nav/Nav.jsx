@@ -31,7 +31,7 @@ const Header = ({ lang }) => {
 					<ProjectHistoryModal />
 				</Modal>
 			)}
-			<nav className="bg-gray-650 text-gray-300">
+			<nav className={`bg-gray-650 text-gray-300 ${lang && "font-irancell"}`}>
 				<ul className="flex items-center justify-between px-9 py-4">
 					<li>
 						<Link to="/">

@@ -30,7 +30,7 @@ const Home = () => {
 			)}
 			<Nav lang="persian" />
 			<Header handleShowModal={handleShowEstimationModal} />
-			<main className="mt-24" dir="rtl">
+			<main className="font-irancell mt-24" dir="rtl">
 				<div id="work-frame">
 					<WorkingProcess />
 					<Simulations />

@@ -3,7 +3,7 @@ import React from "react";
 const Header = ({ handleShowModal }) => {
 	return (
 		<header
-			className="relative mt-10 flex flex-col items-center"
+			className="font-irancell relative mt-10 flex flex-col items-center"
 			id="header__hero"
 		>
 			<div className="relative h-screen w-1/2">

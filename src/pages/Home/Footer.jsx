@@ -17,7 +17,7 @@ import {
 
 const Footer = () => {
 	return (
-		<footer className="" dir="rtl">
+		<footer className="font-irancell" dir="rtl">
 			<header className="relative mb-12 text-center">
 				<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform"></span>
 				<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
@@ -48,7 +48,7 @@ const Footer = () => {
 					</li>
 				</ul>
 				<ul
-					className="flex flex-col items-start gap-y-8 text-2xl text-gray-600"
+					className="flex flex-col items-start gap-y-8 font-sans text-2xl text-gray-600"
 					dir="ltr"
 				>
 					<li className="group h-6">
