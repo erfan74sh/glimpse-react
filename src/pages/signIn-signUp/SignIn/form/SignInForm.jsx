@@ -45,7 +45,7 @@ const SignInForm = () => {
 				handleLogin(values.username, values.password);
 			}}
 		>
-			<Form className="flex flex-col w-full gap-y-7">
+			<Form className="flex w-full flex-col gap-y-7">
 				<TextField
 					type="email"
 					name="username"
@@ -60,7 +60,7 @@ const SignInForm = () => {
 				/>
 				<button
 					type="submit"
-					className="py-1 px-4 rounded-md capitalize bg-blue-550 text-white transition-all hover:shadow-b-sm"
+					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
 				>
 					log in
 				</button>

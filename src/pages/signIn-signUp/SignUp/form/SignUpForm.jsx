@@ -70,7 +70,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				handleSignup(values);
 			}}
 		>
-			<Form className="flex flex-col w-100 gap-y-7">
+			<Form className="w-100 flex flex-col gap-y-7">
 				<TextField
 					type="text"
 					name="full_name"
@@ -110,7 +110,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				</div>
 				<button
 					type="submit"
-					className="py-1 px-4 rounded-md capitalize bg-blue-550 text-white transition-all hover:shadow-b-sm"
+					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
 				>
 					register
 				</button>
