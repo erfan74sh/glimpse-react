@@ -35,7 +35,7 @@ module.exports = {
 				"-1": "-1",
 			},
 			fontFamily: {
-				irancell: ["irancell", "Helvetica", "Arial", "sans-serif"],
+				irancell: ["irancell", "Roboto", "Arial", "sans-serif"],
 			},
 			boxShadow: {
 				"neo-sm": "6px 6px 16px #e3e5e8, -6px -6px 16px #ffffff;",
