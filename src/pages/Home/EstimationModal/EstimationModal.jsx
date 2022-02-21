@@ -139,7 +139,7 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 					.required("alternative name is required"),
 			})}
 		>
-			<Form className="w-84 flex flex-col gap-y-4">
+			<Form className="w-84 flex flex-col gap-y-4" autoComplete="off">
 				<TextField
 					type="text"
 					name="project_name"
