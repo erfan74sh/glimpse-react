@@ -95,7 +95,11 @@ const SelectField = ({
 						setShowDropdown(!showDropdown);
 					}}
 					className={`flex cursor-pointer items-center justify-between border bg-white p-2 ${
-						touched[name] && errors[name] ? "border-red-600" : "border-gray-300"
+						showDropdown && "ring-1"
+					} ${
+						touched[name] && errors[name]
+							? "border-red-600 ring-red-400"
+							: "border-gray-300"
 					}  rounded-md outline-none`}
 				>
 					{selected ? (
