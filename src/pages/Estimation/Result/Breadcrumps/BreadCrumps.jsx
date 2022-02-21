@@ -37,7 +37,7 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 				<FontAwesomeIcon icon={faCaretDown} />
 			</div>
 			<ul
-				className={`absolute min-w-full flex-col gap-y-2 ${
+				className={`absolute min-w-full flex-col gap-y-1 ${
 					showMenu ? "flex" : "hidden"
 				} bg-gray-350 left-0 -bottom-1 z-10 translate-y-full transform rounded-md p-2`}
 			>
@@ -45,7 +45,11 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 					items.map((item, idx) => {
 						return (
 							<li key={idx}>
-								<label className="hover:text-blue-550 block cursor-pointer transition-all">
+								<label
+									className={`block cursor-pointer rounded p-1 transition-all hover:bg-gray-400 ${
+										selectedItem === item && "text-blue-550"
+									}`}
+								>
 									<input
 										type="radio"
 										name={name}
