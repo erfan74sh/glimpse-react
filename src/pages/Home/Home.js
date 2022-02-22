@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import Nav from "../../components/Nav";
 import Modal from "../../components/modal";
 import EstimationModal from "./EstimationModal";
-import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
+import Header from "./Header";
+import EmbededAparat from "./EmbededAparat";
 import WorkingProcess from "./WorkingProcess";
 import Simulations from "./Simulations";
+import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
 import Footer from "./Footer";
 // style
 import "./Home.scss";
-import Header from "./Header";
 
 const Home = () => {
 	const [showEstimateModal, setShowEstimateModal] = useState(false);
@@ -31,10 +32,18 @@ const Home = () => {
 			<Nav lang="persian" />
 			<Header handleShowModal={handleShowEstimationModal} />
 			<main className="font-irancell mt-24" dir="rtl">
-				<div id="work-frame">
+				<EmbededAparat
+					videoId={16504825167}
+					videoUrl="https://www.aparat.com/embed/mVSx2?data[rnddiv]=16504825167&data[responsive]=yes"
+				/>
+				<section id="work-frame">
 					<WorkingProcess />
 					<Simulations />
-				</div>
+				</section>
+				<EmbededAparat
+					videoId={50092033836}
+					videoUrl="https://www.aparat.com/embed/15r6z?data[rnddiv]=50092033836&data[responsive]=yes"
+				/>
 				<section className="pb-40">
 					<header className="relative mb-12 text-center">
 						<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform"></span>
