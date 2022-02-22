@@ -14,7 +14,9 @@ const useScript = (wrapperElId, attributes) => {
 		wrapperEl.appendChild(script);
 
 		return () => {
-			wrapperEl.removeChild(script);
+			while (wrapperEl.firstChild) {
+				wrapperEl.removeChild(wrapperEl.firstChild);
+			}
 		};
 	}, [wrapperElId, attributes]);
 };
