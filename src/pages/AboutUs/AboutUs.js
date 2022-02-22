@@ -106,7 +106,7 @@ const AboutUs = () => {
 			<header className="">
 				<Nav lang="persian" />
 			</header>
-			<main className="px-24 py-16" dir="rtl">
+			<main className="font-irancell px-24 py-16" dir="rtl">
 				<header className=" mb-20 flex flex-col items-center gap-y-5 px-24 text-center">
 					<div className="relative block w-full  ">
 						<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-full translate-y-1/2 -translate-x-1/2 transform"></span>
