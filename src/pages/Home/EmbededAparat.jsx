@@ -1,10 +1,10 @@
 import React from "react";
 import useScript from "../../hooks/useScript";
 
-const EmbededAparat = ({ videoId }) => {
+const EmbededAparat = ({ videoId, videoUrl }) => {
 	useScript(videoId, {
 		type: "text/JavaScript",
-		src: `https://www.aparat.com/embed/ZHdED?data[rnddiv]=${videoId}&data[responsive]=yes`,
+		src: videoUrl,
 		async: true,
 	});
 
