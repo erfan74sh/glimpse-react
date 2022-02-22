@@ -13,7 +13,11 @@ const EmbededAparat = () => {
 		wrapperEl.appendChild(script);
 	}, []);
 
-	return <div id="46590385690" className=""></div>;
+	return (
+		<section className="my-18 mx-auto max-w-4xl">
+			<div id="46590385690" className=""></div>
+		</section>
+	);
 };
 
 export default EmbededAparat;
