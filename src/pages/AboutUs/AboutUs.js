@@ -43,7 +43,12 @@ const AboutUs = () => {
 			activityScope: "هوش مصنوعی",
 			image: pic13,
 		},
-
+		{
+			fullName: "پگاه اشراقی",
+			education: "پژوهشگر دکتری انرژی و معماری",
+			activityScope: "انرژی - آسایش حرارتی",
+			image: pic06,
+		},
 		{
 			fullName: "هانیه نورکجوری",
 			education: "ارشد انرژی و معماری",
@@ -51,23 +56,16 @@ const AboutUs = () => {
 			image: pic04,
 		},
 		{
-			fullName: "پگاه اشراقی",
-			education: "پژوهشگر دکتری انرژی و معماری",
-			activityScope: "انرژی - آسایش حرارتی",
-			image: pic06,
+			fullName: "محمد رجائیان هونجانی",
+			education: "ارشد تکنولوژی معماری",
+			activityScope: "سازه",
+			image: pic01,
 		},
-
 		{
 			fullName: "امیرمحمد ربانی جلالی",
 			education: "ارشد انرژی و معماری",
 			activityScope: "سازه",
 			image: pic11,
-		},
-		{
-			fullName: "محمد رجائیان هونجانی",
-			education: "ارشد تکنولوژی معماری",
-			activityScope: "سازه",
-			image: pic01,
 		},
 		{
 			fullName: "آرمان نیکخواه",
