@@ -1,42 +1,26 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-//
-//
+// style
+import "./App.scss";
+// routes
 import SignIn from "./pages/signIn-signUp/SignIn";
 import SignUp from "./pages/signIn-signUp/SignUp";
-// protectedRoute
+import NotFound from "./pages/NotFound";
 import ProtectedRoutes from "./router/ProtectedRoutes";
-// import Result from "./pages/Estimation/Result";
-// import Zone from "./pages/Estimation/Result/Zone/Zone";
-// import Estimate from "./pages/Estimation/Estimate";
-// import CompareZones from "./pages/Estimation/Result/CompareZones/CompareZones";
-import "./App.scss";
-//
-//
+// lazy load routes
 const Result = lazy(() => import("./pages/Estimation/Result"));
 const Estimate = lazy(() => import("./pages/Estimation/Estimate"));
 const CompareZones = lazy(() =>
 	import("./pages/Estimation/Result/CompareZones/CompareZones")
 );
-// pages
 const Home = lazy(() => import("./pages/Home"));
-// import Home from "./pages/Home";
-// path: estimation
 const Estimation = lazy(() => import("./pages/Estimation"));
-// import Estimation from "./pages/Estimation";
 //
 const Profile = lazy(() => import("./pages/Profile"));
-// import Profile from "./pages/Profile";
 const AboutUs = lazy(() => import("./pages/AboutUs"));
-// import AboutUs from "./pages/AboutUs";
 const ContactUs = lazy(() => import("./pages/ContactUs"));
-// import ContactUs from "./pages/ContactUs";
 const PricingPlans = lazy(() => import("./pages/PricingPlans"));
-// import PricingPlans from "./pages/PricingPlans";
-// path: auth
 const SignInSignUp = lazy(() => import("./pages/signIn-signUp"));
-// import SignInSignUp from "./pages/signIn-signUp";
-// style
 
 function App() {
 	return (
@@ -60,6 +44,7 @@ function App() {
 					<Route path="sign-in" element={<SignIn />} />
 					<Route path="sign-up" element={<SignUp />} />
 				</Route>
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</Suspense>
 	);
