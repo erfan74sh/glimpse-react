@@ -18,12 +18,12 @@ const ContactUs = () => {
 	return (
 		<>
 			<header className="">
-				<Nav />
+				<Nav lang="persian" />
 			</header>
 			<main className="px-24 py-16">
-				<header className="mb-10">
-					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
-						contact us
+				<header className="mb-16" dir="rtl">
+					<h1 className="font-irancell border-blue-550 text-blue-550 border-r-4 pr-3 text-3xl font-bold uppercase leading-8">
+						تماس با ما
 					</h1>
 				</header>
 				<div className="flex">
@@ -86,40 +86,43 @@ const ContactUs = () => {
 							<ContactUsMap />
 						</div>
 					</section>
-					<section className="h-113 relative w-1/2 pl-14">
+					<section
+						className="h-113 font-irancell relative w-1/2 pl-14"
+						dir="rtl"
+					>
 						<form className="flex flex-col gap-y-6">
 							<h2 className="text-gray-650 text-lg font-semibold">
-								How can we help you ?
+								از ما بپرسید.
 							</h2>
 							<input
 								type="text"
 								name="name"
-								placeHolder="your name"
-								className="rounded-2xl bg-gray-200 px-6 py-2"
+								placeHolder="نام و نام خانوادگی"
+								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<input
 								type="email"
 								name="email"
-								placeHolder="your email"
-								className="rounded-2xl bg-gray-200 px-6 py-2"
+								placeHolder="ایمیل"
+								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<input
 								type="text"
 								name="subject"
-								placeHolder="subject"
-								className="rounded-2xl bg-gray-200 px-6 py-2"
+								placeHolder="موضوع"
+								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<textarea
 								rows={10}
 								name="message"
-								placeHolder="write your message here"
-								className="rounded-2xl bg-gray-200 px-6 py-2"
+								placeHolder="پیام خود را بنویسید ..."
+								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<button
 								type="submit"
-								className="bg-blue-550 hover:shadow-b-sm self-end rounded-md px-8 py-1 capitalize text-white transition"
+								className="bg-blue-550 hover:shadow-b-sm self-start rounded-md px-8 py-1 capitalize text-white transition"
 							>
-								send
+								ارسال
 							</button>
 						</form>
 					</section>
