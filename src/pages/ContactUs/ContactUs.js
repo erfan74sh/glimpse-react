@@ -1,14 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faPhoneAlt,
-	faEnvelope,
-	faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
 	faInstagramSquare,
 	faLinkedin,
-	faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 // components
 import Nav from "../../components/Nav";
@@ -28,68 +23,36 @@ const ContactUs = () => {
 				</header>
 				<div className="flex">
 					<section className="w-1/2 pr-20">
-						<ul className="text-gray-650 flex gap-x-14 capitalize">
-							<div className="flex w-1/2 flex-col divide-y-2 divide-gray-300">
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">phone</h3>
-										<span>021-88929017</span>
-									</div>
-								</li>
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">email</h3>
-										<span className="normal-case">Info@bsp.green</span>
-									</div>
-								</li>
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon icon={faMapMarkerAlt} className="text-2xl" />
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">address</h3>
-										<span>
-											Faculty of Architecture and Urban Planning, Building No.
-											2, Shahid Beheshti University
-										</span>
-									</div>
-								</li>
-							</div>
-							<div className="flex w-1/2 flex-col divide-y-2 divide-gray-300">
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon
-										icon={faInstagramSquare}
-										className="text-2xl"
-									/>
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">instagram</h3>
-										<span>BSP.sim</span>
-									</div>
-								</li>
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">linkedin</h3>
-										<span>BSP.sim</span>
-									</div>
-								</li>
-								<li className="flex gap-x-3 py-3">
-									<FontAwesomeIcon icon={faTwitter} className="text-2xl" />
-									<div className="flex flex-col gap-y-2">
-										<h3 className="font-bold">twitter</h3>
-										<span>BSP.sim</span>
-									</div>
-								</li>
-							</div>
+						<ul className="text-gray-650 flex w-1/2 flex-col divide-gray-300">
+							<li className="flex gap-x-3 py-3">
+								<FontAwesomeIcon
+									icon={faInstagramSquare}
+									className="text-2xl"
+								/>
+								<span>BSP.sim</span>
+							</li>
+							<li className="flex gap-x-3 py-3">
+								<FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
+								<span>BSP.sim</span>
+								<div className="flex flex-col gap-y-2"></div>
+							</li>
+							<li className="flex gap-x-3 py-3">
+								<FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
+								<span>Info@bsp.green</span>
+							</li>
+							<li className="font-irancell flex gap-x-3 py-3">
+								<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
+								<span>۰۲۱۸۸۹۲۹۰۱۷ - ۰۹۹۳۹۴۴۴۷۷۵</span>
+							</li>
 						</ul>
-						<div className="mt-5">
+						<div className="my-5">
 							<ContactUsMap />
 						</div>
+						<div dir="rtl" className="font-irancell">
+							دانشگاه شهید‌بهشتی، ساختمان شماره ۲ دانشکده معماری و شهرسازی
+						</div>
 					</section>
-					<section
-						className="h-113 font-irancell relative w-1/2 pl-14"
-						dir="rtl"
-					>
+					<section className="font-irancell relative w-1/2 pl-14" dir="rtl">
 						<form className="flex flex-col gap-y-6">
 							<h2 className="text-gray-650 text-lg font-semibold">
 								از ما بپرسید.
@@ -97,25 +60,25 @@ const ContactUs = () => {
 							<input
 								type="text"
 								name="name"
-								placeHolder="نام و نام خانوادگی"
+								placeholder="نام و نام خانوادگی"
 								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<input
 								type="email"
 								name="email"
-								placeHolder="ایمیل"
+								placeholder="ایمیل"
 								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<input
 								type="text"
 								name="subject"
-								placeHolder="موضوع"
+								placeholder="موضوع"
 								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<textarea
 								rows={10}
 								name="message"
-								placeHolder="پیام خود را بنویسید ..."
+								placeholder="پیام خود را بنویسید ..."
 								className="rounded-xl border border-gray-400 bg-gray-200 px-6 py-2 outline-none focus:ring-2"
 							/>
 							<button
