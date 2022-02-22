@@ -105,14 +105,11 @@ const AboutUs = () => {
 				<Nav lang="persian" />
 			</header>
 			<main className="font-irancell px-24 py-16" dir="rtl">
-				<header className=" mb-20 flex flex-col items-center gap-y-5 px-24 text-center">
-					<div className="relative block w-full  ">
-						<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-full translate-y-1/2 -translate-x-1/2 transform"></span>
-						<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
-							شکل‌گیری{" "}
-						</h3>
-					</div>
-					<p className="">
+				<header className=" mb-20 px-24">
+					<h1 className="border-blue-550 text-blue-550 mb-14  border-r-4 pr-3 text-2xl font-bold uppercase leading-8">
+						درباره ما
+					</h1>
+					<p className="text-justify">
 						فعالیت BSPsim در پی احساس نیاز به ابزاری بومی، قابل دسترس، قابل
 						اتکا، معتبر، کارامد، و مطابق نیاز های کاربران و بهره برداران صنعت
 						ساختمان در دانشکده معماری و شهرسازی دانشگاه شهید بهشتی، آغاز شد.
