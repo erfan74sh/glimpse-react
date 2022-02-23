@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+// components
+import Loader from "./components/Loader/Loader";
 // style
 import "./App.scss";
 // routes
@@ -24,7 +26,7 @@ const SignInSignUp = lazy(() => import("./pages/signIn-signUp"));
 
 function App() {
 	return (
-		<Suspense fallback={<div>loading</div>}>
+		<Suspense fallback={<Loader />}>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route element={<ProtectedRoutes />}>
