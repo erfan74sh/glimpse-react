@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Loader from "../components/Loader/Loader";
+// components
 
 const withLoading = (WrappedComponent, loadingMsg) => {
 	return (props) => {
@@ -9,7 +11,7 @@ const withLoading = (WrappedComponent, loadingMsg) => {
 
 		return (
 			<>
-				{isLoading && <span>loading from hoc: {loadingMsg}</span>}
+				{isLoading && <Loader message={loadingMsg} />}
 				<WrappedComponent {...props} setLoading={handleIsLoading} />
 			</>
 		);
