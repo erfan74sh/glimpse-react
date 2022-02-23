@@ -12,8 +12,10 @@ const PricingPlans = () => {
 				<Nav />
 			</header>
 			<main id="pricing-container" className="px-24 py-16">
-				<header className="text-gray-650 text-center text-3xl font-bold">
-					<h1>Choose a plan that’s right for you</h1>
+				<header className="mb-14" dir="rtl">
+					<h1 className="font-irancell border-blue-550 text-blue-550 border-r-4 pr-3 text-3xl font-bold uppercase leading-8">
+						برنامه فروش
+					</h1>
 				</header>
 				<section className=" py-16" dir="rtl">
 					<RecomendedPackages />
