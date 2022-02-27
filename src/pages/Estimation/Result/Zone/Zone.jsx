@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+// import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 // components
 import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
@@ -10,6 +10,14 @@ import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
+// lazy loading pdf components
+const PDFDownloadLink = lazy(() =>
+	import("@react-pdf/renderer").then((module) => ({
+		default: module.PDFDownloadLink,
+	}))
+);
+// const PdfDoc = lazy(() => import("../PdfDoc/PdfDoc"));
+// const PdfDocVisualComfort = lazy(() => import("../PdfDoc/PdfDocVisualComfort"));
 
 const Zone = ({ projects }) => {
 	const [searchParams] = useSearchParams();
@@ -21,6 +29,7 @@ const Zone = ({ projects }) => {
 
 	useEffect(() => {
 		const unitOptions = {
+			area: "m2",
 			x_dim: "m",
 			y_dim: "m",
 			rotation_angle: "deg",
@@ -101,6 +110,7 @@ const Zone = ({ projects }) => {
 				) {
 					primaryData[item] = output[item];
 				} else if (
+					item === "area" ||
 					// visual-comfort outputs
 					item === "udi" ||
 					item === "ase" ||
@@ -187,21 +197,24 @@ const Zone = ({ projects }) => {
 							<span>{` ${entry.name}`}</span>
 							<span className="ml-1 text-xs">({entry.date})</span>
 							<button className="ml-4">
-								<PDFDownloadLink
-									document={
-										currentSubset === "energy_consumption" ? (
-											<PdfDoc data={entry} />
-										) : currentSubset === "visual_comfort" ? (
-											<PdfDocVisualComfort data={entry} />
-										) : null
-									}
-									fileName={`${entry.subset}_${entry.project_name}_${entry.zone_name}_${entry.name}.pdf`}
-								>
-									<FontAwesomeIcon
-										icon={faFilePdf}
-										className="text-xl opacity-70 transition hover:opacity-90"
-									/>
-								</PDFDownloadLink>
+								<Suspense fallback={<div>downloading...</div>}>
+									<PDFDownloadLink
+										document={
+											currentSubset === "energy_consumption" ? (
+												<PdfDoc data={entry} />
+											) : currentSubset === "visual_comfort" ? (
+												<PdfDocVisualComfort data={entry} />
+											) : null
+											// <span>test</span>
+										}
+										fileName={`${entry.subset}_${entry.project_name}_${entry.zone_name}_${entry.name}.pdf`}
+									>
+										<FontAwesomeIcon
+											icon={faFilePdf}
+											className="text-xl opacity-70 transition hover:opacity-90"
+										/>
+									</PDFDownloadLink>
+								</Suspense>
 							</button>
 							<button className="ml-auto mr-4 capitalize underline">
 								<Link to="/estimation">edit</Link>
