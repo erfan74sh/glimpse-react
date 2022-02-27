@@ -12,6 +12,7 @@ import {
 } from "recharts";
 
 const labelOptions = {
+	area: "area",
 	x_dim: "width",
 	y_dim: "length",
 	rotation_angle: "rotation angle",
@@ -85,6 +86,7 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 	let stroke = "#3F3356";
 	let fontWeight = 400;
 	if (
+		payload.value === "area" ||
 		payload.value === "cooling load" ||
 		payload.value === "heating load" ||
 		payload.value === "electric light" ||
