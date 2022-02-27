@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { axios } from "../../../services/axios";
 import authHeader from "../../../services/auth-header";
+
 // compoents
+import withLoading from "../../../HOC/withLoading";
 import Nav from "../../../components/Nav";
 import BreadCrumps from "./Breadcrumps/BreadCrumps";
 import ResultOptions from "./ResultOptions/ResultOptions";
@@ -11,7 +13,7 @@ import ResultOptions from "./ResultOptions/ResultOptions";
 import "./Result.scss";
 import Zone from "./Zone/Zone";
 
-const Result = () => {
+const Result = ({ setLoading }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
@@ -100,6 +102,7 @@ const Result = () => {
 				(alternative) => alternative.alternative_name
 			);
 			setAlternativesList(list);
+			setLoading(false);
 		}
 	}, [projectsInSubset, currentZoneName, currentProjectName]);
 
@@ -150,4 +153,4 @@ const Result = () => {
 	);
 };
 
-export default Result;
+export default withLoading(Result, "loading your data...");
