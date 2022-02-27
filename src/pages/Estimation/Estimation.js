@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router";
 // components
 import Nav from "../../components/Nav";
+import withLoading from "../../HOC/withLoading";
 // style
 import "./Estimation.scss";
 
-const Estimation = () => {
+const Estimation = ({ setLoading }) => {
+	useEffect(() => {
+		setLoading(false);
+	}, []);
+
 	return (
 		<div className="h-screen bg-gray-50">
 			<header className="">
@@ -16,4 +21,4 @@ const Estimation = () => {
 	);
 };
 
-export default Estimation;
+export default withLoading(Estimation, "");
