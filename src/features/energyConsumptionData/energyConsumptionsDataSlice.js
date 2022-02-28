@@ -1,31 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import energyConsumptionServices from "../../services/estimations/energyConsumption.service";
 
 const initialState = {
-	data: {
-		// floorLevel: "",
-		// xDim: 3,
-		// yDim: 8,
-		// rotation: 0,
-		// wwrNorth: 0,
-		// wwrSouth: 0,
-		// shadingType: "",
-		// eastWallCondition: "",
-		// westWallCondition: "",
-		// northWallCondition: "",
-		// southWallCondition: "",
-		// roofCondition: "",
-		// floorCondition: "",
-		// wallMaterial: 0,
-		// ceilingMaterial: 0,
-		// floorMaterial: 0,
-		// glassMaterial: 0,
-		// southNeighborDist: 3,
-		// southNeighborHeight: 4,
-		// northNeighborDist: 3,
-		// northNeighborHeight: 4,
-		// HVAC: "",
-		// naturalVent: null,
-		//
+	status: "",
+	inputData: {
 		x_dim: 24,
 		y_dim: 10,
 		rotation_angle: 0,
@@ -50,14 +28,40 @@ const initialState = {
 		floor_bc: "",
 		roof_bc: "",
 	},
+	allSimulations: [],
 };
+
+export const getAllEnergySimulations = createAsyncThunk(
+	"energyConsumptionData/getAllEnergySimulations",
+	async (obj, { rejectWithValue }) => {
+		try {
+			const response = await energyConsumptionServices.getEstimations();
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error.response.data);
+		}
+	}
+);
 
 export const energyConsumptionDataSlice = createSlice({
 	name: "energyConsumptionData",
 	initialState,
 	reducers: {
-		updateData(state, action) {
-			state.data = action.payload;
+		updateData(state, { payload }) {
+			state.inputData = payload;
+		},
+	},
+	extraReducers: {
+		[getAllEnergySimulations.fulfilled]: (state, { payload }) => {
+			state.status = "sucseed";
+			state.allSimulations = payload;
+			state.inputData = initialState.inputData;
+		},
+		[getAllEnergySimulations.rejected]: (state) => {
+			state.status = "rejected";
+		},
+		[getAllEnergySimulations.pending]: (state) => {
+			state.status = "pending";
 		},
 	},
 });
