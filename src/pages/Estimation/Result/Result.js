@@ -11,24 +11,34 @@ import "./Result.scss";
 import Zone from "./Zone/Zone";
 //slices
 import { getAllEnergySimulations } from "../../../features/energyConsumptionData/energyConsumptionsDataSlice";
+import { getAllVisualSimulations } from "../../../features/visualComfortData/VisualComfortDataSlice";
 
 const Result = ({ setLoading }) => {
 	const dispatch = useDispatch();
-
-	const { allSimulations } = useSelector(
-		(state) => state.energyConsumptionData
-	);
 
 	const [searchParams, setSearchParams] = useSearchParams();
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
 	const currentZoneName = searchParams.get("zone_name");
 
+	const { allSimulations } = useSelector((state) => {
+		return currentSubset === "energy_consumption"
+			? state.energyConsumptionData
+			: currentSubset === "visual_comfort"
+			? state.visualComfortData
+			: null;
+	});
 	const [projectsList, setProjectsList] = useState([]);
 
 	useEffect(() => {
-		dispatch(getAllEnergySimulations());
-	}, [dispatch]);
+		dispatch(
+			currentSubset === "energy_consumption"
+				? getAllEnergySimulations()
+				: currentSubset === "visual_comfort"
+				? getAllVisualSimulations()
+				: null
+		);
+	}, [dispatch, currentSubset]);
 
 	useEffect(() => {
 		const list = Array.from(
