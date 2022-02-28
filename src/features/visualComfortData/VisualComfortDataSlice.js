@@ -1,7 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import visualComfortService from "../../services/estimations/visualComfort.service";
 
 const initialState = {
-	data: {
+	status: "",
+	inputData: {
 		x_dim: 3,
 		y_dim: 8,
 		rotation_angle: 0,
@@ -17,7 +19,20 @@ const initialState = {
 		north_neighbor_distance: 3,
 		north_neighbor_height: 4,
 	},
+	allSimulations: [],
 };
+
+export const getAllVisualSimulations = createAsyncThunk(
+	"visualcomfortData/getAllVisualSimulations",
+	async (obj, { rejectWithValue }) => {
+		try {
+			const response = await visualComfortService.getEstimations();
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error.response.data);
+		}
+	}
+);
 
 export const VisualComfortDataSlice = createSlice({
 	name: "visualcomfortData",
@@ -27,8 +42,22 @@ export const VisualComfortDataSlice = createSlice({
 			state.data = action.payload;
 		},
 	},
+	extraReducers: {
+		[getAllVisualSimulations.fulfilled]: (state, { payload }) => {
+			state.status = "sucseed";
+			state.allSimulations = payload;
+			state.inputData = initialState.inputData;
+		},
+		[getAllVisualSimulations.rejected]: (state) => {
+			state.status = "rejected";
+		},
+		[getAllVisualSimulations.pending]: (state) => {
+			state.status = "pending";
+		},
+	},
 });
 
 export const { updateData } = VisualComfortDataSlice.actions;
-export const selectVisualComfortData = (state) => state.visualComfortData.data;
+export const selectVisualComfortData = (state) =>
+	state.visualComfortData.inputData;
 export default VisualComfortDataSlice.reducer;
