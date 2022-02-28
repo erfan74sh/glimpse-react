@@ -1,53 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { axios } from "../../../services/axios";
-import authHeader from "../../../services/auth-header";
-
+import { useDispatch, useSelector } from "react-redux";
 // compoents
 import withLoading from "../../../HOC/withLoading";
 import Nav from "../../../components/Nav";
 import BreadCrumps from "./Breadcrumps/BreadCrumps";
 import ResultOptions from "./ResultOptions/ResultOptions";
-
 // style
 import "./Result.scss";
 import Zone from "./Zone/Zone";
+//slices
+import { getAllEnergySimulations } from "../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
 const Result = ({ setLoading }) => {
+	const dispatch = useDispatch();
+
+	const { allSimulations } = useSelector(
+		(state) => state.energyConsumptionData
+	);
+
 	const [searchParams, setSearchParams] = useSearchParams();
 	const currentSubset = searchParams.get("subset");
 	const currentProjectName = searchParams.get("project_name");
 	const currentZoneName = searchParams.get("zone_name");
 
-	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	const [projectsList, setProjectsList] = useState([]);
 
 	useEffect(() => {
-		const subsetOptions = {
-			visual_comfort: "daylights",
-			thermal_comfort: "",
-			energy_consumption: "energies",
-			structure_design: "",
-		};
-		const getProjects = async () => {
-			const fetchData = await axios.get(`/${subsetOptions[currentSubset]}/`, {
-				headers: authHeader(),
-			});
-			//? get all projects in currentSubset
-			const allProjects = await fetchData.data;
-			const list = Array.from(allProjects, (project) => project.project_name);
-			const uniqueList = Array.from(new Set(list));
-			setProjectsInSubset(allProjects);
-			setProjectsList(uniqueList);
-		};
-		getProjects();
-	}, [currentSubset]);
+		dispatch(getAllEnergySimulations());
+	}, [dispatch]);
+
+	useEffect(() => {
+		const list = Array.from(
+			allSimulations,
+			(simulation) => simulation.project_name
+		);
+		const uniqueList = Array.from(new Set(list));
+		setProjectsList(uniqueList);
+	}, [allSimulations]);
 
 	// todo: include redux persist in project and remove this state and it's useEffect
 	// todo: and access this data in final component that needs
 	const [primData, setPrimData] = useState([]);
 	useEffect(() => {
-		if (projectsInSubset[0]) {
+		if (allSimulations[0]) {
 			const {
 				high_performance_building_index,
 				subset,
@@ -56,7 +52,7 @@ const Result = ({ setLoading }) => {
 				zone_name,
 				alternative_name,
 				location,
-			} = projectsInSubset.filter(
+			} = allSimulations.filter(
 				(item) =>
 					item.project_name === currentProjectName &&
 					item.zone_name === currentZoneName
@@ -71,28 +67,28 @@ const Result = ({ setLoading }) => {
 				location,
 			});
 		}
-	}, [projectsInSubset, currentProjectName, currentZoneName]);
+	}, [allSimulations, currentProjectName, currentZoneName]);
 
 	const [zoneList, setZoneList] = useState([]);
 	// ! this useEffect is not efficient
 	useEffect(() => {
 		// ? get all zones in currentProject
-		if (projectsInSubset.length !== 0) {
-			const allZones = projectsInSubset.filter(
+		if (allSimulations.length !== 0) {
+			const allZones = allSimulations.filter(
 				(estimatedData) => estimatedData.project_name === currentProjectName
 			);
 			const list = Array.from(allZones, (zone) => zone.zone_name);
 			const uniqueList = Array.from(new Set(list));
 			setZoneList(uniqueList);
 		}
-	}, [projectsInSubset, currentProjectName]);
+	}, [allSimulations, currentProjectName]);
 
 	const [alternativesList, setAlternativesList] = useState([]);
 	// ! this useEffect is not efficient
 	useEffect(() => {
 		// ? get all alternatives in currentZone
-		if (projectsInSubset.length !== 0) {
-			const allAlternatives = projectsInSubset.filter(
+		if (allSimulations.length !== 0) {
+			const allAlternatives = allSimulations.filter(
 				(estimatedData) =>
 					estimatedData.project_name === currentProjectName &&
 					estimatedData.zone_name === currentZoneName
@@ -104,11 +100,11 @@ const Result = ({ setLoading }) => {
 			setAlternativesList(list);
 			setLoading(false);
 		}
-	}, [projectsInSubset, currentZoneName, currentProjectName]);
+	}, [allSimulations, currentZoneName, currentProjectName, setLoading]);
 
 	const handleSearchParams = (paramToChange, event) => {
 		if (paramToChange === "project_name") {
-			const zonesInProject = projectsInSubset.filter(
+			const zonesInProject = allSimulations.filter(
 				(estimatedData) => estimatedData.project_name === event.target.value
 			);
 			setSearchParams({
@@ -146,7 +142,7 @@ const Result = ({ setLoading }) => {
 					<ResultOptions primData={primData} />
 				</header>
 				<main className="">
-					<Zone projects={projectsInSubset} />
+					<Zone projects={allSimulations} />
 				</main>
 			</main>
 		</>
