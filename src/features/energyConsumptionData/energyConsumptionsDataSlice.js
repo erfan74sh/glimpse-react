@@ -68,5 +68,5 @@ export const energyConsumptionDataSlice = createSlice({
 
 export const { updateData } = energyConsumptionDataSlice.actions;
 export const selectEnergyConsumptionData = (state) =>
-	state.energyConsumptionData.data;
+	state.energyConsumptionData.inputData;
 export default energyConsumptionDataSlice.reducer;
