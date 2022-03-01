@@ -207,10 +207,10 @@ const unitOptions = {
 };
 
 const shadingTypeOptions = {
-	1: "horizontal",
-	2: "horizontal louvre",
-	3: "vertical",
-	4: "all modes",
+	1: "Horizontal",
+	2: "Horizontal Louvre",
+	3: "Vertical",
+	4: "All Modes",
 };
 
 const PdfDoc = ({ data }) => {

@@ -207,10 +207,10 @@ const unitOptions = {
 };
 
 const shadingTypeOptions = {
-	1: "horizontal",
-	2: "horizontal louvre",
-	3: "vertical",
-	4: "all modes",
+	1: "Horizontal",
+	2: "Horizontal Louvre",
+	3: "Vertical",
+	4: "All Modes",
 };
 const boundryConditionOptions = {
 	0: "Adiabatic",
@@ -228,12 +228,12 @@ const hvacOptions = {
 };
 
 const floorLevelOptions = {
-	0: "ground floor",
-	1: "1st floor",
-	2: "2nd floor",
-	3: "3rd floor",
-	4: "4th floor",
-	5: "5th floor",
+	0: "Ground Floor",
+	1: "1st Floor",
+	2: "2nd Floor",
+	3: "3rd Floor",
+	4: "4th Floor",
+	5: "5th Floor",
 };
 
 const PdfDoc = ({ data }) => {
