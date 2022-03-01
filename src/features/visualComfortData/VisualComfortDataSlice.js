@@ -38,8 +38,8 @@ export const VisualComfortDataSlice = createSlice({
 	name: "visualcomfortData",
 	initialState,
 	reducers: {
-		updateData(state, action) {
-			state.data = action.payload;
+		updateData(state, { payload }) {
+			state.inputData = payload;
 		},
 	},
 	extraReducers: {
