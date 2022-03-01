@@ -211,29 +211,6 @@ const shadingTypeOptions = {
 	3: "vertical",
 	4: "all modes",
 };
-const boundryConditionOptions = {
-	0: "Adiabatic",
-	1: "External",
-	2: "Ground",
-};
-
-const hvacOptions = {
-	1: "ideal air loads",
-	2: "PTAC | residential",
-	3: "PTHP | residential",
-	4: "VAV w/reheat",
-	5: "VAV w/PFP boxes",
-	6: "fan coil units + DOAS",
-};
-
-const floorLevelOptions = {
-	0: "ground floor",
-	1: "1st floor",
-	2: "2nd floor",
-	3: "3rd floor",
-	4: "4th floor",
-	5: "5th floor",
-};
 
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
@@ -278,7 +255,7 @@ const PdfDoc = ({ data }) => {
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>project name: </Text>
+										<Text>Project Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -286,7 +263,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>zone name: </Text>
+										<Text>Zone Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -294,7 +271,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>alternative name: </Text>
+										<Text>Alternative Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -302,7 +279,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>location: </Text>
+										<Text>Location: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -310,7 +287,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>building type: </Text>
+										<Text>Building Type: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -327,7 +304,7 @@ const PdfDoc = ({ data }) => {
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>rotation angle: </Text>
+										<Text>Rotation Angle: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -335,7 +312,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>width: </Text>
+										<Text>Width: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -343,7 +320,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>length: </Text>
+										<Text>Length: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -351,7 +328,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_north: </Text>
+										<Text>WWR_North: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -359,7 +336,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_south: </Text>
+										<Text>WWR_South: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -367,7 +344,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>shading type: </Text>
+										<Text>Shading Type: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -375,7 +352,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor distance: </Text>
+										<Text>South Neighbor Distance: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -384,7 +361,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor height: </Text>
+										<Text>South Neighbor Height: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -393,7 +370,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor distance: </Text>
+										<Text>North Neighbor Distance: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -402,7 +379,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor height: </Text>
+										<Text>North Neighbor Height: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -451,7 +428,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>Glass Visible Transmittance: </Text>
+										<Text>Window Glass Visible Transmittance Factor: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -473,7 +450,7 @@ const PdfDoc = ({ data }) => {
 								{ marginTop: 14, borderBottom: "1 solid #147CDD" },
 							]}
 						>
-							Output Parameters
+							Output Metrics
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>

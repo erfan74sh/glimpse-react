@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 	},
 
 	section_output_col: {
-		width: "47.5%",
+		width: "50%",
 		display: "flex",
 		flexDirection: "column",
 	},
@@ -163,10 +163,10 @@ const unitOptions = {
 	wwr_south: "%",
 	shading_type: "",
 	hvac: "",
-	wall_uvalue: "w/m.k",
-	roof_uvalue: "w/m.k",
-	floor_uvalue: "w/m.k",
-	window_uvalue: "w/m.k",
+	wall_uvalue: "W/m\u00B2K",
+	roof_uvalue: "W/m\u00B2K",
+	floor_uvalue: "W/m\u00B2K",
+	window_uvalue: "W/m\u00B2K",
 	natural_ventilation: "",
 	south_neighbor_distance: "m",
 	south_neighbor_height: "m",
@@ -180,14 +180,14 @@ const unitOptions = {
 	floor_bc: "",
 	roof_bc: "",
 
-	coolingload: "kWh/m2",
-	heatingload: "kWh/m2",
-	electriclight: "kWh/m2",
-	fanger20: "hr",
-	fanger10: "hr",
-	adaptiveashrae80: "hr",
-	adaptiveashrae90: "hr",
-	adaptiveencalss2por: "hr",
+	coolingload: "kWh/m\u00B2",
+	heatingload: "kWh/m\u00B2",
+	electriclight: "kWh/m\u00B2",
+	fanger20: "%",
+	fanger10: "%",
+	adaptiveashrae80: "%",
+	adaptiveashrae90: "%",
+	adaptiveencalss2por: "%",
 	overheatot_occupied_hours: "hr",
 	underheatot_occupied_hours: "hr",
 	verheatdbt_occupied_hours: "hr",
@@ -278,7 +278,7 @@ const PdfDoc = ({ data }) => {
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>project name: </Text>
+										<Text>Project Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -286,7 +286,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>zone name: </Text>
+										<Text>Zone Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -294,7 +294,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>alternative name: </Text>
+										<Text>Alternative Name: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -302,7 +302,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>location: </Text>
+										<Text>Location: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -310,7 +310,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>building type: </Text>
+										<Text>Building Type: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -327,7 +327,7 @@ const PdfDoc = ({ data }) => {
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>floor level: </Text>
+										<Text>Floor Level: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -335,7 +335,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>rotation angle: </Text>
+										<Text>Rotation Angle: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -343,7 +343,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>width: </Text>
+										<Text>Width: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -351,7 +351,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>length: </Text>
+										<Text>Length: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -359,7 +359,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_north: </Text>
+										<Text>WWR_North: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -367,7 +367,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wwr_south: </Text>
+										<Text>WWR_South: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -375,7 +375,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>shading type: </Text>
+										<Text>Shading Type: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -383,7 +383,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor distance: </Text>
+										<Text>South Neighbor Distance: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -392,7 +392,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>south neighbor height: </Text>
+										<Text>South Neighbor Height: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -401,7 +401,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor distance: </Text>
+										<Text>North Neighbor Distance: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -410,7 +410,7 @@ const PdfDoc = ({ data }) => {
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>north neighbor height: </Text>
+										<Text>North Neighbor Height: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -427,8 +427,10 @@ const PdfDoc = ({ data }) => {
 									air conditioning
 								</Text>
 								<View style={styles.section_inputs_items_content}>
-									<View style={styles.section_inputs_items_content_item}>
-										<Text>HVAC system: </Text>
+									<View
+										style={styles.section_inputs_items_content_item_halfWidth}
+									>
+										<Text>HVAC System: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -437,17 +439,15 @@ const PdfDoc = ({ data }) => {
 									</View>
 									<View
 										style={[
-											styles.section_inputs_items_content_item,
+											styles.section_inputs_items_content_item_halfWidth,
 											{ flexGrow: 1 },
 										]}
 									>
-										<Text>natural ventilation: </Text>
+										<Text>Natural Ventilation: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.natural_ventilation
-												? " has it"
-												: " does not have"}
+											{inputs.natural_ventilation ? " On" : " Off"}
 										</Text>
 									</View>
 								</View>
@@ -456,39 +456,39 @@ const PdfDoc = ({ data }) => {
 							{/*	 Thermal specifications section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									Thermal specifications of walls
+									Thermal Properties
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>wall U value: </Text>
+										<Text>Wall U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wall_uvalue}
+											{inputs.wall_uvalue} {unitOptions.wall_uvalue}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>floor U value: </Text>
+										<Text>Floor U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.floor_uvalue}
+											{inputs.floor_uvalue} {unitOptions.floor_uvalue}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>roof U value: </Text>
+										<Text>Roof U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.roof_uvalue}
+											{inputs.roof_uvalue} {unitOptions.roof_uvalue}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
-										<Text>window U value: </Text>
+										<Text>Window U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.window_uvalue}
+											{inputs.window_uvalue} {unitOptions.window_uvalue}
 										</Text>
 									</View>
 								</View>
@@ -497,13 +497,13 @@ const PdfDoc = ({ data }) => {
 							{/*	 boundry condition section */}
 							<View style={styles.section_inputs_items}>
 								<Text style={styles.section_inputs_items_title}>
-									boundries condition
+									boundary conditions
 								</Text>
 								<View style={styles.section_inputs_items_content}>
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>east wall boundry condition: </Text>
+										<Text>East Wall Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -513,7 +513,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>west wall boundry condition: </Text>
+										<Text>West Wall Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -523,7 +523,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>north wall boundry condition: </Text>
+										<Text>North Wall Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -533,7 +533,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>south wall boundry condition: </Text>
+										<Text>South Wall Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -543,7 +543,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>roof boundry condition: </Text>
+										<Text>Roof Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -553,7 +553,7 @@ const PdfDoc = ({ data }) => {
 									<View
 										style={styles.section_inputs_items_content_item_halfWidth}
 									>
-										<Text>floor boundry condition: </Text>
+										<Text>Floor Boundary Condition: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
@@ -575,7 +575,7 @@ const PdfDoc = ({ data }) => {
 								{ marginTop: 14, borderBottom: "1 solid #147CDD" },
 							]}
 						>
-							Output Parameters
+							Output Metrics
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
@@ -657,7 +657,7 @@ const PdfDoc = ({ data }) => {
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat OT- Occupied hours: </Text>
+											<Text>Overheat OT-Occupied Hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
@@ -666,7 +666,7 @@ const PdfDoc = ({ data }) => {
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Underheat OT- Occupied hours: </Text>
+											<Text>Underheat OT-Occupied Hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
@@ -675,7 +675,7 @@ const PdfDoc = ({ data }) => {
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat DbT- Occupied hours: </Text>
+											<Text>Overheat DbT-Occupied Hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
@@ -684,7 +684,7 @@ const PdfDoc = ({ data }) => {
 											</Text>
 										</View>
 										<View style={styles.section_outputs_items_content_item}>
-											<Text>Under heat DbT- Occupied hours: </Text>
+											<Text>Underheat DbT- Occupied Hours: </Text>
 											<Text
 												style={styles.section_inputs_items_content_item_value}
 											>
