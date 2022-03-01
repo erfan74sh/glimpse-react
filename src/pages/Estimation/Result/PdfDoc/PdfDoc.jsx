@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
 });
 
 const unitOptions = {
+	area: "m\u00B2",
 	x_dim: "m",
 	y_dim: "m",
 	rotation_angle: "deg",
@@ -315,6 +316,14 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{data.building_program}
+										</Text>
+									</View>
+									<View style={styles.section_inputs_items_content_item}>
+										<Text>Area: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.area} {unitOptions.area}
 										</Text>
 									</View>
 								</View>
