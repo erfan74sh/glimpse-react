@@ -104,7 +104,7 @@ const Material = ({ nextStep, prevStep }) => {
 					<SelectField
 						name="vt_glass"
 						selectOptions={vtGlassOptions}
-						label="Glass Visible Transmittance"
+						label="Window Glass Visible Transmittance Factor"
 						placeholder="choose one"
 						handleValue={handleVtGlass}
 						moreInfo="ضریب انتقال نور از شیشه"
