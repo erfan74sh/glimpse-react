@@ -17,9 +17,7 @@ const DropdownRadio = ({
 }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
-		<label
-			className={`block ${disable ? "cursor-not-allowed" : "cursor-pointer"}`}
-		>
+		<label className={`block ${disable ? "cursor-default" : "cursor-pointer"}`}>
 			<input
 				type="radio"
 				{...field}
