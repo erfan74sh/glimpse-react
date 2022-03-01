@@ -9,7 +9,7 @@ const PricingPlans = () => {
 	return (
 		<>
 			<header>
-				<Nav />
+				<Nav lang="persian" />
 			</header>
 			<main id="pricing-container" className="px-24 py-16">
 				<header className="mb-14" dir="rtl">
