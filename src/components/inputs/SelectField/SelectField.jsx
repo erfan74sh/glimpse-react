@@ -27,7 +27,6 @@ const DropdownRadio = ({
 				className="hidden"
 				onClick={(e) => {
 					if (!disable) {
-						console.log(disable);
 						handleValue(e.target.value);
 						handleSelected(e);
 					}
