@@ -67,6 +67,18 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 	},
 
+	section__points_grades: {
+		display: "flex",
+		flexDirection: "column",
+		paddingHorizontal: 5,
+	},
+
+	section__points_grades__param: {
+		display: "flex",
+		flexDirection: "row",
+		marginBottom: 7,
+	},
+
 	section_output_col: {
 		width: "47.5%",
 		display: "flex",
@@ -150,8 +162,20 @@ const styles = StyleSheet.create({
 		fontWeight: "normal",
 		textTransform: "capitalize",
 	},
-	test: {
-		maxWidth: "100%",
+	text_red: {
+		color: "#EF4444",
+	},
+	text_blue: {
+		color: "#3B82F6",
+	},
+	text_title: {
+		color: "#3B82F6",
+		fontWeight: "bold",
+		marginRight: 5,
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		width: "7%",
 	},
 });
 
@@ -517,6 +541,122 @@ const PdfDoc = ({ data }) => {
 						</View>
 					</View>
 					{/* end outputs section */}
+
+					{/* points and grades section */}
+					<View style={styles.section}>
+						<Text
+							style={[
+								styles.section_header,
+								{ marginTop: 14, borderBottom: "1 solid #147CDD" },
+							]}
+						>
+							Points and Grades
+						</Text>
+						<View style={styles.section__points_grades}>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>UDI</Text>
+									<Text>{`>`}</Text>
+								</View>
+								{outputs.udi < 75 ? (
+									<Text>
+										your alternative is{" "}
+										<Text style={styles.text_red}>not acceptable</Text> in
+										accordance with "LEED" V.4
+									</Text>
+								) : (
+									<Text>
+										your alternative can earn{" "}
+										<Text style={styles.text_blue}>
+											{outputs.udi < 90 ? "2 points" : "3 points"}{" "}
+										</Text>
+										from "LEED" V.4
+									</Text>
+								)}
+							</View>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>mDA</Text>
+									<Text>{`>`}</Text>
+								</View>
+								<Text>
+									your alternative is{" "}
+									<Text
+										style={
+											outputs.mda >= 50 ? styles.text_blue : styles.text_red
+										}
+									>
+										{outputs.mda >= 50 ? "acceptabe." : "not acceptable."}
+									</Text>{" "}
+								</Text>
+							</View>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>sVD</Text>
+									<Text>{`>`}</Text>
+								</View>
+								<Text>
+									your alternative is{" "}
+									<Text
+										style={
+											outputs.svd <= 10 ? styles.text_blue : styles.text_red
+										}
+									>
+										{outputs.svd <= 10 ? "acceptabe." : "not acceptable."}
+									</Text>{" "}
+								</Text>
+							</View>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>ASE</Text>
+									<Text>{`>`}</Text>
+								</View>
+								<Text>
+									your alternative is{" "}
+									<Text
+										style={
+											outputs.ase <= 10 ? styles.text_blue : styles.text_red
+										}
+									>
+										{outputs.ase <= 10 ? "acceptabe" : "not acceptable"}
+									</Text>{" "}
+									in accordance with "LEED" V.4
+								</Text>
+							</View>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>sDA</Text>
+									<Text>{`>`}</Text>
+								</View>
+								{outputs.sda < 55 ? (
+									<Text style={{ flexGrow: 1 }}>
+										your alternative is{" "}
+										<Text style={styles.text_red}>not acceptable</Text> in
+										accordance with "19th topic of National Building Regulations
+										of Iran"
+									</Text>
+								) : (
+									<Text style={{ flexGrow: 1 }}>
+										your alternative can earn{" "}
+										<Text style={styles.text_blue}>
+											{outputs.sda < 75
+												? "EC"
+												: outputs.sda < 85
+												? "EC+"
+												: "EC++"}
+										</Text>{" "}
+										rank from "19th topic of National Building Regulations of
+										Iran" and{" "}
+										<Text style={styles.text_blue}>
+											{outputs.sda < 75 ? "2 points" : "3 points"}{" "}
+										</Text>
+										from "LEED" V.4
+									</Text>
+								)}
+							</View>
+						</View>
+					</View>
+					{/* end points and grades section */}
 				</View>
 				{/* end main */}
 			</Page>
