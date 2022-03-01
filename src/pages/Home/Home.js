@@ -9,6 +9,8 @@ import WorkingProcess from "./WorkingProcess";
 import Simulations from "./Simulations";
 import RecomendedPackages from "../../components/recomendedPackages/RecomendedPackages";
 import Footer from "./Footer";
+// assets
+import LifeCycleImg from "../../assets/images/lifecycle.png";
 // style
 import "./Home.scss";
 
@@ -37,6 +39,9 @@ const Home = () => {
 					videoUrl="https://www.aparat.com/embed/mVSx2?data[rnddiv]=16504825167&data[responsive]=yes"
 				/>
 				<section id="work-frame">
+					<div className="mb-16 flex items-center justify-center pr-28">
+						<img src={LifeCycleImg} alt="life-cycle" className="h-auto w-1/2" />
+					</div>
 					<WorkingProcess />
 					<Simulations />
 				</section>
