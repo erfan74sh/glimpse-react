@@ -48,7 +48,7 @@ const Review = ({ prevStep }) => {
 		},
 		{
 			name: "vt_glass",
-			label: "Glass Visible Transmittance",
+			label: "Window Glass Visible Transmittance Factor",
 			unit: "",
 			value: data.vt_glass,
 		},
