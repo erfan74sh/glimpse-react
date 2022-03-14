@@ -9,9 +9,9 @@ const mapContainerStyle = {
 const initialCenter = [32.42791, 53.688046];
 
 const markers = [
-	{ name: "Tehran", latLng: [35.689198, 51.388973], climate: "Bsk.Bwk" },
-	{ name: "Yazd", latLng: [31.897423, 54.356857], climate: "Bwk" },
-	{ name: "Tabriz", latLng: [38.0739964, 46.2961952], climate: "Bsk" },
+	{ name: "tehran", latLng: [35.689198, 51.388973], climate: "Bsk.Bwk" },
+	{ name: "yazd", latLng: [31.897423, 54.356857], climate: "Bwk" },
+	{ name: "tabriz", latLng: [38.0739964, 46.2961952], climate: "Bsk" },
 ];
 
 const ModalMap = () => {

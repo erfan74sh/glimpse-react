@@ -49,10 +49,10 @@ const StepOne = ({ nextStep, formData }) => {
 		{ label: "energy and carbon", value: "Energy_and_water" },
 	];
 	const buildingProgramOptions = [
-		{ label: "office", value: "Office" },
-		{ label: "residential", value: "Residential", disable: true },
-		{ label: "educational", value: "Educational", disable: true },
-		{ label: "Commercial", value: "Commercial", disable: true },
+		{ label: "Office", value: "office" },
+		{ label: "Residential", value: "residential", disable: true },
+		{ label: "Educational", value: "educational", disable: true },
+		{ label: "Commercial", value: "commercial", disable: true },
 	];
 
 	return (
@@ -83,7 +83,7 @@ const StepOne = ({ nextStep, formData }) => {
 					),
 				building_program: yup
 					.string()
-					.oneOf(["Office", "Residential", "Educational", "Commercial"])
+					.oneOf(["office", "residential", "educational", "commercial"])
 					.required("required"),
 			})}
 		>
@@ -182,9 +182,9 @@ const StepThree = ({ prevStep, formData }) => {
 	const dispatch = useDispatch();
 	let navigate = useNavigate();
 	const locationOptions = [
-		{ label: "tehran", value: "Tehran" },
-		{ label: "yazd", value: "Yazd" },
-		{ label: "tabriz", value: "Tabriz" },
+		{ label: "Tehran", value: "tehran" },
+		{ label: "Yazd", value: "yazd" },
+		{ label: "Tabriz", value: "tabriz" },
 	];
 	return (
 		<Formik
