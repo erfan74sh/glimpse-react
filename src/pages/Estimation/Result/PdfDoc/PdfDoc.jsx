@@ -646,6 +646,12 @@ const PdfDoc = ({ data }) => {
 												{outputs.fanger10} {unitOptions.fanger10}
 											</Text>
 										</View>
+									</View>
+								</View>
+							</View>
+							<View style={styles.section_output_col}>
+								<View style={styles.section_inputs_items}>
+									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
 											<Text>Adaptive ASHRAE 80%: </Text>
 											<Text
@@ -664,12 +670,6 @@ const PdfDoc = ({ data }) => {
 												{unitOptions.adaptiveashrae90}
 											</Text>
 										</View>
-									</View>
-								</View>
-							</View>
-							<View style={styles.section_output_col}>
-								<View style={styles.section_inputs_items}>
-									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
 											<Text>Adaptive EN-Class: </Text>
 											<Text
