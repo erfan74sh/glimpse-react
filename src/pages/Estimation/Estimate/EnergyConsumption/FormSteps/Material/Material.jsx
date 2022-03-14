@@ -52,22 +52,32 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const wallMaterialOptions = [
-		{ label: "1.719" },
-		{ label: "1.649" },
-		{ label: "0.979" },
-		{ label: "0.225" },
+		{ label: "Brick wall + Brick facade", value: "1.719" },
+		{ label: "Cement Block + Stone facade", value: "1.649" },
+		{ label: "Cement Block + Cement facade", value: "0.979" },
+		{
+			label:
+				"Two layer Brick wall with Insulation in the middle + Brick facade",
+			value: "0.225",
+		},
 	];
 	const floorMaterialOptions = [
-		{ label: "0.37" },
-		{ label: "0.47" },
-		{ label: "0.65" },
+		{ label: "Reinforced Concrete with air gap + Terrazzo", value: "0.37" },
+		{ label: "Beam Block + Parquet flooring", value: "0.47" },
+		{ label: "Reinforced concrete + Parquet flooring", value: "0.65" },
 	];
 	const roofMaterialOptions = [
-		{ label: "0.878" },
-		{ label: "0.211" },
-		{ label: "0.393" },
-		{ label: "0.386" },
-		{ label: "1.092" },
+		{ label: "Gypsum Board + Reinforced Concrete + Terrazzo", value: "0.878" },
+		{
+			label: "Reinforced Concrete with thermal insullation + Terrazzo",
+			value: "0.211",
+		},
+		{ label: "Beam block + terrazzo", value: "0.393" },
+		{ label: "Beam Block with out terrazzo", value: "0.386" },
+		{
+			label: "Gypsum Plaster + Reinforced Concrete + Terrazzo",
+			value: "1.092",
+		},
 	];
 	const glassMaterialOptions = [
 		{ label: "1.7" },
