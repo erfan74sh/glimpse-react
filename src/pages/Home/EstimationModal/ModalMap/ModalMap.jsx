@@ -9,10 +9,9 @@ const mapContainerStyle = {
 const initialCenter = [32.42791, 53.688046];
 
 const markers = [
-	{ name: "tehran", latLng: [35.689198, 51.388973] },
-	{ name: "yazd", latLng: [31.897423, 54.356857] },
-	{ name: "bushehr", latLng: [28.919979, 50.830009] },
-	{ name: "sari", latLng: [36.514051, 53.0484] },
+	{ name: "Tehran", latLng: [35.689198, 51.388973], climate: "Bsk.Bwk" },
+	{ name: "Yazd", latLng: [31.897423, 54.356857], climate: "Bwk" },
+	{ name: "Tabriz", latLng: [38.0739964, 46.2961952], climate: "Bsk" },
 ];
 
 const ModalMap = () => {
@@ -48,14 +47,14 @@ const ModalMap = () => {
 				))}
 				{values.location !== "" && (
 					<Overlay anchor={selected.latLng} offset={[0, 0]}>
-						<div className="flex flex-col bg-gray-500 py-2 px-3 rounded-md bg-opacity-50">
+						<div className="flex flex-col rounded-md bg-gray-500 bg-opacity-50 py-2 px-3">
 							<div className="flex gap-x-1">
 								<span className="font-semibold">city:</span>
 								<span>{selected.name}</span>
 							</div>
 							<div className="flex gap-x-1">
 								<span className="font-semibold">climate:</span>
-								<span> ? </span>
+								<span> {selected.climate} </span>
 							</div>
 						</div>
 					</Overlay>
