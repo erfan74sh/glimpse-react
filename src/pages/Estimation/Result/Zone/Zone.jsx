@@ -129,7 +129,10 @@ const Zone = ({ projects }) => {
 					item === "overheatot_occupied_hours" ||
 					item === "underheatot_occupied_hours" ||
 					item === "verheatdbt_occupied_hours" ||
-					item === "underheatdbt_occupied_hours"
+					item === "underheatdbt_occupied_hours" ||
+					item === "total_energy" ||
+					item === "primary_energy"
+
 					// todo: include other subset outputs here
 				) {
 					outputData.push({
