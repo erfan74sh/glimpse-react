@@ -588,9 +588,24 @@ const PdfDoc = ({ data }) => {
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
-								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
 									<View style={styles.section_outputs_items_content}>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Total energy: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.total_energy} {unitOptions.coolingload}
+											</Text>
+										</View>
+										<View style={styles.section_outputs_items_content_item}>
+											<Text>Primary energy: </Text>
+											<Text
+												style={styles.section_inputs_items_content_item_value}
+											>
+												{outputs.primary_energy} {unitOptions.coolingload}
+											</Text>
+										</View>
 										<View style={styles.section_outputs_items_content_item}>
 											<Text>Cooling Load: </Text>
 											<Text
@@ -653,7 +668,6 @@ const PdfDoc = ({ data }) => {
 								</View>
 							</View>
 							<View style={styles.section_output_col}>
-								{/* carbon emitted section */}
 								<View style={styles.section_inputs_items}>
 									<View style={styles.section_outputs_items_content}>
 										<View style={styles.section_outputs_items_content_item}>
