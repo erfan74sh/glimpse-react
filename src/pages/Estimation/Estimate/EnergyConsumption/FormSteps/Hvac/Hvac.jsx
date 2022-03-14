@@ -23,8 +23,8 @@ const Hvac = ({ nextStep, prevStep }) => {
 	];
 
 	const naturalVentilationOptions = [
-		{ label: "yes", value: "true" },
-		{ label: "no", value: "false" },
+		{ label: "on", value: "true" },
+		{ label: "off", value: "false" },
 	];
 
 	const dispatch = useDispatch();

@@ -132,9 +132,9 @@ const VisualReview = () => {
 										{typeof item.value === "object"
 											? item.value[data[item.name]]
 											: data[item.name] === "true"
-											? "yes"
+											? "on"
 											: data[item.name] === "false"
-											? "no"
+											? "off"
 											: item.value}
 									</span>
 									<span className="text-sm normal-case text-gray-800">
