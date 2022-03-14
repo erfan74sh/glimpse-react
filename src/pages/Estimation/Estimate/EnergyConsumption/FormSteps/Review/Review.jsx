@@ -44,19 +44,35 @@ const Review = ({ prevStep }) => {
 			name: "wall_uvalue",
 			label: "wall U value",
 			unit: "",
-			value: data.wall_uvalue,
+			value: {
+				1.719: "Brick wall + Brick facade",
+				1.649: "Cement Block + Stone facade",
+				0.979: "Cement Block + Cement facade",
+				0.225:
+					"Two layer Brick wall with Insulation in the middle + Brick facade",
+			},
 		},
 		{
 			name: "floor_uvalue",
 			label: "floor U value",
 			unit: "",
-			value: data.floor_uvalue,
+			value: {
+				0.37: "Reinforced Concrete with air gap + Terrazzo",
+				0.47: "Beam Block + Parquet flooring",
+				0.65: "Reinforced concrete + Parquet flooring",
+			},
 		},
 		{
 			name: "roof_uvalue",
 			label: "roof U value",
 			unit: "",
-			value: data.roof_uvalue,
+			value: {
+				0.878: "Gypsum Board + Reinforced Concrete + Terrazzo",
+				0.211: "Reinforced Concrete with thermal insullation + Terrazzo",
+				0.393: "Beam block + terrazzo",
+				0.386: "Beam Block with out terrazzo",
+				1.092: "Gypsum Plaster + Reinforced Concrete + Terrazzo",
+			},
 		},
 		{
 			name: "window_uvalue",
