@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
 	},
 
 	section_output_col: {
-		width: "47.5%",
+		width: "50%",
 		display: "flex",
 		flexDirection: "column",
 	},
