@@ -560,13 +560,13 @@ const PdfDoc = ({ data }) => {
 								</View>
 								{outputs.udi < 75 ? (
 									<Text>
-										your alternative is{" "}
+										Your alternative is{" "}
 										<Text style={styles.text_red}>not acceptable</Text> in
 										accordance with "LEED" V.4
 									</Text>
 								) : (
 									<Text>
-										your alternative can earn{" "}
+										Your alternative can earn{" "}
 										<Text style={styles.text_blue}>
 											{outputs.udi < 90 ? "2 points" : "3 points"}{" "}
 										</Text>
@@ -580,7 +580,7 @@ const PdfDoc = ({ data }) => {
 									<Text>{`>`}</Text>
 								</View>
 								<Text>
-									your alternative is{" "}
+									Your alternative is{" "}
 									<Text
 										style={
 											outputs.mda >= 50 ? styles.text_blue : styles.text_red
@@ -596,7 +596,7 @@ const PdfDoc = ({ data }) => {
 									<Text>{`>`}</Text>
 								</View>
 								<Text>
-									your alternative is{" "}
+									Your alternative is{" "}
 									<Text
 										style={
 											outputs.svd <= 10 ? styles.text_blue : styles.text_red
@@ -612,7 +612,7 @@ const PdfDoc = ({ data }) => {
 									<Text>{`>`}</Text>
 								</View>
 								<Text>
-									your alternative is{" "}
+									Your alternative is{" "}
 									<Text
 										style={
 											outputs.ase <= 10 ? styles.text_blue : styles.text_red
@@ -630,14 +630,14 @@ const PdfDoc = ({ data }) => {
 								</View>
 								{outputs.sda < 55 ? (
 									<Text style={{ flexGrow: 1 }}>
-										your alternative is{" "}
+										Your alternative is{" "}
 										<Text style={styles.text_red}>not acceptable</Text> in
 										accordance with "19th topic of National Building Regulations
 										of Iran"
 									</Text>
 								) : (
 									<Text style={{ flexGrow: 1 }}>
-										your alternative can earn{" "}
+										Your alternative can earn{" "}
 										<Text style={styles.text_blue}>
 											{outputs.sda < 75
 												? "EC"
