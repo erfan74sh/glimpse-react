@@ -83,7 +83,7 @@ const StepOne = ({ nextStep, formData }) => {
 					),
 				building_program: yup
 					.string()
-					.oneOf(["office", "residential", "school", "hotel"])
+					.oneOf(["Office", "Residential", "Educational", "Commercial"])
 					.required("required"),
 			})}
 		>
@@ -184,8 +184,7 @@ const StepThree = ({ prevStep, formData }) => {
 	const locationOptions = [
 		{ label: "tehran", value: "Tehran" },
 		{ label: "yazd", value: "Yazd" },
-		{ label: "bushehr", value: "Bushehr" },
-		{ label: "sari", value: "Sari" },
+		{ label: "tabriz", value: "Tabriz" },
 	];
 	return (
 		<Formik
