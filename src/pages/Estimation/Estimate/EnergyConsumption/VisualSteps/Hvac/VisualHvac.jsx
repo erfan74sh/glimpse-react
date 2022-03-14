@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // slice
 import { selectEnergyConsumptionData } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // assets
-import Fancoil from "../../../../../../assets/images/HVAC/FANCOIL.png";
+import Fancoil from "../../../../../../assets/images/HVAC/Fancoil.png";
 import Ptac from "../../../../../../assets/images/HVAC/PTAC.png";
 import Pthp from "../../../../../../assets/images/HVAC/PTHP.png";
-import VavPfp from "../../../../../../assets/images/HVAC/VAVPFP.png";
+import VavPfp from "../../../../../../assets/images/HVAC/VAV_PFP.png";
 import VavRe from "../../../../../../assets/images/HVAC/VAVRE.png";
 // icons
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
