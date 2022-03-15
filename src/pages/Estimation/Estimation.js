@@ -9,7 +9,7 @@ import "./Estimation.scss";
 const Estimation = ({ setLoading }) => {
 	useEffect(() => {
 		setLoading(false);
-	}, []);
+	}, [setLoading]);
 
 	return (
 		<div className="h-screen bg-gray-50">
