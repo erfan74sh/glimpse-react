@@ -34,7 +34,9 @@ const Footer = () => {
 							/>
 						</span>
 
-						<span>تهران.بلوار کشاورز.نبش فلطسین جنوبی. پلاک ۷۲. واحد ۵</span>
+						<span>
+							تهران.دانشگاه شهید‌بهشتی، ساختمان شماره ۲ دانشکده معماری و شهرسازی
+						</span>
 					</li>
 					<li className="flex items-center gap-x-2">
 						<span className="flex h-6 w-6 items-center justify-center">
@@ -44,7 +46,7 @@ const Footer = () => {
 							/>
 						</span>
 
-						<span>۰۲۱۸۸۹۲۹۰۱۷ - ۰۹۹۳۹۴۴۴۷۷۵</span>
+						<span>۰۹۹۳۹۴۴۴۷۷۵ _ ۰۲۱۸۸۹۲۹۰۱۷</span>
 					</li>
 				</ul>
 				<ul
