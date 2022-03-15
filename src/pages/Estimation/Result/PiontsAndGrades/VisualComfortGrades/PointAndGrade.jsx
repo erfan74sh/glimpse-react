@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const PointAndGrade = ({ alt }) => {
-	const [showDropdown, setShowDropdown] = useState(false);
+	const [showDropdown, setShowDropdown] = useState(true);
 	const { svd, sda, udi, ase, mda } = alt.outputs;
 	return (
 		<>
