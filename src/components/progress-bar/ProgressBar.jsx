@@ -6,9 +6,9 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
 	// create array from totalSteps
 	const stepsArr = Array.from({ length: totalSteps }, (v, i) => i + 1);
 	return (
-		<div className="flex h-full flex-col items-center justify-between relative">
+		<div className="relative flex h-full flex-col items-center justify-between">
 			{/* whole progress */}
-			<div className="absolute top-0 left-1/2 w-1 h-full bg-gray-200 transform -translate-x-1/2"></div>
+			<div className="absolute top-0 left-1/2 h-full w-1 -translate-x-1/2 transform bg-gray-200"></div>
 			{/* completed progress */}
 			<div
 				className={`absolute top-0 left-1/2 w-1 ${
@@ -17,12 +17,15 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
 						: currentStep === totalSteps - 1 || currentStep === totalSteps
 						? "h-full"
 						: `h-${currentStep}/${totalSteps - 1}`
-				} bg-gray-400 transform -translate-x-1/2 transition-all`}
+				} -translate-x-1/2 transform bg-gray-400 transition-all`}
 			></div>
 			{/* progress steps */}
-			{stepsArr.map((stepNum) => {
+			{stepsArr.map((stepNum, idx) => {
 				return (
-					<div className="w-6 h-6 flex items-center justify-center bg-blue-550 rounded-full text-center border-2 border-white z-10">
+					<div
+						key={idx}
+						className="bg-blue-550 z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white text-center"
+					>
 						<span className="text-xs font-light text-white">
 							{currentStep > stepNum - 1 ? (
 								<img src={TickIcon} alt="tick icon" />
