@@ -78,7 +78,12 @@ const Review = ({ prevStep }) => {
 			name: "window_uvalue",
 			label: "window U value",
 			unit: "",
-			value: data.window_uvalue,
+			value: {
+				1.7: "Triple glazed windows",
+				2.6: "Double low-E glazed windows",
+				3.1: "Double glazed windows",
+				5.7: "Single glazed windows",
+			},
 		},
 	];
 
