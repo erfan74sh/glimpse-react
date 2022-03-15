@@ -61,6 +61,18 @@ const styles = StyleSheet.create({
 	//
 	section: {},
 
+	section__points_grades: {
+		display: "flex",
+		flexDirection: "column",
+		paddingHorizontal: 5,
+	},
+
+	section__points_grades__param: {
+		display: "flex",
+		flexDirection: "row",
+		marginBottom: 7,
+	},
+
 	section_output: {
 		display: "flex",
 		flexDirection: "row",
@@ -150,8 +162,21 @@ const styles = StyleSheet.create({
 		fontWeight: "normal",
 		textTransform: "capitalize",
 	},
-	test: {
-		maxWidth: "100%",
+
+	text_red: {
+		color: "#EF4444",
+	},
+	text_blue: {
+		color: "#3B82F6",
+	},
+	text_title: {
+		color: "#3B82F6",
+		fontWeight: "bold",
+		marginRight: 5,
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		width: "7%",
 	},
 });
 
@@ -721,6 +746,48 @@ const PdfDoc = ({ data }) => {
 						</View>
 					</View>
 					{/* end outputs section */}
+
+					{/* points and grades section */}
+					<View style={styles.section}>
+						<Text
+							style={[
+								styles.section_header,
+								{ marginTop: 14, borderBottom: "1 solid #147CDD" },
+							]}
+						>
+							Points and Grades
+						</Text>
+						<View style={styles.section__points_grades}>
+							<View style={styles.section__points_grades__param}>
+								<View style={styles.text_title}>
+									<Text>Primary Energy</Text>
+									<Text>{`>`}</Text>
+								</View>
+								{outputs.primary_energy > 160 ? (
+									<Text>
+										Your alternative is{" "}
+										<Text style={styles.text_red}>not acceptable</Text>.
+									</Text>
+								) : (
+									<Text>
+										Your alternative can earn{" "}
+										<Text style={styles.text_blue}>
+											{outputs.primary_energy >= 100
+												? "EC"
+												: outputs.primary_energy >= 80
+												? "EC+"
+												: outputs.primary_energy >= 35
+												? "EC++"
+												: "ECnZ"}
+										</Text>
+										rank from "19th topic of National Building Regulations of
+										Iran".
+									</Text>
+								)}
+							</View>
+						</View>
+					</View>
+					{/* end points and grades section */}
 				</View>
 				{/* end main */}
 			</Page>
