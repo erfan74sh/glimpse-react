@@ -21,7 +21,9 @@ const EnergyConsumptionGrades = ({ alternatives }) => {
 					v.name === "overheatot_occupied_hours" ||
 					v.name === "underheatot_occupied_hours" ||
 					v.name === "verheatdbt_occupied_hours" ||
-					v.name === "underheatdbt_occupied_hours"
+					v.name === "underheatdbt_occupied_hours" ||
+					v.name === "primary_energy" ||
+					v.name === "total_energy"
 			);
 			data.forEach((element) => {
 				tempData[element.name] = element.amt;
