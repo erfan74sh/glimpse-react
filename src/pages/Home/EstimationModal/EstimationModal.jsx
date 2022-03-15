@@ -185,6 +185,8 @@ const StepThree = ({ prevStep, formData }) => {
 		{ label: "Tehran", value: "tehran" },
 		{ label: "Yazd", value: "yazd" },
 		{ label: "Tabriz", value: "tabriz" },
+		{ label: "Bushehr", value: "bushehr", disable: true },
+		{ label: "Sari", value: "sari", disable: true },
 	];
 	return (
 		<Formik
