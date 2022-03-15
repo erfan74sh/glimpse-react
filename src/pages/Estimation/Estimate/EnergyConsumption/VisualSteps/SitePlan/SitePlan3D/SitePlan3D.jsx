@@ -82,6 +82,9 @@ const Ground = () => {
 const SitePlan3D = () => {
 	const data = useSelector(selectEnergyConsumptionData);
 
+	const zoom =
+		data.number_of_floor <= 3 ? 180 : (180 / data.number_of_floor) * 3;
+
 	const soutNeighbor = {
 		height: data.south_neighbor_height / 10,
 		dist: (data.south_neighbor_distance + 6) / 10,
@@ -98,7 +101,7 @@ const SitePlan3D = () => {
 			colorManagement
 			camera={{
 				position: [0, 0, 2],
-				zoom: 200,
+				zoom: zoom,
 				near: 0.01,
 				far: 10000,
 				top: 500,
