@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
 	page: {
 		fontSize: 12,
 		fontFamily: "Roboto",
+		paddingBottom: 50,
 	},
 
 	// header
@@ -125,6 +126,19 @@ const styles = StyleSheet.create({
 		color: "#323232",
 	},
 
+	section_inputs_thermal_content: {
+		display: "flex",
+		flexDirection: "column",
+		paddingHorizontal: 5,
+	},
+	section_inputs_thermal_content_item: {
+		display: "flex",
+		flexDirection: "row",
+		marginVertical: 4,
+		fontWeight: "medium",
+		color: "#323232",
+	},
+
 	section_outputs_items_content_item: {
 		display: "flex",
 		flexDirection: "row",
@@ -176,7 +190,8 @@ const styles = StyleSheet.create({
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "space-between",
-		width: "7%",
+		// width: "7%",
+		minWidth: "7%",
 	},
 });
 
@@ -286,7 +301,7 @@ const PdfDoc = ({ data }) => {
 		<Document>
 			<Page size="A4" style={styles.page}>
 				{/* header */}
-				<View style={styles.header}>
+				<View style={styles.header} fixed={true}>
 					<Text>Energy Demand simulation results</Text>
 					<Image src={Logo} style={styles.logoImage} />
 				</View>
@@ -492,8 +507,8 @@ const PdfDoc = ({ data }) => {
 								<Text style={styles.section_inputs_items_title}>
 									Thermal Properties
 								</Text>
-								<View style={styles.section_inputs_items_content}>
-									<View style={styles.section_inputs_items_content_item}>
+								<View style={styles.section_inputs_thermal_content}>
+									<View style={styles.section_inputs_thermal_content_item}>
 										<Text>Wall U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -501,7 +516,7 @@ const PdfDoc = ({ data }) => {
 											{inputs.wall_uvalue} {unitOptions.wall_uvalue}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View style={styles.section_inputs_thermal_content_item}>
 										<Text>Floor U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -509,7 +524,7 @@ const PdfDoc = ({ data }) => {
 											{inputs.floor_uvalue} {unitOptions.floor_uvalue}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View style={styles.section_inputs_thermal_content_item}>
 										<Text>Roof U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -517,7 +532,7 @@ const PdfDoc = ({ data }) => {
 											{inputs.roof_uvalue} {unitOptions.roof_uvalue}
 										</Text>
 									</View>
-									<View style={styles.section_inputs_items_content_item}>
+									<View style={styles.section_inputs_thermal_content_item}>
 										<Text>Window U Value: </Text>
 										<Text
 											style={styles.section_inputs_items_content_item_value}
@@ -613,133 +628,127 @@ const PdfDoc = ({ data }) => {
 						</Text>
 						<View style={styles.section_output}>
 							<View style={styles.section_output_col}>
-								<View style={styles.section_inputs_items}>
-									<View style={styles.section_outputs_items_content}>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Total energy: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.total_energy} {unitOptions.coolingload}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Primary energy: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.primary_energy} {unitOptions.coolingload}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Cooling Load: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.coolingload} {unitOptions.coolingload}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Heating Load: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.heatingload} {unitOptions.heatingload}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Electric Lighting: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.electriclight} {unitOptions.electriclight}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Fanger 80%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.fanger20} {unitOptions.fanger20}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Fanger 90%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.fanger10} {unitOptions.fanger10}
-											</Text>
-										</View>
+								<View style={styles.section_outputs_items_content}>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Total energy: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.total_energy} {unitOptions.coolingload}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Primary energy: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.primary_energy} {unitOptions.coolingload}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Cooling Load: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.coolingload} {unitOptions.coolingload}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Heating Load: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.heatingload} {unitOptions.heatingload}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Electric Lighting: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.electriclight} {unitOptions.electriclight}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Fanger 80%: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.fanger20} {unitOptions.fanger20}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Fanger 90%: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.fanger10} {unitOptions.fanger10}
+										</Text>
 									</View>
 								</View>
 							</View>
 							<View style={styles.section_output_col}>
-								<View style={styles.section_inputs_items}>
-									<View style={styles.section_outputs_items_content}>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive ASHRAE 80%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.adaptiveashrae80}{" "}
-												{unitOptions.adaptiveashrae80}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive ASHRAE 90%: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.adaptiveashrae90}{" "}
-												{unitOptions.adaptiveashrae90}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Adaptive EN-Class: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.adaptiveencalss2por}{" "}
-												{unitOptions.adaptiveencalss2por}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat OT-Occupied Hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.overheatot_occupied_hours}{" "}
-												{unitOptions.overheatot_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Underheat OT-Occupied Hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.underheatot_occupied_hours}{" "}
-												{unitOptions.underheatot_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Overheat DbT-Occupied Hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.verheatdbt_occupied_hours}{" "}
-												{unitOptions.verheatdbt_occupied_hours}
-											</Text>
-										</View>
-										<View style={styles.section_outputs_items_content_item}>
-											<Text>Underheat DbT- Occupied Hours: </Text>
-											<Text
-												style={styles.section_inputs_items_content_item_value}
-											>
-												{outputs.underheatdbt_occupied_hours}{" "}
-												{unitOptions.underheatdbt_occupied_hours}
-											</Text>
-										</View>
+								<View style={styles.section_outputs_items_content}>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Adaptive ASHRAE 80%: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.adaptiveashrae80} {unitOptions.adaptiveashrae80}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Adaptive ASHRAE 90%: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.adaptiveashrae90} {unitOptions.adaptiveashrae90}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Adaptive EN-Class: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.adaptiveencalss2por}{" "}
+											{unitOptions.adaptiveencalss2por}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Overheat OT-Occupied Hours: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.overheatot_occupied_hours}{" "}
+											{unitOptions.overheatot_occupied_hours}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Underheat OT-Occupied Hours: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.underheatot_occupied_hours}{" "}
+											{unitOptions.underheatot_occupied_hours}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Overheat DbT-Occupied Hours: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.verheatdbt_occupied_hours}{" "}
+											{unitOptions.verheatdbt_occupied_hours}
+										</Text>
+									</View>
+									<View style={styles.section_outputs_items_content_item}>
+										<Text>Underheat DbT- Occupied Hours: </Text>
+										<Text
+											style={styles.section_inputs_items_content_item_value}
+										>
+											{outputs.underheatdbt_occupied_hours}{" "}
+											{unitOptions.underheatdbt_occupied_hours}
+										</Text>
 									</View>
 								</View>
 							</View>
