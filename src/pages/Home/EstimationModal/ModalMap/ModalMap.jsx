@@ -12,11 +12,13 @@ const markers = [
 	{ name: "tehran", latLng: [35.689198, 51.388973], climate: "Bsk.Bwk" },
 	{ name: "yazd", latLng: [31.897423, 54.356857], climate: "Bwk" },
 	{ name: "tabriz", latLng: [38.0739964, 46.2961952], climate: "Bsk" },
+	{ name: "bushehr", latLng: [28.8936645, 51.3204877], climate: "?" },
+	{ name: "sari", latLng: [36.5659598, 53.0587229], climate: "?" },
 ];
 
 const ModalMap = () => {
 	const [center, setCenter] = useState(initialCenter);
-	const [zoom, setZoom] = useState(5);
+	const [zoom, setZoom] = useState(4.7);
 	const { values } = useFormikContext();
 	const selected = markers.filter(
 		(marker) => marker.name === values.location
