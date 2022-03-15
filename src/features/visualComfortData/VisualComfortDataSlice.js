@@ -4,8 +4,8 @@ import visualComfortService from "../../services/estimations/visualComfort.servi
 const initialState = {
 	status: "",
 	inputData: {
-		x_dim: 3,
-		y_dim: 8,
+		x_dim: 8,
+		y_dim: 3,
 		rotation_angle: 0,
 		wwr_north: 0,
 		wwr_south: 0,
@@ -14,9 +14,9 @@ const initialState = {
 		reflectance_celing: 0.2,
 		reflectance_floor: 0.2,
 		vt_glass: "",
-		south_neighbor_distance: 3,
+		south_neighbor_distance: 2,
 		south_neighbor_height: 4,
-		north_neighbor_distance: 3,
+		north_neighbor_distance: 2,
 		north_neighbor_height: 4,
 	},
 	allSimulations: [],
