@@ -80,10 +80,10 @@ const Material = ({ nextStep, prevStep }) => {
 		},
 	];
 	const glassMaterialOptions = [
-		{ label: "1.7" },
-		{ label: "2.6" },
-		{ label: "3.1" },
-		{ label: "5.7" },
+		{ label: "Triple glazed windows", value: "1.7" },
+		{ label: "Double low-E glazed windows", value: "2.6" },
+		{ label: "Double glazed windows", value: "3.1" },
+		{ label: "Single glazed windows", value: "5.7" },
 	];
 
 	return (
