@@ -259,12 +259,12 @@ const boundryConditionOptions = {
 };
 
 const hvacOptions = {
-	1: "ideal air loads",
+	1: "Ideal air loads",
 	2: "PTAC | residential",
 	3: "PTHP | residential",
 	4: "VAV w/reheat",
 	5: "VAV w/PFP boxes",
-	6: "fan coil units + DOAS",
+	6: "Fan coil units + DOAS",
 };
 
 const floorLevelOptions = {
