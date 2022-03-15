@@ -276,6 +276,34 @@ const floorLevelOptions = {
 	5: "5th Floor",
 };
 
+const wallUValueOptions = {
+	1.719: "Brick wall + Brick facade",
+	1.649: "Cement Block + Stone facade",
+	0.979: "Cement Block + Cement facade",
+	0.225: "Two layer Brick wall with Insulation in the middle + Brick facade",
+};
+
+const floorUValueOptions = {
+	0.37: "Reinforced Concrete with air gap + Terrazzo",
+	0.47: "Beam Block + Parquet flooring",
+	0.65: "Reinforced concrete + Parquet flooring",
+};
+
+const roofUValueOptions = {
+	0.878: "Gypsum Board + Reinforced Concrete + Terrazzo",
+	0.211: "Reinforced Concrete with thermal insullation + Terrazzo",
+	0.393: "Beam block + terrazzo",
+	0.386: "Beam Block with out terrazzo",
+	1.092: "Gypsum Plaster + Reinforced Concrete + Terrazzo",
+};
+
+const windowUValueOptions = {
+	1.7: "Triple glazed windows",
+	2.6: "Double low-E glazed windows",
+	3.1: "Double glazed windows",
+	5.7: "Single glazed windows",
+};
+
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
@@ -513,7 +541,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wall_uvalue} {unitOptions.wall_uvalue}
+											{inputs.wall_uvalue} {unitOptions.wall_uvalue}{" "}
+											{`(${wallUValueOptions[inputs.wall_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -521,7 +550,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.floor_uvalue} {unitOptions.floor_uvalue}
+											{inputs.floor_uvalue} {unitOptions.floor_uvalue}{" "}
+											{`(${floorUValueOptions[inputs.floor_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -529,7 +559,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.roof_uvalue} {unitOptions.roof_uvalue}
+											{inputs.roof_uvalue} {unitOptions.roof_uvalue}{" "}
+											{`(${roofUValueOptions[inputs.roof_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -537,7 +568,8 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.window_uvalue} {unitOptions.window_uvalue}
+											{inputs.window_uvalue} {unitOptions.window_uvalue}{" "}
+											{`(${windowUValueOptions[inputs.window_uvalue]})`}
 										</Text>
 									</View>
 								</View>
