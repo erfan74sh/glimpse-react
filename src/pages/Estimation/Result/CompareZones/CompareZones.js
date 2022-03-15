@@ -41,53 +41,28 @@ const CompareZones = () => {
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
 		const unitOptions = {
-			x_dim: "m",
-			y_dim: "m",
-			rotation_angle: "deg",
-			wwr_north: "%",
-			wwr_south: "%",
-			shading_type: "",
-			hvac: "",
-			wall_uvalue: "w/m.k",
-			roof_uvalue: "w/m.k",
-			floor_uvalue: "w/m.k",
-			window_uvalue: "w/m.k",
-			natural_ventilation: "",
-			south_neighbor_distance: "m",
-			south_neighbor_height: "m",
-			north_neighbor_distance: "m",
-			north_neighbor_height: "m",
-			number_of_floor: "",
-			south_wall_bc: "",
-			north_wall_bc: "",
-			east_wall_bc: "",
-			west_wall_bc: "",
-			floor_bc: "",
-			roof_bc: "",
+			area: "m\u00B2",
 
-			coolingload: "kWh/m2",
-			heatingload: "kWh/m2",
-			electriclight: "kWh/m2",
-			fanger20: "",
-			fanger10: "",
-			adaptiveashrae80: "",
-			adaptiveashrae90: "",
-			adaptiveencalss2por: "",
-			overheatot_occupied_hours: "",
-			underheatot_occupied_hours: "",
-			verheatdbt_occupied_hours: "",
-			underheatdbt_occupied_hours: "",
+			primary_energy: "kWh/m\u00B2",
+			total_energy: "kWh/m\u00B2",
+			coolingload: "kWh/m\u00B2",
+			heatingload: "kWh/m\u00B2",
+			electriclight: "kWh/m\u00B2",
+			fanger20: "%",
+			fanger10: "%",
+			adaptiveashrae80: "%",
+			adaptiveashrae90: "%",
+			adaptiveencalss2por: "%",
+			overheatot_occupied_hours: "hr",
+			underheatot_occupied_hours: "hr",
+			verheatdbt_occupied_hours: "hr",
+			underheatdbt_occupied_hours: "hr",
 
-			reflectance_wall: "",
-			reflectance_celing: "",
-			reflectance_floor: "",
-			vt_glass: "",
-
-			udi: "",
-			mda: "",
-			svd: "",
-			ase: "",
-			sda: "",
+			udi: "%",
+			mda: "%",
+			svd: "%",
+			ase: "%",
+			sda: "%",
 		};
 		const colorPallet = [
 			"#784AC1",
@@ -121,6 +96,7 @@ const CompareZones = () => {
 				) {
 					primaryData[item] = output[item];
 				} else if (
+					item === "area" ||
 					// visual-comfort outputs
 					item === "udi" ||
 					item === "ase" ||
