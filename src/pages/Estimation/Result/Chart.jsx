@@ -13,30 +13,9 @@ import {
 
 const labelOptions = {
 	area: "area",
-	x_dim: "width",
-	y_dim: "length",
-	rotation_angle: "rotation angle",
-	wwr_north: "wwr-north",
-	wwr_south: "wwr-south",
-	shading_type: "shading type",
-	hvac: "HVAC system",
-	wall_uvalue: "wall",
-	roof_uvalue: "w/m.k",
-	floor_uvalue: "w/m.k",
-	window_uvalue: "w/m.k",
-	natural_ventilation: "",
-	south_neighbor_distance: "m",
-	south_neighbor_height: "m",
-	north_neighbor_distance: "m",
-	north_neighbor_height: "m",
-	number_of_floor: "",
-	south_wall_bc: "",
-	north_wall_bc: "",
-	east_wall_bc: "",
-	west_wall_bc: "",
-	floor_bc: "",
-	roof_bc: "",
 
+	primary_energy: "Primary Energy",
+	total_energy: "Total Energy",
 	coolingload: "Cooling load",
 	heatingload: "Heating load",
 	electriclight: "Electric Lighting",
@@ -106,7 +85,9 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
 		payload.value === "overheatot_occupied_hours" ||
 		payload.value === "underheatot_occupied_hours" ||
 		payload.value === "verheatdbt_occupied_hours" ||
-		payload.value === "underheatdbt_occupied_hours"
+		payload.value === "underheatdbt_occupied_hours" ||
+		payload.value === "primary_energy" ||
+		payload.value === "total_energy"
 	) {
 		stroke = "#4093E1";
 		fontWeight = 700;
