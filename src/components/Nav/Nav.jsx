@@ -38,9 +38,9 @@ const Header = ({ lang }) => {
 							<img src={Logo} className="h-8 w-auto" alt="glimpse logo" />
 						</Link>
 					</li>
-					<li>
+					<li className="w-1/2">
 						<ul
-							className="flex items-center justify-items-center gap-x-28 text-lg font-normal capitalize"
+							className="flex items-center justify-between text-lg font-normal capitalize"
 							dir={lang ? "rtl" : "ltr"}
 						>
 							<li>
