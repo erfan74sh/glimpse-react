@@ -52,16 +52,6 @@ const PointAndGrade = ({ alt }) => {
 							</span>
 						)}
 					</li>
-					{/* <li className="flex gap-x-1">
-						<span className="text-blue-550 font-medium">{`Primary Energy >`}</span>
-						<span>
-							your Alternative can earn{" "}
-							<span className="text-blue-550 font-medium">
-								{coolingload < 80 ? "EC++" : coolingload < 100 ? "EC+" : "EC"}
-							</span>{" "}
-							rank from "19th topic of National Building Regulations of Iran".
-						</span>
-					</li> */}
 				</ul>
 			</div>
 		</>
