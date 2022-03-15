@@ -70,7 +70,7 @@ const SitePlan3D = () => {
 			colorManagement
 			camera={{
 				position: [0, 0, 2],
-				zoom: 200,
+				zoom: 180,
 				near: 0.01,
 				far: 10000,
 				top: 500,
