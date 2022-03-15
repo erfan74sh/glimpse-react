@@ -17,7 +17,7 @@ const Subset = () => {
 	const { high_performance_building_index } = useFormikContext().values;
 	const ieqSubset = [
 		{ label: "visual comfort", value: "visual_comfort" },
-		{ label: "thermal comfort", value: "thermal_comfort" },
+		{ label: "thermal comfort", value: "thermal_comfort", disable: true },
 	];
 	const energyWaterSubset = [
 		{ label: "energy demand", value: "energy_consumption" },
@@ -45,7 +45,7 @@ const Subset = () => {
 const StepOne = ({ nextStep, formData }) => {
 	const highPerformanceBuildingsOptions = [
 		{ label: "comfort", value: "IEQ" },
-		{ label: "structure", value: "Structure" },
+		{ label: "structure", value: "Structure", disable: true },
 		{ label: "energy and carbon", value: "Energy_and_water" },
 	];
 	const buildingProgramOptions = [
