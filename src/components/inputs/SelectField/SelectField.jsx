@@ -49,7 +49,7 @@ const SelectField = ({
 
 	const [showDropdown, setShowDropdown] = useState(false);
 
-	const { values, errors, touched } = useFormikContext();
+	const { values, errors, touched, setFieldValue } = useFormikContext();
 
 	const [selected, setSelected] = useState("");
 	useEffect(() => {
@@ -60,8 +60,11 @@ const SelectField = ({
 		})?.[0];
 		if (selectedOption) {
 			setSelected(selectedOption.label);
+		} else if (selected) {
+			setSelected("");
+			setFieldValue(name, "");
 		}
-	}, [values, name, selectOptions]);
+	}, [values, name, selectOptions, selected, setFieldValue]);
 
 	const handleSelected = (e) => {
 		const selectedOption = selectOptions.filter((option) => {
