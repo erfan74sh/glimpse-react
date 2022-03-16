@@ -61,6 +61,8 @@ const SelectField = ({
 		if (selectedOption) {
 			setSelected(selectedOption.label);
 		} else if (selected) {
+			// reset selected state and coresponding vlue in formik when ...
+			// selected value doesn't match select options of this selectField
 			setSelected("");
 			setFieldValue(name, "");
 		}
