@@ -45,8 +45,8 @@ const Subset = () => {
 const StepOne = ({ nextStep, formData }) => {
 	const highPerformanceBuildingsOptions = [
 		{ label: "comfort", value: "IEQ" },
-		{ label: "structure", value: "Structure", disable: true },
 		{ label: "energy and carbon", value: "Energy_and_water" },
+		{ label: "structure", value: "Structure", disable: true },
 	];
 	const buildingProgramOptions = [
 		{ label: "Office", value: "office" },
