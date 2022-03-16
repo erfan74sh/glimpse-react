@@ -12,7 +12,7 @@ import {
 } from "recharts";
 
 const labelOptions = {
-	area: "area",
+	area: "Area",
 
 	primary_energy: "Primary Energy",
 	total_energy: "Total Energy",
