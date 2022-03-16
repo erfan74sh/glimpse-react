@@ -98,13 +98,13 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				wwr_north: yup
 					.number()
-					.min(0, "wwr-north must be between 0 and 80")
-					.max(80, "wwr-north must be between 0 and 80")
+					.min(10, "wwr-north must be between 10 and 80")
+					.max(80, "wwr-north must be between 10 and 80")
 					.required("required"),
 				wwr_south: yup
 					.number()
-					.min(0, "wwr-south must be between 0 and 80")
-					.max(80, "wwr-south must be between 0 and 80")
+					.min(10, "wwr-south must be between 10 and 80")
+					.max(80, "wwr-south must be between 10 and 80")
 					.required("required"),
 				shading_type: yup.number().oneOf([1, 2, 3, 4]).required("pick one"),
 			})}
@@ -148,7 +148,7 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="wwr_south"
 						label="WWR-South"
-						min="0"
+						min="10"
 						max="80"
 						step="10"
 						handleValue={handleWwrSouthValue}
@@ -158,7 +158,7 @@ const Geometry = ({ nextStep }) => {
 					<InputRange
 						name="wwr_north"
 						label="WWR-North"
-						min="0"
+						min="10"
 						max="80"
 						step="10"
 						handleValue={handleWwrNorthValue}
