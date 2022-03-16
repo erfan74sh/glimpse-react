@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 // components
@@ -218,7 +218,7 @@ const CompareZones = () => {
 														</PDFDownloadLink>
 													</button>
 													<button className="ml-auto mr-4 capitalize underline">
-														<Link to="/estimation">edit</Link>
+														edit
 													</button>
 													<button className=" mr-4" onClick={handleVisibility}>
 														{entry.visible ? (
