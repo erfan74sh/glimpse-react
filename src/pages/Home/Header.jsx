@@ -3,17 +3,15 @@ import React from "react";
 const Header = ({ handleShowModal }) => {
 	return (
 		<header
-			className="font-irancell relative mt-10 flex flex-col items-center"
+			className="relative mt-10 flex flex-col items-center font-irancell"
 			id="header__hero"
 		>
 			<div className="relative h-screen w-1/2">
 				<section className="absolute bottom-44 left-0 w-max ">
-					<h1 className="mb-4 text-5xl font-extrabold text-white">
-						platform title here
-					</h1>
+					<h1 className="mb-4 text-5xl font-extrabold text-white">BSPsim</h1>
 					<button
 						type="button"
-						className="text-blue-550 hover:bg-blue-550 rounded-b-full rounded-t-full border-none bg-white px-9 py-4 text-lg font-medium outline-none transition-all hover:text-white"
+						className="outline-none rounded-b-full rounded-t-full border-none bg-white px-9 py-4 text-lg font-medium text-blue-550 transition-all hover:bg-blue-550 hover:text-white"
 						onClick={handleShowModal}
 					>
 						شروع به شبیه‌سازی
@@ -21,10 +19,10 @@ const Header = ({ handleShowModal }) => {
 				</section>
 			</div>
 			<section className="w-1/2 text-lg font-medium" dir="rtl">
-				<h2 className="text-blue-550 mb-9 text-center text-2xl font-bold">
-					بی‌اس‌پی سیم چیست؟
+				<h2 className="mb-9 text-center text-2xl font-bold text-blue-550">
+					BSPsim چیست؟
 				</h2>
-				<p className="text-gray-650 text-justify leading-6">
+				<p className="text-justify leading-6 text-gray-650">
 					BSPsim ابزار جامع و یکپارچه شبیه سازی است که به کمک الگوریتم های هوش
 					مصنوعی به ارزیابی عملکرد ساختمان می پردازد. این ابزار برای تمام
 					ذینفعان صنعت ساختمان قابل استفاده است و فارغ از تخصص آنها، ارزیابی
