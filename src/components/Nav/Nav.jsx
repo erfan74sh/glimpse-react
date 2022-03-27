@@ -80,7 +80,7 @@ const Header = ({ lang }) => {
 										} py-1.5 px-0.5 transition-all hover:text-white`
 									}
 								>
-									{lang ? "قیمت" : "pricing"}
+									{lang ? "هزینه‌ها" : "pricing"}
 								</NavLink>
 							</li>
 							<li>
