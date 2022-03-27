@@ -80,10 +80,30 @@ const Material = ({ nextStep, prevStep }) => {
 		},
 	];
 	const glassMaterialOptions = [
-		{ label: "Triple glazed windows", value: "1.7" },
-		{ label: "Double low-E glazed windows", value: "2.6" },
-		{ label: "Double glazed windows", value: "3.1" },
-		{ label: "Single glazed windows", value: "5.7" },
+		{
+			label: "1.7",
+			value: "1.7",
+			moreInfo: "?",
+			moreDescription: "(Triple glazed windows)",
+		},
+		{
+			label: "2.6",
+			value: "2.6",
+			moreInfo: "?",
+			moreDescription: "(Double low-E glazed windows)",
+		},
+		{
+			label: "3.1",
+			value: "3.1",
+			moreInfo: "?",
+			moreDescription: "(Double glazed windows)",
+		},
+		{
+			label: "5.7",
+			value: "5.7",
+			moreInfo: "?",
+			moreDescription: "(Single glazed windows)",
+		},
 	];
 
 	return (
@@ -161,7 +181,7 @@ const Material = ({ nextStep, prevStep }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
 						value="geometry"
 						onClick={prevStep}
 					>
@@ -169,7 +189,7 @@ const Material = ({ nextStep, prevStep }) => {
 					</button>
 					<button
 						type="submit"
-						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(ventilation)</span>
 					</button>
