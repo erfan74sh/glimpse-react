@@ -13,11 +13,17 @@ const DropdownRadio = ({
 	handleSelected,
 	children,
 	disable,
+	moreInfo,
+	moreDescription,
 	...props
 }) => {
 	const [field] = useField({ ...props, type: "radio" });
 	return (
-		<label className={`block ${disable ? "cursor-default" : "cursor-pointer"}`}>
+		<label
+			className={`flex justify-between ${
+				disable ? "cursor-default" : "cursor-pointer"
+			}`}
+		>
 			<input
 				type="radio"
 				{...field}
@@ -31,7 +37,13 @@ const DropdownRadio = ({
 				}}
 				disabled={disable}
 			/>
-			{children}
+			<div className="flex items-center">
+				{children}
+				{moreDescription && (
+					<span className="ml-1 text-xs normal-case">{moreDescription}</span>
+				)}
+			</div>
+			{moreInfo && <MoreInfo moreInfo={moreInfo} />}
 		</label>
 	);
 };
@@ -102,10 +114,10 @@ const SelectField = ({
 						touched[name] && errors[name]
 							? "border-red-600 ring-red-400"
 							: "border-gray-300"
-					}  rounded-md outline-none`}
+					}  outline-none rounded-md`}
 				>
 					{selected ? (
-						<span className="text-gray-650 font-medium">{selected}</span>
+						<span className="font-medium text-gray-650">{selected}</span>
 					) : (
 						<span className="text-gray-400">{placeholder}</span>
 					)}
@@ -130,7 +142,7 @@ const SelectField = ({
 					}}
 					className={`${
 						showDropdown ? "flex" : "hidden"
-					} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2`}
+					} absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2 shadow-full-sm`}
 				>
 					{selectOptions.map((option, idx) => {
 						return (
@@ -141,12 +153,14 @@ const SelectField = ({
 										? "text-gray-400"
 										: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
 								} ${
-									selected === option.label ? "text-gray-650 font-medium" : ""
+									selected === option.label ? "font-medium text-gray-650" : ""
 								}`}
 							>
 								<DropdownRadio
 									name={name}
 									value={option.value || option.label}
+									moreInfo={option.moreInfo}
+									moreDescription={option.moreDescription}
 									disable={option.disable ? true : false}
 									handleValue={handleValue}
 									handleSelected={handleSelected}
