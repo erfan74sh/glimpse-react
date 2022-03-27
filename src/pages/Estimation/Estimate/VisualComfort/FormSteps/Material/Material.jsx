@@ -50,10 +50,33 @@ const Material = ({ nextStep, prevStep }) => {
 	};
 
 	const vtGlassOptions = [
-		{ label: "0.58" },
-		{ label: "0.72" },
-		{ label: "0.80" },
-		{ label: "0.90" },
+		{
+			label: "0.58",
+			value: "0.58",
+			moreInfo: "پنجره سه جداره با دولایه ۸ میلیمتری هوا",
+			moreDescription:
+				"(Triple pane window with clear glasses and two layers of 8mm air gap)",
+		},
+		{
+			label: "0.72",
+			value: "0.72",
+			moreInfo: "پنجره دو جداره کم گسیل با 14 میلیمتر ضخامت هوا",
+			moreDescription:
+				"(Double pane window with low-E glasses and 14mm of air gap)",
+		},
+		{
+			label: "0.80",
+			value: "0.80",
+			moreInfo: "پنجره دو جداره با 8 میلیمتر ضخامت لایه هوا",
+			moreDescription:
+				"(Double pane window with clear glasses and 8mm of air gap)",
+		},
+		{
+			label: "0.90",
+			value: "0.90",
+			moreInfo: "شیشه تک جداره معمولی",
+			moreDescription: "(Single pane window with a clear glass)",
+		},
 	];
 
 	return (
@@ -113,7 +136,7 @@ const Material = ({ nextStep, prevStep }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
 						value="geometry"
 						onClick={prevStep}
 					>
@@ -121,7 +144,7 @@ const Material = ({ nextStep, prevStep }) => {
 					</button>
 					<button
 						type="submit"
-						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(site plan)</span>
 					</button>
