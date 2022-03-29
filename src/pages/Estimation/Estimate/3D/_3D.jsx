@@ -9,8 +9,8 @@ import { useLoader } from "@react-three/fiber";
 import { selectEnergyConsumptionData } from "../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
 const NorthSign = ({ xDim, yDim, rotation }) => {
-	const materials = useLoader(MTLLoader, "NorthSign.mtl");
-	const obj = useLoader(OBJLoader, "NorthSign.obj", (loader) => {
+	const materials = useLoader(MTLLoader, "/NorthSign.mtl");
+	const obj = useLoader(OBJLoader, "/NorthSign.obj", (loader) => {
 		materials.preload();
 		loader.setMaterials(materials);
 	});
