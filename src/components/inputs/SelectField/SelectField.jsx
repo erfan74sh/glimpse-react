@@ -55,6 +55,7 @@ const SelectField = ({
 	placeholder,
 	handleValue,
 	moreInfo,
+	initialValue,
 	unit,
 }) => {
 	const ref = useRef(null);
@@ -62,6 +63,12 @@ const SelectField = ({
 	const [showDropdown, setShowDropdown] = useState(false);
 
 	const { values, errors, touched, setFieldValue } = useFormikContext();
+
+	useEffect(() => {
+		if (initialValue) {
+			setFieldValue(name, initialValue.toString());
+		}
+	}, [initialValue]);
 
 	const [selected, setSelected] = useState("");
 	useEffect(() => {
@@ -114,10 +121,10 @@ const SelectField = ({
 						touched[name] && errors[name]
 							? "border-red-600 ring-red-400"
 							: "border-gray-300"
-					}  outline-none rounded-md`}
+					}  rounded-md outline-none`}
 				>
 					{selected ? (
-						<span className="font-medium text-gray-650">{selected}</span>
+						<span className="text-gray-650 font-medium">{selected}</span>
 					) : (
 						<span className="text-gray-400">{placeholder}</span>
 					)}
@@ -142,7 +149,7 @@ const SelectField = ({
 					}}
 					className={`${
 						showDropdown ? "flex" : "hidden"
-					} absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2 shadow-full-sm`}
+					} shadow-full-sm absolute -bottom-1 z-10 w-full translate-y-full transform flex-col rounded-md bg-white p-2`}
 				>
 					{selectOptions.map((option, idx) => {
 						return (
@@ -153,7 +160,7 @@ const SelectField = ({
 										? "text-gray-400"
 										: "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
 								} ${
-									selected === option.label ? "font-medium text-gray-650" : ""
+									selected === option.label ? "text-gray-650 font-medium" : ""
 								}`}
 							>
 								<DropdownRadio

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useField } from "formik";
 // components
 import MoreInfo from "../../moreInfo/MoreInfo";
@@ -11,9 +11,14 @@ const InputRange = ({
 	handleValue,
 	moreInfo,
 	unit,
+	initialVal,
 	...props
 }) => {
-	const [field, meta] = useField({ ...props, type: "range" });
+	const [field, meta, helpers] = useField({ ...props, type: "range" });
+
+	useEffect(() => {
+		helpers.setValue(initialVal);
+	}, [initialVal]);
 
 	const handleInput = (e) => {
 		handleValue(Number(e.target.value));
