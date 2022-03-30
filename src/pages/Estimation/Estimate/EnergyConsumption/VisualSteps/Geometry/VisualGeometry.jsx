@@ -1,12 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 // component
 import Model3D from "../../../3D";
-// state
-import { selectEnergyConsumptionData } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 
-const VisualGeometry = () => {
-	const inputData = useSelector(selectEnergyConsumptionData);
+const VisualGeometry = ({ inputData }) => {
 	return (
 		<>
 			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
