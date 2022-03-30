@@ -1,19 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 // state
-import {
-	selectEnergyConsumptionData,
-	updateData,
-} from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
+import { updateData } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 
-const Geometry = ({ nextStep }) => {
-	const data = useSelector(selectEnergyConsumptionData);
-
+const Geometry = ({ nextStep, data }) => {
 	const dispatch = useDispatch();
 
 	const handleFloorLevelValue = (v) => {
@@ -145,6 +140,7 @@ const Geometry = ({ nextStep }) => {
 						placeholder="choose level"
 						moreInfo="شماره طبقه"
 						handleValue={handleFloorLevelValue}
+						initialValue={data.number_of_floor}
 					/>
 					<InputRange
 						name="rotation_angle"
@@ -155,6 +151,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleRotationValue}
 						moreInfo="جهت‌گیری بنا"
 						unit="degree"
+						initialVal={data.rotation_angle}
 					/>
 					<InputRange
 						name="x_dim"
@@ -165,6 +162,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleXDimValue}
 						moreInfo="عرض بنا"
 						unit="m"
+						initialVal={data.x_dim}
 					/>
 
 					<InputRange
@@ -176,6 +174,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleYDimValue}
 						moreInfo="طول بنا"
 						unit="m"
+						initialVal={data.y_dim}
 					/>
 					<InputRange
 						name="wwr_south"
@@ -186,6 +185,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleWwrSouthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار جنوبی"
 						unit="%"
+						initialVal={data.wwr_south}
 					/>
 					<InputRange
 						name="wwr_north"
@@ -196,6 +196,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleWwrNorthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار شمالی"
 						unit="%"
+						initialVal={data.wwr_north}
 					/>
 					<SelectField
 						name="shading_type"
@@ -204,6 +205,7 @@ const Geometry = ({ nextStep }) => {
 						placeholder="choose one type"
 						handleValue={handleShadingTypeValue}
 						moreInfo="نوع سایبان"
+						initialValue={data.shading_type}
 					/>
 				</fieldset>
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
