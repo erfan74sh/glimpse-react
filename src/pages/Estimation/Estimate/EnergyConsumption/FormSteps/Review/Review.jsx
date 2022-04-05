@@ -8,7 +8,7 @@ const Review = ({ prevStep }) => {
 	const fullData = [
 		{
 			name: "number_of_floor",
-			label: "floor level",
+			label: "Floor Level",
 			unit: "",
 			value: {
 				0: "ground floor",
@@ -21,17 +21,17 @@ const Review = ({ prevStep }) => {
 		},
 		{
 			name: "rotation_angle",
-			label: "rotation angle",
+			label: "Rotation Angle",
 			unit: "degree",
 			value: data.rotation_angle,
 		},
-		{ name: "x_dim", label: "width", unit: "m", value: data.x_dim },
-		{ name: "y_dim", label: "length", unit: "m", value: data.y_dim },
-		{ name: "wwr_north", label: "wwr_north", unit: "%", value: data.wwr_north },
-		{ name: "wwr_south", label: "wwr_south", unit: "%", value: data.wwr_south },
+		{ name: "x_dim", label: "Width", unit: "m", value: data.x_dim },
+		{ name: "y_dim", label: "Length", unit: "m", value: data.y_dim },
+		{ name: "wwr_north", label: "WWR_north", unit: "", value: data.wwr_north },
+		{ name: "wwr_south", label: "WWR_south", unit: "", value: data.wwr_south },
 		{
 			name: "shading_type",
-			label: "shading type",
+			label: "Shading Type",
 			unit: "",
 			value: {
 				1: "horizontal",
@@ -42,25 +42,25 @@ const Review = ({ prevStep }) => {
 		},
 		{
 			name: "north_neighbor_distance",
-			label: "north neighbor distance",
+			label: "North Neighbor Distance",
 			unit: "m",
 			value: data.north_neighbor_distance,
 		},
 		{
 			name: "north_neighbor_height",
-			label: "north neighbor height",
+			label: "North Neighbor Height",
 			unit: "m",
 			value: data.north_neighbor_height,
 		},
 		{
 			name: "south_neighbor_distance",
-			label: "south neighbor distance",
+			label: "South Neighbor Distance",
 			unit: "m",
 			value: data.south_neighbor_distance,
 		},
 		{
 			name: "south_neighbor_height",
-			label: "south neighbor height",
+			label: "South Neighbor Height",
 			unit: "m",
 			value: data.south_neighbor_height,
 		},
@@ -79,7 +79,7 @@ const Review = ({ prevStep }) => {
 								className="text-gray-650 flex justify-between border-b border-gray-400"
 								key={idx}
 							>
-								<span className="font-semibold capitalize text-gray-900">
+								<span className="font-semibold text-gray-900">
 									{item.label}:
 								</span>
 								<div>
