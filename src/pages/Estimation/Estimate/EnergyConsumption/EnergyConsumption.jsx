@@ -16,15 +16,14 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // slice
-import { selectEnergyConsumptionData } from "../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 
-const EnergyConsumption = () => {
+const EnergyConsumption = ({ inputData }) => {
+	console.log({ inputData });
 	const primData = useSelector(selectPrimaryData);
 	const { subset, project_name, zone_name } = primData;
-	const inputData = useSelector(selectEnergyConsumptionData);
 	const navigate = useNavigate();
 	const [step, setStep] = useState(0);
 
@@ -59,7 +58,7 @@ const EnergyConsumption = () => {
 	};
 
 	const steps = [
-		<Geometry nextStep={handleNextStep} />,
+		<Geometry nextStep={handleNextStep} data={inputData} />,
 		<BoundryCondition nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
@@ -68,7 +67,7 @@ const EnergyConsumption = () => {
 	];
 
 	const visualSteps = [
-		<VisualGeometry />,
+		<VisualGeometry inputData={inputData} />,
 		<VisualBoundryCondition />,
 		<VisualSitePlan />,
 		<VisualMaterial />,
