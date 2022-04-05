@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate, createSearchParams, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -15,17 +14,14 @@ import VisualMaterial from "./VisualSteps/Material";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualHvac from "./VisualSteps/Hvac";
 import VisualReview from "./VisualSteps/Review/VisualReview";
-// slice
-import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 
-const EnergyConsumption = ({ inputData }) => {
+const EnergyConsumption = ({ inputData, primData }) => {
 	const params = useParams();
 
 	const navigate = useNavigate();
 
-	const primData = useSelector(selectPrimaryData);
 	const { subset, project_name, zone_name } = primData;
 
 	const [step, setStep] = useState(0);
@@ -41,22 +37,43 @@ const EnergyConsumption = ({ inputData }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		// todo: edit error handling
-		try {
-			const response = await energyConsumptionServices.estimate({
-				...inputData,
-				...primData,
-			});
-			console.log(response.data);
-			navigate({
-				pathname: "/result",
-				search: `?${createSearchParams({
-					subset,
-					project_name,
-					zone_name,
-				})}`,
-			});
-		} catch (err) {
-			console.log("errore from visual comfort service", err);
+		if (params && params.subset && params.simulationId) {
+			console.log({ inputData, primData });
+			try {
+				const response = await energyConsumptionServices.editEstimation(
+					params.simulationId,
+					{ ...inputData, ...primData }
+				);
+				console.log(response.data);
+				navigate({
+					pathname: "/result",
+					search: `?${createSearchParams({
+						subset,
+						project_name,
+						zone_name,
+					})}`,
+				});
+			} catch (err) {
+				console.log("errore from edit energy comfort service", err);
+			}
+		} else {
+			try {
+				const response = await energyConsumptionServices.estimate({
+					...inputData,
+					...primData,
+				});
+				console.log(response.data);
+				navigate({
+					pathname: "/result",
+					search: `?${createSearchParams({
+						subset,
+						project_name,
+						zone_name,
+					})}`,
+				});
+			} catch (err) {
+				console.log("errore from visual comfort service", err);
+			}
 		}
 	};
 
