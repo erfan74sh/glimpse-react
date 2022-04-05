@@ -114,13 +114,13 @@ const Geometry = ({ nextStep, data }) => {
 					.required("required"),
 				wwr_north: yup
 					.number()
-					.min(10, "wwr-north must be between 10 and 80")
-					.max(80, "wwr-north must be between 10 and 80")
+					.min(0.1, "wwr-north must be between 0.1 and 0.8")
+					.max(0.8, "wwr-north must be between 0.1 and 0.8")
 					.required("required"),
 				wwr_south: yup
 					.number()
-					.min(10, "wwr-south must be between 10 and 80")
-					.max(80, "wwr-south must be between 10 and 80")
+					.min(0.1, "wwr-south must be between 0.1 and 0.8")
+					.max(0.8, "wwr-south must be between 0.1 and 0.8")
 					.required("required"),
 				shading_type: yup
 					.string()
@@ -179,23 +179,21 @@ const Geometry = ({ nextStep, data }) => {
 					<InputRange
 						name="wwr_south"
 						label="WWR-South"
-						min="10"
-						max="80"
-						step="10"
+						min="0.1"
+						max="0.8"
+						step="0.1"
 						handleValue={handleWwrSouthValue}
-						moreInfo="نسبت مساحت پنجره به دیوار جنوبی"
-						unit="%"
+						moreInfo="نسبت مساحت پنجره به مساحت دیوار جنوبی"
 						initialVal={data.wwr_south}
 					/>
 					<InputRange
 						name="wwr_north"
 						label="WWR-North"
-						min="10"
-						max="80"
-						step="10"
+						min="0.1"
+						max="0.8"
+						step="0.1"
 						handleValue={handleWwrNorthValue}
-						moreInfo="نسبت مساحت پنجره به دیوار شمالی"
-						unit="%"
+						moreInfo="نسبت مساحت پنجره به مساحت دیوار شمالی"
 						initialVal={data.wwr_north}
 					/>
 					<SelectField
