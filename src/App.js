@@ -33,7 +33,7 @@ function App() {
 					<Route path="/estimation" element={<Estimation />}>
 						<Route index element={<Estimate />} />
 						<Route path="estimate" element={<Estimate />} />
-						<Route path=":simulationId" element={<Estimate />} />
+						<Route path=":subset/:simulationId" element={<Estimate />} />
 					</Route>
 					<Route path="result" element={<Result />}></Route>
 					<Route path="compare-zones" element={<CompareZones />} />
