@@ -96,6 +96,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						moreInfo="فاصله از همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborDistValue}
+						initialVal={data.south_neighbor_distance}
 					/>
 					<InputRange
 						name="south_neighbor_height"
@@ -106,6 +107,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						moreInfo="ارتفاع همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborHeightValue}
+						initialVal={data.south_neighbor_height}
 					/>
 					<InputRange
 						name="north_neighbor_distance"
@@ -116,6 +118,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						moreInfo="فاصله از همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborDistValue}
+						initialVal={data.north_neighbor_distance}
 					/>
 					<InputRange
 						name="north_neighbor_height"
@@ -126,6 +129,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						moreInfo="ارتفاع همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborHeightValue}
+						initialVal={data.north_neighbor_height}
 					/>
 				</fieldset>
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
