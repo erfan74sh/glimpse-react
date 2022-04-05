@@ -116,12 +116,12 @@ const VisualReview = () => {
 			label: "HVAC system",
 			unit: "",
 			value: {
-				1: "ideal air loads",
-				2: "PTAC | residential",
-				3: "PTHP | residential",
-				4: "VAV w/reheat",
-				5: "VAV w/PFP boxes",
-				6: "fan coil units + DOAS",
+				0: "ideal air loads",
+				1: "PTAC | residential",
+				2: "PTHP | residential",
+				7: "VAV w/reheat",
+				8: "VAV w/PFP boxes",
+				11: "fan coil units + DOAS",
 			},
 		},
 		{

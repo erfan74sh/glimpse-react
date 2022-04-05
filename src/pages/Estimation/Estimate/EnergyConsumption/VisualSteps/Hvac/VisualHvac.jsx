@@ -15,12 +15,12 @@ import { faExpand } from "@fortawesome/free-solid-svg-icons";
 const VisualHvac = () => {
 	const { hvac } = useSelector(selectEnergyConsumptionData);
 	const hvacOptions = [
-		{ val: "1", url: Fancoil },
-		{ val: "2", url: Ptac },
-		{ val: "3", url: Pthp },
-		{ val: "4", url: VavRe },
-		{ val: "5", url: VavPfp },
-		{ val: "6", url: Fancoil },
+		{ val: "0", url: Fancoil },
+		{ val: "1", url: Ptac },
+		{ val: "2", url: Pthp },
+		{ val: "7", url: VavRe },
+		{ val: "8", url: VavPfp },
+		{ val: "11", url: Fancoil },
 	];
 	return (
 		<>
