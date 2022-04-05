@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
+import { useNavigate, createSearchParams, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
@@ -21,10 +21,13 @@ import { selectPrimaryData } from "../../../../features/estimationPrimData/Estim
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 
 const EnergyConsumption = ({ inputData }) => {
-	console.log({ inputData });
+	const params = useParams();
+
+	const navigate = useNavigate();
+
 	const primData = useSelector(selectPrimaryData);
 	const { subset, project_name, zone_name } = primData;
-	const navigate = useNavigate();
+
 	const [step, setStep] = useState(0);
 
 	const handleNextStep = () => {
@@ -92,7 +95,7 @@ const EnergyConsumption = ({ inputData }) => {
 						step !== 5 && "pointer-events-none opacity-25"
 					}`}
 				>
-					start estimate
+					{params && params.simulationId ? "update" : "start estimate"}
 				</button>
 			</section>
 		</>
