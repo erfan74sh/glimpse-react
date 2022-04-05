@@ -34,6 +34,19 @@ export const getAllVisualSimulations = createAsyncThunk(
 	}
 );
 
+export const getVisualSimulationById = createAsyncThunk(
+	"visualComfortData/getVisualSimulationById",
+	async (id, { rejectWithValue }) => {
+		try {
+			const response = await visualComfortService.getEstimationById(id);
+			console.log("visual edit", response.data);
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error.response.data);
+		}
+	}
+);
+
 export const VisualComfortDataSlice = createSlice({
 	name: "visualcomfortData",
 	initialState,
@@ -53,6 +66,10 @@ export const VisualComfortDataSlice = createSlice({
 		},
 		[getAllVisualSimulations.pending]: (state) => {
 			state.status = "pending";
+		},
+		[getVisualSimulationById.fulfilled]: (state, { payload }) => {
+			state.status = "sucseed";
+			state.updateData = payload;
 		},
 	},
 });
