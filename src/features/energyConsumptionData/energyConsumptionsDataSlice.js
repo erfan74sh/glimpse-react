@@ -43,6 +43,19 @@ export const getAllEnergySimulations = createAsyncThunk(
 	}
 );
 
+export const getEnergySimulationById = createAsyncThunk(
+	"energyConsumptionData/getEnergySimulationById",
+	async (id, { rejectWithValue }) => {
+		try {
+			const response = await energyConsumptionServices.getEstimationById(id);
+			console.log("test", response.data);
+			return response.data;
+		} catch (error) {
+			return rejectWithValue(error.response.data);
+		}
+	}
+);
+
 export const energyConsumptionDataSlice = createSlice({
 	name: "energyConsumptionData",
 	initialState,
@@ -62,6 +75,11 @@ export const energyConsumptionDataSlice = createSlice({
 		},
 		[getAllEnergySimulations.pending]: (state) => {
 			state.status = "pending";
+		},
+		[getEnergySimulationById.fulfilled]: (state, { payload }) => {
+			state.status = "sucseed";
+			// state.allSimulations = payload;
+			state.inputData = payload;
 		},
 	},
 });
