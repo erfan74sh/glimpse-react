@@ -194,7 +194,7 @@ const Zone = ({ projects }) => {
 								</Suspense>
 							</button>
 							<Link
-								to={`/estimation/${entry.id}`}
+								to={`/estimation/${entry.subset}/${entry.id}`}
 								className="ml-auto mr-4 capitalize underline"
 							>
 								edit
