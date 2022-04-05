@@ -21,11 +21,18 @@ const getEstimationByProjectName = (projectName) => {
 	});
 };
 
+const editEstimation = (simulationId, editedInputs) => {
+	return axios.put(`/energies/${simulationId}`, editedInputs, {
+		headers: authHeader(),
+	});
+};
+
 const energyConsumptionServices = {
 	estimate,
 	getEstimations,
 	getEstimationById,
 	getEstimationByProjectName,
+	editEstimation,
 };
 
 export default energyConsumptionServices;
