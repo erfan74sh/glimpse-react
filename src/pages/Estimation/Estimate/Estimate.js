@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 // components
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 import ThermalComfort from "./ThermalComfort";
@@ -8,11 +8,68 @@ import EnergyConsumption from "./EnergyConsumption";
 import StructureDesign from "./StructureDesign";
 // state
 import { selectPrimaryData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
+import {
+	getEnergySimulationById,
+	selectEnergyConsumptionData,
+	updateData,
+} from "../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // style
 import "./Estimate.scss";
+import { useParams } from "react-router-dom";
 
 const Estimate = () => {
-	const primaryData = useSelector(selectPrimaryData);
+	const dispatch = useDispatch();
+	const params = useParams();
+	const initialPrimaryData = useSelector(selectPrimaryData);
+
+	const inputData = useSelector(selectEnergyConsumptionData);
+
+	const [primaryData, setPrimaryData] = useState(initialPrimaryData);
+	useEffect(() => {
+		if (params.simulationId) {
+			if (params.subset === "energy_consumption") {
+				dispatch(getEnergySimulationById(Number(params.simulationId)))
+					.unwrap()
+					.then((data) => {
+						setPrimaryData({
+							subset: data.subset,
+							project_name: data.project_name,
+							zone_name: data.zone_name,
+							alternative_name: data.alternative_name,
+						});
+						dispatch(
+							updateData({
+								x_dim: data.x_dim,
+								y_dim: data.y_dim,
+								rotation_angle: data.rotation_angle,
+								wwr_north: data.wwr_north,
+								wwr_south: data.wwr_south,
+								shading_type: data.shading_type.toString(),
+								hvac: data.hvac.toString(),
+								wall_uvalue: data.wall_uvalue.toString(),
+								roof_uvalue: data.roof_uvalue.toString(),
+								floor_uvalue: data.floor_uvalue.toString(),
+								window_uvalue: data.window_uvalue.toString(),
+								natural_ventilation: data.natural_ventilation.toString(),
+								south_neighbor_distance: data.south_neighbor_distance,
+								south_neighbor_height: data.south_neighbor_height,
+								north_neighbor_distance: data.north_neighbor_distance,
+								north_neighbor_height: data.north_neighbor_height,
+								number_of_floor: data.number_of_floor,
+								south_wall_bc: data.south_wall_bc.toString(),
+								north_wall_bc: data.north_wall_bc.toString(),
+								east_wall_bc: data.east_wall_bc.toString(),
+								west_wall_bc: data.west_wall_bc.toString(),
+								floor_bc: data.floor_bc.toString(),
+								roof_bc: data.roof_bc.toString(),
+							})
+						);
+					})
+					.catch((er) => console.log(er));
+			} else if (params.subset === "visual_comfort") {
+			}
+		}
+	}, [params, dispatch]);
 
 	return (
 		<main className=" px-24 py-10" id="estimate__main">
@@ -37,7 +94,9 @@ const Estimate = () => {
 			<main className="flex">
 				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual_comfort" && <VisualComfort />}
-				{primaryData.subset === "energy_consumption" && <EnergyConsumption />}
+				{primaryData.subset === "energy_consumption" && (
+					<EnergyConsumption inputData={inputData} />
+				)}
 				{primaryData.subset === "structure_design" && <StructureDesign />}
 			</main>
 		</main>
