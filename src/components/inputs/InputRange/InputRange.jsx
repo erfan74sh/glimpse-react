@@ -18,7 +18,7 @@ const InputRange = ({
 
 	useEffect(() => {
 		helpers.setValue(initialVal);
-	}, [initialVal]);
+	}, [initialVal, helpers]);
 
 	const handleInput = (e) => {
 		handleValue(Number(e.target.value));

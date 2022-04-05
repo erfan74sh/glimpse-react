@@ -68,7 +68,7 @@ const SelectField = ({
 		if (initialValue) {
 			setFieldValue(name, initialValue.toString());
 		}
-	}, [initialValue]);
+	}, [initialValue, name, setFieldValue]);
 
 	const [selected, setSelected] = useState("");
 	useEffect(() => {
