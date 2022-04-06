@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate, createSearchParams, useParams } from "react-router-dom";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -11,18 +10,16 @@ import VisualMaterial from "./VisualSteps/Material";
 import VisualGeometry from "./VisualSteps/Geometry";
 import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
-// state
-import { selectVisualComfortData } from "../../../../features/visualComfortData/VisualComfortDataSlice";
-import { selectPrimaryData } from "../../../../features/estimationPrimData/EstimationPrimDataSlice";
-
 // services
 import visualComfortServices from "../../../../services/estimations/visualComfort.service";
 
-const ThermalComfort = () => {
-	const inputData = useSelector(selectVisualComfortData);
-	const primData = useSelector(selectPrimaryData);
-	const { subset, project_name, zone_name } = primData;
+const ThermalComfort = ({ inputData, primData }) => {
+	const params = useParams();
+
 	const navigate = useNavigate();
+
+	const { subset, project_name, zone_name } = primData;
+
 	const [step, setStep] = useState(0);
 
 	const handleNextStep = () => {
@@ -56,7 +53,7 @@ const ThermalComfort = () => {
 	};
 
 	const steps = [
-		<Geometry nextStep={handleNextStep} />,
+		<Geometry nextStep={handleNextStep} data={inputData} />,
 		<Material nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<SitePlan nextStep={handleNextStep} prevStep={handlePrevStep} />,
 		<Review prevStep={handlePrevStep} />,
@@ -86,7 +83,7 @@ const ThermalComfort = () => {
 						step !== 3 && "pointer-events-none opacity-25"
 					}`}
 				>
-					start estimate
+					{params && params.simulationId ? "update" : "start estimate"}
 				</button>
 			</section>
 		</>
