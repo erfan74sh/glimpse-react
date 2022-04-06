@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 // component
 import Profile from "../profile/Profile";
-import DropdownProfile from "../dropdowns/dropdownProfile";
 import ProjectHistoryModal from "../ProjectHistoryModal";
 import Modal from "../modal/Modal";
 // slice
@@ -12,8 +11,6 @@ import { selectUser } from "../../features/auth/authSlice";
 import Logo from "../../assets/images/logo-02.png";
 
 const Header = ({ lang }) => {
-	const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-
 	const { isLoggedIn } = useSelector(selectUser);
 
 	const [showProjectHistoryModal, setShowProjectHistoryModal] = useState(false);
@@ -109,20 +106,11 @@ const Header = ({ lang }) => {
 							</li>
 						</ul>
 					</li>
-					<li
-						className="relative"
-						onClick={() => {
-							setShowProfileDropdown(!showProfileDropdown);
-						}}
-					>
+					<li>
 						{isLoggedIn ? (
-							<>
-								<Profile />
-								<DropdownProfile
-									showDropdown={showProfileDropdown}
-									handleShowProjectHistoryModal={handleShowProjectHistoryModal}
-								/>
-							</>
+							<Profile
+								handleShowProjectHistoryModal={handleShowProjectHistoryModal}
+							/>
 						) : (
 							<>
 								<NavLink
