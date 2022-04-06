@@ -65,7 +65,7 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 				<li className="py-1">
 					<Link
 						to="/auth"
-						className="text-red-350 flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 text-red-400 transition-colors hover:bg-gray-50"
 						onClick={handleLogout}
 					>
 						<FontAwesomeIcon icon={faSignOutAlt} size="lg" />
