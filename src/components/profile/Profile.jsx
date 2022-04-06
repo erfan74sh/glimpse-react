@@ -23,45 +23,61 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 	};
 
 	return (
-		<ul
+		<div
 			className={`${
 				showDropdown ? "max-h-screen" : "max-h-0"
-			} shadow-full-sm absolute top-full right-0 z-10 flex w-max translate-y-9 transform flex-col divide-y-2 overflow-hidden rounded-md bg-white px-3 font-normal capitalize text-gray-500 transition-all`}
+			} shadow-full-sm absolute top-full right-0 z-10  w-max translate-y-9 transform  overflow-hidden  rounded-md bg-white font-normal capitalize text-gray-500 transition-all`}
 		>
-			<li>
-				<Link to="/profile" className="flex gap-x-4 px-2 py-4">
-					<img src={ProfileIcon} alt="profile icon" className="h-auto w-6" />
-					<span>profile</span>
-				</Link>
-			</li>
-			<li
-				onClick={(e) => {
-					e.preventDefault();
-					handleShowProjectHistoryModal();
-				}}
-			>
-				<button className="flex gap-x-4 px-2 py-4">
-					<img src={ProjectHistory} alt="profile icon" className="h-auto w-6" />
-					<span>projects history</span>
-				</button>
-			</li>
-			<li>
-				<Link to="#" className="flex gap-x-4 px-2 py-4">
-					<img src={ChargeIcon} alt="charge icon" className="h-auto w-6" />
-					<span>charge account</span>
-				</Link>
-			</li>
-			<li>
-				<Link
-					to="/auth"
-					className="flex gap-x-4 px-2 py-4"
-					onClick={handleLogout}
+			<ul className="flex flex-col divide-y-2 px-3 py-2">
+				<li className="py-1">
+					<Link
+						to="/profile"
+						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+					>
+						<img src={ProfileIcon} alt="profile icon" className="h-auto w-6" />
+						<span>profile</span>
+					</Link>
+				</li>
+				<li
+					className="py-1"
+					onClick={(e) => {
+						e.preventDefault();
+						handleShowProjectHistoryModal();
+					}}
 				>
-					<img src={SignOutIcon} alt="sign out icon" className="h-auto w-6" />
-					<span className="text-red-350">logout</span>
-				</Link>
-			</li>
-		</ul>
+					<Link
+						to=""
+						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+					>
+						<img
+							src={ProjectHistory}
+							alt="profile icon"
+							className="h-auto w-6"
+						/>
+						<span>projects history</span>
+					</Link>
+				</li>
+				<li className="py-1">
+					<Link
+						to="#"
+						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+					>
+						<img src={ChargeIcon} alt="charge icon" className="h-auto w-6" />
+						<span>charge account</span>
+					</Link>
+				</li>
+				<li className="py-1">
+					<Link
+						to="/auth"
+						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+						onClick={handleLogout}
+					>
+						<img src={SignOutIcon} alt="sign out icon" className="h-auto w-6" />
+						<span className="text-red-350">logout</span>
+					</Link>
+				</li>
+			</ul>
+		</div>
 	);
 };
 
