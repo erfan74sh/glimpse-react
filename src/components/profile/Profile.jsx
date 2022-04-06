@@ -26,7 +26,7 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 		<div
 			className={`${
 				showDropdown ? "max-h-screen" : "max-h-0"
-			} shadow-full-sm absolute top-full right-0 z-10  w-max translate-y-9 transform  overflow-hidden  rounded-md bg-white font-normal capitalize text-gray-500 transition-all`}
+			} shadow-full-sm absolute top-full right-0 z-10  w-max translate-y-8 transform  overflow-hidden  rounded-md bg-white font-normal capitalize text-gray-500 transition-all`}
 		>
 			<ul className="flex flex-col divide-y-2 px-3 py-2">
 				<li className="py-1">
