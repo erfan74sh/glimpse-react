@@ -8,13 +8,13 @@ import { selectUser } from "../../features/auth/authSlice";
 import { logout } from "../../features/auth/authSlice";
 // hooks
 import useOutsideClick from "../../hooks/useOutsideClick";
-// assets
-import ProfileIcon from "../../assets/icons/Profile.svg";
-import ChargeIcon from "../../assets/icons/charge.svg";
-import SignOutIcon from "../../assets/icons/sign-out.svg";
-import ProjectHistory from "../../assets/icons/project-history.png";
 // icons
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+	faUserCircle,
+	faHistory,
+	faSignOutAlt,
+	faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 	const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 						to="/profile"
 						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
 					>
-						<img src={ProfileIcon} alt="profile icon" className="h-auto w-6" />
+						<FontAwesomeIcon icon={faUserCircle} size="lg" />
 						<span>profile</span>
 					</Link>
 				</li>
@@ -47,13 +47,9 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 				>
 					<Link
 						to=""
-						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+						className="flex items-center gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
 					>
-						<img
-							src={ProjectHistory}
-							alt="profile icon"
-							className="h-auto w-6"
-						/>
+						<FontAwesomeIcon icon={faHistory} size="lg" />
 						<span>projects history</span>
 					</Link>
 				</li>
@@ -62,18 +58,18 @@ const DropdownProfile = ({ showDropdown, handleShowProjectHistoryModal }) => {
 						to="#"
 						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
 					>
-						<img src={ChargeIcon} alt="charge icon" className="h-auto w-6" />
+						<FontAwesomeIcon icon={faPlus} size="lg" />
 						<span>charge account</span>
 					</Link>
 				</li>
 				<li className="py-1">
 					<Link
 						to="/auth"
-						className="flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
+						className="text-red-350 flex gap-x-4 rounded-md bg-white p-2 pr-3 transition-colors hover:bg-gray-50"
 						onClick={handleLogout}
 					>
-						<img src={SignOutIcon} alt="sign out icon" className="h-auto w-6" />
-						<span className="text-red-350">logout</span>
+						<FontAwesomeIcon icon={faSignOutAlt} size="lg" />
+						<span>logout</span>
 					</Link>
 				</li>
 			</ul>
