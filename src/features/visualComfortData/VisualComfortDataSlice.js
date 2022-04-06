@@ -69,7 +69,7 @@ export const VisualComfortDataSlice = createSlice({
 		},
 		[getVisualSimulationById.fulfilled]: (state, { payload }) => {
 			state.status = "sucseed";
-			state.updateData = payload;
+			state.inputData = payload;
 		},
 	},
 });
