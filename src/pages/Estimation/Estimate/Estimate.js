@@ -36,6 +36,10 @@ const Estimate = () => {
 							project_name: data.project_name,
 							zone_name: data.zone_name,
 							alternative_name: data.alternative_name,
+							location: data.location,
+							high_performance_building_index:
+								data.high_performance_building_index,
+							building_program: data.building_program,
 						});
 						dispatch(
 							updateData({
@@ -95,7 +99,7 @@ const Estimate = () => {
 				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual_comfort" && <VisualComfort />}
 				{primaryData.subset === "energy_consumption" && (
-					<EnergyConsumption inputData={inputData} />
+					<EnergyConsumption inputData={inputData} primData={primaryData} />
 				)}
 				{primaryData.subset === "structure_design" && <StructureDesign />}
 			</main>
