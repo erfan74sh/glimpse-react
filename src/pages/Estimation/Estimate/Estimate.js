@@ -13,6 +13,11 @@ import {
 	selectEnergyConsumptionData,
 	updateData,
 } from "../../../features/energyConsumptionData/energyConsumptionsDataSlice";
+import {
+	getVisualSimulationById,
+	selectVisualComfortData,
+	updateData as updateVisualData,
+} from "../../../features/visualComfortData/VisualComfortDataSlice";
 // style
 import "./Estimate.scss";
 import { useParams } from "react-router-dom";
@@ -23,6 +28,8 @@ const Estimate = () => {
 	const initialPrimaryData = useSelector(selectPrimaryData);
 
 	const inputData = useSelector(selectEnergyConsumptionData);
+
+	const visualInputData = useSelector(selectVisualComfortData);
 
 	const [primaryData, setPrimaryData] = useState(initialPrimaryData);
 	useEffect(() => {
@@ -71,6 +78,38 @@ const Estimate = () => {
 					})
 					.catch((er) => console.log(er));
 			} else if (params.subset === "visual_comfort") {
+				dispatch(getVisualSimulationById(Number(params.simulationId)))
+					.unwrap()
+					.then((data) => {
+						setPrimaryData({
+							subset: data.subset,
+							project_name: data.project_name,
+							zone_name: data.zone_name,
+							alternative_name: data.alternative_name,
+							location: data.location,
+							high_performance_building_index:
+								data.high_performance_building_index,
+							building_program: data.building_program,
+						});
+						dispatch(
+							updateVisualData({
+								x_dim: data.x_dim,
+								y_dim: data.y_dim,
+								rotation_angle: data.rotation_angle,
+								wwr_north: data.wwr_north,
+								wwr_south: data.wwr_south,
+								shading_type: data.shading_type.toString(),
+								reflectance_wall: data.reflectance_wall,
+								reflectance_celing: data.reflectance_celing,
+								reflectance_floor: data.reflectance_floor,
+								vt_glass: data.vt_glass.toString(),
+								south_neighbor_distance: data.south_neighbor_distance,
+								south_neighbor_height: data.south_neighbor_height,
+								north_neighbor_distance: data.north_neighbor_distance,
+								north_neighbor_height: data.north_neighbor_height,
+							})
+						);
+					});
 			}
 		}
 	}, [params, dispatch]);
@@ -97,7 +136,9 @@ const Estimate = () => {
 			</header>
 			<main className="flex">
 				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
-				{primaryData.subset === "visual_comfort" && <VisualComfort />}
+				{primaryData.subset === "visual_comfort" && (
+					<VisualComfort inputData={visualInputData} primData={primaryData} />
+				)}
 				{primaryData.subset === "energy_consumption" && (
 					<EnergyConsumption inputData={inputData} primData={primaryData} />
 				)}
