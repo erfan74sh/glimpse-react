@@ -1,19 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 // state
-import {
-	selectVisualComfortData,
-	updateData,
-} from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
+import { updateData } from "../../../../../../features/visualComfortData/VisualComfortDataSlice";
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 
-const Geometry = ({ nextStep }) => {
-	const data = useSelector(selectVisualComfortData);
-
+const Geometry = ({ nextStep, data }) => {
 	const dispatch = useDispatch();
 
 	const handleXDimValue = (v) => {
@@ -98,13 +93,13 @@ const Geometry = ({ nextStep }) => {
 					.required("required"),
 				wwr_north: yup
 					.number()
-					.min(10, "wwr-north must be between 10 and 80")
-					.max(80, "wwr-north must be between 10 and 80")
+					.min(0.1, "wwr-north must be between 0.1 and 0.8")
+					.max(0.8, "wwr-north must be between 0.1 and 0.8")
 					.required("required"),
 				wwr_south: yup
 					.number()
-					.min(10, "wwr-south must be between 10 and 80")
-					.max(80, "wwr-south must be between 10 and 80")
+					.min(0.1, "wwr-south must be between 0.1 and 0.8")
+					.max(0.8, "wwr-south must be between 0.1 and 0.8")
 					.required("required"),
 				shading_type: yup.number().oneOf([1, 2, 3, 4]).required("pick one"),
 			})}
@@ -123,6 +118,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleRotationValue}
 						moreInfo="جهت‌گیری بنا"
 						unit="degree"
+						initialVal={data.rotation_angle}
 					/>
 					<InputRange
 						name="x_dim"
@@ -133,6 +129,7 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleXDimValue}
 						moreInfo="عرض بنا"
 						unit="m"
+						initialVal={data.x_dim}
 					/>
 
 					<InputRange
@@ -144,26 +141,29 @@ const Geometry = ({ nextStep }) => {
 						handleValue={handleYDimValue}
 						moreInfo="طول بنا"
 						unit="m"
+						initialVal={data.y_dim}
 					/>
 					<InputRange
 						name="wwr_south"
 						label="WWR-South"
-						min="10"
-						max="80"
-						step="10"
+						min="0.1"
+						max="0.8"
+						step="0.1"
 						handleValue={handleWwrSouthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار جنوبی"
-						unit="%"
+						unit=""
+						initialVal={data.wwr_south}
 					/>
 					<InputRange
 						name="wwr_north"
 						label="WWR-North"
-						min="10"
-						max="80"
-						step="10"
+						min="0.1"
+						max="0.8"
+						step="0.1"
 						handleValue={handleWwrNorthValue}
 						moreInfo="نسبت مساحت پنجره به دیوار شمالی"
-						unit="%"
+						unit=""
+						initialVal={data.wwr_north}
 					/>
 					<SelectField
 						name="shading_type"
@@ -172,6 +172,7 @@ const Geometry = ({ nextStep }) => {
 						placeholder="choose one type"
 						handleValue={handleShadingTypeValue}
 						moreInfo="نوع سایبان"
+						initialValue={data.shading_type}
 					/>
 				</fieldset>
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
