@@ -54,28 +54,32 @@ const Result = ({ setLoading }) => {
 	const [primData, setPrimData] = useState([]);
 	useEffect(() => {
 		if (allSimulations[0]) {
-			const {
-				high_performance_building_index,
-				subset,
-				building_program,
-				project_name,
-				zone_name,
-				alternative_name,
-				location,
-			} = allSimulations.filter(
+			const currentSimulation = allSimulations.filter(
 				(item) =>
 					item.project_name === currentProjectName &&
 					item.zone_name === currentZoneName
-			)[0];
-			setPrimData({
-				high_performance_building_index,
-				subset,
-				building_program,
-				project_name,
-				zone_name,
-				alternative_name,
-				location,
-			});
+			);
+			if (currentSimulation && currentSimulation[0]) {
+				const {
+					high_performance_building_index,
+					subset,
+					building_program,
+					project_name,
+					zone_name,
+					alternative_name,
+					location,
+				} = currentSimulation[0];
+
+				setPrimData({
+					high_performance_building_index,
+					subset,
+					building_program,
+					project_name,
+					zone_name,
+					alternative_name,
+					location,
+				});
+			}
 		}
 	}, [allSimulations, currentProjectName, currentZoneName]);
 
