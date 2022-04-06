@@ -21,11 +21,18 @@ const getEstimationByProjectName = (projectName) => {
 	});
 };
 
+const editEstimation = (simulationId, editedInputs) => {
+	return axios.put(`/daylights/${simulationId}`, editedInputs, {
+		headers: authHeader(),
+	});
+};
+
 const visualComfortServices = {
 	estimate,
 	getEstimations,
 	getEstimationById,
 	getEstimationByProjectName,
+	editEstimation,
 };
 
 export default visualComfortServices;
