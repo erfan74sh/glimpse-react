@@ -33,22 +33,42 @@ const ThermalComfort = ({ inputData, primData }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		// todo: edit error handling
-		try {
-			const response = await visualComfortServices.estimate({
-				...inputData,
-				...primData,
-			});
-			console.log(response.data);
-			navigate({
-				pathname: "/result",
-				search: `?${createSearchParams({
-					subset,
-					project_name,
-					zone_name,
-				})}`,
-			});
-		} catch (err) {
-			console.log("errore from visual comfort service", err);
+		if (params && params.subset && params.simulationId) {
+			try {
+				const response = await visualComfortServices.editEstimation(
+					params.simulationId,
+					{ ...inputData, ...primData }
+				);
+				console.log(response.data);
+				navigate({
+					pathname: "/result",
+					search: `?${createSearchParams({
+						subset,
+						project_name,
+						zone_name,
+					})}`,
+				});
+			} catch (err) {
+				console.log("errore from edit visual comfort service", err);
+			}
+		} else {
+			try {
+				const response = await visualComfortServices.estimate({
+					...inputData,
+					...primData,
+				});
+				console.log(response.data);
+				navigate({
+					pathname: "/result",
+					search: `?${createSearchParams({
+						subset,
+						project_name,
+						zone_name,
+					})}`,
+				});
+			} catch (err) {
+				console.log("errore from visual comfort service", err);
+			}
 		}
 	};
 
