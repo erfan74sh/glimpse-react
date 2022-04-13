@@ -424,7 +424,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.x_dim} {unitOptions.x_dim}
+											{inputs.y_dim} {unitOptions.y_dim}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -432,7 +432,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.y_dim} {unitOptions.y_dim}
+											{inputs.x_dim} {unitOptions.x_dim}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -440,7 +440,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wwr_north} {unitOptions.wwr_north}
+											{inputs.wwr_north * 100} {unitOptions.wwr_north}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -448,7 +448,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{inputs.wwr_south} {unitOptions.wwr_south}
+											{inputs.wwr_south * 100} {unitOptions.wwr_south}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
