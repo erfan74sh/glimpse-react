@@ -22,19 +22,19 @@ const AboutUs = () => {
 		{
 			fullName: "محمد تحصیلدوست",
 			education: "دکتری معماری علوم ساختمان",
-			activityScope: "معمار",
+			activityScope: "عضو هیئت علمی",
 			image: pic05,
 		},
 		{
 			fullName: "زهرا سادات زمردیان",
 			education: "دکتری معماری علوم ساختمان",
-			activityScope: "معمار",
+			activityScope: "عضو هیئت علمی",
 			image: pic08,
 		},
 		{
 			fullName: "رهام افغانی",
 			education: "دکتری مهندسی سیستم‌های ساختمانی",
-			activityScope: "معمار",
+			activityScope: "عضو هیئت علمی",
 			image: pic09,
 		},
 		{
@@ -63,7 +63,7 @@ const AboutUs = () => {
 		},
 		{
 			fullName: "امیرمحمد ربانی جلالی",
-			education: "ارشد انرژی و معماری",
+			education: "ارشد تکنولوژی معماری",
 			activityScope: "سازه",
 			image: pic11,
 		},
