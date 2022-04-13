@@ -33,11 +33,14 @@ const ThermalComfort = ({ inputData, primData }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		// todo: edit error handling
+		let tempInputData = { ...inputData };
+		tempInputData.wwr_north = inputData.wwr_north / 100;
+		tempInputData.wwr_south = inputData.wwr_south / 100;
 		if (params && params.subset && params.simulationId) {
 			try {
 				const response = await visualComfortServices.editEstimation(
 					params.simulationId,
-					{ ...inputData, ...primData }
+					{ ...tempInputData, ...primData }
 				);
 				console.log(response.data);
 				navigate({
@@ -54,7 +57,7 @@ const ThermalComfort = ({ inputData, primData }) => {
 		} else {
 			try {
 				const response = await visualComfortServices.estimate({
-					...inputData,
+					...tempInputData,
 					...primData,
 				});
 				console.log(response.data);
@@ -99,7 +102,7 @@ const ThermalComfort = ({ inputData, primData }) => {
 					type="submit"
 					form="energy-and-comfort"
 					onClick={(e) => handleSubmit(e)}
-					className={`bg-blue-550 mt-16 self-center rounded-md px-10 py-2 font-medium uppercase text-white ${
+					className={`mt-16 self-center rounded-md bg-blue-550 px-10 py-2 font-medium uppercase text-white ${
 						step !== 3 && "pointer-events-none opacity-25"
 					}`}
 				>
