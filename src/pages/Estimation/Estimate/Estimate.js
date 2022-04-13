@@ -53,8 +53,8 @@ const Estimate = () => {
 								x_dim: data.x_dim,
 								y_dim: data.y_dim,
 								rotation_angle: data.rotation_angle,
-								wwr_north: data.wwr_north,
-								wwr_south: data.wwr_south,
+								wwr_north: data.wwr_north * 100,
+								wwr_south: data.wwr_south * 100,
 								shading_type: data.shading_type.toString(),
 								hvac: data.hvac.toString(),
 								wall_uvalue: data.wall_uvalue.toString(),
@@ -96,8 +96,8 @@ const Estimate = () => {
 								x_dim: data.x_dim,
 								y_dim: data.y_dim,
 								rotation_angle: data.rotation_angle,
-								wwr_north: data.wwr_north,
-								wwr_south: data.wwr_south,
+								wwr_north: data.wwr_north * 100,
+								wwr_south: data.wwr_south * 100,
 								shading_type: data.shading_type.toString(),
 								reflectance_wall: data.reflectance_wall,
 								reflectance_celing: data.reflectance_celing,
@@ -117,7 +117,7 @@ const Estimate = () => {
 	return (
 		<main className=" px-24 py-10" id="estimate__main">
 			<header className="mb-10">
-				<h1 className="border-blue-550 text-blue-550 flex justify-between border-l-8 pl-3 text-2xl font-bold uppercase leading-8">
+				<h1 className="flex justify-between border-l-8 border-blue-550 pl-3 text-2xl font-bold uppercase leading-8 text-blue-550">
 					{primaryData.subset === "energy_consumption"
 						? "energy demand"
 						: primaryData.subset === "visual_comfort"
