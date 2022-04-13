@@ -104,9 +104,9 @@ const AboutUs = () => {
 			<header className="">
 				<Nav lang="persian" />
 			</header>
-			<main className="font-irancell px-24 py-16" dir="rtl">
+			<main className="px-24 py-16 font-irancell" dir="rtl">
 				<header className=" mb-20 px-24">
-					<h1 className="border-blue-550 text-blue-550 mb-14  border-r-4 pr-3 text-2xl font-bold uppercase leading-8">
+					<h1 className="mb-14 border-r-4 border-blue-550  pr-3 text-2xl font-bold uppercase leading-8 text-blue-550">
 						درباره ما
 					</h1>
 					<p className="text-justify">
@@ -117,7 +117,7 @@ const AboutUs = () => {
 						مختلف از جمله علوم ساختمان، فناوری معماری، علوم کامپیوتر، و مهندسی
 						معماری را گرد هم آورده است. این گروه پس از کسب رتبه اول طرح "نوآ" در
 						پارک علم و فناوری دانشگاه شهیدبهشتی در تیرماه 1400، به صورت جدی به
-						توسعه ابزار و گسترش آن پرداخت و از اینرو با گذشت زمان تکمیل شده،
+						توسعه ابزار و گسترش آن پرداخت. این ابزار، با گذشت زمان تکمیل شده،
 						حوزه های جامع تر و فراگیر تری را در بر خواهد گرفت و به واسطه نوع
 						تدوین آن با الگویی یادگیرنده، هر لحظه دقیقتر و سریعتر از قبل خواهد
 						بود.
@@ -130,7 +130,7 @@ const AboutUs = () => {
 							return (
 								<article
 									key={idx}
-									className="text-gray-650 flex w-1/4 flex-col items-center px-5 font-normal capitalize"
+									className="flex w-1/4 flex-col items-center px-5 font-normal capitalize text-gray-650"
 								>
 									<MemberCard
 										fullName={member.fullName}
