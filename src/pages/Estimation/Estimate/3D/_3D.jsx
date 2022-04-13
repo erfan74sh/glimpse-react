@@ -18,7 +18,7 @@ const NorthSign = ({ xDim, yDim, rotation }) => {
 		<primitive
 			object={obj}
 			scale={0.07}
-			position={[-(xDim / 2 + 3) / 10, -3.5 / 10 / 2, (yDim / 2 + 3) / 10]}
+			position={[-(yDim / 2 + 3) / 10, -3.5 / 10 / 2, (xDim / 2 + 3) / 10]}
 			rotation={[0, (rotation / 180) * Math.PI, 0]}
 		/>
 	);
@@ -31,7 +31,7 @@ const Box = ({ xDim, yDim, position, rotation, data }) => {
 		<mesh ref={mesh}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[xDim / 10, 3.5 / 10, yDim / 10]}
+				args={[yDim / 10, 3.5 / 10, xDim / 10]}
 			/>
 			<meshStandardMaterial
 				attachArray="material"
@@ -71,7 +71,7 @@ const WindowSouth = ({ xDim, yDim, dimentions }) => {
 	const mesh = useRef(null);
 
 	return (
-		<mesh ref={mesh} position={[0, 0, yDim / 10 / 2 + 0.001]}>
+		<mesh ref={mesh} position={[0, 0, xDim / 10 / 2 + 0.001]}>
 			<planeBufferGeometry
 				attach="geometry"
 				args={[dimentions.width, dimentions.height]}
@@ -86,7 +86,7 @@ const WindowNorth = ({ xDim, yDim, dimentions }) => {
 	return (
 		<mesh
 			ref={mesh}
-			position={[0, 0, -yDim / 10 / 2 - 0.001]}
+			position={[0, 0, -xDim / 10 / 2 - 0.001]}
 			rotation={[0, Math.PI, 0]}
 		>
 			<planeBufferGeometry
@@ -104,7 +104,7 @@ const Roof = ({ xDim, yDim, roof_bc }) => {
 		<mesh ref={mesh} position={[0, 3.5 / 10 / 2 + 0.2 / 10 / 2, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[xDim / 10, 0.2 / 10, yDim / 10]}
+				args={[yDim / 10, 0.2 / 10, xDim / 10]}
 			/>
 			<meshStandardMaterial
 				attach="material"
@@ -119,7 +119,7 @@ const Floor = ({ xDim, yDim, floor_bc }) => {
 		<mesh ref={mesh} position={[0, -3.5 / 10 / 2 - 0.2 / 10 / 2, 0]}>
 			<boxBufferGeometry
 				attach="geometry"
-				args={[xDim / 10, 0.2 / 10, yDim / 10]}
+				args={[yDim / 10, 0.2 / 10, xDim / 10]}
 			/>
 			<meshStandardMaterial
 				attach="material"
@@ -141,7 +141,7 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 		<mesh
 			ref={mesh}
 			rotation={[-Math.PI / 2, 0, 0]}
-			position={[0, height, yDim / 10 / 2 + 0.03 / 2]}
+			position={[0, height, xDim / 10 / 2 + 0.03 / 2]}
 		>
 			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.03]} />
 			<meshStandardMaterial attach="material" color="gray" />
@@ -149,12 +149,12 @@ const ShaderType1 = ({ xDim, yDim, height, dimentions }) => {
 	);
 };
 
-const ShaderType2 = ({ yDim, dimentions }) => {
+const ShaderType2 = ({ xDim, dimentions }) => {
 	const mesh = useRef(null);
 	return (
 		<mesh
 			ref={mesh}
-			position={[0, dimentions.height / 2, yDim / 10 / 2 + 0.1 / 2]}
+			position={[0, dimentions.height / 2, xDim / 10 / 2 + 0.1 / 2]}
 			rotation={[-Math.PI / 2, 0, 0]}
 		>
 			<planeBufferGeometry attach="geometry" args={[dimentions.width, 0.1]} />
@@ -163,13 +163,13 @@ const ShaderType2 = ({ yDim, dimentions }) => {
 	);
 };
 
-const ShaderType3 = ({ yDim, dimentions }) => {
+const ShaderType3 = ({ xDim, dimentions }) => {
 	const mesh = useRef(null);
 	return (
 		<>
 			<mesh
 				ref={mesh}
-				position={[dimentions.width / 2, 0, yDim / 10 / 2 + 0.1 / 2]}
+				position={[dimentions.width / 2, 0, xDim / 10 / 2 + 0.1 / 2]}
 			>
 				<boxBufferGeometry
 					attach="geometry"
@@ -179,7 +179,7 @@ const ShaderType3 = ({ yDim, dimentions }) => {
 			</mesh>
 			<mesh
 				ref={mesh}
-				position={[-dimentions.width / 2, 0, yDim / 10 / 2 + 0.1 / 2]}
+				position={[-dimentions.width / 2, 0, xDim / 10 / 2 + 0.1 / 2]}
 			>
 				<boxBufferGeometry
 					attach="geometry"
@@ -194,11 +194,11 @@ const ShaderType3 = ({ yDim, dimentions }) => {
 const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 	const data = useSelector(selectEnergyConsumptionData);
 	const southWindowDimentions = {
-		width: (xDim / 10) * (wwrSouth / 100),
+		width: (yDim / 10) * (wwrSouth / 100),
 		height: (3.5 / 10) * (3 / 5),
 	};
 	const northWindowDimentions = {
-		width: (xDim / 10) * (wwrNorth / 100),
+		width: (yDim / 10) * (wwrNorth / 100),
 		height: (3.5 / 10) * (3 / 5),
 	};
 	return (
@@ -257,10 +257,10 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 							</group>
 						)}
 						{shadingType === "1" && (
-							<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
+							<ShaderType2 xDim={xDim} dimentions={southWindowDimentions} />
 						)}
 						{shadingType === "3" && (
-							<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
+							<ShaderType3 xDim={xDim} dimentions={southWindowDimentions} />
 						)}
 						{shadingType === "4" && (
 							<group>
@@ -282,8 +282,8 @@ const _3D = ({ xDim, yDim, wwrNorth, wwrSouth, shadingType, rotation }) => {
 									height={-0.06}
 									dimentions={southWindowDimentions}
 								/>
-								<ShaderType3 yDim={yDim} dimentions={southWindowDimentions} />
-								<ShaderType2 yDim={yDim} dimentions={southWindowDimentions} />
+								<ShaderType3 xDim={xDim} dimentions={southWindowDimentions} />
+								<ShaderType2 xDim={xDim} dimentions={southWindowDimentions} />
 							</group>
 						)}
 					</group>
