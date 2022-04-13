@@ -36,13 +36,16 @@ const EnergyConsumption = ({ inputData, primData }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		let tempInputData = { ...inputData };
+		tempInputData.wwr_north = inputData.wwr_north / 100;
+		tempInputData.wwr_south = inputData.wwr_south / 100;
 		// todo: edit error handling
 		if (params && params.subset && params.simulationId) {
-			console.log({ inputData, primData });
+			console.log({ tempInputData, primData });
 			try {
 				const response = await energyConsumptionServices.editEstimation(
 					params.simulationId,
-					{ ...inputData, ...primData }
+					{ ...tempInputData, ...primData }
 				);
 				console.log(response.data);
 				navigate({
@@ -59,7 +62,7 @@ const EnergyConsumption = ({ inputData, primData }) => {
 		} else {
 			try {
 				const response = await energyConsumptionServices.estimate({
-					...inputData,
+					...tempInputData,
 					...primData,
 				});
 				console.log(response.data);
@@ -108,7 +111,7 @@ const EnergyConsumption = ({ inputData, primData }) => {
 					type="submit"
 					form="energy-and-comfort"
 					onClick={(e) => handleSubmit(e)}
-					className={`bg-blue-550 mt-16 self-center rounded-md px-10 py-2 font-medium uppercase text-white ${
+					className={`mt-16 self-center rounded-md bg-blue-550 px-10 py-2 font-medium uppercase text-white ${
 						step !== 5 && "pointer-events-none opacity-25"
 					}`}
 				>
