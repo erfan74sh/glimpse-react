@@ -92,7 +92,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						label="South neighbor distance"
 						min="2"
 						max="8"
-						step="1"
+						step="0.5"
 						moreInfo="فاصله از همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborDistValue}
@@ -103,7 +103,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						label="South neighbor height"
 						min="4"
 						max="10"
-						step="1"
+						step="0.5"
 						moreInfo="ارتفاع همسایه جنوبی"
 						unit="m"
 						handleValue={handleSouthNeighborHeightValue}
@@ -114,7 +114,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						label="North neighbor distance"
 						min="2"
 						max="8"
-						step="1"
+						step="0.5"
 						moreInfo="فاصله از همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborDistValue}
@@ -125,7 +125,7 @@ const SitePlan = ({ nextStep, prevStep }) => {
 						label="North neighbor height"
 						min="4"
 						max="10"
-						step="1"
+						step="0.5"
 						moreInfo="ارتفاع همسایه شمالی"
 						unit="m"
 						handleValue={handleNorthNeighborHeightValue}
@@ -135,14 +135,14 @@ const SitePlan = ({ nextStep, prevStep }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="text-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
 						onClick={prevStep}
 					>
 						prev <span className="text-xs lowercase">(boundry condition)</span>
 					</button>
 					<button
 						type="submit"
-						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(material)</span>
 					</button>
