@@ -114,13 +114,13 @@ const Geometry = ({ nextStep, data }) => {
 					.required("required"),
 				wwr_north: yup
 					.number()
-					.min(0.1, "wwr-north must be between 0.1 and 0.8")
-					.max(0.8, "wwr-north must be between 0.1 and 0.8")
+					.min(10, "wwr-north must be between 10 and 80")
+					.max(80, "wwr-north must be between 10 and 80")
 					.required("required"),
 				wwr_south: yup
 					.number()
-					.min(0.1, "wwr-south must be between 0.1 and 0.8")
-					.max(0.8, "wwr-south must be between 0.1 and 0.8")
+					.min(10, "wwr-south must be between 10 and 80")
+					.max(80, "wwr-south must be between 10 and 80")
 					.required("required"),
 				shading_type: yup
 					.string()
@@ -155,33 +155,33 @@ const Geometry = ({ nextStep, data }) => {
 					/>
 					<InputRange
 						name="x_dim"
-						label="width"
+						label="length"
 						min="8"
 						max="24"
 						step="0.5"
 						handleValue={handleXDimValue}
-						moreInfo="عرض بنا"
+						moreInfo="طول بنا"
 						unit="m"
 						initialVal={data.x_dim}
 					/>
 
 					<InputRange
 						name="y_dim"
-						label="length"
+						label="width"
 						min="3"
 						max="10"
 						step="0.5"
 						handleValue={handleYDimValue}
-						moreInfo="طول بنا"
+						moreInfo="عرض بنا"
 						unit="m"
 						initialVal={data.y_dim}
 					/>
 					<InputRange
 						name="wwr_south"
 						label="WWR-South"
-						min="0.1"
-						max="0.8"
-						step="0.1"
+						min="10"
+						max="80"
+						step="10"
 						handleValue={handleWwrSouthValue}
 						moreInfo="نسبت مساحت پنجره به مساحت دیوار جنوبی"
 						initialVal={data.wwr_south}
@@ -189,9 +189,9 @@ const Geometry = ({ nextStep, data }) => {
 					<InputRange
 						name="wwr_north"
 						label="WWR-North"
-						min="0.1"
-						max="0.8"
-						step="0.1"
+						min="10"
+						max="80"
+						step="10"
 						handleValue={handleWwrNorthValue}
 						moreInfo="نسبت مساحت پنجره به مساحت دیوار شمالی"
 						initialVal={data.wwr_north}
@@ -209,7 +209,7 @@ const Geometry = ({ nextStep, data }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(boundry condition)</span>
 					</button>
