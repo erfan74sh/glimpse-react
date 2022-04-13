@@ -22,7 +22,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 			.then(() => {
 				setTimeout(() => {
 					navigate("/auth/sign-in");
-				}, 2000);
+				}, 3000);
 			})
 			.catch(() => handleSuccessful(false));
 	};
@@ -70,7 +70,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				handleSignup(values);
 			}}
 		>
-			<Form className="w-100 flex flex-col gap-y-7">
+			<Form className="flex w-100 flex-col gap-y-7">
 				<TextField
 					type="text"
 					name="full_name"
@@ -110,7 +110,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				</div>
 				<button
 					type="submit"
-					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
+					className="rounded-md bg-blue-550 py-1 px-4 capitalize text-white transition-all hover:shadow-b-sm"
 				>
 					register
 				</button>
