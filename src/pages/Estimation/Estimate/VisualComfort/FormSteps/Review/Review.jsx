@@ -13,8 +13,8 @@ const Review = ({ prevStep }) => {
 			unit: "degree",
 			value: data.rotation_angle,
 		},
-		{ name: "x_dim", label: "width", unit: "m", value: data.x_dim },
-		{ name: "y_dim", label: "length", unit: "m", value: data.y_dim },
+		{ name: "x_dim", label: "length", unit: "m", value: data.x_dim },
+		{ name: "y_dim", label: "width", unit: "m", value: data.y_dim },
 		{ name: "wwr_north", label: "wwr_north", unit: "%", value: data.wwr_north },
 		{ name: "wwr_south", label: "wwr_south", unit: "%", value: data.wwr_south },
 		{
@@ -64,7 +64,7 @@ const Review = ({ prevStep }) => {
 					{fullData.map((item, idx) => {
 						return (
 							<li
-								className="text-gray-650 flex justify-between border-b border-gray-400"
+								className="flex justify-between border-b border-gray-400 text-gray-650"
 								key={idx}
 							>
 								<span className="font-semibold capitalize text-gray-900">
@@ -88,7 +88,7 @@ const Review = ({ prevStep }) => {
 			<section className="mt-auto flex justify-center gap-x-4 pr-10">
 				<button
 					type="button"
-					className="text-blue-550 border-blue-550 flex items-center justify-between rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
+					className="flex items-center justify-between rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
 					onClick={prevStep}
 					value="site plan"
 				>

@@ -122,7 +122,7 @@ const Geometry = ({ nextStep, data }) => {
 					/>
 					<InputRange
 						name="x_dim"
-						label="width"
+						label="length"
 						min="8"
 						max="24"
 						step="0.5"
@@ -134,7 +134,7 @@ const Geometry = ({ nextStep, data }) => {
 
 					<InputRange
 						name="y_dim"
-						label="length"
+						label="width"
 						min="3"
 						max="10"
 						step="0.5"
@@ -178,7 +178,7 @@ const Geometry = ({ nextStep, data }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="bg-blue-550 border-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
+						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(material)</span>
 					</button>
