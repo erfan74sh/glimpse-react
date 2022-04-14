@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // services
 import visualComfortServices from "../../services/estimations/visualComfort.service";
 import energyConsumptionServices from "../../services/estimations/energyConsumption.service";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { logout } from "../../features/auth/authSlice";
+// icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectsInSubset = ({ subset }) => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	useEffect(() => {
 		const fetchData = async () => {
@@ -30,10 +36,13 @@ const ProjectsInSubset = ({ subset }) => {
 						return { project_name: project, zone_name: firstZone };
 					}
 				);
-
 				setProjectsInSubset(uniqueListOfProjectWithZoneName);
 			} catch (error) {
-				console.log("errore from projectHistoryModal:", error);
+				console.log("error from projectHistoryModal:", error);
+				if (error.response && error.response.status === 401) {
+					dispatch(logout());
+					navigate("/auth");
+				}
 			}
 		};
 		fetchData();
