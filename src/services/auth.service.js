@@ -25,11 +25,16 @@ const getCurrentUser = () => {
 		.then((response) => response.data);
 };
 
+const updateUser = (userInfo) => {
+	return axios.put("/users/me", userInfo, { headers: authHeader() });
+};
+
 const authService = {
 	signUp,
 	logIn,
 	logOut,
 	getCurrentUser,
+	updateUser,
 };
 
 export default authService;

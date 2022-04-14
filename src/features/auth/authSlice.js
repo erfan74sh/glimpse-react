@@ -79,6 +79,41 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 	await authService.logOut();
 });
 
+export const updateUser = createAsyncThunk(
+	"auth/updateUser",
+	async (userInfo, thunkAPI) => {
+		try {
+			const response = await authService.updateUser(userInfo);
+			thunkAPI.dispatch(setMessage("your profile update successfuly!"));
+			console.log(response);
+			return { user: response.data };
+		} catch (error) {
+			let message;
+			if (error.response) {
+				// The request was made and the server responded with a status code
+				// that falls out of the range of 2xx
+				// todo: remove console.logs
+				console.log(error.response.data);
+				console.log(error.response.status);
+				console.log(error.response.headers);
+				message = error.response.data.detail;
+			} else if (error.request) {
+				// The request was made but no response was received
+				// `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+				// http.ClientRequest in node.js
+				console.log(error.request);
+				message = error.request;
+			} else {
+				// Something happened in setting up the request that triggered an Error
+				console.log("Error", error.message);
+				message = error.message;
+			}
+			thunkAPI.dispatch(setMessage(message));
+			return thunkAPI.rejectWithValue();
+		}
+	}
+);
+
 const initialState = user
 	? { isLoggedIn: true, user }
 	: { isLoggedIn: false, user: null };
@@ -104,6 +139,14 @@ const authSlice = createSlice({
 		[logout.fulfilled]: (state, action) => {
 			state.isLoggedIn = false;
 			state.user = null;
+		},
+		[updateUser.fulfilled]: (state, action) => {
+			state.isLoggedIn = true;
+			state.user = action.payload.user;
+		},
+		[updateUser.rejected]: (state, action) => {
+			state.isLoggedIn = state.isLoggedIn;
+			state.user = state.user;
 		},
 	},
 });
