@@ -127,7 +127,7 @@ const Estimate = () => {
 					});
 			}
 		}
-	}, [params, dispatch]);
+	}, [params, dispatch, navigate]);
 
 	return (
 		<main className=" px-24 py-10" id="estimate__main">

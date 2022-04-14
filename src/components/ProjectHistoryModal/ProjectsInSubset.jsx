@@ -46,7 +46,7 @@ const ProjectsInSubset = ({ subset }) => {
 			}
 		};
 		fetchData();
-	}, [subset]);
+	}, [subset, dispatch, navigate]);
 
 	const [showDropdown, setShowDropdown] = useState(false);
 
