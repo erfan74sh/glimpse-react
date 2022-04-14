@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 // state
-import {
-	selectUserInfo,
-	updateInfo,
-} from "../../../features/userInfo/UserInfoSlice";
+// import {
+// 	selectUserInfo,
+// 	updateInfo,
+// } from "../../../features/userInfo/UserInfoSlice";
 
 const ProfileInfo = ({ user }) => {
 	const [fullName, setfullName] = useState(user.full_name);
@@ -16,7 +16,7 @@ const ProfileInfo = ({ user }) => {
 
 	const [isEdit, setIsEdit] = useState(false);
 
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -38,13 +38,13 @@ const ProfileInfo = ({ user }) => {
 		<section className="flex flex-grow flex-col gap-y-10">
 			<section>
 				<header className="flex gap-x-4 border-b-2 border-gray-400 pb-4">
-					<h3 className="text-2xl font-bold capitalize text-gray-650">
+					<h3 className="text-gray-650 text-2xl font-bold capitalize">
 						information
 					</h3>
 					{!isEdit && (
 						<button
 							type="button"
-							className="border-b-2 border-blue-550 text-xl font-normal capitalize text-blue-550"
+							className="border-blue-550 text-blue-550 border-b-2 text-xl font-normal capitalize"
 							onClick={() => setIsEdit(true)}
 						>
 							edit
@@ -64,7 +64,7 @@ const ProfileInfo = ({ user }) => {
 										type="text"
 										placeHolder="enter your full name"
 										value={fullName}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setfullName(e.target.value)}
 									/>
 								</div>
@@ -74,7 +74,7 @@ const ProfileInfo = ({ user }) => {
 										type="text"
 										placeHolder="enter tour education"
 										value={education}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setEducation(e.target.value)}
 									/>
 								</div>
@@ -84,7 +84,7 @@ const ProfileInfo = ({ user }) => {
 										type="text"
 										placeHolder="enter your scope of activity"
 										value={scopOfActivity}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setScopOfActivity(e.target.value)}
 									/>
 								</div>
@@ -96,7 +96,7 @@ const ProfileInfo = ({ user }) => {
 										type="text"
 										placeHolder="enter your address"
 										value={address}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setAddress(e.target.value)}
 									/>
 								</div>
@@ -106,7 +106,7 @@ const ProfileInfo = ({ user }) => {
 										type="email"
 										placeHolder="enter your email"
 										value={email}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setEmail(e.target.value)}
 										required
 									/>
@@ -117,7 +117,7 @@ const ProfileInfo = ({ user }) => {
 										type="tel"
 										placeHolder="enter your phone number"
 										value={phone}
-										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
+										className="shadow-neo-sm rounded-md border-none p-3 outline-none"
 										onChange={(e) => setPhone(e.target.value)}
 									/>
 								</div>
@@ -125,7 +125,7 @@ const ProfileInfo = ({ user }) => {
 						</div>
 						{isEdit && (
 							<button
-								className="self-start rounded-md bg-blue-550 px-4 py-2 text-xl font-normal capitalize text-white"
+								className="bg-blue-550 self-start rounded-md px-4 py-2 text-xl font-normal capitalize text-white"
 								type="submit"
 							>
 								save changes
@@ -168,12 +168,12 @@ const ProfileInfo = ({ user }) => {
 			</section>
 			<section>
 				<header className="flex gap-x-4 border-b-2 border-gray-400 pb-4">
-					<h3 className="text-2xl font-bold capitalize text-gray-650">
+					<h3 className="text-gray-650 text-2xl font-bold capitalize">
 						account status
 					</h3>
 					<button
 						type="button"
-						className="border-b-2 border-blue-550 text-xl font-normal capitalize text-blue-550"
+						className="border-blue-550 text-blue-550 border-b-2 text-xl font-normal capitalize"
 					>
 						charge
 					</button>
