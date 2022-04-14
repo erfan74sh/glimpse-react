@@ -66,7 +66,6 @@ const ProfileInfo = ({ user }) => {
 										value={fullName}
 										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
 										onChange={(e) => setfullName(e.target.value)}
-										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -77,7 +76,6 @@ const ProfileInfo = ({ user }) => {
 										value={education}
 										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
 										onChange={(e) => setEducation(e.target.value)}
-										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -88,7 +86,6 @@ const ProfileInfo = ({ user }) => {
 										value={scopOfActivity}
 										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
 										onChange={(e) => setScopOfActivity(e.target.value)}
-										required
 									/>
 								</div>
 							</fieldset>
@@ -101,7 +98,6 @@ const ProfileInfo = ({ user }) => {
 										value={address}
 										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
 										onChange={(e) => setAddress(e.target.value)}
-										required
 									/>
 								</div>
 								<div className="flex flex-col text-lg capitalize">
@@ -123,7 +119,6 @@ const ProfileInfo = ({ user }) => {
 										value={phone}
 										className="outline-none rounded-md border-none p-3 shadow-neo-sm"
 										onChange={(e) => setPhone(e.target.value)}
-										required
 									/>
 								</div>
 							</fieldset>
