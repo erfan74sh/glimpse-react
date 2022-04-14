@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 // components
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
 import ThermalComfort from "./ThermalComfort";
@@ -18,12 +19,13 @@ import {
 	selectVisualComfortData,
 	updateData as updateVisualData,
 } from "../../../features/visualComfortData/VisualComfortDataSlice";
+import { logout } from "../../../features/auth/authSlice";
 // style
 import "./Estimate.scss";
-import { useParams } from "react-router-dom";
 
 const Estimate = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const params = useParams();
 	const initialPrimaryData = useSelector(selectPrimaryData);
 
@@ -76,7 +78,13 @@ const Estimate = () => {
 							})
 						);
 					})
-					.catch((er) => console.log(er));
+					.catch((er) => {
+						console.log(er);
+						if (er.response && er.response.status === 401) {
+							dispatch(logout());
+							navigate("/auth");
+						}
+					});
 			} else if (params.subset === "visual_comfort") {
 				dispatch(getVisualSimulationById(Number(params.simulationId)))
 					.unwrap()
@@ -109,6 +117,13 @@ const Estimate = () => {
 								north_neighbor_height: data.north_neighbor_height,
 							})
 						);
+					})
+					.catch((er) => {
+						console.log(er);
+						if (er.response && er.response.status === 401) {
+							dispatch(logout());
+							navigate("/auth");
+						}
 					});
 			}
 		}
@@ -117,7 +132,7 @@ const Estimate = () => {
 	return (
 		<main className=" px-24 py-10" id="estimate__main">
 			<header className="mb-10">
-				<h1 className="flex justify-between border-l-8 border-blue-550 pl-3 text-2xl font-bold uppercase leading-8 text-blue-550">
+				<h1 className="border-blue-550 text-blue-550 flex justify-between border-l-8 pl-3 text-2xl font-bold uppercase leading-8">
 					{primaryData.subset === "energy_consumption"
 						? "energy demand"
 						: primaryData.subset === "visual_comfort"

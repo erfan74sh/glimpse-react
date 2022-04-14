@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, createSearchParams, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -12,9 +13,12 @@ import VisualSitePlan from "./VisualSteps/SitePlan";
 import VisualReview from "./VisualSteps/Review/VisualReview";
 // services
 import visualComfortServices from "../../../../services/estimations/visualComfort.service";
+import { logout } from "../../../../features/auth/authSlice";
 
 const ThermalComfort = ({ inputData, primData }) => {
 	const params = useParams();
+
+	const dispatch = useDispatch();
 
 	const navigate = useNavigate();
 
@@ -53,6 +57,11 @@ const ThermalComfort = ({ inputData, primData }) => {
 				});
 			} catch (err) {
 				console.log("errore from edit visual comfort service", err);
+				console.log(err.response);
+				if (err.response && err.response.status === 401) {
+					dispatch(logout());
+					navigate("/auth");
+				}
 			}
 		} else {
 			try {
@@ -71,6 +80,10 @@ const ThermalComfort = ({ inputData, primData }) => {
 				});
 			} catch (err) {
 				console.log("errore from visual comfort service", err);
+				if (err.response && err.response.status === 401) {
+					dispatch(logout());
+					navigate("/auth");
+				}
 			}
 		}
 	};
@@ -102,7 +115,7 @@ const ThermalComfort = ({ inputData, primData }) => {
 					type="submit"
 					form="energy-and-comfort"
 					onClick={(e) => handleSubmit(e)}
-					className={`mt-16 self-center rounded-md bg-blue-550 px-10 py-2 font-medium uppercase text-white ${
+					className={`bg-blue-550 mt-16 self-center rounded-md px-10 py-2 font-medium uppercase text-white ${
 						step !== 3 && "pointer-events-none opacity-25"
 					}`}
 				>
