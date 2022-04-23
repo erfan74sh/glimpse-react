@@ -1,12 +1,34 @@
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Axios from "axios";
+// icons
 import {
 	faCheckCircle,
 	faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Link } from "react-router-dom";
 
 const Verifyy = () => {
+	useEffect(() => {
+		const verifyPayment = async () => {
+			try {
+				const response = await Axios.post(
+					"https://api.zarinpal.com/pg/v4/payment/verify.json",
+					{
+						merchant_id: "4ced0a1e-4ad8-4309-9668-3ea3ae8e8897",
+						amount: "1000",
+						authority: "A00000000000000000000000000000000002",
+					}
+				);
+				const { code, card_pan, ref_id } = response.data.data;
+				console.log({ code, card_pan, ref_id });
+			} catch (err) {
+				console.log(err);
+			}
+		};
+		verifyPayment();
+	}, []);
+
 	return (
 		<div className="flex min-h-screen items-center justify-center gap-x-10 bg-gray-50 px-40">
 			<div className="flex min-w-max flex-col content-center items-center rounded-xl bg-white px-10 py-3 shadow-xl ">
