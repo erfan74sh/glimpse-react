@@ -7,10 +7,12 @@ import {
 	faCheckCircle,
 	faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../../components/Loader/Loader";
 
 const Verifyy = () => {
 	const [succsessfullPayment, setSuccsessfullPayment] = useState(false);
 	const [paymentData, setPaymentData] = useState({});
+	const [pending, setPending] = useState(true);
 	useEffect(() => {
 		const verifyPayment = async () => {
 			try {
@@ -22,13 +24,17 @@ const Verifyy = () => {
 						authority: "A00000000000000000000000000000000002",
 					}
 				);
-				setPaymentData({ ...response.data.data });
-				const { code, card_pan, ref_id } = response.data.data;
-				if (code === 100 || code === 101) {
-					setSuccsessfullPayment(true);
+				if (response.data.data) {
+					const { code, card_pan, ref_id } = response.data.data;
+					console.log({ code, card_pan, ref_id });
+					if (code === 100 || code === 101) {
+						setSuccsessfullPayment(true);
+					}
+					setPaymentData({ ...response.data.data });
 				}
-				console.log({ code, card_pan, ref_id });
+				setPending(false);
 			} catch (err) {
+				setPending(false);
 				console.log(err);
 			}
 		};
@@ -37,43 +43,57 @@ const Verifyy = () => {
 
 	return (
 		<div className="flex min-h-screen items-center justify-center gap-x-10 bg-gray-50 px-40">
-			<div className="flex min-w-max flex-col content-center items-center rounded-xl bg-white px-10 py-3 shadow-xl ">
-				<div className="flex w-full flex-col items-center gap-y-2 border-b-2 border-dashed py-5">
-					<div
-						className={`flex flex-col items-center gap-y-2 text-3xl font-bold ${
-							succsessfullPayment ? "text-green-500" : "text-red-500"
-						}`}
-					>
-						<FontAwesomeIcon
-							icon={succsessfullPayment ? faCheckCircle : faTimesCircle}
-							size="2x"
-						/>
-						<span>
-							{succsessfullPayment
-								? "پرداخت شما با موفقیت انجام شد!"
-								: "پرداخت ناموفق بود!"}
-						</span>
-					</div>
-					<div className="flex items-center gap-x-1 text-gray-500">
-						<span>شماره تراکنش:</span>
-						<span>۱۲۳۴۵۶۷۸۹</span>
-					</div>
-				</div>
-				<div className="flex w-full flex-col gap-y-10 py-5">
-					<div className="flex justify-between font-medium text-gray-500">
-						<span>مبلغ پرداخت شده:</span>
-						<span>100 هزار تومان</span>
-					</div>
-					<button className="self-center">
-						<Link
-							to="/"
-							className="bg-blue-550 flex items-center rounded-md px-5 py-1.5 text-white"
+			{pending ? (
+				<Loader />
+			) : (
+				<div className="flex min-w-max flex-col content-center items-center rounded-xl bg-white px-10 py-3 shadow-xl ">
+					<div className="flex w-full flex-col items-center gap-y-2 border-b-2 border-dashed py-5">
+						<div
+							className={`flex flex-col items-center gap-y-2 text-3xl font-bold ${
+								succsessfullPayment ? "text-green-500" : "text-red-500"
+							}`}
 						>
-							Go Home
-						</Link>
-					</button>
+							<FontAwesomeIcon
+								icon={succsessfullPayment ? faCheckCircle : faTimesCircle}
+								size="2x"
+							/>
+							<span>
+								{succsessfullPayment
+									? "پرداخت شما با موفقیت انجام شد!"
+									: "پرداخت ناموفق بود!"}
+							</span>
+						</div>
+						{succsessfullPayment && (
+							<div className="flex items-center gap-x-1 font-medium text-gray-500">
+								<span>شماره تراکنش:</span>
+								<span>{paymentData.ref_id}</span>
+							</div>
+						)}
+					</div>
+					{succsessfullPayment && (
+						<div className="flex w-full flex-col gap-y-3 py-5">
+							<div className="flex justify-between font-medium text-gray-500">
+								<span>مبلغ پرداخت شده:</span>
+								<span>100 هزار تومان</span>
+							</div>
+							<div className="flex justify-between font-medium text-gray-500">
+								<span>شماره کارت:</span>
+								<span>{paymentData.card_pan}</span>
+							</div>
+						</div>
+					)}
+					<div className="mt-10 mb-5">
+						<button className="self-center">
+							<Link
+								to="/"
+								className="bg-blue-550 flex items-center rounded-md px-5 py-1.5 text-white"
+							>
+								Go Home
+							</Link>
+						</button>
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 };
