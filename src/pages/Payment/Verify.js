@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from "axios";
@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Verifyy = () => {
+	const [succsessfullPayment, setSuccsessfullPayment] = useState(false);
 	useEffect(() => {
 		const verifyPayment = async () => {
 			try {
