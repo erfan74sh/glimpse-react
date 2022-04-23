@@ -10,6 +10,7 @@ import {
 
 const Verifyy = () => {
 	const [succsessfullPayment, setSuccsessfullPayment] = useState(false);
+	const [paymentData, setPaymentData] = useState({});
 	useEffect(() => {
 		const verifyPayment = async () => {
 			try {
@@ -21,6 +22,7 @@ const Verifyy = () => {
 						authority: "A00000000000000000000000000000000002",
 					}
 				);
+				setPaymentData({ ...response.data.data });
 				const { code, card_pan, ref_id } = response.data.data;
 				if (code === 100 || code === 101) {
 					setSuccsessfullPayment(true);
@@ -39,15 +41,17 @@ const Verifyy = () => {
 				<div className="flex w-full flex-col items-center gap-y-2 border-b-2 border-dashed py-5">
 					<div
 						className={`flex flex-col items-center gap-y-2 text-3xl font-bold ${
-							true ? "text-green-500" : "text-red-500"
+							succsessfullPayment ? "text-green-500" : "text-red-500"
 						}`}
 					>
 						<FontAwesomeIcon
-							icon={true ? faCheckCircle : faTimesCircle}
+							icon={succsessfullPayment ? faCheckCircle : faTimesCircle}
 							size="2x"
 						/>
 						<span>
-							{true ? "پرداخت شما با موفقیت انجام شد!" : "پرداخت ناموفق بود!"}
+							{succsessfullPayment
+								? "پرداخت شما با موفقیت انجام شد!"
+								: "پرداخت ناموفق بود!"}
 						</span>
 					</div>
 					<div className="flex items-center gap-x-1 text-gray-500">
