@@ -22,6 +22,9 @@ const Verifyy = () => {
 					}
 				);
 				const { code, card_pan, ref_id } = response.data.data;
+				if (code === 100 || code === 101) {
+					setSuccsessfullPayment(true);
+				}
 				console.log({ code, card_pan, ref_id });
 			} catch (err) {
 				console.log(err);
