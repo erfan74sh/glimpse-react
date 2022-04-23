@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 // components
 import PriceCard from "../cards/PriceCard";
 
@@ -58,6 +59,27 @@ const packagesCategories = [
 ];
 
 const RecomendedPackages = () => {
+	const handlePayment = async (price, description) => {
+		try {
+			const response = await Axios.post(
+				"https://api.zarinpal.com/pg/v4/payment/request.json",
+				{
+					merchant_id: "1344b5d4-0048-11e8-94db-005056a205be",
+					amount: price,
+					callback_url: "http://localhost:3000/pricing",
+					description: description,
+				}
+			);
+			const { code, authority } = response.data.data;
+			console.log({ code, authority });
+			if (code === 100 && authority) {
+				window.location.href = `https://www.zarinpal.com/pg/StartPay/${authority}`;
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	return (
 		<ul className="font-irancell flex justify-center gap-x-28">
 			{packagesCategories.map((category, idx) => {
@@ -68,8 +90,14 @@ const RecomendedPackages = () => {
 						</h3>
 						<ul className="flex flex-col gap-y-6">
 							{category.packagesList.map((_package, idx) => {
+								const description = `خرید بسته ${category.categoryName} ${_package.period} شامل ${_package.options[0]}`;
 								return (
-									<li key={idx}>
+									<li
+										key={idx}
+										onClick={() =>
+											handlePayment(_package.paymentpriceIRR, description)
+										}
+									>
 										<PriceCard
 											period={_package.period}
 											options={_package.options}
