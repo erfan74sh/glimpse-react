@@ -9,7 +9,7 @@ const Loader = ({ message }) => {
 				<div>
 					<LoaderAnimation />
 				</div>
-				<span>{message}</span>
+				{message && <span>{message}</span>}
 			</div>
 		</div>
 	);
