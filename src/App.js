@@ -9,6 +9,8 @@ import SignIn from "./pages/signIn-signUp/SignIn";
 import SignUp from "./pages/signIn-signUp/SignUp";
 import NotFound from "./pages/NotFound";
 import ProtectedRoutes from "./router/ProtectedRoutes";
+import Verifyy from "./pages/Payment/Verify";
+import Payment from "./pages/Payment/Payment";
 // lazy load routes
 const Result = lazy(() => import("./pages/Estimation/Result"));
 const Estimate = lazy(() => import("./pages/Estimation/Estimate"));
@@ -46,6 +48,9 @@ function App() {
 					<Route index element={<SignIn />} />
 					<Route path="sign-in" element={<SignIn />} />
 					<Route path="sign-up" element={<SignUp />} />
+				</Route>
+				<Route path="payment" element={<Payment />}>
+					<Route path="verify" element={<Verifyy />} />
 				</Route>
 				<Route path="*" element={<NotFound />} />
 			</Routes>
