@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from "axios";
+// components
+import Loader from "../../components/Loader/Loader";
 // icons
 import {
 	faCheckCircle,
 	faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import Loader from "../../components/Loader/Loader";
 
 const Verifyy = () => {
 	const [succsessfullPayment, setSuccsessfullPayment] = useState(false);
@@ -44,7 +45,7 @@ const Verifyy = () => {
 	return (
 		<div className="flex min-h-screen items-center justify-center gap-x-10 bg-gray-50 px-40">
 			{pending ? (
-				<Loader />
+				<Loader message="در حال بررسی تراکنش" />
 			) : (
 				<div className="flex min-w-max flex-col content-center items-center rounded-xl bg-white px-10 py-3 shadow-xl ">
 					<div className="flex w-full flex-col items-center gap-y-2 border-b-2 border-dashed py-5">
