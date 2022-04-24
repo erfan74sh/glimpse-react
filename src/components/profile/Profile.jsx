@@ -94,7 +94,9 @@ const Profile = ({ handleShowProjectHistoryModal }) => {
 				onClick={() => setShowProfileDropdown(!showProfileDropdown)}
 				ref={ref}
 			>
-				<span className="text-lg">{isLoggedIn && user["full_name"]}</span>
+				<span className="hidden text-lg lg:block">
+					{isLoggedIn && user["full_name"]}
+				</span>
 				<span className="flex h-10 w-10 items-center justify-center">
 					<FontAwesomeIcon icon={faUserCircle} className="text-3xl" />
 				</span>
