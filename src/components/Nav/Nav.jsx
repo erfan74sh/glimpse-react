@@ -21,6 +21,8 @@ const Header = ({ lang }) => {
 		setShowProjectHistoryModal(true);
 	};
 
+	const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
 	return (
 		<>
 			{showProjectHistoryModal && (
@@ -39,23 +41,24 @@ const Header = ({ lang }) => {
 						</Link>
 					</li>
 					<li className="order-1 md:order-2 md:w-7/12 lg:w-6/12 ">
-						<span className="flex h-10 w-10 items-center justify-start md:hidden">
-							<FontAwesomeIcon icon={faBars} className="text-2xl" />
+						<span
+							className="flex h-10 w-10 cursor-pointer items-center justify-start md:hidden"
+							onClick={() => {
+								setShowBurgerMenu(!showBurgerMenu);
+							}}
+						>
+							<FontAwesomeIcon
+								icon={showBurgerMenu ? faTimes : faBars}
+								className="text-2xl"
+							/>
 						</span>
-						<div className="bg-gray-650 fixed left-0 top-0 z-50 h-screen w-screen p-5 md:hidden">
-							<div className="mb-10 flex items-center justify-between">
-								<span className="flex h-10 w-10 items-center justify-start md:hidden">
-									<FontAwesomeIcon icon={faTimes} className="text-2xl" />
-								</span>
-								<Link to="/">
-									<img src={Logo} className="h-8 w-auto" alt="glimpse logo" />
-								</Link>
-								<span className="invisible block h-10 w-10">
-									<FontAwesomeIcon icon={faTimes} className="text-2xl" />
-								</span>
-							</div>
+						<div
+							className={`bg-gray-650 top-18 fixed left-0 z-10 h-screen w-screen border-t-2 ${
+								showBurgerMenu ? "" : " -translate-x-full"
+							} transform p-5 transition-all duration-300 md:hidden`}
+						>
 							<ul
-								className=" flex flex-col items-center justify-center gap-y-8 text-lg font-normal capitalize"
+								className="flex h-full flex-col items-center justify-center gap-y-8 text-lg font-normal capitalize"
 								dir={lang ? "rtl" : "ltr"}
 							>
 								<li>
@@ -64,7 +67,7 @@ const Header = ({ lang }) => {
 										className={({ isActive }) =>
 											` ${
 												isActive && "border-b-2 border-white text-white"
-											} py-1.5 px-0.5 transition-all hover:text-white`
+											} py-1.5 px-0.5 transition-transform hover:text-white`
 										}
 									>
 										{lang ? "صفحه اصلی" : "home"}
