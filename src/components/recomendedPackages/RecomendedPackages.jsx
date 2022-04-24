@@ -81,7 +81,7 @@ const RecomendedPackages = () => {
 	};
 
 	return (
-		<ul className="font-irancell flex justify-center gap-x-28">
+		<ul className="font-irancell lg:gap-x-18 flex flex-col justify-between gap-y-10 gap-x-5 md:flex-row lg:justify-center">
 			{packagesCategories.map((category, idx) => {
 				return (
 					<li key={idx} className="flex flex-col items-center gap-y-10">
