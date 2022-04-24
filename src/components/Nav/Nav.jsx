@@ -30,12 +30,12 @@ const Header = ({ lang }) => {
 			)}
 			<nav className={`bg-gray-650 text-gray-300 ${lang && "font-irancell"}`}>
 				<ul className="flex items-center justify-between px-9 py-4">
-					<li>
+					<li className="order-2 md:order-1">
 						<Link to="/">
 							<img src={Logo} className="h-8 w-auto" alt="glimpse logo" />
 						</Link>
 					</li>
-					<li className="w-1/2">
+					<li className="order-1 w-8/12 md:order-2 md:w-7/12 lg:w-6/12 ">
 						<ul
 							className="flex items-center justify-between text-lg font-normal capitalize"
 							dir={lang ? "rtl" : "ltr"}
@@ -106,7 +106,7 @@ const Header = ({ lang }) => {
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li className="order-3">
 						{isLoggedIn ? (
 							<Profile
 								handleShowProjectHistoryModal={handleShowProjectHistoryModal}
