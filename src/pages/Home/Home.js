@@ -33,7 +33,7 @@ const Home = () => {
 			)}
 			<Nav lang="persian" />
 			<Header handleShowModal={handleShowEstimationModal} />
-			<main className="mt-24 font-irancell" dir="rtl">
+			<main className="font-irancell mt-24" dir="rtl">
 				<EmbededAparat
 					videoId={16504825167}
 					videoUrl="https://www.aparat.com/embed/mVSx2?data[rnddiv]=16504825167&data[responsive]=yes"
@@ -49,10 +49,10 @@ const Home = () => {
 					videoId={50092033836}
 					videoUrl="https://www.aparat.com/embed/15r6z?data[rnddiv]=50092033836&data[responsive]=yes"
 				/>
-				<section className="pb-40">
+				<section className=" px-10 pb-40 lg:px-56">
 					<header className="relative mb-12 text-center">
-						<span className="absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform bg-blue-550"></span>
-						<h3 className="relative z-10 inline-block bg-white px-5 text-2xl font-bold text-blue-550">
+						<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform"></span>
+						<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
 							بسته‌های پیشنهادی
 						</h3>
 					</header>
