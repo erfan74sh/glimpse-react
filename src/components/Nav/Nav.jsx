@@ -203,29 +203,20 @@ const Header = ({ lang }) => {
 								handleShowProjectHistoryModal={handleShowProjectHistoryModal}
 							/>
 						) : (
-							<>
+							<div className="flex items-center gap-x-3">
 								<NavLink
 									to="/auth/sign-in"
-									className={({ isActive }) =>
-										` ${
-											isActive && "border-b-2 border-white text-white"
-										} py-1.5 px-0.5 transition-all hover:text-white`
-									}
+									className=" py-1.5 px-0.5 text-white transition-all"
 								>
 									{lang ? "ورود" : "login"}
 								</NavLink>
-								<span className="mx-2">{`/`}</span>
 								<NavLink
 									to="/auth/sign-up"
-									className={({ isActive }) =>
-										` ${
-											isActive && "border-b-2 border-white text-white"
-										} py-1.5 px-0.5 transition-all hover:text-white`
-									}
+									className="bg-blue-550 hidden rounded-md py-1 px-2 text-white transition-all md:inline"
 								>
 									{lang ? "ثبت‌نام" : "register"}
 								</NavLink>
-							</>
+							</div>
 						)}
 					</li>
 				</ul>
