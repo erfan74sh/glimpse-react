@@ -15,15 +15,15 @@ const ContactUs = () => {
 			<header className="">
 				<Nav lang="persian" />
 			</header>
-			<main className="px-24 py-16">
+			<main className="px-5 py-16 md:px-10 lg:px-24">
 				<header className="mb-16" dir="rtl">
-					<h1 className="font-irancell border-blue-550 text-blue-550 border-r-4 pr-3 text-3xl font-bold uppercase leading-8">
+					<h1 className="font-irancell border-blue-550 text-blue-550 text-center text-3xl font-bold uppercase leading-8 md:border-r-4 md:pr-3 md:text-right">
 						تماس با ما
 					</h1>
 				</header>
-				<div className="flex">
-					<section className="w-1/2 pr-20">
-						<ul className="text-gray-650 flex w-1/2 flex-col divide-gray-300">
+				<div className="lg:gap-x-18  flex flex-col gap-x-5 gap-y-10 md:flex-row xl:gap-x-24">
+					<section className="w-full md:w-1/2">
+						<ul className="text-gray-650 flex flex-col flex-wrap divide-gray-300">
 							<li className="flex gap-x-3 py-3">
 								<FontAwesomeIcon
 									icon={faInstagramSquare}
@@ -52,7 +52,7 @@ const ContactUs = () => {
 							دانشگاه شهید‌بهشتی، ساختمان شماره ۲ دانشکده معماری و شهرسازی
 						</div>
 					</section>
-					<section className="font-irancell relative w-1/2 pl-14" dir="rtl">
+					<section className="font-irancell relative w-full md:w-1/2" dir="rtl">
 						<form className="flex flex-col gap-y-6">
 							<h2 className="text-gray-650 text-lg font-semibold">
 								از ما بپرسید.
