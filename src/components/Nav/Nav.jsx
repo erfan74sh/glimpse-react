@@ -11,7 +11,7 @@ import { selectUser } from "../../features/auth/authSlice";
 // assets
 import Logo from "../../assets/images/logo-02.png";
 // icons
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ lang }) => {
 	const { isLoggedIn } = useSelector(selectUser);
@@ -42,6 +42,88 @@ const Header = ({ lang }) => {
 						<span className="flex h-10 w-10 items-center justify-start md:hidden">
 							<FontAwesomeIcon icon={faBars} className="text-2xl" />
 						</span>
+						<div className="bg-gray-650 fixed left-0 top-0 z-50 h-screen w-screen p-5 md:hidden">
+							<div className="mb-10 flex items-center justify-between">
+								<span className="flex h-10 w-10 items-center justify-start md:hidden">
+									<FontAwesomeIcon icon={faTimes} className="text-2xl" />
+								</span>
+								<Link to="/">
+									<img src={Logo} className="h-8 w-auto" alt="glimpse logo" />
+								</Link>
+								<span className="invisible block h-10 w-10">
+									<FontAwesomeIcon icon={faTimes} className="text-2xl" />
+								</span>
+							</div>
+							<ul
+								className=" flex flex-col items-center justify-center gap-y-8 text-lg font-normal capitalize"
+								dir={lang ? "rtl" : "ltr"}
+							>
+								<li>
+									<NavLink
+										to="/"
+										className={({ isActive }) =>
+											` ${
+												isActive && "border-b-2 border-white text-white"
+											} py-1.5 px-0.5 transition-all hover:text-white`
+										}
+									>
+										{lang ? "صفحه اصلی" : "home"}
+									</NavLink>
+								</li>
+								<li className="relative">
+									<NavLink
+										to="/result"
+										className={({ isActive }) =>
+											` ${
+												isActive && "border-b-2 border-white text-white"
+											} py-1.5 px-0.5 transition-all hover:text-white`
+										}
+										onClick={(e) => {
+											e.preventDefault();
+											setShowProjectHistoryModal(true);
+										}}
+									>
+										{lang ? "شبیه‌سازی‌ها" : "simulations"}
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/pricing"
+										className={({ isActive }) =>
+											` ${
+												isActive && "border-b-2 border-white text-white"
+											} py-1.5 px-0.5 transition-all hover:text-white`
+										}
+									>
+										{lang ? "هزینه‌ها" : "pricing"}
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/about-us"
+										className={({ isActive }) =>
+											` ${
+												isActive && "border-b-2 border-white text-white"
+											} py-1.5 px-0.5 transition-all hover:text-white`
+										}
+									>
+										{lang ? "درباره ما" : "about us"}
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/contact-us"
+										className={({ isActive }) =>
+											` ${
+												isActive && "border-b-2 border-white text-white"
+											} py-1.5 px-0.5 transition-all hover:text-white`
+										}
+									>
+										{lang ? "تماس با ما" : "contact us"}
+									</NavLink>
+								</li>
+							</ul>
+						</div>
 						<ul
 							className="hidden items-center justify-between text-lg font-normal capitalize md:flex"
 							dir={lang ? "rtl" : "ltr"}
