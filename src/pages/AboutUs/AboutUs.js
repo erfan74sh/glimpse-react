@@ -104,9 +104,12 @@ const AboutUs = () => {
 			<header className="">
 				<Nav lang="persian" />
 			</header>
-			<main className="px-24 py-16 font-irancell" dir="rtl">
-				<header className=" mb-20 px-24">
-					<h1 className="mb-14 border-r-4 border-blue-550  pr-3 text-2xl font-bold uppercase leading-8 text-blue-550">
+			<main
+				className="font-irancell lg:px-18 py-16 px-5 md:px-10 xl:px-24"
+				dir="rtl"
+			>
+				<header className="  mb-20 px-0 xl:px-24">
+					<h1 className="border-blue-550 text-blue-550 mb-14 pr-3 text-center  text-2xl font-bold uppercase leading-8 md:border-r-4 md:text-right">
 						درباره ما
 					</h1>
 					<p className="text-justify">
@@ -123,14 +126,13 @@ const AboutUs = () => {
 						بود.
 					</p>
 				</header>
-
-				<section className="flex flex-col gap-y-14 px-24 text-center">
+				<section className=" flex flex-col gap-y-14 px-0 text-center xl:px-24">
 					<div className="flex flex-wrap gap-y-10">
 						{members.map((member, idx) => {
 							return (
 								<article
 									key={idx}
-									className="flex w-1/4 flex-col items-center px-5 font-normal capitalize text-gray-650"
+									className="text-gray-650 flex w-full flex-col items-center px-5 font-normal capitalize sm:w-1/2 md:w-1/3 lg:w-1/4"
 								>
 									<MemberCard
 										fullName={member.fullName}
