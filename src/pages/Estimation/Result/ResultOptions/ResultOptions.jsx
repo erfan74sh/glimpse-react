@@ -25,10 +25,10 @@ const ResultOptions = ({ primData }) => {
 	};
 
 	return (
-		<section className="mt-6 flex gap-x-8 ">
-			<div className="flex items-center gap-x-4 overflow-hidden py-1">
+		<section className="mt-6 flex flex-col gap-x-8 gap-y-1 lg:flex-row ">
+			<div className="flex flex-col gap-x-4 gap-y-3 overflow-hidden py-1 md:flex-row lg:items-center">
 				<button
-					className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white"
+					className="bg-blue-550 border-blue-550 w-full rounded-md border p-2 capitalize text-white md:w-36"
 					onClick={() => setShowNewZone(!showNewZone)}
 				>
 					new zone
@@ -56,8 +56,8 @@ const ResultOptions = ({ primData }) => {
 				>
 					<Form
 						className={` ${
-							showNewZone ? "max-w-3xl" : ""
-						} flex max-w-0 items-center gap-x-2 transition-all duration-200`}
+							showNewZone ? "max-h-screen lg:max-w-3xl" : ""
+						} flex max-h-0 items-center gap-x-2 overflow-hidden transition-all duration-200 lg:max-w-0`}
 					>
 						<TextField
 							type="text"
@@ -78,9 +78,9 @@ const ResultOptions = ({ primData }) => {
 					</Form>
 				</Formik>
 			</div>
-			<div className="flex gap-x-4 overflow-hidden py-1">
+			<div className="flex flex-col gap-x-4 gap-y-3 overflow-hidden py-1 md:flex-row">
 				<button
-					className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white"
+					className="bg-blue-550 border-blue-550 w-full rounded-md border p-2 capitalize text-white md:w-36"
 					onClick={() => setShowNewAlter(!showNewAlter)}
 				>
 					new alternative
@@ -102,8 +102,8 @@ const ResultOptions = ({ primData }) => {
 				>
 					<Form
 						className={` ${
-							showNewAlter ? "max-w-3xl" : ""
-						} flex max-w-0 items-center gap-x-2 transition-all duration-200`}
+							showNewAlter ? "max-h-screen lg:max-w-3xl" : ""
+						} flex max-h-0 items-center gap-x-2 overflow-hidden transition-all duration-200 lg:max-w-0`}
 					>
 						<TextField
 							type="text"
@@ -126,8 +126,9 @@ const ResultOptions = ({ primData }) => {
 						search: `?subset=${primData.subset}&project_name=${primData.project_name}`,
 					}}
 					target={"_blank"}
+					className="w-full"
 				>
-					<button className="bg-blue-550 border-blue-550 w-36 rounded-md border p-2 capitalize text-white">
+					<button className="bg-blue-550 border-blue-550 w-full rounded-md border p-2 capitalize text-white md:w-36">
 						compare zones
 					</button>
 				</Link>
