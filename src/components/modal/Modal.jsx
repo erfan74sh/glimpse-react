@@ -10,7 +10,7 @@ const Modal = ({ closeModal, title, children }) => {
 	// ! it's second arg to closeModal function from props
 	return (
 		<div className="fixed z-30 flex h-screen w-screen items-center justify-center bg-gray-500 bg-opacity-80">
-			<section className="rounded-lg bg-white p-6 pt-7">
+			<section className="w-full rounded-lg bg-white px-3 py-4 sm:px-6 sm:py-6 md:w-auto">
 				<header className="flex items-center justify-between border-b border-gray-400 px-1 pb-1">
 					<h2 className="text-blue-550 font-medium capitalize">{title}</h2>
 					<button
