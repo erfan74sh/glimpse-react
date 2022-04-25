@@ -203,8 +203,8 @@ const StepThree = ({ prevStep, formData }) => {
 		>
 			<div className="estimation-modal__map-container">
 				<Form>
-					<div className="mb-8 flex items-end gap-x-7">
-						<div className="w-7/12">
+					<div className="mb-8 flex flex-col items-end gap-x-7 gap-y-5 md:flex-row">
+						<div className="w-full md:flex-grow">
 							<SelectField
 								selectOptions={locationOptions}
 								name="location"
@@ -213,17 +213,17 @@ const StepThree = ({ prevStep, formData }) => {
 								handleValue={() => null}
 							/>
 						</div>
-						<div className="flex w-5/12 gap-x-3">
+						<div className="flex w-full gap-x-3 md:flex-grow">
 							<button
 								type="button"
-								className="border-blue-550 text-blue-550 w-1/2 rounded-md border bg-white px-3 py-2 uppercase"
+								className="border-blue-550 text-blue-550 flex-grow rounded-md border bg-white px-3 py-2 uppercase"
 								onClick={prevStep}
 							>
 								prev
 							</button>
 							<button
 								type="submit"
-								className="bg-blue-550 w-1/2 rounded-md px-3 py-2 uppercase text-white"
+								className="bg-blue-550 flex-grow rounded-md px-3 py-2 uppercase text-white"
 							>
 								start estimation
 							</button>
