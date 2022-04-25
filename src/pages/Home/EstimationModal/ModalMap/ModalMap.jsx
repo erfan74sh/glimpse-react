@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Map, Marker, Overlay } from "pigeon-maps";
 import { useFormikContext } from "formik";
 
-const mapContainerStyle = {
-	width: "55vw",
-	height: "55vh",
-};
 const initialCenter = [32.42791, 53.688046];
 
 const markers = [
@@ -33,10 +29,8 @@ const ModalMap = () => {
 		}
 	}, [values.location]);
 	return (
-		<div>
+		<div className="h-100 lg:w-160">
 			<Map
-				height={mapContainerStyle.height}
-				width={mapContainerStyle.width}
 				center={center}
 				zoom={zoom}
 				onBoundsChanged={({ center, zoom }) => {
