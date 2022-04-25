@@ -138,7 +138,7 @@ const Result = ({ setLoading }) => {
 	return (
 		<>
 			<Nav />
-			<main className=" px-24 py-16" id="result__main">
+			<main className="px-5 py-16 lg:px-24" id="result__main">
 				<header className="mb-10">
 					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
 						result
