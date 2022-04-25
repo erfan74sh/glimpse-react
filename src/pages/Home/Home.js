@@ -39,8 +39,12 @@ const Home = () => {
 					videoUrl="https://www.aparat.com/embed/mVSx2?data[rnddiv]=16504825167&data[responsive]=yes"
 				/>
 				<section id="work-frame">
-					<div className="mb-16 flex items-center justify-center">
-						<img src={LifeCycleImg} alt="life-cycle" className="h-auto w-1/2" />
+					<div className="mb-16 flex items-center justify-center px-5">
+						<img
+							src={LifeCycleImg}
+							alt="life-cycle"
+							className="h-auto w-full md:w-4/5 lg:w-3/5 xl:w-1/2"
+						/>
 					</div>
 					<WorkingProcess />
 					<Simulations />
