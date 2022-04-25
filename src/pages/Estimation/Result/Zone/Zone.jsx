@@ -8,7 +8,11 @@ import PdfDoc from "../PdfDoc";
 import PdfDocVisualComfort from "../PdfDoc/PdfDocVisualComfort";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+	faExclamationCircle,
+	faEye,
+	faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 // lazy loading pdf components
 const PDFDownloadLink = lazy(() =>
@@ -147,19 +151,27 @@ const Zone = ({ projects }) => {
 	};
 	return (
 		<>
-			<section className="max-h-152 flex items-center justify-center overflow-hidden">
+			<section className="max-h-152 relative flex items-center justify-center overflow-hidden">
 				{series.length > 0 ? <Chart series={series} /> : "loading..."}
+				<span className="absolute flex h-full w-full items-center justify-center bg-white bg-opacity-50 px-3 text-lg font-medium text-red-500 backdrop-blur-lg backdrop-filter sm:hidden">
+					{" "}
+					<FontAwesomeIcon
+						icon={faExclamationCircle}
+						className=" mr-2 text-2xl"
+					/>
+					rotate your phone to see chart!
+				</span>
 			</section>
 			<PointsAndGrades subset={currentSubset} alternatives={series} />
-			<section className="mt-20 flex h-96 flex-col px-40">
-				<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
+			<section className="mt-20 flex h-96 flex-col lg:px-40">
+				<header className="mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase lg:mx-8">
 					<h2>alternatives</h2>
 				</header>
 				<ul className="flex flex-col gap-y-9">
 					{series.map((entry, i) => (
 						<li
 							key={i}
-							className=" shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
+							className=" shadow-full-sm relative flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm lg:mx-16"
 							data-name={entry.name}
 						>
 							{/* todo: remove this */}
