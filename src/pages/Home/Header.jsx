@@ -1,28 +1,34 @@
 import React from "react";
+// assets
+import HeaderImg from "../../assets/images/header-image.png";
 
 const Header = ({ handleShowModal }) => {
 	return (
 		<header
-			className="relative mt-10 flex flex-col items-center font-irancell"
+			className="font-irancell relative mt-10 flex flex-col items-center"
 			id="header__hero"
 		>
-			<div className="relative h-screen w-1/2">
-				<section className="absolute bottom-44 left-0 w-max ">
+			<div className="relative">
+				<img src={HeaderImg} alt="header" className="" />
+				<section className="absolute top-1/2 flex w-full transform flex-col items-center px-5 md:px-10 lg:-translate-y-40 lg:items-center">
 					<h1 className="mb-4 text-5xl font-extrabold text-white">BSPsim</h1>
 					<button
 						type="button"
-						className="outline-none rounded-b-full rounded-t-full border-none bg-white px-9 py-4 text-lg font-medium text-blue-550 transition-all hover:bg-blue-550 hover:text-white"
+						className="text-blue-550 hover:bg-blue-550 rounded-b-full rounded-t-full border-none bg-white px-9 py-4 text-lg font-medium outline-none transition-all hover:text-white"
 						onClick={handleShowModal}
 					>
 						شروع به شبیه‌سازی
 					</button>
 				</section>
 			</div>
-			<section className="w-1/2 text-lg font-medium" dir="rtl">
-				<h2 className="mb-9 text-center text-2xl font-bold text-blue-550">
+			<section
+				className="xl:px-18 px-5 text-lg font-medium md:px-10 lg:absolute lg:bottom-0 lg:w-4/5 xl:w-2/3"
+				dir="rtl"
+			>
+				<h2 className="text-blue-550 mb-9 text-center text-2xl font-bold">
 					BSPsim چیست؟
 				</h2>
-				<p className="text-justify leading-6 text-gray-650">
+				<p className="text-gray-650 text-justify leading-6">
 					BSPsim ابزار جامع و یکپارچه شبیه‌سازی است که به کمک الگوریتم‌های هوش
 					مصنوعی به ارزیابی عملکرد ساختمان می‌پردازد. این ابزار برای تمام
 					ذینفعان صنعت ساختمان، فارغ از تخصص آنها، ارزیابی‌هایی در حوزه‌های
