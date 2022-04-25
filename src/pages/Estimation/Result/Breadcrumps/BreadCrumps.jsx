@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // icons
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
 // hooks
 import useOutsideClick from "../../../../hooks/useOutsideClick";
 
@@ -24,7 +23,7 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 
 	return (
 		<div
-			className={`bg-gray-350 relative w-36 rounded-md p-2 text-sm font-medium text-white ${
+			className={`bg-gray-350 relative w-full rounded-md p-2 text-sm font-medium text-white md:w-36 ${
 				showMenu && "ring-1 ring-gray-500"
 			}`}
 			ref={selectRef}
@@ -71,39 +70,15 @@ const DropdownMenu = ({ items, name, handleSearchParams, selected }) => {
 	);
 };
 
-const AlternativeList = ({ items }) => {
-	return (
-		<ul className="flex items-center gap-x-1 text-gray-500">
-			{items &&
-				items.map((alternative, idx) => {
-					return (
-						<li key={idx}>
-							{idx !== 0 ? <span>{`/ `}</span> : <span>{`: `}</span>}
-							<NavLink
-								to={`${idx}`}
-								className={({ isActive }) =>
-									isActive ? "text-blue-550" : "text-gray-500"
-								}
-							>
-								{alternative}
-							</NavLink>
-						</li>
-					);
-				})}
-		</ul>
-	);
-};
-
 const BreadCrumps = ({
 	projectsList,
 	zoneList,
-	alternativeList,
 	currentProjectName,
 	currentZoneName,
 	handleSearchParams,
 }) => {
 	return (
-		<div className="flex items-center gap-x-5">
+		<div className="flex items-center justify-between gap-x-5  md:justify-start">
 			<DropdownMenu
 				items={projectsList}
 				name="project_name"
@@ -117,7 +92,6 @@ const BreadCrumps = ({
 				selected={currentZoneName}
 				handleSearchParams={handleSearchParams}
 			/>
-			<AlternativeList items={alternativeList} />
 		</div>
 	);
 };
