@@ -13,12 +13,12 @@ const WorkingProcess = () => {
 	return (
 		<section>
 			<header className="relative text-center">
-				<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-2/3 translate-y-1/2 -translate-x-1/2 transform"></span>
+				<span className="bg-blue-550 absolute left-1/2 top-1/2 z-0 block h-0.5 w-11/12 translate-y-1/2 -translate-x-1/2 transform md:w-2/3"></span>
 				<h3 className="text-blue-550 relative z-10 inline-block bg-white px-5 text-2xl font-bold">
 					ساختار کلی و مراحل
 				</h3>
 			</header>
-			<ul className="flex items-center justify-evenly  px-56 py-16">
+			<ul className="lg:px-18 flex flex-col items-center justify-evenly gap-y-6 px-5 py-16  md:flex-row xl:px-56">
 				<li className="relative flex flex-col items-center">
 					<div className="shadow-neo flex h-32 w-32 items-center justify-center rounded-full bg-white">
 						<img
@@ -27,11 +27,11 @@ const WorkingProcess = () => {
 							className="h-1/2 w-1/2 object-contain"
 						/>
 					</div>
-					<span className="absolute top-full min-w-full pt-1 text-center font-medium">
+					<span className="min-w-full pt-1 text-center font-medium">
 						شبیه‌سازی
 					</span>
 				</li>
-				<li>
+				<li className="hidden md:inline-block">
 					<FontAwesomeIcon
 						icon={faAngleLeft}
 						className="text-4xl text-gray-400"
@@ -45,11 +45,11 @@ const WorkingProcess = () => {
 							className="h-1/2 w-1/2 object-contain"
 						/>
 					</div>
-					<span className="absolute top-full min-w-full pt-1 text-center font-medium">
+					<span className="min-w-full pt-1 text-center font-medium">
 						تحلیل و بررسی
 					</span>
 				</li>
-				<li>
+				<li className="hidden md:inline-block">
 					<FontAwesomeIcon
 						icon={faAngleLeft}
 						className="text-4xl text-gray-400"
@@ -63,11 +63,11 @@ const WorkingProcess = () => {
 							className="h-1/2 w-1/2 object-contain"
 						/>
 					</div>
-					<span className="absolute top-full min-w-full pt-1 text-center font-medium">
+					<span className="min-w-full pt-1 text-center font-medium">
 						ساخت مجموعه داده
 					</span>
 				</li>
-				<li>
+				<li className="hidden md:inline-block">
 					<FontAwesomeIcon
 						icon={faAngleLeft}
 						className="text-4xl text-gray-400"
@@ -81,11 +81,11 @@ const WorkingProcess = () => {
 							className="h-1/2 w-1/2 object-contain"
 						/>
 					</div>
-					<span className=" absolute top-full min-w-full pt-1 text-center font-medium">
+					<span className=" min-w-full pt-1 text-center font-medium">
 						هوش مصنوعی
 					</span>
 				</li>
-				<li>
+				<li className="hidden md:inline-block">
 					<FontAwesomeIcon
 						icon={faAngleLeft}
 						className="text-4xl text-gray-400"
@@ -99,9 +99,7 @@ const WorkingProcess = () => {
 							className="h-3/5 w-3/5 object-contain"
 						/>
 					</div>
-					<span className="absolute top-full min-w-full pt-1 text-center font-medium">
-						نتایج
-					</span>
+					<span className="min-w-full pt-1 text-center font-medium">نتایج</span>
 				</li>
 			</ul>
 		</section>
