@@ -9,7 +9,7 @@ const VisualGeometry = () => {
 	const inputData = useSelector(selectVisualComfortData);
 	return (
 		<>
-			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
+			<h2 className="mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 				3D view
 			</h2>
 			<div className="">
