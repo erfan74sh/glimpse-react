@@ -8,7 +8,11 @@ import Chart from "../Chart";
 import PdfDoc from "../PdfDoc";
 import PointsAndGrades from "../PiontsAndGrades/PointsAndGrades";
 // icons
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import {
+	faEye,
+	faEyeSlash,
+	faExclamationCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
@@ -171,22 +175,30 @@ const CompareZones = () => {
 	return (
 		<>
 			<Nav />
-			<main className=" px-24 py-16" id="compare-zone__main">
+			<main className="px-5 py-16 lg:px-24" id="compare-zone__main">
 				<header className="mb-10">
 					<h1 className="border-blue-550 text-blue-550 border-l-8 pl-3 text-3xl font-bold uppercase leading-8">
 						compare zones
 					</h1>
 				</header>
 				<div>
-					<section className="max-h-152 flex items-center justify-center overflow-hidden">
+					<section className="max-h-152 relative flex items-center justify-center overflow-hidden">
 						{series.length > 0 ? <Chart series={series} /> : "loading..."}
+						<span className="absolute flex h-full w-full items-center justify-center bg-white bg-opacity-50 px-3 text-lg font-medium text-red-500 backdrop-blur-lg backdrop-filter sm:hidden">
+							{" "}
+							<FontAwesomeIcon
+								icon={faExclamationCircle}
+								className=" mr-2 text-2xl"
+							/>
+							rotate your phone to see chart!
+						</span>
 					</section>
 					<PointsAndGrades subset={currentSubset} alternatives={series} />
-					<section className="mt-20 flex flex-col gap-y-10 px-40">
+					<section className="mt-20 flex flex-col gap-y-10 xl:px-40">
 						{zoneList.map((zoneName, idx) => {
 							return (
 								<div key={idx}>
-									<header className="mx-8 mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase">
+									<header className="mb-9 flex items-center justify-between border-b border-gray-500 pb-2 text-xl font-normal uppercase lg:mx-8">
 										<h2>{zoneName}</h2>
 									</header>
 									<ul className="flex flex-col gap-y-6">
@@ -197,7 +209,7 @@ const CompareZones = () => {
 											.map((entry, i) => (
 												<li
 													key={i}
-													className="shadow-full-sm relative mx-16 flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm"
+													className="shadow-full-sm relative flex content-between items-center rounded-md bg-white px-4 py-3.5 text-sm lg:mx-16"
 													data-name={entry.name}
 												>
 													{/* <PDFViewer className="h-screen w-full">
