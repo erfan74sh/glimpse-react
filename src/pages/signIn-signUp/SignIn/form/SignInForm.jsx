@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
 // services
 import { login } from "../../../../features/auth/authSlice";
+// icons
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const SignInForm = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	const [isRequestPending, setIsRequestPending] = useState(false);
+
 	const handleLogin = (username, password) => {
+		setIsRequestPending(true);
 		dispatch(
 			login(
 				`grant_type=&username=${username}&password=${password}&scope=&client_id=&client_secret=`
@@ -23,7 +29,8 @@ const SignInForm = () => {
 				navigate("/");
 				window.location.reload();
 			})
-			.catch((er) => console.log(er));
+			.catch((er) => console.log(er))
+			.then(() => setIsRequestPending(false));
 	};
 
 	const validate = yup.object({
@@ -62,7 +69,11 @@ const SignInForm = () => {
 					type="submit"
 					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
 				>
-					log in
+					{isRequestPending ? (
+						<FontAwesomeIcon icon={faCircleNotch} spin />
+					) : (
+						"log in"
+					)}
 				</button>
 			</Form>
 		</Formik>
