@@ -54,135 +54,133 @@ const VisualMaterial = () => {
 
 	return (
 		<>
-			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
+			<h2 className="mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 				construction
 			</h2>
-			<div className="">
-				<div className="flex w-full flex-col justify-center gap-y-10 px-10 pt-5">
-					<div className="flex justify-center gap-x-10">
-						<article className="relative flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{!data.wall_uvalue ? (
-								<span className="text-xl font-semibold uppercase text-white">
-									wall
-								</span>
-							) : (
-								<div
-									className="group relative h-full w-full"
-									onClick={(e) =>
-										e.currentTarget
-											.getElementsByTagName("img")[0]
-											.requestFullscreen()
+			<div className="flex w-full flex-col justify-center gap-y-3 pt-5 lg:gap-y-10 lg:px-10">
+				<div className="flex justify-center gap-x-3 lg:gap-x-10">
+					<article className="relative flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
+						{!data.wall_uvalue ? (
+							<span className="text-xl font-semibold uppercase text-white">
+								wall
+							</span>
+						) : (
+							<div
+								className="group relative h-full w-full"
+								onClick={(e) =>
+									e.currentTarget
+										.getElementsByTagName("img")[0]
+										.requestFullscreen()
+								}
+							>
+								<img
+									src={
+										wallImages.filter(
+											(material) => material.val === data.wall_uvalue
+										)[0].url
 									}
-								>
-									<img
-										src={
-											wallImages.filter(
-												(material) => material.val === data.wall_uvalue
-											)[0].url
-										}
-										alt="wall 1"
-										className="fullscrn-bg-white h-full w-full object-contain"
-									/>
-									<FontAwesomeIcon
-										icon={faExpand}
-										className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
-									/>
-								</div>
-							)}
-						</article>
-						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{!data.roof_uvalue ? (
-								<span className="text-xl font-semibold uppercase text-white">
-									roof
-								</span>
-							) : (
-								<div
-									className="group relative h-full w-full"
-									onClick={(e) =>
-										e.currentTarget
-											.getElementsByTagName("img")[0]
-											.requestFullscreen()
+									alt="wall 1"
+									className="fullscrn-bg-white h-full w-full object-contain"
+								/>
+								<FontAwesomeIcon
+									icon={faExpand}
+									className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
+								/>
+							</div>
+						)}
+					</article>
+					<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
+						{!data.roof_uvalue ? (
+							<span className="text-xl font-semibold uppercase text-white">
+								roof
+							</span>
+						) : (
+							<div
+								className="group relative h-full w-full"
+								onClick={(e) =>
+									e.currentTarget
+										.getElementsByTagName("img")[0]
+										.requestFullscreen()
+								}
+							>
+								<img
+									src={
+										roofImages.filter(
+											(material) => material.val === data.roof_uvalue
+										)[0].url
 									}
-								>
-									<img
-										src={
-											roofImages.filter(
-												(material) => material.val === data.roof_uvalue
-											)[0].url
-										}
-										alt="wall 1"
-										className="fullscrn-bg-white h-full w-full object-contain"
-									/>
-									<FontAwesomeIcon
-										icon={faExpand}
-										className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
-									/>
-								</div>
-							)}
-						</article>
-					</div>
-					<div className="flex justify-center gap-x-10">
-						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{!data.floor_uvalue ? (
-								<span className="text-xl font-semibold uppercase text-white">
-									floor
-								</span>
-							) : (
-								<div
-									className="group relative h-full w-full"
-									onClick={(e) =>
-										e.currentTarget
-											.getElementsByTagName("img")[0]
-											.requestFullscreen()
+									alt="wall 1"
+									className="fullscrn-bg-white h-full w-full object-contain"
+								/>
+								<FontAwesomeIcon
+									icon={faExpand}
+									className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
+								/>
+							</div>
+						)}
+					</article>
+				</div>
+				<div className="flex justify-center gap-x-3 lg:gap-x-10">
+					<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
+						{!data.floor_uvalue ? (
+							<span className="text-xl font-semibold uppercase text-white">
+								floor
+							</span>
+						) : (
+							<div
+								className="group relative h-full w-full"
+								onClick={(e) =>
+									e.currentTarget
+										.getElementsByTagName("img")[0]
+										.requestFullscreen()
+								}
+							>
+								<img
+									src={
+										floorImages.filter(
+											(material) => material.val === data.floor_uvalue
+										)[0].url
 									}
-								>
-									<img
-										src={
-											floorImages.filter(
-												(material) => material.val === data.floor_uvalue
-											)[0].url
-										}
-										alt="wall 1"
-										className="fullscrn-bg-white h-full w-full object-contain"
-									/>
-									<FontAwesomeIcon
-										icon={faExpand}
-										className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
-									/>
-								</div>
-							)}
-						</article>
-						<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
-							{!data.window_uvalue ? (
-								<span className="text-xl font-semibold uppercase text-white">
-									window
-								</span>
-							) : (
-								<div
-									className="group relative h-full w-full"
-									onClick={(e) =>
-										e.currentTarget
-											.getElementsByTagName("img")[0]
-											.requestFullscreen()
+									alt="wall 1"
+									className="fullscrn-bg-white h-full w-full object-contain"
+								/>
+								<FontAwesomeIcon
+									icon={faExpand}
+									className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
+								/>
+							</div>
+						)}
+					</article>
+					<article className="flex h-52 w-52 items-center justify-center rounded-2xl bg-gray-400">
+						{!data.window_uvalue ? (
+							<span className="text-xl font-semibold uppercase text-white">
+								window
+							</span>
+						) : (
+							<div
+								className="group relative h-full w-full"
+								onClick={(e) =>
+									e.currentTarget
+										.getElementsByTagName("img")[0]
+										.requestFullscreen()
+								}
+							>
+								<img
+									src={
+										windowImages.filter(
+											(material) => material.val === data.window_uvalue
+										)[0].url
 									}
-								>
-									<img
-										src={
-											windowImages.filter(
-												(material) => material.val === data.window_uvalue
-											)[0].url
-										}
-										alt="wall 1"
-										className="fullscrn-bg-white h-full w-full object-contain"
-									/>
-									<FontAwesomeIcon
-										icon={faExpand}
-										className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
-									/>
-								</div>
-							)}
-						</article>
-					</div>
+									alt="wall 1"
+									className="fullscrn-bg-white h-full w-full object-contain"
+								/>
+								<FontAwesomeIcon
+									icon={faExpand}
+									className="absolute bottom-0 right-0 -translate-y-4 -translate-x-4 transform cursor-pointer text-2xl text-gray-600 transition group-hover:scale-125 group-hover:text-gray-700"
+								/>
+							</div>
+						)}
+					</article>
 				</div>
 			</div>
 		</>
