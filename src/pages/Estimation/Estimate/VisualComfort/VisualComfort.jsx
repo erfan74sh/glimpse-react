@@ -111,13 +111,13 @@ const ThermalComfort = ({ inputData, primData }) => {
 	];
 	return (
 		<>
-			<section className="relative w-2/5 pr-10">
+			<section className="relative w-full lg:w-2/5 lg:pr-10">
 				{steps[step]}
 				<div className="absolute right-0 top-1/2 h-3/4 -translate-y-1/2 transform">
 					<ProgressBar currentStep={step} totalSteps={3} />
 				</div>
 			</section>
-			<section className="flex w-3/5 flex-col pl-24">
+			<section className="flex w-full flex-col lg:w-3/5 lg:pl-24">
 				{visualSteps[step]}
 				<button
 					type="submit"
