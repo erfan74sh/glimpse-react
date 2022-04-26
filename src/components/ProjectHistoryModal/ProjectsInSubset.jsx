@@ -8,7 +8,10 @@ import visualComfortServices from "../../services/estimations/visualComfort.serv
 import energyConsumptionServices from "../../services/estimations/energyConsumption.service";
 import { logout } from "../../features/auth/authSlice";
 // icons
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import {
+	faCaretDown,
+	faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProjectsInSubset = ({ subset }) => {
 	const dispatch = useDispatch();
@@ -71,36 +74,43 @@ const ProjectsInSubset = ({ subset }) => {
 					showDropdown ? "max-h-screen" : "max-h-0"
 				}`}
 			>
-				<ul className="flex flex-col gap-y-5 py-5 px-2">
-					{projectsInSubset.map((project, idx) => {
-						return (
-							<li
-								className="w-133 shadow-full-sm rounded-md bg-white"
-								key={idx}
-							>
-								<Link
-									to={{
-										pathname: "/result",
-										search: `?subset=${
-											subset === "visual comfort"
-												? "visual_comfort"
-												: "energy_consumption"
-										}&project_name=${project.project_name}&zone_name=${
-											project.zone_name
-										}`,
-									}}
-									target="_blank"
-									className="flex items-center justify-between p-3 text-gray-600"
+				{projectsInSubset.length > 0 ? (
+					<ul className="flex flex-col gap-y-5 py-5 px-2">
+						{projectsInSubset.map((project, idx) => {
+							return (
+								<li
+									className="w-133 shadow-full-sm rounded-md bg-white"
+									key={idx}
 								>
-									<span className="font-semibold ">{`${idx + 1} _ ${
-										project.project_name
-									}`}</span>
-									<span className="text-xs">Last edit :1/2/2022</span>
-								</Link>
-							</li>
-						);
-					})}
-				</ul>
+									<Link
+										to={{
+											pathname: "/result",
+											search: `?subset=${
+												subset === "visual comfort"
+													? "visual_comfort"
+													: "energy_consumption"
+											}&project_name=${project.project_name}&zone_name=${
+												project.zone_name
+											}`,
+										}}
+										target="_blank"
+										className="flex items-center justify-between p-3 text-gray-600"
+									>
+										<span className="font-semibold ">{`${idx + 1} _ ${
+											project.project_name
+										}`}</span>
+										<span className="text-xs">Last edit :1/2/2022</span>
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+				) : (
+					<div className="flex items-center justify-center gap-x-1 py-3 font-medium text-yellow-500">
+						<FontAwesomeIcon icon={faExclamationTriangle} />
+						<span>You don't have any project in this category!</span>
+					</div>
+				)}
 			</div>
 		</article>
 	);
