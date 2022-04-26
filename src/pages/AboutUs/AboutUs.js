@@ -4,7 +4,7 @@ import Nav from "../../components/Nav";
 import MemberCard from "./memberCard/MemberCard";
 
 import pic01 from "./../../assets/profile/01.png";
-import pic02 from "./../../assets/profile/02.png";
+import pic02 from "./../../assets/profile/02.jpeg";
 import pic03 from "./../../assets/profile/03.png";
 import pic04 from "./../../assets/profile/04.png";
 import pic05 from "./../../assets/profile/05.png";
@@ -70,7 +70,7 @@ const AboutUs = () => {
 		{
 			fullName: "آرمان نیکخواه",
 			education: "ارشد انرژی و معماری",
-			activityScope: "آنالیز داده",
+			activityScope: "هوش مصنوعی - تحقیق و توسعه",
 			image: pic02,
 		},
 		{
