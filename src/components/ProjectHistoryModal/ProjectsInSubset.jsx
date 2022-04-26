@@ -10,12 +10,15 @@ import { logout } from "../../features/auth/authSlice";
 // icons
 import {
 	faCaretDown,
+	faCircleNotch,
 	faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectsInSubset = ({ subset }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
+	const [isRequestPending, setIsRequestPending] = useState(true);
 
 	const [projectsInSubset, setProjectsInSubset] = useState([]);
 	useEffect(() => {
@@ -46,6 +49,8 @@ const ProjectsInSubset = ({ subset }) => {
 					dispatch(logout());
 					navigate("/auth");
 				}
+			} finally {
+				setIsRequestPending(false);
 			}
 		};
 		fetchData();
@@ -61,12 +66,20 @@ const ProjectsInSubset = ({ subset }) => {
 			>
 				<span className="text-gray-650 px-0.5 font-medium">{subset}</span>
 				<span className="px-2">
-					<FontAwesomeIcon
-						icon={faCaretDown}
-						className={`transform text-gray-500 transition-all delay-300 ${
-							showDropdown && "rotate-180"
-						}`}
-					/>
+					{isRequestPending ? (
+						<FontAwesomeIcon
+							icon={faCircleNotch}
+							spin
+							className="text-gray-500"
+						/>
+					) : (
+						<FontAwesomeIcon
+							icon={faCaretDown}
+							className={`transform text-gray-500 transition-all delay-300 ${
+								showDropdown && "rotate-180"
+							}`}
+						/>
+					)}
 				</span>
 			</h4>
 			<div
