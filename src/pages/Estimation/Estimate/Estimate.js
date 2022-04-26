@@ -130,7 +130,10 @@ const Estimate = () => {
 	}, [params, dispatch, navigate]);
 
 	return (
-		<main className=" px-24 py-10" id="estimate__main">
+		<main
+			className="py-10 px-5 pb-32 md:px-10 lg:px-14 xl:px-24"
+			id="estimate__main"
+		>
 			<header className="mb-10">
 				<h1 className="border-blue-550 text-blue-550 flex justify-between border-l-8 pl-3 text-2xl font-bold uppercase leading-8">
 					{primaryData.subset === "energy_consumption"
@@ -149,7 +152,7 @@ const Estimate = () => {
 					/>
 				</section>
 			</header>
-			<main className="flex">
+			<main className="flex flex-col gap-y-14 lg:flex-row">
 				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual_comfort" && (
 					<VisualComfort inputData={visualInputData} primData={primaryData} />
