@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as yup from "yup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import TextField from "../../../../components/inputs/TextField/TextField";
 import SelectField from "../../../../components/inputs/SelectField";
-
 import { signin } from "../../../../features/auth/authSlice";
+// icons
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const SignUpForm = ({ handleSuccessful }) => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
+	const [isRequestPending, setIsRequestPending] = useState(false);
+
 	const handleSignup = (formVal) => {
+		setIsRequestPending(true);
+
 		dispatch(signin(formVal))
 			.unwrap()
 			.then(() => {
@@ -24,7 +30,10 @@ const SignUpForm = ({ handleSuccessful }) => {
 					navigate("/auth/sign-in");
 				}, 3000);
 			})
-			.catch(() => handleSuccessful(false));
+			.catch(() => handleSuccessful(false))
+			.then(() => {
+				setIsRequestPending(false);
+			});
 	};
 
 	const scopeOfActivityOptions = [
@@ -112,7 +121,11 @@ const SignUpForm = ({ handleSuccessful }) => {
 					type="submit"
 					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
 				>
-					register
+					{isRequestPending ? (
+						<FontAwesomeIcon icon={faCircleNotch} spin />
+					) : (
+						"register"
+					)}
 				</button>
 			</Form>
 		</Formik>
