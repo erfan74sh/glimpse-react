@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // import { useSelector, useDispatch } from "react-redux";
 // state
 // import {
@@ -56,8 +57,8 @@ const ProfileInfo = ({ user }) => {
 						className="flex flex-col gap-y-10 py-8 px-4"
 						onSubmit={(e) => handleSubmit(e)}
 					>
-						<div className="flex gap-x-6 ">
-							<fieldset className="flex w-1/2 flex-col gap-y-6">
+						<div className="flex flex-col gap-x-6 gap-y-6 md:flex-row ">
+							<fieldset className="flex flex-col gap-y-6 md:w-1/2">
 								<div className="flex flex-col text-lg capitalize">
 									<label className="font-bold">fullname</label>
 									<input
@@ -89,7 +90,7 @@ const ProfileInfo = ({ user }) => {
 									/>
 								</div>
 							</fieldset>
-							<fieldset className="flex w-1/2 flex-col gap-y-6">
+							<fieldset className="flex flex-col gap-y-6 md:w-1/2">
 								<div className="flex flex-col text-lg capitalize">
 									<label className="font-bold">address</label>
 									<input
@@ -134,8 +135,8 @@ const ProfileInfo = ({ user }) => {
 					</form>
 				)}
 				{!isEdit && (
-					<section className="flex gap-x-6 py-8 px-4">
-						<div className="flex w-1/2 flex-col gap-y-6">
+					<section className="flex flex-col gap-x-6 gap-y-6 py-8 px-4 md:flex-row">
+						<div className="flex flex-col gap-y-6 md:w-1/2">
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">full name</span>
 								<span>{user.full_name}</span>
@@ -149,7 +150,7 @@ const ProfileInfo = ({ user }) => {
 								<span>{user.scope_of_activity}</span>
 							</div>
 						</div>
-						<div className="flex w-1/2 flex-col gap-y-6">
+						<div className="flex flex-col gap-y-6 md:w-1/2">
 							<div className="flex flex-col text-lg capitalize">
 								<span className="font-bold">address</span>
 								<span>{user.address}</span>
@@ -171,12 +172,14 @@ const ProfileInfo = ({ user }) => {
 					<h3 className="text-gray-650 text-2xl font-bold capitalize">
 						account status
 					</h3>
-					<button
-						type="button"
-						className="border-blue-550 text-blue-550 border-b-2 text-xl font-normal capitalize"
-					>
-						charge
-					</button>
+					<Link to="/pricing">
+						<button
+							type="button"
+							className="border-blue-550 text-blue-550 border-b-2 text-xl font-normal capitalize"
+						>
+							charge
+						</button>
+					</Link>
 				</header>
 				<section className="py-8 px-4">
 					<div className="flex flex-col text-lg capitalize">
