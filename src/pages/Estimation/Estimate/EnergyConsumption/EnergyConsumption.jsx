@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, createSearchParams, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // components
 import ProgressBar from "../../../../components/progress-bar";
 import Geometry from "./FormSteps/Geometry";
@@ -18,6 +19,8 @@ import VisualReview from "./VisualSteps/Review/VisualReview";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 import { logout } from "../../../../features/auth/authSlice";
+// icons
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const EnergyConsumption = ({ inputData, primData }) => {
 	const params = useParams();
@@ -29,6 +32,8 @@ const EnergyConsumption = ({ inputData, primData }) => {
 	const { subset, project_name, zone_name } = primData;
 
 	const [step, setStep] = useState(0);
+
+	const [isRequestPending, setIsRequestPending] = useState(false);
 
 	const handleNextStep = () => {
 		setStep((prev) => prev + 1);
@@ -43,6 +48,7 @@ const EnergyConsumption = ({ inputData, primData }) => {
 		let tempInputData = { ...inputData };
 		tempInputData.wwr_north = inputData.wwr_north / 100;
 		tempInputData.wwr_south = inputData.wwr_south / 100;
+		setIsRequestPending(true);
 		// todo: edit error handling
 		if (params && params.subset && params.simulationId) {
 			console.log({ tempInputData, primData });
@@ -66,6 +72,7 @@ const EnergyConsumption = ({ inputData, primData }) => {
 					dispatch(logout());
 					navigate("/auth");
 				}
+				setIsRequestPending(false);
 			}
 		} else {
 			try {
@@ -88,6 +95,7 @@ const EnergyConsumption = ({ inputData, primData }) => {
 					dispatch(logout());
 					navigate("/auth");
 				}
+				setIsRequestPending(false);
 			}
 		}
 	};
@@ -127,7 +135,13 @@ const EnergyConsumption = ({ inputData, primData }) => {
 						step !== 5 && "pointer-events-none opacity-25"
 					}`}
 				>
-					{params && params.simulationId ? "update" : "start estimate"}
+					{isRequestPending ? (
+						<FontAwesomeIcon icon={faCircleNotch} spin />
+					) : params && params.simulationId ? (
+						"update"
+					) : (
+						"start estimate"
+					)}
 				</button>
 			</section>
 		</>
