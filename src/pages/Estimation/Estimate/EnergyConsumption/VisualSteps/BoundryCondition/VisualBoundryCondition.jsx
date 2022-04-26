@@ -10,7 +10,7 @@ const VisualBoundryCondition = () => {
 	const inputData = useSelector(selectEnergyConsumptionData);
 	return (
 		<>
-			<h2 className=" mx-8 mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
+			<h2 className="mb-9 border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 				3D view
 			</h2>
 			<div className="">
@@ -24,7 +24,7 @@ const VisualBoundryCondition = () => {
 					/>
 				</div>
 				<section className="pt-2">
-					<ul className="flex justify-center gap-x-12">
+					<ul className="flex flex-col  justify-center gap-y-3 gap-x-12 md:flex-row">
 						<li className="flex items-center gap-x-4">
 							<span className="bg-pink-250 inline-block h-7 w-7 rounded-lg"></span>
 							<div className="flex gap-x-1">
