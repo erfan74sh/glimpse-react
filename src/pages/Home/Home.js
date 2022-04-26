@@ -35,8 +35,8 @@ const Home = () => {
 			<Header handleShowModal={handleShowEstimationModal} />
 			<main className="font-irancell mt-24" dir="rtl">
 				<EmbededAparat
-					videoId={16504825167}
-					videoUrl="https://www.aparat.com/embed/mVSx2?data[rnddiv]=16504825167&data[responsive]=yes"
+					videoId={66997426036}
+					videoUrl="https://www.aparat.com/embed/nrSIi?data[rnddiv]=66997426036&data[responsive]=yes"
 				/>
 				<section id="work-frame">
 					<div className="mb-16 flex items-center justify-center px-5">
