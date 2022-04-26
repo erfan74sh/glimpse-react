@@ -18,16 +18,16 @@ const SignIn = () => {
 		dispatch(clearMessage());
 	}, [dispatch]);
 	return (
-		<div className="flex flex-col items-center px-12 py-12 gap-y-9 bg-white rounded-md shadow-full">
-			<img src={Logo} alt="logo" className="w-60 h-auto" />
+		<div className="shadow-full mx-3 flex w-full flex-col items-center gap-y-9 rounded-md bg-white p-6 sm:mx-0 sm:w-auto sm:p-12">
+			<img src={Logo} alt="logo" className="h-auto w-60" />
 			<SignInForm />
-			<div className="flex flex-col gap-y-2 items-center">
+			<div className="flex flex-col items-center gap-y-2">
 				{message && <div className="text-red-500">{message}</div>}
-				<Link to="#" className="text-sm text-gray-650 font-normal capitalize">
+				<Link to="#" className="text-gray-650 text-sm font-normal capitalize">
 					forget password?
 				</Link>
 			</div>
-			<span className="text-lg font-normal text-blue-550 capitalize">
+			<span className="text-blue-550 text-lg font-normal capitalize">
 				or{" "}
 				<Link to="/auth/sign-up" className="underline">
 					sign up

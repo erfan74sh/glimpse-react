@@ -70,7 +70,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				handleSignup(values);
 			}}
 		>
-			<Form className="flex w-100 flex-col gap-y-7">
+			<Form className="sm:w-100 flex w-full flex-col gap-y-7">
 				<TextField
 					type="text"
 					name="full_name"
@@ -89,8 +89,8 @@ const SignUpForm = ({ handleSuccessful }) => {
 					placeholder="password"
 					label="password"
 				/>
-				<div className="flex gap-x-5">
-					<div className="w-1/2">
+				<div className="flex flex-col gap-y-7 gap-x-5 sm:flex-row">
+					<div className="sm:w-1/2">
 						<TextField
 							type="text"
 							name="phone_number"
@@ -98,7 +98,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 							label="phone number"
 						/>
 					</div>
-					<div className="w-1/2">
+					<div className="sm:w-1/2">
 						<SelectField
 							selectOptions={scopeOfActivityOptions}
 							name="scope_of_activity"
@@ -110,7 +110,7 @@ const SignUpForm = ({ handleSuccessful }) => {
 				</div>
 				<button
 					type="submit"
-					className="rounded-md bg-blue-550 py-1 px-4 capitalize text-white transition-all hover:shadow-b-sm"
+					className="bg-blue-550 hover:shadow-b-sm rounded-md py-1 px-4 capitalize text-white transition-all"
 				>
 					register
 				</button>
