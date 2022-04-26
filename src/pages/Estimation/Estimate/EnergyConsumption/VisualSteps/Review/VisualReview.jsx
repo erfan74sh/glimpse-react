@@ -142,7 +142,7 @@ const VisualReview = () => {
 					{fullData.map((item, idx) => {
 						return (
 							<li
-								className="text-gray-650 flex justify-between border-b border-gray-400"
+								className="text-gray-650 flex flex-wrap justify-between border-b border-gray-400"
 								key={idx}
 							>
 								<span className="font-semibold capitalize text-gray-900">
