@@ -52,13 +52,14 @@ const Header = ({ lang }) => {
 								className="text-2xl"
 							/>
 						</span>
+						{/* for mobile screens */}
 						<div
 							className={`bg-gray-650 top-18 fixed left-0 z-10 h-screen w-screen border-t-2 ${
 								showBurgerMenu ? "" : " -translate-x-full"
 							} transform p-5 transition-all duration-300 md:hidden`}
 						>
 							<ul
-								className="flex h-full flex-col items-center justify-center gap-y-8 text-lg font-normal capitalize"
+								className="flex h-full flex-col items-center justify-center gap-y-6 text-lg font-normal capitalize sm:h-auto"
 								dir={lang ? "rtl" : "ltr"}
 							>
 								<li>
@@ -73,7 +74,7 @@ const Header = ({ lang }) => {
 										{lang ? "صفحه اصلی" : "home"}
 									</NavLink>
 								</li>
-								<li className="relative">
+								<li>
 									<NavLink
 										to="/result"
 										className={({ isActive }) =>
@@ -127,6 +128,7 @@ const Header = ({ lang }) => {
 								</li>
 							</ul>
 						</div>
+						{/* for md and bigger screens */}
 						<ul
 							className="hidden items-center justify-between text-lg font-normal capitalize md:flex"
 							dir={lang ? "rtl" : "ltr"}
