@@ -68,7 +68,7 @@ const Review = ({ prevStep }) => {
 
 	return (
 		<div className="flex h-full flex-col">
-			<section className="flex flex-col pr-10">
+			<section className="mb-8 flex flex-col pr-10">
 				<h2 className="mb-9 w-full border-b border-gray-500 pb-4 text-xl font-normal uppercase">
 					review
 				</h2>
@@ -76,7 +76,7 @@ const Review = ({ prevStep }) => {
 					{fullData.map((item, idx) => {
 						return (
 							<li
-								className="flex justify-between border-b border-gray-400 text-gray-650"
+								className="text-gray-650 flex justify-between border-b border-gray-400"
 								key={idx}
 							>
 								<span className="font-semibold text-gray-900">
@@ -100,7 +100,7 @@ const Review = ({ prevStep }) => {
 			<section className="mt-auto flex justify-center gap-x-4 pr-10">
 				<button
 					type="button"
-					className="flex items-center justify-between rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
+					className="border-blue-550 text-blue-550 flex items-center justify-between rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
 					onClick={prevStep}
 					value="site plan"
 				>
