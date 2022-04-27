@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 // components
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
-import ThermalComfort from "./ThermalComfort";
 import VisualComfort from "./VisualComfort";
 import EnergyConsumption from "./EnergyConsumption";
-import StructureDesign from "./StructureDesign";
-// state
+// slices
 import { selectPrimaryData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 import {
 	getEnergySimulationById,
@@ -153,14 +151,12 @@ const Estimate = () => {
 				</section>
 			</header>
 			<main className="flex flex-col gap-y-14 lg:flex-row">
-				{primaryData.subset === "thermal_comfort" && <ThermalComfort />}
 				{primaryData.subset === "visual_comfort" && (
 					<VisualComfort inputData={visualInputData} primData={primaryData} />
 				)}
 				{primaryData.subset === "energy_consumption" && (
 					<EnergyConsumption inputData={inputData} primData={primaryData} />
 				)}
-				{primaryData.subset === "structure_design" && <StructureDesign />}
 			</main>
 		</main>
 	);
