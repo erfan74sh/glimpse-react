@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Loader from "../components/Loader/Loader";
 // components
+import Loader from "../components/Loader/Loader";
 
 const withLoading = (WrappedComponent, loadingMsg) => {
 	return (props) => {
