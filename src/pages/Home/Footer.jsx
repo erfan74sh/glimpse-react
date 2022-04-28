@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // assets
 import Logo from "../../assets/images/logo-02.png";
@@ -14,6 +13,8 @@ import {
 	faEnvelope,
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+// constants
+import { contactUsInfo } from "../../constants";
 
 const Footer = () => {
 	return (
@@ -34,7 +35,7 @@ const Footer = () => {
 							/>
 						</span>
 						<span className="text-center md:text-right">
-							تهران.دانشگاه شهید‌بهشتی، ساختمان شماره ۲ دانشکده معماری و شهرسازی
+							{contactUsInfo.location.address}{" "}
 						</span>
 					</li>
 					<li className="flex items-center gap-x-2">
@@ -45,7 +46,7 @@ const Footer = () => {
 							/>
 						</span>
 
-						<span>۰۹۹۳۹۴۴۴۷۷۵ _ ۰۲۱۸۸۹۲۹۰۱۷</span>
+						<span>{contactUsInfo.phoneNumber}</span>
 					</li>
 				</ul>
 				<ul
@@ -53,8 +54,8 @@ const Footer = () => {
 					dir="ltr"
 				>
 					<li className="group h-6">
-						<Link
-							to="#"
+						<a
+							href={contactUsInfo.instagram.url}
 							className="group-hover:text-blue-550  flex h-full items-center justify-center gap-x-2"
 						>
 							<span className="flex w-6 items-center justify-center">
@@ -63,12 +64,14 @@ const Footer = () => {
 									className="group-hover:text-blue-550 "
 								/>{" "}
 							</span>
-							<span className="hidden text-base md:inline-block">BSP.sim</span>
-						</Link>
+							<span className="hidden text-base md:inline-block">
+								{contactUsInfo.instagram.username}
+							</span>
+						</a>
 					</li>
 					<li className="group h-6">
-						<Link
-							to="#"
+						<a
+							href={contactUsInfo.linkedin.url}
 							className="group-hover:text-blue-550  flex h-full items-center justify-center gap-x-2"
 						>
 							<span className="flex w-6 items-center justify-center">
@@ -77,12 +80,14 @@ const Footer = () => {
 									className="group-hover:text-blue-550 "
 								/>{" "}
 							</span>
-							<span className="hidden text-base md:inline-block">BSP.sim</span>
-						</Link>
+							<span className="hidden text-base md:inline-block">
+								{contactUsInfo.linkedin.username}
+							</span>
+						</a>
 					</li>
 					<li className="group h-6">
-						<Link
-							to="#"
+						<a
+							href={contactUsInfo.email.url}
 							className="group-hover:text-blue-550  flex h-full items-center justify-center gap-x-2"
 						>
 							<span className="flex w-6 items-center justify-center">
@@ -92,9 +97,9 @@ const Footer = () => {
 								/>{" "}
 							</span>
 							<span className="hidden text-base md:inline-block">
-								Info@bsp.green
+								{contactUsInfo.email.username}
 							</span>
-						</Link>
+						</a>
 					</li>
 				</ul>
 			</section>
