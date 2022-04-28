@@ -1,13 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// components
+import Nav from "../../components/Nav";
+import ContactUsMap from "./ContactUsMap";
+// icons
 import { faPhoneAlt, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
 	faInstagramSquare,
 	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-// components
-import Nav from "../../components/Nav";
-import ContactUsMap from "./ContactUsMap";
 // constants
 import { contactUsInfo } from "../../constants";
 
