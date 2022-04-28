@@ -1,13 +1,21 @@
 import React from "react";
 import { Map, Marker } from "pigeon-maps";
-
-const companyLocation = [35.796784220168966, 51.39476019337767];
+// constants
+import { contactUsInfo } from "../../constants";
 
 const ContactUsMap = () => {
 	return (
 		<div>
-			<Map height={250} defaultZoom={15} defaultCenter={companyLocation}>
-				<Marker anchor={companyLocation} width={40} color="#147CDD" />
+			<Map
+				height={250}
+				defaultZoom={15}
+				defaultCenter={contactUsInfo.location.latLong}
+			>
+				<Marker
+					anchor={contactUsInfo.location.latLong}
+					width={40}
+					color="#147CDD"
+				/>
 			</Map>
 		</div>
 	);
