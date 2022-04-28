@@ -8,6 +8,8 @@ import {
 // components
 import Nav from "../../components/Nav";
 import ContactUsMap from "./ContactUsMap";
+// constants
+import { contactUsInfo } from "../../constants";
 
 const ContactUs = () => {
 	return (
@@ -29,27 +31,27 @@ const ContactUs = () => {
 									icon={faInstagramSquare}
 									className="text-2xl"
 								/>
-								<span>BSP.sim</span>
+								<span>{contactUsInfo.instagram.username}</span>
 							</li>
 							<li className="flex gap-x-3 py-3">
 								<FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
-								<span>BSP.sim</span>
+								<span>{contactUsInfo.linkedin.username}</span>
 								<div className="flex flex-col gap-y-2"></div>
 							</li>
 							<li className="flex gap-x-3 py-3">
 								<FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
-								<span>Info@bsp.green</span>
+								<span>{contactUsInfo.email.username}</span>
 							</li>
 							<li className="font-irancell flex gap-x-3 py-3">
 								<FontAwesomeIcon icon={faPhoneAlt} className="text-2xl" />
-								<span>۰۲۱۸۸۹۲۹۰۱۷ - ۰۹۹۳۹۴۴۴۷۷۵</span>
+								<span>{contactUsInfo.phoneNumber}</span>
 							</li>
 						</ul>
 						<div className="my-5">
 							<ContactUsMap />
 						</div>
 						<div dir="rtl" className="font-irancell">
-							دانشگاه شهید‌بهشتی، ساختمان شماره ۲ دانشکده معماری و شهرسازی
+							{contactUsInfo.location.address}
 						</div>
 					</section>
 					<section className="font-irancell relative w-full md:w-1/2" dir="rtl">
