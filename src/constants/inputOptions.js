@@ -185,3 +185,41 @@ export const vtGlassOptions = [
 		moreDescription: "(Single pane window with a clear glass)",
 	},
 ];
+
+// EstimationModal
+//
+// StepOne
+export const highPerformanceBuildingsOptions = [
+	{ label: "comfort", value: "IEQ" },
+	{ label: "energy and carbon", value: "Energy_and_water" },
+	{ label: "structure", value: "Structure", disable: true },
+];
+export const buildingProgramOptions = [
+	{ label: "Office", value: "office" },
+	{ label: "Residential", value: "residential", disable: true },
+	{ label: "Educational", value: "educational", disable: true },
+	{ label: "Commercial", value: "commercial", disable: true },
+];
+
+//
+// StepThree
+export const locationOptions = [
+	{ label: "Tehran", value: "tehran" },
+	{ label: "Yazd", value: "yazd" },
+	{ label: "Tabriz", value: "tabriz" },
+	{ label: "Bushehr", value: "bushehr", disable: true },
+	{ label: "Sari", value: "sari", disable: true },
+];
+
+//
+// Subset
+export const ieqSubset = [
+	{ label: "visual comfort", value: "visual_comfort" },
+	{ label: "thermal comfort", value: "thermal_comfort", disable: true },
+];
+export const energyWaterSubset = [
+	{ label: "energy demand", value: "energy_consumption" },
+];
+export const structureSubset = [
+	{ label: "structure design", value: "structure_design" },
+];
