@@ -10,6 +10,8 @@ import {
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
 import InputRange from "../../../../../../components/inputs/InputRange";
+// constants
+import { vtGlassOptions } from "../../../../../../constants";
 
 const Material = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectVisualComfortData);
@@ -48,36 +50,6 @@ const Material = ({ nextStep, prevStep }) => {
 			})
 		);
 	};
-
-	const vtGlassOptions = [
-		{
-			label: "0.58",
-			value: "0.58",
-			moreInfo: "پنجره سه جداره با دولایه ۸ میلیمتری هوا",
-			moreDescription:
-				"(Triple pane window with clear glasses and two layers of 8mm air gap)",
-		},
-		{
-			label: "0.72",
-			value: "0.72",
-			moreInfo: "پنجره دو جداره کم گسیل با 14 میلیمتر ضخامت هوا",
-			moreDescription:
-				"(Double pane window with low-E glasses and 14mm of air gap)",
-		},
-		{
-			label: "0.80",
-			value: "0.80",
-			moreInfo: "پنجره دو جداره با 8 میلیمتر ضخامت لایه هوا",
-			moreDescription:
-				"(Double pane window with clear glasses and 8mm of air gap)",
-		},
-		{
-			label: "0.90",
-			value: "0.90",
-			moreInfo: "شیشه تک جداره معمولی",
-			moreDescription: "(Single pane window with a clear glass)",
-		},
-	];
 
 	return (
 		<Formik
