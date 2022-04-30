@@ -13,9 +13,10 @@ import Roboto400 from "../../../../assets/fonts/Roboto/Roboto-Regular.ttf";
 import Roboto500 from "../../../../assets/fonts/Roboto/Roboto-Medium.ttf";
 import Roboto700 from "../../../../assets/fonts/Roboto/Roboto-Bold.ttf";
 import Roboto900 from "../../../../assets/fonts/Roboto/Roboto-Black.ttf";
-
 // assets
 import Logo from "../../../../assets/images/logo-02.png";
+// constants
+import { unitOptions } from "../../../../constants";
 
 // font registration
 Font.register({
@@ -194,57 +195,6 @@ const styles = StyleSheet.create({
 		minWidth: "7%",
 	},
 });
-
-const unitOptions = {
-	area: "m\u00B2",
-	x_dim: "m",
-	y_dim: "m",
-	rotation_angle: "deg",
-	wwr_north: "%",
-	wwr_south: "%",
-	shading_type: "",
-	hvac: "",
-	wall_uvalue: "W/m\u00B2K",
-	roof_uvalue: "W/m\u00B2K",
-	floor_uvalue: "W/m\u00B2K",
-	window_uvalue: "W/m\u00B2K",
-	natural_ventilation: "",
-	south_neighbor_distance: "m",
-	south_neighbor_height: "m",
-	north_neighbor_distance: "m",
-	north_neighbor_height: "m",
-	number_of_floor: "",
-	south_wall_bc: "",
-	north_wall_bc: "",
-	east_wall_bc: "",
-	west_wall_bc: "",
-	floor_bc: "",
-	roof_bc: "",
-
-	coolingload: "kWh/m\u00B2",
-	heatingload: "kWh/m\u00B2",
-	electriclight: "kWh/m\u00B2",
-	fanger20: "%",
-	fanger10: "%",
-	adaptiveashrae80: "%",
-	adaptiveashrae90: "%",
-	adaptiveencalss2por: "%",
-	overheatot_occupied_hours: "hr",
-	underheatot_occupied_hours: "hr",
-	verheatdbt_occupied_hours: "hr",
-	underheatdbt_occupied_hours: "hr",
-
-	reflectance_wall: "",
-	reflectance_celing: "",
-	reflectance_floor: "",
-	vt_glass: "",
-
-	udi: "%",
-	mda: "%",
-	svd: "%",
-	ase: "%",
-	sda: "%",
-};
 
 const shadingTypeOptions = {
 	1: "Horizontal",
