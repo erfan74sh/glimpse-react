@@ -16,7 +16,17 @@ import Roboto900 from "../../../../assets/fonts/Roboto/Roboto-Black.ttf";
 // assets
 import Logo from "../../../../assets/images/logo-02.png";
 // constants
-import { unitOptions } from "../../../../constants";
+import {
+	unitOptions,
+	shadingTypeENums,
+	boundryConditionENums,
+	hvacENums,
+	floorLevelENums,
+	wallUValueENums,
+	floorUValueENums,
+	roofUValueENums,
+	windowUValueENums,
+} from "../../../../constants";
 
 // font registration
 Font.register({
@@ -196,64 +206,6 @@ const styles = StyleSheet.create({
 	},
 });
 
-const shadingTypeOptions = {
-	1: "Horizontal",
-	2: "Horizontal Louvre",
-	3: "Vertical",
-	4: "All Modes",
-};
-const boundryConditionOptions = {
-	0: "Adiabatic",
-	1: "External",
-	2: "Ground",
-};
-
-const hvacOptions = {
-	1: "Ideal air loads",
-	2: "PTAC | residential",
-	3: "PTHP | residential",
-	4: "VAV w/reheat",
-	5: "VAV w/PFP boxes",
-	6: "Fan coil units + DOAS",
-};
-
-const floorLevelOptions = {
-	0: "Ground Floor",
-	1: "1st Floor",
-	2: "2nd Floor",
-	3: "3rd Floor",
-	4: "4th Floor",
-	5: "5th Floor",
-};
-
-const wallUValueOptions = {
-	1.719: "Brick wall + Brick facade",
-	1.649: "Cement Block + Stone facade",
-	0.979: "Cement Block + Cement facade",
-	0.225: "Two layer Brick wall with Insulation in the middle + Brick facade",
-};
-
-const floorUValueOptions = {
-	0.37: "Reinforced Concrete with air gap + Terrazzo",
-	0.47: "Beam Block + Parquet flooring",
-	0.65: "Reinforced concrete + Parquet flooring",
-};
-
-const roofUValueOptions = {
-	0.878: "Gypsum Board + Reinforced Concrete + Terrazzo",
-	0.211: "Reinforced Concrete with thermal insullation + Terrazzo",
-	0.393: "Beam block + terrazzo",
-	0.386: "Beam Block with out terrazzo",
-	1.092: "Gypsum Plaster + Reinforced Concrete + Terrazzo",
-};
-
-const windowUValueOptions = {
-	1.7: "Triple glazed windows",
-	2.6: "Double low-E glazed windows",
-	3.1: "Double glazed windows",
-	5.7: "Single glazed windows",
-};
-
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
@@ -358,7 +310,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{floorLevelOptions[inputs.number_of_floor]}
+											{floorLevelENums[inputs.number_of_floor]}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -406,7 +358,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{shadingTypeOptions[inputs.shading_type]}
+											{shadingTypeENums[inputs.shading_type]}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
@@ -461,7 +413,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{hvacOptions[inputs.hvac]}
+											{hvacENums[inputs.hvac]}
 										</Text>
 									</View>
 									<View
@@ -492,7 +444,7 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{inputs.wall_uvalue} {unitOptions.wall_uvalue}{" "}
-											{`(${wallUValueOptions[inputs.wall_uvalue]})`}
+											{`(${wallUValueENums[inputs.wall_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -501,7 +453,7 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{inputs.floor_uvalue} {unitOptions.floor_uvalue}{" "}
-											{`(${floorUValueOptions[inputs.floor_uvalue]})`}
+											{`(${floorUValueENums[inputs.floor_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -510,7 +462,7 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{inputs.roof_uvalue} {unitOptions.roof_uvalue}{" "}
-											{`(${roofUValueOptions[inputs.roof_uvalue]})`}
+											{`(${roofUValueENums[inputs.roof_uvalue]})`}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_thermal_content_item}>
@@ -519,7 +471,7 @@ const PdfDoc = ({ data }) => {
 											style={styles.section_inputs_items_content_item_value}
 										>
 											{inputs.window_uvalue} {unitOptions.window_uvalue}{" "}
-											{`(${windowUValueOptions[inputs.window_uvalue]})`}
+											{`(${windowUValueENums[inputs.window_uvalue]})`}
 										</Text>
 									</View>
 								</View>
@@ -538,7 +490,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.east_wall_bc]}
+											{boundryConditionENums[inputs.east_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -548,7 +500,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.west_wall_bc]}
+											{boundryConditionENums[inputs.west_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -558,7 +510,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.north_wall_bc]}
+											{boundryConditionENums[inputs.north_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -568,7 +520,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.south_wall_bc]}
+											{boundryConditionENums[inputs.south_wall_bc]}
 										</Text>
 									</View>
 									<View
@@ -578,7 +530,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.roof_bc]}
+											{boundryConditionENums[inputs.roof_bc]}
 										</Text>
 									</View>
 									<View
@@ -588,7 +540,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{boundryConditionOptions[inputs.floor_bc]}
+											{boundryConditionENums[inputs.floor_bc]}
 										</Text>
 									</View>
 								</View>
