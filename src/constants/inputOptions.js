@@ -204,11 +204,38 @@ export const buildingProgramOptions = [
 //
 // StepThree
 export const locationOptions = [
-	{ label: "Tehran", value: "tehran" },
-	{ label: "Yazd", value: "yazd" },
-	{ label: "Tabriz", value: "tabriz" },
-	{ label: "Bushehr", value: "bushehr", disable: true },
-	{ label: "Sari", value: "sari", disable: true },
+	{
+		label: "Tehran",
+		value: "tehran",
+		latLng: [35.689198, 51.388973],
+		climate: "Bsk.Bwk",
+	},
+	{
+		label: "Yazd",
+		value: "yazd",
+		latLng: [31.897423, 54.356857],
+		climate: "Bwk",
+	},
+	{
+		label: "Tabriz",
+		value: "tabriz",
+		latLng: [38.0739964, 46.2961952],
+		climate: "Bsk",
+	},
+	{
+		label: "Bushehr",
+		value: "bushehr",
+		disable: true,
+		latLng: [28.8936645, 51.3204877],
+		climate: "?",
+	},
+	{
+		label: "Sari",
+		value: "sari",
+		disable: true,
+		latLng: [36.5659598, 53.0587229],
+		climate: "?",
+	},
 ];
 
 //
