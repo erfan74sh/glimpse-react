@@ -17,6 +17,8 @@ import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 // services
 import energyConsumptionServices from "../../../../services/estimations/energyConsumption.service";
 import visualComfortServices from "../../../../services/estimations/visualComfort.service";
+// constants
+import { unitOptions, colorPallet } from "../../../../constants";
 
 const CompareZones = () => {
 	const [searchParams] = useSearchParams();
@@ -44,40 +46,6 @@ const CompareZones = () => {
 
 	const [series, setSeries] = useState([]);
 	useEffect(() => {
-		const unitOptions = {
-			area: "m\u00B2",
-
-			primary_energy: "kWh/m\u00B2",
-			total_energy: "kWh/m\u00B2",
-			coolingload: "kWh/m\u00B2",
-			heatingload: "kWh/m\u00B2",
-			electriclight: "kWh/m\u00B2",
-			fanger20: "%",
-			fanger10: "%",
-			adaptiveashrae80: "%",
-			adaptiveashrae90: "%",
-			adaptiveencalss2por: "%",
-			overheatot_occupied_hours: "hr",
-			underheatot_occupied_hours: "hr",
-			verheatdbt_occupied_hours: "hr",
-			underheatdbt_occupied_hours: "hr",
-
-			udi: "%",
-			mda: "%",
-			svd: "%",
-			ase: "%",
-			sda: "%",
-		};
-		const colorPallet = [
-			"#784AC1",
-			"#00C48C",
-			"#B5008E",
-			"#0085D3",
-			"#003576",
-			"#8b5cf6",
-			"#a21caf",
-			"#f43f5e",
-		];
 		// const alts = zones.filter(
 		// 	(value) =>
 		// 		value.project_name === currentProject && value.zone_name === currentZone
