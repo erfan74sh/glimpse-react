@@ -9,23 +9,13 @@ import {
 } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
-
+// constants
+import {
+	hvacOptions,
+	naturalVentilationOptions,
+} from "../../../../../../constants";
 const Hvac = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectEnergyConsumptionData);
-
-	const hvacOptions = [
-		{ label: "ideal air loads", value: "0" },
-		{ label: "PTAC | residential", value: "1" },
-		{ label: "PTHP | residential", value: "2" },
-		{ label: "VAV w/reheat", value: "7" },
-		{ label: "VAV w/PFP boxes", value: "8" },
-		{ label: "fan coil units + DOAS", value: "11" },
-	];
-
-	const naturalVentilationOptions = [
-		{ label: "on", value: "true" },
-		{ label: "off", value: "false" },
-	];
 
 	const dispatch = useDispatch();
 
