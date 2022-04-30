@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, useFormikContext } from "formik";
 import * as yup from "yup";
-
 // components
 import TextField from "../../../components/inputs/TextField";
 import SelectField from "../../../components/inputs/SelectField/SelectField";
@@ -12,19 +11,18 @@ import ModalMap from "./ModalMap/ModalMap";
 import { updateData } from "../../../features/estimationPrimData/EstimationPrimDataSlice";
 // style
 import "./EstimationModal.scss";
+// constants
+import {
+	highPerformanceBuildingsOptions,
+	buildingProgramOptions,
+	locationOptions,
+	ieqSubset,
+	energyWaterSubset,
+	structureSubset,
+} from "../../../constants";
 
 const Subset = () => {
 	const { high_performance_building_index } = useFormikContext().values;
-	const ieqSubset = [
-		{ label: "visual comfort", value: "visual_comfort" },
-		{ label: "thermal comfort", value: "thermal_comfort", disable: true },
-	];
-	const energyWaterSubset = [
-		{ label: "energy demand", value: "energy_consumption" },
-	];
-	const structureSubset = [
-		{ label: "structure design", value: "structure_design" },
-	];
 	return (
 		<SelectField
 			selectOptions={
@@ -43,18 +41,6 @@ const Subset = () => {
 };
 
 const StepOne = ({ nextStep, formData }) => {
-	const highPerformanceBuildingsOptions = [
-		{ label: "comfort", value: "IEQ" },
-		{ label: "energy and carbon", value: "Energy_and_water" },
-		{ label: "structure", value: "Structure", disable: true },
-	];
-	const buildingProgramOptions = [
-		{ label: "Office", value: "office" },
-		{ label: "Residential", value: "residential", disable: true },
-		{ label: "Educational", value: "educational", disable: true },
-		{ label: "Commercial", value: "commercial", disable: true },
-	];
-
 	return (
 		<Formik
 			initialValues={formData}
@@ -181,13 +167,7 @@ const StepTwo = ({ nextStep, prevStep, formData }) => {
 const StepThree = ({ prevStep, formData }) => {
 	const dispatch = useDispatch();
 	let navigate = useNavigate();
-	const locationOptions = [
-		{ label: "Tehran", value: "tehran" },
-		{ label: "Yazd", value: "yazd" },
-		{ label: "Tabriz", value: "tabriz" },
-		{ label: "Bushehr", value: "bushehr", disable: true },
-		{ label: "Sari", value: "sari", disable: true },
-	];
+
 	return (
 		<Formik
 			initialValues={formData}
