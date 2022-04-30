@@ -10,31 +10,8 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from "recharts";
-
-const labelOptions = {
-	area: "Area",
-
-	primary_energy: "Primary Energy",
-	total_energy: "Total Energy",
-	coolingload: "Cooling load",
-	heatingload: "Heating load",
-	electriclight: "Electric Lighting",
-	fanger20: "Fanger 80%",
-	fanger10: "Fanger 90%",
-	adaptiveashrae80: "Adaptive ASHRAE 80%",
-	adaptiveashrae90: "Adaptive ASHRAE 90%",
-	adaptiveencalss2por: "Adaptive EN-Class",
-	overheatot_occupied_hours: "Overheat OT- Occupied hours",
-	underheatot_occupied_hours: "Underheat OT- Occupied hours",
-	verheatdbt_occupied_hours: "Overheat DbT- Occupied hours",
-	underheatdbt_occupied_hours: "Under heat DbT- Occupied hours",
-
-	udi: "UDI",
-	mda: "mDA",
-	svd: "sVD",
-	ase: "ASE",
-	sda: "sDA",
-};
+// constants
+import { labelOptions } from "../../../constants";
 
 const CustomizedLabel = (props) => {
 	const { x, y, value, strokeOpacity } = props;
