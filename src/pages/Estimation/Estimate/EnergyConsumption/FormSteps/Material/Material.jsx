@@ -9,6 +9,13 @@ import {
 } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
+// constants
+import {
+	wallMaterialOptions,
+	roofMaterialOptions,
+	floorMaterialOptions,
+	glassMaterialOptions,
+} from "../../../../../../constants";
 
 const Material = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectEnergyConsumptionData);
@@ -50,113 +57,6 @@ const Material = ({ nextStep, prevStep }) => {
 			})
 		);
 	};
-
-	const wallMaterialOptions = [
-		{
-			label: "1.719",
-			value: "1.719",
-			moreDescription: "(Brick wall + Brick facade)",
-			moreInfo: "دیوار آجری با نمای آجری",
-		},
-		{
-			label: "1.649",
-			value: "1.649",
-			moreDescription: "(Cement Block + Stone facade)",
-			moreInfo: "دیوار بلوک سیمانی با نمای سنگ",
-		},
-		{
-			label: "0.979",
-			value: "0.979",
-			moreDescription: "(Cement Block + Cement facade)",
-			moreInfo: "دیوار بلوک سیمانی با نمای سیمانی",
-		},
-		{
-			label: "0.225",
-			value: "0.225",
-			moreDescription:
-				"(Two layer Brick wall with Insulation in the middle + Brick facade)",
-			moreInfo: "دیوار دولایه آجری با عایق میانی و نمای آجری",
-		},
-	];
-	const floorMaterialOptions = [
-		{
-			label: "0.37",
-			value: "0.37",
-			moreDescription: "(Reinforced Concrete with air gap + Terrazzo)",
-			moreInfo: "کف بتنی با پوشش موزاییک و فاصله هوایی",
-		},
-		{
-			label: "0.47",
-			value: "0.47",
-			moreDescription: "(Beam Block + Parquet flooring)",
-			moreInfo: "کف تیرچه بلوک با پوشش پارکت",
-		},
-		{
-			label: "0.65",
-			value: "0.65",
-			moreDescription: "(Reinforced concrete + Parquet flooring)",
-			moreInfo: "کف بتنی با پوشش پارکت",
-		},
-	];
-	const roofMaterialOptions = [
-		{
-			label: "0.878",
-			value: "0.878",
-			moreDescription: "(Gypsum Board + Reinforced Concrete + Terrazzo)",
-			moreInfo: "بام بتنی با کفپوش موزاییکی",
-		},
-		{
-			label: "0.211",
-			value: "0.211",
-			moreDescription:
-				"(Reinforced Concrete with thermal insullation + Terrazzo)",
-			moreInfo: "بام بتنی با کف پوش موزاییکی و عایق حرارتی",
-		},
-		{
-			label: "0.393",
-			value: "0.393",
-			moreDescription: "(Beam block + terrazzo)",
-			moreInfo: "بام تیرچه بلوک با کفپوش موزاییکی",
-		},
-		{
-			label: "0.386",
-			value: "0.386",
-			moreDescription: "(Beam Block with out terrazzo)",
-			moreInfo: "بام تیرچه بلوک بدون کفپوش موزاییکی",
-		},
-		{
-			label: "1.092",
-			value: "1.092",
-			moreDescription: "(Gypsum Plaster + Reinforced Concrete + Terrazzo)",
-			moreInfo: "بام بتنی با کفپوش موزاییکی و نازک کاری گچ اندود داخلی",
-		},
-	];
-	const glassMaterialOptions = [
-		{
-			label: "1.7",
-			value: "1.7",
-			moreInfo: "?",
-			moreDescription: "(Triple glazed windows)",
-		},
-		{
-			label: "2.6",
-			value: "2.6",
-			moreInfo: "?",
-			moreDescription: "(Double low-E glazed windows)",
-		},
-		{
-			label: "3.1",
-			value: "3.1",
-			moreInfo: "?",
-			moreDescription: "(Double glazed windows)",
-		},
-		{
-			label: "5.7",
-			value: "5.7",
-			moreInfo: "?",
-			moreDescription: "(Single glazed windows)",
-		},
-	];
 
 	return (
 		<Formik
@@ -233,7 +133,7 @@ const Material = ({ nextStep, prevStep }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="button"
-						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-white px-5 py-1 font-medium uppercase text-blue-550"
+						className="border-blue-550 text-blue-550 flex items-center gap-x-1 rounded-md border-2 bg-white px-5 py-1 font-medium uppercase"
 						value="geometry"
 						onClick={prevStep}
 					>
@@ -241,7 +141,7 @@ const Material = ({ nextStep, prevStep }) => {
 					</button>
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
+						className="border-blue-550 bg-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(ventilation)</span>
 					</button>
