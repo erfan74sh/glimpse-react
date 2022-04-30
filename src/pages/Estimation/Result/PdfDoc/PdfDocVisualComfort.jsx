@@ -16,7 +16,7 @@ import Roboto900 from "../../../../assets/fonts/Roboto/Roboto-Black.ttf";
 // assets
 import Logo from "../../../../assets/images/logo-02.png";
 // constants
-import { unitOptions } from "../../../../constants";
+import { unitOptions, shadingTypeENums } from "../../../../constants";
 
 // font registration
 Font.register({
@@ -180,13 +180,6 @@ const styles = StyleSheet.create({
 	},
 });
 
-const shadingTypeOptions = {
-	1: "Horizontal",
-	2: "Horizontal Louvre",
-	3: "Vertical",
-	4: "All Modes",
-};
-
 const PdfDoc = ({ data }) => {
 	const [inputs, setInputs] = useState({});
 	useEffect(() => {
@@ -331,7 +324,7 @@ const PdfDoc = ({ data }) => {
 										<Text
 											style={styles.section_inputs_items_content_item_value}
 										>
-											{shadingTypeOptions[inputs.shading_type]}
+											{shadingTypeENums[inputs.shading_type]}
 										</Text>
 									</View>
 									<View style={styles.section_inputs_items_content_item}>
