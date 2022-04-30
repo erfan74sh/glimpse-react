@@ -9,6 +9,8 @@ import {
 } from "../../../../../../features/energyConsumptionData/energyConsumptionsDataSlice";
 // components
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
+// constants
+import { WallOptions, floorOptions } from "../../../../../../constants";
 
 const BoundryCondition = ({ nextStep, prevStep }) => {
 	const data = useSelector(selectEnergyConsumptionData);
@@ -63,16 +65,6 @@ const BoundryCondition = ({ nextStep, prevStep }) => {
 			})
 		);
 	};
-
-	const WallOptions = [
-		{ label: "adiabatic", value: "0" },
-		{ label: "external", value: "1" },
-	];
-	const floorOptions = [
-		{ label: "adiabatic", value: "0" },
-		{ label: "external", value: "1" },
-		{ label: "ground", value: "2" },
-	];
 
 	return (
 		<Formik
