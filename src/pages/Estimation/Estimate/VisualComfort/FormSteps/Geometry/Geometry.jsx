@@ -7,6 +7,8 @@ import { updateData } from "../../../../../../features/visualComfortData/VisualC
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
+// constants
+import { shadingOptions } from "../../../../../../constants";
 
 const Geometry = ({ nextStep, data }) => {
 	const dispatch = useDispatch();
@@ -59,13 +61,6 @@ const Geometry = ({ nextStep, data }) => {
 			})
 		);
 	};
-
-	const shadingOptions = [
-		{ label: "vertical", value: "3" },
-		{ label: "horizontal", value: "1" },
-		{ label: "horizontal louvre", value: "2" },
-		{ label: "all modes", value: "4" },
-	];
 
 	return (
 		<Formik
@@ -178,7 +173,7 @@ const Geometry = ({ nextStep, data }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
+						className="border-blue-550 bg-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(material)</span>
 					</button>
