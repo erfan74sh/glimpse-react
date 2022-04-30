@@ -7,6 +7,8 @@ import { updateData } from "../../../../../../features/energyConsumptionData/ene
 // components
 import InputRange from "../../../../../../components/inputs/InputRange";
 import SelectField from "../../../../../../components/inputs/SelectField/SelectField";
+// constats
+import { shadingOptions, floorLevelOptions } from "../../../../../../constants";
 
 const Geometry = ({ nextStep, data }) => {
 	const dispatch = useDispatch();
@@ -67,22 +69,6 @@ const Geometry = ({ nextStep, data }) => {
 			})
 		);
 	};
-
-	const shadingOptions = [
-		{ label: "horizontal", value: "1" },
-		{ label: "horizontal louvre", value: "2" },
-		{ label: "vertical", value: "3" },
-		{ label: "all modes", value: "4" },
-	];
-
-	const floorLevelOptions = [
-		{ label: "ground floor", value: "0" },
-		{ label: "1st floor", value: "1" },
-		{ label: "2nd floor", value: "2" },
-		{ label: "3rd floor", value: "3" },
-		{ label: "4th floor", value: "4" },
-		{ label: "5th floor", value: "5" },
-	];
 
 	return (
 		<Formik
@@ -209,7 +195,7 @@ const Geometry = ({ nextStep, data }) => {
 				<section className="mt-auto flex justify-center gap-x-4 pr-10">
 					<button
 						type="submit"
-						className="flex items-center gap-x-1 rounded-md border-2 border-blue-550 bg-blue-550 px-5 py-1 font-medium uppercase text-white"
+						className="border-blue-550 bg-blue-550 flex items-center gap-x-1 rounded-md border-2 px-5 py-1 font-medium uppercase text-white"
 					>
 						next <span className="text-xs lowercase">(boundry condition)</span>
 					</button>
